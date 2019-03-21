@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <div class="imgcontainer">
+        <img src="assets/logo.png"  width="250" height="180">
+        <h1>sign up</h1>
+      </div>
+
+    <form  [formGroup]="regiForm" (ngSubmit)="onSubmit(username.value, password1.value, password2.value)">
+      <div class="container">
+        
+          <label>
+            <input type="text" #username placeholder="Enter Hunter Email" formControlName="email" required>
+          </label><br>
+          <label>  
+            <input type="text" #password1 placeholder="Enter password" formControlName="password1" required>
+          </label><br>
+          <label>  
+              <input type="text" #password2 placeholder="Re-enter password" formControlName="password2" required>
+            </label><br>
+          <button type="submit" [disabled]="!regiForm.valid">Register Me</button>
+          
+          <h4>----or----</h4>
+
+      </div>
+    </form>
+
+    <div class ="container">
+        <button>
+          <a routerLink="/login" >login page</a>
+          <router-outlet></router-outlet>  
+        </button>
+      </div>
+
+      <div class="container">
+          <div>
+            <h5>Tearms and conditioins.</h5>
+          </div>
+      </div>
+
+</body>
+</html>
