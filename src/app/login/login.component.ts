@@ -9,7 +9,7 @@ import {Router } from '@angular/router';
   selector: 'app-name-editor',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
-
+ 
 })
 
 
@@ -29,14 +29,24 @@ export class LoginComponent implements OnInit {
 
   onSubmit(username,password) {
     this.userService.userAuthentication(username,password).subscribe((data : any)=>{
-      localStorage.setItem('userToken',data.access_token);
-      this.router.navigate(['/home']);
-    },
-    (err : HttpErrorResponse)=>{
-      this.isLoginError = true;
+      localStorage.setItem('userToken',data.success);
+      localStorage.setItem('token',data.token);
+
+      if(data.success == true){
+
+        this.router.navigate(['/home']);
+        console.log ( username + "logged in");
+        
+        console.log("Token =  "+data.token);
+        
+      }
+      else{console.log ("error "+data.error)};
+      
     });
     
   }
+
+  
 
 
 }

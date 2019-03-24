@@ -1,5 +1,27 @@
 <!DOCTYPE html>
-<html>  
+<html>
+<head>
+    <h3>Collab Screen</h3>
+</head> 
+
+<body>
+
+  <div>
+    <h2>
+        Collab Feeds
+    </h2>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
 <p>
   Collab # 1
 </p><br>
@@ -18,22 +40,31 @@
         <p>
             Collab # 6
           </p><br>
+
+
+
+
+
+         
+
+
+
+
+
           
+            
             <div>
                 <button>
-                    <a routerLink="/register" >Register Account</a>
-                    <router-outlet></router-outlet>
-                    
-                  </button><br>
-                  
-            </div>
-            <div>
+                    <a (click) ="userDetails()">Profile</a>
+                  </button>
                 <button>
-                    <a routerLink="/login" >login page</a>
-                    <router-outlet></router-outlet>
-                    
+                    <a (click) ="logOut()">Logout</a>
                   </button>
             </div>
-                                    
+
+
+            
+</body>
+                                   
             
 </html>

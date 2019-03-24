@@ -7,22 +7,22 @@
 <body>
 
     <div class="imgcontainer">
-        <img src="assets/logo.png"  width="250" height="180">
-        <h1>sign up</h1>
+        <img src="assets/logo.png"  width="250" height="130">
+        <h1>Register Account</h1>
       </div>
 
-    <form  [formGroup]="regiForm" (ngSubmit)="onSubmit(username.value, password1.value, password2.value)">
+    <form  [formGroup]="regiForm" (ngSubmit)="onSubmit(username.value,password.value,password2.value)">
       <div class="container">
         
           <label>
-            <input type="text" #username placeholder="Enter Hunter Email" formControlName="email" required>
+            <input type="text" #username placeholder="Enter Hunter Email" formControlName="username" required>
           </label><br>
           <label>  
-            <input type="text" #password1 placeholder="Enter password" formControlName="password1" required>
+            <input type="text" #password placeholder="Enter password" formControlName="password" required>
           </label><br>
           <label>  
-              <input type="text" #password2 placeholder="Re-enter password" formControlName="password2" required>
-            </label><br>
+            <input type="text" #password2 placeholder="Re-enter password" formControlName="password" required>
+          </label><br>
           <button type="submit" [disabled]="!regiForm.valid">Register Me</button>
           
           <h4>----or----</h4>
@@ -39,7 +39,7 @@
 
       <div class="container">
           <div>
-            <h5>Tearms and conditioins.</h5>
+            
           </div>
       </div>
 
