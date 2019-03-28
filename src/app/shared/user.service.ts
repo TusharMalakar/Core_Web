@@ -46,8 +46,12 @@ export class UserService {
 
     //get(url: string, options?: { headers?: HttpHeaders | { [header: string]: string | string[]; }; observe?: "body"; params?: HttpParams | { [param: string]: string | string[]; }; reportProgress?: boolean; responseType?: "json"; withCredentials?: boolean; }): 
     //{headers : new HttpHeaders({'Authorization': 'Bearer '+ localStorage.getItem('token') })}  
+    //,{"Content-Type ": "application/x-www-form-urlencoded"}
+    //,{"username ": "jane.doe99@myhunter.cuny.edu"}
+  
+
     return this.http.get(   this.rootUrl +"/user?"
-      ,{headers : new HttpHeaders({'Authorization': 'Basic '+ this.cookies })} );
+      ,{headers : new HttpHeaders({'Authorization': 'Basic '+ this.cookies }     )} );
   }
 
 }
