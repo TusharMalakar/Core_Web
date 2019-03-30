@@ -31,25 +31,28 @@ export class RegisterComponent implements OnInit {
     console.log(username,password,password2);
 
     if(password != password2){
-      console.log("Password did not matched!");
+      alert("Password did not matche!");
     }
     else
     {
       this.userService.registerUser(username,password)
       .subscribe((data: any)  =>{
   
+            //storing json object to localStorage
+            localStorage.setItem('capstoneAuth',data);
+
+            if(data.success == true){
+
+              this.router.navigate(['/home']);
+              console.log ( username + " registered"); 
+            }
+            else{ 
+                alert(data.error);
+                this.router.navigate(['/register']);
+            };
+            return;
   
-        localStorage.setItem('userToken',data.access_token);
-        this.router.navigate(['/home']);
-  
-        console.log ( username + "  you are registed!"),
-        
-      (err : HttpErrorResponse)=>{
-        this.isRegiError = true;
-      }
-  
-  
-      });
+      } );
     }
 
    
