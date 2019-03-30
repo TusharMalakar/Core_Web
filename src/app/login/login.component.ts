@@ -1,7 +1,6 @@
 import { UserService } from './../shared/user.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component , OnInit} from '@angular/core';
-import { HttpErrorResponse } from '@angular/common/http';
 import {Router } from '@angular/router';
 
 
@@ -31,7 +30,7 @@ export class LoginComponent implements OnInit {
   onSubmit(username,password) {
     this.userService.userAuthentication(username,password).subscribe((data : any)=>{
       //storing json object to localStorage
-      localStorage.setItem('capstoneAuth',data);
+      localStorage.setItem('capstoneAuth',data.token);
 
       if(data.success == true){
 

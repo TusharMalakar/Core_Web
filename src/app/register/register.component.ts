@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
       .subscribe((data: any)  =>{
   
             //storing json object to localStorage
-            localStorage.setItem('capstoneAuth',data);
+            localStorage.setItem('capstoneAuth',data.token);
 
             if(data.success == true){
 

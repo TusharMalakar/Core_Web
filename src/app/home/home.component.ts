@@ -14,10 +14,16 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     
+
+    
   }
 
   userDetails(){
-    console.log( this.userService.settings);
+    this.userService.getUserdetails().subscribe ((data : any ) => {
+      localStorage.setItem('userdetails' , data.token);
+      console.log ( localStorage.getItem('userdetails'));
+
+    });
   }
 
     logOut(){
