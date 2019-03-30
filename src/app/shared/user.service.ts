@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { User } from './user.model';
-import {Router } from '@angular/router';
-import { jsonpCallbackContext } from '@angular/common/http/src/module';
+import { getToken } from '@angular/router/src/utils/preactivation';
 
 
 
@@ -39,31 +38,40 @@ export class UserService {
   }
 
   
+
+  
 public isAuthenticated() : boolean {
   return localStorage.getItem('capstonAuth') !== null;
 }
 
- settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://huntercollabapi.herokuapp.com/user",
-  "method": "GET",
-  "headers": {
-    "cache-control": "no-cache",
-    "Postman-Token": "2b3ca2d6-334e-45fb-a8d5-4b1ce5df8dcf"
-  }
-}
   
+ 
+
+
+//testuser1@myhunter.cuny.edu
+
+    /**
+    get(url: string, options: { headers?: HttpHeaders | { [header: string]: string | string[]; }; observe?: "body"; params?: HttpParams | { [param: string]: string | string[]; }; reportProgress?: boolean; responseType: "arraybuffer"; withCredentials?: boolean; }): Observable<ArrayBuffer>
+    The HTTP options to send with the request.
+
+    Constructs a GET request that interprets the body as an ArrayBuffer and returns the response in an ArrayBuffer.
+
+    @return — An Observable of the response, with the response body as an ArrayBuffer.
+
+    */
+   cookies = {headers : new HttpHeaders( {
   
+    "Authorization": `Bearer ${localStorage.getItem('capstoneAuth')}`,
+    'cache-control': "no-cache"
+  })
+};
   //url + json authentication
   getUserdetails(){
     //,{"username ": "jane.doe99@myhunter.cuny.edu"}
     console.log(localStorage.getItem('capstoneAuth'));
-    
-
-    return this.http.get( this.rootUrl +"/user?"  );
-    
-
+    return this.http.get( this.rootUrl +"/user?", this.cookies );
+  
 }
+
 
 }
