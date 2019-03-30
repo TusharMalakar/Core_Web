@@ -17,13 +17,11 @@ export class HomeComponent implements OnInit {
   }
 
   userDetails(){
-    this.userService.getUserdetails().subscribe((data : any) => {
-      this.userDetails = data;
-    } )
+    console.log( this.userService.settings);
   }
 
     logOut(){
-      localStorage.removeItem('userToken');
+      localStorage.removeItem('capstoneAuth');
       this.router.navigate(['/login']);
     }
 }

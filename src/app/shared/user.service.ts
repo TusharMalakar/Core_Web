@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { User } from './user.model';
-
-import { HttpErrorResponse } from '@angular/common/http';
 import {Router } from '@angular/router';
+import { jsonpCallbackContext } from '@angular/common/http/src/module';
 
 
 
@@ -39,19 +38,32 @@ export class UserService {
     return this.http.get(this.rootUrl +"/auth/login?"+"username="+userName+"&password="+password);
   }
 
-  //cookies
-  private cookies = localStorage.getItem('token');
-   
-  getUserdetails(){
-
-    //get(url: string, options?: { headers?: HttpHeaders | { [header: string]: string | string[]; }; observe?: "body"; params?: HttpParams | { [param: string]: string | string[]; }; reportProgress?: boolean; responseType?: "json"; withCredentials?: boolean; }): 
-    //{headers : new HttpHeaders({'Authorization': 'Bearer '+ localStorage.getItem('token') })}  
-    //,{"Content-Type ": "application/x-www-form-urlencoded"}
-    //,{"username ": "jane.doe99@myhunter.cuny.edu"}
   
+public isAuthenticated() : boolean {
+  return localStorage.getItem('capstonAuth') !== null;
+}
 
-    return this.http.get(   this.rootUrl +"/user?"
-      ,{headers : new HttpHeaders({'Authorization': 'Basic '+ this.cookies }     )} );
+ settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://huntercollabapi.herokuapp.com/user",
+  "method": "GET",
+  "headers": {
+    "cache-control": "no-cache",
+    "Postman-Token": "2b3ca2d6-334e-45fb-a8d5-4b1ce5df8dcf"
   }
+}
+  
+  
+  //url + json authentication
+  getUserdetails(){
+    //,{"username ": "jane.doe99@myhunter.cuny.edu"}
+    console.log(localStorage.getItem('capstoneAuth'));
+    
+
+    return this.http.get( this.rootUrl +"/user?"  );
+    
+
+}
 
 }
