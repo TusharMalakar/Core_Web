@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { User } from './user.model';
-import { getToken } from '@angular/router/src/utils/preactivation';
+import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs';
 
 
 
@@ -10,68 +11,77 @@ import { getToken } from '@angular/router/src/utils/preactivation';
 export class UserService {
   readonly rootUrl = 'https://huntercollabapi.herokuapp.com';
   constructor(private http: HttpClient) { }
-
+  private AccessToke = localStorage.getItem('capstoneAuth');
   registerUser(username, password ) {
     const body: User = {
-
-      _id : '',
       UserName: username,
-      Password: password,
+      password: password,
       github : '',
       linkedin : ' ',
-      skills : ' ',
-      classess : '',
-      profilePicture : ' '
+      skills : [],
+      classes : [],
+      name : ''
 
     }
     var reqHeader = new HttpHeaders({'No-Auth':'True'});
     var requestedUrl = this.rootUrl + "/user?username="+username+"&password="+password;
     console.log(requestedUrl);
-    
+
     return this.http.put(requestedUrl , body,{headers : reqHeader});
   }
 
   //"/user?username="+UserName+"&password="password
-
-  userAuthentication(userName, password) {
+  userAuthentication(userName: string, password: string) {
     return this.http.get(this.rootUrl +"/auth/login?"+"username="+userName+"&password="+password);
   }
 
-  
-
-  
 public isAuthenticated() : boolean {
   return localStorage.getItem('capstonAuth') !== null;
 }
-
-  
- 
-
-
-//testuser1@myhunter.cuny.edu
-
-    /**
-    get(url: string, options: { headers?: HttpHeaders | { [header: string]: string | string[]; }; observe?: "body"; params?: HttpParams | { [param: string]: string | string[]; }; reportProgress?: boolean; responseType: "arraybuffer"; withCredentials?: boolean; }): Observable<ArrayBuffer>
-    The HTTP options to send with the request.
-
-    Constructs a GET request that interprets the body as an ArrayBuffer and returns the response in an ArrayBuffer.
-
-    @return — An Observable of the response, with the response body as an ArrayBuffer.
-
-    */
-   cookies = {headers : new HttpHeaders( {
-  
-    "Authorization": `Bearer ${localStorage.getItem('capstoneAuth')}`,
-    'cache-control': "no-cache"
-  })
-};
-  //url + json authentication
-  getUserdetails(){
-    //,{"username ": "jane.doe99@myhunter.cuny.edu"}
-    console.log(localStorage.getItem('capstoneAuth'));
-    return this.http.get( this.rootUrl +"/user?", this.cookies );
-  
+ //url + json authentication
+ getUserdetails(){
+  return this.http.get( this.rootUrl +"/user");
+}
+// getPicture(){
+//   // user/profilePicture
+//   return this.http.get( this.rootUrl +"/user/profilePicture");
+// }
+getSkill(){ 
+  return this.http.get( this.rootUrl +"/user/skills");
+}
+getClasses(){ 
+  return this.http.get( this.rootUrl +"/user/classes");
+}
+//search/skills:
+searchSkills(){ 
+  return this.http.get( this.rootUrl +"/search/skills");
+}
+//collab/getCollabDetails
+collabDetails(){ 
+  return this.http.get( this.rootUrl +"/collab/getCollabDetails");
+}
+//collab/getAllCollabs
+allCollabs(){ 
+  return this.http.get( this.rootUrl +"/collab/getAllCollabs");
+}
+//collab/getActiveCollabs 
+activeCollabs(){ 
+  return this.http.get( this.rootUrl +"/collab/getActiveCollabs");
+}
+//messaging/myConvos
+myCollabs(){ 
+  return this.http.get( this.rootUrl +"/messaging/myConvos");
 }
 
+//___________POST_________________
+
+// /collab/deleteCollab
+///collab/editCollab
+///collab/joinCollab 
+//collab/leaveCollab 
+///collab/getRecommendedCollabs
+///messaging/getMessages 
+///messaging/sendMessage 
 
 }
+//testuser1@myhunter.cuny.edu  
