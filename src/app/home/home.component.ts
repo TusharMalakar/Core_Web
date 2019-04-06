@@ -67,22 +67,28 @@ export class HomeComponent implements OnInit {
     this.userService.collabDetails().subscribe ((data : any ) => {
       console.log(data[0].owner);
       console.log(data[0].members);
-      
-      /**
-       * id
-       * owner
-       * size
-       * members
-       * date
-       * duration
-       * location
-       * status
-       * title
-       * description
-       * classes
-       * skills
-       * applicants
+
+      //write a for loop to inter arrar
+    
+      //for(int i = 0 ; data.length ; i ++){
+            /**
+       * id = data[i].owner
+       * owner = data[i].
+       * size = data[i]
+       * members = data[i]
+       * date   = data[i] 
+       * duration =  data[i]
+       * location = data[i]
+       * status = data[i]
+       * title = data[i]
+       * description = data[i]
+       * classes = data[i]
+       * skills = data[i]
+       * applicants = data[i]
        *  */  
+      //}
+      
+      
   
      });
   }
