@@ -10,10 +10,11 @@ import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   {path : 'login', component :LoginComponent},
   {path:'register', component: RegisterComponent},
-  // {path:'home', component: HomeComponent, canActivate: [AuthGuard]},
-  {path:'home', component: HomeComponent},
   
-
+  //protected components
+  {path:'home',  canActivate : [AuthGuard],component: HomeComponent,data:{}},
+  
+  //default component
   {path:'**', redirectTo: 'login'}
 ];
 
@@ -22,3 +23,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+// testuser1@myhunter.cuny.edu 
