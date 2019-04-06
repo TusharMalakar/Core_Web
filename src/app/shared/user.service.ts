@@ -12,7 +12,7 @@ export class UserService {
   readonly rootUrl = 'https://huntercollabapi.herokuapp.com';
   constructor(private http: HttpClient) { }
   getToken(){
-    return localStorage.getItem('capstoneAuth')
+    return localStorage.getItem('accessToken')
   }
 
   registerUser(username, password ) {
@@ -40,7 +40,7 @@ export class UserService {
   }
 
 public isAuthenticated() : boolean {
-  return localStorage.getItem('capstonAuth') !== null;
+  return localStorage.getItem('accessToken') !== null;
 }
  //url + json authentication
  getUserdetails() {

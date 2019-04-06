@@ -92,7 +92,7 @@ export class HomeComponent implements OnInit {
 
 
     logOut(){
-      localStorage.removeItem('capstoneAuth');
+      localStorage.removeItem('accessToken');
       this.router.navigate(['/login']);
     }
 
