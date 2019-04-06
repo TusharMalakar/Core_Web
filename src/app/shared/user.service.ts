@@ -11,7 +11,10 @@ import { Observable } from 'rxjs';
 export class UserService {
   readonly rootUrl = 'https://huntercollabapi.herokuapp.com';
   constructor(private http: HttpClient) { }
-  private AccessToke = localStorage.getItem('capstoneAuth');
+  getToken(){
+    return localStorage.getItem('capstoneAuth')
+  }
+
   registerUser(username, password ) {
     const body: User = {
       UserName: username,
@@ -32,20 +35,21 @@ export class UserService {
 
   //"/user?username="+UserName+"&password="password
   userAuthentication(userName: string, password: string) {
-    return this.http.get(this.rootUrl +"/auth/login?"+"username="+userName+"&password="+password);
+    var reqHeader = new HttpHeaders({'No-Auth':'True'});
+    return this.http.get(this.rootUrl +"/auth/login?"+"username="+userName+"&password="+password, {headers : reqHeader});
   }
 
 public isAuthenticated() : boolean {
   return localStorage.getItem('capstonAuth') !== null;
 }
  //url + json authentication
- getUserdetails(){
+ getUserdetails() {
   return this.http.get( this.rootUrl +"/user");
 }
-// getPicture(){
-//   // user/profilePicture
-//   return this.http.get( this.rootUrl +"/user/profilePicture");
-// }
+getPicture(){
+  // user/profilePicture
+  return this.http.get( this.rootUrl +"/user/profilePicture");
+}
 getSkill(){ 
   return this.http.get( this.rootUrl +"/user/skills");
 }

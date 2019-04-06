@@ -9,21 +9,17 @@ export class AuthInterceptor implements HttpInterceptor {
 
     constructor(private router: Router) { }
 
-    intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        if (request.headers.get('No-Auth') == "True")
-            return next.handle(request.clone());
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        if (req.headers.get('No-Auth') == "True")
+            return next.handle(req.clone());
 
-        if (localStorage.getItem('capstoneAuth') != null) {
-            const clonedreq = request.clone({
-                headers: request.headers.set("Authorization", localStorage.getItem('capstoneAuth'))
+        if (localStorage.getItem('accessToken') != null) {
+            const clonedreq = req.clone({
+                headers: req.headers.set("Authorization", localStorage.getItem('accessToken'))
             });
             return next.handle(clonedreq)
-            
             .do(
-                succ => { 
-                    console.log("___");
-                    this.router.navigateByUrl('/home');
-                },
+                succ => { },
                 err => {
                     if (err.status === 401)
                         this.router.navigateByUrl('/login');
