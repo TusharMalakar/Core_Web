@@ -29,11 +29,10 @@ export class LoginComponent implements OnInit {
 
   onSubmit(username,password) {
     this.userService.userAuthentication(username,password).subscribe((data : any)=>{
-      //storing json object to localStorage
-      localStorage.setItem('capstoneAuth',data.token);
-
+      
       if(data.success == true){
-
+        //storing json object to localStorage
+        localStorage.setItem('accessToken',data.token);
         this.router.navigate(['/home']);
         console.log ( username + "  logged-in"); 
       }
@@ -48,6 +47,5 @@ export class LoginComponent implements OnInit {
   }
 
   
-
-
 }
+//testuser1@myhunter.cuny.edu 

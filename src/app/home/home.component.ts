@@ -1,4 +1,4 @@
-import { User } from './../shared/user.model';
+import { User, profile } from './../shared/user.model';
 import { TokenParams } from './../shared/TokenPrarms';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../shared/user.service';
@@ -23,17 +23,24 @@ export class HomeComponent implements OnInit {
 
   userDetails() {
     this.userService.getUserdetails().subscribe ((data : any ) => {
-      console.log(data);     
+      //setter 
+       this.username = "Email : "+ data.username;
+       this.github = data.github;
+       this.linkedin = data.linkedin;
+       this.skills =  "Skills : "+data.skills;
+       this.classes = "Classes : "+data.classes;
+       this.name = data.name;
+
      });
   }
-
-
-  // userPicture(){
-  //   ///user/profilePicture
-  //   this.userService.getPicture().subscribe ((data : any ) => {
-  //     console.log(data);   
-  //    });
-  // }
+  
+  userPicture(){
+    ///user/profilePicture
+    this.userService.getPicture().subscribe ((data : any ) => {
+      // BitmapImage image = new BitmapImage();
+      // image.SetSource(stream);  
+     });
+  }
 
   //user/skills
   userSkill(){
@@ -88,5 +95,16 @@ export class HomeComponent implements OnInit {
       localStorage.removeItem('capstoneAuth');
       this.router.navigate(['/login']);
     }
+
+
+
+    //private data variables
+    private username; 
+    private github;
+    private linkedin;
+    private skills;
+    private classes;
+    private name; 
 }
 // testuser1@myhunter.cuny.edu
+ 
