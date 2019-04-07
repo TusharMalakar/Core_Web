@@ -1,0 +1,51 @@
+<!--
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <div class="imgcontainer">
+        <img src="assets/logo.png"  width="250" height="200">
+        
+      </div>
+
+    <form  [formGroup]="regiForm" (ngSubmit)="onSubmit(username.value,password.value,password2.value)">
+      <div class="container">
+        
+          <label>
+            <input type="text" #username placeholder="Enter Hunter Email" formControlName="username" required>
+          </label><br>
+          <label>  
+            <input type="text" #password placeholder="Enter password" formControlName="password" required>
+          </label><br>
+          <label>  
+            <input type="text" #password2 placeholder="Re-enter password" formControlName="password" required>
+          </label><br>
+          <button type="submit" [disabled]="!regiForm.valid">Register Me</button>
+          
+          <h4>----or----</h4>
+
+      </div>
+    </form>
+
+    <div class ="container">
+        <button>
+          <a routerLink="/login" >login page</a>
+          <router-outlet></router-outlet>  
+        </button>
+      </div>
+
+      <div class="container">
+          <div>
+            
+          </div>
+      </div>
+
+</body>
+</html>
+-->
+<p>Register!</p>
+
