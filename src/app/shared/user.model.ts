@@ -8,13 +8,6 @@ export interface User {
     name ?: string;
 }
 
-export interface profile {
-    UserName ?: string;
-    github ?: string ;
-    linkedin ?: string;
-    skills ?:  [];
-    classes ?: []
-    name ?: string;
-}
+
 
 

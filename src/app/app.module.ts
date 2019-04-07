@@ -10,7 +10,7 @@ import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { UserService } from './shared/user.service';
-
+import {DropdownModule} from "ngx-dropdown";
 
 
 
@@ -25,7 +25,8 @@ import { UserService } from './shared/user.service';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule 
+    HttpClientModule ,
+    DropdownModule
   ],
   providers: [
     UserService,

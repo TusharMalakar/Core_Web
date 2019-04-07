@@ -1,17 +1,21 @@
-import { User, profile } from './../shared/user.model';
+
+import { User } from './../shared/user.model';
 import { TokenParams } from './../shared/TokenPrarms';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../shared/user.service';
 import {Router } from '@angular/router';
+import {DropdownModule} from "ngx-dropdown";
 
 
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+ 
 })
 export class HomeComponent implements OnInit {
+    [x: string]: any;
 
   constructor(private userService : UserService,private router : Router) { }
 
@@ -65,31 +69,40 @@ export class HomeComponent implements OnInit {
   // return array of JSON OBJECTS
   collabDetails(){
     this.userService.collabDetails().subscribe ((data : any ) => {
-      console.log(data[0].owner);
-      console.log(data[0].members);
 
+       // console.log(data[0].owner)
       //write a for loop to inter arrar
-    
-      //for(int i = 0 ; data.length ; i ++){
-            /**
-       * id = data[i].owner
-       * owner = data[i].
-       * size = data[i]
-       * members = data[i]
-       * date   = data[i] 
-       * duration =  data[i]
-       * location = data[i]
-       * status = data[i]
-       * title = data[i]
-       * description = data[i]
-       * classes = data[i]
-       * skills = data[i]
-       * applicants = data[i]
-       *  */  
-      //}
-      
-      
-  
+        var i : number;
+        var length_ = data.length;
+       for( i  = 0 ; data.length ; i ++){
+        // console.log(data[i].owner)
+        // console.log(data[i].size)
+        // console.log(data[i].members) 
+        // console.log(data[i].date)
+        // console.log(data[i].duration)
+        // console.log(data[i].location)
+        // console.log(data[i].status)
+        // console.log(data[i].description)
+        // console.log(data[i].Classes)
+        // console.log(data[i].skills)
+        // console.log(data[i].applicants)
+       this.owner = data[i].owner
+       this.size = data[i].size
+       this.members = data[i].member
+       this.date   = data[i].date 
+       this.duration =  data[i].duration
+       this.location = data[i].location
+       this.status = data[i].status
+       this.title = data[i].title
+       this.description = data[i].description
+       this.classes = data[i].classes
+       this.skills = data[i].skills
+       this.applicants = data[i].applicants
+        
+       }
+       this.Collabs = data;
+       
+         
      });
   }
   AllCollabs(){
@@ -145,21 +158,21 @@ export class HomeComponent implements OnInit {
     private classes;
     private name; 
 
-    /**
-       * id
-       * owner
-       * size
-       * members
-       * date
-       * duration
-       * location
-       * status
-       * title
-       * description
-       * classes
-       * skills
-       * applicants
-       *  */ 
+    //collabs details
+       private id : []
+       private owner : []
+       private size : []
+       private members : []
+       private date : []
+       private duration : []
+       private location : []
+       private status : []
+       private title : []
+       private description : []
+       //private classes
+       //private skills
+       private applicants : []
+        
 }
 // testuser1@myhunter.cuny.edu
  
@@ -330,3 +343,23 @@ export class HomeComponent implements OnInit {
         "applicants": []
     }
 ]
+
+
+export class Collabs {
+    
+    id : any
+    owner : any
+    size : any
+    members : any
+    date : any
+    duration : any
+    location : any
+    status : any
+    title : any
+    description : any
+    classes : any
+    skills : any
+    applicants : any
+   
+}
+ 
