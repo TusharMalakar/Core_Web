@@ -305,20 +305,32 @@ var AuthInterceptor = /** @class */ (function () {
     function AuthInterceptor(router) {
         this.router = router;
     }
+    //Handler: Will intercept any http request going out.
     AuthInterceptor.prototype.intercept = function (req, next) {
         var _this = this;
+        //If the request doesn't need auth; use this.
+        //req.headers.get('No-Auth') :  This checks the header of the request
+        //next.handle(req.clone()) : clone the whole request and send it
         if (req.headers.get('No-Auth') == "True")
             return next.handle(req.clone());
+        //If we do need auth, first if will fail.
+        //localStorage.getItem('accessToken') : Will check if there is a token in local storage
         if (localStorage.getItem('accessToken') != null) {
+            //Copies request that was caught and adds the authorization
             var clonedreq = req.clone({
                 headers: req.headers.set("Authorization", localStorage.getItem('accessToken'))
             });
-            return next.handle(clonedreq)
-                .do(function (succ) { }, function (err) {
+            //This sends the request that was cloned.
+            return next.handle(clonedreq).do(
+            //If Successful
+            function (succ) { }, 
+            //If error
+            function (err) {
                 if (err.status === 401)
                     _this.router.navigateByUrl('/login');
             });
         }
+        //If no token, send user to login.
         else {
             this.router.navigateByUrl('/login');
         }
@@ -421,9 +433,15 @@ var UserService = /** @class */ (function () {
             UserName: username,
             password: password,
         };
+        //This request does not need authorization 
         var reqHeader = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'No-Auth': 'True' });
+        //Adding Parameters
         var requestedUrl = this.rootUrl + "/user?username=" + username + "&password=" + password;
+        //Testing url 
         console.log(requestedUrl);
+        //requestUrl: endpoint
+        //body: Needed, but not used
+        //{headers : reqHeader} : Creating object from the header library; set to non-auth 
         return this.http.put(requestedUrl, body, { headers: reqHeader });
     };
     //"/user?username="+UserName+"&password="password
