@@ -1,6 +1,5 @@
 import { AuthInterceptor } from './guard/auth.inspector';
 import { AuthGuard } from './guard/auth.guard';
-import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +10,10 @@ import { RegisterComponent } from './register/register-page/register.component';
 import { HomeComponent } from './home/collab-list/home.component';
 import { UserService } from './shared/user.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+
 //These are the materials that will make our site adaptable
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -18,6 +21,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatMenuModule } from '@angular/material/menu'
+
 
 
 
@@ -41,6 +45,8 @@ import { MatMenuModule } from '@angular/material/menu'
 
     //Our Routes will be here to make code cleaner
     AppRoutingModule
+
+    //Forms Modules
   ],
   providers: [
     UserService,

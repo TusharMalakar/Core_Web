@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 export class UserService {
   readonly rootUrl = 'https://huntercollabapi.herokuapp.com';
   constructor(private http: HttpClient) { }
+  
   getToken(){
     return localStorage.getItem('accessToken')
   }
@@ -19,18 +20,21 @@ export class UserService {
     const body: User = {
       UserName: username,
       password: password,
-      github : '',
-      linkedin : ' ',
-      skills : [],
-      classes : [],
-      name : ''
-
     }
+
+    //This request does not need authorization 
     var reqHeader = new HttpHeaders({'No-Auth':'True'});
+
+    //Adding Parameters
     var requestedUrl = this.rootUrl + "/user?username="+username+"&password="+password;
+
+    //Testing url 
     console.log(requestedUrl);
 
-    return this.http.put(requestedUrl , body,{headers : reqHeader});
+    //requestUrl: endpoint
+    //body: Needed, but not used
+    //{headers : reqHeader} : Creating object from the header library; set to non-auth 
+    return this.http.put(requestedUrl , body, {headers : reqHeader});
   }
 
   //"/user?username="+UserName+"&password="password
