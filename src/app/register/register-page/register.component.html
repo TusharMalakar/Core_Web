@@ -1,51 +1,83 @@
-<!--
-<!DOCTYPE html>
-<html>
+<div class = "medium-list">
+  <div class="list-viewer-wrapper">
+    <div class="list-header-title">Register</div>
+      <!-- Error that will display if the entire form is not valid -->
+    <div *ngIf="form.errors" class = "alert alert-danger">
+        User or Password is invalid!
+    </div>
+    
+    <form [formGroup] = "form" (ngSubmit) = "onSubmit()">
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
+      <!-- Username Field -->
+      <div class="form-container">
+        <mat-form-field>
 
-    <div class="imgcontainer">
-        <img src="assets/logo.png"  width="250" height="200">
-        
+            <!-- Associate key from ts file: username -->
+            <input 
+                formControlName = "username"
+                matInput
+                id="username" 
+                type="email" 
+                class="form-control"
+                placeholder="Hunter Email...">
+        </mat-form-field>
+        <div *ngIf="username.touched && username.invalid" 
+              class="alert alert-danger">
+              <mat-error *ngIf="username.errors.required">Email is <strong>Required!</strong></mat-error>
+        </div>
       </div>
-
-    <form  [formGroup]="regiForm" (ngSubmit)="onSubmit(username.value,password.value,password2.value)">
-      <div class="container">
-        
-          <label>
-            <input type="text" #username placeholder="Enter Hunter Email" formControlName="username" required>
-          </label><br>
-          <label>  
-            <input type="text" #password placeholder="Enter password" formControlName="password" required>
-          </label><br>
-          <label>  
-            <input type="text" #password2 placeholder="Re-enter password" formControlName="password" required>
-          </label><br>
-          <button type="submit" [disabled]="!regiForm.valid">Register Me</button>
-          
-          <h4>----or----</h4>
-
-      </div>
-    </form>
-
-    <div class ="container">
-        <button>
-          <a routerLink="/login" >login page</a>
-          <router-outlet></router-outlet>  
-        </button>
-      </div>
-
-      <div class="container">
-          <div>
-            
+      
+      <!-- Password Field -->
+      <div class="form-container">
+          <mat-form-field>
+  
+              <!-- Associate key from ts file: username -->
+              <input 
+                  formControlName = "password"
+                  matInput
+                  id="password" 
+                  type="text" 
+                  class="form-control"
+                  placeholder="Password...">
+          </mat-form-field>
+          <div *ngIf="password.touched && password.invalid" 
+                class="alert alert-danger">
+                <mat-error *ngIf="password.errors.required">Password <strong>Required!</strong></mat-error>
           </div>
       </div>
 
-</body>
-</html>
--->
-<p>Register!</p>
+      <!-- Confirm Password Field -->
+      <div class="form-container">
+          <mat-form-field>
+  
+              <!-- Associate key from ts file: username -->
+              <input 
+                  formControlName = "password2"
+                  matInput
+                  id="password2" 
+                  type="text" 
+                  class="form-control"
+                  placeholder="Confirm Password...">
+          </mat-form-field>
+          <div *ngIf="password2.touched && password2.invalid" 
+                class="alert alert-danger">
+                <mat-error *ngIf="password2.errors.required">Password <strong>Required!</strong></mat-error>
+          </div>
+      </div>
+
+        <div class="form-container">
+            <button class="form-button" mat-raised-button color = "primary" type="submit" [disabled] = "!form.valid">Register</button>
+            <br>
+            <button class="form-button"  mat-raised-button color = "primary" routerLink="/login">Login</button>
+        </div>      
+
+    </form>
+
+
+  </div>
+</div>
+
+
+
+
 
