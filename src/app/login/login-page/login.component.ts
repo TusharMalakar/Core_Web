@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 
 
+
 @Component({
 
   selector: 'app-name-editor',
@@ -43,7 +44,7 @@ export class LoginComponent implements OnInit {
       else{ 
          alert(data.error);
          this.router.navigate(['/login']);
-    };
+    }; 
       return;
       
     });
