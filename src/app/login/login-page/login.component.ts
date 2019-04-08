@@ -3,6 +3,10 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component , OnInit} from '@angular/core';
 import {Router } from '@angular/router';
 
+//Material
+import { MatButtonModule } from '@angular/material/button';
+
+
 
 @Component({
 
