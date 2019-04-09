@@ -2583,7 +2583,7 @@ module.exports = "  .mat-card {\n      max-width: 500px;\n      max-height: auto
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "    <mat-card class=\"usercard\">\n      <mat-card-header>\n        <div mat-card-avatar></div>\n        <mat-card-title>{{ userData.name }}</mat-card-title>\n        <mat-card-subtitle>{{ userData.username }}</mat-card-subtitle>\n      </mat-card-header>\n      <img mat-card-image src=\"/assets/userPhoto.png\">\n      <mat-card-content>\n        <p>{{ userData.github }}</p>\n        <p>{{ userData.linkedin }}</p>\n        <p> {{ userData.class}}</p>\n        <mat-grid-list cols=\"2\" rowHeight=\"2:1\">\n\n          <mat-grid-tile>\n\n              <mat-nav-list>\n                <h4 mat-subheader >Skills</h4>\n                <mat-list-item *ngFor = \"let skill of userData.skills\"> \n                  <mat-icon mat-list-icon>edit</mat-icon>\n                  <h5>{{ skill }}</h5>\n                </mat-list-item>\n              </mat-nav-list>\n\n          </mat-grid-tile>\n          <mat-grid-tile>\n\n              <mat-nav-list>\n                  \n                  <mat-list-item *ngFor = \"let class of userData.classes\"> \n                    <mat-icon mat-list-icon>school</mat-icon>\n                    {{ class }} \n                  </mat-list-item>\n              </mat-nav-list>\n            \n          </mat-grid-tile>\n\n        </mat-grid-list>\n\n      </mat-card-content>\n      <mat-card-content>\n\n      </mat-card-content>\n    </mat-card>\n"
+module.exports = "    <mat-card class=\"usercard\">\n      <mat-card-header>\n        <div mat-card-avatar></div>\n        <mat-card-title>{{ userData?.name }}</mat-card-title>\n        <mat-card-subtitle>{{ userData?.username }}</mat-card-subtitle>\n      </mat-card-header>\n      <img mat-card-image src=\"/assets/userPhoto.png\">\n      <mat-card-content>\n        <p>{{ userData?.github }}</p>\n        <p>{{ userData?.linkedin }}</p>\n        <p> {{ userData?.class}}</p>\n        \n        <mat-grid-list cols=\"2\" rowHeight=\"2:1\">\n\n          <mat-grid-tile>\n\n              <mat-nav-list>\n                <h4 mat-subheader >Skills</h4>\n                <mat-list-item *ngFor = \"let skill of userData?.skills\"> \n                  <mat-icon mat-list-icon>edit</mat-icon>\n                  <h5>{{ skill }}</h5>\n                </mat-list-item>\n              </mat-nav-list>\n\n          </mat-grid-tile>\n          <mat-grid-tile>\n\n              <mat-nav-list>\n                  \n                  <mat-list-item *ngFor = \"let class of userData?.classes\"> \n                    <mat-icon mat-list-icon>school</mat-icon>\n                    {{ class }} \n                  </mat-list-item>\n              </mat-nav-list>\n            \n          </mat-grid-tile>\n\n        </mat-grid-list>\n\n      </mat-card-content>\n      <mat-card-content>\n\n      </mat-card-content>\n    </mat-card>\n"
 
 /***/ }),
 
@@ -2599,7 +2599,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserPageComponent", function() { return UserPageComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var src_app_shared_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/user.service */ "./src/app/shared/user.service.ts");
+/* harmony import */ var src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/dbAccess/user.service */ "./src/app/shared/dbAccess/user.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 
 
@@ -2620,7 +2620,7 @@ var UserPageComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./user-page.component.html */ "./src/app/user/user-page/user-page.component.html"),
             styles: [__webpack_require__(/*! ./user-page.component.css */ "./src/app/user/user-page/user-page.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], UserPageComponent);
     return UserPageComponent;
 }());

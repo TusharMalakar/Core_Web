@@ -19,18 +19,20 @@ const routes: Routes = [
   },
   {
     path:'home', 
-    loadChildren : './home/home.module#HomeModule'
+    loadChildren : './home/home.module#HomeModule',
+    canLoad: [AuthGuard]
   },
   {
     path: 'user',
-    loadChildren: './user/user.module#UserModule'
+    loadChildren: './user/user.module#UserModule',
+    canLoad: [AuthGuard]
   },
   
   
   //default component
   {
-    path:'', 
-    redirectTo: '',
+    path:'**', 
+    redirectTo: 'home',
     pathMatch: 'full'
   }
 ];
