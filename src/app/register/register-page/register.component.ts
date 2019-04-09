@@ -1,4 +1,4 @@
-import { UserService } from '../../shared/user.service';
+import { UserService } from '../../shared/dbAccess/user.service';
 import { Component , OnInit} from '@angular/core';
 import {Router } from '@angular/router';
 import { RegisterModel } from '../../shared/models/register.model';
@@ -13,20 +13,22 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 export class RegisterComponent implements OnInit{
   
-  user: RegisterModel = new RegisterModel();
+  user: RegisterModel;
   form: FormGroup;
 
   isRegiError : boolean;
   constructor(
     private userService : UserService,
     private router : Router,
-    private formBuilder: FormBuilder
-    ) { }
+    private formBuilder: FormBuilder) 
+    {
+      this.user = new RegisterModel();
+     }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
        username: [this.user.username, [
-        Validators.required,
+        Validators.required
       ]],
        password: [this.user.password, [
         Validators.required,
@@ -43,8 +45,6 @@ export class RegisterComponent implements OnInit{
   onSubmit() {
 
     this.user = Object.assign({}, this.form.value);
-
-    alert(this.user.username + ' ' + this.user.password);
     
     if(this.user.password != this.user.password2){
       alert("Password did not matche!");

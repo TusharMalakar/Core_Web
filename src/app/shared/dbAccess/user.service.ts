@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { User } from './user.model';
+import { UserModel } from '../models/user.model';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs';
-
-
 
 
 @Injectable()
@@ -16,9 +14,15 @@ export class UserService {
     return localStorage.getItem('accessToken')
   }
 
+  //"/user?username="+UserName+"&password="password
+  userAuthentication(userName: string, password: string) {
+    var reqHeader = new HttpHeaders({'No-Auth':'True'});
+    return this.http.get(this.rootUrl +"/auth/login?"+"username="+userName+"&password="+password, {headers : reqHeader});
+  }
+
   registerUser(username, password ) {
-    const body: User = {
-      UserName: username,
+    const body: UserModel = {
+      username: username,
       password: password,
     }
 
@@ -37,18 +41,12 @@ export class UserService {
     return this.http.put(requestedUrl , body, {headers : reqHeader});
   }
 
-  //"/user?username="+UserName+"&password="password
-  userAuthentication(userName: string, password: string) {
-    var reqHeader = new HttpHeaders({'No-Auth':'True'});
-    return this.http.get(this.rootUrl +"/auth/login?"+"username="+userName+"&password="+password, {headers : reqHeader});
-  }
-
 public isAuthenticated() : boolean {
   return localStorage.getItem('accessToken') !== null;
 }
  //url + json authentication
- getUserdetails() {
-  return this.http.get( this.rootUrl +"/user");
+ getUserdetails(): Observable<UserModel[]> {
+  return this.http.get<UserModel[]>( this.rootUrl +"/user");
 }
 getPicture(){
   // user/profilePicture
