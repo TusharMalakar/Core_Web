@@ -2,13 +2,14 @@ import { AuthInterceptor } from './guard/auth.inspector';
 import { AuthGuard } from './guard/auth.guard';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+//Declares our routing
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login-page/login.component';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { RegisterComponent } from './register/register-page/register.component';
 import { HomeComponent } from './home/collab-list/home.component';
-import { UserService } from './shared/user.service';
+import { UserService } from './shared/dbAccess/user.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
