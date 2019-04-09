@@ -183,7 +183,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./shared/user.service */ "./src/app/shared/user.service.ts");
+/* harmony import */ var _shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./shared/dbAccess/user.service */ "./src/app/shared/dbAccess/user.service.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
@@ -236,7 +236,7 @@ var AppModule = /** @class */ (function () {
                 //Forms Modules
             ],
             providers: [
-                _shared_user_service__WEBPACK_IMPORTED_MODULE_8__["UserService"],
+                _shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_8__["UserService"],
                 _guard_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"],
                 {
                     provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HTTP_INTERCEPTORS"],
@@ -265,7 +265,7 @@ var AppModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthGuard", function() { return AuthGuard; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../shared/user.service */ "./src/app/shared/user.service.ts");
+/* harmony import */ var _shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/dbAccess/user.service */ "./src/app/shared/dbAccess/user.service.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 
@@ -288,7 +288,7 @@ var AuthGuard = /** @class */ (function () {
     };
     AuthGuard = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _shared_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"]])
     ], AuthGuard);
     return AuthGuard;
 }());
@@ -416,10 +416,10 @@ var NavbarComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/shared/user.service.ts":
-/*!****************************************!*\
-  !*** ./src/app/shared/user.service.ts ***!
-  \****************************************/
+/***/ "./src/app/shared/dbAccess/user.service.ts":
+/*!*************************************************!*\
+  !*** ./src/app/shared/dbAccess/user.service.ts ***!
+  \*************************************************/
 /*! exports provided: UserService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -442,6 +442,11 @@ var UserService = /** @class */ (function () {
     UserService.prototype.getToken = function () {
         return localStorage.getItem('accessToken');
     };
+    //"/user?username="+UserName+"&password="password
+    UserService.prototype.userAuthentication = function (userName, password) {
+        var reqHeader = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'No-Auth': 'True' });
+        return this.http.get(this.rootUrl + "/auth/login?" + "username=" + userName + "&password=" + password, { headers: reqHeader });
+    };
     UserService.prototype.registerUser = function (username, password) {
         var body = {
             username: username,
@@ -457,11 +462,6 @@ var UserService = /** @class */ (function () {
         //body: Needed, but not used
         //{headers : reqHeader} : Creating object from the header library; set to non-auth 
         return this.http.put(requestedUrl, body, { headers: reqHeader });
-    };
-    //"/user?username="+UserName+"&password="password
-    UserService.prototype.userAuthentication = function (userName, password) {
-        var reqHeader = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'No-Auth': 'True' });
-        return this.http.get(this.rootUrl + "/auth/login?" + "username=" + userName + "&password=" + password, { headers: reqHeader });
     };
     UserService.prototype.isAuthenticated = function () {
         return localStorage.getItem('accessToken') !== null;
