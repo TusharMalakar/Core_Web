@@ -1,9 +1,8 @@
-import { User, profile } from '../../shared/user.model';
-import { TokenParams } from '../../shared/TokenPrarms';
+import { UserModel } from './../../shared/models/user.model';
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../shared/user.service';
+import { UserService } from '../../shared/dbAccess/user.service';
 import {Router } from '@angular/router';
-
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -11,26 +10,16 @@ import {Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+    userData: UserModel[];
 
   constructor(private userService : UserService,private router : Router) { }
 
   ngOnInit() {
-    
-
-    
+    this.userDetails();
   }
 
-  userDetails() {
-    this.userService.getUserdetails().subscribe ((data : any ) => {
-      //setter 
-       this.username = "Email : "+ data.username;
-       this.github = data.github;
-       this.linkedin = data.linkedin;
-       this.skills =  "Skills : "+data.skills;
-       this.classes = "Classes : "+data.classes;
-       this.name = data.name;
-
-     });
+  userDetails(){
+    this.userService.getUserdetails().subscribe(userData => this.userData = userData);
   }
   
   userPicture(){
@@ -38,26 +27,6 @@ export class HomeComponent implements OnInit {
     this.userService.getPicture().subscribe ((data : any ) => {
       // BitmapImage image = new BitmapImage();
       // image.SetSource(stream);  
-     });
-  }
-
-  //user/skills
-  userSkill(){
-    this.userService.getSkill().subscribe ((data : any ) => {
-      console.log(data);   
-  
-     });
-  }
-  userClass(){
-    this.userService.getClasses().subscribe ((data : any ) => {
-      console.log(data);   
-  
-     });
-  }
-  searchSkill(){
-    this.userService.getSkill().subscribe((data : any ) => {
-      console.log(data);   
-  
      });
   }
 

@@ -10,17 +10,26 @@
 var map = {
 	"./home/home.module": [
 		"./src/app/home/home.module.ts",
-		"default~home-home-module~register-register-module",
+		"default~home-home-module~login-login-module~register-register-module~user-user-module",
 		"home-home-module"
 	],
 	"./login/login.module": [
 		"./src/app/login/login.module.ts",
+		"default~home-home-module~login-login-module~register-register-module~user-user-module",
+		"default~login-login-module~register-register-module~user-user-module",
 		"login-login-module"
 	],
 	"./register/register.module": [
 		"./src/app/register/register.module.ts",
-		"default~home-home-module~register-register-module",
+		"default~home-home-module~login-login-module~register-register-module~user-user-module",
+		"default~login-login-module~register-register-module~user-user-module",
 		"register-register-module"
+	],
+	"./user/user.module": [
+		"./src/app/user/user.module.ts",
+		"default~home-home-module~login-login-module~register-register-module~user-user-module",
+		"default~login-login-module~register-register-module~user-user-module",
+		"user-user-module"
 	]
 };
 function webpackAsyncContext(req) {
@@ -74,6 +83,10 @@ var routes = [
         path: 'home',
         loadChildren: './home/home.module#HomeModule'
     },
+    {
+        path: 'user',
+        loadChildren: './user/user.module#UserModule'
+    },
     //default component
     {
         path: '',
@@ -105,7 +118,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n}\n\n.container .mat-drawer {\n    min-width: 200px;\n}\n\n.container .mat-drawer .mat-button {\n    display: block;\n    width: 100%;\n    text-align: left;\n}\n\n.spacer {\n    flex: 1 1 auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxrQkFBa0I7SUFDbEIsTUFBTTtJQUNOLE9BQU87SUFDUCxRQUFRO0lBQ1IsU0FBUztBQUNiOztBQUVBO0lBQ0ksZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksY0FBYztJQUNkLFdBQVc7SUFDWCxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxjQUFjO0FBQ2xCIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udGFpbmVyIHtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgdG9wOiAwO1xuICAgIGxlZnQ6IDA7XG4gICAgcmlnaHQ6IDA7XG4gICAgYm90dG9tOiAwO1xufVxuXG4uY29udGFpbmVyIC5tYXQtZHJhd2VyIHtcbiAgICBtaW4td2lkdGg6IDIwMHB4O1xufVxuXG4uY29udGFpbmVyIC5tYXQtZHJhd2VyIC5tYXQtYnV0dG9uIHtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICB3aWR0aDogMTAwJTtcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xufVxuXG4uc3BhY2VyIHtcbiAgICBmbGV4OiAxIDEgYXV0bztcbn0iXX0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -184,6 +197,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+//Declares our routing
 
 
 
@@ -364,7 +378,7 @@ module.exports = ".container {\n    position: absolute;\n    top: 0;\n    left: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-drawer-container class=\"container\" autosize >\n    <!-- Will be triggered by (click) = \"drawer.toggle()\" -->\n    <mat-drawer #drawer class=\"sidenav\">\n            <button color=\"primary\" mat-button routerLink=\"/login\">Login</button>\n            <button color=\"primary\" mat-button routerLink=\"/register\">Register</button>\n            <button color=\"primary\" mat-button routerLink=\"/home\">Home</button>\n    </mat-drawer>\n\n    <div class=\"sidenav-content\">\n        <mat-toolbar color=\"primary\">\n            <mat-toolbar-row>\n                <!-- \n                  drawer.toggle(): will call #drawer and will bring the sidenav into view\n                 -->\n                <button mat-icon-button (click) = \"drawer.toggle()\">\n                        <mat-icon>menu</mat-icon>\n                </button>\n\n                <span>Hunter Collab</span>\n                <span class=\"spacer\"></span>\n                <!--\n                   How every button is implemented \n                    [matMenuTriggerFor] is bindded to button menu; will be triggered by menu\n                  -->\n                <button mat-icon-button [matMenuTriggerFor] = \"menu\">\n                    <mat-icon>perm_identity</mat-icon>\n                </button>\n                \n                <mat-menu #menu=\"matMenu\">\n                  <button mat-menu-item>\n                    <mat-icon>person</mat-icon>\n                    <span>User Info</span>\n                  </button>\n                  <button mat-menu-item>\n                    <mat-icon>directions_run</mat-icon>\n                    <span>LogOut</span>\n                  </button>\n                </mat-menu>\n\n            </mat-toolbar-row>\n        </mat-toolbar>\n        <router-outlet></router-outlet>\n    </div>\n</mat-drawer-container>\n"
+module.exports = "<mat-drawer-container class=\"container\" autosize >\n    <!-- Will be triggered by (click) = \"drawer.toggle()\" -->\n    <mat-drawer #drawer class=\"sidenav\">\n            <button color=\"primary\" mat-button routerLink=\"/login\">Login</button>\n            <button color=\"primary\" mat-button routerLink=\"/register\">Register</button>\n            <button color=\"primary\" mat-button routerLink=\"/home\">Home</button>\n    </mat-drawer>\n\n    <div class=\"sidenav-content\">\n        <mat-toolbar color=\"primary\">\n            <mat-toolbar-row>\n                <!-- \n                  drawer.toggle(): will call #drawer and will bring the sidenav into view\n                 -->\n                <button mat-icon-button (click) = \"drawer.toggle()\">\n                        <mat-icon>menu</mat-icon>\n                </button>\n\n                <span>Hunter Collab</span>\n                <span class=\"spacer\"></span>\n                <!--\n                   How every button is implemented \n                    [matMenuTriggerFor] is bindded to button menu; will be triggered by menu\n                  -->\n                <button mat-icon-button [matMenuTriggerFor] = \"menu\">\n                    <mat-icon>perm_identity</mat-icon>\n                </button>\n                \n                <mat-menu #menu=\"matMenu\" >\n                  <button mat-menu-item routerLink=\"/user\">\n                    <mat-icon>person</mat-icon>\n                    <span>User Info</span>\n                  </button>\n                  <button mat-menu-item>\n                    <mat-icon>directions_run</mat-icon>\n                    <span>LogOut</span>\n                  </button>\n                </mat-menu>\n\n            </mat-toolbar-row>\n        </mat-toolbar>\n        <router-outlet></router-outlet>\n    </div>\n</mat-drawer-container>\n"
 
 /***/ }),
 
@@ -430,7 +444,7 @@ var UserService = /** @class */ (function () {
     };
     UserService.prototype.registerUser = function (username, password) {
         var body = {
-            UserName: username,
+            username: username,
             password: password,
         };
         //This request does not need authorization 

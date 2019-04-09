@@ -1,10 +1,11 @@
-import { UserService } from '../../shared/user.service';
+import { UserService } from '../../shared/dbAccess/user.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component , OnInit} from '@angular/core';
 import {Router } from '@angular/router';
 
 //Material
 import { MatButtonModule } from '@angular/material/button';
+import { LogInModel } from 'src/app/shared/models/login.model';
 
 
 
@@ -19,27 +20,45 @@ import { MatButtonModule } from '@angular/material/button';
 
 
 export class LoginComponent implements OnInit {
+ 
+ user: LogInModel;
+  form: FormGroup;
+
+  isLoginError : boolean;
+  constructor(private formBuilder: FormBuilder,
+              private userService : UserService,
+              private router : Router) 
+  {
+    this.user = new LogInModel();
+   }
+
+   ngOnInit(){
+      this.form = this.formBuilder.group({
+      username: [this.user.username, 
+        [Validators.required
+      ]],
+      password: [this.user.password, [
+        Validators.required,
+        Validators.minLength(6)
+      ]]
+    });
+  }
 
   
-  ngOnInit(): void {}
-  
-  isLoginError : boolean = false;
-  constructor(private fb: FormBuilder,private userService : UserService,private router : Router) { }
-
-  loginForm : FormGroup = this.fb.group({
-    username: ['', Validators.required],
-    password: ['', Validators.required]
-  });
   
 
-  onSubmit(username,password) {
-    this.userService.userAuthentication(username,password).subscribe((data : any)=>{
+  onSubmit() {
+
+      this.user = Object.assign({}, this.form.value);
+
+    this.userService.userAuthentication(this.user.username,this.user.password)
+    .subscribe((data : any)=>{
       
-      if(data.success == true){
+      if(data.success){
         //storing json object to localStorage
         localStorage.setItem('accessToken',data.token);
         this.router.navigate(['/home']);
-        console.log ( username + "  logged-in"); 
+        console.log ( this.user.username + "  logged-in"); 
       }
       else{ 
          alert(data.error);
@@ -49,6 +68,14 @@ export class LoginComponent implements OnInit {
       
     });
     
+  }
+
+  get username(){
+    return this.form.get('username');
+  }
+  
+  get password(){
+    return this.form.get('password');
   }
 
   

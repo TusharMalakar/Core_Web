@@ -74,7 +74,7 @@ module.exports = "p {\n    padding: 16px;\n    text-align: center;\n  \n  }\n/*#
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "     <!--\n       <button>\n          <a (click) =\"userDetails()\">Profile</a>\n        </button>\n      <button>\n        </button>\n      <button>\n          <a (click) =\"userSkill()\">userSkill</a>\n        </button>\n        <button>\n          <a (click) =\"userClass()\">userClass</a>\n        </button>\n        <button>\n          <a (click) =\"searchSkill()\">searchSkill</a>\n        </button>\n        <button>\n          <a (click) =\"collabDetails()\">collabDetails</a>\n        </button>\n        <button>\n          <a (click) =\"AllCollabs()\">AllCollabs</a>\n        </button>\n        <button>\n          <a (click) =\"activeCollabs()\">activeCollabs</a>\n        </button>\n        <button>\n          <a (click) =\"myCollabs()\">myCollabs</a>\n        </button>\n\n        <button>\n          <a (click) =\"logOut()\">Logout</a>\n        </button> <br> <br> <br>\n\n\n            <h1>Profile of {{name}}</h1> <br>\n            <td>Github : <a href=\"{{github}}\">{{github}}</a></td> <br>\n            <td>Linkedin : <a href=\"{{linkedin}}\">{{linkedin}}</a></td> <br>\n            <td>{{skills}}</td> <br>\n            <td>{{classes}}</td> <br>\n            <td>{{username}}</td> <br>\n\n            <table style=\"width : 50%\">\n              <thead>\n                <tr>\n                  <th>name</th>\n                  <th>Github</th>\n                  <th>linkedin</th>\n                  <th>skills</th>\n                  <th>classes</th>\n                  <th>username</th>\n                </tr>\n              </thead>\n                  \n          </table> \n\n     -->\n   <mat-tab-group>\n\n      <mat-tab label=\"Active Collabs\">\n        <ng-template matTabContent>\n            Active Collabs\n        </ng-template>\n      </mat-tab>\n\n      <mat-tab label=\"Recommended Collabs\">\n        <ng-template matTabContent>\n            Recommended Collabs\n        </ng-template>\n      </mat-tab>\n\n      <mat-tab label=\"My Collabs\">\n        <ng-template matTabContent>\n            My Collabs\n        </ng-template>\n      </mat-tab>\n\n   </mat-tab-group>\n     \n          \n            \n"
+module.exports = "     <!--\n       <button>\n          <a (click) =\"userDetails()\">Profile</a>\n        </button>\n      <button>\n        </button>\n      <button>\n          <a (click) =\"userSkill()\">userSkill</a>\n        </button>\n        <button>\n          <a (click) =\"userClass()\">userClass</a>\n        </button>\n        <button>\n          <a (click) =\"searchSkill()\">searchSkill</a>\n        </button>\n        <button>\n          <a (click) =\"collabDetails()\">collabDetails</a>\n        </button>\n        <button>\n          <a (click) =\"AllCollabs()\">AllCollabs</a>\n        </button>\n        <button>\n          <a (click) =\"activeCollabs()\">activeCollabs</a>\n        </button>\n        <button>\n          <a (click) =\"myCollabs()\">myCollabs</a>\n        </button>\n\n        <button>\n          <a (click) =\"logOut()\">Logout</a>\n        </button> <br> <br> <br>\n\n\n            <h1>Profile of {{name}}</h1> <br>\n            <td>Github : <a href=\"{{github}}\">{{github}}</a></td> <br>\n            <td>Linkedin : <a href=\"{{linkedin}}\">{{linkedin}}</a></td> <br>\n            <td>{{skills}}</td> <br>\n            <td>{{classes}}</td> <br>\n            <td>{{username}}</td> <br>\n\n            <table style=\"width : 50%\">\n              <thead>\n                <tr>\n                  <th>name</th>\n                  <th>Github</th>\n                  <th>linkedin</th>\n                  <th>skills</th>\n                  <th>classes</th>\n                  <th>username</th>\n                </tr>\n              </thead>\n                  \n          </table> \n\n     -->\n   <mat-tab-group>\n\n      <mat-tab label=\"Active Collabs\">\n        <ng-template matTabContent>\n            Active Collabs\n        </ng-template>\n      </mat-tab>\n\n      <mat-tab label=\"Recommended Collabs\">\n        <ng-template matTabContent>\n            Recommended Collabs\n        </ng-template>\n      </mat-tab>\n\n      <mat-tab label=\"My Collabs\">\n        <ng-template matTabContent>\n            My Collabs\n            \n\n        </ng-template>\n      </mat-tab>\n\n   </mat-tab-group>\n     \n          \n            \n"
 
 /***/ }),
 
@@ -102,40 +102,17 @@ var HomeComponent = /** @class */ (function () {
         this.router = router;
     }
     HomeComponent.prototype.ngOnInit = function () {
+        this.userDetails();
     };
     HomeComponent.prototype.userDetails = function () {
         var _this = this;
-        this.userService.getUserdetails().subscribe(function (data) {
-            //setter 
-            _this.username = "Email : " + data.username;
-            _this.github = data.github;
-            _this.linkedin = data.linkedin;
-            _this.skills = "Skills : " + data.skills;
-            _this.classes = "Classes : " + data.classes;
-            _this.name = data.name;
-        });
+        this.userService.getUserdetails().subscribe(function (userData) { return _this.userData = userData; });
     };
     HomeComponent.prototype.userPicture = function () {
         ///user/profilePicture
         this.userService.getPicture().subscribe(function (data) {
             // BitmapImage image = new BitmapImage();
             // image.SetSource(stream);  
-        });
-    };
-    //user/skills
-    HomeComponent.prototype.userSkill = function () {
-        this.userService.getSkill().subscribe(function (data) {
-            console.log(data);
-        });
-    };
-    HomeComponent.prototype.userClass = function () {
-        this.userService.getClasses().subscribe(function (data) {
-            console.log(data);
-        });
-    };
-    HomeComponent.prototype.searchSkill = function () {
-        this.userService.getSkill().subscribe(function (data) {
-            console.log(data);
         });
     };
     // return array of JSON OBJECTS
