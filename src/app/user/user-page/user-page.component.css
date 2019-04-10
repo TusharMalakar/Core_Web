@@ -1,15 +1,7 @@
     .usercard1 {
-      max-width: 450px;
-      max-height: auto;
       margin-top: 30px;
       padding: 0px;
   }
-
-  .usercard2 {
-    width: auto;
-    margin-top: 10px;
-    padding: 1px;
-}
 
   .mat-card-avatar {
       background-image: url('/assets/userPhoto.png');
@@ -18,10 +10,6 @@
   }
   .mat-card-actions {
       display: flex;
-  }
-
-  .mat-card-actions .flex-spacer {
-      width: 100%;
   }
 
   .list-header-title {
@@ -33,7 +21,7 @@
   }
 
   .mat-card-image {
-    margin: 0 16px 0px -16px;
+    margin: 0px;
     max-width: 100%;
   }
 
@@ -47,19 +35,41 @@
       height: 100%;
       margin-bottom: 7px;
   }
+  
 
-  .viewport {
-      height: 200px;
-      width: 400px;
-      margin-top: 20px;
-      margin-bottom: 10px;
-      margin-left: 10px;
-      
-  }
 
-  .item {
-      height: 50px;
-  }
+  .usercard2 {
+   margin: 0px;
+    
+}
+
+.viewport {
+    width: 100%;
+    height: 100%;
+    margin-left: 40px;
+}
+
+.cdk-virtual-scroll-viewport {
+    height: 50%;
+    margin: 20px;
+    outline: solid black;
+
+}
+
+.example-form {
+    color: rgba(0, 0, 0, .54);
+    background: rgba(0, 0, 0, .03);
+    font-weight: bold;
+}
+
+.example-form .mat-form-field {
+  margin: 0px;
+}
+
+.mat-grid-tile {
+    outline: solid black;
+}
+
   
 
 

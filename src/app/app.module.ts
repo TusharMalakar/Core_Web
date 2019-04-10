@@ -23,6 +23,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 //Angular Flex Module
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -52,6 +53,7 @@ import { ScrollDispatchModule } from '@angular/cdk/scrolling';
     MatMenuModule,
     ScrollDispatchModule,
     MatChipsModule,
+    MatAutocompleteModule,
 
     //Our Routes will be here to make code cleaner
     AppRoutingModule,

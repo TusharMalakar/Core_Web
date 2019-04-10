@@ -1,3 +1,5 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatChipsModule } from '@angular/material/chips';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -14,7 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule }  from '@angular/material/grid-list';
-import { MatListModule }  from '@angular/material/list'
+import { MatListModule }  from '@angular/material/list';
 
 @NgModule({
   declarations: [UserPageComponent],
@@ -32,9 +34,14 @@ import { MatListModule }  from '@angular/material/list'
     MatListModule,
     ScrollDispatchModule,
     MatChipsModule,
+    MatAutocompleteModule,
 
     //Flex Module
-    FlexLayoutModule
+    FlexLayoutModule,
+
+    //Forms
+    FormsModule,
+    ReactiveFormsModule,
 
   ]
 })

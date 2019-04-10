@@ -7,7 +7,7 @@
 -->
   <div class = "container" fxLayout = "row" fxLayout.xs = "column" fxLayoutWrap fxLayoutAlign="center">
 
-    <div fxFlex = "40%">
+    <div fxFlex = "40%" fxFlex.xs = "80%">
         <mat-card class="usercard1">
                 <mat-card-header class="list-header-title">
                     <div mat-card-avatar></div>
@@ -30,42 +30,30 @@
         </mat-card>
     </div>
 
-    <div fxFlex = "30%">
-      <mat-card class="usercard2">
-
-          <mat-grid-list cols="1" rowHeight="2:1">
-
-              <mat-grid-tile>
-                  
-                  <cdk-virtual-scroll-viewport itemSize = "skills.size" class="viewport">
-                      <mat-chip-list>
-                          <div *cdkVirtualFor = "let skill of userData?.skills" class="item">
-                              <mat-chip>
-                                {{skill}}
-                              <mat-icon matChipRemove>cancel</mat-icon>
-                              </mat-chip>
-                            </div>
-                      </mat-chip-list>
-                    </cdk-virtual-scroll-viewport>
-    
+    <div fxFlex = "40%" fxFlex.xs = "80%">
+      <div class="usercard2">
+        <mat-grid-list cols="1" rowHeight="2:1">
+          <!-- Will hold class list -->
+            <mat-grid-tile>
+                <cdk-virtual-scroll-viewport itemSize="classes.size" class="viewport">
+                  <mat-chip-list>
+                    <mat-chip *ngFor = "let class of userData?.classes">
+                      {{ class }}
+                    </mat-chip>
+                  </mat-chip-list>
+                </cdk-virtual-scroll-viewport>
               </mat-grid-tile>
-              <mat-grid-tile>
-
-                      <cdk-virtual-scroll-viewport itemSize = "class.size" class="viewport">
-                        <mat-chip-list>
-                            <div *cdkVirtualFor = "let class of userData?.classes" class="item">
-                                <mat-chip>
-                                  {{class}}
-                                <mat-icon matChipRemove>cancel</mat-icon>
-                                </mat-chip>
-                              </div>
-                        </mat-chip-list>
-                      </cdk-virtual-scroll-viewport>
-
-              </mat-grid-tile>
-    
-            </mat-grid-list>
-      </mat-card>
-
+          <!-- Will hold the skill list -->
+          <mat-grid-tile>
+              <cdk-virtual-scroll-viewport itemSize="classes.size" class="viewport">
+                  <mat-chip-list>
+                    <mat-chip *ngFor = "let skill of userData?.skills">
+                      {{ skill }}
+                    </mat-chip>
+                  </mat-chip-list>
+                </cdk-virtual-scroll-viewport>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
     </div>
   </div>

@@ -65,8 +65,10 @@ module.exports = webpackAsyncContext;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./guard/auth.guard */ "./src/app/guard/auth.guard.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
 
 
 
@@ -81,16 +83,18 @@ var routes = [
     },
     {
         path: 'home',
-        loadChildren: './home/home.module#HomeModule'
+        loadChildren: './home/home.module#HomeModule',
+        canLoad: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__["AuthGuard"]]
     },
     {
         path: 'user',
-        loadChildren: './user/user.module#UserModule'
+        loadChildren: './user/user.module#UserModule',
+        canLoad: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__["AuthGuard"]]
     },
     //default component
     {
-        path: '',
-        redirectTo: '',
+        path: '**',
+        redirectTo: 'home',
         pathMatch: 'full'
     }
 ];
@@ -98,9 +102,9 @@ var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
     AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
-            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(routes)],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"]]
         })
     ], AppRoutingModule);
     return AppRoutingModule;
@@ -192,6 +196,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/toolbar */ "./node_modules/@angular/material/esm5/toolbar.es5.js");
 /* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
 /* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/menu */ "./node_modules/@angular/material/esm5/menu.es5.js");
+/* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/chips */ "./node_modules/@angular/material/esm5/chips.es5.js");
+/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/cdk/scrolling */ "./node_modules/@angular/cdk/esm5/scrolling.es5.js");
 
 
 
@@ -211,6 +218,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+//Angular Flex Module
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -222,7 +233,9 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["BrowserModule"],
+                //Forms Modules
                 _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ReactiveFormsModule"],
+                //HTTP requests
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__["BrowserAnimationsModule"],
                 //Material
@@ -231,9 +244,11 @@ var AppModule = /** @class */ (function () {
                 _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_13__["MatSidenavModule"],
                 _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_14__["MatToolbarModule"],
                 _angular_material_menu__WEBPACK_IMPORTED_MODULE_16__["MatMenuModule"],
+                _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_19__["ScrollDispatchModule"],
+                _angular_material_chips__WEBPACK_IMPORTED_MODULE_17__["MatChipsModule"],
                 //Our Routes will be here to make code cleaner
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"]
-                //Forms Modules
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
+                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_18__["FlexLayoutModule"]
             ],
             providers: [
                 _shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_8__["UserService"],
@@ -278,6 +293,15 @@ var AuthGuard = /** @class */ (function () {
         this.service = service;
     }
     AuthGuard.prototype.canActivate = function () {
+        if (localStorage.getItem('accessToken')) {
+            return true;
+        }
+        else {
+            this.router.navigate(["/login"]);
+            return false;
+        }
+    };
+    AuthGuard.prototype.canLoad = function (route) {
         if (localStorage.getItem('accessToken')) {
             return true;
         }
@@ -378,7 +402,7 @@ module.exports = ".container {\n    position: absolute;\n    top: 0;\n    left: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-drawer-container class=\"container\" autosize >\n    <!-- Will be triggered by (click) = \"drawer.toggle()\" -->\n    <mat-drawer #drawer class=\"sidenav\">\n            <button color=\"primary\" mat-button routerLink=\"/login\">Login</button>\n            <button color=\"primary\" mat-button routerLink=\"/register\">Register</button>\n            <button color=\"primary\" mat-button routerLink=\"/home\">Home</button>\n    </mat-drawer>\n\n    <div class=\"sidenav-content\">\n        <mat-toolbar color=\"primary\">\n            <mat-toolbar-row>\n                <!-- \n                  drawer.toggle(): will call #drawer and will bring the sidenav into view\n                 -->\n                <button mat-icon-button (click) = \"drawer.toggle()\">\n                        <mat-icon>menu</mat-icon>\n                </button>\n\n                <span>Hunter Collab</span>\n                <span class=\"spacer\"></span>\n                <!--\n                   How every button is implemented \n                    [matMenuTriggerFor] is bindded to button menu; will be triggered by menu\n                  -->\n                <button mat-icon-button [matMenuTriggerFor] = \"menu\">\n                    <mat-icon>perm_identity</mat-icon>\n                </button>\n                \n                <mat-menu #menu=\"matMenu\" >\n                  <button mat-menu-item routerLink=\"/user\">\n                    <mat-icon>person</mat-icon>\n                    <span>User Info</span>\n                  </button>\n                  <button mat-menu-item>\n                    <mat-icon>directions_run</mat-icon>\n                    <span>LogOut</span>\n                  </button>\n                </mat-menu>\n\n            </mat-toolbar-row>\n        </mat-toolbar>\n        <router-outlet></router-outlet>\n    </div>\n</mat-drawer-container>\n"
+module.exports = "<mat-drawer-container class=\"container\" autosize >\n    <!-- Will be triggered by (click) = \"drawer.toggle()\" -->\n    <mat-drawer #drawer class=\"sidenav\">\n            <button color=\"primary\" mat-button routerLink=\"/home\">Home</button>\n    </mat-drawer>\n\n    <div class=\"sidenav-content\">\n        <mat-toolbar color=\"primary\">\n            <mat-toolbar-row>\n                <!-- \n                  drawer.toggle(): will call #drawer and will bring the sidenav into view\n                 -->\n                <button mat-icon-button (click) = \"drawer.toggle()\">\n                        <mat-icon>menu</mat-icon>\n                </button>\n\n                <span>Hunter Collab</span>\n                <span class=\"spacer\"></span>\n                <!--\n                   How every button is implemented \n                    [matMenuTriggerFor] is bindded to button menu; will be triggered by menu\n                  -->\n                <button mat-icon-button [matMenuTriggerFor] = \"menu\">\n                    <mat-icon>perm_identity</mat-icon>\n                </button>\n                \n                <mat-menu #menu=\"matMenu\" >\n                  <button mat-menu-item routerLink=\"/user\">\n                    <mat-icon>person</mat-icon>\n                    <span>User Info</span>\n                  </button>\n                  <button mat-menu-item (click)=\"logOut()\">\n                    <mat-icon>directions_run</mat-icon>\n                    <span>LogOut</span>\n                  </button>\n                </mat-menu>\n\n            </mat-toolbar-row>\n        </mat-toolbar>\n        <router-outlet></router-outlet>\n    </div>\n</mat-drawer-container>\n"
 
 /***/ }),
 
@@ -394,12 +418,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavbarComponent", function() { return NavbarComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
 
 
 var NavbarComponent = /** @class */ (function () {
-    function NavbarComponent() {
+    function NavbarComponent(router) {
+        this.router = router;
     }
     NavbarComponent.prototype.ngOnInit = function () {
+    };
+    NavbarComponent.prototype.logOut = function () {
+        localStorage.removeItem('accessToken');
+        this.router.navigate(['/login']);
     };
     NavbarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -407,7 +438,7 @@ var NavbarComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./navbar.component.html */ "./src/app/navbar/navbar.component.html"),
             styles: [__webpack_require__(/*! ./navbar.component.css */ "./src/app/navbar/navbar.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], NavbarComponent);
     return NavbarComponent;
 }());
