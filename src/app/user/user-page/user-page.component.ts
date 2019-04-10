@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ChangeDetectionStrategy } from '@angular/core';
 import { UserService } from 'src/app/shared/dbAccess/user.service';
 import { Router } from '@angular/router';
 import { UserModel } from 'src/app/shared/models/user.model';
