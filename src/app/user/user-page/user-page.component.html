@@ -6,47 +6,62 @@
   fxLayoutGap = 20%;       : Will give us a gap bewteen each fxFlex
 -->
   <div class = "container" fxLayout = "row" fxLayout.xs = "column" fxLayoutWrap fxLayoutAlign="center">
+
     <div fxFlex = "40%">
-        <mat-card class="usercard">
-            <mat-card-header>
-                <div mat-card-avatar></div>
-                <mat-card-title>{{ userData?.name }}</mat-card-title>
-                <mat-card-subtitle>{{ userData?.username }}</mat-card-subtitle>
-              </mat-card-header>
-              <img mat-card-image src="/assets/userPhoto.png">
-              <mat-card-content>
-                <p>{{ userData?.github }}</p>
-                <p>{{ userData?.linkedin }}</p>
-                <p> {{ userData?.class}}</p>
+        <mat-card class="usercard1">
+                <mat-card-header class="list-header-title">
+                    <div mat-card-avatar></div>
+                    <mat-card-title>{{ userData?.name }}</mat-card-title>
+                    <mat-card-subtitle>{{ userData?.username }}</mat-card-subtitle>
+                  </mat-card-header>    
+                <img mat-card-image src="/assets/userPhoto.png">
+                <mat-card-content>
+                
+                <mat-grid-list cols="2" rowHeight="4:1">
+                    <mat-grid-tile>
+                          <button mat-raised-button color="warm">{{ userData?.github }}</button>
+                    </mat-grid-tile>
+                    
+                    <mat-grid-tile>
+                        <button mat-raised-button color="primary">{{ userData?.linkedin }}</button>
+                    </mat-grid-tile>
+                    </mat-grid-list>
               </mat-card-content>
         </mat-card>
     </div>
-    <div fxFlex = "40%">
-      <mat-card class="usercard">
 
-          <mat-grid-list cols="2" rowHeight="2:1">
+    <div fxFlex = "30%">
+      <mat-card class="usercard2">
+
+          <mat-grid-list cols="2" rowHeight="1:1">
 
               <mat-grid-tile>
-    
-                  <mat-nav-list>
-                    <h4 mat-subheader >Skills</h4>
-                    <mat-list-item *ngFor = "let skill of userData?.skills"> 
-                      <mat-icon mat-list-icon>edit</mat-icon>
-                      <h5>{{ skill }}</h5>
-                    </mat-list-item>
-                  </mat-nav-list>
+                  
+                  <cdk-virtual-scroll-viewport itemSize = "skills.size" class="viewport">
+                      <mat-chip-list>
+                          <div *cdkVirtualFor = "let skill of userData?.skills" class="item">
+                              <mat-chip>
+                                {{skill}}
+                              <mat-icon matChipRemove>cancel</mat-icon>
+                              </mat-chip>
+                            </div>
+                      </mat-chip-list>
+                    </cdk-virtual-scroll-viewport>
     
               </mat-grid-tile>
               <mat-grid-tile>
-    
-                  <mat-nav-list>
-                      
-                      <mat-list-item *ngFor = "let class of userData?.classes"> 
-                        <mat-icon mat-list-icon>school</mat-icon>
-                        {{ class }} 
-                      </mat-list-item>
-                  </mat-nav-list>
-                
+
+                      <cdk-virtual-scroll-viewport itemSize = "class.size" class="viewport">
+                        <mat-chip-list>
+                            <div *cdkVirtualFor = "let class of userData?.classes" class="item">
+                                <mat-chip>
+                                  {{class}}
+                                <mat-icon matChipRemove>cancel</mat-icon>
+                                </mat-chip>
+                              </div>
+                        </mat-chip-list>
+                      </cdk-virtual-scroll-viewport>
+
               </mat-grid-tile>
     
             </mat-grid-list>

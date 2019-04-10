@@ -21,10 +21,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavbarComponent } from './navbar/navbar.component';
-import { MatMenuModule } from '@angular/material/menu'
+import { MatMenuModule } from '@angular/material/menu';
+import { MatChipsModule } from '@angular/material/chips';
 
 //Angular Flex Module
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 
 
 
@@ -48,6 +50,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSidenavModule,
     MatToolbarModule,
     MatMenuModule,
+    ScrollDispatchModule,
+    MatChipsModule,
 
     //Our Routes will be here to make code cleaner
     AppRoutingModule,
