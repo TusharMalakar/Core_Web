@@ -1,3 +1,4 @@
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -26,7 +27,10 @@ import { MatListModule }  from '@angular/material/list'
     MatButtonModule,
     MatInputModule,
     MatGridListModule,
-    MatListModule
+    MatListModule,
+
+    //Flex Module
+    FlexLayoutModule
 
   ]
 })
