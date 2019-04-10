@@ -23,6 +23,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatMenuModule } from '@angular/material/menu'
 
+//Angular Flex Module
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 
 
@@ -34,7 +37,9 @@ import { MatMenuModule } from '@angular/material/menu'
   ],
   imports: [
     BrowserModule,
+     //Forms Modules
     ReactiveFormsModule,
+    //HTTP requests
     HttpClientModule,
     BrowserAnimationsModule,
     //Material
@@ -45,9 +50,10 @@ import { MatMenuModule } from '@angular/material/menu'
     MatMenuModule,
 
     //Our Routes will be here to make code cleaner
-    AppRoutingModule
+    AppRoutingModule,
 
-    //Forms Modules
+    FlexLayoutModule
+   
   ],
   providers: [
     UserService,

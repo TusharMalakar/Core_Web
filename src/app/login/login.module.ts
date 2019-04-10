@@ -24,6 +24,7 @@ import { LoginRoutingModule } from './login-routing.module';
     MatIconModule,
     MatButtonModule,
     MatInputModule
+    
   ]
 })
 export class LoginModule { }
