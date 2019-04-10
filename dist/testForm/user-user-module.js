@@ -2572,7 +2572,7 @@ var MatListModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "  .mat-card {\n      max-width: 500px;\n      max-height: auto;\n      margin: auto;\n      margin-top: 20px;\n  }\n\n  .mat-card-avatar {\n      background-image: url('/assets/userPhoto.png');\n      background-size: cover;\n  }\n\n  .mat-card-actions {\n      display: flex;\n  }\n\n  .mat-card-actions .flex-spacer {\n      width: 100%;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdXNlci91c2VyLXBhZ2UvdXNlci1wYWdlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkVBQUU7TUFDSSxnQkFBZ0I7TUFDaEIsZ0JBQWdCO01BQ2hCLFlBQVk7TUFDWixnQkFBZ0I7RUFDcEI7O0VBRUE7TUFDSSw4Q0FBOEM7TUFDOUMsc0JBQXNCO0VBQzFCOztFQUVBO01BQ0ksYUFBYTtFQUNqQjs7RUFFQTtNQUNJLFdBQVc7RUFDZiIsImZpbGUiOiJzcmMvYXBwL3VzZXIvdXNlci1wYWdlL3VzZXItcGFnZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiICAubWF0LWNhcmQge1xuICAgICAgbWF4LXdpZHRoOiA1MDBweDtcbiAgICAgIG1heC1oZWlnaHQ6IGF1dG87XG4gICAgICBtYXJnaW46IGF1dG87XG4gICAgICBtYXJnaW4tdG9wOiAyMHB4O1xuICB9XG5cbiAgLm1hdC1jYXJkLWF2YXRhciB7XG4gICAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy9hc3NldHMvdXNlclBob3RvLnBuZycpO1xuICAgICAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgfVxuXG4gIC5tYXQtY2FyZC1hY3Rpb25zIHtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gIH1cblxuICAubWF0LWNhcmQtYWN0aW9ucyAuZmxleC1zcGFjZXIge1xuICAgICAgd2lkdGg6IDEwMCU7XG4gIH0iXX0= */"
+module.exports = "    .usercard1 {\n      max-width: 450px;\n      max-height: auto;\n      margin-top: 30px;\n      padding: 0px;\n  }\n\n  .usercard2 {\n    width: auto;\n    margin-top: 10px;\n    padding: 1px;\n}\n\n  .mat-card-avatar {\n      background-image: url('/assets/userPhoto.png');\n      background-size: cover;\n\n  }\n\n  .mat-card-actions {\n      display: flex;\n  }\n\n  .mat-card-actions .flex-spacer {\n      width: 100%;\n  }\n\n  .list-header-title {\n    color: rgba(0, 0, 0, .54);\n    background: rgba(0, 0, 0, .03);\n    font-weight: bold;\n    padding: 0px;\n   \n  }\n\n  .mat-card-image {\n    margin: 0 16px 0px -16px;\n    max-width: 100%;\n  }\n\n  .mat-card-header {\n      padding-left: 10px;\n      padding-top: 10px; \n  }\n\n  .mat-raised-button {\n      width: 100%;\n      height: 100%;\n      margin-bottom: 7px;\n  }\n\n  .viewport {\n      height: 200px;\n      width: 400px;\n      margin-top: 20px;\n      margin-bottom: 10px;\n      margin-left: 10px;\n      \n  }\n\n  .item {\n      height: 50px;\n  }\n  \n\n\n  \n \n  \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdXNlci91c2VyLXBhZ2UvdXNlci1wYWdlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IklBQUk7TUFDRSxnQkFBZ0I7TUFDaEIsZ0JBQWdCO01BQ2hCLGdCQUFnQjtNQUNoQixZQUFZO0VBQ2hCOztFQUVBO0lBQ0UsV0FBVztJQUNYLGdCQUFnQjtJQUNoQixZQUFZO0FBQ2hCOztFQUVFO01BQ0ksOENBQThDO01BQzlDLHNCQUFzQjs7RUFFMUI7O0VBQ0E7TUFDSSxhQUFhO0VBQ2pCOztFQUVBO01BQ0ksV0FBVztFQUNmOztFQUVBO0lBQ0UseUJBQXlCO0lBQ3pCLDhCQUE4QjtJQUM5QixpQkFBaUI7SUFDakIsWUFBWTs7RUFFZDs7RUFFQTtJQUNFLHdCQUF3QjtJQUN4QixlQUFlO0VBQ2pCOztFQUVBO01BQ0ksa0JBQWtCO01BQ2xCLGlCQUFpQjtFQUNyQjs7RUFFQTtNQUNJLFdBQVc7TUFDWCxZQUFZO01BQ1osa0JBQWtCO0VBQ3RCOztFQUVBO01BQ0ksYUFBYTtNQUNiLFlBQVk7TUFDWixnQkFBZ0I7TUFDaEIsbUJBQW1CO01BQ25CLGlCQUFpQjs7RUFFckI7O0VBRUE7TUFDSSxZQUFZO0VBQ2hCIiwiZmlsZSI6InNyYy9hcHAvdXNlci91c2VyLXBhZ2UvdXNlci1wYWdlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIgICAgLnVzZXJjYXJkMSB7XG4gICAgICBtYXgtd2lkdGg6IDQ1MHB4O1xuICAgICAgbWF4LWhlaWdodDogYXV0bztcbiAgICAgIG1hcmdpbi10b3A6IDMwcHg7XG4gICAgICBwYWRkaW5nOiAwcHg7XG4gIH1cblxuICAudXNlcmNhcmQyIHtcbiAgICB3aWR0aDogYXV0bztcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xuICAgIHBhZGRpbmc6IDFweDtcbn1cblxuICAubWF0LWNhcmQtYXZhdGFyIHtcbiAgICAgIGJhY2tncm91bmQtaW1hZ2U6IHVybCgnL2Fzc2V0cy91c2VyUGhvdG8ucG5nJyk7XG4gICAgICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xuXG4gIH1cbiAgLm1hdC1jYXJkLWFjdGlvbnMge1xuICAgICAgZGlzcGxheTogZmxleDtcbiAgfVxuXG4gIC5tYXQtY2FyZC1hY3Rpb25zIC5mbGV4LXNwYWNlciB7XG4gICAgICB3aWR0aDogMTAwJTtcbiAgfVxuXG4gIC5saXN0LWhlYWRlci10aXRsZSB7XG4gICAgY29sb3I6IHJnYmEoMCwgMCwgMCwgLjU0KTtcbiAgICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIC4wMyk7XG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgcGFkZGluZzogMHB4O1xuICAgXG4gIH1cblxuICAubWF0LWNhcmQtaW1hZ2Uge1xuICAgIG1hcmdpbjogMCAxNnB4IDBweCAtMTZweDtcbiAgICBtYXgtd2lkdGg6IDEwMCU7XG4gIH1cblxuICAubWF0LWNhcmQtaGVhZGVyIHtcbiAgICAgIHBhZGRpbmctbGVmdDogMTBweDtcbiAgICAgIHBhZGRpbmctdG9wOiAxMHB4OyBcbiAgfVxuXG4gIC5tYXQtcmFpc2VkLWJ1dHRvbiB7XG4gICAgICB3aWR0aDogMTAwJTtcbiAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgIG1hcmdpbi1ib3R0b206IDdweDtcbiAgfVxuXG4gIC52aWV3cG9ydCB7XG4gICAgICBoZWlnaHQ6IDIwMHB4O1xuICAgICAgd2lkdGg6IDQwMHB4O1xuICAgICAgbWFyZ2luLXRvcDogMjBweDtcbiAgICAgIG1hcmdpbi1ib3R0b206IDEwcHg7XG4gICAgICBtYXJnaW4tbGVmdDogMTBweDtcbiAgICAgIFxuICB9XG5cbiAgLml0ZW0ge1xuICAgICAgaGVpZ2h0OiA1MHB4O1xuICB9XG4gIFxuXG5cbiAgXG4gXG4gICJdfQ== */"
 
 /***/ }),
 
@@ -2583,7 +2583,7 @@ module.exports = "  .mat-card {\n      max-width: 500px;\n      max-height: auto
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "    <mat-card class=\"usercard\">\n      <mat-card-header>\n        <div mat-card-avatar></div>\n        <mat-card-title>{{ userData?.name }}</mat-card-title>\n        <mat-card-subtitle>{{ userData?.username }}</mat-card-subtitle>\n      </mat-card-header>\n      <img mat-card-image src=\"/assets/userPhoto.png\">\n      <mat-card-content>\n        <p>{{ userData?.github }}</p>\n        <p>{{ userData?.linkedin }}</p>\n        <p> {{ userData?.class}}</p>\n        \n        <mat-grid-list cols=\"2\" rowHeight=\"2:1\">\n\n          <mat-grid-tile>\n\n              <mat-nav-list>\n                <h4 mat-subheader >Skills</h4>\n                <mat-list-item *ngFor = \"let skill of userData?.skills\"> \n                  <mat-icon mat-list-icon>edit</mat-icon>\n                  <h5>{{ skill }}</h5>\n                </mat-list-item>\n              </mat-nav-list>\n\n          </mat-grid-tile>\n          <mat-grid-tile>\n\n              <mat-nav-list>\n                  \n                  <mat-list-item *ngFor = \"let class of userData?.classes\"> \n                    <mat-icon mat-list-icon>school</mat-icon>\n                    {{ class }} \n                  </mat-list-item>\n              </mat-nav-list>\n            \n          </mat-grid-tile>\n\n        </mat-grid-list>\n\n      </mat-card-content>\n      <mat-card-content>\n\n      </mat-card-content>\n    </mat-card>\n"
+module.exports = "<!--\n  fxLayout.lt-sm=\"column\"  : Will only be applied when the viewport is less thatn small.\n  fxLayout = \"row\"         :  If ;using big screens, display data in rows\n  fxLayout.xs =\"column\" ;  : using small screens, display data in columns\n  fxLayoutWrap             : Will wrap this div for us so that flex will be applied\n  fxLayoutGap = 20%;       : Will give us a gap bewteen each fxFlex\n-->\n  <div class = \"container\" fxLayout = \"row\" fxLayout.xs = \"column\" fxLayoutWrap fxLayoutAlign=\"center\">\n\n    <div fxFlex = \"40%\">\n        <mat-card class=\"usercard1\">\n                <mat-card-header class=\"list-header-title\">\n                    <div mat-card-avatar></div>\n                    <mat-card-title>{{ userData?.name }}</mat-card-title>\n                    <mat-card-subtitle>{{ userData?.username }}</mat-card-subtitle>\n                  </mat-card-header>    \n                <img mat-card-image src=\"/assets/userPhoto.png\">\n                <mat-card-content>\n                \n                <mat-grid-list cols=\"2\" rowHeight=\"4:1\">\n                    <mat-grid-tile>\n                          <button mat-raised-button color=\"warm\">{{ userData?.github }}</button>\n                    </mat-grid-tile>\n                    \n                    <mat-grid-tile>\n                        <button mat-raised-button color=\"primary\">{{ userData?.linkedin }}</button>\n                    </mat-grid-tile>\n                    </mat-grid-list>\n              </mat-card-content>\n        </mat-card>\n    </div>\n\n    <div fxFlex = \"30%\">\n      <mat-card class=\"usercard2\">\n\n          <mat-grid-list cols=\"1\" rowHeight=\"2:1\">\n\n              <mat-grid-tile>\n                  \n                  <cdk-virtual-scroll-viewport itemSize = \"skills.size\" class=\"viewport\">\n                      <mat-chip-list>\n                          <div *cdkVirtualFor = \"let skill of userData?.skills\" class=\"item\">\n                              <mat-chip>\n                                {{skill}}\n                              <mat-icon matChipRemove>cancel</mat-icon>\n                              </mat-chip>\n                            </div>\n                      </mat-chip-list>\n                    </cdk-virtual-scroll-viewport>\n    \n              </mat-grid-tile>\n              <mat-grid-tile>\n\n                      <cdk-virtual-scroll-viewport itemSize = \"class.size\" class=\"viewport\">\n                        <mat-chip-list>\n                            <div *cdkVirtualFor = \"let class of userData?.classes\" class=\"item\">\n                                <mat-chip>\n                                  {{class}}\n                                <mat-icon matChipRemove>cancel</mat-icon>\n                                </mat-chip>\n                              </div>\n                        </mat-chip-list>\n                      </cdk-virtual-scroll-viewport>\n\n              </mat-grid-tile>\n    \n            </mat-grid-list>\n      </mat-card>\n\n    </div>\n  </div>"
 
 /***/ }),
 
@@ -2681,17 +2681,23 @@ var UserRoutingModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserModule", function() { return UserModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _user_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./user-routing.module */ "./src/app/user/user-routing.module.ts");
-/* harmony import */ var _user_page_user_page_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user-page/user-page.component */ "./src/app/user/user-page/user-page.component.ts");
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
-/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/esm5/card.es5.js");
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/esm5/icon.es5.js");
-/* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/tabs */ "./node_modules/@angular/material/esm5/tabs.es5.js");
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/input */ "./node_modules/@angular/material/esm5/input.es5.js");
-/* harmony import */ var _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/grid-list */ "./node_modules/@angular/material/esm5/grid-list.es5.js");
-/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/list */ "./node_modules/@angular/material/esm5/list.es5.js");
+/* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/chips */ "./node_modules/@angular/material/esm5/chips.es5.js");
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/scrolling */ "./node_modules/@angular/cdk/esm5/scrolling.es5.js");
+/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _user_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./user-routing.module */ "./src/app/user/user-routing.module.ts");
+/* harmony import */ var _user_page_user_page_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./user-page/user-page.component */ "./src/app/user/user-page/user-page.component.ts");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/esm5/card.es5.js");
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/esm5/icon.es5.js");
+/* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/tabs */ "./node_modules/@angular/material/esm5/tabs.es5.js");
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/input */ "./node_modules/@angular/material/esm5/input.es5.js");
+/* harmony import */ var _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/grid-list */ "./node_modules/@angular/material/esm5/grid-list.es5.js");
+/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/list */ "./node_modules/@angular/material/esm5/list.es5.js");
+
+
+
 
 
 
@@ -2709,19 +2715,23 @@ var UserModule = /** @class */ (function () {
     function UserModule() {
     }
     UserModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [_user_page_user_page_component__WEBPACK_IMPORTED_MODULE_4__["UserPageComponent"]],
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgModule"])({
+            declarations: [_user_page_user_page_component__WEBPACK_IMPORTED_MODULE_7__["UserPageComponent"]],
             imports: [
-                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                _user_routing_module__WEBPACK_IMPORTED_MODULE_3__["UserRoutingModule"],
+                _angular_common__WEBPACK_IMPORTED_MODULE_5__["CommonModule"],
+                _user_routing_module__WEBPACK_IMPORTED_MODULE_6__["UserRoutingModule"],
                 //Angular Material
-                _angular_material_tabs__WEBPACK_IMPORTED_MODULE_8__["MatTabsModule"],
-                _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardModule"],
-                _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIconModule"],
-                _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButtonModule"],
-                _angular_material_input__WEBPACK_IMPORTED_MODULE_9__["MatInputModule"],
-                _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_10__["MatGridListModule"],
-                _angular_material_list__WEBPACK_IMPORTED_MODULE_11__["MatListModule"]
+                _angular_material_tabs__WEBPACK_IMPORTED_MODULE_11__["MatTabsModule"],
+                _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCardModule"],
+                _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__["MatIconModule"],
+                _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"],
+                _angular_material_input__WEBPACK_IMPORTED_MODULE_12__["MatInputModule"],
+                _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_13__["MatGridListModule"],
+                _angular_material_list__WEBPACK_IMPORTED_MODULE_14__["MatListModule"],
+                _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_2__["ScrollDispatchModule"],
+                _angular_material_chips__WEBPACK_IMPORTED_MODULE_1__["MatChipsModule"],
+                //Flex Module
+                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_3__["FlexLayoutModule"]
             ]
         })
     ], UserModule);
