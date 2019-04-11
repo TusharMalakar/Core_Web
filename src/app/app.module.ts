@@ -24,6 +24,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatTableModule } from '@angular/material/table';
 
 //Angular Flex Module
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -54,6 +55,7 @@ import { ScrollDispatchModule } from '@angular/cdk/scrolling';
     ScrollDispatchModule,
     MatChipsModule,
     MatAutocompleteModule,
+    MatTableModule,
 
     //Our Routes will be here to make code cleaner
     AppRoutingModule,

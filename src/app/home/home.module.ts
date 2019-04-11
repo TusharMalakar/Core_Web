@@ -1,3 +1,5 @@
+import { ScrollDispatchModule } from '@angular/cdk/scrolling';
+import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
 
 
@@ -27,7 +29,9 @@ import { CollabCardComponent } from './collab-card/collab-card.component';
     MatIconModule,
     MatButtonModule,
     MatListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTableModule,
+    ScrollDispatchModule
   ]
 })
 export class HomeModule { }

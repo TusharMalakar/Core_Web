@@ -5,19 +5,24 @@
 
   <mat-card-content>
     <mat-accordion>
-        <p> {{ collabData.description }} </p>
+        <h4 class="description"> {{ collabData.description }} </h4>
         
         <mat-expansion-panel (opened)="panelOpenState = true"
                        (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
           <mat-panel-title>
-            Self aware panel
+            Skills/Classes Wanted.
           </mat-panel-title>
           <mat-panel-description>
             Currently I am {{panelOpenState ? 'open' : 'closed'}}
           </mat-panel-description>
           </mat-expansion-panel-header>
-          <p>I'm visible because I am open</p>
+
+            <div *ngFor="let skill of getAllRequired()">
+              <p>{{ skill }} </p> 
+            </div>
+          
+          
         </mat-expansion-panel>
     </mat-accordion>
     
