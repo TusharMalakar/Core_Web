@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { CollabCardComponent } from './collab-card/collab-card.component';
 
@@ -25,7 +26,8 @@ import { CollabCardComponent } from './collab-card/collab-card.component';
     MatCardModule,
     MatIconModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatExpansionModule
   ]
 })
 export class HomeModule { }

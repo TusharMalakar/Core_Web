@@ -1,18 +1,32 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title> {{collabData.title}} </mat-card-title>
+    <mat-card-title> <h4>{{collabData.title}}</h4> </mat-card-title>
   </mat-card-header>
 
   <mat-card-content>
-    <p> {{ collabData.description }} </p>
+    <mat-accordion>
+        <p> {{ collabData.description }} </p>
+        
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Self aware panel
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+    
   </mat-card-content>
 
   <mat-card-actions>
-    <div class="button-row">
         <button mat-raised-button color = "primary"> Join </button>
         <button mat-raised-button color = "primary"> Leave </button>
         <button mat-raised-button color = "primary"> Delete</button>
-    </div>
   </mat-card-actions>
 
 </mat-card>
