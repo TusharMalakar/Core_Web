@@ -2,12 +2,12 @@
 
       <mat-tab label="All Collabs">
         <ng-template matTabContent>
-          <mat-list>
-            <mat-list-item *ngFor = "let collab of collabData">
-                <h4>{{ collab.title }}</h4>
-                <mat-divider></mat-divider>
-            </mat-list-item>
-          </mat-list>
+          <ng-container *ngFor = "let collab of collabData">
+            <div class ="collab">
+                <!-- Property binding from component to component using @Input() and @Output -->
+                <collab-card [collabData] = "collab"></collab-card>
+            </div>      
+          </ng-container>
         </ng-template>
       </mat-tab>
 
