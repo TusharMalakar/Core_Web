@@ -1,3 +1,4 @@
+import { MatListModule } from '@angular/material/list';
 
 
 import { HomeComponent } from './collab-list/home.component';
@@ -23,7 +24,8 @@ import { CollabCardComponent } from './collab-card/collab-card.component';
     MatTabsModule,
     MatCardModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule
   ]
 })
 export class HomeModule { }

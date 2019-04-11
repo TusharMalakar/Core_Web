@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { UserModel } from '../models/user.model';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs';
@@ -55,29 +55,20 @@ getPicture(){
 getSkill(){ 
   return this.http.get( this.rootUrl +"/user/skills");
 }
+
+//search/skills
+searchSkills(constrain: string): Observable<any>{
+  let params = new HttpParams().set("query",constrain);
+  return this.http.get(this.rootUrl +"/search/skills",{params: params});
+}
+
 getClasses(){ 
   return this.http.get( this.rootUrl +"/user/classes");
 }
-//search/skills:
-searchSkills(){ 
-  return this.http.get( this.rootUrl +"/search/skills");
-}
-//collab/getCollabDetails
-collabDetails(){ 
-  return this.http.get( this.rootUrl +"/collab/getCollabDetails");
-}
-//collab/getAllCollabs
-allCollabs(){ 
-  return this.http.get( this.rootUrl +"/collab/getAllCollabs");
-}
-//collab/getActiveCollabs 
-activeCollabs(){ 
-  return this.http.get( this.rootUrl +"/collab/getActiveCollabs");
-}
-//messaging/myConvos
-myCollabs(){ 
-  return this.http.get( this.rootUrl +"/messaging/myConvos");
-}
+
+
+
+
 
 //___________POST_________________
 
@@ -90,4 +81,3 @@ myCollabs(){
 ///messaging/sendMessage 
 
 }
-//testuser1@myhunter.cuny.edu  
