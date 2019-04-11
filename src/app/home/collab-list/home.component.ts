@@ -69,11 +69,7 @@ export class HomeComponent implements OnInit {
   
      });
   }
-  AllCollabs(){
-    this.collabService.allCollabs().subscribe ((data : any ) => {
-      console.log(data);  
-     });
-  }
+  
 
   activeCollabs(){
     this.collabService.activeCollabs().subscribe ((data : any ) => {
@@ -92,8 +88,8 @@ export class HomeComponent implements OnInit {
 
 
     logOut(){
-      localStorage.removeItem('accessToken');
-      this.router.navigate(['/login']);
+        localStorage.removeItem('accessToken');
+        this.router.navigate(['/login']);
     }
 
 
