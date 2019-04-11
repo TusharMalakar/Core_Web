@@ -1,8 +1,10 @@
+import { CollabsService } from './../../shared/dbAccess/collabs.service';
 import { UserModel } from './../../shared/models/user.model';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../shared/dbAccess/user.service';
 import {Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { CollabModel } from 'src/app/shared/models/collab.model';
 
 @Component({
   selector: 'app-home',
@@ -11,11 +13,18 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
     userData: UserModel[];
+    collabData: CollabModel[];
 
-  constructor(private userService : UserService,private router : Router) { }
+  constructor(
+      private userService : UserService,
+      private router : Router, 
+      private collabService : CollabsService)
+       {
+        this.collabService.allCollabs().subscribe ((data : CollabModel[] )  => this.collabData = data);
+        }
 
   ngOnInit() {
-    this.userDetails();
+    
   }
 
   userDetails(){
@@ -32,7 +41,7 @@ export class HomeComponent implements OnInit {
 
   // return array of JSON OBJECTS
   collabDetails(){
-    this.userService.collabDetails().subscribe ((data : any ) => {
+    this.collabService.collabDetails().subscribe ((data : any ) => {
       console.log(data[0].owner);
       console.log(data[0].members);
 
@@ -61,36 +70,20 @@ export class HomeComponent implements OnInit {
      });
   }
   AllCollabs(){
-    this.userService.allCollabs().subscribe ((data : any ) => {
+    this.collabService.allCollabs().subscribe ((data : any ) => {
       console.log(data);  
-      /**
-       * id
-       * owner
-       * size
-       * members
-       * date
-       * duration
-       * location
-       * status
-       * title
-       * description
-       * classes
-       * skills
-       * applicants
-       *  */ 
-  
      });
   }
 
   activeCollabs(){
-    this.userService.activeCollabs().subscribe ((data : any ) => {
+    this.collabService.activeCollabs().subscribe ((data : any ) => {
       console.log(data);   
   
      });
   }
 
   myCollabs(){
-    this.userService.myCollabs().subscribe ((data : any ) => {
+    this.collabService.myCollabs().subscribe ((data : any ) => {
       console.log(data);   
   
      });

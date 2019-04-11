@@ -197,8 +197,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
 /* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/menu */ "./node_modules/@angular/material/esm5/menu.es5.js");
 /* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/chips */ "./node_modules/@angular/material/esm5/chips.es5.js");
-/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
-/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/cdk/scrolling */ "./node_modules/@angular/cdk/esm5/scrolling.es5.js");
+/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/autocomplete */ "./node_modules/@angular/material/esm5/autocomplete.es5.js");
+/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/cdk/scrolling */ "./node_modules/@angular/cdk/esm5/scrolling.es5.js");
 
 
 
@@ -212,6 +213,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //These are the materials that will make our site adaptable
+
 
 
 
@@ -244,11 +246,12 @@ var AppModule = /** @class */ (function () {
                 _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_13__["MatSidenavModule"],
                 _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_14__["MatToolbarModule"],
                 _angular_material_menu__WEBPACK_IMPORTED_MODULE_16__["MatMenuModule"],
-                _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_19__["ScrollDispatchModule"],
+                _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_20__["ScrollDispatchModule"],
                 _angular_material_chips__WEBPACK_IMPORTED_MODULE_17__["MatChipsModule"],
+                _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__["MatAutocompleteModule"],
                 //Our Routes will be here to make code cleaner
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
-                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_18__["FlexLayoutModule"]
+                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_19__["FlexLayoutModule"]
             ],
             providers: [
                 _shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_8__["UserService"],
@@ -466,8 +469,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var UserService = /** @class */ (function () {
-    function UserService(http) {
+    function UserService(http, httpParams) {
         this.http = http;
+        this.httpParams = httpParams;
         this.rootUrl = 'https://huntercollabapi.herokuapp.com';
     }
     UserService.prototype.getToken = function () {
@@ -508,37 +512,21 @@ var UserService = /** @class */ (function () {
     UserService.prototype.getSkill = function () {
         return this.http.get(this.rootUrl + "/user/skills");
     };
+    //search/skills
+    UserService.prototype.searchSkills = function (constrain) {
+        var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set("query", constrain);
+        return this.http.get(this.rootUrl + "/search/skills", { params: params });
+    };
     UserService.prototype.getClasses = function () {
         return this.http.get(this.rootUrl + "/user/classes");
     };
-    //search/skills:
-    UserService.prototype.searchSkills = function () {
-        return this.http.get(this.rootUrl + "/search/skills");
-    };
-    //collab/getCollabDetails
-    UserService.prototype.collabDetails = function () {
-        return this.http.get(this.rootUrl + "/collab/getCollabDetails");
-    };
-    //collab/getAllCollabs
-    UserService.prototype.allCollabs = function () {
-        return this.http.get(this.rootUrl + "/collab/getAllCollabs");
-    };
-    //collab/getActiveCollabs 
-    UserService.prototype.activeCollabs = function () {
-        return this.http.get(this.rootUrl + "/collab/getActiveCollabs");
-    };
-    //messaging/myConvos
-    UserService.prototype.myCollabs = function () {
-        return this.http.get(this.rootUrl + "/messaging/myConvos");
-    };
     UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]])
     ], UserService);
     return UserService;
 }());
 
-//testuser1@myhunter.cuny.edu  
 
 
 /***/ }),
