@@ -11,6 +11,7 @@ var map = {
 	"./home/home.module": [
 		"./src/app/home/home.module.ts",
 		"default~home-home-module~login-login-module~register-register-module~user-user-module",
+		"default~home-home-module~user-user-module",
 		"home-home-module"
 	],
 	"./login/login.module": [
@@ -29,6 +30,7 @@ var map = {
 		"./src/app/user/user.module.ts",
 		"default~home-home-module~login-login-module~register-register-module~user-user-module",
 		"default~login-login-module~register-register-module~user-user-module",
+		"default~home-home-module~user-user-module",
 		"user-user-module"
 	]
 };
@@ -469,9 +471,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var UserService = /** @class */ (function () {
-    function UserService(http, httpParams) {
+    function UserService(http) {
         this.http = http;
-        this.httpParams = httpParams;
         this.rootUrl = 'https://huntercollabapi.herokuapp.com';
     }
     UserService.prototype.getToken = function () {
@@ -522,7 +523,7 @@ var UserService = /** @class */ (function () {
     };
     UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], UserService);
     return UserService;
 }());

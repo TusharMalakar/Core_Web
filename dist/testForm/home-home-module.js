@@ -74,7 +74,7 @@ module.exports = "p {\n    padding: 16px;\n    text-align: center;\n  \n  }\n/*#
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "     <!--\n       <button>\n          <a (click) =\"userDetails()\">Profile</a>\n        </button>\n      <button>\n        </button>\n      <button>\n          <a (click) =\"userSkill()\">userSkill</a>\n        </button>\n        <button>\n          <a (click) =\"userClass()\">userClass</a>\n        </button>\n        <button>\n          <a (click) =\"searchSkill()\">searchSkill</a>\n        </button>\n        <button>\n          <a (click) =\"collabDetails()\">collabDetails</a>\n        </button>\n        <button>\n          <a (click) =\"AllCollabs()\">AllCollabs</a>\n        </button>\n        <button>\n          <a (click) =\"activeCollabs()\">activeCollabs</a>\n        </button>\n        <button>\n          <a (click) =\"myCollabs()\">myCollabs</a>\n        </button>\n\n        <button>\n          <a (click) =\"logOut()\">Logout</a>\n        </button> <br> <br> <br>\n\n\n            <h1>Profile of {{name}}</h1> <br>\n            <td>Github : <a href=\"{{github}}\">{{github}}</a></td> <br>\n            <td>Linkedin : <a href=\"{{linkedin}}\">{{linkedin}}</a></td> <br>\n            <td>{{skills}}</td> <br>\n            <td>{{classes}}</td> <br>\n            <td>{{username}}</td> <br>\n\n            <table style=\"width : 50%\">\n              <thead>\n                <tr>\n                  <th>name</th>\n                  <th>Github</th>\n                  <th>linkedin</th>\n                  <th>skills</th>\n                  <th>classes</th>\n                  <th>username</th>\n                </tr>\n              </thead>\n                  \n          </table> \n\n     -->\n   <mat-tab-group>\n\n      <mat-tab label=\"Active Collabs\">\n        <ng-template matTabContent>\n            Active Collabs\n        </ng-template>\n      </mat-tab>\n\n      <mat-tab label=\"Recommended Collabs\">\n        <ng-template matTabContent>\n            Recommended Collabs\n        </ng-template>\n      </mat-tab>\n\n      <mat-tab label=\"My Collabs\">\n        <ng-template matTabContent>\n            My Collabs\n            \n\n        </ng-template>\n      </mat-tab>\n\n   </mat-tab-group>\n     \n          \n            \n"
+module.exports = "   <mat-tab-group>\n\n      <mat-tab label=\"All Collabs\">\n        <ng-template matTabContent>\n          <mat-list>\n            <mat-list-item *ngFor = \"let collab of collabData\">\n                <h4>{{ collab.title }}</h4>\n                <mat-divider></mat-divider>\n            </mat-list-item>\n          </mat-list>\n        </ng-template>\n      </mat-tab>\n\n      <mat-tab label=\"Recommended Collabs\">\n        <ng-template matTabContent>\n            Recommended Collabs\n        </ng-template>\n      </mat-tab>\n\n      <mat-tab label=\"My Collabs\">\n        <ng-template matTabContent>\n            My Collabs\n            \n\n        </ng-template>\n      </mat-tab>\n\n   </mat-tab-group>\n     \n          \n            \n"
 
 /***/ }),
 
@@ -100,12 +100,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var HomeComponent = /** @class */ (function () {
     function HomeComponent(userService, router, collabService) {
+        var _this = this;
         this.userService = userService;
         this.router = router;
         this.collabService = collabService;
+        this.collabService.allCollabs().subscribe(function (data) { return _this.collabData = data; });
     }
     HomeComponent.prototype.ngOnInit = function () {
-        this.userDetails();
     };
     HomeComponent.prototype.userDetails = function () {
         var _this = this;
@@ -146,21 +147,6 @@ var HomeComponent = /** @class */ (function () {
     HomeComponent.prototype.AllCollabs = function () {
         this.collabService.allCollabs().subscribe(function (data) {
             console.log(data);
-            /**
-             * id
-             * owner
-             * size
-             * members
-             * date
-             * duration
-             * location
-             * status
-             * title
-             * description
-             * classes
-             * skills
-             * applicants
-             *  */
         });
     };
     HomeComponent.prototype.activeCollabs = function () {
@@ -417,15 +403,17 @@ var HomeRoutingModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeModule", function() { return HomeModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _collab_list_home_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./collab-list/home.component */ "./src/app/home/collab-list/home.component.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _home_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home-routing.module */ "./src/app/home/home-routing.module.ts");
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
-/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/esm5/card.es5.js");
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/esm5/icon.es5.js");
-/* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/tabs */ "./node_modules/@angular/material/esm5/tabs.es5.js");
-/* harmony import */ var _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./collab-card/collab-card.component */ "./src/app/home/collab-card/collab-card.component.ts");
+/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/list */ "./node_modules/@angular/material/esm5/list.es5.js");
+/* harmony import */ var _collab_list_home_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./collab-list/home.component */ "./src/app/home/collab-list/home.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _home_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./home-routing.module */ "./src/app/home/home-routing.module.ts");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/esm5/card.es5.js");
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/esm5/icon.es5.js");
+/* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/tabs */ "./node_modules/@angular/material/esm5/tabs.es5.js");
+/* harmony import */ var _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./collab-card/collab-card.component */ "./src/app/home/collab-card/collab-card.component.ts");
+
 
 
 
@@ -441,16 +429,17 @@ var HomeModule = /** @class */ (function () {
     function HomeModule() {
     }
     HomeModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-            declarations: [_collab_list_home_component__WEBPACK_IMPORTED_MODULE_1__["HomeComponent"], _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_9__["CollabCardComponent"]],
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
+            declarations: [_collab_list_home_component__WEBPACK_IMPORTED_MODULE_2__["HomeComponent"], _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_10__["CollabCardComponent"]],
             imports: [
-                _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
-                _home_routing_module__WEBPACK_IMPORTED_MODULE_4__["HomeRoutingModule"],
+                _angular_common__WEBPACK_IMPORTED_MODULE_4__["CommonModule"],
+                _home_routing_module__WEBPACK_IMPORTED_MODULE_5__["HomeRoutingModule"],
                 //Angular Material
-                _angular_material_tabs__WEBPACK_IMPORTED_MODULE_8__["MatTabsModule"],
-                _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardModule"],
-                _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIconModule"],
-                _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButtonModule"]
+                _angular_material_tabs__WEBPACK_IMPORTED_MODULE_9__["MatTabsModule"],
+                _angular_material_card__WEBPACK_IMPORTED_MODULE_7__["MatCardModule"],
+                _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"],
+                _angular_material_button__WEBPACK_IMPORTED_MODULE_6__["MatButtonModule"],
+                _angular_material_list__WEBPACK_IMPORTED_MODULE_1__["MatListModule"]
             ]
         })
     ], HomeModule);
