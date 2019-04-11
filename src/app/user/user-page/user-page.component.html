@@ -17,7 +17,7 @@
                 <img mat-card-image src="/assets/userPhoto.png">
                 <mat-card-content>
                 
-                <mat-grid-list cols="2" rowHeight="4:1">
+                <mat-grid-list cols="2" rowHeight="4:1" class="user-links">
                     <mat-grid-tile>
                           <button mat-raised-button color="warm">{{ userData?.github }}</button>
                     </mat-grid-tile>
@@ -25,7 +25,7 @@
                     <mat-grid-tile>
                         <button mat-raised-button color="primary">{{ userData?.linkedin }}</button>
                     </mat-grid-tile>
-                    </mat-grid-list>
+                </mat-grid-list>
               </mat-card-content>
         </mat-card>
     </div>
@@ -35,23 +35,46 @@
         <mat-grid-list cols="1" rowHeight="2:1">
           <!-- Will hold class list -->
             <mat-grid-tile>
-                <cdk-virtual-scroll-viewport itemSize="classes.size" class="viewport">
-                  <mat-chip-list>
-                    <mat-chip *ngFor = "let class of userData?.classes">
-                      {{ class }}
-                    </mat-chip>
-                  </mat-chip-list>
-                </cdk-virtual-scroll-viewport>
-              </mat-grid-tile>
+            <div class ="grid-container">  
+              <div class = "grid-search">
+                  <div class="wrapper">
+                      <input type="text" />
+                      <button mat-flat-button color="primary">Add Class</button>
+                  </div>
+              </div>
+              <div class = "grid-item">
+                  <cdk-virtual-scroll-viewport itemSize="classes.size" class="viewport">
+                      <mat-chip-list>
+                        <mat-chip *ngFor = "let class of userData?.classes">
+                          {{ class }}
+                          <mat-icon matChipRemove>cancel</mat-icon>
+                        </mat-chip>
+                      </mat-chip-list>
+                    </cdk-virtual-scroll-viewport>
+                </div>
+            </div>    
+            </mat-grid-tile>
           <!-- Will hold the skill list -->
           <mat-grid-tile>
-              <cdk-virtual-scroll-viewport itemSize="classes.size" class="viewport">
-                  <mat-chip-list>
-                    <mat-chip *ngFor = "let skill of userData?.skills">
-                      {{ skill }}
-                    </mat-chip>
-                  </mat-chip-list>
-                </cdk-virtual-scroll-viewport>
+              <div class ="grid-container">  
+                  <div class = "grid-search">
+                      <div class="wrapper">
+                          <input type="text" />
+                          <button mat-flat-button color="primary">Add Skill</button>
+                      </div>
+                  </div>
+                  <div class = "grid-item">
+                      <cdk-virtual-scroll-viewport itemSize="skills.size" class="viewport">
+                          <mat-chip-list>
+                            <mat-chip *ngFor = "let skill of userData?.skills">
+                              {{ skill }}
+                              <mat-icon matChipRemove>cancel</mat-icon>
+                            </mat-chip>
+                            
+                          </mat-chip-list>
+                        </cdk-virtual-scroll-viewport>
+                    </div>
+                </div>
           </mat-grid-tile>
         </mat-grid-list>
       </div>
