@@ -1,3 +1,4 @@
+import { MatExpansionModule } from '@angular/material/expansion';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatChipsModule } from '@angular/material/chips';
@@ -35,6 +36,7 @@ import { MatListModule }  from '@angular/material/list';
     ScrollDispatchModule,
     MatChipsModule,
     MatAutocompleteModule,
+    MatExpansionModule,
 
     //Flex Module
     FlexLayoutModule,
