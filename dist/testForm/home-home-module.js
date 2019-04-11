@@ -89,17 +89,20 @@ module.exports = "     <!--\n       <button>\n          <a (click) =\"userDetail
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/dbAccess/user.service */ "./src/app/shared/dbAccess/user.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../shared/dbAccess/collabs.service */ "./src/app/shared/dbAccess/collabs.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/dbAccess/user.service */ "./src/app/shared/dbAccess/user.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
 
 
 
 
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(userService, router) {
+    function HomeComponent(userService, router, collabService) {
         this.userService = userService;
         this.router = router;
+        this.collabService = collabService;
     }
     HomeComponent.prototype.ngOnInit = function () {
         this.userDetails();
@@ -117,7 +120,7 @@ var HomeComponent = /** @class */ (function () {
     };
     // return array of JSON OBJECTS
     HomeComponent.prototype.collabDetails = function () {
-        this.userService.collabDetails().subscribe(function (data) {
+        this.collabService.collabDetails().subscribe(function (data) {
             console.log(data[0].owner);
             console.log(data[0].members);
             //write a for loop to inter arrar
@@ -141,7 +144,7 @@ var HomeComponent = /** @class */ (function () {
         });
     };
     HomeComponent.prototype.AllCollabs = function () {
-        this.userService.allCollabs().subscribe(function (data) {
+        this.collabService.allCollabs().subscribe(function (data) {
             console.log(data);
             /**
              * id
@@ -161,12 +164,12 @@ var HomeComponent = /** @class */ (function () {
         });
     };
     HomeComponent.prototype.activeCollabs = function () {
-        this.userService.activeCollabs().subscribe(function (data) {
+        this.collabService.activeCollabs().subscribe(function (data) {
             console.log(data);
         });
     };
     HomeComponent.prototype.myCollabs = function () {
-        this.userService.myCollabs().subscribe(function (data) {
+        this.collabService.myCollabs().subscribe(function (data) {
             console.log(data);
         });
     };
@@ -175,12 +178,14 @@ var HomeComponent = /** @class */ (function () {
         this.router.navigate(['/login']);
     };
     HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
             selector: 'app-home',
             template: __webpack_require__(/*! ./home.component.html */ "./src/app/home/collab-list/home.component.html"),
             styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/home/collab-list/home.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"],
+            _shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_1__["CollabsService"]])
     ], HomeComponent);
     return HomeComponent;
 }());
@@ -450,6 +455,56 @@ var HomeModule = /** @class */ (function () {
         })
     ], HomeModule);
     return HomeModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/dbAccess/collabs.service.ts":
+/*!****************************************************!*\
+  !*** ./src/app/shared/dbAccess/collabs.service.ts ***!
+  \****************************************************/
+/*! exports provided: CollabsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CollabsService", function() { return CollabsService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+
+var CollabsService = /** @class */ (function () {
+    function CollabsService(http) {
+        this.http = http;
+        this.rootUrl = 'https://huntercollabapi.herokuapp.com';
+    }
+    //collab/getCollabDetails
+    CollabsService.prototype.collabDetails = function () {
+        return this.http.get(this.rootUrl + "/collab/getCollabDetails");
+    };
+    //collab/getAllCollabs
+    CollabsService.prototype.allCollabs = function () {
+        return this.http.get(this.rootUrl + "/collab/getAllCollabs");
+    };
+    //collab/getActiveCollabs 
+    CollabsService.prototype.activeCollabs = function () {
+        return this.http.get(this.rootUrl + "/collab/getActiveCollabs");
+    };
+    //messaging/myConvos
+    CollabsService.prototype.myCollabs = function () {
+        return this.http.get(this.rootUrl + "/messaging/myConvos");
+    };
+    CollabsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], CollabsService);
+    return CollabsService;
 }());
 
 
