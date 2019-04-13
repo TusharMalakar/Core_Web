@@ -1,21 +1,40 @@
+import { CollabCardComponent } from './home/collab-card/collab-card.component';
 import { AuthGuard } from './guard/auth.guard';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/collab-list/home.component';
+import { LoginComponent } from './login/login-page/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, CanActivate } from '@angular/router';
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './register/register-page/register.component';
 
 
 const routes: Routes = [
-  {path : 'login', component :LoginComponent},
-  {path:'register', component: RegisterComponent},
+  {
+    path : 'login', 
+    loadChildren : './login/login.module#LoginModule'
+  },
+  {
+    path:'register', 
+    loadChildren : './register/register.module#RegisterModule'
+  },
+  {
+    path:'home', 
+    loadChildren : './home/home.module#HomeModule',
+    canLoad: [AuthGuard]
+  },
+  {
+    path: 'user',
+    loadChildren: './user/user.module#UserModule',
+    canLoad: [AuthGuard]
+  },
   
-  //protected components
-  {path:'home',  canActivate : [AuthGuard],component: HomeComponent,data:{}},
   
   //default component
-  {path:'**', redirectTo: 'login'}
+  {
+    path:'**', 
+    redirectTo: 'home',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

@@ -5,9 +5,16 @@ export interface User {
     linkedin ?: string;
     skills ?:  [];
     classes ?: []
-    name ?: string;
+    profilePicture ?: string;
 }
 
-
+export interface profile {
+    UserName ?: string;
+    github ?: string ;
+    linkedin ?: string;
+    skills ?:  [];
+    classes ?: []
+    name ?: string;
+}
 
 

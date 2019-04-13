@@ -1,0 +1,37 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title> <h4>{{collabData.title}}</h4> </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-accordion>
+        <h4 class="description"> {{ collabData.description }} </h4>
+        
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Skills/Classes Wanted.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+          </mat-expansion-panel-header>
+
+            <div *ngFor="let skill of getAllRequired()">
+              <p>{{ skill }} </p> 
+            </div>
+          
+          
+        </mat-expansion-panel>
+    </mat-accordion>
+    
+  </mat-card-content>
+
+  <mat-card-actions>
+        <button mat-raised-button color = "primary"> Join </button>
+        <button mat-raised-button color = "primary"> Leave </button>
+        <button mat-raised-button color = "primary"> Delete</button>
+  </mat-card-actions>
+
+</mat-card>

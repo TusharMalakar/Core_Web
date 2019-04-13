@@ -1,0 +1,36 @@
+.mat-card {
+    max-width: 800px;
+    margin: auto;
+    padding: 0px;
+    height: 100%;
+}
+
+.mat-card-header {
+    color: rgba(0, 0, 0, .54);
+    background: rgba(0, 0, 0, 0.062);
+    font-weight: bold;
+    padding: 0px;
+}
+
+.mat-card-title  {
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.mat-card-content {
+    margin: 0px;
+}
+
+.mat-card>.mat-card-actions:last-child {
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+.description {
+    margin-left: 10px;
+}
+
+.table {
+    width: 100%;
+}
+

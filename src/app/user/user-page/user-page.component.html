@@ -1,0 +1,100 @@
+<!--
+  fxLayout.lt-sm="column"  : Will only be applied when the viewport is less thatn small.
+  fxLayout = "row"         :  If ;using big screens, display data in rows
+  fxLayout.xs ="column" ;  : using small screens, display data in columns
+  fxLayoutWrap             : Will wrap this div for us so that flex will be applied
+  fxLayoutGap = 20%;       : Will give us a gap bewteen each fxFlex
+-->
+  <div class = "container" fxLayout = "row" fxLayout.xs = "column" fxLayoutWrap fxLayoutAlign="center">
+
+    <div fxFlex = "40%" fxFlex.xs = "80%">
+        <mat-card class="usercard1">
+                <mat-card-header class="list-header-title">
+                    <div mat-card-avatar></div>
+                    <mat-card-title>{{ userData?.name }}</mat-card-title>
+                    <mat-card-subtitle>{{ userData?.username }}</mat-card-subtitle>
+                  </mat-card-header>    
+                <img mat-card-image src="/assets/userPhoto.png">
+                <mat-card-content>
+                
+                <mat-grid-list cols="2" rowHeight="4:1" class="user-links">
+                    <mat-grid-tile>
+                          <button mat-raised-button color="warm">{{ userData?.github }}</button>
+                    </mat-grid-tile>
+                    
+                    <mat-grid-tile>
+                        <button mat-raised-button color="primary">{{ userData?.linkedin }}</button>
+                    </mat-grid-tile>
+                </mat-grid-list>
+              </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div fxFlex = "40%" fxFlex.xs = "80%">
+      <div class="usercard2">
+        <mat-grid-list cols="1" rowHeight="2:1">
+          <!-- Will hold class list -->
+            <mat-grid-tile>
+            <div class ="grid-container">  
+              <div class = "grid-search">
+                  <div class="wrapper">
+                      <input type="text" placeholder="Search for Class..." />
+                      <button mat-flat-button color="primary">Add Class</button>
+                  </div>
+              </div>
+              <div class = "grid-item">
+                  <cdk-virtual-scroll-viewport itemSize="classes.size" class="viewport">
+                      <mat-chip-list>
+                        <mat-chip *ngFor = "let class of userData?.classes">
+                          {{ class }}
+                          <mat-icon matChipRemove>cancel</mat-icon>
+                        </mat-chip>
+                      </mat-chip-list>
+                    </cdk-virtual-scroll-viewport>
+                </div>
+            </div>    
+            </mat-grid-tile>
+          <!-- Will hold the skill list -->
+          <mat-grid-tile>
+              <div class ="grid-container">  
+                  <div class = "grid-search">
+                      <div class="wrapper">
+                          <input type="text" placeholder="Search for Skills..." />
+                          <button mat-flat-button color="primary">Add Skill</button>
+                      </div>
+                  </div>
+                  <div class = "grid-item">
+                      <cdk-virtual-scroll-viewport itemSize="skills.size" class="viewport">
+                          <mat-chip-list>
+                            <mat-chip *ngFor = "let skill of userData?.skills">
+                              {{ skill }}
+                              <mat-icon matChipRemove>cancel</mat-icon>
+                            </mat-chip>
+                            
+                          </mat-chip-list>
+                        </cdk-virtual-scroll-viewport>
+                    </div>
+                </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+  </div>
+
+  <!--
+      //display profie-picture
+        <img [src]="imageToShow"
+        alt="Place image title"
+        *ngIf="!isImageLoading; else noImageFound">
+        <ng-template #noImageFound>
+        <img src="getImageFromService()"userPicture>
+        </ng-template>
+      
+      //upload profile-picture
+      <h2>Upload picture </h2>
+      <input type = "file" (change) = "onFileSelected ($event)"><br>
+      <button type="button" (click) = "onUpload()">Upload</button>
+
+
+
+  -->
