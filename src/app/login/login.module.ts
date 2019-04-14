@@ -27,6 +27,4 @@ import { LoginRoutingModule } from './login-routing.module';
     
   ]
 })
-
-//exporting a empty class 
 export class LoginModule { }

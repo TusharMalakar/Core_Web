@@ -20,25 +20,20 @@
                    How every button is implemented 
                     [matMenuTriggerFor] is bindded to button menu; will be triggered by menu
                   -->
-                  
                 <button mat-icon-button [matMenuTriggerFor] = "menu">
                     <mat-icon>perm_identity</mat-icon>
                 </button>
                 
                 <mat-menu #menu="matMenu" >
-
                   <button mat-menu-item routerLink="/user">
                     <mat-icon>person</mat-icon>
                     <span>User Info</span>
                   </button>
-
                   <button mat-menu-item (click)="logOut()">
                     <mat-icon>directions_run</mat-icon>
                     <span>LogOut</span>
                   </button>
-
                 </mat-menu>
-
 
             </mat-toolbar-row>
         </mat-toolbar>

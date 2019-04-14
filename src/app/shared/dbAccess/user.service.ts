@@ -48,12 +48,10 @@ public isAuthenticated() : boolean {
  getUserdetails(): Observable<UserModel[]> {
   return this.http.get<UserModel[]>( this.rootUrl +"/user");
 }
-//getting profile picture as Bolb file
-getPicture(): Observable <Blob>{
+getPicture(){
   // user/profilePicture
-  return this.http.get( this.rootUrl +"/user/profilePicture",  { responseType: 'blob' });
+  return this.http.get( this.rootUrl +"/user/profilePicture");
 }
-
 getSkill(){ 
   return this.http.get( this.rootUrl +"/user/skills");
 }
@@ -71,6 +69,7 @@ getClasses(){
 
 
 
+
 //___________POST_________________
 
 // /collab/deleteCollab
@@ -80,11 +79,5 @@ getClasses(){
 ///collab/getRecommendedCollabs
 ///messaging/getMessages 
 ///messaging/sendMessage 
-
-//-----------errorHandler----
-
-errorHandler (error : HttpErrorResponse){
-  return Observable.throw(error.message || "server Error");
-}
 
 }

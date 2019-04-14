@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { UserService } from '../../shared/dbAccess/user.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component , OnInit} from '@angular/core';
@@ -21,17 +20,15 @@ import { LogInModel } from 'src/app/shared/models/login.model';
 
 
 export class LoginComponent implements OnInit {
-
-  user: LogInModel;
+ 
+ user: LogInModel;
   form: FormGroup;
-  isLoginError : boolean;
 
-  //injecting FormBuilder, Userservice and Router
+  isLoginError : boolean;
   constructor(private formBuilder: FormBuilder,
               private userService : UserService,
-              private router : Router
-              ) {
-                
+              private router : Router) 
+  {
     this.user = new LogInModel();
    }
 
@@ -80,6 +77,7 @@ export class LoginComponent implements OnInit {
   get password(){
     return this.form.get('password');
   }
+
   
 }
 //testuser1@myhunter.cuny.edu 

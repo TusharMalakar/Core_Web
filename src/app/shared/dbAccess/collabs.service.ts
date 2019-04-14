@@ -21,11 +21,11 @@ export class CollabsService {
   }
   //collab/getActiveCollabs 
   activeCollabs(){ 
-    return this.http.get<CollabModel[]>( this.rootUrl +"/collab/getActiveCollabs");
+    return this.http.get( this.rootUrl +"/collab/getActiveCollabs");
   }
   //messaging/myConvos
   myCollabs(){ 
-    return this.http.get<CollabModel[]>( this.rootUrl +"/messaging/myConvos");
+    return this.http.get( this.rootUrl +"/messaging/myConvos");
   }
 
 

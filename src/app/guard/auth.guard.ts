@@ -6,7 +6,7 @@ import { Route } from '@angular/compiler/src/core';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(private router : Router){}
+  constructor(private router : Router, private service : UserService){}
   canActivate():  boolean {
       if ( localStorage.getItem('accessToken') ){      
         return true;
