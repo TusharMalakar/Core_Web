@@ -33,7 +33,8 @@ export class CollabsService {
 
   //______________POST_REQUEST____________
 
-  ///collab/createCollab
+  //create a new collab, wehre owner = currentUser
+  // size, date, duration, location, title, description, classes and skills are required
   CreateCollab( owner, size, member, date, duration, location, status, title,description, classes,skills,applicants ){
 
     const body: CollabModel2 = {
@@ -55,35 +56,35 @@ export class CollabsService {
   }
 
 
+  //_______________________IN-Progress__________________
+
+  ///collab/getRecommendedCollabs 
+  recomendedCollab( skills, classes){
+    const body:CollabModel = {
+      skills : skills,
+      classes :classes
+    }
+    skills ["t"];
+    classes ["r"];
+    return this.http.get (this.rootUrl + "/collab/getRecommendedCollabs",skills)
+  }
+  updateUser(github, linkedin, skills, classes){
+    const body : UserModel ={
+      username : '',
+      github  :github,
+      linkedin : linkedin,
+      skills :skills,
+      classes :classes
+    }
+    return this.http.put(this.rootUrl + "/user", body)
+  }
+  
+
+
+
+
+
+
 }
 
 
-/**
- 
- COLLABS 
-
-owner: String, The username who owns the Collab
-size: Int, The maximum amount of users in a Collab
-members: Array of Strings, Array of the users in the Collab, including the owner
-date: Int, Date collaboration was posted in milliseconds
-duration: Int, Amount of time before the Collab automatically archives.
-location: String, Some location of the Collab.
-status: Bool, True means active, false means archived. For searching
-title: String, Title of the Collab
-description: String, Description of the Collab
-classes: Array of strings, Array of classes specified desired for the Collab
-skills: Array of strings, Array of skills specified desired for the Collab
-applicants: Array of strings, Array of users applying to the Collab
-
-
-All the following endpoints are protected. “id” when required, refers to the string variable of the respective Collab’s object id.
-
-/collab/createCollab (POST)
-Requires a JSON object with "size", “date” (long, in milliseconds), “duration”, "location", "title", "description", "classes", "skills" sent and creates a Collab.
-
-"owner" and "member" are based on the user sending the request. "date", "status", "applicants" are automatically filled out. “duration” is entered by the user
-
-Returns "'success': True" on success.
-
-
- */

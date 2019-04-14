@@ -75,6 +75,17 @@ export class RegisterComponent implements OnInit{
 createCollab(){
   this.collabService.CreateCollab("", 29, [], 4/13/2019, 5, "rego park", true, "test","test", ["test", "test2"],["test","test"], ["test", 'test2'])
 }
+//not implemented yet
+recomendedCollab(){
+  this.collabService.recomendedCollab(["c"],["r"]).subscribe(data =>
+    console.log(data))
+}
+///user
+updateuser(){
+  this.collabService.updateUser("www.mygithub.com","www.mylimkedin.com",["c","R"], ["none"]).subscribe(
+    data => console.log(data)
+  )
+}
 
 get username(){
   return this.form.get('username');
