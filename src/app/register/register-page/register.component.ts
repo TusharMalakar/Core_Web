@@ -86,7 +86,6 @@ get password2(){
   return this.form.get('password2');
 }
 
-
 // private id;
 getCollabID(){
   return CollabModel[0];
@@ -118,10 +117,11 @@ updateSkills(){
 getImageFromService(){
    this.userService.getImageFromService();
 }
-
-
-
-private profilePicture;
+//updateUserProfile(github,linkedin, skills, classes)
+updateUser(){
+  this.userService.updateUserProfile("myGit", "myLinkedIn",["c","r","a"], ["e"]).subscribe(
+    data => console.log(data));
+}
 
 
 }

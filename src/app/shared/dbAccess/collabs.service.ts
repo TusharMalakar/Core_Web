@@ -56,25 +56,6 @@ export class CollabsService {
     .subscribe (data => console.log(data) )
   }
 
-  //join collab by id
-  joinCollab(id, username){
-    const body: CollabModel2 = {
-      id : id,
-      members : username
-    }
-    return this.http.post(this.rootUrl + "/collab/joinCollab", body)
-    .subscribe (data => console.log(data) )
-}
-
-//leave collab by id
-leaveCollab(id, username){
-  const body: CollabModel2 = {
-    id : id,
-    members : username
-  }
-  return this.http.post(this.rootUrl + "/collab/leaveCollab", body)
-  .subscribe (data => console.log(data) )
-}
 //edit collab
 //"_id", "owner", "size", "members", "data", "duration", "location", "status", "title", "description", "classes", "skills", "applicants".
 editCollab(id, owner, size, member, data, duration, location, status,title, description, classes,skills, applicants){

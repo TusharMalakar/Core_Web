@@ -1,7 +1,7 @@
+import { UserModel } from './../models/user.model';
 import { CollabModel } from './../models/collab.model';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from '@angular/common/http';
-import { UserModel } from '../models/user.model';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs';
 
@@ -46,7 +46,7 @@ public isAuthenticated() : boolean {
   return localStorage.getItem('accessToken') !== null;
 }
  //url + json authentication
- getUserdetails(): Observable<UserModel[]> {
+getUserdetails(): Observable<UserModel[]> {
   return this.http.get<UserModel[]>( this.rootUrl +"/user");
 }
 //download profile-picture as Bold file
@@ -107,6 +107,16 @@ getClasses(){
 
 //___________POST_________________
 
+//you can update user profile taking all these as input but "Not required"
+updateUserProfile(github,linkedin, skills, classes){
+  const body : UserModel ={
+    github  :github,
+    linkedin:linkedin,
+    skills  :skills,
+    classes :classes
+  }
+  return this.http.post(this.rootUrl +"/user", body)
+}
 // /collab/deleteCollab
 ///collab/editCollab
 ///collab/joinCollab 
