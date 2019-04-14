@@ -1,3 +1,4 @@
+import { FormControl } from '@angular/forms';
 import { CollabsService } from './../../shared/dbAccess/collabs.service';
 import { UserModel } from './../../shared/models/user.model';
 import { Component, OnInit } from '@angular/core';
@@ -14,17 +15,18 @@ import { CollabModel } from 'src/app/shared/models/collab.model';
 export class HomeComponent implements OnInit {
     userData: UserModel[];
     collabData: CollabModel[];
+    selected = new FormControl(0);
 
   constructor(
       private userService : UserService,
       private router : Router, 
       private collabService : CollabsService)
        {
-        this.collabService.allCollabs().subscribe ((data : CollabModel[] )  => this.collabData = data);
+        
         }
 
   ngOnInit() {
-    
+    this.currentTab(0);
   }
 
   userDetails(){
@@ -48,16 +50,45 @@ export class HomeComponent implements OnInit {
 
   activeCollabs(){
     this.collabService.activeCollabs().subscribe ((data : any ) => {
-      console.log(data);   
+      //console.log(data);   
   
      });
   }
 
   myCollabs(){
     this.collabService.myCollabs().subscribe ((data : any ) => {
-      console.log(data);   
+      //console.log(data);   
   
      });
+  }
+
+  async currentTab($event){
+    switch($event) {
+
+      case 0: {
+        console.log("API called!")
+        this.collabService.getCollabs("getAllCollabs").subscribe ((data : CollabModel[] )  => this.collabData = data);
+        break;
+      }
+
+      case 1: {
+        console.log("API called!")
+        await this.collabService.getCollabs("getCollabDetails").subscribe ((data : CollabModel[] )  => this.collabData = data);
+        break;
+      }
+
+      case 2: {
+
+        break;
+      }
+
+      default: {
+
+        break;
+      }
+
+
+    }
   }
 
 }

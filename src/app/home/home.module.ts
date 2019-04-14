@@ -1,3 +1,4 @@
+import { MatChipsModule } from '@angular/material/chips';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
@@ -32,7 +33,8 @@ import { CollabTableComponent } from './collab-table/collab-table.component';
     MatListModule,
     MatExpansionModule,
     MatTableModule,
-    ScrollDispatchModule
+    ScrollDispatchModule,
+    MatChipsModule
   ]
 })
 export class HomeModule { }

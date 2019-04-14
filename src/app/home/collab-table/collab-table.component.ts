@@ -14,7 +14,7 @@ export class CollabTableComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.xAxisReq);
+    //console.log(this.xAxisReq);
   }
 }
 

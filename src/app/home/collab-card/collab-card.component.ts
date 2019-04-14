@@ -24,6 +24,7 @@ export class CollabCardComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit() {
+    console.log(this.collabData);
   }
 
   /*

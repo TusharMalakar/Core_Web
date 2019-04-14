@@ -1,13 +1,35 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title> <h4>{{collabData.title}}</h4> </mat-card-title>
+    <mat-card-title> 
+      
+      <h4>{{collabData.title}}     <mat-icon>group</mat-icon>{{collabData.members.length}} / {{ collabData.size}}</h4>
+    </mat-card-title>
   </mat-card-header>
-
   <mat-card-content>
     <mat-accordion>
-        <h4 class="description"> {{ collabData.description }} </h4>
-        <h3> {{ collabData._id["$oid"] }}</h3>
-        
+        <div class = "content">
+            <p class="description">Description: {{ collabData.description }} </p>
+            <p class="date">Date: {{ collabData.date | date }}</p>
+            <p class="location">Location: {{ collabData.location }}</p>
+
+            <div class = "requirements">
+                <mat-chip-list>
+                    Classes: 
+                    <mat-chip *ngFor = "let class of collabData.classes">
+                      {{ class }}
+                    </mat-chip>
+                </mat-chip-list>
+                <br>
+                <mat-chip-list>
+                    Skills: 
+                    <mat-chip *ngFor="let skill of collabData.skills">
+                      {{ skill }}
+                    </mat-chip>
+                </mat-chip-list>
+            </div>
+      
+        </div>
+        <br>
         
         <!-- Event Binding: In this case the event is (opened) -->
         <mat-expansion-panel 
@@ -15,7 +37,7 @@
                        (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
           <mat-panel-title>
-            Skills/Classes Wanted.
+            <h4>Requirements</h4>
           </mat-panel-title>
           <mat-panel-description>
           </mat-panel-description>
