@@ -17,9 +17,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import {MatExpansionModule} from '@angular/material/expansion';
 
 import { CollabCardComponent } from './collab-card/collab-card.component';
+import { CollabTableComponent } from './collab-table/collab-table.component';
 
 @NgModule({
-  declarations: [HomeComponent, CollabCardComponent],
+  declarations: [HomeComponent, CollabCardComponent, CollabTableComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

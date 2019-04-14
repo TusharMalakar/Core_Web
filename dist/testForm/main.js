@@ -200,8 +200,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/menu */ "./node_modules/@angular/material/esm5/menu.es5.js");
 /* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/chips */ "./node_modules/@angular/material/esm5/chips.es5.js");
 /* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/autocomplete */ "./node_modules/@angular/material/esm5/autocomplete.es5.js");
-/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
-/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/cdk/scrolling */ "./node_modules/@angular/cdk/esm5/scrolling.es5.js");
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/esm5/table.es5.js");
+/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/cdk/scrolling */ "./node_modules/@angular/cdk/esm5/scrolling.es5.js");
 
 
 
@@ -215,6 +216,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //These are the materials that will make our site adaptable
+
 
 
 
@@ -248,12 +250,13 @@ var AppModule = /** @class */ (function () {
                 _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_13__["MatSidenavModule"],
                 _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_14__["MatToolbarModule"],
                 _angular_material_menu__WEBPACK_IMPORTED_MODULE_16__["MatMenuModule"],
-                _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_20__["ScrollDispatchModule"],
+                _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_21__["ScrollDispatchModule"],
                 _angular_material_chips__WEBPACK_IMPORTED_MODULE_17__["MatChipsModule"],
                 _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__["MatAutocompleteModule"],
+                _angular_material_table__WEBPACK_IMPORTED_MODULE_19__["MatTableModule"],
                 //Our Routes will be here to make code cleaner
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
-                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_19__["FlexLayoutModule"]
+                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_20__["FlexLayoutModule"]
             ],
             providers: [
                 _shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_8__["UserService"],
@@ -510,16 +513,34 @@ var UserService = /** @class */ (function () {
         // user/profilePicture
         return this.http.get(this.rootUrl + "/user/profilePicture");
     };
-    UserService.prototype.getSkill = function () {
-        return this.http.get(this.rootUrl + "/user/skills");
+    UserService.prototype.getUserSkills = function (userName) {
+        return this.http.get(this.rootUrl + "/user/skills/" + userName);
     };
-    //search/skills
+    UserService.prototype.getUserClasses = function (userName) {
+        return this.http.get(this.rootUrl + "/user/classes/" + userName);
+    };
+    UserService.prototype.getUserSkillsAndClasses = function (username) {
+        var xAxisReq = [];
+        var skills;
+        var classes;
+        this.getUserSkills(username)
+            .subscribe(function (data) { skills = data; });
+        this.getUserClasses(username)
+            .subscribe(function (data) { classes = data; });
+        console.log(skills);
+        console.log(classes);
+        for (var _i = 0, classes_1 = classes; _i < classes_1.length; _i++) {
+            var classTaken = classes_1[_i];
+            xAxisReq.push({
+                skillOrClass: classTaken,
+                type: "class"
+            });
+        }
+        return xAxisReq;
+    };
     UserService.prototype.searchSkills = function (constrain) {
         var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set("query", constrain);
         return this.http.get(this.rootUrl + "/search/skills", { params: params });
-    };
-    UserService.prototype.getClasses = function () {
-        return this.http.get(this.rootUrl + "/user/classes");
     };
     UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),

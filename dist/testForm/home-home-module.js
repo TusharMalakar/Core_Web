@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".mat-card {\n    max-width: 400px;\n    margin: auto;\n}\n\n.mat-card-actions {\n    display: flex;\n}\n\n.mat-card-actions .flex-spacer {\n    width: 100%;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jb2xsYWItY2FyZC9jb2xsYWItY2FyZC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxhQUFhO0FBQ2pCOztBQUVBO0lBQ0ksV0FBVztBQUNmIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9jb2xsYWItY2FyZC9jb2xsYWItY2FyZC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1hdC1jYXJkIHtcbiAgICBtYXgtd2lkdGg6IDQwMHB4O1xuICAgIG1hcmdpbjogYXV0bztcbn1cblxuLm1hdC1jYXJkLWFjdGlvbnMge1xuICAgIGRpc3BsYXk6IGZsZXg7XG59XG5cbi5tYXQtY2FyZC1hY3Rpb25zIC5mbGV4LXNwYWNlciB7XG4gICAgd2lkdGg6IDEwMCU7XG59XG4iXX0= */"
+module.exports = ".mat-card {\n    max-width: 800px;\n    margin: auto;\n    padding: 0px;\n    height: 100%;\n}\n\n.mat-card-header {\n    color: rgba(0, 0, 0, .54);\n    background: rgba(0, 0, 0, 0.062);\n    font-weight: bold;\n    padding: 0px;\n}\n\n.mat-card-title  {\n    margin-left: 5px;\n    margin-top: 10px;\n}\n\n.mat-card-content {\n    margin: 0px;\n}\n\n.mat-card>.mat-card-actions:last-child {\n    margin-bottom: 5px;\n    margin-left: 10px;\n}\n\n.description {\n    margin-left: 10px;\n}\n\n.table {\n    width: 100%;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jb2xsYWItY2FyZC9jb2xsYWItY2FyZC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLFlBQVk7SUFDWixZQUFZO0lBQ1osWUFBWTtBQUNoQjs7QUFFQTtJQUNJLHlCQUF5QjtJQUN6QixnQ0FBZ0M7SUFDaEMsaUJBQWlCO0lBQ2pCLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxnQkFBZ0I7SUFDaEIsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksV0FBVztBQUNmOztBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLFdBQVc7QUFDZiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvY29sbGFiLWNhcmQvY29sbGFiLWNhcmQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYXQtY2FyZCB7XG4gICAgbWF4LXdpZHRoOiA4MDBweDtcbiAgICBtYXJnaW46IGF1dG87XG4gICAgcGFkZGluZzogMHB4O1xuICAgIGhlaWdodDogMTAwJTtcbn1cblxuLm1hdC1jYXJkLWhlYWRlciB7XG4gICAgY29sb3I6IHJnYmEoMCwgMCwgMCwgLjU0KTtcbiAgICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuMDYyKTtcbiAgICBmb250LXdlaWdodDogYm9sZDtcbiAgICBwYWRkaW5nOiAwcHg7XG59XG5cbi5tYXQtY2FyZC10aXRsZSAge1xuICAgIG1hcmdpbi1sZWZ0OiA1cHg7XG4gICAgbWFyZ2luLXRvcDogMTBweDtcbn1cblxuLm1hdC1jYXJkLWNvbnRlbnQge1xuICAgIG1hcmdpbjogMHB4O1xufVxuXG4ubWF0LWNhcmQ+Lm1hdC1jYXJkLWFjdGlvbnM6bGFzdC1jaGlsZCB7XG4gICAgbWFyZ2luLWJvdHRvbTogNXB4O1xuICAgIG1hcmdpbi1sZWZ0OiAxMHB4O1xufVxuXG4uZGVzY3JpcHRpb24ge1xuICAgIG1hcmdpbi1sZWZ0OiAxMHB4O1xufVxuXG4udGFibGUge1xuICAgIHdpZHRoOiAxMDAlO1xufVxuXG4iXX0= */"
 
 /***/ }),
 
@@ -18,7 +18,7 @@ module.exports = ".mat-card {\n    max-width: 400px;\n    margin: auto;\n}\n\n.m
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card>\n  <mat-card-header>\n    <mat-card-title> Collab # </mat-card-title>\n  </mat-card-header>\n\n  <mat-card-content>\n    <p> Collab Details</p>\n  </mat-card-content>\n\n  <mat-card-actions>\n    <div class=\"button-row\">\n        <button mat-raised-button color = \"primary\"> Join </button>\n        <button mat-raised-button color = \"primary\"> Leave </button>\n        <button mat-raised-button color = \"primary\"> Delete</button>\n    </div>\n  </mat-card-actions>\n\n</mat-card>"
+module.exports = "<mat-card>\n  <mat-card-header>\n    <mat-card-title> <h4>{{collabData.title}}</h4> </mat-card-title>\n  </mat-card-header>\n\n  <mat-card-content>\n    <mat-accordion>\n        <h4 class=\"description\"> {{ collabData.description }} </h4>\n        \n        <!-- Event Binding: In this case the event is (opened) -->\n        <mat-expansion-panel \n                       (opened)=\"panelOpenState = true && makeTable()\"\n                       (closed)=\"panelOpenState = false\">\n        <mat-expansion-panel-header>\n          <mat-panel-title>\n            Skills/Classes Wanted.\n          </mat-panel-title>\n          <mat-panel-description>\n            Currently I am {{panelOpenState ? 'open' : 'closed'}}\n          </mat-panel-description>\n          </mat-expansion-panel-header>\n\n            <div *ngFor=\"let skill of collabData.skills\">\n              <p>{{ skill.skillOrClass }} </p> \n            </div>\n          \n          \n        </mat-expansion-panel>\n    </mat-accordion>\n    \n  </mat-card-content>\n\n  <mat-card-actions>\n        <button mat-raised-button color = \"primary\"> Join </button>\n        <button mat-raised-button color = \"primary\"> Leave </button>\n        <button mat-raised-button color = \"primary\"> Delete</button>\n  </mat-card-actions>\n\n</mat-card>"
 
 /***/ }),
 
@@ -33,21 +33,68 @@ module.exports = "<mat-card>\n  <mat-card-header>\n    <mat-card-title> Collab #
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CollabCardComponent", function() { return CollabCardComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../shared/dbAccess/user.service */ "./src/app/shared/dbAccess/user.service.ts");
+/* harmony import */ var _shared_models_collab_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../shared/models/collab.model */ "./src/app/shared/models/collab.model.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
 
 
 var CollabCardComponent = /** @class */ (function () {
-    function CollabCardComponent() {
+    function CollabCardComponent(userService) {
+        this.userService = userService;
     }
     CollabCardComponent.prototype.ngOnInit = function () {
     };
+    CollabCardComponent.prototype.makeTable = function () {
+        var yAxisUsers;
+        var table;
+        var xAxisReq = [];
+        xAxisReq = this.getAllRequired();
+        yAxisUsers = this.collabData.members;
+        console.log("x-Axis: ", xAxisReq);
+        console.log("y-Axis: ", yAxisUsers);
+        for (var _i = 0, xAxisReq_1 = xAxisReq; _i < xAxisReq_1.length; _i++) {
+            var x = xAxisReq_1[_i];
+            for (var _a = 0, yAxisUsers_1 = yAxisUsers; _a < yAxisUsers_1.length; _a++) {
+                var y = yAxisUsers_1[_a];
+                var knownByUser = this.userService.getUserSkillsAndClasses(y);
+                if (x.type == "skill") {
+                }
+                else {
+                }
+            }
+        }
+    };
+    CollabCardComponent.prototype.getAllRequired = function () {
+        var xAxisReq = [];
+        for (var _i = 0, _a = this.collabData.skills; _i < _a.length; _i++) {
+            var skill = _a[_i];
+            xAxisReq.push({
+                skillOrClass: skill,
+                type: "skill"
+            });
+        }
+        for (var _b = 0, _c = this.collabData.classes; _b < _c.length; _b++) {
+            var classTaken = _c[_b];
+            xAxisReq.push({
+                skillOrClass: classTaken,
+                type: "class"
+            });
+        }
+        return xAxisReq;
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _shared_models_collab_model__WEBPACK_IMPORTED_MODULE_2__["CollabModel"])
+    ], CollabCardComponent.prototype, "collabData", void 0);
     CollabCardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-collab-card',
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+            selector: 'collab-card',
             template: __webpack_require__(/*! ./collab-card.component.html */ "./src/app/home/collab-card/collab-card.component.html"),
             styles: [__webpack_require__(/*! ./collab-card.component.css */ "./src/app/home/collab-card/collab-card.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"]])
     ], CollabCardComponent);
     return CollabCardComponent;
 }());
@@ -63,7 +110,7 @@ var CollabCardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "p {\n    padding: 16px;\n    text-align: center;\n  \n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jb2xsYWItbGlzdC9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxhQUFhO0lBQ2Isa0JBQWtCOztFQUVwQiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvY29sbGFiLWxpc3QvaG9tZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsicCB7XG4gICAgcGFkZGluZzogMTZweDtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIFxuICB9Il19 */"
+module.exports = "p {\n    padding: 16px;\n    text-align: center;\n  \n  }\n\n  .collab {\n    margin-top:25px;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jb2xsYWItbGlzdC9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxhQUFhO0lBQ2Isa0JBQWtCOztFQUVwQjs7RUFFQTtJQUNFLGVBQWU7RUFDakIiLCJmaWxlIjoic3JjL2FwcC9ob21lL2NvbGxhYi1saXN0L2hvbWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInAge1xuICAgIHBhZGRpbmc6IDE2cHg7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBcbiAgfVxuXG4gIC5jb2xsYWIge1xuICAgIG1hcmdpbi10b3A6MjVweDtcbiAgfSJdfQ== */"
 
 /***/ }),
 
@@ -74,7 +121,7 @@ module.exports = "p {\n    padding: 16px;\n    text-align: center;\n  \n  }\n/*#
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "   <mat-tab-group>\n\n      <mat-tab label=\"All Collabs\">\n        <ng-template matTabContent>\n          <mat-list>\n            <mat-list-item *ngFor = \"let collab of collabData\">\n                <h4>{{ collab.title }}</h4>\n                <mat-divider></mat-divider>\n            </mat-list-item>\n          </mat-list>\n        </ng-template>\n      </mat-tab>\n\n      <mat-tab label=\"Recommended Collabs\">\n        <ng-template matTabContent>\n            Recommended Collabs\n        </ng-template>\n      </mat-tab>\n\n      <mat-tab label=\"My Collabs\">\n        <ng-template matTabContent>\n            My Collabs\n            \n\n        </ng-template>\n      </mat-tab>\n\n   </mat-tab-group>\n     \n          \n            \n"
+module.exports = "   <mat-tab-group>\n\n      <mat-tab label=\"All Collabs\">\n        <ng-template matTabContent>\n          <ng-container *ngFor = \"let collab of collabData\">\n            <div class =\"collab\">\n                <!-- Property binding from component to component using @Input() and @Output -->\n                <collab-card [collabData] = \"collab\"></collab-card>\n            </div>      \n          </ng-container>\n        </ng-template>\n      </mat-tab>\n\n      <mat-tab label=\"Recommended Collabs\">\n        <ng-template matTabContent>\n            Recommended Collabs\n        </ng-template>\n      </mat-tab>\n\n      <mat-tab label=\"My Collabs\">\n        <ng-template matTabContent>\n            My Collabs\n            \n\n        </ng-template>\n      </mat-tab>\n\n   </mat-tab-group>\n     \n          \n            \n"
 
 /***/ }),
 
@@ -122,31 +169,6 @@ var HomeComponent = /** @class */ (function () {
     // return array of JSON OBJECTS
     HomeComponent.prototype.collabDetails = function () {
         this.collabService.collabDetails().subscribe(function (data) {
-            console.log(data[0].owner);
-            console.log(data[0].members);
-            //write a for loop to inter arrar
-            //for(int i = 0 ; data.length ; i ++){
-            /**
-       * id = data[i].owner
-       * owner = data[i].
-       * size = data[i]
-       * members = data[i]
-       * date   = data[i]
-       * duration =  data[i]
-       * location = data[i]
-       * status = data[i]
-       * title = data[i]
-       * description = data[i]
-       * classes = data[i]
-       * skills = data[i]
-       * applicants = data[i]
-       *  */
-            //}
-        });
-    };
-    HomeComponent.prototype.AllCollabs = function () {
-        this.collabService.allCollabs().subscribe(function (data) {
-            console.log(data);
         });
     };
     HomeComponent.prototype.activeCollabs = function () {
@@ -158,10 +180,6 @@ var HomeComponent = /** @class */ (function () {
         this.collabService.myCollabs().subscribe(function (data) {
             console.log(data);
         });
-    };
-    HomeComponent.prototype.logOut = function () {
-        localStorage.removeItem('accessToken');
-        this.router.navigate(['/login']);
     };
     HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
@@ -176,172 +194,6 @@ var HomeComponent = /** @class */ (function () {
     return HomeComponent;
 }());
 
-// testuser1@myhunter.cuny.edu
-[
-    {
-        "_id": {
-            "$oid": "5ca82697e1fe6800040efb48"
-        },
-        "owner": "testuser1@myhunter.cuny.edu",
-        "size": 5,
-        "members": [
-            "testuser1@myhunter.cuny.edu",
-            "testuser99@myhunter.cuny.edu",
-            "jane.doe99@myhunter.cuny.edu",
-            "john.doe99@myhunter.cuny.edu",
-            "frank.white@myhunter.cuny.edu"
-        ],
-        "date": 1560465000955,
-        "duration": 259200000,
-        "location": "MLH NYC Headquarters",
-        "status": true,
-        "title": "MLH Hackathon",
-        "description": "looking for 4 more people to attend hackathon as a group",
-        "classes": [
-            "Any"
-        ],
-        "skills": [
-            "C++",
-            "Java",
-            "Python",
-            "Firebase"
-        ],
-        "applicants": []
-    },
-    {
-        "_id": {
-            "$oid": "5ca826e6e1fe6800040efb49"
-        },
-        "owner": "jane.doe99@myhunter.cuny.edu",
-        "size": 6,
-        "members": [
-            "jane.doe99@myhunter.cuny.edu",
-            "john.doe99@myhunter.cuny.edu",
-            "frank.white@myhunter.cuny.edu",
-            "testuser1@myhunter.cuny.edu"
-        ],
-        "date": 1555171800432,
-        "duration": 5184000000,
-        "location": "Anywhere",
-        "status": true,
-        "title": "Web App for Portfolio",
-        "description": "looking to discuss/build a web app for a portfolio",
-        "classes": [
-            "CS 335",
-            "Practical Web Development"
-        ],
-        "skills": [
-            "C++",
-            "Python",
-            "Java",
-            "JavaScript",
-            "HTML",
-            "CSS"
-        ],
-        "applicants": []
-    },
-    {
-        "_id": {
-            "$oid": "5ca82726e1fe6800040efb4a"
-        },
-        "owner": "testuser1@myhunter.cuny.edu",
-        "size": 30,
-        "members": [
-            "testuser1@myhunter.cuny.edu",
-            "testuser99@myhunter.cuny.edu",
-            "john.doe99@myhunter.cuny.edu",
-            "frank.white@myhunter.cuny.edu"
-        ],
-        "date": 1557939600823,
-        "duration": 345600000,
-        "location": "Hunter 6th Floor Library",
-        "status": true,
-        "title": "CS 235 section 3 Final review",
-        "description": "study for finals exam, all are welcome",
-        "classes": [
-            "CS 235"
-        ],
-        "skills": [
-            "C++"
-        ],
-        "applicants": []
-    },
-    {
-        "_id": {
-            "$oid": "5ca82761e1fe6800040efb4b"
-        },
-        "owner": "jane.doe99@myhunter.cuny.edu",
-        "size": 20,
-        "members": [
-            "jane.doe99@myhunter.cuny.edu",
-            "john.doe99@myhunter.cuny.edu",
-            "frank.white@myhunter.cuny.edu",
-            "testuser1@myhunter.cuny.edu"
-        ],
-        "date": 1555018200807,
-        "duration": 7776000000,
-        "location": "Hunter North 10th floor, walk towards the labs and make a right",
-        "status": true,
-        "title": "Hunter ASM Weekly Meeting",
-        "description": "come join fellow CS students for weekly meetings from 5:30 PM to 7:30 PM",
-        "classes": [
-            "Any"
-        ],
-        "skills": [
-            "Any"
-        ],
-        "applicants": []
-    },
-    {
-        "_id": {
-            "$oid": "5ca827c2e1fe6800040efb4c"
-        },
-        "owner": "testuser99@myhunter.cuny.edu",
-        "size": 4,
-        "members": [
-            "testuser99@myhunter.cuny.edu",
-            "jane.doe99@myhunter.cuny.edu",
-            "john.doe99@myhunter.cuny.edu",
-            "frank.white@myhunter.cuny.edu"
-        ],
-        "date": 1557271500378,
-        "duration": 259200000,
-        "location": "127 Madison Avenue",
-        "status": true,
-        "title": "Intro to Python meetup",
-        "description": "looking for smal group of people to attend a Python intro meetup",
-        "classes": [
-            "Any"
-        ],
-        "skills": [
-            "Any"
-        ],
-        "applicants": []
-    },
-    {
-        "_id": {
-            "$oid": "5ca82c35e1fe6800040efb4f"
-        },
-        "owner": "frank.white@myhunter.cuny.edu",
-        "size": 1,
-        "members": [
-            "frank.white@myhunter.cuny.edu"
-        ],
-        "date": 1554546780684,
-        "duration": 3801600000,
-        "location": "test",
-        "status": true,
-        "title": "test edits",
-        "description": "test",
-        "classes": [
-            "123"
-        ],
-        "skills": [
-            "123"
-        ],
-        "applicants": []
-    }
-];
 
 
 /***/ }),
@@ -403,16 +255,21 @@ var HomeRoutingModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeModule", function() { return HomeModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/list */ "./node_modules/@angular/material/esm5/list.es5.js");
-/* harmony import */ var _collab_list_home_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./collab-list/home.component */ "./src/app/home/collab-list/home.component.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _home_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./home-routing.module */ "./src/app/home/home-routing.module.ts");
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
-/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/esm5/card.es5.js");
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/esm5/icon.es5.js");
-/* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/tabs */ "./node_modules/@angular/material/esm5/tabs.es5.js");
-/* harmony import */ var _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./collab-card/collab-card.component */ "./src/app/home/collab-card/collab-card.component.ts");
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/scrolling */ "./node_modules/@angular/cdk/esm5/scrolling.es5.js");
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/esm5/table.es5.js");
+/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/list */ "./node_modules/@angular/material/esm5/list.es5.js");
+/* harmony import */ var _collab_list_home_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./collab-list/home.component */ "./src/app/home/collab-list/home.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _home_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home-routing.module */ "./src/app/home/home-routing.module.ts");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/esm5/card.es5.js");
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/esm5/icon.es5.js");
+/* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/tabs */ "./node_modules/@angular/material/esm5/tabs.es5.js");
+/* harmony import */ var _angular_material_expansion__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/expansion */ "./node_modules/@angular/material/esm5/expansion.es5.js");
+/* harmony import */ var _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./collab-card/collab-card.component */ "./src/app/home/collab-card/collab-card.component.ts");
+
+
 
 
 
@@ -425,21 +282,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var HomeModule = /** @class */ (function () {
     function HomeModule() {
     }
     HomeModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
-            declarations: [_collab_list_home_component__WEBPACK_IMPORTED_MODULE_2__["HomeComponent"], _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_10__["CollabCardComponent"]],
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["NgModule"])({
+            declarations: [_collab_list_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"], _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_13__["CollabCardComponent"]],
             imports: [
-                _angular_common__WEBPACK_IMPORTED_MODULE_4__["CommonModule"],
-                _home_routing_module__WEBPACK_IMPORTED_MODULE_5__["HomeRoutingModule"],
+                _angular_common__WEBPACK_IMPORTED_MODULE_6__["CommonModule"],
+                _home_routing_module__WEBPACK_IMPORTED_MODULE_7__["HomeRoutingModule"],
                 //Angular Material
-                _angular_material_tabs__WEBPACK_IMPORTED_MODULE_9__["MatTabsModule"],
-                _angular_material_card__WEBPACK_IMPORTED_MODULE_7__["MatCardModule"],
-                _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"],
-                _angular_material_button__WEBPACK_IMPORTED_MODULE_6__["MatButtonModule"],
-                _angular_material_list__WEBPACK_IMPORTED_MODULE_1__["MatListModule"]
+                _angular_material_tabs__WEBPACK_IMPORTED_MODULE_11__["MatTabsModule"],
+                _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCardModule"],
+                _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__["MatIconModule"],
+                _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"],
+                _angular_material_list__WEBPACK_IMPORTED_MODULE_3__["MatListModule"],
+                _angular_material_expansion__WEBPACK_IMPORTED_MODULE_12__["MatExpansionModule"],
+                _angular_material_table__WEBPACK_IMPORTED_MODULE_2__["MatTableModule"],
+                _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["ScrollDispatchModule"]
             ]
         })
     ], HomeModule);
@@ -494,6 +355,26 @@ var CollabsService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], CollabsService);
     return CollabsService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/models/collab.model.ts":
+/*!***********************************************!*\
+  !*** ./src/app/shared/models/collab.model.ts ***!
+  \***********************************************/
+/*! exports provided: CollabModel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CollabModel", function() { return CollabModel; });
+var CollabModel = /** @class */ (function () {
+    function CollabModel() {
+    }
+    return CollabModel;
 }());
 
 
