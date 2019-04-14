@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from '@angular
 import { UserModel } from '../models/user.model';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs';
+import { Requirements } from 'src/app/home/collab-card/collab-card.component';
 
 
 @Injectable()
@@ -41,43 +42,65 @@ export class UserService {
     return this.http.put(requestedUrl , body, {headers : reqHeader});
   }
 
-public isAuthenticated() : boolean {
-  return localStorage.getItem('accessToken') !== null;
-}
+  public isAuthenticated() : boolean {
+    return localStorage.getItem('accessToken') !== null;
+  }
  //url + json authentication
  getUserdetails(): Observable<UserModel[]> {
   return this.http.get<UserModel[]>( this.rootUrl +"/user");
-}
-getPicture(){
-  // user/profilePicture
-  return this.http.get( this.rootUrl +"/user/profilePicture");
-}
-getSkill(){ 
-  return this.http.get( this.rootUrl +"/user/skills");
-}
+  }
 
-//search/skills
+  getPicture(){
+    // user/profilePicture
+    return this.http.get( this.rootUrl +"/user/profilePicture");
+  }
+
+  getUserSkills(userName: string) { 
+    return this.http.get( this.rootUrl + "/user/skills/" + userName).toPromise();
+  }
+
+  getUserClasses(userName: string){ 
+    return this.http.get( this.rootUrl +"/user/classes/" + userName).toPromise();
+  }
+
+  async getUserSkillsAndClasses(username: string){
+    
+    let xAxisReq: Array<string> = [];
+    let classes: string[];
+    let skills: string[];
+
+    await this.getUserSkills(username).then(function(result){
+      xAxisReq = result["skills"];
+    });
+
+    await this.getUserClasses(username).then(function(result){
+      classes = result["classes"];
+    });
+    
+    
+    /*
+    for(let classTaken of classes){
+        xAxisReq.push({
+        skillOrClass: classTaken,
+        type: "class"
+      });
+    }
+
+    for(let skill of skills){
+      xAxisReq.push({
+      skillOrClass: skill,
+      type: "skill"
+    });
+  }
+  */
+
+    return xAxisReq;
+  }
+
 searchSkills(constrain: string): Observable<any>{
   let params = new HttpParams().set("query",constrain);
   return this.http.get(this.rootUrl +"/search/skills",{params: params});
 }
 
-getClasses(){ 
-  return this.http.get( this.rootUrl +"/user/classes");
-}
-
-
-
-
-
-//___________POST_________________
-
-// /collab/deleteCollab
-///collab/editCollab
-///collab/joinCollab 
-//collab/leaveCollab 
-///collab/getRecommendedCollabs
-///messaging/getMessages 
-///messaging/sendMessage 
 
 }

@@ -7,20 +7,24 @@
     <mat-accordion>
         <h4 class="description"> {{ collabData.description }} </h4>
         
-        <mat-expansion-panel (opened)="panelOpenState = true"
+        
+        <!-- Event Binding: In this case the event is (opened) -->
+        <mat-expansion-panel 
+                       (opened)="panelOpenState = true && makeTable()"
                        (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
           <mat-panel-title>
             Skills/Classes Wanted.
           </mat-panel-title>
           <mat-panel-description>
-            Currently I am {{panelOpenState ? 'open' : 'closed'}}
           </mat-panel-description>
           </mat-expansion-panel-header>
 
-            <div *ngFor="let skill of getAllRequired()">
-              <p>{{ skill }} </p> 
-            </div>
+            <ng-container class="table-container">
+              <div class="table">
+                <collab-table [table] = "table" [xAxisReq] = "xAxisReq"></collab-table>
+              </div>
+            </ng-container>
           
           
         </mat-expansion-panel>
