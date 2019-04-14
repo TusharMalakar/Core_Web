@@ -514,29 +514,47 @@ var UserService = /** @class */ (function () {
         return this.http.get(this.rootUrl + "/user/profilePicture");
     };
     UserService.prototype.getUserSkills = function (userName) {
-        return this.http.get(this.rootUrl + "/user/skills/" + userName);
+        return this.http.get(this.rootUrl + "/user/skills/" + userName).toPromise();
     };
     UserService.prototype.getUserClasses = function (userName) {
-        return this.http.get(this.rootUrl + "/user/classes/" + userName);
+        return this.http.get(this.rootUrl + "/user/classes/" + userName).toPromise();
     };
     UserService.prototype.getUserSkillsAndClasses = function (username) {
-        var xAxisReq = [];
-        var skills;
-        var classes;
-        this.getUserSkills(username)
-            .subscribe(function (data) { skills = data; });
-        this.getUserClasses(username)
-            .subscribe(function (data) { classes = data; });
-        console.log(skills);
-        console.log(classes);
-        for (var _i = 0, classes_1 = classes; _i < classes_1.length; _i++) {
-            var classTaken = classes_1[_i];
-            xAxisReq.push({
-                skillOrClass: classTaken,
-                type: "class"
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var xAxisReq, classes, skills;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        xAxisReq = [];
+                        return [4 /*yield*/, this.getUserSkills(username).then(function (result) {
+                                xAxisReq = result["skills"];
+                            })];
+                    case 1:
+                        _a.sent();
+                        return [4 /*yield*/, this.getUserClasses(username).then(function (result) {
+                                classes = result["classes"];
+                            })];
+                    case 2:
+                        _a.sent();
+                        /*
+                        for(let classTaken of classes){
+                            xAxisReq.push({
+                            skillOrClass: classTaken,
+                            type: "class"
+                          });
+                        }
+                    
+                        for(let skill of skills){
+                          xAxisReq.push({
+                          skillOrClass: skill,
+                          type: "skill"
+                        });
+                      }
+                      */
+                        return [2 /*return*/, xAxisReq];
+                }
             });
-        }
-        return xAxisReq;
+        });
     };
     UserService.prototype.searchSkills = function (constrain) {
         var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set("query", constrain);
