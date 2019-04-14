@@ -16,9 +16,9 @@ export interface Requirements{
 export class CollabCardComponent implements OnInit {
 
   @Input() collabData: CollabModel;
-  table: Array<TableBuilder> = [];
-  
+  table: Array<TableBuilder> = [];  
   xAxisReq: Array<string> = [];
+  alreadyBuilt: boolean = false;
   
 
   constructor(private userService: UserService) {}
@@ -31,7 +31,11 @@ export class CollabCardComponent implements OnInit {
   async: Will allow us to do await functions
   */
   async makeTable(){
-    console.log(this.collabData._id["$oid"]);
+
+    if(this.alreadyBuilt){
+
+    } else {
+    this.alreadyBuilt = true;
     //Will store the list of users.
     let yAxisUsers : string[];
 
@@ -51,6 +55,8 @@ export class CollabCardComponent implements OnInit {
         this.table.push(tableRow);
         //console.log(tableRow);
      }
+    }
+    
   }
 
   //WIll check if a user knows skill or class, from the list of classes and skills that a user knows
