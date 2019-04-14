@@ -14,6 +14,7 @@ import { CollabModel } from 'src/app/shared/models/collab.model';
 export class HomeComponent implements OnInit {
     userData: UserModel[];
     collabData: CollabModel[];
+    myCollabData : CollabModel[];
 
   constructor(
       private userService : UserService,
@@ -21,6 +22,8 @@ export class HomeComponent implements OnInit {
       private collabService : CollabsService)
        {
         this.collabService.allCollabs().subscribe ((data : CollabModel[] )  => this.collabData = data);
+        //this.collabService.myCollabs().subscribe ((data : CollabModel[])  =>this.myCollabData = data);
+        this.collabService.myCollabs().subscribe(data => console.log(data) )
         }
 
   ngOnInit() {
@@ -85,6 +88,7 @@ export class HomeComponent implements OnInit {
      });
   }
 
+  
 
 
     logOut(){

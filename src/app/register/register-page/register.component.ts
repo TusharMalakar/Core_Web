@@ -1,3 +1,4 @@
+import { CollabsService } from './../../shared/dbAccess/collabs.service';
 import { UserService } from '../../shared/dbAccess/user.service';
 import { Component , OnInit} from '@angular/core';
 import {Router } from '@angular/router';
@@ -18,6 +19,7 @@ export class RegisterComponent implements OnInit{
 
   isRegiError : boolean;
   constructor(
+    private collabService : CollabsService,
     private userService : UserService,
     private router : Router,
     private formBuilder: FormBuilder) 
@@ -70,6 +72,9 @@ export class RegisterComponent implements OnInit{
     }
 }
 
+createCollab(){
+  this.collabService.CreateCollab("", 29, [], 4/13/2019, 5, "rego park", true, "test","test", ["test", "test2"],["test","test"], ["test", 'test2'])
+}
 
 get username(){
   return this.form.get('username');
