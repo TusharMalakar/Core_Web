@@ -17,6 +17,7 @@ export class CollabCardComponent implements OnInit {
 
   @Input() collabData: CollabModel;
   table: Array<TableBuilder> = [];
+  
   xAxisReq: Array<string> = [];
   
 
@@ -30,6 +31,7 @@ export class CollabCardComponent implements OnInit {
   async: Will allow us to do await functions
   */
   async makeTable(){
+    console.log(this.collabData._id["$oid"]);
     //Will store the list of users.
     let yAxisUsers : string[];
 
