@@ -49,9 +49,34 @@ public isAuthenticated() : boolean {
  getUserdetails(): Observable<UserModel[]> {
   return this.http.get<UserModel[]>( this.rootUrl +"/user");
 }
-getPicture(){
+//download profile-picture as Bold file
+getPicture(): Observable <Blob>{
   // user/profilePicture
-  return this.http.get( this.rootUrl +"/user/profilePicture");
+  return this.http.get( this.rootUrl +"/user/profilePicture",  { responseType: 'blob' });
+}
+//Convert Bolb file into picture
+imageToShow: any;
+createImageFromBlob(image: Blob) {
+   let reader = new FileReader();
+   reader.addEventListener("load", () => {
+      this.imageToShow = reader.result;
+   }, false);
+
+   if (image) {
+      reader.readAsDataURL(image);
+   }
+}
+//picture is ready to display
+isImageLoading : boolean;
+getImageFromService() {
+  this.isImageLoading = true;
+  this.getPicture().subscribe(data => {
+    this.createImageFromBlob(data);
+    console.log(data)
+    this.isImageLoading = false;
+    console.log(data)
+    return data
+  })
 }
 
 getSkill(){ 

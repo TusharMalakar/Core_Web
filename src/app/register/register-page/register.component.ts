@@ -1,3 +1,4 @@
+import { CollabModel } from 'src/app/shared/models/collab.model';
 import { CollabsService } from './../../shared/dbAccess/collabs.service';
 import { UserService } from '../../shared/dbAccess/user.service';
 import { Component , OnInit} from '@angular/core';
@@ -72,6 +73,25 @@ export class RegisterComponent implements OnInit{
     }
 }
 
+
+get username(){
+  return this.form.get('username');
+}
+
+get password(){
+  return this.form.get('password');
+}
+
+get password2(){
+  return this.form.get('password2');
+}
+
+
+// private id;
+getCollabID(){
+  return CollabModel[0];
+}
+
 createCollab(){
   this.collabService.CreateCollab("", 29, [], 4/13/2019, 5, "rego park", true, "test","test", ["test", "test2"],["test","test"], ["test", 'test2'])
 }
@@ -90,34 +110,18 @@ updateuser(){
 sendMessage(){
   this.collabService.sendMessage("what's up ", "jane.doe99@myhunter.cuny.edu")
 }
-//join collab
-join(){
-  this.collabService.joinCollab("5ca826e6e1fe6800040efb49","new-user")
-}
-
-//leave a collab by id
-leave(){
-  this.collabService.leaveCollab("5ca826e6e1fe6800040efb49","new-user")
-}
 
 updateSkills(){
   this.userService.updateSkill("new-skill");
 }
 
-
-
-get username(){
-  return this.form.get('username');
+getImageFromService(){
+   this.userService.getImageFromService();
 }
 
-get password(){
-  return this.form.get('password');
-}
 
-get password2(){
-  return this.form.get('password2');
-}
 
+private profilePicture;
 
 
 }

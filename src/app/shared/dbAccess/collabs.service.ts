@@ -14,7 +14,7 @@ export class CollabsService {
 
   readonly rootUrl = 'https://huntercollabapi.herokuapp.com';
   constructor(private http: HttpClient) { }
-
+  private collabID;
   //collab/getCollabDetails
   collabDetails(){ 
     return this.http.get( this.rootUrl +"/collab/getCollabDetails");
@@ -55,6 +55,7 @@ export class CollabsService {
     return this.http.post(this.rootUrl + "/collab/createCollab", body)
     .subscribe (data => console.log(data) )
   }
+
   //join collab by id
   joinCollab(id, username){
     const body: CollabModel2 = {
@@ -73,6 +74,25 @@ leaveCollab(id, username){
   }
   return this.http.post(this.rootUrl + "/collab/leaveCollab", body)
   .subscribe (data => console.log(data) )
+}
+//edit collab
+//"_id", "owner", "size", "members", "data", "duration", "location", "status", "title", "description", "classes", "skills", "applicants".
+editCollab(id, owner, size, member, data, duration, location, status,title, description, classes,skills, applicants){
+  const body: CollabModel2 = {
+    owner : owner,
+    size :size,
+    members:member,
+    //date :'',
+    duration :duration,
+    location :location,
+    status :status,
+    title:title,
+    description:description,
+    classes:classes,
+    skills:skills,
+    applicants:applicants 
+  }
+
 }
 
   //_______________________IN-Progress__________________
