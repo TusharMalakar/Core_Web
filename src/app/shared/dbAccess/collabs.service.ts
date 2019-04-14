@@ -28,6 +28,10 @@ export class CollabsService {
     return this.http.get( this.rootUrl +"/messaging/myConvos");
   }
 
+  getCollabs(collabType: string){
+    return this.http.get( this.rootUrl + "/collab/" + collabType);
+  }
+
 
 }
 
