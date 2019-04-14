@@ -1,9 +1,15 @@
 <mat-card>
-  <mat-card-header>
+  <mat-card-header >
+
     <mat-card-title> 
+
+      <mat-grid-list  cols="2" rowHeight="4:1">
+        <mat-grid-tile>{{collabData.title}}</mat-grid-tile>
+        <mat-grid-tile><mat-icon>group</mat-icon> : {{collabData.members.length}} / {{ collabData.size}}</mat-grid-tile>
+      </mat-grid-list>
       
-      <h4>{{collabData.title}}     <mat-icon>group</mat-icon>{{collabData.members.length}} / {{ collabData.size}}</h4>
     </mat-card-title>
+
   </mat-card-header>
   <mat-card-content>
     <mat-accordion>
