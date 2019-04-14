@@ -1,3 +1,4 @@
+import { CollabModel } from './../models/collab.model';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { UserModel } from '../models/user.model';
@@ -52,8 +53,17 @@ getPicture(){
   // user/profilePicture
   return this.http.get( this.rootUrl +"/user/profilePicture");
 }
+
 getSkill(){ 
   return this.http.get( this.rootUrl +"/user/skills");
+}
+
+updateSkill(skills){
+  const body : UserModel ={
+    skills : skills
+  }
+  return this.http.post(this.rootUrl+"user/skills", body)
+  .subscribe(data => console.log(data))
 }
 
 //search/skills

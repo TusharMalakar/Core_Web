@@ -86,6 +86,25 @@ updateuser(){
     data => console.log(data)
   )
 }
+//sendmessage
+sendMessage(){
+  this.collabService.sendMessage("what's up ", "jane.doe99@myhunter.cuny.edu")
+}
+//join collab
+join(){
+  this.collabService.joinCollab("5ca826e6e1fe6800040efb49","new-user")
+}
+
+//leave a collab by id
+leave(){
+  this.collabService.leaveCollab("5ca826e6e1fe6800040efb49","new-user")
+}
+
+updateSkills(){
+  this.userService.updateSkill("new-skill");
+}
+
+
 
 get username(){
   return this.form.get('username');

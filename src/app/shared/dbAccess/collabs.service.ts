@@ -1,3 +1,4 @@
+import { MessageModel } from './../models/messageModel';
 import { UserModel } from './../models/user.model';
 import { CollabModel2 } from './../models/collab.model';
 import { HttpClient } from '@angular/common/http';
@@ -54,7 +55,25 @@ export class CollabsService {
     return this.http.post(this.rootUrl + "/collab/createCollab", body)
     .subscribe (data => console.log(data) )
   }
+  //join collab by id
+  joinCollab(id, username){
+    const body: CollabModel2 = {
+      id : id,
+      members : username
+    }
+    return this.http.post(this.rootUrl + "/collab/joinCollab", body)
+    .subscribe (data => console.log(data) )
+}
 
+//leave collab by id
+leaveCollab(id, username){
+  const body: CollabModel2 = {
+    id : id,
+    members : username
+  }
+  return this.http.post(this.rootUrl + "/collab/leaveCollab", body)
+  .subscribe (data => console.log(data) )
+}
 
   //_______________________IN-Progress__________________
 
@@ -79,8 +98,18 @@ export class CollabsService {
     return this.http.put(this.rootUrl + "/user", body)
   }
   
+  //messaging/sendMessage (POST)
+  sendMessage (message, recipient){
+    const body : MessageModel ={
+      message : message,
+      recipient : recipient
+    }
+    return this.http.post(this.rootUrl + "/messaging/sendMessage", body)
+    .subscribe(data => console.log (data))
+  }
 
 
+  
 
 
 
