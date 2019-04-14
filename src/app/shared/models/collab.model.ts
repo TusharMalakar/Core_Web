@@ -1,5 +1,5 @@
 export class CollabModel {
-    public id           ?: number;
+    public _id          ?: {};
     public owner        ?: string;
     public size         ?: number;
     public date         ?: number;
@@ -12,5 +12,5 @@ export class CollabModel {
     public skills       ?: string[];
     public applicants   ?: string[];
     public members      ?: string[];
-    public collabId     ?: string;
+    
 }
