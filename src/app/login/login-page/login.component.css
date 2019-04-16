@@ -31,3 +31,12 @@
   margin-right: auto;  
   
 }
+
+input.form-control-password::-webkit-outer-spin-button,
+input.form-control-password::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.form-control-password {
+  -moz-appearance: textfield;
+}
