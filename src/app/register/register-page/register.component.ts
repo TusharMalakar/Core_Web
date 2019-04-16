@@ -15,6 +15,8 @@ export class RegisterComponent implements OnInit{
   
   user: RegisterModel;
   form: FormGroup;
+  hide1: boolean;
+  hide2: boolean;
 
   isRegiError : boolean;
   constructor(
@@ -23,12 +25,15 @@ export class RegisterComponent implements OnInit{
     private formBuilder: FormBuilder) 
     {
       this.user = new RegisterModel();
+      this.hide1 = true;
+      this.hide2 = true;
      }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
        username: [this.user.username, [
-        Validators.required
+        Validators.required, 
+        Validators.email
       ]],
        password: [this.user.password, [
         Validators.required,

@@ -24,6 +24,7 @@
         <div *ngIf="username.touched && username.invalid" 
               class="alert alert-danger">
               <mat-error *ngIf="username.errors.required">Email is <strong>Required!</strong></mat-error>
+              <mat-error *ngIf="username.errors.email">Invalid <strong>Email!</strong></mat-error>
         </div>
       </div>
       
@@ -37,12 +38,16 @@
                   matInput
                   id="password" 
                   type="text" 
-                  class="form-control"
-                  placeholder="Password...">
+                  class="form-control-password"
+                  placeholder="Password..."
+                  [type] = "hide1 ? 'password' : 'text' "
+                  autocomplete="off">
+                <mat-icon matSuffix (click) = "hide1 = !hide1">{{ hide1 ? 'visibility_of' : 'visibility' }}</mat-icon>
           </mat-form-field>
           <div *ngIf="password.touched && password.invalid" 
                 class="alert alert-danger">
                 <mat-error *ngIf="password.errors.required">Password <strong>Required!</strong></mat-error>
+                <mat-error *ngIf="password.errors.minlength">Password must be of size {{ password.errors.minlength.requiredLength }}!</mat-error>
           </div>
       </div>
 
@@ -56,22 +61,27 @@
                   matInput
                   id="password2" 
                   type="text" 
-                  class="form-control"
-                  placeholder="Confirm Password...">
+                  class="form-control-password"
+                  placeholder="Confirm Password..."
+                  [type] = "hide2 ? 'password' : 'text' "
+                  autocomplete="off">
+                  <mat-icon matSuffix (click) = "hide2 = !hide2">{{ hide2 ? 'visibility_of' : 'visibility' }}</mat-icon>
           </mat-form-field>
           <div *ngIf="password2.touched && password2.invalid" 
                 class="alert alert-danger">
                 <mat-error *ngIf="password2.errors.required">Password <strong>Required!</strong></mat-error>
+                <mat-error *ngIf="password.errors.minlength">Password must be of size {{ password.errors.minlength.requiredLength }}!</mat-error>
           </div>
       </div>
 
         <div class="form-container">
             <button class="form-button" mat-raised-button color = "primary" type="submit" [disabled] = "!form.valid">Register</button>
-            <br>
-            <button class="form-button"  mat-raised-button color = "primary" routerLink="/login">Login</button>
         </div>      
 
     </form>
+        <div class="form-container">
+            <button class="form-button"  mat-raised-button color = "primary" routerLink="/login">Login</button>
+        </div> 
 
   </div>
 </div>
