@@ -54,30 +54,6 @@ getPicture(): Observable <Blob>{
   // user/profilePicture
   return this.http.get( this.rootUrl +"/user/profilePicture",  { responseType: 'blob' });
 }
-//Convert Bolb file into picture
-imageToShow: any;
-createImageFromBlob(image: Blob) {
-   let reader = new FileReader();
-   reader.addEventListener("load", () => {
-      this.imageToShow = reader.result;
-   }, false);
-
-   if (image) {
-      reader.readAsDataURL(image);
-   }
-}
-//picture is ready to display
-isImageLoading : boolean;
-getImageFromService() {
-  this.isImageLoading = true;
-  this.getPicture().subscribe(data => {
-    this.createImageFromBlob(data);
-    console.log(data)
-    this.isImageLoading = false;
-    console.log(data)
-    return data
-  })
-}
 
 getSkill(){ 
   return this.http.get( this.rootUrl +"/user/skills");
@@ -116,6 +92,15 @@ updateUserProfile(github,linkedin, skills, classes){
     classes :classes
   }
   return this.http.post(this.rootUrl +"/user", body)
+}
+
+updateUserSkill(skills){
+  const body : UserModel ={
+    skills  :skills   
+  }
+  
+  return this.http.post(this.rootUrl +"/user/skills", body)  
+
 }
 // /collab/deleteCollab
 ///collab/editCollab

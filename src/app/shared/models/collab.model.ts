@@ -16,6 +16,8 @@ export class CollabModel {
     public collabId     ?: string;
 }
 
+
+//this is a model to create new collab
 export class CollabModel2 {
     public id           ?: number;
     public owner        ?: string;

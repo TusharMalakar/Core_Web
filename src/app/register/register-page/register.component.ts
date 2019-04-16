@@ -86,41 +86,67 @@ get password2(){
   return this.form.get('password2');
 }
 
-// private id;
-getCollabID(){
-  return CollabModel[0];
-}
 
 createCollab(){
   this.collabService.CreateCollab("", 29, [], 4/13/2019, 5, "rego park", true, "test","test", ["test", "test2"],["test","test"], ["test", 'test2'])
 }
-//not implemented yet
+
+//updateUserProfile(github,linkedin, skills, classes)
+updateUser(){
+  this.userService.updateUserProfile("myGit", "myLinkedIn",["c","r","new"], ["e"]).subscribe(
+    data => console.log(data));
+}
+
+
+updateSkills(){
+  this.userService.updateUserSkill(["c","rNew","new","t"]).subscribe(
+    data => console.log(data));
+}
+
+
+
+//not implemented yet--------------------------------------
+
+addSkills(){
+  return
+}
+addClasses(){
+  return
+}
+
+
+
 recomendedCollab(){
   this.collabService.recomendedCollab(["c"],["r"]).subscribe(data =>
     console.log(data))
-}
-///user
-updateuser(){
-  this.collabService.updateUser("www.mygithub.com","www.mylimkedin.com",["c","R"], ["none"]).subscribe(
-    data => console.log(data)
-  )
 }
 //sendmessage
 sendMessage(){
   this.collabService.sendMessage("what's up ", "jane.doe99@myhunter.cuny.edu")
 }
 
-updateSkills(){
-  this.userService.updateSkill("new-skill");
-}
+//Convert Bolb file into picture
+imageToShow: any;
+createImageFromBlob(image: Blob) {
+   let reader = new FileReader();
+   reader.addEventListener("load", () => {
+      this.imageToShow = reader.result;
+   }, false);
 
-getImageFromService(){
-   this.userService.getImageFromService();
+   if (image) {
+      reader.readAsDataURL(image);
+   }
 }
-//updateUserProfile(github,linkedin, skills, classes)
-updateUser(){
-  this.userService.updateUserProfile("myGit", "myLinkedIn",["c","r","a"], ["e"]).subscribe(
-    data => console.log(data));
+//picture is ready to display
+//isImageLoading : boolean;
+getImageFromService() {
+  //this.isImageLoading = true;
+  this.userService.getPicture().subscribe(data => {
+     this.createImageFromBlob(data);
+     //return myPicture;
+    //this.isImageLoading = false;
+    //console.log(data)
+  })
 }
 
 

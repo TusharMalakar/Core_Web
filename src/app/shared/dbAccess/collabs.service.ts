@@ -88,16 +88,6 @@ editCollab(id, owner, size, member, data, duration, location, status,title, desc
     classes ["r"];
     return this.http.get (this.rootUrl + "/collab/getRecommendedCollabs",skills)
   }
-  updateUser(github, linkedin, skills, classes){
-    const body : UserModel ={
-      username : '',
-      github  :github,
-      linkedin : linkedin,
-      skills :skills,
-      classes :classes
-    }
-    return this.http.put(this.rootUrl + "/user", body)
-  }
   
   //messaging/sendMessage (POST)
   sendMessage (message, recipient){
