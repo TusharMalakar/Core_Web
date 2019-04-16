@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
  
  user: LogInModel;
   form: FormGroup;
+  hide: boolean;
 
   isLoginError : boolean;
   constructor(private formBuilder: FormBuilder,
@@ -30,16 +31,17 @@ export class LoginComponent implements OnInit {
               private router : Router) 
   {
     this.user = new LogInModel();
+    this.hide = true;
    }
 
    ngOnInit(){
       this.form = this.formBuilder.group({
       username: [this.user.username, 
-        [Validators.required
+        [Validators.required, Validators.email
       ]],
       password: [this.user.password, [
         Validators.required,
-        Validators.minLength(6)
+        Validators.minLength(6),
       ]]
     });
   }
