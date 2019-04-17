@@ -9,6 +9,7 @@ import { RegisterModel } from '../../shared/models/register.model';
 //Needed to implement Reactive Forms
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { concat } from 'rxjs';
+import { exists } from 'fs';
 
 @Component({
   selector: 'app-register',
@@ -53,56 +54,29 @@ export class RegisterComponent implements OnInit{
       this.userService.getClasses().subscribe(
         data=> this.currentClasses=data
         )
-       
-        return this.currentClasses;
     }
-//it merge two skills
-merge(newSkills:string[]=["a"],previous:string[]={}=["b"]){
-//   let newSkills:string[] = ["a","b"]
-//  let previous:string[] = ["d","e"]
- if (newSkills.length != null){
-   for (let i =0 ; i<newSkills.length;i++){
-    previous.push(newSkills[i])
-   }
- }
- console.log(previous)
- return previous
-}
 
 
-  addskills() {
+//skill can be added but one at a time
+addskills() {
     //copying all the skills as object that are already exist
      this.userService.getSkill().subscribe(data=>this.currentSkills=data)
      let skills: string []  = this.currentSkills.skills;
-     console.log("current " , skills);
+     
      //taking values from input
     let newObject = Object.assign(this.username.value)
     //checking if the skill is already exist or not
      for(var iter in skills){
       if(this.username.value == skills[iter]){
           console.log(skills[iter]," already exits !")
+          return 0;
       }
-      else  var addedSkills = skills.concat(newObject)
      }
-    console.log(skills)
-    //parsing if the is multiple values, serpated by space
-    //and pushing to previous array and sending the post reques
-     //var str = newObject
-
-    //  let splitted:string =str.split(" " , str.length)   
-    //  console.log("splitted ", splitted)
-    //  console.log("before adding new skill ", this.user)
-    //  let newL:string[]= this.merge(skills,splitted)
-    //  console.log("After additiion of skill ", newL)
-    //  for (let i=0; i < splitted.length ;i++){
-    //   skills.push(splitted[i])
-    //   console.log("After additiion of skill ", skills)
-    //  }
-     
-    // //console.log("Final skills after addintiion ", Skills)
-     this.userService.updateUserProfile("","",addedSkills,"").subscribe(
+    newObject= skills.concat(newObject)
+     this.userService.updateUserProfile("","",newObject,"").subscribe(
       data => console.log(data));
-      return   
+      this.getCurrentSkills()
+    
 }
 addClass() {    
  
