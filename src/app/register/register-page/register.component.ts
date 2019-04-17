@@ -8,6 +8,7 @@ import { RegisterModel } from '../../shared/models/register.model';
 
 //Needed to implement Reactive Forms
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
+import { concat } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -36,47 +37,99 @@ export class RegisterComponent implements OnInit{
    
     
     }
+    getUserDetails(){
+      this.userService.updateSkill()
+      console.log(this.userService.skill)
+    }
     
    
     getCurrentSkills(){
       this.userService.getSkill().subscribe((data:any)=>{
         this.currentSkills = data;
+        console.log("curr sk.. ",this.currentSkills)
       })
-      return this.currentSkills;
     }
+    getClasses(){
+      this.userService.getClasses().subscribe(
+        data=> this.currentClasses=data
+        )
+       
+        return this.currentClasses;
+    }
+//it merge two skills
+merge(newSkills:string[]=["a"],previous:string[]={}=["b"]){
+//   let newSkills:string[] = ["a","b"]
+//  let previous:string[] = ["d","e"]
+ if (newSkills.length != null){
+   for (let i =0 ; i<newSkills.length;i++){
+    previous.push(newSkills[i])
+   }
+ }
+ console.log(previous)
+ return previous
+}
 
 
-
-  addskills() {    
-    this.userService.getSkill().subscribe(
-      data=> this.currentSkills=data
-      )
-     this.user = Object.assign({}, this.form.value);
-     var arr: string  [] = new Array()
-     //arr.push(this.currentSkills)
-     var currentSkills = this.getCurrentSkills()
-     console.log("current " ,currentSkills);
-     arr.push(currentSkills)
-     var str = this.username.value
-     var splitted = str.split(" " , str.length)
-     console.log(splitted)
-     for (let i=0; i< splitted.length ;i++){
-
-      console.log(splitted[i])
-      arr.push(splitted[i])
+  addskills() {
+    //copying all the skills as object that are already exist
+     this.userService.getSkill().subscribe(data=>this.currentSkills=data)
+     let skills: string []  = this.currentSkills.skills;
+     console.log("current " , skills);
+     //taking values from input
+    let newObject = Object.assign(this.username.value)
+    //checking if the skill is already exist or not
+     for(var iter in skills){
+      if(this.username.value == skills[iter]){
+          console.log(skills[iter]," already exits !")
+      }
+      else  var addedSkills = skills.concat(newObject)
      }
+    console.log(skills)
+    //parsing if the is multiple values, serpated by space
+    //and pushing to previous array and sending the post reques
+     //var str = newObject
+
+    //  let splitted:string =str.split(" " , str.length)   
+    //  console.log("splitted ", splitted)
+    //  console.log("before adding new skill ", this.user)
+    //  let newL:string[]= this.merge(skills,splitted)
+    //  console.log("After additiion of skill ", newL)
+    //  for (let i=0; i < splitted.length ;i++){
+    //   skills.push(splitted[i])
+    //   console.log("After additiion of skill ", skills)
+    //  }
      
-    console.log(this.currentSkills)
-     this.userService.updateUserProfile("","",arr,"").subscribe(
+    // //console.log("Final skills after addintiion ", Skills)
+     this.userService.updateUserProfile("","",addedSkills,"").subscribe(
       data => console.log(data));
       return   
 }
-private currentSkills;
+addClass() {    
+ 
+   this.user = Object.assign({}, this.form.value);
+   var arr: string  [] = new Array()
+   //arr.push(this.currentSkills)
+   var currentClasses = this.getClasses()
+   console.log("current " ,currentClasses);
+   arr.push(currentClasses)
+   var str = this.username.value
+   var splitted = str.split(" " , str.length)
+   console.log(splitted)
+   for (let i=0; i< splitted.length ;i++){
 
-getUserDetails(){
-  this.userService.updateSkill()
-  console.log(this.userService.skill)
+    console.log(splitted[i])
+    arr.push(splitted[i])
+   }
+   
+  console.log(this.currentSkills)
+   this.userService.updateUserProfile("","","",arr).subscribe(
+    data => console.log(data));
+    return   
 }
+private currentSkills;
+private currentClasses;
+
+
 
 
 get username(){
@@ -115,10 +168,6 @@ updateSkills(){
 addSkills(){
   return
 }
-addClasses(){
-  return
-}
-
 
 
 recomendedCollab(){
