@@ -1,3 +1,4 @@
+import { CollabsService } from 'src/app/shared/dbAccess/collabs.service';
 import { UserService } from './../../shared/dbAccess/user.service';
 import { CollabModel } from './../../shared/models/collab.model';
 import { Component, OnInit, Input } from '@angular/core';
@@ -21,7 +22,8 @@ export class CollabCardComponent implements OnInit {
   alreadyBuilt: boolean = false;
   
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, 
+              private collabService: CollabsService) {}
 
   ngOnInit() {
     console.log(this.collabData);
@@ -95,6 +97,7 @@ export class CollabCardComponent implements OnInit {
     return xAxisReq;
   }
 
+  
 
 
   
