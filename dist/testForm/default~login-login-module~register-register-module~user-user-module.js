@@ -15,8 +15,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TextFieldModule", function() { return TextFieldModule; });
 /* harmony import */ var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/platform */ "./node_modules/@angular/cdk/esm5/platform.es5.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/cdk/coercion */ "./node_modules/@angular/cdk/esm5/coercion.es5.js");
+/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/coercion */ "./node_modules/@angular/cdk/esm5/coercion.es5.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 /**
  * @license
@@ -62,17 +62,17 @@ var AutofillMonitor = /** @class */ (function () {
     function (elementOrRef) {
         var _this = this;
         if (!this._platform.isBrowser) {
-            return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
+            return rxjs__WEBPACK_IMPORTED_MODULE_3__["EMPTY"];
         }
         /** @type {?} */
-        var element = elementOrRef instanceof _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] ? elementOrRef.nativeElement : elementOrRef;
+        var element = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_2__["coerceElement"])(elementOrRef);
         /** @type {?} */
         var info = this._monitoredElements.get(element);
         if (info) {
             return info.subject.asObservable();
         }
         /** @type {?} */
-        var result = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+        var result = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
         /** @type {?} */
         var cssClass = 'cdk-text-field-autofilled';
         /** @type {?} */
@@ -113,7 +113,7 @@ var AutofillMonitor = /** @class */ (function () {
      */
     function (elementOrRef) {
         /** @type {?} */
-        var element = elementOrRef instanceof _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] ? elementOrRef.nativeElement : elementOrRef;
+        var element = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_2__["coerceElement"])(elementOrRef);
         /** @type {?} */
         var info = this._monitoredElements.get(element);
         if (info) {
@@ -206,7 +206,7 @@ var CdkTextareaAutosize = /** @class */ (function () {
         this._elementRef = _elementRef;
         this._platform = _platform;
         this._ngZone = _ngZone;
-        this._destroyed = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+        this._destroyed = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
         this._enabled = true;
         /**
          * Value of minRows as of last resize. If the minRows has decreased, the
@@ -264,7 +264,7 @@ var CdkTextareaAutosize = /** @class */ (function () {
          * @return {?}
          */
         function (value) {
-            value = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_3__["coerceBooleanProperty"])(value);
+            value = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_2__["coerceBooleanProperty"])(value);
             // Only act if the actual value changed. This specifically helps to not run
             // resizeToFitContent too early (i.e. before ngAfterViewInit)
             if (this._enabled !== value) {
@@ -321,7 +321,7 @@ var CdkTextareaAutosize = /** @class */ (function () {
             this._initialHeight = this._textareaElement.style.height;
             this.resizeToFitContent();
             this._ngZone.runOutsideAngular(function () {
-                Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["fromEvent"])(window, 'resize')
+                Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["fromEvent"])(window, 'resize')
                     .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["auditTime"])(16), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(_this._destroyed))
                     .subscribe(function () { return _this.resizeToFitContent(true); });
             });
@@ -1073,7 +1073,9 @@ var MatInput = /** @class */ (function (_super) {
      * Focuses the input.
      * @return {?}
      */
-    function () { this._elementRef.nativeElement.focus(); };
+    function () {
+        this._elementRef.nativeElement.focus();
+    };
     /** Callback for the cases where the focused state of the input changes. */
     /**
      * Callback for the cases where the focused state of the input changes.
@@ -1086,7 +1088,7 @@ var MatInput = /** @class */ (function (_super) {
      * @return {?}
      */
     function (isFocused) {
-        if (isFocused !== this.focused && !this.readonly) {
+        if (isFocused !== this.focused && (!this.readonly || !isFocused)) {
             this.focused = isFocused;
             this.stateChanges.next();
         }

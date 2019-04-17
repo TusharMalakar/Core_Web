@@ -1,3 +1,4 @@
+import { CreateCollabComponent } from './create-collab/create-collab.component';
 import { CollabCardComponent } from './collab-card/collab-card.component';
 import { HomeComponent } from './collab-list/home.component';
 import { NgModule } from '@angular/core';
@@ -12,6 +13,10 @@ const routes: Routes = [
     path:"collabinfo",
     component: CollabCardComponent
   },
+  {
+    path:"createcollab",
+    component: CreateCollabComponent
+  }
 ];
 
 @NgModule({
