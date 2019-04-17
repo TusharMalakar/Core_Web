@@ -59,13 +59,6 @@ getSkill(){
   return this.http.get( this.rootUrl +"/user/skills");
 }
 
-updateSkill(skills){
-  const body : UserModel ={
-    skills : skills
-  }
-  return this.http.post(this.rootUrl+"user/skills", body)
-  .subscribe(data => console.log(data))
-}
 
 //search/skills
 searchSkills(constrain: string): Observable<any>{
@@ -96,12 +89,34 @@ updateUserProfile(github,linkedin, skills, classes){
 
 updateUserSkill(skills){
   const body : UserModel ={
-    skills  :skills   
+    github  :'',
+    linkedin:'',
+    skills  :skills,
+    classes :[]
   }
-  
-  return this.http.post(this.rootUrl +"/user/skills", body)  
+  console.log(body)
+  return this.http.post(this.rootUrl +"/user", body)
 
 }
+
+
+//      4/16/2019
+
+updateSkill(){
+  var currentSkills;
+  return this.http.get( this.rootUrl +"/user/skills")
+ .subscribe((data:any)=>{
+   this.skill=data;
+ })  
+}
+
+
+
+
+public skill;
+
+
+
 // /collab/deleteCollab
 ///collab/editCollab
 ///collab/joinCollab 

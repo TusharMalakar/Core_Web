@@ -1,3 +1,4 @@
+import { UserModel } from './../../shared/models/user.model';
 import { CollabModel } from 'src/app/shared/models/collab.model';
 import { CollabsService } from './../../shared/dbAccess/collabs.service';
 import { UserService } from '../../shared/dbAccess/user.service';
@@ -30,47 +31,51 @@ export class RegisterComponent implements OnInit{
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-       username: [this.user.username, [
-        Validators.required
-      ]],
-       password: [this.user.password, [
-        Validators.required,
-        Validators.minLength(6)
-      ]], 
-       password2: [this.user.password2, [
-        Validators.required,
-        Validators.minLength(6)
-      ]] 
-
+       username: this.user.username
     });
-    }
-  
-  onSubmit() {
-
-    this.user = Object.assign({}, this.form.value);
+   
     
-    if(this.user.password != this.user.password2){
-      alert("Password did not matche!");
     }
-    else
-    {
-      this.userService.registerUser(this.user.username , this.user.password)
-      .subscribe((data: any)  =>{
-            console.log ( data );
-            //storing json object to localStorage
-            localStorage.setItem('accessToken',data.token);
-
-            if(data.success){
-
-              this.router.navigate(['/home']);
-              console.log ( this.user.username + " registered"); 
-            }
-            else{ 
-                alert(data.error);
-                this.router.navigate(['/register']);
-            };
-        });
+    
+   
+    getCurrentSkills(){
+      this.userService.getSkill().subscribe((data:any)=>{
+        this.currentSkills = data;
+      })
+      return this.currentSkills;
     }
+
+
+
+  addskills() {    
+    this.userService.getSkill().subscribe(
+      data=> this.currentSkills=data
+      )
+     this.user = Object.assign({}, this.form.value);
+     var arr: string  [] = new Array()
+     //arr.push(this.currentSkills)
+     var currentSkills = this.getCurrentSkills()
+     console.log("current " ,currentSkills);
+     arr.push(currentSkills)
+     var str = this.username.value
+     var splitted = str.split(" " , str.length)
+     console.log(splitted)
+     for (let i=0; i< splitted.length ;i++){
+
+      console.log(splitted[i])
+      arr.push(splitted[i])
+     }
+     
+    console.log(this.currentSkills)
+     this.userService.updateUserProfile("","",arr,"").subscribe(
+      data => console.log(data));
+      return   
+}
+private currentSkills;
+
+getUserDetails(){
+  this.userService.updateSkill()
+  console.log(this.userService.skill)
 }
 
 
@@ -86,20 +91,20 @@ get password2(){
   return this.form.get('password2');
 }
 
-
 createCollab(){
   this.collabService.CreateCollab("", 29, [], 4/13/2019, 5, "rego park", true, "test","test", ["test", "test2"],["test","test"], ["test", 'test2'])
 }
 
 //updateUserProfile(github,linkedin, skills, classes)
 updateUser(){
-  this.userService.updateUserProfile("myGit", "myLinkedIn",["c","r","new"], ["e"]).subscribe(
+  this.userService.updateUserProfile("myGit", "myLinkedIn",["c++","java","rust"] ,["cs 235", "cs 335"]).subscribe(
     data => console.log(data));
 }
 
 
 updateSkills(){
-  this.userService.updateUserSkill(["c","rNew","new","t"]).subscribe(
+  console.log(this.addskills())
+  this.userService.updateUserSkill(this.addskills() ).subscribe(
     data => console.log(data));
 }
 
@@ -151,3 +156,4 @@ getImageFromService() {
 
 
 }
+

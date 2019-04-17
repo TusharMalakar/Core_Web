@@ -14,10 +14,35 @@
 
 <!--IN Progress-->
 <button (click) = "updateClasses()">updateClasses</button>
+<button (click) = "getUserDetails()">current user details</button>
+
 <button (click) = "sendMessage()">sendMessage</button>
 <button (click) = "recomendedCollab()">RecomendedCollab</button>
 
 
+<h1>test</h1><br><Br>
 
-
-
+    <div class = "medium-list">
+        <div class="list-viewer-wrapper">
+          <div class="list-header-title">add skills</div>
+            <!-- Error that will display if the entire form is not valid -->
+          
+          
+          <form [formGroup] = "form" (ngSubmit) = "addskills()">
+      
+                  <input 
+                      formControlName = "username"
+                      id="username" 
+                      placeholder="Enter Skills using space">
+                
+              <div class="form-container">
+                  <button class="form-button" mat-raised-button color = "primary" type="submit" >updateSkills</button>
+              </div>      
+      
+          </form>
+               
+      
+        </div>
+      </div>
+      
+      
