@@ -32,6 +32,29 @@ export class CollabsService {
     return this.http.get( this.rootUrl + "/collab/" + collabType);
   }
 
+  //______________POST_REQUEST____________
+
+  //create a new collab, wehre owner = currentUser
+  // size, date, duration, location, title, description, classes and skills are required
+  CreateCollab( owner, size, member, date, duration, location, status, title,description, classes,skills,applicants ){
+
+    const body: CollabModel = {
+      owner : owner,
+      size :size,
+      members:member,
+      date :date,
+      duration :duration,
+      location :location,
+      status :status,
+      title:title,
+      description:description,
+      classes:classes,
+      skills:skills,
+      applicants:applicants 
+    }
+    return this.http.post(this.rootUrl + "/collab/createCollab", body)
+    .subscribe (data => console.log(data) )
+  }
 
 }
 
