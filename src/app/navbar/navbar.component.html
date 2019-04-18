@@ -1,20 +1,20 @@
 <mat-drawer-container class="container" autosize >
     <!-- Will be triggered by (click) = "drawer.toggle()" -->
-    <!--
+    
     <mat-drawer #drawer class="sidenav">
             <button color="primary" mat-button routerLink="/home">Home</button>
     </mat-drawer>
-    -->
+    
     <div class="sidenav-content">
         <mat-toolbar color="primary">
             <mat-toolbar-row>
                 <!-- 
                   drawer.toggle(): will call #drawer and will bring the sidenav into view
-                
+                -->
                 <button mat-icon-button (click) = "drawer.toggle()">
                         <mat-icon>menu</mat-icon>
                 </button>
-                 -->
+                 
                 <button mat-button routerLink="/home">Hunter Collab</button>
                 <span class="spacer"></span>
                 <!--

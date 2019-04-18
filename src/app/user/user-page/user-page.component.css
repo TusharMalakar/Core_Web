@@ -44,7 +44,7 @@
    margin-top: 30px;
    color: rgba(0, 0, 0, .54);
    background: rgba(0, 0, 0, 0.062);
-  
+   height: 92%;
    padding-bottom: 25px;
    border-radius: 5px;
    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -88,9 +88,10 @@
   }
   .grid-item {
     grid-area: grid-item;
-    height: 95%;
+    height: 100%;
     margin-left: 25px;
     margin-right: 25px;
+    margin-bottom: 0px;
   }
 
   .mat-chip-list {
