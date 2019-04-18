@@ -97,8 +97,5 @@ updateUserSkill(skills){
 }
 
 // /collab/deleteCollab 
-///collab/getRecommendedCollabs
-///messaging/getMessages 
-///messaging/sendMessage 
-
+///collab/getRecommendedCollab
 }

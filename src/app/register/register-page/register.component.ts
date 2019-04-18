@@ -8,6 +8,8 @@ import {Router } from '@angular/router';
 
 //Needed to implement Reactive Forms
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
+import { ConversatioinsService } from 'src/app/shared/dbAccess/conversatioins.service';
+import { DataSource } from '@angular/cdk/table';
 
 @Component({
   selector: 'app-register',
@@ -26,7 +28,8 @@ export class RegisterComponent implements OnInit{
     private collabService : CollabsService,
     private userService : UserService,
     private router : Router,
-    private formBuilder: FormBuilder) 
+    private formBuilder: FormBuilder,
+    private messageService : ConversatioinsService) 
     {
       this.user = new UserModel()
       this.user2 = new UserModel()
@@ -107,8 +110,6 @@ addClass(){
 
    //if input class is not exist in the class obj concate new class to previous class
   newObject= classes.concat(newObject)
-  
-  
    this.userService.updateUserProfile("","","",newObject).subscribe(
     data => console.log(data));
 }
@@ -149,6 +150,16 @@ searchedClasses(){
     this.dbClasses=data;
   })
 }
+//sendmessage
+sendMessage(){
+  this.messageService.sendMessage_(["Hey hey man whats up "],  [ "testuser1@myhunter.cuny.edu","testuser99@myhunter.cuny.edu"])
+      .subscribe((data:any)=>{ console.log(data)
+  })
+}
+
+getmessage(){
+  this.messageService.getMessages().subscribe(data=>console.log(DataSource))
+}
 
 private currentSkills;
 private currentClasses;
@@ -163,10 +174,7 @@ recomendedCollab(){
  // this.collabService.recomendedCollab(["c"],["r"]).subscribe(data =>
    // console.log(data))
 }
-//sendmessage
-sendMessage(){
-  this.collabService.sendMessage("what's up ", "jane.doe99@myhunter.cuny.edu")
-}
+
 
 //Convert Bolb file into picture
 imageToShow: any;

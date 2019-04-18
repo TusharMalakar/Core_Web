@@ -1,3 +1,4 @@
+import { UserService } from './user.service';
 import { MessageModel } from './../models/messageModel';
 import { UserModel } from './../models/user.model';
 import { CollabModel2 } from './../models/collab.model';
@@ -13,7 +14,7 @@ import { Observable } from 'rxjs';
 export class CollabsService {
 
   readonly rootUrl = 'https://huntercollabapi.herokuapp.com';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private userService : UserService) { }
   private collabID;
   //collab/getCollabDetails
   collabDetails(){ 
@@ -27,10 +28,11 @@ export class CollabsService {
   activeCollabs(){ 
     return this.http.get( this.rootUrl +"/collab/getActiveCollabs");
   }
-  //messaging/myConvos
-  myCollabs(){ 
+   //messaging/myConvos
+   myCollabs(){ 
     return this.http.get( this.rootUrl +"/messaging/myConvos");
   }
+
 
   //______________POST_REQUEST____________
 
@@ -86,26 +88,19 @@ deleteCollab(owner){
   //_______________________IN-Progress__________________
 
   ///collab/getRecommendedCollabs 
-  recomendedCollab( skills, classes){
-    const body:CollabModel = {
+  recomendedCollab(){
+    var skills
+    var classes
+    this.userService.getSkill().subscribe((data:any)=> {skills=data})
+    this.userService.getClasses().subscribe((data:any)=>{classes=data})
+    const body : UserModel = {
       skills : skills,
-      classes :classes
+      classes : classes
     }
-    skills ["t"];
-    classes ["r"];
-    return this.http.get (this.rootUrl + "/collab/getRecommendedCollabs",skills)
+    return this.http.get (this.rootUrl + "/collab/getRecommendedCollabs")
   }
   
-  //messaging/sendMessage (POST)
-  sendMessage (message, recipient){
-    const body : MessageModel ={
-      message : message,
-      recipient : recipient
-    }
-    return this.http.post(this.rootUrl + "/messaging/sendMessage", body)
-    .subscribe(data => console.log (data))
-  }
-
+ 
 
   
 

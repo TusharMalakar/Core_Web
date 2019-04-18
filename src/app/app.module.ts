@@ -1,3 +1,5 @@
+import { CollabsService } from 'src/app/shared/dbAccess/collabs.service';
+import { ConversatioinsService } from './shared/dbAccess/conversatioins.service';
 import { AuthInterceptor } from './guard/auth.inspector';
 import { AuthGuard } from './guard/auth.guard';
 import { BrowserModule } from '@angular/platform-browser';
@@ -65,6 +67,8 @@ import { ScrollDispatchModule } from '@angular/cdk/scrolling';
   ],
   providers: [
     UserService,
+    CollabsService,
+    ConversatioinsService,
     AuthGuard,
     {
       provide :HTTP_INTERCEPTORS,

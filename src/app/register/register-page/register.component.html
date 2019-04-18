@@ -12,16 +12,15 @@
 
 
 
-
 <h6>------Below Buttons are in Progress----------</h6>
 
-<!--IN Progress-->
 
-<button (click) = "sendMessage()">sendMessage</button>
+<button (click) = "sendMessage()">Send Message</button>
+<button (click) = "getmessage()">Get Message</button>
 <button (click) = "recomendedCollab()">RecomendedCollab</button>
 <button (click) = "getImageFromService()">pic</button>
 
- 
+
 
 <!-- <img src="getImageFromService()">  -->
 
@@ -51,26 +50,4 @@
         </div>
       </div>
       
-          <div class = "medium-list">
-            <div class="list-viewer-wrapper">
-              <div class="list-header-title">add class</div>
-                <!-- Error that will display if the entire form is not valid -->
-              
-              
-              <form [formGroup] = "form2" (ngSubmit) = "addClass()">
-          
-                      <input 
-                          formControlName ="classes"
-                          id="classes" 
-                          placeholder="Enter class one at time">
-                    
-                  <div class="form-container">
-                      <button class="form-button" mat-raised-button color = "primary" type="submit" >updateClass</button>
-                  </div>      
-          
-              </form>
-                   
-          
-            </div>
-          </div>
-    
+         

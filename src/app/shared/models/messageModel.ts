@@ -1,4 +1,6 @@
 export class MessageModel {
-    message    ?: string;
-    recipient    ?: string;
+    message      ?: string[]
+    participants ?: string[]
+    recipient    ?: string[]
+    page         ?: number
 }
