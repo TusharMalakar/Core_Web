@@ -1,3 +1,5 @@
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatChipsModule } from '@angular/material/chips';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
@@ -15,11 +17,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatStepperModule} from '@angular/material/stepper';
 
 import { CollabCardComponent } from './collab-card/collab-card.component';
+import { CollabTableComponent } from './collab-table/collab-table.component';
+import { CreateCollabComponent } from './create-collab/create-collab.component';
 
 @NgModule({
-  declarations: [HomeComponent, CollabCardComponent],
+  declarations: [HomeComponent, CollabCardComponent, CollabTableComponent, CreateCollabComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
@@ -31,7 +36,10 @@ import { CollabCardComponent } from './collab-card/collab-card.component';
     MatListModule,
     MatExpansionModule,
     MatTableModule,
-    ScrollDispatchModule
+    ScrollDispatchModule,
+    MatChipsModule,
+    MatGridListModule,
+    MatStepperModule
   ]
 })
 export class HomeModule { }

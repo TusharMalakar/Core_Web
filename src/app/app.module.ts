@@ -1,5 +1,4 @@
 import { CollabsService } from 'src/app/shared/dbAccess/collabs.service';
-import { ConversatioinsService } from './shared/dbAccess/conversatioins.service';
 import { AuthInterceptor } from './guard/auth.inspector';
 import { AuthGuard } from './guard/auth.guard';
 import { BrowserModule } from '@angular/platform-browser';
@@ -31,6 +30,7 @@ import { MatTableModule } from '@angular/material/table';
 //Angular Flex Module
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
+import { ConversatioinComponent } from './conversatioin/conversatioin.component';
 
 
 
@@ -40,6 +40,7 @@ import { ScrollDispatchModule } from '@angular/cdk/scrolling';
   declarations: [
     AppComponent,
     NavbarComponent,
+    ConversatioinComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,8 +68,8 @@ import { ScrollDispatchModule } from '@angular/cdk/scrolling';
   ],
   providers: [
     UserService,
+    ConversatioinComponent,
     CollabsService,
-    ConversatioinsService,
     AuthGuard,
     {
       provide :HTTP_INTERCEPTORS,

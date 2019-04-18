@@ -1,26 +1,59 @@
 <mat-card>
-  <mat-card-header>
-    <mat-card-title> <h4>{{collabData.title}}</h4> </mat-card-title>
-  </mat-card-header>
+  <mat-card-header >
 
+    <mat-card-title> 
+
+      <mat-grid-list  cols="2" rowHeight="4:1">
+        <mat-grid-tile>{{collabData.title}}</mat-grid-tile>
+        <mat-grid-tile><mat-icon>group</mat-icon> : {{collabData.members.length}} / {{ collabData.size}}</mat-grid-tile>
+      </mat-grid-list>
+      
+    </mat-card-title>
+
+  </mat-card-header>
   <mat-card-content>
     <mat-accordion>
-        <h4 class="description"> {{ collabData.description }} </h4>
+        <div class = "content">
+            <p class="description">Description: {{ collabData.description }} </p>
+            <p class="date">Date: {{ collabData.date | date }}</p>
+            <p class="location">Location: {{ collabData.location }}</p>
+
+            <div class = "requirements">
+                <mat-chip-list>
+                    Classes: 
+                    <mat-chip *ngFor = "let class of collabData.classes">
+                      {{ class }}
+                    </mat-chip>
+                </mat-chip-list>
+                <br>
+                <mat-chip-list>
+                    Skills: 
+                    <mat-chip *ngFor="let skill of collabData.skills">
+                      {{ skill }}
+                    </mat-chip>
+                </mat-chip-list>
+            </div>
+      
+        </div>
+        <br>
         
-        <mat-expansion-panel (opened)="panelOpenState = true"
+        <!-- Event Binding: In this case the event is (opened) -->
+        <mat-expansion-panel 
+                       (opened)="panelOpenState = true && makeTable()"
                        (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
           <mat-panel-title>
-            Skills/Classes Wanted.
+            <h4>Members</h4>
           </mat-panel-title>
           <mat-panel-description>
-            Currently I am {{panelOpenState ? 'open' : 'closed'}}
           </mat-panel-description>
           </mat-expansion-panel-header>
 
-            <div *ngFor="let skill of getAllRequired()">
-              <p>{{ skill }} </p> 
-            </div>
+            <ng-container class="table-container">
+              <div class="table">
+                <collab-table [table] = "table" [xAxisReq] = "xAxisReq"></collab-table>
+              </div>
+            </ng-container>
           
           
         </mat-expansion-panel>
@@ -29,10 +62,9 @@
   </mat-card-content>
 
   <mat-card-actions>
-        <button (click)= "joinCollab()" mat-raised-button color = "primary"> Join </button>
-        <button (click)= "leaveCollab( )" mat-raised-button color = "primary"> Leave </button>
-        <button (click)= "deleteCollab()"  mat-raised-button color = "primary"> Delete</button>
+        <button mat-raised-button color = "primary"> Join </button>
+        <button mat-raised-button color = "primary"> Leave </button>
+        <button mat-raised-button color = "primary"> Delete</button>
   </mat-card-actions>
 
 </mat-card>
-

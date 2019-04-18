@@ -1,3 +1,4 @@
+import { FormControl } from '@angular/forms';
 import { CollabsService } from './../../shared/dbAccess/collabs.service';
 import { UserModel } from './../../shared/models/user.model';
 import { Component, OnInit } from '@angular/core';
@@ -14,69 +15,86 @@ import { CollabModel } from 'src/app/shared/models/collab.model';
 export class HomeComponent implements OnInit {
     userData: UserModel[];
     collabData: CollabModel[];
-    myCollabData : CollabModel[];
+    selected = new FormControl(0);
 
   constructor(
       private userService : UserService,
       private router : Router, 
       private collabService : CollabsService)
        {
-        this.collabService.allCollabs().subscribe ((data : CollabModel[] )  => this.collabData = data);
-        //this.collabService.myCollabs().subscribe ((data : CollabModel[])  =>this.myCollabData = data);
-        this.collabService.myCollabs().subscribe(data => console.log(data) )
+        
         }
 
-ngOnInit() {}
+  ngOnInit() {
+    this.currentTab(0);
+  }
 
-userDetails(){
+  userDetails(){
     this.userService.getUserdetails().subscribe(userData => this.userData = userData);
-}
-  
-// return array of JSON OBJECTS
-collabDetails(){
-    this.collabService.collabDetails().subscribe ((data : any ) => {
-      console.log(data[0].owner);
-      console.log(data[0].members);
-     });
-}
-  
-activeCollabs(){
-    this.collabService.activeCollabs().subscribe ((data : any ) => {
-      console.log(data);   
-     });
   }
-
-myCollabs(){
-    this.collabService.myCollabs().subscribe ((data : any ) => {
-      console.log(data);   
-     });
-  }
- 
-userPicture(){
+  
+  userPicture(){
+    ///user/profilePicture
     this.userService.getPicture().subscribe ((data : any ) => {
+      // BitmapImage image = new BitmapImage();
+      // image.SetSource(stream);  
      });
   }
 
+  // return array of JSON OBJECTS
+  collabDetails(){
+    this.collabService.collabDetails().subscribe ((data : any ) => {
+     });
+  }
+  
 
-logOut(){
-    localStorage.removeItem('accessToken');
-    this.router.navigate(['/login']);
+  activeCollabs(){
+    this.collabService.activeCollabs().subscribe ((data : any ) => {
+      //console.log(data);   
+  
+     });
+  }
+
+  myCollabs(){
+    this.collabService.myCollabs().subscribe ((data : any ) => {
+      //console.log(data);   
+  
+     });
+  }
+
+  async currentTab($event){
+    switch($event) {
+
+      case 0: {
+        //console.log("API called!")
+        this.collabService.getCollabs("getAllCollabs").subscribe ((data : CollabModel[] )  => this.collabData = data);
+        break;
+      }
+
+      case 1: {
+        //console.log("API called!")
+        await this.collabService.getCollabs("getCollabDetails").subscribe ((data : CollabModel[] )  => this.collabData = data);
+        break;
+      }
+
+      case 2: {
+
+        break;
+      }
+
+      default: {
+
+        break;
+      }
+
+
+    }
+  }
+
+  createCollab(){
+    this.collabService.CreateCollab("", 29, [], 4/13/2019, 5, "rego park", true, "test","test", ["test", "test2"],["test","test"], ["test", 'test2'])
+  }
+
+
 }
 
-
-
-    //private data variables
-    private username; 
-    private github;
-    private linkedin;
-    private skills;
-    private classes;
-    private name; 
-
-   
-}
-// testuser1@myhunter.cuny.edu
- 
-
-
- 

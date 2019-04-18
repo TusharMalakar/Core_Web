@@ -1,15 +1,10 @@
-import { UserModel } from './../../shared/models/user.model';
-import { CollabModel } from 'src/app/shared/models/collab.model';
-import { CollabsService } from './../../shared/dbAccess/collabs.service';
 import { UserService } from '../../shared/dbAccess/user.service';
 import { Component , OnInit} from '@angular/core';
 import {Router } from '@angular/router';
-//import { RegisterModel } from '../../shared/models/register.model';
+import { RegisterModel } from '../../shared/models/register.model';
 
 //Needed to implement Reactive Forms
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
-import { ConversatioinsService } from 'src/app/shared/dbAccess/conversatioins.service';
-import { DataSource } from '@angular/cdk/table';
 
 @Component({
   selector: 'app-register',
@@ -18,190 +13,83 @@ import { DataSource } from '@angular/cdk/table';
 })
 export class RegisterComponent implements OnInit{
   
-  user: UserModel;
-  user2 : UserModel;
+  user: RegisterModel;
   form: FormGroup;
-  form2: FormGroup;
+  hide1: boolean;
+  hide2: boolean;
 
   isRegiError : boolean;
   constructor(
-    private collabService : CollabsService,
     private userService : UserService,
     private router : Router,
-    private formBuilder: FormBuilder,
-    private messageService : ConversatioinsService) 
+    private formBuilder: FormBuilder) 
     {
-      this.user = new UserModel()
-      this.user2 = new UserModel()
+      this.user = new RegisterModel();
+      this.hide1 = true;
+      this.hide2 = true;
      }
 
   ngOnInit() {
-    this.form2 = this.formBuilder.group({
-      classes: this.user.classes
-   }); 
     this.form = this.formBuilder.group({
-       skills: this.user.skills
+       username: [this.user.username, [
+        Validators.required, 
+        Validators.email
+      ]],
+       password: [this.user.password, [
+        Validators.required,
+        Validators.minLength(6)
+      ]], 
+       password2: [this.user.password2, [
+        Validators.required,
+        Validators.minLength(6)
+      ]] 
+
     });
-
-   
     }
-    
-    
-   
-getCurrentSkills(){
-      this.userService.getSkill().subscribe((data:any)=>{
-        this.currentSkills = data;
-        console.log("curr sk.. ",this.currentSkills)
-      })
-    }
-
-getClasses(){
-      this.userService.getClasses().subscribe((data :any)=> {
-        
-        this.currentClasses=data;
-        console.log("curr classes.. ",this.currentClasses)
-      })
-    }
-
-
-//skill can be added but one at a time
-addskills() {
-    //copying all the skills as object that are already exist
-     this.userService.getSkill().subscribe(data=>this.currentSkills=data)
-     let skills: string []  = this.currentSkills.skills;
-     
-     //taking values from input
-    let newObject = Object.assign(this.skills.value)
-    //checking if the skill is already exist or not
-     for(var iter in skills){
-      if(this.skills.value == skills[iter]){
-          console.log(skills[iter]," already exits !")
-          return 0;
-      }
-      else if(this.skills.value==null || this.skills.value == ""){
-        return 0
-      }
-     }
-    newObject= skills.concat(newObject)
-     this.userService.updateUserProfile("","",newObject,"").subscribe(
-      data => console.log(data));
-      this.getCurrentSkills()
-    
-}
-
-
-addClass(){
-  //copying previous skills which is JSON OBJ
-   let classes: string []  = this.currentClasses;
   
-   //taking values from input and converting as JSON Object
-  let newObject = Object.assign(this.classes.value)
-  
-  //checking if the inputed class is already exist or not in the class obj
-   for(var iter in classes){
-    if(this.classes.value == classes[iter]){
-        console.log(classes[iter]," already exits !")
-        return 0;
+  onSubmit() {
+
+    this.user = Object.assign({}, this.form.value);
+    
+    if(this.user.password != this.user.password2){
+      alert("Password did not matche!");
     }
-    else if(this.classes.value==null){
-      return 0
+    else
+    {
+      this.userService.registerUser(this.user.username , this.user.password)
+      .subscribe((data: any)  =>{
+            console.log ( data );
+            //storing json object to localStorage
+            localStorage.setItem('accessToken',data.token);
+
+            if(data.success){
+
+              this.router.navigate(['/home']);
+              console.log ( this.user.username + " registered"); 
+            }
+            else{ 
+                alert(data.error);
+                this.router.navigate(['/register']);
+            };
+        });
     }
-   }
-
-   //if input class is not exist in the class obj concate new class to previous class
-  newObject= classes.concat(newObject)
-   this.userService.updateUserProfile("","","",newObject).subscribe(
-    data => console.log(data));
-}
-
-get skills(){
-  return this.form.get('skills');
-}
-
-get classes(){
-  return this.form.get('classes');
-}
-
-createCollab(){
-  this.collabService.CreateCollab("", 29, [], 4/13/2019, 5, "rego park", true, "test","test", ["test", "test2"],["test","test"], ["test", 'test2'])
-}
-
-//updateUserProfile(github,linkedin, skills, classes)
-updateUser(){
-  this.userService.updateUserProfile("myGit", "myLinkedIn",["c++","java","rust"] ,["cs 235", "cs 335"]).subscribe(
-    data => console.log(data));
 }
 
 
-updateSkills(){
-  console.log(this.addskills())
-  this.userService.updateUserSkill(this.addskills() ).subscribe(
-    data => console.log(data));
+get username(){
+  return this.form.get('username');
 }
 
-searchedSkill(){
-  this.userService.searchSkills().subscribe((data:any)=>{
-      this.dbSkills=data;
-  })
+get password(){
+  return this.form.get('password');
 }
 
-searchedClasses(){
-  this.userService.searchClasses().subscribe((data:any)=>{
-    this.dbClasses=data;
-  })
-}
-//sendmessage
-sendMessage(){
-  this.messageService.sendMessage_(["Hey hey man whats up "],  [ "testuser1@myhunter.cuny.edu","testuser99@myhunter.cuny.edu"])
-      .subscribe((data:any)=>{ console.log(data)
-  })
-}
-
-getmessage(){
-  this.messageService.getMessages().subscribe(data=>console.log(DataSource))
-}
-
-private currentSkills;
-private currentClasses;
-private dbSkills;
-private dbClasses;
-
-
-//not implemented yet--------------------------------------
-
-
-recomendedCollab(){
- // this.collabService.recomendedCollab(["c"],["r"]).subscribe(data =>
-   // console.log(data))
+get password2(){
+  return this.form.get('password2');
 }
 
 
-//Convert Bolb file into picture
-imageToShow: any;
-createImageFromBlob(image: Blob) {
-   let reader = new FileReader();
-   reader.addEventListener("load", () => {
-      this.imageToShow = reader.result;
-   }, false);
 
-   if (image) {
-      reader.readAsDataURL(image);
-   }
-}
-//picture is ready to display
-//isImageLoading : boolean;
-getImageFromService() {
-  //this.isImageLoading = true;
-  this.userService.getPicture().subscribe(data => {
-    console.log(data)
-      this.createImageFromBlob(data[0]);
-     console.log(data)
-     //return myPicture;
-    //this.isImageLoading = false;
-    //console.log(data)
-  })
-}
 
 
 }
-
