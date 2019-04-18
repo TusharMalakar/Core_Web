@@ -1,3 +1,6 @@
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatChipsModule } from '@angular/material/chips';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
@@ -19,9 +22,13 @@ import { MatTabsModule } from '@angular/material/tabs';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatStepperModule} from '@angular/material/stepper';
 
+
 import { CollabCardComponent } from './collab-card/collab-card.component';
 import { CollabTableComponent } from './collab-table/collab-table.component';
 import { CreateCollabComponent } from './create-collab/create-collab.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [HomeComponent, CollabCardComponent, CollabTableComponent, CreateCollabComponent],
@@ -39,7 +46,16 @@ import { CreateCollabComponent } from './create-collab/create-collab.component';
     ScrollDispatchModule,
     MatChipsModule,
     MatGridListModule,
-    MatStepperModule
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatAutocompleteModule,
+    
+
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class HomeModule { }

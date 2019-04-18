@@ -25,10 +25,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatTableModule } from '@angular/material/table';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 //Angular Flex Module
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 
@@ -56,6 +58,10 @@ import { ScrollDispatchModule } from '@angular/cdk/scrolling';
     MatChipsModule,
     MatAutocompleteModule,
     MatTableModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatAutocompleteModule,
+    
 
     //Our Routes will be here to make code cleaner
     AppRoutingModule,
