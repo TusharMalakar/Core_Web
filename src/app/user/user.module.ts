@@ -18,9 +18,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule }  from '@angular/material/grid-list';
 import { MatListModule }  from '@angular/material/list';
+import { UpdateUserdataComponent } from './update-userdata/update-userdata.component';
 
 @NgModule({
-  declarations: [UserPageComponent],
+  declarations: [UserPageComponent, UpdateUserdataComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
