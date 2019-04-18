@@ -4,12 +4,10 @@ import { CollabsService } from './../../shared/dbAccess/collabs.service';
 import { UserService } from '../../shared/dbAccess/user.service';
 import { Component , OnInit} from '@angular/core';
 import {Router } from '@angular/router';
-import { RegisterModel } from '../../shared/models/register.model';
+//import { RegisterModel } from '../../shared/models/register.model';
 
 //Needed to implement Reactive Forms
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
-import { concat } from 'rxjs';
-import { exists } from 'fs';
 
 @Component({
   selector: 'app-register',
@@ -18,8 +16,10 @@ import { exists } from 'fs';
 })
 export class RegisterComponent implements OnInit{
   
-  user: RegisterModel;
+  user: UserModel;
+  user2 : UserModel;
   form: FormGroup;
+  form2: FormGroup;
 
   isRegiError : boolean;
   constructor(
@@ -28,32 +28,36 @@ export class RegisterComponent implements OnInit{
     private router : Router,
     private formBuilder: FormBuilder) 
     {
-      this.user = new RegisterModel();
+      this.user = new UserModel()
+      this.user2 = new UserModel()
      }
 
   ngOnInit() {
+    this.form2 = this.formBuilder.group({
+      classes: this.user.classes
+   }); 
     this.form = this.formBuilder.group({
-       username: this.user.username
+       skills: this.user.skills
     });
+
    
-    
-    }
-    getUserDetails(){
-      this.userService.updateSkill()
-      console.log(this.userService.skill)
     }
     
+    
    
-    getCurrentSkills(){
+getCurrentSkills(){
       this.userService.getSkill().subscribe((data:any)=>{
         this.currentSkills = data;
         console.log("curr sk.. ",this.currentSkills)
       })
     }
-    getClasses(){
-      this.userService.getClasses().subscribe(
-        data=> this.currentClasses=data
-        )
+
+getClasses(){
+      this.userService.getClasses().subscribe((data :any)=> {
+        
+        this.currentClasses=data;
+        console.log("curr classes.. ",this.currentClasses)
+      })
     }
 
 
@@ -64,12 +68,15 @@ addskills() {
      let skills: string []  = this.currentSkills.skills;
      
      //taking values from input
-    let newObject = Object.assign(this.username.value)
+    let newObject = Object.assign(this.skills.value)
     //checking if the skill is already exist or not
      for(var iter in skills){
-      if(this.username.value == skills[iter]){
+      if(this.skills.value == skills[iter]){
           console.log(skills[iter]," already exits !")
           return 0;
+      }
+      else if(this.skills.value==null || this.skills.value == ""){
+        return 0
       }
      }
     newObject= skills.concat(newObject)
@@ -78,44 +85,40 @@ addskills() {
       this.getCurrentSkills()
     
 }
-addClass() {    
- 
-   this.user = Object.assign({}, this.form.value);
-   var arr: string  [] = new Array()
-   //arr.push(this.currentSkills)
-   var currentClasses = this.getClasses()
-   console.log("current " ,currentClasses);
-   arr.push(currentClasses)
-   var str = this.username.value
-   var splitted = str.split(" " , str.length)
-   console.log(splitted)
-   for (let i=0; i< splitted.length ;i++){
 
-    console.log(splitted[i])
-    arr.push(splitted[i])
+
+addClass(){
+  //copying previous skills which is JSON OBJ
+   let classes: string []  = this.currentClasses;
+  
+   //taking values from input and converting as JSON Object
+  let newObject = Object.assign(this.classes.value)
+  
+  //checking if the inputed class is already exist or not in the class obj
+   for(var iter in classes){
+    if(this.classes.value == classes[iter]){
+        console.log(classes[iter]," already exits !")
+        return 0;
+    }
+    else if(this.classes.value==null){
+      return 0
+    }
    }
-   
-  console.log(this.currentSkills)
-   this.userService.updateUserProfile("","","",arr).subscribe(
+
+   //if input class is not exist in the class obj concate new class to previous class
+  newObject= classes.concat(newObject)
+  
+  
+   this.userService.updateUserProfile("","","",newObject).subscribe(
     data => console.log(data));
-    return   
-}
-private currentSkills;
-private currentClasses;
-
-
-
-
-get username(){
-  return this.form.get('username');
 }
 
-get password(){
-  return this.form.get('password');
+get skills(){
+  return this.form.get('skills');
 }
 
-get password2(){
-  return this.form.get('password2');
+get classes(){
+  return this.form.get('classes');
 }
 
 createCollab(){
@@ -135,18 +138,30 @@ updateSkills(){
     data => console.log(data));
 }
 
+searchedSkill(){
+  this.userService.searchSkills().subscribe((data:any)=>{
+      this.dbSkills=data;
+  })
+}
+
+searchedClasses(){
+  this.userService.searchClasses().subscribe((data:any)=>{
+    this.dbClasses=data;
+  })
+}
+
+private currentSkills;
+private currentClasses;
+private dbSkills;
+private dbClasses;
 
 
 //not implemented yet--------------------------------------
 
-addSkills(){
-  return
-}
-
 
 recomendedCollab(){
-  this.collabService.recomendedCollab(["c"],["r"]).subscribe(data =>
-    console.log(data))
+ // this.collabService.recomendedCollab(["c"],["r"]).subscribe(data =>
+   // console.log(data))
 }
 //sendmessage
 sendMessage(){
@@ -170,7 +185,9 @@ createImageFromBlob(image: Blob) {
 getImageFromService() {
   //this.isImageLoading = true;
   this.userService.getPicture().subscribe(data => {
-     this.createImageFromBlob(data);
+    console.log(data)
+      this.createImageFromBlob(data[0]);
+     console.log(data)
      //return myPicture;
     //this.isImageLoading = false;
     //console.log(data)

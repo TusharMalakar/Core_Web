@@ -1,10 +1,10 @@
-export interface UserModel {
-    username ?: string,
+export class UserModel {
+    username ?: string;
     password ?: string;
     github ?: string ;
     linkedin ?: string;
-    skills ?: string  [];
-    classes ?: string [];
+    skills ?: string[];
+    classes ?: string[];
     name ?: string;
 }
 

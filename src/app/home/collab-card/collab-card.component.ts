@@ -20,7 +20,7 @@ export class CollabCardComponent implements OnInit {
 
 
 
-  constructor(private http : HttpClient) { 
+  constructor(private http : HttpClient, private collabService : CollabsService) { 
     
   }
   readonly rootUrl = 'https://huntercollabapi.herokuapp.com';
@@ -60,6 +60,12 @@ leaveCollab( ){
   .subscribe (data => console.log(data) )
 }
 
+deleteCollab(){
+  var id = this.getCollabID
+  this.collabService.deleteCollab(id).subscribe((data:any)=>{
+    console.log(data)    
+  })
+} 
 
   makeTable(){
     this.xAxis = this.getAllRequired();

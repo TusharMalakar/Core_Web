@@ -26,19 +26,12 @@ export class UserService {
       username: username,
       password: password,
     }
-
     //This request does not need authorization 
     var reqHeader = new HttpHeaders({'No-Auth':'True'});
 
     //Adding Parameters
     var requestedUrl = this.rootUrl + "/user?username="+username+"&password="+password;
 
-    //Testing url 
-    console.log(requestedUrl);
-
-    //requestUrl: endpoint
-    //body: Needed, but not used
-    //{headers : reqHeader} : Creating object from the header library; set to non-auth 
     return this.http.put(requestedUrl , body, {headers : reqHeader});
   }
 
@@ -49,25 +42,29 @@ public isAuthenticated() : boolean {
 getUserdetails(): Observable<UserModel[]> {
   return this.http.get<UserModel[]>( this.rootUrl +"/user");
 }
-//download profile-picture as Bold file
-getPicture(): Observable <Blob>{
-  // user/profilePicture
-  return this.http.get( this.rootUrl +"/user/profilePicture",  { responseType: 'blob' });
-}
 
+getClasses(){ 
+  return this.http.get( this.rootUrl +"/user/classes");
+}
 getSkill(){ 
   return this.http.get( this.rootUrl +"/user/skills");
 }
 
-
-//search/skills
-searchSkills(constrain: string): Observable<any>{
-  let params = new HttpParams().set("query",constrain);
-  return this.http.get(this.rootUrl +"/search/skills",{params: params});
+//return the list of skills already in the database
+searchSkills(){
+  return this.http.get(this.rootUrl +"/search/skills")
+}
+//return the list of classes already in the database
+searchClasses(){
+  return this.http.get(this.rootUrl +"/search/classes")
 }
 
-getClasses(){ 
-  return this.http.get( this.rootUrl +"/user/classes");
+
+
+//download profile-picture as Bold file
+getPicture(): Observable <Blob>{
+  // user/profilePicture
+  return this.http.get( this.rootUrl +"/user/profilePicture",  { responseType: 'blob' });
 }
 
 
@@ -99,28 +96,7 @@ updateUserSkill(skills){
 
 }
 
-
-//      4/16/2019
-
-updateSkill(){
-  var currentSkills;
-  return this.http.get( this.rootUrl +"/user/skills")
- .subscribe((data:any)=>{
-   this.skill=data;
- })  
-}
-
-
-
-
-public skill;
-
-
-
-// /collab/deleteCollab
-///collab/editCollab
-///collab/joinCollab 
-//collab/leaveCollab 
+// /collab/deleteCollab 
 ///collab/getRecommendedCollabs
 ///messaging/getMessages 
 ///messaging/sendMessage 

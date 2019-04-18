@@ -76,6 +76,13 @@ editCollab(id, owner, size, member, data, duration, location, status,title, desc
 
 }
 
+deleteCollab(owner){
+  const body :CollabModel={
+    owner: owner
+  }
+  return this.http.post(this.rootUrl+"/collab/deleteCollab", body)
+}
+
   //_______________________IN-Progress__________________
 
   ///collab/getRecommendedCollabs 
