@@ -14,3 +14,19 @@ export class CollabModel {
     public members      ?: string[];
     
 }
+export class CollabMode2 {
+    public id          ?: string;
+    public owner        ?: string;
+    public size         ?: number;
+    public date         ?: number;
+    public duration     ?: number;
+    public location     ?: string;
+    public status       ?: boolean;
+    public title        ?: string;
+    public description  ?: string;
+    public classes      ?: string[];
+    public skills       ?: string[];
+    public applicants   ?: string[];
+    public members      ?: string[];
+    
+}

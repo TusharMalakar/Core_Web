@@ -1,6 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { CollabsService } from 'src/app/shared/dbAccess/collabs.service';
 import { UserService } from './../../shared/dbAccess/user.service';
-import { CollabModel } from './../../shared/models/collab.model';
+import { CollabModel, CollabMode2 } from './../../shared/models/collab.model';
 import { Component, OnInit, Input } from '@angular/core';
 import { TableBuilder } from 'src/app/shared/models/tableBuilder.model';
 
@@ -20,9 +21,11 @@ export class CollabCardComponent implements OnInit {
   table: Array<TableBuilder> = [];  
   xAxisReq: Array<string> = [];
   alreadyBuilt: boolean = false;
+  readonly rootUrl = 'https://huntercollabapi.herokuapp.com';
   
 
   constructor(private userService: UserService, 
+              private http : HttpClient,
               private collabService: CollabsService) {}
 
   ngOnInit() {
@@ -98,10 +101,34 @@ export class CollabCardComponent implements OnInit {
   }
 
   
-
-
+  getCollabID(){
+   // console.log(this.collabData._id["$oid"])
+    return this.collabData._id["$oid"];
+  }
   
 
+  //join collab by id
+  joinCollab(){
+    const body: CollabMode2 = {
+      id : this.getCollabID(),
+    }
+    return this.http.post(this.rootUrl + "/collab/joinCollab", body)
+    .subscribe (data => console.log(data) )
+}
 
+
+
+//leave collab by id
+leaveCollab(){
+  const body: CollabMode2 = {
+    id : this.getCollabID()
+  }
+  return this.http.post(this.rootUrl + "/collab/leaveCollab", body)
+  .subscribe (data => console.log(data) )
+}
+
+deleteCollab(){
+  console.log("Not implemented yet")
+}
 
 }

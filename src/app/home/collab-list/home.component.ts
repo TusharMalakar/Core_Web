@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
 
   async currentTab($event){
     switch($event) {
-
+      
       case 0: {
         //console.log("API called!")
         this.collabService.getCollabs("getAllCollabs").subscribe ((data : CollabModel[] )  => this.collabData = data);
@@ -73,7 +73,11 @@ export class HomeComponent implements OnInit {
 
       case 1: {
         //console.log("API called!")
-        await this.collabService.getCollabs("getCollabDetails").subscribe ((data : CollabModel[] )  => this.collabData = data);
+        await this.collabService.getCollabs("getCollabDetails").subscribe ((data : CollabModel[] )  =>{
+          this.collabData = data;
+          this.getcollagID()
+        });
+        
         break;
       }
 
@@ -94,6 +98,18 @@ export class HomeComponent implements OnInit {
   createCollab(){
     this.collabService.CreateCollab("", 29, [], 4/13/2019, 5, "rego park", true, "test","test", ["test", "test2"],["test","test"], ["test", 'test2'])
   }
+
+
+  getcollagID(){
+    
+    for(let i = 0; i < this.collabData.length; i++){
+      console.log(this.collabData[i]._id)
+      
+    return this.collabData[i]._id
+    }
+   
+  }
+
 
 
 }

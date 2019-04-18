@@ -62,9 +62,10 @@
   </mat-card-content>
 
   <mat-card-actions>
-        <button mat-raised-button color = "primary"> Join </button>
-        <button mat-raised-button color = "primary"> Leave </button>
-        <button mat-raised-button color = "primary"> Delete</button>
+        <button (click) = "joinCollab()"  mat-raised-button color = "primary"> Join </button>
+        <button (click) = "leaveCollab()"  mat-raised-button color = "primary">leave</button>
+        <button (click) = "deleteCollab()"  mat-raised-button color = "primary">delete</button>
+        
   </mat-card-actions>
 
 </mat-card>

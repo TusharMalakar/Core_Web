@@ -1,8 +1,7 @@
+import { CollabModel, CollabMode2 } from './../models/collab.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CollabModel } from '../models/collab.model';
 import { Observable } from 'rxjs';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -31,6 +30,23 @@ export class CollabsService {
   getCollabs(collabType: string){
     return this.http.get( this.rootUrl + "/collab/" + collabType);
   }
+   //join collab by id
+   joinCollab(id){
+    const body: CollabMode2 = {
+      id     : id
+    }
+    return this.http.post(this.rootUrl + "/collab/joinCollab", body)
+    .subscribe (data => console.log(data) )
+}
+
+//leave collab by id
+leaveCollab(id){
+  const body: CollabMode2 = {
+    id : id
+  }
+  return this.http.post(this.rootUrl + "/collab/leaveCollab", body)
+  .subscribe (data => console.log(data) )
+}
 
   //______________POST_REQUEST____________
 
@@ -55,6 +71,8 @@ export class CollabsService {
     return this.http.post(this.rootUrl + "/collab/createCollab", body)
     .subscribe (data => console.log(data) )
   }
+
+  
 
 }
 
