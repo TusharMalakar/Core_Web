@@ -122,17 +122,18 @@ createCollab(){
   // size, date, duration, location, title, description, classes and skills are required
   const body: CollabModel = {
       owner      : this.firstFormGroup.value[""],
-      size       : this.firstFormGroup.value[""],
+      size       : this.firstFormGroup.value["collabSize"],
       members    : this.firstFormGroup.value[""],
-      date       : this.firstFormGroup.value[""],
+      date       : this.firstFormGroup.value["collabDate"],
       duration   : this.firstFormGroup.value[""],
-      location   : this.firstFormGroup.value[""],
+      location   : this.firstFormGroup.value["collabLocation"],
       status     : this.firstFormGroup.value[""],
       title      : this.firstFormGroup.value[""],
-      description: this.firstFormGroup.value[""],
+      description: this.firstFormGroup.value["collabDescription"],
       classes    : this.firstFormGroup.value[""],
       skills     : this.firstFormGroup.value[""],
       applicants : this.firstFormGroup.value[""],
+
     }
   //sending http request to create a new collab
   //return this.http.post(this.rootUrl+"/collab/createCollab",body)
