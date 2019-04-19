@@ -53,16 +53,15 @@
                         </mat-autocomplete>
                     </mat-form-field>
                 </div>
-                
+                                
         
             </mat-step>
 
                 
             <mat-step>
-        
+                <button (Click) = "createCollab()">Create Collab</button>
             </mat-step>
         
     </mat-vertical-stepper>
 </div>
 
-<button (Click) = "createCollab(firstFormGroup.value, secondFormGroup.value)">submit</button>
