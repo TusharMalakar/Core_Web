@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { map, startWith, first } from 'rxjs/operators';
+import { create } from 'domain';
 
 @Component({
   selector: 'create-collab',
@@ -45,7 +46,7 @@ export class CreateCollabComponent implements OnInit {
   ngOnInit() {
 
     this.firstFormGroup = this._formBuilder.group({
-      collabTitle: ['', Validators.required],
+      collabTitle: ['testValueOfCollabTitle', Validators.required],
       collabDescription: ['', Validators.required],
       collabLocation: ['', Validators.required],
       collabSize: ['', Validators.required],
@@ -57,6 +58,12 @@ export class CreateCollabComponent implements OnInit {
     const body : CollabModel = Object.assign({}, this.firstFormGroup.value, this.secondFormGroup.value)
     console.log(body)
 
+    //retriving form value and assigning to body attributes
+    body.description= this.firstFormGroup.value["collabTitle"]
+    console.log(body.description)
+    
+    
+    //this.createCollab();
     //testing to add to JSON BODYS
     const body1 : CollabModel = {
       owner : "test owner1"
