@@ -1,5 +1,12 @@
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { CollabModel } from 'src/app/shared/models/collab.model';
+import { CollabsService } from 'src/app/shared/dbAccess/collabs.service';
+import { ENTER, COMMA } from '@angular/cdk/keycodes';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Observable } from 'rxjs';
+import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { MatChipInputEvent } from '@angular/material/chips';
+import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'create-collab',
@@ -11,15 +18,93 @@ export class CreateCollabComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  private collabData : CollabModel;
+
+  visible = true;
+  selectable = true;
+  removable = true;
+  addOnBlur = true;
+  separatorKeysCodes: number[] = [ENTER, COMMA];
+  fruitCtrl = new FormControl();
+  filteredFruits: Observable<string[]>;
+  fruits: string[] = ['Lemon'];
+  allFruits: string[] = ['Apple', 'Lemon', 'Orange', 'Strawberry'];
+
+  @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement>;
+  @ViewChild('auto') matAutocomplete: MatAutocomplete;
+
+  constructor(private _formBuilder: FormBuilder, private collabService : CollabsService) { 
+    
+    this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
+      startWith(null),
+      map((fruit: string | null) => fruit ? this._filter(fruit) : this.allFruits.slice() ) );
+  }
 
   ngOnInit() {
+
     this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
+      collabTitle: ['', Validators.required],
+      collabDescription: ['', Validators.required],
+      collabLocation: ['', Validators.required],
+      collabSize: ['', Validators.required],
+      collabDate: ['', Validators.required],
     });
+    console.log(this.firstFormGroup.value)
+    
     this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
+     
     });
+    console.log(Object.bind(this.firstFormGroup.value,this.firstFormGroup.value))
   }
+
+  add(event: MatChipInputEvent): void {
+    
+
+    if(!this.matAutocomplete.isOpen){
+
+      const input = event.input;
+      const value = event.value;
+
+      if((value || '').trim()) {
+        this.fruits.push(value.trim());
+      }
+  
+      if(input) {
+        input.value = '';
+      } 
+
+      this.fruitCtrl.setValue(null);
+    }
+  }
+
+  remove(fruit: string): void {
+    const index = this.fruits.indexOf(fruit);
+
+    if (index >= 0) {
+      this.fruits.splice(index, 1);
+    }
+  }
+
+  selected(event: MatAutocompleteSelectedEvent): void {
+    this.fruits.push(event.option.viewValue);
+    this.fruitInput.nativeElement.value = '';
+    this.fruitCtrl.setValue(null);
+  }
+
+ 
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.allFruits.filter(fruit => fruit.toLowerCase().indexOf(filterValue) === 0);
+  }
+
+createCollab(){
+  // this.collabService.CreateCollab().subscribe((data : this.collabData)=>
+  //   collabData = data)
+}
+  
+onSubmit(){
+  console.log(this.firstFormGroup.value)
+}
 
 }
