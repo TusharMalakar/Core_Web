@@ -73,10 +73,7 @@ export class HomeComponent implements OnInit {
 
       case 1: {
         //console.log("API called!")
-        await this.collabService.getCollabs("getCollabDetails").subscribe ((data : CollabModel[] )  =>{
-          this.collabData = data;
-          this.getcollagID()
-        });
+        await this.collabService.getCollabs("getCollabDetails").subscribe ((data : CollabModel[] )  =>{this.collabData = data;});
         
         break;
       }
@@ -100,15 +97,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-  getcollagID(){
-    
-    for(let i = 0; i < this.collabData.length; i++){
-      console.log(this.collabData[i]._id)
-      
-    return this.collabData[i]._id
-    }
-   
-  }
+  
 
 
 
