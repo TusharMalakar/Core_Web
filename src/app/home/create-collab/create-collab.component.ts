@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { map, startWith, first } from 'rxjs/operators';
-import { create } from 'domain';
 
 @Component({
   selector: 'create-collab',
@@ -19,8 +18,6 @@ export class CreateCollabComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-
-  private collabData : CollabModel;
 
   visible = true;
   selectable = true;
@@ -122,12 +119,24 @@ createCollab(){
   console.log(this.firstFormGroup.value)
   console.log(this.secondFormGroup.value)
 
-  //builnding two objects
-  let body  = Object.assign(this.firstFormGroup, this.secondFormGroup)
-
+  // size, date, duration, location, title, description, classes and skills are required
+  const body: CollabModel = {
+      owner      : this.firstFormGroup.value[""],
+      size       : this.firstFormGroup.value[""],
+      members    : this.firstFormGroup.value[""],
+      date       : this.firstFormGroup.value[""],
+      duration   : this.firstFormGroup.value[""],
+      location   : this.firstFormGroup.value[""],
+      status     : this.firstFormGroup.value[""],
+      title      : this.firstFormGroup.value[""],
+      description: this.firstFormGroup.value[""],
+      classes    : this.firstFormGroup.value[""],
+      skills     : this.firstFormGroup.value[""],
+      applicants : this.firstFormGroup.value[""],
+    }
   //sending http request to create a new collab
   //return this.http.post(this.rootUrl+"/collab/createCollab",body)
-
+        // or through collab service
   //passing a JSON OBJECT to create a new collab
   this.collabService.CreateCollab(body)
 }
