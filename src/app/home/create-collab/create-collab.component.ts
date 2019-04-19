@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { CollabModel } from 'src/app/shared/models/collab.model';
 import { CollabsService } from 'src/app/shared/dbAccess/collabs.service';
 import { ENTER, COMMA } from '@angular/cdk/keycodes';
@@ -6,7 +7,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
-import { map, startWith } from 'rxjs/operators';
+import { map, startWith, first } from 'rxjs/operators';
 
 @Component({
   selector: 'create-collab',
@@ -33,8 +34,9 @@ export class CreateCollabComponent implements OnInit {
   @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
 
-  constructor(private _formBuilder: FormBuilder, private collabService : CollabsService) { 
-    
+  readonly rootUrl = 'https://huntercollabapi.herokuapp.com';
+
+  constructor(private _formBuilder: FormBuilder, private http: HttpClient, private collabService : CollabsService) { 
     this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
       startWith(null),
       map((fruit: string | null) => fruit ? this._filter(fruit) : this.allFruits.slice() ) );
@@ -49,12 +51,22 @@ export class CreateCollabComponent implements OnInit {
       collabSize: ['', Validators.required],
       collabDate: ['', Validators.required],
     });
-    console.log(this.firstFormGroup.value)
-    
     this.secondFormGroup = this._formBuilder.group({
-     
     });
-    console.log(Object.bind(this.firstFormGroup.value,this.firstFormGroup.value))
+
+    const body : CollabModel = Object.assign({}, this.firstFormGroup.value, this.secondFormGroup.value)
+    console.log(body)
+
+    //testing to add to JSON BODYS
+    const body1 : CollabModel = {
+      owner : "test owner1"
+    }
+    const body2 : CollabModel = {
+      location : "anywhere"
+    }
+    const CombinedBody = Object.assign({}, body1,body2)
+    console.log(CombinedBody)
+    
   }
 
   add(event: MatChipInputEvent): void {
@@ -98,13 +110,19 @@ export class CreateCollabComponent implements OnInit {
     return this.allFruits.filter(fruit => fruit.toLowerCase().indexOf(filterValue) === 0);
   }
 
-createCollab(){
-  // this.collabService.CreateCollab().subscribe((data : this.collabData)=>
-  //   collabData = data)
-}
   
-onSubmit(){
+createCollab(){
   console.log(this.firstFormGroup.value)
+  console.log(this.secondFormGroup.value)
+
+  //builnding two objects
+  let body  = Object.assign(this.firstFormGroup, this.secondFormGroup)
+
+  //sending http request to create a new collab
+  //return this.http.post(this.rootUrl+"/collab/createCollab",body)
+
+  //passing a JSON OBJECT to create a new collab
+  this.collabService.CreateCollab(body)
 }
 
 }
