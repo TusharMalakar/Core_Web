@@ -76,31 +76,14 @@ export class UserService {
     await this.getUserClasses(username).then(function(result){
       classes = result["classes"];
     });
-    
-    
-    /*
-    for(let classTaken of classes){
-        xAxisReq.push({
-        skillOrClass: classTaken,
-        type: "class"
-      });
-    }
-
-    for(let skill of skills){
-      xAxisReq.push({
-      skillOrClass: skill,
-      type: "skill"
-    });
-  }
-  */
 
     return xAxisReq;
   }
 
-searchSkills(constrain: string): Observable<any>{
-  let params = new HttpParams().set("query",constrain);
-  return this.http.get(this.rootUrl +"/search/skills",{params: params});
-}
+  searchSkills(constrain: string): Observable<any>{
+    let params = new HttpParams().set("query",constrain);
+    return this.http.get(this.rootUrl +"/search/skills",{params: params});
+  }
 
 
 }
