@@ -1,10 +1,12 @@
+import { UserService } from 'src/app/shared/dbAccess/user.service';
+import { CollabsService } from 'src/app/shared/dbAccess/collabs.service';
 import { ENTER, COMMA } from '@angular/cdk/keycodes';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
-import { map, startWith } from 'rxjs/operators';
+import { map, startWith, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'create-collab',
@@ -29,11 +31,17 @@ export class CreateCollabComponent implements OnInit {
   @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
 
-  constructor(private _formBuilder: FormBuilder) { 
+  constructor(private _formBuilder: FormBuilder, private userService : UserService) { 
     
-    this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
+    this.filteredFruits = this.fruitCtrl.valueChanges
+      .pipe(
       startWith(null),
-      map((fruit: string | null) => fruit ? this._filter(fruit) : this.allFruits.slice() ) );
+      debounceTime(200),
+      distinctUntilChanged(),
+      switchMap(val => {
+        return this._filter(val || '')
+      }) 
+      );
   }
 
   ngOnInit() {
@@ -86,10 +94,14 @@ export class CreateCollabComponent implements OnInit {
   }
 
  
-  private _filter(value: string): string[] {
+  private _filter(value: string): Observable<any[]> {
     const filterValue = value.toLowerCase();
-
-    return this.allFruits.filter(fruit => fruit.toLowerCase().indexOf(filterValue) === 0);
+    console.log(filterValue);
+    return this.userService.searchSkills(filterValue).pipe(
+      map(response => response.filter(
+        option => { console.log(option) }
+      ))
+    )
   }
   
 
