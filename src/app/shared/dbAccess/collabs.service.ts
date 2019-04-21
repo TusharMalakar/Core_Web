@@ -53,7 +53,7 @@ leaveCollab(id){
   //create a new collab, wehre owner = currentUser
   // size, date, duration, location, title, description, classes and skills are required
   //CreateCollab( owner, size, member, date, duration, location, status, title,description, classes,skills,applicants ){
-  CreateCollab(body){
+  CreateCollab(body:{}){
   
     // const body: CollabModel = {
     //   owner : owner,
