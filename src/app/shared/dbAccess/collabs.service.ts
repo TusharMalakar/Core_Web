@@ -28,6 +28,7 @@ export class CollabsService {
     return this.http.get( this.rootUrl +"/messaging/myConvos");
   }
 
+  //Get Both All and My Collabs
   getCollabs(collabType: string){
     return this.http.get( this.rootUrl + "/collab/" + collabType);
   }
@@ -36,24 +37,20 @@ export class CollabsService {
 
   //create a new collab, wehre owner = currentUser
   // size, date, duration, location, title, description, classes and skills are required
-  CreateCollab( owner, size, member, date, duration, location, status, title,description, classes,skills,applicants ){
+  createCollab(collabData: CollabModel){
 
     const body: CollabModel = {
-      owner : owner,
-      size :size,
-      members:member,
-      date :date,
-      duration :duration,
-      location :location,
-      status :status,
-      title:title,
-      description:description,
-      classes:classes,
-      skills:skills,
-      applicants:applicants 
+      size : collabData.size,
+      date : collabData.date,
+      duration : collabData.duration,
+      location : collabData.location,
+      title: collabData.title,
+      description: collabData.description,
+      classes: collabData.classes,
+      skills: collabData.skills,
     }
     return this.http.post(this.rootUrl + "/collab/createCollab", body)
-    .subscribe (data => console.log(data) )
+    .subscribe (result => console.log(result) )
   }
 
 }
