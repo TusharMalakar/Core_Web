@@ -202,6 +202,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
 /* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/cdk/scrolling */ "./node_modules/@angular/cdk/esm5/scrolling.es5.js");
 /* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/material/core */ "./node_modules/@angular/material/esm5/core.es5.js");
+/* harmony import */ var ng_pick_datetime__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ng-pick-datetime */ "./node_modules/ng-pick-datetime/picker.js");
 
 
 
@@ -228,6 +229,8 @@ __webpack_require__.r(__webpack_exports__);
 //Angular Flex Module
 
 
+
+//Clock
 
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -260,7 +263,10 @@ var AppModule = /** @class */ (function () {
                 _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__["MatAutocompleteModule"],
                 //Our Routes will be here to make code cleaner
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
-                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_21__["FlexLayoutModule"]
+                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_21__["FlexLayoutModule"],
+                //Clock
+                ng_pick_datetime__WEBPACK_IMPORTED_MODULE_24__["OwlDateTimeModule"],
+                ng_pick_datetime__WEBPACK_IMPORTED_MODULE_24__["OwlNativeDateTimeModule"],
             ],
             providers: [
                 _shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_8__["UserService"],
@@ -548,6 +554,10 @@ var UserService = /** @class */ (function () {
     UserService.prototype.searchSkills = function (constrain) {
         var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set("query", constrain);
         return this.http.get(this.rootUrl + "/search/skills", { params: params });
+    };
+    UserService.prototype.searchClasses = function (constrain) {
+        var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set("query", constrain);
+        return this.http.get(this.rootUrl + "/search/classes", { params: params }).map(function (res) { return res["matches"]; });
     };
     UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),

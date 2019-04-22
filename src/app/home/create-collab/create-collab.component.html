@@ -31,29 +31,29 @@
                     <div>
                         <mat-form-field class="example-chip-list">
                             <mat-chip-list #chipList>
-                                    <mat-chip
-                                        *ngFor="let skill of skills"
-                                        [selectable]="selectable"
-                                        [removable]="removable"
-                                        (removed)="removeSkill(skill)">
-                                        {{ skill }}
-                                        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-                                    </mat-chip>
-                                    <input
-                                        placeholder="New Skill..."
-                                        #skillInput
-                                        [formControl]="skillCtrl"
-                                        [matAutocomplete]="auto"
-                                        [matChipInputFor]="chipList"
-                                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                                        [matChipInputAddOnBlur]="addOnBlur"
-                                        (matChipInputTokenEnd)="addSkill($event)">
-                                        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectedSkill($event)">
-                                                <mat-option *ngFor="let skill of filteredSkills | async" [value]="skill">
-                                                    {{ skill }}
-                                                </mat-option>
-                                                </mat-autocomplete>
-                                    </mat-chip-list>
+                                <mat-chip
+                                    *ngFor="let skill of skills"
+                                    [selectable]="selectable"
+                                    [removable]="removable"
+                                    (removed)="removeSkill(skill)">
+                                    {{ skill }}
+                                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                                </mat-chip>
+                                <input
+                                    placeholder="New Skill..."
+                                    #skillInput
+                                    [formControl]="skillCtrl"
+                                    [matAutocomplete]="auto"
+                                    [matChipInputFor]="chipList"
+                                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                    [matChipInputAddOnBlur]="addOnBlur"
+                                    (matChipInputTokenEnd)="addSkill($event)">
+                                    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectedSkill($event)">
+                                        <mat-option *ngFor="let skill of filteredSkills | async" [value]="skill">
+                                            {{ skill }}
+                                        </mat-option>
+                                    </mat-autocomplete>
+                            </mat-chip-list>
                                     
                         </mat-form-field>
                         <mat-form-field class="example-chip-list">
@@ -66,6 +66,13 @@
                                     {{ class }}
                                     <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
                                 </mat-chip>
+                                <input 
+                                    placeholder="New Class..."
+                                    #classInput
+                                    [formControl]="classCtrl"
+                                    [matChipInputFor]="chipListClasses"
+                                    [matChipInputAddOnBlur]="addOnBlur"
+                                    (matChipInputTokenEnd)="addClass($event)">
                             </mat-chip-list>
 
                         </mat-form-field>
