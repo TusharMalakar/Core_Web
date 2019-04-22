@@ -23,6 +23,7 @@ export class UserPageComponent implements OnInit {
   constructor(private userService : UserService,private router : Router, private formBuilder: FormBuilder)
    { 
     this.userService.getUserdetails().subscribe(userData => this.userData = userData);
+    console.log(this.userData);
    }
 
   ngOnInit() {

@@ -66,13 +66,11 @@ export class HomeComponent implements OnInit {
     switch($event) {
 
       case 0: {
-        console.log("API called!")
-        this.collabService.getCollabs("getAllCollabs").subscribe ((data : CollabModel[] )  => this.collabData = data);
+        this.collabService.getCollabs("getActiveCollabs").subscribe ((data : CollabModel[] )  => this.collabData = data);
         break;
       }
 
       case 1: {
-        console.log("API called!")
         await this.collabService.getCollabs("getCollabDetails").subscribe ((data : CollabModel[] )  => this.collabData = data);
         break;
       }

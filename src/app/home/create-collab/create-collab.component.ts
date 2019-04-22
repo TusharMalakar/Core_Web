@@ -8,6 +8,7 @@ import { Observable, from } from 'rxjs';
 import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { map, startWith, debounceTime, distinctUntilChanged, switchMap, } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'create-collab',
@@ -15,7 +16,7 @@ import { map, startWith, debounceTime, distinctUntilChanged, switchMap, } from '
   styleUrls: ['./create-collab.component.css']
 })
 export class CreateCollabComponent implements OnInit {
-  isLinear = false;
+
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
 
@@ -35,7 +36,7 @@ export class CreateCollabComponent implements OnInit {
   //Variables for Classes.
   classCtrl = new FormControl();
   filteredClasses: Observable<string[]>;
-  classes: string[] = ['CS 3600', 'CS 3400'];
+  classes: string[] = [];
   allClasses: string[] = [];
 
 
@@ -47,7 +48,10 @@ export class CreateCollabComponent implements OnInit {
   @ViewChild('classInput') classInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto2') matAutocomplete2: MatAutocomplete;
 
-  constructor(private _formBuilder: FormBuilder, private userService : UserService, private collabService: CollabsService) {
+  constructor(private _formBuilder: FormBuilder, 
+              private userService : UserService, 
+              private collabService: CollabsService,
+              private router: Router) {
     this.collabData = new CollabModel;
    }
 
@@ -97,8 +101,6 @@ export class CreateCollabComponent implements OnInit {
     }
   }
 
-  
-
   removeSkill(skill: string): void {
     const index = this.skills.indexOf(skill);
 
@@ -113,28 +115,57 @@ export class CreateCollabComponent implements OnInit {
     this.skillCtrl.setValue(null);
   }
 
+  addClass(event: MatChipInputEvent): void {
+
+    if(!this.matAutocomplete.isOpen){
+
+      const input = event.input;
+      const value = event.value;
+
+      if((value || '').trim()) {
+        this.classes.push(value.trim());
+      }
+  
+      if(input) {
+        input.value = '';
+      } 
+
+      this.classCtrl.setValue(null);
+    }
+  }
+
   removeClass(_class: string): void {
-    const index = this.skills.indexOf(_class);
+    const index = this.classes.indexOf(_class);
 
     if (index >= 0) {
       this.classes.splice(index, 1);
     }
   }
 
+  selectedClass(event: MatAutocompleteSelectedEvent): void {
+    this.classes.push(event.option.viewValue);
+    this.classInput.nativeElement.value = '';
+    this.classCtrl.setValue(null);
+  }
+
   createCollab(){    
     this.collabData = Object.assign({}, this.firstFormGroup.value);
     this.collabData.skills = this.skills;
     this.collabData.classes = this.classes;
-    console.log("title: " + this.collabData.title);
-    console.log("description: " + this.collabData.description);
-    console.log("location: " + this.collabData.location);
-    console.log("size: " + this.collabData.size);
-    console.log("date: " + this.collabData.date);
-    console.log("duration: " + this.collabData.duration);
-    console.log(this.collabData.skills);
+    this.collabData.date = (this.collabData.date).valueOf();
+    this.collabData.duration *= 86400000;
+    this.collabData.duration += this.collabData.date;
+    let createResult: boolean;
+    this.collabService.createCollab(this.collabData)
+      .subscribe(result => { 
+        if(result['success']){
+          this.router.navigate(['/home'])
+        } else {
+          error => {console.error('success' + error)}
+        }
+
+       } );
     
-    this.collabService.createCollab(this.collabData);
-  
     
   }
 
@@ -146,6 +177,8 @@ export class CreateCollabComponent implements OnInit {
     return this.allSkills.filter(fruit => fruit.toLowerCase().indexOf(filterValue) === 0);
 
   }
+
+  
   
 
 }

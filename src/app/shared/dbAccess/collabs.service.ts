@@ -49,8 +49,7 @@ export class CollabsService {
       classes: collabData.classes,
       skills: collabData.skills,
     }
-    return this.http.post(this.rootUrl + "/collab/createCollab", body)
-    .subscribe (result => console.log(result) )
+    return this.http.post(this.rootUrl + "/collab/createCollab", body);
   }
 
 }
