@@ -30,9 +30,12 @@
 
 .mat-card>.mat-card-actions:last-child {
     margin-bottom: 5px;
-    margin-left: 10px;
+   
 }
-
+.mat-card-actions .mat-button, .mat-card-actions .mat-raised-button{
+    margin: 0px;
+    margin-left: 22px;
+}
 .mat-expansion-panel {
     background: rgba(255, 254, 254, 0.151);
 }
@@ -49,7 +52,7 @@
     margin-right: 30px;
 }
 
-.content .date,.location{
+.content .date,.location,.duration{
     margin-left: 40px;
     margin-right: 40px;
 }

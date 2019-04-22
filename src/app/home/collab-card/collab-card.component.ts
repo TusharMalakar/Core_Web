@@ -3,6 +3,7 @@ import { UserService } from './../../shared/dbAccess/user.service';
 import { CollabModel } from './../../shared/models/collab.model';
 import { Component, OnInit, Input } from '@angular/core';
 import { TableBuilder } from 'src/app/shared/models/tableBuilder.model';
+import { UserModel } from 'src/app/shared/models/user.model';
 
 export interface Requirements{
   skillOrClass: string,
@@ -20,13 +21,22 @@ export class CollabCardComponent implements OnInit {
   table: Array<TableBuilder> = [];  
   xAxisReq: Array<string> = [];
   alreadyBuilt: boolean = false;
+  partOf = false; 
+  isOwner = false; 
+
+  //Will hold our user data.
+  userData: UserModel[];
   
 
   constructor(private userService: UserService, 
-              private collabService: CollabsService) {}
+              private collabService: CollabsService) {
+               
+                
+              }
 
-  ngOnInit() {
-    console.log(this.collabData);
+  async ngOnInit() {
+    await this.userService.getUserdetails().subscribe(userData => this.userData = userData);
+    
   }
 
   /*
@@ -96,12 +106,37 @@ export class CollabCardComponent implements OnInit {
 
     return xAxisReq;
   }
-
   
+  async actionCheck(){
+    await this.isUserOwner();
+    this.isPartOf();
+  }
+  isUserOwner(){
+    console.log(this.userData['username']);
+    if(this.collabData.owner == this.userData['username']){
+      this.isOwner = true;
+    } else {
+      this.isOwner = false;
+    }
+  }
 
+  isPartOf(){
+    for(let member of this.collabData.members){
+      if(member == this.userData['username']){
+        this.partOf = true;
+      } 
+    }
 
-  
+    console.log(this.partOf);
+  }
 
+  checkPartOf(){
+    return this.partOf;
+  }
+
+  checkOwner(){
+    return this.isOwner;
+  }
 
 
 }

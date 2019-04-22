@@ -4,8 +4,8 @@
     <mat-card-title> 
 
       <mat-grid-list  cols="2" rowHeight="4:1">
-        <mat-grid-tile>{{collabData.title}}</mat-grid-tile>
-        <mat-grid-tile><mat-icon>group</mat-icon> : {{collabData.members.length}} / {{ collabData.size}}</mat-grid-tile>
+        <mat-grid-tile>{{collabData?.title}}</mat-grid-tile>
+        <mat-grid-tile><mat-icon>group</mat-icon> : {{collabData?.members.length}} / {{ collabData?.size}}</mat-grid-tile>
       </mat-grid-list>
       
     </mat-card-title>
@@ -14,21 +14,22 @@
   <mat-card-content>
     <mat-accordion>
         <div class = "content">
-            <p class="description">Description: {{ collabData.description }} </p>
-            <p class="date">Date: {{ collabData.date | date }}</p>
-            <p class="location">Location: {{ collabData.location }}</p>
+            <p class="description">Description: {{ collabData?.description }} </p>
+            <p class="date">Date: {{ collabData?.date | date:'medium' }}</p>
+            <p class="duration">Apply By: {{ collabData?.duration | date:'medium' }}</p>
+            <p class="location">Location: {{ collabData?.location }}</p>
 
             <div class = "requirements">
                 <mat-chip-list>
                     Classes: 
-                    <mat-chip *ngFor = "let class of collabData.classes">
+                    <mat-chip *ngFor = "let class of collabData?.classes">
                       {{ class }}
                     </mat-chip>
                 </mat-chip-list>
                 <br>
                 <mat-chip-list>
                     Skills: 
-                    <mat-chip *ngFor="let skill of collabData.skills">
+                    <mat-chip *ngFor="let skill of collabData?.skills">
                       {{ skill }}
                     </mat-chip>
                 </mat-chip-list>
@@ -61,10 +62,24 @@
     
   </mat-card-content>
 
-  <mat-card-actions>
-        <button mat-raised-button color = "primary"> Join </button>
-        <button mat-raised-button color = "primary"> Leave </button>
-        <button mat-raised-button color = "primary"> Delete</button>
-  </mat-card-actions>
+  <mat-expansion-panel 
+                       (opened)="panelOpenState = true && actionCheck()"
+                       (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h4>Actions</h4>
+          </mat-panel-title>
+          <mat-panel-description>
+          </mat-panel-description>
+          </mat-expansion-panel-header>
+            <mat-card-actions>
+              <button *ngIf="checkPartOf() == false" mat-raised-button color = "primary"> Join </button>
+              <button *ngIf="checkPartOf() == true" mat-raised-button color = "primary"> Leave </button>
+              <button *ngIf="checkOwner() == true" mat-raised-button color = "primary"> Delete </button>
+              <button *ngIf="checkOwner() == true"mat-raised-button color = "primary"> Edit </button>
+            </mat-card-actions>   
+        </mat-expansion-panel>
+
+  
 
 </mat-card>
