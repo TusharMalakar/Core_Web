@@ -17,19 +17,16 @@ var map = {
 	"./login/login.module": [
 		"./src/app/login/login.module.ts",
 		"default~home-home-module~login-login-module~register-register-module~user-user-module",
-		"default~login-login-module~register-register-module~user-user-module",
 		"login-login-module"
 	],
 	"./register/register.module": [
 		"./src/app/register/register.module.ts",
 		"default~home-home-module~login-login-module~register-register-module~user-user-module",
-		"default~login-login-module~register-register-module~user-user-module",
 		"register-register-module"
 	],
 	"./user/user.module": [
 		"./src/app/user/user.module.ts",
 		"default~home-home-module~login-login-module~register-register-module~user-user-module",
-		"default~login-login-module~register-register-module~user-user-module",
 		"default~home-home-module~user-user-module",
 		"user-user-module"
 	]
@@ -201,8 +198,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/chips */ "./node_modules/@angular/material/esm5/chips.es5.js");
 /* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/autocomplete */ "./node_modules/@angular/material/esm5/autocomplete.es5.js");
 /* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/esm5/table.es5.js");
-/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
-/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/cdk/scrolling */ "./node_modules/@angular/cdk/esm5/scrolling.es5.js");
+/* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/datepicker */ "./node_modules/@angular/material/esm5/datepicker.es5.js");
+/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/cdk/scrolling */ "./node_modules/@angular/cdk/esm5/scrolling.es5.js");
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/material/core */ "./node_modules/@angular/material/esm5/core.es5.js");
 
 
 
@@ -225,7 +224,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 //Angular Flex Module
+
 
 
 var AppModule = /** @class */ (function () {
@@ -250,13 +251,16 @@ var AppModule = /** @class */ (function () {
                 _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_13__["MatSidenavModule"],
                 _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_14__["MatToolbarModule"],
                 _angular_material_menu__WEBPACK_IMPORTED_MODULE_16__["MatMenuModule"],
-                _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_21__["ScrollDispatchModule"],
+                _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_22__["ScrollDispatchModule"],
                 _angular_material_chips__WEBPACK_IMPORTED_MODULE_17__["MatChipsModule"],
                 _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__["MatAutocompleteModule"],
                 _angular_material_table__WEBPACK_IMPORTED_MODULE_19__["MatTableModule"],
+                _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_20__["MatDatepickerModule"],
+                _angular_material_core__WEBPACK_IMPORTED_MODULE_23__["MatNativeDateModule"],
+                _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__["MatAutocompleteModule"],
                 //Our Routes will be here to make code cleaner
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
-                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_20__["FlexLayoutModule"]
+                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_21__["FlexLayoutModule"]
             ],
             providers: [
                 _shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_8__["UserService"],
@@ -410,7 +414,7 @@ module.exports = ".container {\n    position: absolute;\n    top: 0;\n    left: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-drawer-container class=\"container\" autosize >\n    <!-- Will be triggered by (click) = \"drawer.toggle()\" -->\n    <!--\n    <mat-drawer #drawer class=\"sidenav\">\n            <button color=\"primary\" mat-button routerLink=\"/home\">Home</button>\n    </mat-drawer>\n    -->\n    <div class=\"sidenav-content\">\n        <mat-toolbar color=\"primary\">\n            <mat-toolbar-row>\n                <!-- \n                  drawer.toggle(): will call #drawer and will bring the sidenav into view\n                \n                <button mat-icon-button (click) = \"drawer.toggle()\">\n                        <mat-icon>menu</mat-icon>\n                </button>\n                 -->\n                <button mat-button routerLink=\"/home\">Hunter Collab</button>\n                <span class=\"spacer\"></span>\n                <!--\n                   How every button is implemented \n                    [matMenuTriggerFor] is bindded to button menu; will be triggered by menu\n                  -->\n                <button mat-icon-button [matMenuTriggerFor] = \"menu\">\n                    <mat-icon>perm_identity</mat-icon>\n                </button>\n                \n                <mat-menu #menu=\"matMenu\" >\n                  <button mat-menu-item routerLink=\"/user\">\n                    <mat-icon>person</mat-icon>\n                    <span>User Info</span>\n                  </button>\n                  <button mat-menu-item (click)=\"logOut()\">\n                    <mat-icon>directions_run</mat-icon>\n                    <span>LogOut</span>\n                  </button>\n                </mat-menu>\n\n            </mat-toolbar-row>\n        </mat-toolbar>\n        <router-outlet></router-outlet>\n    </div>\n</mat-drawer-container>\n"
+module.exports = "<mat-drawer-container class=\"container\" autosize >\n    <!-- Will be triggered by (click) = \"drawer.toggle()\" -->\n    \n    <mat-drawer #drawer class=\"sidenav\">\n            <button color=\"primary\" mat-button routerLink=\"/home\">Home</button>\n    </mat-drawer>\n    \n    <div class=\"sidenav-content\">\n        <mat-toolbar color=\"primary\">\n            <mat-toolbar-row>\n                <!-- \n                  drawer.toggle(): will call #drawer and will bring the sidenav into view\n                -->\n                <button mat-icon-button (click) = \"drawer.toggle()\">\n                        <mat-icon>menu</mat-icon>\n                </button>\n                 \n                <button mat-button routerLink=\"/home\">Hunter Collab</button>\n                <span class=\"spacer\"></span>\n                <!--\n                   How every button is implemented \n                    [matMenuTriggerFor] is bindded to button menu; will be triggered by menu\n                  -->\n                <button mat-icon-button [matMenuTriggerFor] = \"menu\">\n                    <mat-icon>perm_identity</mat-icon>\n                </button>\n                \n                <mat-menu #menu=\"matMenu\" >\n                  <button mat-menu-item routerLink=\"/user\">\n                    <mat-icon>person</mat-icon>\n                    <span>User Info</span>\n                  </button>\n                  <button mat-menu-item (click)=\"logOut()\">\n                    <mat-icon>directions_run</mat-icon>\n                    <span>LogOut</span>\n                  </button>\n                </mat-menu>\n\n            </mat-toolbar-row>\n        </mat-toolbar>\n        <router-outlet></router-outlet>\n    </div>\n</mat-drawer-container>\n"
 
 /***/ }),
 
@@ -536,21 +540,6 @@ var UserService = /** @class */ (function () {
                             })];
                     case 2:
                         _a.sent();
-                        /*
-                        for(let classTaken of classes){
-                            xAxisReq.push({
-                            skillOrClass: classTaken,
-                            type: "class"
-                          });
-                        }
-                    
-                        for(let skill of skills){
-                          xAxisReq.push({
-                          skillOrClass: skill,
-                          type: "skill"
-                        });
-                      }
-                      */
                         return [2 /*return*/, xAxisReq];
                 }
             });

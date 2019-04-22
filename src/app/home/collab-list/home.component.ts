@@ -91,10 +91,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  createCollab(){
-    this.collabService.CreateCollab("", 29, [], 4/13/2019, 5, "rego park", true, "test","test", ["test", "test2"],["test","test"], ["test", 'test2'])
-  }
-
+  
 
 }
 

@@ -4,6 +4,7 @@ import { UserModel } from '../models/user.model';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs';
 import { Requirements } from 'src/app/home/collab-card/collab-card.component';
+import { map, startWith, debounceTime, distinctUntilChanged, switchMap, } from 'rxjs/operators';
 
 
 @Injectable()
@@ -80,10 +81,19 @@ export class UserService {
     return xAxisReq;
   }
 
-  searchSkills(constrain: string): Observable<any>{
+    searchSkills(constrain: string){
     let params = new HttpParams().set("query",constrain);
+
     return this.http.get(this.rootUrl +"/search/skills",{params: params});
+
   }
+
+    searchClasses(constrain: string): Observable<string[]>{
+    let params = new HttpParams().set("query",constrain);
+    return this.http.get<string[]>(this.rootUrl +"/search/classes",{params: params}).map(
+      res => { return res["matches"]}
+    )
+    }
 
 
 }

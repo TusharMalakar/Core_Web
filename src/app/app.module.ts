@@ -32,6 +32,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 import { MatNativeDateModule } from '@angular/material/core';
 
+//Clock
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+
 
 
 
@@ -66,7 +69,11 @@ import { MatNativeDateModule } from '@angular/material/core';
     //Our Routes will be here to make code cleaner
     AppRoutingModule,
 
-    FlexLayoutModule
+    FlexLayoutModule,
+
+    //Clock
+    OwlDateTimeModule, 
+    OwlNativeDateTimeModule,
    
   ],
   providers: [
