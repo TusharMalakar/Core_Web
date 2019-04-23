@@ -6,19 +6,23 @@ import { Route } from '@angular/compiler/src/core';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
+
   constructor(private router : Router, private service : UserService){}
+
   canActivate():  boolean {
-      if ( localStorage.getItem('accessToken') ){      
-        return true;
-      }
-      else{    
-        this.router.navigate(["/login"])   
-        return false;
-      }    
+    if ( localStorage.getItem('accessToken') == null ){
+          
+      return true;
+    }
+    else{    
+      this.router.navigate(["home"]) 
+      return false;
+    } 
   }
 
-  canLoad(route: Route): boolean {
-    if ( localStorage.getItem('accessToken') ){      
+  canLoad(): boolean {
+    if ( localStorage.getItem('accessToken') ){
+            
       return true;
     }
     else{    
@@ -26,4 +30,5 @@ export class AuthGuard implements CanActivate {
       return false;
     } 
   }
+
 }
