@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CollabModel } from '../models/collab.model';
 import { Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -50,6 +51,34 @@ export class CollabsService {
       skills: collabData.skills,
     }
     return this.http.post(this.rootUrl + "/collab/createCollab", body);
+  }
+
+  //Join Collab
+  joinCollab(id){
+
+    console.log(id["$oid"]);
+    const body = {
+     id : id["$oid"]
+    }
+    return this.http.post(this.rootUrl + "/collab/joinCollab", body);
+  }
+
+  //Leave Collab
+  leaveCollab(id){
+
+    console.log(id["$oid"]);
+    const body = {
+     id : id["$oid"]
+    }
+    return this.http.post(this.rootUrl + "/collab/leaveCollab", body);
+  }
+
+  deleteCollab(id){
+    console.log(id["$oid"]);
+    const body = {
+      id : id["$oid"]
+    }
+    return this.http.delete(this.rootUrl + "/collab/deleteCollabForReal");
   }
 
 }
