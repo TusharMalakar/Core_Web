@@ -74,11 +74,13 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [
     {
         path: 'login',
-        loadChildren: './login/login.module#LoginModule'
+        loadChildren: './login/login.module#LoginModule',
+        canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__["AuthGuard"]]
     },
     {
         path: 'register',
-        loadChildren: './register/register.module#RegisterModule'
+        loadChildren: './register/register.module#RegisterModule',
+        canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__["AuthGuard"]]
     },
     {
         path: 'home',
@@ -109,7 +111,6 @@ var AppRoutingModule = /** @class */ (function () {
     return AppRoutingModule;
 }());
 
-// testuser1@myhunter.cuny.edu 
 
 
 /***/ }),
@@ -311,15 +312,15 @@ var AuthGuard = /** @class */ (function () {
         this.service = service;
     }
     AuthGuard.prototype.canActivate = function () {
-        if (localStorage.getItem('accessToken')) {
+        if (localStorage.getItem('accessToken') == null) {
             return true;
         }
         else {
-            this.router.navigate(["/login"]);
+            this.router.navigate(["home"]);
             return false;
         }
     };
-    AuthGuard.prototype.canLoad = function (route) {
+    AuthGuard.prototype.canLoad = function () {
         if (localStorage.getItem('accessToken')) {
             return true;
         }

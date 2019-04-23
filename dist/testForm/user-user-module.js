@@ -99,6 +99,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var UserPageComponent = /** @class */ (function () {
+    /*
+    TODO:
+      DISPLAY Image
+      Edit all fields
+      Autocomplete on edit skills and classes.
+  
+    */
     function UserPageComponent(userService, router, formBuilder) {
         var _this = this;
         this.userService = userService;
@@ -107,6 +114,7 @@ var UserPageComponent = /** @class */ (function () {
         this.filteredUsers = [];
         this.isLoading = false;
         this.userService.getUserdetails().subscribe(function (userData) { return _this.userData = userData; });
+        console.log(this.userData);
     }
     UserPageComponent.prototype.ngOnInit = function () {
         this.classesForm = this.formBuilder.group({
