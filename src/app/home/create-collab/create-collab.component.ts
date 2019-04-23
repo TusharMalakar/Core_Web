@@ -3,7 +3,7 @@ import { UserService } from 'src/app/shared/dbAccess/user.service';
 import { CollabsService } from 'src/app/shared/dbAccess/collabs.service';
 import { ENTER, COMMA } from '@angular/cdk/keycodes';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { Observable, from } from 'rxjs';
 import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
@@ -16,6 +16,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-collab.component.css']
 })
 export class CreateCollabComponent implements OnInit {
+  @Input() currentCollab: CollabModel;
 
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
