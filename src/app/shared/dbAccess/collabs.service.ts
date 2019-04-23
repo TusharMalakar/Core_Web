@@ -95,5 +95,29 @@ export class CollabsService {
     return this.http.get(this.rootUrl + "/collab/getRecommendedCollabs");
   }
 
+  //Requires a JSON"_id"
+  editCollab(_id, owner, size,members, date, duration, location, status, title, description,classes, skills, applicants){
+      const body: CollabModel = {
+          _id         : _id,
+          owner       : owner,
+          size        : size,
+          members     : members,
+          date        : date,
+          duration    : duration,
+          location    : location,
+          status      : status,
+          title       : title,
+          description : description,
+          classes     : classes,
+          skills      : skills,
+          applicants  : applicants
+      }
+      return this.http.post(this.rootUrl + "/collab/editCollab",body)
+  }
+
+    
+    
+
+
 }
 

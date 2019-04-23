@@ -20,6 +20,7 @@ export class CollabCardComponent implements OnInit {
   @Input() collabData: CollabModel;
   table: Array<TableBuilder> = [];  
   xAxisReq: Array<string> = [];
+  yAxisUsers: any
   alreadyBuilt: boolean = false;
   partOf = false; 
   isOwner = false; 
@@ -39,6 +40,7 @@ export class CollabCardComponent implements OnInit {
     
   }
 
+
   /*
   Function that will build our table. 
   async: Will allow us to do await functions
@@ -57,6 +59,7 @@ export class CollabCardComponent implements OnInit {
     
     //Will members of the collaboration
     yAxisUsers  = this.collabData.members;
+
     //console.log("Skills Required: " , xAxisReq);
     
     //Will loop through all the users and check if they know the required skills and classes
@@ -72,6 +75,12 @@ export class CollabCardComponent implements OnInit {
     
   }
 
+  RefreshPage(){
+    this.getAllRequired();
+    //Will members of the collaboration
+    this.yAxisUsers  = this.collabData.members;
+  } 
+  
   //WIll check if a user knows skill or class, from the list of classes and skills that a user knows
   async checkIfKnown(userName: string, listOfRequired: string[]){
     let tmp: TableBuilder = null;
@@ -137,7 +146,7 @@ export class CollabCardComponent implements OnInit {
   checkOwner(){
     return this.isOwner;
   }
-
+  
   joinCollab(){
     this.collabService.joinCollab(this.collabData._id)
       .subscribe(res => { console.log(res) });
