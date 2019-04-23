@@ -39,4 +39,16 @@ export class UserPageComponent implements OnInit {
       userInput: null
     })
   }
+  searchClasses(constrain: string){
+    this.userService.searchClasses(constrain).subscribe((data:any)=>{
+      console.log(data)
+    })
+  }
+  
+  addclass(){
+    //this.userService.
+  }
+
+
+
 }
