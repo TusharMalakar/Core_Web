@@ -11,7 +11,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path:"collabinfo",
+  path:"collabinfo",
     component: CollabCardComponent
   },
   {
