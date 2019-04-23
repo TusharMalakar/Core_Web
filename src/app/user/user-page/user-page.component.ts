@@ -20,6 +20,13 @@ export class UserPageComponent implements OnInit {
   filteredUsers: String[] = [];
   isLoading = false;
 
+  /*
+  TODO: 
+    DISPLAY Image
+    Edit all fields
+    Autocomplete on edit skills and classes. 
+
+  */
   constructor(private userService : UserService,private router : Router, private formBuilder: FormBuilder)
    { 
     this.userService.getUserdetails().subscribe(userData => this.userData = userData);
@@ -31,6 +38,5 @@ export class UserPageComponent implements OnInit {
     this.classesForm = this.formBuilder.group({
       userInput: null
     })
-    
   }
 }
