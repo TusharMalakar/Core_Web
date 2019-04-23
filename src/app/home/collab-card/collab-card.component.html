@@ -76,7 +76,7 @@
               <button *ngIf="checkPartOf() == false" mat-raised-button color = "primary" (click) = "joinCollab()"  > Join </button>
               <button *ngIf="checkPartOf() == true"  mat-raised-button color = "primary" (click) = "leaveCollab()" > Leave </button>
               <button *ngIf="checkOwner() == true"   mat-raised-button color = "primary" (click) = "deleteCollab()"> Delete </button>
-              <button *ngIf="checkOwner() == true"   mat-raised-button color = "primary"> Edit </button>
+              <button *ngIf="checkOwner() == true"   mat-raised-button color = "primary" (ckick) = "editCollab()"> Edit </button>
             </mat-card-actions>   
         </mat-expansion-panel>
 

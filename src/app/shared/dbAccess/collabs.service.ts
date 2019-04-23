@@ -73,12 +73,26 @@ export class CollabsService {
     return this.http.post(this.rootUrl + "/collab/leaveCollab", body);
   }
 
+  //TODO: Get this http request working
   deleteCollab(id){
     console.log(id["$oid"]);
     const body = {
       id : id["$oid"]
     }
     return this.http.delete(this.rootUrl + "/collab/deleteCollabForReal");
+  }
+
+  //TODO: Get this http request working
+  getReqCollabs(classes: string[], skills: string[]){
+    console.log(classes);
+    console.log(skills);
+
+    const body = {
+      classes : classes,
+      skills  : skills
+    }
+
+    return this.http.get(this.rootUrl + "/collab/getRecommendedCollabs");
   }
 
 }
