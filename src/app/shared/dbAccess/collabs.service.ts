@@ -95,5 +95,7 @@ export class CollabsService {
     return this.http.get(this.rootUrl + "/collab/getRecommendedCollabs");
   }
 
+  //TODO: edit collab endpoint
+
 }
 
