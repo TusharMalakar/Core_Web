@@ -6,7 +6,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { HomeComponent } from './collab-list/home.component';
 import { NgModule } from '@angular/core';
@@ -29,6 +29,8 @@ import { CreateCollabComponent } from './create-collab/create-collab.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatSidenavModule } from '@angular/material';
 
 @NgModule({
   declarations: [HomeComponent, CollabCardComponent, CollabTableComponent, CreateCollabComponent],
@@ -52,10 +54,14 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatDatepickerModule,
     MatNativeDateModule,
     MatAutocompleteModule,
+    FlexLayoutModule,
     
 
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule
   ]
 })
 export class HomeModule { }

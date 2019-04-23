@@ -5,6 +5,11 @@ import { CollabModel, CollabMode2 } from './../../shared/models/collab.model';
 import { Component, OnInit, Input } from '@angular/core';
 import { TableBuilder } from 'src/app/shared/models/tableBuilder.model';
 
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+
 export interface Requirements{
   skillOrClass: string,
   type: string
@@ -15,6 +20,8 @@ export interface Requirements{
   templateUrl: './collab-card.component.html',
   styleUrls: ['./collab-card.component.css']
 })
+
+
 export class CollabCardComponent implements OnInit {
 
   @Input() collabData: CollabModel;
@@ -23,8 +30,13 @@ export class CollabCardComponent implements OnInit {
   alreadyBuilt: boolean = false;
   readonly rootUrl = 'https://huntercollabapi.herokuapp.com';
   
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches)
+    );
 
   constructor(private userService: UserService, 
+              private breakpointObserver: BreakpointObserver,
               private http : HttpClient,
               private collabService: CollabsService) {}
 
