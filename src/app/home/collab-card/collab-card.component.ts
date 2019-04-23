@@ -138,5 +138,20 @@ export class CollabCardComponent implements OnInit {
     return this.isOwner;
   }
 
+  joinCollab(){
+    this.collabService.joinCollab(this.collabData._id)
+      .subscribe(res => { console.log(res) });
+  }
+
+  leaveCollab(){
+    this.collabService.leaveCollab(this.collabData._id)
+      .subscribe(res => {console.log(res) })
+  }
+
+  deleteCollab(){
+    this.collabService.deleteCollab(this.collabData._id)
+      .subscribe(res => {console.log(res) })
+  }
+
 
 }

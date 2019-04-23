@@ -11,11 +11,13 @@ import { RegisterComponent } from './register/register-page/register.component';
 const routes: Routes = [
   {
     path : 'login', 
-    loadChildren : './login/login.module#LoginModule'
+    loadChildren : './login/login.module#LoginModule',
+    canActivate: [AuthGuard]
   },
   {
     path:'register', 
-    loadChildren : './register/register.module#RegisterModule'
+    loadChildren : './register/register.module#RegisterModule',
+    canActivate: [AuthGuard]
   },
   {
     path:'home', 
@@ -42,5 +44,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-// testuser1@myhunter.cuny.edu 

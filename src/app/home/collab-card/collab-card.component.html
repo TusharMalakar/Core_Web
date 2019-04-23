@@ -73,10 +73,10 @@
           </mat-panel-description>
           </mat-expansion-panel-header>
             <mat-card-actions>
-              <button *ngIf="checkPartOf() == false" mat-raised-button color = "primary"> Join </button>
-              <button *ngIf="checkPartOf() == true" mat-raised-button color = "primary"> Leave </button>
-              <button *ngIf="checkOwner() == true" mat-raised-button color = "primary"> Delete </button>
-              <button *ngIf="checkOwner() == true"mat-raised-button color = "primary"> Edit </button>
+              <button *ngIf="checkPartOf() == false" mat-raised-button color = "primary" (click) = "joinCollab()"  > Join </button>
+              <button *ngIf="checkPartOf() == true"  mat-raised-button color = "primary" (click) = "leaveCollab()" > Leave </button>
+              <button *ngIf="checkOwner() == true"   mat-raised-button color = "primary" (click) = "deleteCollab()"> Delete </button>
+              <button *ngIf="checkOwner() == true"   mat-raised-button color = "primary"> Edit </button>
             </mat-card-actions>   
         </mat-expansion-panel>
 
