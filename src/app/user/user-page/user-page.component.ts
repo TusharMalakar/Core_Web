@@ -1,3 +1,4 @@
+import { profile } from './../../shared/user.model';
 import { Component, OnInit,ChangeDetectionStrategy } from '@angular/core';
 import { UserService } from 'src/app/shared/dbAccess/user.service';
 import { Router } from '@angular/router';
@@ -14,8 +15,11 @@ import { Observable } from 'rxjs';
 export class UserPageComponent implements OnInit {
   //Will hold our user data.
   userData: UserModel[];
+  picture : Blob;
   userClass:UserModel["classes"];
   userSkill:UserModel["skills"];
+  
+  imageToShow: any;
   
   //Auto complete variables.
   classesForm: FormGroup;
@@ -34,7 +38,7 @@ export class UserPageComponent implements OnInit {
    }
 
   ngOnInit() {
-    
+    this.profilePicture();
     this.classesForm = this.formBuilder.group({
       userInput: null
     })
@@ -51,6 +55,28 @@ export class UserPageComponent implements OnInit {
     console.log("checking JSON body " , body)
     this.userService.updateUserSkill(body).subscribe((data:any)=>{
       console.log(data)
+    })
+  }
+
+
+createImageFromBlob(image: Blob) {
+   let reader = new FileReader();
+   reader.addEventListener("load", () => {
+     
+      //image to show is the final place holder of profile picture
+      this.imageToShow = reader.result;
+      return this.imageToShow
+   }, false);
+
+   if (image) {
+      reader.readAsDataURL(image);
+   }
+}
+
+profilePicture(){
+    this.userService.getPicture().subscribe((picture:Blob)=>{
+      this.createImageFromBlob(picture)
+      console.log(picture)
     })
   }
 

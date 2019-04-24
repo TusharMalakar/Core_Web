@@ -73,7 +73,11 @@ leaveCollab(id){
     .subscribe (data => console.log(data) )
   }
 
-  recomandedCollab(){
+  recomandedCollab(skills, classes){
+    const body = {
+      skills  : skills,
+      classes : classes
+    }
     return this.http.get(this.rootUrl+"/user/getRecCollabs")
   }
 

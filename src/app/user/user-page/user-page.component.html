@@ -13,8 +13,15 @@
                   <div mat-card-avatar></div>
                   <mat-card-title>{{ userData?.name }}</mat-card-title>
                   <mat-card-subtitle>{{ userData?.username }}</mat-card-subtitle>
-                </mat-card-header>    
-              <img mat-card-image src="/assets/userPhoto.png">
+                </mat-card-header>
+                    <!--Display profile Picture-->
+                    <img mat-card-image [src]="imageToShow"
+                    alt="Place image title"
+                    *ngIf="!isImageLoading; else noImageFound">
+                    <ng-template #noImageFound>
+                          <img src="src\assets\userPhoto.png" alt="userPhoto.png"> 
+                    </ng-template>
+
               <mat-card-content>
               
               <mat-grid-list cols="2" rowHeight="4:1" class="user-links">
@@ -84,3 +91,7 @@
     </div>
   </div>
 </div>
+
+
+
+
