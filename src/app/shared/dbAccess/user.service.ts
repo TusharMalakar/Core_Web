@@ -135,6 +135,11 @@ getPicture(): Observable <Blob>{
   return this.http.get( this.rootUrl +"/user/profilePicture",  { responseType: 'blob' });
 }
 
+uploadProfilePicture(fileToUpload: File){
+  const formData: FormData = new FormData();
+  formData.append('pic', fileToUpload, fileToUpload.name);
+  return this.http.post(this.rootUrl+"/user/profilePicture", formData)
+}
 
 // /collab/deleteCollab 
 ///collab/getRecommendedCollab

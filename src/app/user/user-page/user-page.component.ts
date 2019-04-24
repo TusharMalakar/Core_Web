@@ -21,6 +21,9 @@ export class UserPageComponent implements OnInit {
   
   //place holder of image
   imageToShow: any;
+
+  //default variable for selected file.
+  fileToUpload: File = null;
   
   //Auto complete variables.
   classesForm: FormGroup;
@@ -80,6 +83,23 @@ profilePicture(){
       //console.log(picture)
     })
   }
+  //function which you use in (change)-event of your file input tag:
+  handleFileInput(files: FileList) {
+      this.fileToUpload = files.item(0);
+  }
+
+  uploadFileToActivity() {
+    this.userService.uploadProfilePicture(this.fileToUpload).subscribe((data: any)=>{
+      console.log(data)
+    })
+  //   this.fileUploadService.postFile(this.fileToUpload).subscribe(data => {
+  //     // do something, if upload success
+  //     }, error => {
+  //       console.log(error);
+  //     });
+ }
+
+
 
 
 }

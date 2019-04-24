@@ -17,11 +17,13 @@
                     <!--Display profile Picture-->
                     <img mat-card-image [src]="imageToShow"
                     alt="Place image title"
-                    *ngIf="!isImageLoading; else noImageFound">
+                    *ngIf="!isImageLoading; else noImageFound" >
                     <ng-template #noImageFound>
                           <img src="/src/assets/userPhoto.png"> 
                     </ng-template>
-
+                    
+                    
+                    
               <mat-card-content>
               
               <mat-grid-list cols="2" rowHeight="4:1" class="user-links">
@@ -33,9 +35,18 @@
                       <button mat-raised-button color="primary">{{ userData?.linkedin }}</button>
                   </mat-grid-tile>
               </mat-grid-list>
+
+              <!--Taking picture as input-->
+              <div class="form-group">
+                <input type="file" id="file"(change)="handleFileInput($event.target.files)">
+                <button (click)="uploadFileToActivity()">submit</button>
+              </div>
+             
+          
             </mat-card-content>
       </mat-card>
   </div>
+  
 
   <div fxFlex = "40%" fxFlex.xs = "80%">
     <div class="usercard2">
@@ -91,6 +102,8 @@
     </div>
   </div>
 </div>
+
+
 
 
 
