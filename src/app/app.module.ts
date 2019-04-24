@@ -30,7 +30,6 @@ import { MatTableModule } from '@angular/material/table';
 //Angular Flex Module
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
-import { ConversatioinComponent } from './conversatioin/conversatioin.component';
 
 
 
@@ -39,8 +38,7 @@ import { ConversatioinComponent } from './conversatioin/conversatioin.component'
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    ConversatioinComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +66,7 @@ import { ConversatioinComponent } from './conversatioin/conversatioin.component'
   ],
   providers: [
     UserService,
-    ConversatioinComponent,
+    //ConversatioinComponent,
     CollabsService,
     AuthGuard,
     {
