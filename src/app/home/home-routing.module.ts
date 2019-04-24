@@ -3,6 +3,7 @@ import { CollabCardComponent } from './collab-card/collab-card.component';
 import { HomeComponent } from './collab-list/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { EditCollabComponent } from './edit-collab/edit-collab.component';
 
 const routes: Routes = [
   {
@@ -10,12 +11,16 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path:"collabinfo",
+  path:"collabinfo",
     component: CollabCardComponent
   },
   {
     path:"createcollab",
     component: CreateCollabComponent
+  },
+  {
+    path:"editcollab",
+    component: EditCollabComponent
   }
 ];
 
