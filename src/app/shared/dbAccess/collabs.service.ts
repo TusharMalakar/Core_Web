@@ -1,3 +1,4 @@
+import { UserService } from 'src/app/shared/dbAccess/user.service';
 import { CollabModel, CollabMode2 } from './../models/collab.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
 export class CollabsService {
 
   readonly rootUrl = 'https://huntercollabapi.herokuapp.com';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private uererService: UserService) { }
 
   //collab/getCollabDetails
   collabDetails(){ 
@@ -73,12 +74,13 @@ leaveCollab(id){
     .subscribe (data => console.log(data) )
   }
 
-  recomandedCollab(skills, classes){
+  recomandedCollab(){
+    this.uererService.getUserClasses
     const body = {
-      skills  : skills,
-      classes : classes
+      "skills" : ["c++", "java"],
+    	"classes" : []
     }
-    return this.http.get(this.rootUrl+"/user/getRecCollabs")
+    return this.http.post(this.rootUrl+"/collab/getRecommendedCollabs", body)
   }
 
 }

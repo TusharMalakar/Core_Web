@@ -19,6 +19,7 @@ export class UserPageComponent implements OnInit {
   userClass:UserModel["classes"];
   userSkill:UserModel["skills"];
   
+  //place holder of image
   imageToShow: any;
   
   //Auto complete variables.
@@ -31,9 +32,9 @@ export class UserPageComponent implements OnInit {
     this.userService.getUserdetails().subscribe(userData =>{
       this.userData = userData;
       this.userClass= userData["classes"]
-      console.log("userClasses : "+this.userClass)
+      //console.log("userClasses : "+this.userClass)
       this.userSkill= userData["skills"]
-      console.log("userSkills : "+ this.userSkill)
+      //console.log("userSkills : "+ this.userSkill)
     });
    }
 
@@ -46,15 +47,15 @@ export class UserPageComponent implements OnInit {
   }
   addClass(){
     this.userService.updateUserclass("newClass").subscribe((data:any)=>{
-      console.log(data)
+      //console.log(data)
     })
   }
 
   addSkill(input:{}=["new1", "new2"]){
     let body = Object.assign({},this.userSkill,input)
-    console.log("checking JSON body " , body)
+    //console.log("checking JSON body " , body)
     this.userService.updateUserSkill(body).subscribe((data:any)=>{
-      console.log(data)
+      //console.log(data)
     })
   }
 
@@ -76,7 +77,7 @@ createImageFromBlob(image: Blob) {
 profilePicture(){
     this.userService.getPicture().subscribe((picture:Blob)=>{
       this.createImageFromBlob(picture)
-      console.log(picture)
+      //console.log(picture)
     })
   }
 

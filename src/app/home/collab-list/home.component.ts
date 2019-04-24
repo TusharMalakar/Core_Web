@@ -59,6 +59,8 @@ export class HomeComponent implements OnInit {
     this.collabService.recomandedCollab().subscribe((data:any)=>{
       console.log(data)
     })
+    
+    //console.log("Waiting for endpoint ! ")
   }
 
   myCollabs(){
