@@ -95,5 +95,38 @@ export class UserService {
     )
     }
 
+  //___________POST_________________
+
+//you can update user profile taking all these as input but "Not required"
+updateUserProfile(github,linkedin, skills, classes){
+  const body : UserModel ={
+    github  :github,
+    linkedin:linkedin,
+    skills  :skills,
+    classes :classes
+  }
+  return this.http.post(this.rootUrl +"/user", body)
+}
+
+updateUserSkill(skills){
+  const body : UserModel ={
+    skills  :skills,
+    
+  }
+  console.log(body)
+  return this.http.post(this.rootUrl +"/user", body)
+
+}
+updateUserclass(classes){
+  const body : UserModel ={
+    classes:classes
+  }
+  console.log(body)
+  return this.http.post(this.rootUrl +"/user", body)
+
+}
+
+
+
 
 }

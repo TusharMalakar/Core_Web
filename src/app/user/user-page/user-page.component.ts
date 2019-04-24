@@ -19,6 +19,9 @@ export class UserPageComponent implements OnInit {
   classesForm: FormGroup;
   filteredUsers: String[] = [];
   isLoading = false;
+  userClass:UserModel["classes"];
+  userSkill:UserModel["skills"];
+  
 
   /*
   TODO: 
@@ -29,8 +32,13 @@ export class UserPageComponent implements OnInit {
   */
   constructor(private userService : UserService,private router : Router, private formBuilder: FormBuilder)
    { 
-    this.userService.getUserdetails().subscribe(userData => this.userData = userData);
-    console.log(this.userData);
+    this.userService.getUserdetails().subscribe(userData => {
+      this.userData = userData;
+      this.userClass= userData["classes"]
+      console.log("userClasses : "+this.userClass)
+      this.userSkill= userData["skills"]
+      console.log("userSkills : "+ this.userSkill)
+    });
    }
 
   ngOnInit() {
@@ -45,10 +53,19 @@ export class UserPageComponent implements OnInit {
     })
   }
   
-  addclass(){
-    //this.userService.
+  addClass(){
+    this.userService.updateUserclass("newClass").subscribe((data:any)=>{
+      console.log(data)
+    })
   }
 
-
+  addSkill(){
+    let input=["new1", "new2"]
+    let body = Object.assign({},this.userSkill,input)
+    console.log("checking JSON body " , body)
+    this.userService.updateUserSkill(body).subscribe((data:any)=>{
+      console.log(data)
+    })
+  }
 
 }
