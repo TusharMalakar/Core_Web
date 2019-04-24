@@ -55,6 +55,12 @@ export class HomeComponent implements OnInit {
      });
   }
 
+  recomendedCollab(){
+    this.collabService.recomandedCollab().subscribe((data:any)=>{
+      console.log(data)
+    })
+  }
+
   myCollabs(){
     this.collabService.myCollabs().subscribe ((data : any ) => {
       //console.log(data);   

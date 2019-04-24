@@ -39,7 +39,7 @@
             <div class = "grid-search">
                 <div class="wrapper">
                     <input type="text" placeholder="Search for Class..." />
-                    <button mat-flat-button color="primary">Add Class</button>
+                    <button (click)="addClass()" mat-flat-button color="primary">Add Class</button>
                 </div>
             </div>
             
@@ -64,7 +64,7 @@
                 <div class = "grid-search">
                     <div class="wrapper">
                         <input type="text" placeholder="Search for Skills..." />
-                        <button mat-flat-button color="primary">Add Skill</button>
+                        <button (click)="addSkill()" mat-flat-button color="primary">Add Skill</button>
                     </div>
                 </div>
                 <div class = "grid-item">

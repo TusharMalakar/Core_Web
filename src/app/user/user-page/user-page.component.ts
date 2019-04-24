@@ -14,6 +14,8 @@ import { Observable } from 'rxjs';
 export class UserPageComponent implements OnInit {
   //Will hold our user data.
   userData: UserModel[];
+  userClass:UserModel["classes"];
+  userSkill:UserModel["skills"];
   
   //Auto complete variables.
   classesForm: FormGroup;
@@ -22,7 +24,13 @@ export class UserPageComponent implements OnInit {
 
   constructor(private userService : UserService,private router : Router, private formBuilder: FormBuilder)
    { 
-    this.userService.getUserdetails().subscribe(userData => this.userData = userData);
+    this.userService.getUserdetails().subscribe(userData =>{
+      this.userData = userData;
+      this.userClass= userData["classes"]
+      console.log("userClasses : "+this.userClass)
+      this.userSkill= userData["skills"]
+      console.log("userSkills : "+ this.userSkill)
+    });
    }
 
   ngOnInit() {
@@ -32,4 +40,19 @@ export class UserPageComponent implements OnInit {
     })
     
   }
+  addClass(){
+    this.userService.updateUserclass("newClass").subscribe((data:any)=>{
+      console.log(data)
+    })
+  }
+
+  addSkill(input:{}=["new1", "new2"]){
+    let body = Object.assign({},this.userSkill,input)
+    console.log("checking JSON body " , body)
+    this.userService.updateUserSkill(body).subscribe((data:any)=>{
+      console.log(data)
+    })
+  }
+
+
 }

@@ -73,7 +73,9 @@ leaveCollab(id){
     .subscribe (data => console.log(data) )
   }
 
-  
+  recomandedCollab(){
+    return this.http.get(this.rootUrl+"/user/getRecCollabs")
+  }
 
 }
 

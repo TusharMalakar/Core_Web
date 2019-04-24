@@ -113,10 +113,16 @@ updateUserProfile(github,linkedin, skills, classes){
 
 updateUserSkill(skills){
   const body : UserModel ={
-    github  :'',
-    linkedin:'',
     skills  :skills,
-    classes :[]
+    
+  }
+  console.log(body)
+  return this.http.post(this.rootUrl +"/user", body)
+
+}
+updateUserclass(classes){
+  const body : UserModel ={
+    classes:classes
   }
   console.log(body)
   return this.http.post(this.rootUrl +"/user", body)
