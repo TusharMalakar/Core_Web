@@ -36,7 +36,7 @@ export class UserPageComponent implements OnInit {
   constructor(private userService : UserService,private router : Router, private formBuilder: FormBuilder)
    { 
     this.userService.getUserdetails().subscribe(userData => this.userData = userData);
-    console.log(this.userData);
+    //console.log(this.userData);
    }
 
   ngOnInit() {
@@ -74,14 +74,14 @@ profilePicture(){
 
  uploadFileToActivity() {
    this.userService.uploadProfilePicture(this.fileToUpload).subscribe((data: any)=>{
-     console.log(data)
+     //console.log(data)
    });
 }
 
 addskill(newSkill){
   //taking values from input
   let newObject = Object.assign(newSkill.value["NewSkill"])
-  console.log(newObject)
+  //console.log(newObject)
   //copying all the skills as object that are already exist
   let skills: string []  = this.userData["skills"];
   
@@ -89,20 +89,21 @@ addskill(newSkill){
  //checking if the skill is already exist or not
   for(var iter in skills){
    if(newObject== skills[iter]){
-       console.log(skills[iter]," already exits !")
+       //console.log(skills[iter]," already exits !")
        return 0;
    }
   }
   //Combining input skill and previous skills
   newObject= skills.concat(newObject)
-  this.userService.updateUserSkill(newObject).subscribe(
-  data => console.log(data));
+  this.userService.updateUserSkill(newObject).subscribe(data => {
+    //console.log(data)
+  });
 }
 
 addclass(newclass){
   //taking values from input
   let newObject = Object.assign(newclass.value["NewClass"])
-  console.log(newObject)
+  //console.log(newObject)
   //copying all the classes as object that are already exist
   let classes: string []  = this.userData["classes"];
   
@@ -110,14 +111,15 @@ addclass(newclass){
  //checking if the skill is already exist or not
   for(var iter in classes){
    if(newObject== classes[iter]){
-       console.log(classes[iter]," already exits !")
+      // console.log(classes[iter]," already exits !")
        return 0;
    }
   }
   //Combining input skill and previous skills
   newObject= classes.concat(newObject)
-  this.userService.updateUserclass(newObject).subscribe(
-  data => console.log(data));
+  this.userService.updateUserclass(newObject).subscribe(data => {
+    //console.log(data)
+  });
 }
 
 
