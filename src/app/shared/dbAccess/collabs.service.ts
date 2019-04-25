@@ -92,7 +92,7 @@ export class CollabsService {
       skills  : skills
     }
 
-    return this.http.get(this.rootUrl + "/collab/getRecommendedCollabs");
+    return this.http.post(this.rootUrl + "/collab/getRecommendedCollabs", body);
   }
 
   //Requires a JSON"_id"

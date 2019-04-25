@@ -29,9 +29,12 @@
 
       <mat-tab label="Recommended Collabs">
         <ng-template matTabContent>
-            My Collabs
-            
-
+          <ng-container *ngFor = "let collab of collabData">
+            <div class ="collab">
+                <!-- Property binding from component to component using @Input() and @Output -->
+                <collab-card [collabData] = "collab"></collab-card>
+            </div>      
+          </ng-container>
         </ng-template>
       </mat-tab>
 

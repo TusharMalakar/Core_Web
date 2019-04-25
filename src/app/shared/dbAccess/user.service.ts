@@ -4,7 +4,6 @@ import { UserModel } from '../models/user.model';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs';
 import { Requirements } from 'src/app/home/collab-card/collab-card.component';
-import { map, startWith, debounceTime, distinctUntilChanged, switchMap, } from 'rxjs/operators';
 
 
 @Injectable()
@@ -51,11 +50,6 @@ export class UserService {
   return this.http.get<UserModel[]>( this.rootUrl +"/user");
   }
 
-  getPicture(){
-    // user/profilePicture
-    return this.http.get( this.rootUrl +"/user/profilePicture");
-  }
-
   getUserSkills(userName: string) { 
     return this.http.get( this.rootUrl + "/user/skills/" + userName).toPromise();
   }
@@ -77,23 +71,50 @@ export class UserService {
     await this.getUserClasses(username).then(function(result){
       classes = result["classes"];
     });
+    
+    
+    /*
+    for(let classTaken of classes){
+        xAxisReq.push({
+        skillOrClass: classTaken,
+        type: "class"
+      });
+    }
+    for(let skill of skills){
+      xAxisReq.push({
+      skillOrClass: skill,
+      type: "skill"
+    });
+  }
+  */
 
     return xAxisReq;
   }
 
-    searchSkills(constrain: string){
-    let params = new HttpParams().set("query",constrain);
+searchSkills(constrain: string): Observable<any>{
+  let params = new HttpParams().set("query",constrain);
+  return this.http.get(this.rootUrl +"/search/skills",{params: params});
+}
 
-    return this.http.get(this.rootUrl +"/search/skills",{params: params});
 
-  }
+//___________POST_________________
 
-    searchClasses(constrain: string): Observable<string[]>{
-    let params = new HttpParams().set("query",constrain);
-    return this.http.get<string[]>(this.rootUrl +"/search/classes",{params: params}).map(
-      res => { return res["matches"]}
-    )
-    }
+
+
+//download profile-picture as Bold file
+getPicture(): Observable <Blob>{
+  // user/profilePicture
+  return this.http.get( this.rootUrl +"/user/profilePicture",  { responseType: 'blob' });
+}
+
+uploadProfilePicture(fileToUpload: File){
+  const formData: FormData = new FormData();
+  formData.append('pic', fileToUpload, fileToUpload.name);
+  return this.http.post(this.rootUrl+"/user/profilePicture", formData)
+}
+
+// /collab/deleteCollab 
+///collab/getRecommendedCollab
 
   //___________POST_________________
 
@@ -115,7 +136,6 @@ updateUserSkill(skills){
   }
   console.log(body)
   return this.http.post(this.rootUrl +"/user", body)
-
 }
 updateUserclass(classes){
   const body : UserModel ={
