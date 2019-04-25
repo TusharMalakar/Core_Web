@@ -140,8 +140,12 @@ uploadProfilePicture(fileToUpload: File){
   return this.http.post(this.rootUrl+"/user/profilePicture", formData)
 }
 
-// /collab/deleteCollab 
-///collab/getRecommendedCollab
-
+//it will split usename by "@" and return "First.Last" of user
+gertFirstandLastName(username : UserModel["username"]){
+  let str = username
+  let result = str.split('@')
+  console.log(result[0]);
+  return result[0];
+}
 
 }

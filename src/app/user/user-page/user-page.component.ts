@@ -83,8 +83,9 @@ profilePicture(){
 
 addskill(newSkill){
   //return if input is empty string
-  if(newSkill.value["NewSkill"]=this.regex ){
-    console.log("it is an empty string")
+  if(newSkill.value["NewSkill"]==this.regex ){
+
+    console.log("it is an empty string = " ,newSkill.value["NewSkill"])
     return 0;
   }
 
@@ -102,16 +103,16 @@ addskill(newSkill){
        return 0;
    }
   }
-  //Combining input skill and previous skills
-  newObject= skills.concat(newObject)
-  this.userService.updateUserSkill(newObject).subscribe(data => {
-    //console.log(data)
-  });
+  // //Combining input skill and previous skills
+  // newObject= skills.concat(newObject)
+  // this.userService.updateUserSkill(newObject).subscribe(data => {
+  //   //console.log(data)
+  // });
 }
 
 addclass(newclass){
   //return if input is empty string
-  if(newclass.value["NewClass"]=this.regex){
+  if(newclass.value["NewClass"]==this.regex){
     console.log("it is an empty strings")
     return 0;
   }
@@ -130,11 +131,17 @@ addclass(newclass){
        return 0;
    }
   }
-  //Combining input skill and previous skills
-  newObject= classes.concat(newObject)
-  this.userService.updateUserclass(newObject).subscribe(data => {
-    //console.log(data)
-  });
+  // //Combining input skill and previous skills
+  // newObject= classes.concat(newObject)
+  // this.userService.updateUserclass(newObject).subscribe(data => {
+  //   //console.log(data)
+  // });
+
+}
+
+//get first.last name from email
+getNameFromEmail(){
+  this.userService.gertFirstandLastName(this.userData["username"])
 }
 
 
