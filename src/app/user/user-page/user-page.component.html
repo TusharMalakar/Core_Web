@@ -51,8 +51,11 @@
             <div class ="grid-container">  
               <div class = "grid-search">
                   <div class="wrapper">
-                      <input type="text" placeholder="Search for Class..." />
-                      <button mat-flat-button color="primary">Add Class</button>
+                      <!--add a new skill--> 
+                      <form #classForm="ngForm" (ngSubmit)="addclass(classForm)" class="form form-login">
+                          <input name="NewClass" id="login-email" type="text" class="form-input" placeholder="Add a new class" required ngModel>
+                          <button mat-flat-button color="primary">Add class</button>
+                      </form>
                   </div>
               </div>
               
@@ -76,8 +79,13 @@
               <div class ="grid-container">  
                   <div class = "grid-search">
                       <div class="wrapper">
-                          <input type="text" placeholder="Search for Skills..." />
-                          <button mat-flat-button color="primary">Add Skill</button>
+
+                        <!--add a new skill--> 
+                        <form #skillForm="ngForm" (ngSubmit)="addskill(skillForm)" class="form form-login">
+                            <input name="NewSkill" id="login-email" type="text" class="form-input" placeholder="Add a new skill" required ngModel>
+                            <button mat-flat-button color="primary">Add Skill</button>
+                        </form>
+                          
                       </div>
                   </div>
                   <div class = "grid-item">
@@ -97,3 +105,4 @@
       </div>
     </div>
   </div>
+

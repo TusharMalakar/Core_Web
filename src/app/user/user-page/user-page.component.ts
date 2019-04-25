@@ -75,11 +75,50 @@ profilePicture(){
  uploadFileToActivity() {
    this.userService.uploadProfilePicture(this.fileToUpload).subscribe((data: any)=>{
      console.log(data)
-   })
- //   this.fileUploadService.postFile(this.fileToUpload).subscribe(data => {
- //     // do something, if upload success
- //     }, error => {
- //       console.log(error);
- //     });
+   });
 }
+
+addskill(newSkill){
+  //taking values from input
+  let newObject = Object.assign(newSkill.value["NewSkill"])
+  console.log(newObject)
+  //copying all the skills as object that are already exist
+  let skills: string []  = this.userData["skills"];
+  
+  
+ //checking if the skill is already exist or not
+  for(var iter in skills){
+   if(newObject== skills[iter]){
+       console.log(skills[iter]," already exits !")
+       return 0;
+   }
+  }
+  //Combining input skill and previous skills
+  newObject= skills.concat(newObject)
+  this.userService.updateUserSkill(newObject).subscribe(
+  data => console.log(data));
+}
+
+addclass(newclass){
+  //taking values from input
+  let newObject = Object.assign(newclass.value["NewClass"])
+  console.log(newObject)
+  //copying all the classes as object that are already exist
+  let classes: string []  = this.userData["classes"];
+  
+  
+ //checking if the skill is already exist or not
+  for(var iter in classes){
+   if(newObject== classes[iter]){
+       console.log(classes[iter]," already exits !")
+       return 0;
+   }
+  }
+  //Combining input skill and previous skills
+  newObject= classes.concat(newObject)
+  this.userService.updateUserclass(newObject).subscribe(
+  data => console.log(data));
+}
+
+
 }

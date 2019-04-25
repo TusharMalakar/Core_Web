@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit {
       }
 
       case 2: {
-        console.log(this.userData);
+        //console.log(this.userData);
         await this.collabService.getReqCollabs(this.userData["classes"], this.userData["skills"]).subscribe ((data : CollabModel[] )  => this.collabData = data);
         break;
       }
