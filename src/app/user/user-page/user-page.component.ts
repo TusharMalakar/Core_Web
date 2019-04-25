@@ -103,11 +103,11 @@ addskill(newSkill){
        return 0;
    }
   }
-  // //Combining input skill and previous skills
-  // newObject= skills.concat(newObject)
-  // this.userService.updateUserSkill(newObject).subscribe(data => {
-  //   //console.log(data)
-  // });
+  //Combining input skill and previous skills
+  newObject= skills.concat(newObject)
+  this.userService.updateUserSkill(newObject).subscribe(data => {
+    //console.log(data)
+  });
 }
 
 addclass(newclass){
@@ -131,11 +131,11 @@ addclass(newclass){
        return 0;
    }
   }
-  // //Combining input skill and previous skills
-  // newObject= classes.concat(newObject)
-  // this.userService.updateUserclass(newObject).subscribe(data => {
-  //   //console.log(data)
-  // });
+  //Combining input skill and previous skills
+  newObject= classes.concat(newObject)
+  this.userService.updateUserclass(newObject).subscribe(data => {
+    //console.log(data)
+  });
 
 }
 
