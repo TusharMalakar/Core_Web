@@ -20,6 +20,9 @@ export class UserPageComponent implements OnInit {
   filteredUsers: String[] = [];
   isLoading = false;
 
+  //regular expression to check empty string
+  regex = "^\\s+$";
+
   //place holder of image
   imageToShow: any;
 
@@ -79,6 +82,12 @@ profilePicture(){
 }
 
 addskill(newSkill){
+  //return if input is empty string
+  if(newSkill.value["NewSkill"]=this.regex ){
+    console.log("it is an empty string")
+    return 0;
+  }
+
   //taking values from input
   let newObject = Object.assign(newSkill.value["NewSkill"])
   //console.log(newObject)
@@ -101,6 +110,12 @@ addskill(newSkill){
 }
 
 addclass(newclass){
+  //return if input is empty string
+  if(newclass.value["NewClass"]=this.regex){
+    console.log("it is an empty strings")
+    return 0;
+  }
+  
   //taking values from input
   let newObject = Object.assign(newclass.value["NewClass"])
   //console.log(newObject)
