@@ -10,14 +10,19 @@
     <div fxFlex = "40%" fxFlex.xs = "80%">
         <mat-card class="usercard1">
                 <mat-card-header class="list-header-title">
-                    <div mat-card-avatar></div>
+                    <div mat-card-avatar >
+                        <img mat-card-image [src]="imageToShow"
+                        class ="avatar"
+                        alt="Place image title"
+                        *ngIf="!isImageLoading; else noImageFound">
+                    </div>
                     <mat-card-title>{{ userData?.name }}</mat-card-title>
                     <mat-card-subtitle>{{ userData?.username }}</mat-card-subtitle>
                   </mat-card-header>    
                   <img mat-card-image [src]="imageToShow"
                     alt="Place image title"
-                    *ngIf="!isImageLoading; else noImageFound"
-                    >
+                    *ngIf="!isImageLoading; else noImageFound">
+                    
                      <!--Taking picture as input-->
               <div class="form-group">
                 <input type="file" id="file"(change)="handleFileInput($event.target.files)">
@@ -107,3 +112,4 @@
   </div>
 
   <button (click)="getNameFromEmail()">getUserName</button>
+  
