@@ -71,8 +71,7 @@ export class UserService {
     await this.getUserClasses(username).then(function(result){
       classes = result["classes"];
     });
-    
-    
+   
     /*
     for(let classTaken of classes){
         xAxisReq.push({
@@ -110,6 +109,14 @@ updateUserProfile(github,linkedin, skills, classes){
   }
   return this.http.post(this.rootUrl +"/user", body)
 }
+
+//this service method will add a add 
+addclass(class_:{}){
+  let currentClass : {}
+  let body = Object.assign({}, )
+  return this.http.post (this.rootUrl+ currentClass,class_)
+}
+
 
 updateUserSkill(skills){
   const body : UserModel ={

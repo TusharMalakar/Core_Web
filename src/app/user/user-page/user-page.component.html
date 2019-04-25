@@ -14,16 +14,14 @@
                   <mat-card-title>{{ userData?.name }}</mat-card-title>
                   <mat-card-subtitle>{{ userData?.username }}</mat-card-subtitle>
                 </mat-card-header>
+                  
                     <!--Display profile Picture-->
-                    <img mat-card-image [src]="imageToShow"
-                    alt="Place image title"
+                    <img  mat-card-image [src]="imageToShow"
                     *ngIf="!isImageLoading; else noImageFound" >
                     <ng-template #noImageFound>
-                          <img src="/src/assets/userPhoto.png"> 
+                          <img src="userPhoto.png"> 
                     </ng-template>
-                    
-                    
-                    
+                       
               <mat-card-content>
               
               <mat-grid-list cols="2" rowHeight="4:1" class="user-links">
@@ -39,7 +37,7 @@
               <!--Taking picture as input-->
               <div class="form-group">
                 <input type="file" id="file"(change)="handleFileInput($event.target.files)">
-                <button (click)="uploadFileToActivity()">submit</button>
+                <button  (click)="uploadFileToActivity()">submit</button>
               </div>
              
           

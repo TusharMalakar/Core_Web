@@ -68,6 +68,11 @@ background-color: white;
 margin: 0px;
 }
 
+.profilePicture{
+  height: 180px;
+  width: 100%;
+  background-color: white;
+}
 
 
 .mat-list {

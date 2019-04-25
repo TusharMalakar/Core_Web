@@ -83,20 +83,19 @@ profilePicture(){
       //console.log(picture)
     })
   }
+
+  //Below the Picture unloading two step process
   //function which you use in (change)-event of your file input tag:
   handleFileInput(files: FileList) {
       this.fileToUpload = files.item(0);
   }
-
   uploadFileToActivity() {
     this.userService.uploadProfilePicture(this.fileToUpload).subscribe((data: any)=>{
       console.log(data)
-    })
-  //   this.fileUploadService.postFile(this.fileToUpload).subscribe(data => {
-  //     // do something, if upload success
-  //     }, error => {
-  //       console.log(error);
-  //     });
+      if(data["success"]==true){
+        this.router.navigate(['/user']) 
+      }
+    });  
  }
 
 
