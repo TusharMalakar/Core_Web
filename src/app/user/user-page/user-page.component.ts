@@ -1,5 +1,6 @@
 import { Component, OnInit,ChangeDetectionStrategy } from '@angular/core';
 import { UserService } from 'src/app/shared/dbAccess/user.service';
+import {MatListModule} from '@angular/material/list';
 import { Router } from '@angular/router';
 import { UserModel } from 'src/app/shared/models/user.model';
 import { FormControl, Form, FormGroup, FormBuilder } from '@angular/forms';
@@ -85,7 +86,7 @@ addskill(newSkill){
   //return if input is empty string
   if(newSkill.value["NewSkill"]==this.regex ){
 
-    console.log("it is an empty string = " ,newSkill.value["NewSkill"])
+    console.log("it is an empty string  ")
     return 0;
   }
 
