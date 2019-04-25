@@ -23,7 +23,7 @@
                     alt="Place image title"
                     *ngIf="!isImageLoading; else noImageFound">
                     
-                     <!--Taking picture as input-->
+               <!--Taking picture as input-->
               <div class="form-group">
                 <input type="file" id="file"(change)="handleFileInput($event.target.files)">
                 <button (click)="uploadFileToActivity()">submit</button>
@@ -112,4 +112,5 @@
   </div>
 
   <button (click)="getNameFromEmail()">getUserName</button>
+  <button (click)="sendPersonalMessage()">message</button>
   

@@ -1,3 +1,4 @@
+import { ConversationService } from './../../shared/dbAccess/conversation.service';
 import { Component, OnInit,ChangeDetectionStrategy } from '@angular/core';
 import { UserService } from 'src/app/shared/dbAccess/user.service';
 import {MatListModule} from '@angular/material/list';
@@ -37,7 +38,7 @@ export class UserPageComponent implements OnInit {
     Autocomplete on edit skills and classes. 
 
   */
-  constructor(private userService : UserService,private router : Router, private formBuilder: FormBuilder)
+  constructor(private userService : UserService,private router : Router, private formBuilder: FormBuilder,private conver: ConversationService)
    { 
     this.userService.getUserdetails().subscribe(userData => this.userData = userData);
     //console.log(this.userData);
@@ -68,6 +69,7 @@ createImageFromBlob(image: Blob) {
 profilePicture(){
    this.userService.getPicture().subscribe((picture:Blob)=>{
      this.createImageFromBlob(picture)
+     
      //console.log(picture)
    })
  }
@@ -139,10 +141,13 @@ addclass(newclass){
   });
 
 }
-
 //get first.last name from email
 getNameFromEmail(){
   this.userService.gertFirstandLastName(this.userData["username"])
+}
+//sendPersonalMessage()
+sendPersonalMessage(){
+  this.conver.sendPersonalMessage().subscribe(message=>console.log(message))
 }
 
 

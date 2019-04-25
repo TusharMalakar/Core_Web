@@ -4,6 +4,8 @@ import { UserModel } from '../models/user.model';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs';
 import { Requirements } from 'src/app/home/collab-card/collab-card.component';
+import 'rxjs/add/operator/catch';
+//import 'rxjs/add/operator/throw';
 
 
 @Injectable()
@@ -131,7 +133,8 @@ updateUserclass(classes){
 //download profile-picture as Bold file
 getPicture(): Observable <Blob>{
   // user/profilePicture
-  return this.http.get( this.rootUrl +"/user/profilePicture",  { responseType: 'blob' });
+  return this.http.get( this.rootUrl +"/user/profilePicture",  { responseType: 'blob' })
+  .catch(this.errorhandler);
 }
 
 uploadProfilePicture(fileToUpload: File){
@@ -146,6 +149,12 @@ gertFirstandLastName(username : UserModel["username"]){
   let result = str.split('@')
   console.log(result[0]);
   return result[0];
+}
+
+//Http error handler 
+errorhandler(error:HttpErrorResponse){
+  var str="error"
+  return Observable.throw(error.message || "server Error")
 }
 
 }

@@ -1,3 +1,4 @@
+import { ConversationService } from './shared/dbAccess/conversation.service';
 import { AuthInterceptor } from './guard/auth.inspector';
 import { AuthGuard } from './guard/auth.guard';
 import { BrowserModule } from '@angular/platform-browser';
@@ -80,6 +81,7 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
   ],
   providers: [
     UserService,
+    ConversationService,
     AuthGuard,
     {
       provide :HTTP_INTERCEPTORS,
