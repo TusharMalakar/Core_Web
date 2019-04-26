@@ -11,26 +11,27 @@
               <mat-icon>person</mat-icon>
               <span>Profile</span>
             </button> 
+           
             <button mat-menu-item routerLink="/home"   >
                 <span>Direct Messages  </span>
                 <mat-icon>send</mat-icon>
             </button> 
               <!--Collab username goes in the list-->
               <mat-list dense>
-                  <mat-list-item> 
+                  <mat-list-item routerLink="/home/message"> 
                       <mat-icon>group</mat-icon>
                       <span>Collab Group</span>
                   </mat-list-item>
 
-                  <mat-list-item>
+                  <mat-list-item routerLink="/home/message">
                       <mat-icon>person</mat-icon>
                       <span>Test.User1</span>
                   </mat-list-item>
-                  <mat-list-item> 
+                  <mat-list-item routerLink="/home/message"> 
                       <mat-icon>person</mat-icon>
                       <span>Test.User2</span>
                   </mat-list-item>
-                  <mat-list-item> 
+                  <mat-list-item routerLink="/home/message"> 
                       <mat-icon>person</mat-icon>
                       <span>Test.User3</span>
                   </mat-list-item>

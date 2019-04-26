@@ -141,14 +141,7 @@ addclass(newclass){
   });
 
 }
-//get first.last name from email
-getNameFromEmail(){
-  this.userService.gertFirstandLastName(this.userData["username"])
-}
-//sendPersonalMessage()
-sendPersonalMessage(){
-  this.conver.sendPersonalMessage().subscribe(message=>console.log(message))
-}
+
 
 
 }

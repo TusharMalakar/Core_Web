@@ -34,13 +34,6 @@ export class HomeComponent implements OnInit {
     this.userService.getUserdetails().subscribe(userData => this.userData = userData);
   }
   
-  userPicture(){
-    ///user/profilePicture
-    this.userService.getPicture().subscribe ((data : any ) => {
-      // BitmapImage image = new BitmapImage();
-      // image.SetSource(stream);  
-     });
-  }
 
   // return array of JSON OBJECTS
   collabDetails(){
@@ -51,13 +44,6 @@ export class HomeComponent implements OnInit {
 
   activeCollabs(){
     this.collabService.activeCollabs().subscribe ((data : any ) => {
-      //console.log(data);   
-  
-     });
-  }
-
-  myCollabs(){
-    this.collabService.myCollabs().subscribe ((data : any ) => {
       //console.log(data);   
   
      });

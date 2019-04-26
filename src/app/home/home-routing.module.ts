@@ -1,3 +1,4 @@
+import { MessageComponent } from './message/message.component';
 import { CreateCollabComponent } from './create-collab/create-collab.component';
 import { CollabCardComponent } from './collab-card/collab-card.component';
 import { HomeComponent } from './collab-list/home.component';
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path:"createcollab",
     component: CreateCollabComponent
+  },
+  {
+    path:"message",
+    component: MessageComponent
   }
 ];
 

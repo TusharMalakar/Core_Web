@@ -24,10 +24,7 @@ export class CollabsService {
   activeCollabs(){ 
     return this.http.get( this.rootUrl +"/collab/getActiveCollabs");
   }
-  //messaging/myConvos
-  myCollabs(){ 
-    return this.http.get( this.rootUrl +"/messaging/myConvos");
-  }
+
 
   //Get Both All and My Collabs
   getCollabs(collabType: string){
@@ -66,7 +63,7 @@ export class CollabsService {
   //Leave Collab
   leaveCollab(id){
 
-    console.log(id["$oid"]);
+    //console.log(id["$oid"]);
     const body = {
      id : id["$oid"]
     }
@@ -75,7 +72,7 @@ export class CollabsService {
 
   //TODO: Get this http request working
   deleteCollab(id){
-    console.log(id["$oid"]);
+    //console.log(id["$oid"]);
     const body = {
       id : id["$oid"]
     }
@@ -84,8 +81,8 @@ export class CollabsService {
 
   //TODO: Get this http request working
   getReqCollabs(classes: string[], skills: string[]){
-    console.log(classes);
-    console.log(skills);
+    //console.log(classes);
+    //console.log(skills);
 
     const body = {
       classes : classes,

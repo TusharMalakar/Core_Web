@@ -30,9 +30,10 @@ import { CreateCollabComponent } from './create-collab/create-collab.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
-  declarations: [HomeComponent, CollabCardComponent, CollabTableComponent, CreateCollabComponent],
+  declarations: [HomeComponent, CollabCardComponent, CollabTableComponent, CreateCollabComponent, MessageComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

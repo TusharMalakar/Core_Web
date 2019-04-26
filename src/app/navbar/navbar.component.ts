@@ -13,6 +13,10 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  messagePageLink(){
+    this.router.navigate(['/home/message'])
+  }
+
   logOut(){
     localStorage.removeItem('accessToken');
     this.router.navigate(['/login']);

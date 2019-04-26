@@ -23,6 +23,7 @@ export class CollabCardComponent implements OnInit {
   alreadyBuilt: boolean = false;
   partOf = false; 
   isOwner = false; 
+  
 
   //Will hold our user data.
   userData: UserModel[];
@@ -35,7 +36,7 @@ export class CollabCardComponent implements OnInit {
               }
 
   async ngOnInit() {
-    await this.userService.getUserdetails().subscribe(userData => this.userData = userData);
+    await this.userService.getUserdetails().subscribe(userData => this.userData = userData)
     
   }
 
@@ -107,6 +108,7 @@ export class CollabCardComponent implements OnInit {
     return xAxisReq;
   }
   
+
   async actionCheck(){
     await this.isUserOwner();
     this.isPartOf();
