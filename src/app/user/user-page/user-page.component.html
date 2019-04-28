@@ -9,6 +9,7 @@
 
     <div fxFlex = "40%" fxFlex.xs = "80%">
         <mat-card class="usercard1">
+          
                 <mat-card-header class="list-header-title">
                     <div mat-card-avatar></div>
                     <mat-card-title>{{ userData?.name }}</mat-card-title>
@@ -22,7 +23,7 @@
                         *ngIf="!isImageLoading; else noImageFound">
                     </div>
                   </div>
-                  
+
                      <!--Taking picture as input-->
               <div class="form-group">
                 <input type="file" id="file"(change)="handleFileInput($event.target.files)">

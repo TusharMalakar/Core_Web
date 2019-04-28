@@ -75,11 +75,12 @@ export class CollabsService {
 
   //TODO: Get this http request working
   deleteCollab(id){
+
     console.log(id["$oid"]);
     const body = {
       id : id["$oid"]
     }
-    return this.http.delete(this.rootUrl + "/collab/deleteCollabForReal");
+    return this.http.request('delete',this.rootUrl + "/collab/deleteCollabForReal", {body});
   }
 
   //TODO: Get this http request working
