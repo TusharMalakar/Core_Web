@@ -1521,7 +1521,7 @@ module.exports = ".mat-card {\n    max-width: 800px;\n    margin: auto;\n    pad
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card>\n  <mat-card-header >\n\n    <mat-card-title> \n\n      <mat-grid-list  cols=\"2\" rowHeight=\"4:1\">\n        <mat-grid-tile>{{collabData?.title}}</mat-grid-tile>\n        <mat-grid-tile><mat-icon>group</mat-icon> : {{collabData?.members.length}} / {{ collabData?.size}}</mat-grid-tile>\n      </mat-grid-list>\n      \n    </mat-card-title>\n\n  </mat-card-header>\n  <mat-card-content>\n    <mat-accordion>\n        <div class = \"content\">\n            <p class=\"description\">Description: {{ collabData?.description }} </p>\n            <p class=\"date\">Date: {{ collabData?.date | date:'medium' }}</p>\n            <p class=\"duration\">Apply By: {{ collabData?.duration | date:'medium' }}</p>\n            <p class=\"location\">Location: {{ collabData?.location }}</p>\n\n            <div class = \"requirements\">\n                <mat-chip-list>\n                    Classes: \n                    <mat-chip *ngFor = \"let class of collabData?.classes\">\n                      {{ class }}\n                    </mat-chip>\n                </mat-chip-list>\n                <br>\n                <mat-chip-list>\n                    Skills: \n                    <mat-chip *ngFor=\"let skill of collabData?.skills\">\n                      {{ skill }}\n                    </mat-chip>\n                </mat-chip-list>\n            </div>\n      \n        </div>\n        <br>\n        \n        <!-- Event Binding: In this case the event is (opened) -->\n        <mat-expansion-panel \n                       (opened)=\"panelOpenState = true && makeTable()\"\n                       (closed)=\"panelOpenState = false\">\n        <mat-expansion-panel-header>\n          <mat-panel-title>\n            <h4>Members</h4>\n          </mat-panel-title>\n          <mat-panel-description>\n          </mat-panel-description>\n          </mat-expansion-panel-header>\n\n            <ng-container class=\"table-container\">\n              <div class=\"table\">\n                <collab-table [table] = \"table\" [xAxisReq] = \"xAxisReq\"></collab-table>\n              </div>\n            </ng-container>\n          \n          \n        </mat-expansion-panel>\n    </mat-accordion>\n    \n  </mat-card-content>\n\n  <mat-expansion-panel \n                       (opened)=\"panelOpenState = true && actionCheck()\"\n                       (closed)=\"panelOpenState = false\">\n        <mat-expansion-panel-header>\n          <mat-panel-title>\n            <h4>Actions</h4>\n          </mat-panel-title>\n          <mat-panel-description>\n          </mat-panel-description>\n          </mat-expansion-panel-header>\n            <mat-card-actions>\n              <button *ngIf=\"checkPartOf() == false\" mat-raised-button color = \"primary\" (click) = \"joinCollab()\"  > Join </button>\n              <button *ngIf=\"checkPartOf() == true\"  mat-raised-button color = \"primary\" (click) = \"leaveCollab()\" > Leave </button>\n              <button *ngIf=\"checkOwner() == true\"   mat-raised-button color = \"primary\" (click) = \"deleteCollab()\"> Delete </button>\n              <button *ngIf=\"checkOwner() == true\"   mat-raised-button color = \"primary\" (ckick) = \"editCollab()\"> Edit </button>\n            </mat-card-actions>   \n        </mat-expansion-panel>\n\n  \n\n</mat-card>"
+module.exports = "<mat-card>\n  <mat-card-header >\n\n    <mat-card-title> \n\n      <mat-grid-list  cols=\"2\" rowHeight=\"4:1\">\n        <mat-grid-tile>{{collabData?.title}}</mat-grid-tile>\n        <mat-grid-tile><mat-icon>group</mat-icon> : {{collabData?.members.length}} / {{ collabData?.size}}</mat-grid-tile>\n      </mat-grid-list>\n      \n    </mat-card-title>\n\n  </mat-card-header>\n  <mat-card-content>\n    <mat-accordion>\n        <div class = \"content\">\n            <p class=\"description\">Description: {{ collabData?.description }} </p>\n            <p class=\"date\">Date: {{ collabData?.date | date:'medium' }}</p>\n            <p class=\"duration\">Apply By: {{ collabData?.duration | date:'medium' }}</p>\n            <p class=\"location\">Location: {{ collabData?.location }}</p>\n\n            <div class = \"requirements\">\n                <mat-chip-list>\n                    Classes: \n                    <mat-chip *ngFor = \"let class of collabData?.classes\">\n                      {{ class }}\n                    </mat-chip>\n                </mat-chip-list>\n                <br>\n                <mat-chip-list>\n                    Skills: \n                    <mat-chip *ngFor=\"let skill of collabData?.skills\">\n                      {{ skill }}\n                    </mat-chip>\n                </mat-chip-list>\n            </div>\n      \n        </div>\n        <br>\n        \n        <!-- Event Binding: In this case the event is (opened) -->\n        <mat-expansion-panel \n                       (opened)=\"panelOpenState = true && makeTable()\"\n                       (closed)=\"panelOpenState = false\">\n        <mat-expansion-panel-header>\n          <mat-panel-title>\n              <h4>Members</h4>\n          </mat-panel-title>\n          <mat-panel-description>\n          </mat-panel-description>\n          </mat-expansion-panel-header>\n\n            <ng-container class=\"table-container\">\n              <div class=\"table\">\n                <collab-table [table] = \"table\" [xAxisReq] = \"xAxisReq\"></collab-table>\n              </div>\n            </ng-container>\n          \n          \n        </mat-expansion-panel>\n    </mat-accordion>\n    \n  </mat-card-content>\n\n  <mat-expansion-panel \n                       (opened)=\"panelOpenState = true && actionCheck()\"\n                       (closed)=\"panelOpenState = false\">\n        <mat-expansion-panel-header>\n          <mat-panel-title>\n            <h4>Actions</h4>\n          </mat-panel-title>\n          <mat-panel-description>\n          </mat-panel-description>\n          </mat-expansion-panel-header>\n            <mat-card-actions>\n              <button *ngIf=\"checkPartOf() == false\" mat-raised-button color = \"primary\" (click) = \"joinCollab()\"  > Join </button>\n              <button *ngIf=\"checkPartOf() == true\"  mat-raised-button color = \"primary\" (click) = \"leaveCollab()\" > Leave </button>\n              <button *ngIf=\"checkOwner() == true\"   mat-raised-button color = \"primary\" (click) = \"deleteCollab()\"> Delete </button>\n              <button *ngIf=\"checkOwner() == true\"   mat-raised-button color = \"primary\" > <a routerLink=\"/home/editcollab\">Edit</a></button>\n            </mat-card-actions>   \n        </mat-expansion-panel>\n\n  \n\n</mat-card>"
 
 /***/ }),
 
@@ -1610,6 +1610,11 @@ var CollabCardComponent = /** @class */ (function () {
                 }
             });
         });
+    };
+    CollabCardComponent.prototype.RefreshPage = function () {
+        this.getAllRequired();
+        //Will members of the collaboration
+        this.yAxisUsers = this.collabData.members;
     };
     //WIll check if a user knows skill or class, from the list of classes and skills that a user knows
     CollabCardComponent.prototype.checkIfKnown = function (userName, listOfRequired) {
@@ -1741,7 +1746,7 @@ module.exports = "p {\n    padding: 16px;\n    text-align: center;\n  \n  }\n\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "   <!--\n     selected.value: Is a value from .ts file.\n     selectedIndex: DOM value\n   -->\n   <mat-tab-group [selectedIndex] = \"selected.value\" \n                  (selectedIndexChange) =\"currentTab($event)\" >\n\n      <mat-tab label=\"All Collabs\">\n        <ng-template matTabContent>\n          <ng-container *ngFor = \"let collab of collabData\">\n            <div class =\"collab\">\n                <!-- Property binding from component to component using @Input() and @Output -->\n                <collab-card [collabData] = \"collab\"></collab-card>\n            </div>      \n          </ng-container>\n        </ng-template>\n      </mat-tab>\n\n      <mat-tab label=\"My Collabs\">\n        <ng-template matTabContent>\n            <ng-container *ngFor = \"let collab of collabData\">\n              <div class =\"collab\">\n                <!-- Property binding from component to component using @Input() and @Output -->\n                <collab-card [collabData] = \"collab\"></collab-card>\n              </div>      \n            </ng-container>\n        </ng-template>\n      </mat-tab>\n\n      <mat-tab label=\"Recommended Collabs\">\n        <ng-template matTabContent>\n            My Collabs\n            \n\n        </ng-template>\n      </mat-tab>\n\n   </mat-tab-group>\n\n   <div class = \"add-collab-button\">\n     <a mat-fab color = \"primary\" routerLink=\"/home/createcollab\" style=\"margin-right: 14px\">\n      <mat-icon>add</mat-icon>\n     </a>\n   </div>\n     \n          \n            \n"
+module.exports = "   <!--\n     selected.value: Is a value from .ts file.\n     selectedIndex: DOM value\n   -->\n   <mat-tab-group [selectedIndex] = \"selected.value\" \n                  (selectedIndexChange) =\"currentTab($event)\" >\n\n      <mat-tab label=\"All Collabs\">\n        <ng-template matTabContent>\n          <ng-container *ngFor = \"let collab of collabData\">\n            <div class =\"collab\">\n                <!-- Property binding from component to component using @Input() and @Output -->\n                <collab-card [collabData] = \"collab\"></collab-card>\n            </div>      \n          </ng-container>\n        </ng-template>\n      </mat-tab>\n\n      <mat-tab label=\"My Collabs\">\n        <ng-template matTabContent>\n            <ng-container *ngFor = \"let collab of collabData\">\n              <div class =\"collab\">\n                <!-- Property binding from component to component using @Input() and @Output -->\n                <collab-card [collabData] = \"collab\"></collab-card>\n              </div>      \n            </ng-container>\n        </ng-template>\n      </mat-tab>\n\n      <mat-tab label=\"Recommended Collabs\">\n        <ng-template matTabContent>\n          <ng-container *ngFor = \"let collab of collabData\">\n            <div class =\"collab\">\n                <!-- Property binding from component to component using @Input() and @Output -->\n                <collab-card [collabData] = \"collab\"></collab-card>\n            </div>      \n          </ng-container>\n        </ng-template>\n      </mat-tab>\n\n   </mat-tab-group>\n\n   <div class = \"add-collab-button\">\n     <a mat-fab color = \"primary\" routerLink=\"/home/createcollab\" style=\"margin-right: 14px\">\n      <mat-icon>add</mat-icon>\n     </a>\n   </div>\n     \n          \n            \n"
 
 /***/ }),
 
@@ -2125,6 +2130,119 @@ var CreateCollabComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/home/edit-collab/edit-collab.component.css":
+/*!************************************************************!*\
+  !*** ./src/app/home/edit-collab/edit-collab.component.css ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".mat-form-field{\n    width: 70%;\n    margin-top: 10px;\n}\n\n.container {\n    margin-top: 50px;\n    margin-left: 25px;\n    margin-right: 25px;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}\n\n.example-chip-list {\n    width: 100%;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9lZGl0LWNvbGxhYi9lZGl0LWNvbGxhYi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksVUFBVTtJQUNWLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLGdCQUFnQjtJQUNoQixpQkFBaUI7SUFDakIsa0JBQWtCO0lBQ2xCLHlFQUF5RTtBQUM3RTs7QUFFQTtJQUNJLFdBQVc7RUFDYiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvZWRpdC1jb2xsYWIvZWRpdC1jb2xsYWIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYXQtZm9ybS1maWVsZHtcbiAgICB3aWR0aDogNzAlO1xuICAgIG1hcmdpbi10b3A6IDEwcHg7XG59XG5cbi5jb250YWluZXIge1xuICAgIG1hcmdpbi10b3A6IDUwcHg7XG4gICAgbWFyZ2luLWxlZnQ6IDI1cHg7XG4gICAgbWFyZ2luLXJpZ2h0OiAyNXB4O1xuICAgIGJveC1zaGFkb3c6IDAgNHB4IDhweCAwIHJnYmEoMCwwLDAsMC4yKSwgMCA2cHggMjBweCAwIHJnYmEoMCwgMCwgMCwgMC4xOSk7XG59XG5cbi5leGFtcGxlLWNoaXAtbGlzdCB7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/home/edit-collab/edit-collab.component.html":
+/*!*************************************************************!*\
+  !*** ./src/app/home/edit-collab/edit-collab.component.html ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h4> Edit Component works</h4>\n\n<div>\n  <div>\n      <a routerLink=\"/home\">Home</a>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/home/edit-collab/edit-collab.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/home/edit-collab/edit-collab.component.ts ***!
+  \***********************************************************/
+/*! exports provided: EditCollabComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditCollabComponent", function() { return EditCollabComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var src_app_shared_models_collab_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/shared/models/collab.model */ "./src/app/shared/models/collab.model.ts");
+/* harmony import */ var src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/dbAccess/user.service */ "./src/app/shared/dbAccess/user.service.ts");
+/* harmony import */ var src_app_shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/dbAccess/collabs.service */ "./src/app/shared/dbAccess/collabs.service.ts");
+/* harmony import */ var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/keycodes */ "./node_modules/@angular/cdk/esm5/keycodes.es5.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/autocomplete */ "./node_modules/@angular/material/esm5/autocomplete.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+
+
+
+
+
+var EditCollabComponent = /** @class */ (function () {
+    function EditCollabComponent(_formBuilder, userService, collabService, router) {
+        this._formBuilder = _formBuilder;
+        this.userService = userService;
+        this.collabService = collabService;
+        this.router = router;
+        this.visible = true;
+        this.selectable = true;
+        this.removable = true;
+        this.addOnBlur = true;
+        this.separatorKeysCodes = [_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_4__["ENTER"], _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_4__["COMMA"]];
+        //Variables for Skills.
+        this.skillCtrl = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]();
+        this.skills = [];
+        this.allSkills = [];
+        //Variables for Classes.
+        this.classCtrl = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]();
+        this.classes = [];
+        this.allClasses = [];
+        this.collabData = new src_app_shared_models_collab_model__WEBPACK_IMPORTED_MODULE_1__["CollabModel"];
+    }
+    EditCollabComponent.prototype.ngOnInit = function () {
+    };
+    EditCollabComponent.prototype.editCollab = function () {
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", src_app_shared_models_collab_model__WEBPACK_IMPORTED_MODULE_1__["CollabModel"])
+    ], EditCollabComponent.prototype, "currentCollab", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"])('skillInput'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ElementRef"])
+    ], EditCollabComponent.prototype, "skillInput", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"])('auto'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_7__["MatAutocomplete"])
+    ], EditCollabComponent.prototype, "matAutocomplete", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"])('classInput'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ElementRef"])
+    ], EditCollabComponent.prototype, "classInput", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"])('auto2'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_7__["MatAutocomplete"])
+    ], EditCollabComponent.prototype, "matAutocomplete2", void 0);
+    EditCollabComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"])({
+            selector: 'app-edit-collab',
+            template: __webpack_require__(/*! ./edit-collab.component.html */ "./src/app/home/edit-collab/edit-collab.component.html"),
+            styles: [__webpack_require__(/*! ./edit-collab.component.css */ "./src/app/home/edit-collab/edit-collab.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"],
+            src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"],
+            src_app_shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_3__["CollabsService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"]])
+    ], EditCollabComponent);
+    return EditCollabComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/home/home-routing.module.ts":
 /*!*********************************************!*\
   !*** ./src/app/home/home-routing.module.ts ***!
@@ -2139,8 +2257,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./create-collab/create-collab.component */ "./src/app/home/create-collab/create-collab.component.ts");
 /* harmony import */ var _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./collab-card/collab-card.component */ "./src/app/home/collab-card/collab-card.component.ts");
 /* harmony import */ var _collab_list_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./collab-list/home.component */ "./src/app/home/collab-list/home.component.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _edit_collab_edit_collab_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit-collab/edit-collab.component */ "./src/app/home/edit-collab/edit-collab.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
 
 
 
@@ -2159,15 +2279,19 @@ var routes = [
     {
         path: "createcollab",
         component: _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_1__["CreateCollabComponent"]
+    },
+    {
+        path: "editcollab",
+        component: _edit_collab_edit_collab_component__WEBPACK_IMPORTED_MODULE_4__["EditCollabComponent"]
     }
 ];
 var HomeRoutingModule = /** @class */ (function () {
     function HomeRoutingModule() {
     }
     HomeRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"].forChild(routes)],
-            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"]]
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"].forChild(routes)],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"]]
         })
     ], HomeRoutingModule);
     return HomeRoutingModule;
@@ -2213,6 +2337,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/material/form-field */ "./node_modules/@angular/material/esm5/form-field.es5.js");
 /* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/material/input */ "./node_modules/@angular/material/esm5/input.es5.js");
 /* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/material/datepicker */ "./node_modules/@angular/material/esm5/datepicker.es5.js");
+/* harmony import */ var _edit_collab_edit_collab_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./edit-collab/edit-collab.component */ "./src/app/home/edit-collab/edit-collab.component.ts");
 
 
 
@@ -2240,12 +2365,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var HomeModule = /** @class */ (function () {
     function HomeModule() {
     }
     HomeModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_11__["NgModule"])({
-            declarations: [_collab_list_home_component__WEBPACK_IMPORTED_MODULE_10__["HomeComponent"], _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_20__["CollabCardComponent"], _collab_table_collab_table_component__WEBPACK_IMPORTED_MODULE_21__["CollabTableComponent"], _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_22__["CreateCollabComponent"]],
+            declarations: [_collab_list_home_component__WEBPACK_IMPORTED_MODULE_10__["HomeComponent"], _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_20__["CollabCardComponent"], _collab_table_collab_table_component__WEBPACK_IMPORTED_MODULE_21__["CollabTableComponent"], _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_22__["CreateCollabComponent"], _edit_collab_edit_collab_component__WEBPACK_IMPORTED_MODULE_26__["EditCollabComponent"]],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_12__["CommonModule"],
                 _home_routing_module__WEBPACK_IMPORTED_MODULE_13__["HomeRoutingModule"],
@@ -2369,7 +2495,26 @@ var CollabsService = /** @class */ (function () {
             classes: classes,
             skills: skills
         };
-        return this.http.get(this.rootUrl + "/collab/getRecommendedCollabs");
+        return this.http.post(this.rootUrl + "/collab/getRecommendedCollabs", body);
+    };
+    //Requires a JSON"_id"
+    CollabsService.prototype.editCollab = function (_id, owner, size, members, date, duration, location, status, title, description, classes, skills, applicants) {
+        var body = {
+            _id: _id,
+            owner: owner,
+            size: size,
+            members: members,
+            date: date,
+            duration: duration,
+            location: location,
+            status: status,
+            title: title,
+            description: description,
+            classes: classes,
+            skills: skills,
+            applicants: applicants
+        };
+        return this.http.post(this.rootUrl + "/collab/editCollab", body);
     };
     CollabsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({

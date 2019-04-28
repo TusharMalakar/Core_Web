@@ -8,6 +8,10 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./conversations/conversations.module": [
+		"./src/app/conversations/conversations.module.ts",
+		"conversations-conversations-module"
+	],
 	"./home/home.module": [
 		"./src/app/home/home.module.ts",
 		"default~home-home-module~login-login-module~register-register-module~user-user-module",
@@ -91,6 +95,10 @@ var routes = [
         path: 'user',
         loadChildren: './user/user.module#UserModule',
         canLoad: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__["AuthGuard"]]
+    },
+    {
+        path: 'conversations',
+        loadChildren: './conversations/conversations.module#ConversationsModule',
     },
     //default component
     {
@@ -520,10 +528,6 @@ var UserService = /** @class */ (function () {
     UserService.prototype.getUserdetails = function () {
         return this.http.get(this.rootUrl + "/user");
     };
-    UserService.prototype.getPicture = function () {
-        // user/profilePicture
-        return this.http.get(this.rootUrl + "/user/profilePicture");
-    };
     UserService.prototype.getUserSkills = function (userName) {
         return this.http.get(this.rootUrl + "/user/skills/" + userName).toPromise();
     };
@@ -547,6 +551,20 @@ var UserService = /** @class */ (function () {
                             })];
                     case 2:
                         _a.sent();
+                        /*
+                        for(let classTaken of classes){
+                            xAxisReq.push({
+                            skillOrClass: classTaken,
+                            type: "class"
+                          });
+                        }
+                        for(let skill of skills){
+                          xAxisReq.push({
+                          skillOrClass: skill,
+                          type: "skill"
+                        });
+                      }
+                      */
                         return [2 /*return*/, xAxisReq];
                 }
             });
@@ -556,9 +574,43 @@ var UserService = /** @class */ (function () {
         var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set("query", constrain);
         return this.http.get(this.rootUrl + "/search/skills", { params: params });
     };
-    UserService.prototype.searchClasses = function (constrain) {
-        var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set("query", constrain);
-        return this.http.get(this.rootUrl + "/search/classes", { params: params }).map(function (res) { return res["matches"]; });
+    //___________POST_________________
+    //download profile-picture as Bold file
+    UserService.prototype.getPicture = function () {
+        // user/profilePicture
+        return this.http.get(this.rootUrl + "/user/profilePicture", { responseType: 'blob' });
+    };
+    UserService.prototype.uploadProfilePicture = function (fileToUpload) {
+        var formData = new FormData();
+        formData.append('pic', fileToUpload, fileToUpload.name);
+        return this.http.post(this.rootUrl + "/user/profilePicture", formData);
+    };
+    // /collab/deleteCollab 
+    ///collab/getRecommendedCollab
+    //___________POST_________________
+    //you can update user profile taking all these as input but "Not required"
+    UserService.prototype.updateUserProfile = function (github, linkedin, skills, classes) {
+        var body = {
+            github: github,
+            linkedin: linkedin,
+            skills: skills,
+            classes: classes
+        };
+        return this.http.post(this.rootUrl + "/user", body);
+    };
+    UserService.prototype.updateUserSkill = function (skills) {
+        var body = {
+            skills: skills,
+        };
+        console.log(body);
+        return this.http.post(this.rootUrl + "/user", body);
+    };
+    UserService.prototype.updateUserclass = function (classes) {
+        var body = {
+            classes: classes
+        };
+        console.log(body);
+        return this.http.post(this.rootUrl + "/user", body);
     };
     UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
