@@ -74,11 +74,13 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [
     {
         path: 'login',
-        loadChildren: './login/login.module#LoginModule'
+        loadChildren: './login/login.module#LoginModule',
+        canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__["AuthGuard"]]
     },
     {
         path: 'register',
-        loadChildren: './register/register.module#RegisterModule'
+        loadChildren: './register/register.module#RegisterModule',
+        canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__["AuthGuard"]]
     },
     {
         path: 'home',
@@ -109,7 +111,6 @@ var AppRoutingModule = /** @class */ (function () {
     return AppRoutingModule;
 }());
 
-// testuser1@myhunter.cuny.edu 
 
 
 /***/ }),
@@ -179,30 +180,33 @@ var AppComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _guard_auth_inspector__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./guard/auth.inspector */ "./src/app/guard/auth.inspector.ts");
-/* harmony import */ var _guard_auth_guard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./guard/auth.guard */ "./src/app/guard/auth.guard.ts");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./shared/dbAccess/user.service */ "./src/app/shared/dbAccess/user.service.ts");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/esm5/icon.es5.js");
-/* harmony import */ var _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/sidenav */ "./node_modules/@angular/material/esm5/sidenav.es5.js");
-/* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/toolbar */ "./node_modules/@angular/material/esm5/toolbar.es5.js");
-/* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
-/* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/menu */ "./node_modules/@angular/material/esm5/menu.es5.js");
-/* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/chips */ "./node_modules/@angular/material/esm5/chips.es5.js");
-/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/autocomplete */ "./node_modules/@angular/material/esm5/autocomplete.es5.js");
-/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/esm5/table.es5.js");
-/* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/datepicker */ "./node_modules/@angular/material/esm5/datepicker.es5.js");
-/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
-/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/cdk/scrolling */ "./node_modules/@angular/cdk/esm5/scrolling.es5.js");
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/material/core */ "./node_modules/@angular/material/esm5/core.es5.js");
-/* harmony import */ var ng_pick_datetime__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ng-pick-datetime */ "./node_modules/ng-pick-datetime/picker.js");
+/* harmony import */ var _shared_dbAccess_conversation_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./shared/dbAccess/conversation.service */ "./src/app/shared/dbAccess/conversation.service.ts");
+/* harmony import */ var _guard_auth_inspector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./guard/auth.inspector */ "./src/app/guard/auth.inspector.ts");
+/* harmony import */ var _guard_auth_guard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./guard/auth.guard */ "./src/app/guard/auth.guard.ts");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./shared/dbAccess/user.service */ "./src/app/shared/dbAccess/user.service.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/esm5/icon.es5.js");
+/* harmony import */ var _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/sidenav */ "./node_modules/@angular/material/esm5/sidenav.es5.js");
+/* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/toolbar */ "./node_modules/@angular/material/esm5/toolbar.es5.js");
+/* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
+/* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/menu */ "./node_modules/@angular/material/esm5/menu.es5.js");
+/* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/chips */ "./node_modules/@angular/material/esm5/chips.es5.js");
+/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/autocomplete */ "./node_modules/@angular/material/esm5/autocomplete.es5.js");
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/esm5/table.es5.js");
+/* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/datepicker */ "./node_modules/@angular/material/esm5/datepicker.es5.js");
+/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/list */ "./node_modules/@angular/material/esm5/list.es5.js");
+/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/cdk/scrolling */ "./node_modules/@angular/cdk/esm5/scrolling.es5.js");
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/material/core */ "./node_modules/@angular/material/esm5/core.es5.js");
+/* harmony import */ var ng_pick_datetime__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ng-pick-datetime */ "./node_modules/ng-pick-datetime/picker.js");
+
 
 
 
@@ -226,6 +230,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 //Angular Flex Module
 
 
@@ -236,48 +241,50 @@ var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
-                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_15__["NavbarComponent"],
+                _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
+                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_16__["NavbarComponent"],
             ],
             imports: [
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["BrowserModule"],
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["BrowserModule"],
                 //Forms Modules
-                _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ReactiveFormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_11__["ReactiveFormsModule"],
                 //HTTP requests
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__["BrowserAnimationsModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__["BrowserAnimationsModule"],
                 //Material
-                _angular_material_button__WEBPACK_IMPORTED_MODULE_11__["MatButtonModule"],
-                _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__["MatIconModule"],
-                _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_13__["MatSidenavModule"],
-                _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_14__["MatToolbarModule"],
-                _angular_material_menu__WEBPACK_IMPORTED_MODULE_16__["MatMenuModule"],
-                _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_22__["ScrollDispatchModule"],
-                _angular_material_chips__WEBPACK_IMPORTED_MODULE_17__["MatChipsModule"],
-                _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__["MatAutocompleteModule"],
-                _angular_material_table__WEBPACK_IMPORTED_MODULE_19__["MatTableModule"],
-                _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_20__["MatDatepickerModule"],
-                _angular_material_core__WEBPACK_IMPORTED_MODULE_23__["MatNativeDateModule"],
-                _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__["MatAutocompleteModule"],
+                _angular_material_button__WEBPACK_IMPORTED_MODULE_12__["MatButtonModule"],
+                _angular_material_icon__WEBPACK_IMPORTED_MODULE_13__["MatIconModule"],
+                _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_14__["MatSidenavModule"],
+                _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_15__["MatToolbarModule"],
+                _angular_material_menu__WEBPACK_IMPORTED_MODULE_17__["MatMenuModule"],
+                _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_24__["ScrollDispatchModule"],
+                _angular_material_chips__WEBPACK_IMPORTED_MODULE_18__["MatChipsModule"],
+                _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_19__["MatAutocompleteModule"],
+                _angular_material_table__WEBPACK_IMPORTED_MODULE_20__["MatTableModule"],
+                _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_21__["MatDatepickerModule"],
+                _angular_material_core__WEBPACK_IMPORTED_MODULE_25__["MatNativeDateModule"],
+                _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_19__["MatAutocompleteModule"],
+                _angular_material_list__WEBPACK_IMPORTED_MODULE_22__["MatListModule"],
                 //Our Routes will be here to make code cleaner
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
-                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_21__["FlexLayoutModule"],
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
+                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_23__["FlexLayoutModule"],
                 //Clock
-                ng_pick_datetime__WEBPACK_IMPORTED_MODULE_24__["OwlDateTimeModule"],
-                ng_pick_datetime__WEBPACK_IMPORTED_MODULE_24__["OwlNativeDateTimeModule"],
+                ng_pick_datetime__WEBPACK_IMPORTED_MODULE_26__["OwlDateTimeModule"],
+                ng_pick_datetime__WEBPACK_IMPORTED_MODULE_26__["OwlNativeDateTimeModule"],
             ],
             providers: [
-                _shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_8__["UserService"],
-                _guard_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"],
+                _shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_9__["UserService"],
+                _shared_dbAccess_conversation_service__WEBPACK_IMPORTED_MODULE_1__["ConversationService"],
+                _guard_auth_guard__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"],
                 {
-                    provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HTTP_INTERCEPTORS"],
-                    useClass: _guard_auth_inspector__WEBPACK_IMPORTED_MODULE_1__["AuthInterceptor"],
+                    provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HTTP_INTERCEPTORS"],
+                    useClass: _guard_auth_inspector__WEBPACK_IMPORTED_MODULE_2__["AuthInterceptor"],
                     multi: true
                 }
             ],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -311,15 +318,15 @@ var AuthGuard = /** @class */ (function () {
         this.service = service;
     }
     AuthGuard.prototype.canActivate = function () {
-        if (localStorage.getItem('accessToken')) {
+        if (localStorage.getItem('accessToken') == null) {
             return true;
         }
         else {
-            this.router.navigate(["/login"]);
+            this.router.navigate(["home"]);
             return false;
         }
     };
-    AuthGuard.prototype.canLoad = function (route) {
+    AuthGuard.prototype.canLoad = function () {
         if (localStorage.getItem('accessToken')) {
             return true;
         }
@@ -420,7 +427,7 @@ module.exports = ".container {\n    position: absolute;\n    top: 0;\n    left: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-drawer-container class=\"container\" autosize >\n    <!-- Will be triggered by (click) = \"drawer.toggle()\" -->\n    \n    <mat-drawer #drawer class=\"sidenav\">\n            <button color=\"primary\" mat-button routerLink=\"/home\">Home</button>\n    </mat-drawer>\n    \n    <div class=\"sidenav-content\">\n        <mat-toolbar color=\"primary\">\n            <mat-toolbar-row>\n                <!-- \n                  drawer.toggle(): will call #drawer and will bring the sidenav into view\n                -->\n                <button mat-icon-button (click) = \"drawer.toggle()\">\n                        <mat-icon>menu</mat-icon>\n                </button>\n                 \n                <button mat-button routerLink=\"/home\">Hunter Collab</button>\n                <span class=\"spacer\"></span>\n                <!--\n                   How every button is implemented \n                    [matMenuTriggerFor] is bindded to button menu; will be triggered by menu\n                  -->\n                <button mat-icon-button [matMenuTriggerFor] = \"menu\">\n                    <mat-icon>perm_identity</mat-icon>\n                </button>\n                \n                <mat-menu #menu=\"matMenu\" >\n                  <button mat-menu-item routerLink=\"/user\">\n                    <mat-icon>person</mat-icon>\n                    <span>User Info</span>\n                  </button>\n                  <button mat-menu-item (click)=\"logOut()\">\n                    <mat-icon>directions_run</mat-icon>\n                    <span>LogOut</span>\n                  </button>\n                </mat-menu>\n\n            </mat-toolbar-row>\n        </mat-toolbar>\n        <router-outlet></router-outlet>\n    </div>\n</mat-drawer-container>\n"
+module.exports = "<mat-drawer-container class=\"container\" autosize >\r\n    <!-- Will be triggered by (click) = \"drawer.toggle()\" -->\r\n    \r\n    <mat-drawer #drawer class=\"sidenav\">\r\n            <button mat-menu-item routerLink=\"/home\">\r\n              <mat-icon>home</mat-icon>\r\n              <span>Home</span>\r\n            </button> \r\n\r\n            <button mat-menu-item routerLink=\"/user\">\r\n              <mat-icon>person</mat-icon>\r\n              <span>Profile</span>\r\n            </button> \r\n           \r\n            <button mat-menu-item >\r\n                <span>Direct Messages  </span>\r\n                <mat-icon>send</mat-icon>\r\n            </button> \r\n              <!--Collab username goes in the list-->\r\n              <mat-list dense>\r\n                  <mat-list-item routerLink=\"/home/message\"> \r\n                      <mat-icon>group</mat-icon>\r\n                      <span>Collab Group</span>\r\n                  </mat-list-item>\r\n\r\n                  <mat-list-item routerLink=\"/home/message\">\r\n                      <mat-icon>person</mat-icon>\r\n                      <span>Test.User1</span>\r\n                  </mat-list-item>\r\n                  <mat-list-item routerLink=\"/home/message\"> \r\n                      <mat-icon>person</mat-icon>\r\n                      <span>Test.User2</span>\r\n                  </mat-list-item>\r\n                  <mat-list-item routerLink=\"/home/message\"> \r\n                      <mat-icon>person</mat-icon>\r\n                      <span>Test.User3</span>\r\n                  </mat-list-item>\r\n                 </mat-list>\r\n                  <span>----------------------------------</span>\r\n                 <button mat-menu-item (click)=\"logOut()\">\r\n                    <mat-icon>logout</mat-icon>\r\n                    <span>LogOut</span>\r\n                  </button>\r\n           \r\n    </mat-drawer>\r\n    \r\n    <div class=\"sidenav-content\">\r\n        <mat-toolbar color=\"primary\">\r\n            <mat-toolbar-row>\r\n                <!-- \r\n                  drawer.toggle(): will call #drawer and will bring the sidenav into view\r\n                -->\r\n                <button mat-icon-button (click) = \"drawer.toggle()\">\r\n                        <mat-icon>menu</mat-icon>\r\n                </button>\r\n                 \r\n                <button mat-button routerLink=\"/home\">Hunter Collab</button>\r\n                <span class=\"spacer\"></span>\r\n                <!--\r\n                   How every button is implemented \r\n                    [matMenuTriggerFor] is bindded to button menu; will be triggered by menu\r\n                  -->\r\n                \r\n                <mat-menu #menu=\"matMenu\" >\r\n                  <button mat-menu-item routerLink=\"/user\">\r\n                    <mat-icon>person</mat-icon>\r\n                    <span>User Info</span>\r\n                  </button>\r\n                  <button mat-menu-item (click)=\"logOut()\">\r\n                    <mat-icon>directions_run</mat-icon>\r\n                    <span>LogOut</span>\r\n                  </button>\r\n                </mat-menu>\r\n\r\n            </mat-toolbar-row>\r\n        </mat-toolbar>\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n</mat-drawer-container>\r\n"
 
 /***/ }),
 
@@ -446,6 +453,9 @@ var NavbarComponent = /** @class */ (function () {
     }
     NavbarComponent.prototype.ngOnInit = function () {
     };
+    NavbarComponent.prototype.messagePageLink = function () {
+        this.router.navigate(['/home/message']);
+    };
     NavbarComponent.prototype.logOut = function () {
         localStorage.removeItem('accessToken');
         this.router.navigate(['/login']);
@@ -459,6 +469,60 @@ var NavbarComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], NavbarComponent);
     return NavbarComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/dbAccess/conversation.service.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/shared/dbAccess/conversation.service.ts ***!
+  \*********************************************************/
+/*! exports provided: ConversationService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConversationService", function() { return ConversationService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+
+var ConversationService = /** @class */ (function () {
+    function ConversationService(http) {
+        this.http = http;
+        this.rootUrl = 'https://huntercollabapi.herokuapp.com';
+    }
+    //send group message to collab group
+    ConversationService.prototype.sendMessageToCollabGroup = function (message, collabID) {
+        var body = {
+            message: message,
+            collabId: collabID
+        };
+        return this.http.post(this.rootUrl + "/messaging/sendMessage", body);
+    };
+    //send personal message to collab members
+    ConversationService.prototype.sendPersonalMessage = function (message, recipient) {
+        var body = {
+            message: message,
+            recipient: recipient
+        };
+        return this.http.post(this.rootUrl + "/messaging/sendMessage", body);
+    };
+    //return current user conversations
+    ConversationService.prototype.myCoversations = function () {
+        return this.http.get(this.rootUrl + "/messaging/myConvos");
+    };
+    ConversationService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], ConversationService);
+    return ConversationService;
 }());
 
 
@@ -479,10 +543,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var rxjs_add_operator_catch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/add/operator/catch */ "./node_modules/rxjs-compat/_esm5/add/operator/catch.js");
 
 
 
 
+
+
+//import 'rxjs/add/operator/throw';
 var UserService = /** @class */ (function () {
     function UserService(http) {
         this.http = http;
@@ -519,10 +588,6 @@ var UserService = /** @class */ (function () {
     UserService.prototype.getUserdetails = function () {
         return this.http.get(this.rootUrl + "/user");
     };
-    UserService.prototype.getPicture = function () {
-        // user/profilePicture
-        return this.http.get(this.rootUrl + "/user/profilePicture");
-    };
     UserService.prototype.getUserSkills = function (userName) {
         return this.http.get(this.rootUrl + "/user/skills/" + userName).toPromise();
     };
@@ -546,6 +611,20 @@ var UserService = /** @class */ (function () {
                             })];
                     case 2:
                         _a.sent();
+                        /*
+                        for(let classTaken of classes){
+                            xAxisReq.push({
+                            skillOrClass: classTaken,
+                            type: "class"
+                          });
+                        }
+                        for(let skill of skills){
+                          xAxisReq.push({
+                          skillOrClass: skill,
+                          type: "skill"
+                        });
+                      }
+                      */
                         return [2 /*return*/, xAxisReq];
                 }
             });
@@ -555,9 +634,53 @@ var UserService = /** @class */ (function () {
         var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set("query", constrain);
         return this.http.get(this.rootUrl + "/search/skills", { params: params });
     };
-    UserService.prototype.searchClasses = function (constrain) {
-        var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set("query", constrain);
-        return this.http.get(this.rootUrl + "/search/classes", { params: params }).map(function (res) { return res["matches"]; });
+    //___________POST_________________
+    //you can update user profile taking all these as input but "Not required"
+    UserService.prototype.updateUserProfile = function (github, linkedin, skills, classes) {
+        var body = {
+            github: github,
+            linkedin: linkedin,
+            skills: skills,
+            classes: classes
+        };
+        return this.http.post(this.rootUrl + "/user", body);
+    };
+    UserService.prototype.updateUserSkill = function (skills) {
+        var body = {
+            skills: skills,
+        };
+        console.log(body);
+        return this.http.post(this.rootUrl + "/user", body);
+    };
+    UserService.prototype.updateUserclass = function (classes) {
+        var body = {
+            classes: classes
+        };
+        console.log(body);
+        return this.http.post(this.rootUrl + "/user", body);
+    };
+    //download profile-picture as Bold file
+    UserService.prototype.getPicture = function () {
+        // user/profilePicture
+        return this.http.get(this.rootUrl + "/user/profilePicture", { responseType: 'blob' })
+            .catch(this.errorhandler);
+    };
+    UserService.prototype.uploadProfilePicture = function (fileToUpload) {
+        var formData = new FormData();
+        formData.append('pic', fileToUpload, fileToUpload.name);
+        return this.http.post(this.rootUrl + "/user/profilePicture", formData);
+    };
+    //it will split usename by "@" and return "First.Last" of user
+    UserService.prototype.gertFirstandLastName = function (username) {
+        var str = username;
+        var result = str.split('@');
+        console.log(result[0]);
+        return result[0];
+    };
+    //Http error handler 
+    UserService.prototype.errorhandler = function (error) {
+        var str = "error";
+        return rxjs__WEBPACK_IMPORTED_MODULE_4__["Observable"].throw(error.message || "server Error");
     };
     UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
@@ -631,7 +754,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/ariel/Desktop/HunterCollabWeb/webApplication/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\tusha\Desktop\CS499\hunterCollap\current\webApplication\src\main.ts */"./src/main.ts");
 
 
 /***/ })
