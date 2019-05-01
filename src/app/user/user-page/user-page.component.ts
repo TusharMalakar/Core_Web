@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { UserModel } from 'src/app/shared/models/user.model';
 import { FormControl, Form, FormGroup, FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { NavbarComponent } from 'src/app/navbar/navbar.component';
 
 
 @Component({
@@ -31,17 +32,12 @@ export class UserPageComponent implements OnInit {
   //default variable for selected file.
   fileToUpload: File = null;
 
-  /*
-  TODO: 
-    DISPLAY Image
-    Edit all fields
-    Autocomplete on edit skills and classes. 
-
-  */
-  constructor(private userService : UserService,private router : Router, private formBuilder: FormBuilder,private conver: ConversationService)
+  //get other user
+  mem:any;
+  
+  constructor(private userService : UserService,private router : Router, private formBuilder: FormBuilder,private conver: ConversationService, private getmem :NavbarComponent)
    { 
-    this.userService.getUserdetails().subscribe(userData => this.userData = userData);
-    //console.log(this.userData);
+     this.userService.getUserdetails().subscribe(userData => this.userData = userData);
    }
 
   ngOnInit() {
@@ -49,6 +45,12 @@ export class UserPageComponent implements OnInit {
     this.classesForm = this.formBuilder.group({
       userInput: null
     })
+  }
+
+  //it will display other members profile from nebvar 
+  otherUserProfile(){
+    this.userService.getUserdetails_(this.getmem.mem).subscribe(userData=> this.userData =userData);
+    console.log("other User profile "+ this.userData)
   }
 
 

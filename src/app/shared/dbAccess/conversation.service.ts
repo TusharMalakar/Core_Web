@@ -28,6 +28,7 @@ export class ConversationService {
       message   : message,
       recipient : recipient
     }
+    console.log(message+" "+ recipient)
     return this.http.post(this.rootUrl+"/messaging/sendMessage",body)
 
   }

@@ -1,3 +1,4 @@
+import { Route } from '@angular/compiler/src/core';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { UserModel } from '../models/user.model';
@@ -5,13 +6,14 @@ import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs';
 import { Requirements } from 'src/app/home/collab-card/collab-card.component';
 import 'rxjs/add/operator/catch';
+import { Router } from '@angular/router';
 //import 'rxjs/add/operator/throw';
 
 
 @Injectable()
 export class UserService {
   readonly rootUrl = 'https://huntercollabapi.herokuapp.com';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router : Router) { }
   
   getToken(){
     return localStorage.getItem('accessToken')
@@ -51,6 +53,19 @@ export class UserService {
  getUserdetails(): Observable<UserModel[]> {
   return this.http.get<UserModel[]>( this.rootUrl +"/user");
   }
+  //all other user profile
+ public member:string;
+ getUserdetails_(user:string): Observable<UserModel[]> { 
+  return this.http.get<UserModel[]>( this.rootUrl +"/user/"+user);
+  }
+
+  //wrapper of other user
+  otheruserprofile(user:string){
+    this.member=user;
+    console.log(this.member)
+    this.router.navigate(['/user'])
+  }
+
 
   getUserSkills(userName: string) { 
     return this.http.get( this.rootUrl + "/user/skills/" + userName).toPromise();

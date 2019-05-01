@@ -23,10 +23,14 @@
                           <mat-icon>group</mat-icon>
                           {{collab.title }}</p>
                          <mat-list-item *ngFor ="let mem of collab?.members">
-                            <p routerLink="/home/message"> 
-                          <mat-icon>person</mat-icon> 
-                          {{mem}}
-                          </p>                          
+                          <!--Taking individual user as input to navigate user -->
+                          <div class="form-group">
+                              <mat-icon>person</mat-icon> 
+                              <input type="text" id="mem_" placeholder={{mem}} (click)="GoToProfile(mem)">    
+                            </div>
+                            <!--This leades to message-->
+                            <p (click)=" messagePageLink(mem)">  <mat-icon>chat</mat-icon> </p>
+                                            
                         </mat-list-item> 
                    </ng-container> 
                  </mat-list>
@@ -70,3 +74,7 @@
         <router-outlet></router-outlet>
     </div>
 </mat-drawer-container>
+
+
+     
+  

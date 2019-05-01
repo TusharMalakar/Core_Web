@@ -1,3 +1,4 @@
+import { AuthGuard } from './../guard/auth.guard';
 import { MessageComponent } from './message/message.component';
 import { CreateCollabComponent } from './create-collab/create-collab.component';
 import { CollabCardComponent } from './collab-card/collab-card.component';
@@ -20,7 +21,8 @@ const routes: Routes = [
   },
   {
     path:"message",
-    component: MessageComponent
+    component: MessageComponent,
+    canLoad: [AuthGuard]
   }
 ];
 
