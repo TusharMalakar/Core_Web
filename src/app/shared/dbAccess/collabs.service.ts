@@ -76,7 +76,6 @@ export class CollabsService {
   //TODO: Get this http request working
   deleteCollab(id){
 
-    console.log(id["$oid"]);
     const body = {
       id : id["$oid"]
     }
@@ -97,21 +96,18 @@ export class CollabsService {
   }
 
   //Requires a JSON"_id"
-  editCollab(_id, owner, size,members, date, duration, location, status, title, description,classes, skills, applicants){
+  editCollab(collabData: CollabModel){
       const body: CollabModel = {
-          _id         : _id,
-          owner       : owner,
-          size        : size,
-          members     : members,
-          date        : date,
-          duration    : duration,
-          location    : location,
-          status      : status,
-          title       : title,
-          description : description,
-          classes     : classes,
-          skills      : skills,
-          applicants  : applicants
+          _id         : collabData._id["$oid"],
+          size : collabData.size,
+          date : collabData.date,
+          duration : collabData.duration,
+          location : collabData.location,
+          title: collabData.title,
+          description: collabData.description,
+          classes: collabData.classes,
+          skills: collabData.skills,
+          applicants  : collabData.applicants
       }
       return this.http.post(this.rootUrl + "/collab/editCollab",body)
   }

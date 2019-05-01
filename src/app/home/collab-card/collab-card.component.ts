@@ -4,6 +4,7 @@ import { CollabModel } from './../../shared/models/collab.model';
 import { Component, OnInit, Input } from '@angular/core';
 import { TableBuilder } from 'src/app/shared/models/tableBuilder.model';
 import { UserModel } from 'src/app/shared/models/user.model';
+import { Router } from '@angular/router';
 
 export interface Requirements{
   skillOrClass: string,
@@ -30,7 +31,8 @@ export class CollabCardComponent implements OnInit {
   
 
   constructor(private userService: UserService, 
-              private collabService: CollabsService) {
+              private collabService: CollabsService,
+              private router: Router) {
                
                 
               }
@@ -158,6 +160,11 @@ export class CollabCardComponent implements OnInit {
   deleteCollab(){
     this.collabService.deleteCollab(this.collabData._id)
       .subscribe(res => {console.log(res) })
+  }
+
+  editCollab(){
+    console.log("Here");
+    this.router.navigate(['/home/createcollab']);
   }
 
 

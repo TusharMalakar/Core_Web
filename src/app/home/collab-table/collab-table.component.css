@@ -16,3 +16,8 @@ table {
     border: 1px solid #ccc; 
     text-align: left; 
   }
+
+  td a{
+    display: block;
+  
+  }

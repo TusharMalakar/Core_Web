@@ -50,6 +50,10 @@ export class UserService {
   return this.http.get<UserModel[]>( this.rootUrl +"/user");
   }
 
+  getMemberdetails(username: string): Observable<UserModel[]> {
+    return this.http.get<UserModel[]>( this.rootUrl +"/user/" + username);
+  }
+
   getUserSkills(userName: string) { 
     return this.http.get( this.rootUrl + "/user/skills/" + userName).toPromise();
   }
@@ -105,6 +109,12 @@ searchSkills(constrain: string): Observable<any>{
 getPicture(): Observable <Blob>{
   // user/profilePicture
   return this.http.get( this.rootUrl +"/user/profilePicture",  { responseType: 'blob' });
+}
+
+getMemberPicture(username: string): Observable <Blob>{
+  console.log(username);
+  // user/profilePicture
+  return this.http.get( this.rootUrl +"/user/profilePicture?username=" + username,  { responseType: 'blob' });
 }
 
 uploadProfilePicture(fileToUpload: File){

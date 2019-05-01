@@ -54,6 +54,11 @@ export class CreateCollabComponent implements OnInit {
               private collabService: CollabsService,
               private router: Router) {
     this.collabData = new CollabModel;
+    if(this.collabData){
+      console.log(this.collabData);
+    } else {
+      console.log(this.collabData);
+    }
    }
 
   ngOnInit() {

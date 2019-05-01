@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TableBuilder } from 'src/app/shared/models/tableBuilder.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'collab-table',
@@ -11,11 +12,19 @@ export class CollabTableComponent implements OnInit {
   @Input('xAxisReq') xAxisReq: Array<string> = [];
  
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) 
+  { }
 
   ngOnInit() {
     //console.log(this.xAxisReq);
   }
+
+  goToProfile(user: string) {
+      this.router.navigate(['/user/', user]);
+  }
+
 }
 
 

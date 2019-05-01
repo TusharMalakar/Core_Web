@@ -1521,7 +1521,7 @@ module.exports = ".mat-card {\n    max-width: 800px;\n    margin: auto;\n    pad
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card>\n  <mat-card-header >\n\n    <mat-card-title> \n\n      <mat-grid-list  cols=\"2\" rowHeight=\"4:1\">\n        <mat-grid-tile>{{collabData?.title}}</mat-grid-tile>\n        <mat-grid-tile><mat-icon>group</mat-icon> : {{collabData?.members.length}} / {{ collabData?.size}}</mat-grid-tile>\n      </mat-grid-list>\n      \n    </mat-card-title>\n\n  </mat-card-header>\n  <mat-card-content>\n    <mat-accordion>\n        <div class = \"content\">\n            <p class=\"description\">Description: {{ collabData?.description }} </p>\n            <p class=\"date\">Date: {{ collabData?.date | date:'medium' }}</p>\n            <p class=\"duration\">Apply By: {{ collabData?.duration | date:'medium' }}</p>\n            <p class=\"location\">Location: {{ collabData?.location }}</p>\n\n            <div class = \"requirements\">\n                <mat-chip-list>\n                    Classes: \n                    <mat-chip *ngFor = \"let class of collabData?.classes\">\n                      {{ class }}\n                    </mat-chip>\n                </mat-chip-list>\n                <br>\n                <mat-chip-list>\n                    Skills: \n                    <mat-chip *ngFor=\"let skill of collabData?.skills\">\n                      {{ skill }}\n                    </mat-chip>\n                </mat-chip-list>\n            </div>\n      \n        </div>\n        <br>\n        \n        <!-- Event Binding: In this case the event is (opened) -->\n        <mat-expansion-panel \n                       (opened)=\"panelOpenState = true && makeTable()\"\n                       (closed)=\"panelOpenState = false\">\n        <mat-expansion-panel-header>\n          <mat-panel-title>\n              <h4>Members</h4>\n          </mat-panel-title>\n          <mat-panel-description>\n          </mat-panel-description>\n          </mat-expansion-panel-header>\n\n            <ng-container class=\"table-container\">\n              <div class=\"table\">\n                <collab-table [table] = \"table\" [xAxisReq] = \"xAxisReq\"></collab-table>\n              </div>\n            </ng-container>\n          \n          \n        </mat-expansion-panel>\n    </mat-accordion>\n    \n  </mat-card-content>\n\n  <mat-expansion-panel \n                       (opened)=\"panelOpenState = true && actionCheck()\"\n                       (closed)=\"panelOpenState = false\">\n        <mat-expansion-panel-header>\n          <mat-panel-title>\n            <h4>Actions</h4>\n          </mat-panel-title>\n          <mat-panel-description>\n          </mat-panel-description>\n          </mat-expansion-panel-header>\n            <mat-card-actions>\n              <button *ngIf=\"checkPartOf() == false\" mat-raised-button color = \"primary\" (click) = \"joinCollab()\"  > Join </button>\n              <button *ngIf=\"checkPartOf() == true\"  mat-raised-button color = \"primary\" (click) = \"leaveCollab()\" > Leave </button>\n              <button *ngIf=\"checkOwner() == true\"   mat-raised-button color = \"primary\" (click) = \"deleteCollab()\"> Delete </button>\n              <button *ngIf=\"checkOwner() == true\"   mat-raised-button color = \"primary\" > <a routerLink=\"/home/editcollab\">Edit</a></button>\n            </mat-card-actions>   \n        </mat-expansion-panel>\n\n  \n\n</mat-card>"
+module.exports = "<mat-card>\n  <mat-card-header >\n\n    <mat-card-title> \n\n      <mat-grid-list  cols=\"2\" rowHeight=\"4:1\">\n        <mat-grid-tile>{{collabData?.title}}</mat-grid-tile>\n        <mat-grid-tile><mat-icon>group</mat-icon> : {{collabData?.members.length}} / {{ collabData?.size}}</mat-grid-tile>\n      </mat-grid-list>\n      \n    </mat-card-title>\n\n  </mat-card-header>\n  <mat-card-content>\n    <mat-accordion>\n        <div class = \"content\">\n            <p class=\"description\">Description: {{ collabData?.description }} </p>\n            <p class=\"date\">Date: {{ collabData?.date | date:'medium' }}</p>\n            <p class=\"duration\">Apply By: {{ collabData?.duration | date:'medium' }}</p>\n            <p class=\"location\">Location: {{ collabData?.location }}</p>\n\n            <div class = \"requirements\">\n                <mat-chip-list>\n                    Classes: \n                    <mat-chip *ngFor = \"let class of collabData?.classes\">\n                      {{ class }}\n                    </mat-chip>\n                </mat-chip-list>\n                <br>\n                <mat-chip-list>\n                    Skills: \n                    <mat-chip *ngFor=\"let skill of collabData?.skills\">\n                      {{ skill }}\n                    </mat-chip>\n                </mat-chip-list>\n            </div>\n      \n        </div>\n        <br>\n        \n        <!-- Event Binding: In this case the event is (opened) -->\n        <mat-expansion-panel \n                       (opened)=\"panelOpenState = true && makeTable()\"\n                       (closed)=\"panelOpenState = false\">\n        <mat-expansion-panel-header>\n          <mat-panel-title>\n              <h4>Members</h4>\n          </mat-panel-title>\n          <mat-panel-description>\n          </mat-panel-description>\n          </mat-expansion-panel-header>\n\n            <ng-container class=\"table-container\">\n              <div class=\"table\">\n                <collab-table [table] = \"table\" [xAxisReq] = \"xAxisReq\"></collab-table>\n              </div>\n            </ng-container>\n          \n          \n        </mat-expansion-panel>\n    </mat-accordion>\n    \n  </mat-card-content>\n\n  <mat-expansion-panel \n                       (opened)=\"panelOpenState = true && actionCheck()\"\n                       (closed)=\"panelOpenState = false\">\n        <mat-expansion-panel-header>\n          <mat-panel-title>\n            <h4>Actions</h4>\n          </mat-panel-title>\n          <mat-panel-description>\n          </mat-panel-description>\n          </mat-expansion-panel-header>\n            <mat-card-actions>\n              <button *ngIf=\"checkPartOf() == false\" mat-raised-button color = \"primary\" (click) = \"joinCollab()\"  > Join </button>\n              <button *ngIf=\"checkPartOf() == true\"  mat-raised-button color = \"primary\" (click) = \"leaveCollab()\" > Leave </button>\n              <button *ngIf=\"checkOwner() == true\"   mat-raised-button color = \"primary\" (click) = \"deleteCollab()\"> Delete </button>\n              <button *ngIf=\"checkOwner() == true\"   mat-raised-button color = \"primary\" (click) = \"editCollab()\">    Edit</button>\n            </mat-card-actions>   \n        </mat-expansion-panel>\n\n  \n\n</mat-card>"
 
 /***/ }),
 
@@ -1541,6 +1541,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_models_collab_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../shared/models/collab.model */ "./src/app/shared/models/collab.model.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_shared_models_tableBuilder_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/shared/models/tableBuilder.model */ "./src/app/shared/models/tableBuilder.model.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
 
 
 
@@ -1548,9 +1550,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var CollabCardComponent = /** @class */ (function () {
-    function CollabCardComponent(userService, collabService) {
+    function CollabCardComponent(userService, collabService, router) {
         this.userService = userService;
         this.collabService = collabService;
+        this.router = router;
         this.table = [];
         this.xAxisReq = [];
         this.alreadyBuilt = false;
@@ -1708,6 +1711,10 @@ var CollabCardComponent = /** @class */ (function () {
         this.collabService.deleteCollab(this.collabData._id)
             .subscribe(function (res) { console.log(res); });
     };
+    CollabCardComponent.prototype.editCollab = function () {
+        console.log("Here");
+        this.router.navigate(['/home/createcollab']);
+    };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _shared_models_collab_model__WEBPACK_IMPORTED_MODULE_3__["CollabModel"])
@@ -1719,7 +1726,8 @@ var CollabCardComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./collab-card.component.css */ "./src/app/home/collab-card/collab-card.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"],
-            src_app_shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_1__["CollabsService"]])
+            src_app_shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_1__["CollabsService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"]])
     ], CollabCardComponent);
     return CollabCardComponent;
 }());
@@ -2005,6 +2013,12 @@ var CreateCollabComponent = /** @class */ (function () {
         this.classes = [];
         this.allClasses = [];
         this.collabData = new src_app_shared_models_collab_model__WEBPACK_IMPORTED_MODULE_1__["CollabModel"];
+        if (this.collabData) {
+            console.log(this.collabData);
+        }
+        else {
+            console.log(this.collabData);
+        }
     }
     CreateCollabComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -2481,11 +2495,10 @@ var CollabsService = /** @class */ (function () {
     };
     //TODO: Get this http request working
     CollabsService.prototype.deleteCollab = function (id) {
-        console.log(id["$oid"]);
         var body = {
             id: id["$oid"]
         };
-        return this.http.delete(this.rootUrl + "/collab/deleteCollabForReal");
+        return this.http.request('delete', this.rootUrl + "/collab/deleteCollabForReal", { body: body });
     };
     //TODO: Get this http request working
     CollabsService.prototype.getReqCollabs = function (classes, skills) {
@@ -2498,21 +2511,18 @@ var CollabsService = /** @class */ (function () {
         return this.http.post(this.rootUrl + "/collab/getRecommendedCollabs", body);
     };
     //Requires a JSON"_id"
-    CollabsService.prototype.editCollab = function (_id, owner, size, members, date, duration, location, status, title, description, classes, skills, applicants) {
+    CollabsService.prototype.editCollab = function (collabData) {
         var body = {
-            _id: _id,
-            owner: owner,
-            size: size,
-            members: members,
-            date: date,
-            duration: duration,
-            location: location,
-            status: status,
-            title: title,
-            description: description,
-            classes: classes,
-            skills: skills,
-            applicants: applicants
+            _id: collabData._id["$oid"],
+            size: collabData.size,
+            date: collabData.date,
+            duration: collabData.duration,
+            location: collabData.location,
+            title: collabData.title,
+            description: collabData.description,
+            classes: collabData.classes,
+            skills: collabData.skills,
+            applicants: collabData.applicants
         };
         return this.http.post(this.rootUrl + "/collab/editCollab", body);
     };
