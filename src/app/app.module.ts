@@ -36,6 +36,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 
 //Clock
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { CollabMessagingComponent } from './conversations/collab-messaging/collab-messaging.component';
 
 
 
@@ -45,6 +46,7 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
   declarations: [
     AppComponent,
     NavbarComponent,
+    CollabMessagingComponent,
   ],
   imports: [
     BrowserModule,

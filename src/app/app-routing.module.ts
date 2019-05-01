@@ -29,6 +29,10 @@ const routes: Routes = [
     loadChildren: './user/user.module#UserModule',
     canLoad: [AuthGuard]
   },
+  {
+    path: 'conversations',
+    loadChildren: './ conversations/conversations.module#ConversationsModule',
+  },
   
   
   //default component

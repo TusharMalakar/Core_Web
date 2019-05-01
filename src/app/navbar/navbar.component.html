@@ -17,31 +17,24 @@
                 <mat-icon>send</mat-icon>
             </button> 
               <!--Collab username goes in the list-->
-              <mat-list dense>
-                  <mat-list-item routerLink="/home/message"> 
-                      <mat-icon>group</mat-icon>
-                      <span>Collab Group</span>
-                  </mat-list-item>
-
-                  <mat-list-item routerLink="/home/message">
-                      <mat-icon>person</mat-icon>
-                      <span>Test.User1</span>
-                  </mat-list-item>
-                  <mat-list-item routerLink="/home/message"> 
-                      <mat-icon>person</mat-icon>
-                      <span>Test.User2</span>
-                  </mat-list-item>
-                  <mat-list-item routerLink="/home/message"> 
-                      <mat-icon>person</mat-icon>
-                      <span>Test.User3</span>
-                  </mat-list-item>
+                 <mat-list dense>
+                    <ng-container *ngFor = "let collab of collabData" >
+                         <p routerLink="/home/message">
+                          <mat-icon>group</mat-icon>
+                          {{collab.title }}</p>
+                         <mat-list-item *ngFor ="let mem of collab?.members">
+                            <p routerLink="/home/message"> 
+                          <mat-icon>person</mat-icon> 
+                          {{mem}}
+                          </p>                          
+                        </mat-list-item> 
+                   </ng-container> 
                  </mat-list>
                   <span>----------------------------------</span>
                  <button mat-menu-item (click)="logOut()">
                     <mat-icon>logout</mat-icon>
                     <span>LogOut</span>
-                  </button>
-           
+                  </button>          
     </mat-drawer>
     
     <div class="sidenav-content">
