@@ -1,3 +1,4 @@
+import { UserService } from 'src/app/shared/dbAccess/user.service';
 import { UserModel } from 'src/app/shared/models/user.model';
 import { CollabModel } from './../../shared/models/collab.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -13,6 +14,7 @@ export class EditUserFormComponent implements OnInit {
   userData: UserModel;
 
   constructor(
+    private userService: UserService,
     private _formBuilder: FormBuilder,
     //Handles the openning/closing of the Dialog
     public dialogRef: MatDialogRef<EditUserFormComponent>,
@@ -28,9 +30,11 @@ export class EditUserFormComponent implements OnInit {
   }
 
   update(userData){
+
     console.log(userData['username']);
     console.log(userData['github']);
     console.log(userData['linkedin']);
+    this.userService.updateUserProfile(userData).subscribe(result => { console.log(result) });
     this.dialogRef.close();
   }
 

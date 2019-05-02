@@ -27,13 +27,15 @@
                   </div>
 
                      <!--Taking picture as input-->
-              <div class="form-group">
-                <input type="file" id="file"(change)="handleFileInput($event.target.files)">
-                <button (click)="uploadFileToActivity()">submit</button>
-              </div>
-                    <ng-template #noImageFound>
-                      <img src="/assets/userPhoto.png"> 
-                    </ng-template>
+                <div class="form-group">
+
+                  <input  type="file" id="file" (change)="handleFileInput($event.target.files)">
+                  <button mat-button color="primary" (click)="uploadFileToActivity()">submit</button>
+                </div>
+
+                <ng-template #noImageFound>
+                  <img src="/assets/userPhoto.png"> 
+                </ng-template>
                 <!--img mat-card-image -->
                 <mat-card-content>
                 

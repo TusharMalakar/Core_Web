@@ -134,13 +134,11 @@ uploadProfilePicture(fileToUpload: File){
   //___________POST_________________
 
 //you can update user profile taking all these as input but "Not required"
-updateUserProfile(github,linkedin, skills, classes, name){
+updateUserProfile(userData: UserModel){
   const body : UserModel ={
-    name : name,
-    github  :github,
-    linkedin:linkedin,
-    skills  :skills,
-    classes :classes
+    name : userData.username,
+    github  : userData.github,
+    linkedin: userData.linkedin,
   }
   return this.http.post(this.rootUrl +"/user", body)
 }
