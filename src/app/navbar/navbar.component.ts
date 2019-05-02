@@ -1,4 +1,5 @@
-import { Message } from 'src/app/shared/models/message.model';
+import { MessageComponent } from './../home/message/message.component';
+import { Message } from './../shared/models/message.model';
 import { UserModel } from './../shared/models/user.model';
 import { map, startWith } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -56,13 +57,21 @@ GoToProfile(mem_:any){
   }
 
 groupMessageingPageLink(id:string){
+    //setting collabId 
     this.collabId=id;
+    //making member to null, which is parameter of personal message before switching to group messaging
+    this.mem=null;
     console.log("Going to Group message "+this.collabId)
+    console.log("member "+this.mem)
     this.router.navigate(['/home/message'])
 }
 PersonalmessagePageLink(mem:string){
+  //setting members of message
   this.mem=mem
+  //making collabId null before switching to personal messaging
+  this.collabId=null;
   console.log("Going to message page of "+this.mem)
+  console.log("CollabId "+this.collabId)
   this.router.navigate(['/home/message'])
 }
 getTitle(title:string){
@@ -72,9 +81,7 @@ getTitle(title:string){
 logOut(){
   localStorage.removeItem('accessToken');
   this.router.navigate(['/login']);
-}
-
-  
+} 
 
 }
 

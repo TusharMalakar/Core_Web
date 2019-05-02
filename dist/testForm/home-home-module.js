@@ -2125,12 +2125,14 @@ var CreateCollabComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeRoutingModule", function() { return HomeRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _message_message_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./message/message.component */ "./src/app/home/message/message.component.ts");
-/* harmony import */ var _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./create-collab/create-collab.component */ "./src/app/home/create-collab/create-collab.component.ts");
-/* harmony import */ var _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./collab-card/collab-card.component */ "./src/app/home/collab-card/collab-card.component.ts");
-/* harmony import */ var _collab_list_home_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./collab-list/home.component */ "./src/app/home/collab-list/home.component.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../guard/auth.guard */ "./src/app/guard/auth.guard.ts");
+/* harmony import */ var _message_message_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./message/message.component */ "./src/app/home/message/message.component.ts");
+/* harmony import */ var _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./create-collab/create-collab.component */ "./src/app/home/create-collab/create-collab.component.ts");
+/* harmony import */ var _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./collab-card/collab-card.component */ "./src/app/home/collab-card/collab-card.component.ts");
+/* harmony import */ var _collab_list_home_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./collab-list/home.component */ "./src/app/home/collab-list/home.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
 
 
 
@@ -2141,28 +2143,29 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [
     {
         path: '',
-        component: _collab_list_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"]
+        component: _collab_list_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"]
     },
     {
         path: "collabinfo",
-        component: _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_3__["CollabCardComponent"]
+        component: _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_4__["CollabCardComponent"]
     },
     {
         path: "createcollab",
-        component: _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_2__["CreateCollabComponent"]
+        component: _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_3__["CreateCollabComponent"]
     },
     {
         path: "message",
-        component: _message_message_component__WEBPACK_IMPORTED_MODULE_1__["MessageComponent"]
+        component: _message_message_component__WEBPACK_IMPORTED_MODULE_2__["MessageComponent"],
+        canLoad: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__["AuthGuard"]]
     }
 ];
 var HomeRoutingModule = /** @class */ (function () {
     function HomeRoutingModule() {
     }
     HomeRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"].forChild(routes)],
-            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"]]
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"].forChild(routes)],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"]]
         })
     ], HomeRoutingModule);
     return HomeRoutingModule;
@@ -2284,7 +2287,7 @@ var HomeModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvbWVzc2FnZS9tZXNzYWdlLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "\r\n  .container-bottom {\r\n    float: right;\r\n    position: fixed;\r\n    bottom: 0;\r\n}\r\n\r\n\r\n/* Chat containers */\r\n\r\n\r\n.container {\r\n  border: 2px solid #dedede;\r\n  background-color: #f1f1f1;\r\n  border-radius: 5px;\r\n  padding: 10px;\r\n  margin: 10px 0;\r\n}\r\n\r\n\r\n/* Chat containers */\r\n\r\n\r\n.container2 {\r\n  border: 4px solid #dedede;\r\n  background-color: plum;\r\n  border-radius: 5px;\r\n  padding: 10px;\r\n  margin: 10px 0;\r\n  text-align: center;\r\n}\r\n\r\n\r\n/* Darker chat container */\r\n\r\n\r\n.darker {\r\n  border-color: #ccc;\r\n  background-color: #ddd;\r\n}\r\n\r\n\r\n/* Clear floats */\r\n\r\n\r\n.container::after {\r\n  content: \"\";\r\n  clear: both;\r\n  display: table;\r\n}\r\n\r\n\r\n.right {\r\n  float: right;\r\n  margin-left: 20px;\r\n  margin-right:0;\r\n}\r\n\r\n\r\n/* Style time text */\r\n\r\n\r\n.time-right {\r\n  float: right;\r\n  color: #aaa;\r\n}\r\n\r\n\r\n/* Style time text */\r\n\r\n\r\n.time-left {\r\n  float: left;\r\n  color: #999;\r\n}\r\n\r\n\r\n.mat-card {\r\n  max-width: 800px;\r\n  margin: auto;\r\n  padding: 0px;\r\n  height: 100%;\r\n  background: rgba(214, 212, 212, 0.048);\r\n  border: .4px solid rgb(59, 59, 59);\r\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n}\r\n\r\n\r\n.mat-card2 {\r\n  max-width: 600px;\r\n  margin: auto;\r\n  padding: 0px;\r\n  height: 100%;\r\n  background: rgba(214, 212, 212, 0.048);\r\n  border: .4px solid rgb(59, 59, 59);\r\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n}\r\n\r\n\r\n.mat-card-header {\r\n \r\n  font-weight: bold;\r\n  display: inline;\r\n  \r\n}\r\n\r\n\r\n.mat-card-title  {\r\n  margin-left: -16px;\r\n  margin-right: -16px;\r\n  margin-top: 0px;\r\n  color: rgba(0, 0, 0, 0.836);\r\n  background: rgba(34, 34, 34, 0.13);\r\n  padding: 5px;\r\n}\r\n\r\n\r\n.mat-card-content {\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.mat-card>.mat-card-actions:last-child {\r\n  margin-bottom: 5px;\r\n \r\n}\r\n\r\n\r\n.mat-card-actions .mat-button, .mat-card-actions .mat-raised-button{\r\n  margin: 0px;\r\n  margin-left: 22px;\r\n}\r\n\r\n\r\n.mat-expansion-panel {\r\n  background: rgba(255, 254, 254, 0.151);\r\n}\r\n\r\n\r\n.requirements {\r\n  margin-left: 30px;\r\n  margin-right: 30px;\r\n  \r\n}\r\n\r\n\r\n.content .description{\r\n  font-size: 20px;\r\n  margin-left: 30px;\r\n  margin-right: 30px;\r\n}\r\n\r\n\r\n.content .date,.location,.duration{\r\n  margin-left: 40px;\r\n  margin-right: 40px;\r\n}\r\n\r\n\r\n.table{\r\n  width: 100%;\r\n  height: 100%;\r\n  overflow-x:  auto;\r\n  overflow-y:  auto;\r\n}\r\n\r\n\r\n.mat-card {\r\n  font-family: Georgia, 'Times New Roman', Times, serif;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9tZXNzYWdlL21lc3NhZ2UuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0VBQ0U7SUFDRSxZQUFZO0lBQ1osZUFBZTtJQUNmLFNBQVM7QUFDYjs7O0FBR0Esb0JBQW9COzs7QUFDcEI7RUFDRSx5QkFBeUI7RUFDekIseUJBQXlCO0VBQ3pCLGtCQUFrQjtFQUNsQixhQUFhO0VBQ2IsY0FBYztBQUNoQjs7O0FBQ0Esb0JBQW9COzs7QUFDcEI7RUFDRSx5QkFBeUI7RUFDekIsc0JBQXNCO0VBQ3RCLGtCQUFrQjtFQUNsQixhQUFhO0VBQ2IsY0FBYztFQUNkLGtCQUFrQjtBQUNwQjs7O0FBRUEsMEJBQTBCOzs7QUFDMUI7RUFDRSxrQkFBa0I7RUFDbEIsc0JBQXNCO0FBQ3hCOzs7QUFFQSxpQkFBaUI7OztBQUNqQjtFQUNFLFdBQVc7RUFDWCxXQUFXO0VBQ1gsY0FBYztBQUNoQjs7O0FBRUE7RUFDRSxZQUFZO0VBQ1osaUJBQWlCO0VBQ2pCLGNBQWM7QUFDaEI7OztBQUlBLG9CQUFvQjs7O0FBQ3BCO0VBQ0UsWUFBWTtFQUNaLFdBQVc7QUFDYjs7O0FBRUEsb0JBQW9COzs7QUFDcEI7RUFDRSxXQUFXO0VBQ1gsV0FBVztBQUNiOzs7QUFDQTtFQUNFLGdCQUFnQjtFQUNoQixZQUFZO0VBQ1osWUFBWTtFQUNaLFlBQVk7RUFDWixzQ0FBc0M7RUFDdEMsa0NBQWtDO0VBQ2xDLHlFQUF5RTtBQUMzRTs7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsWUFBWTtFQUNaLFlBQVk7RUFDWixZQUFZO0VBQ1osc0NBQXNDO0VBQ3RDLGtDQUFrQztFQUNsQyx5RUFBeUU7QUFDM0U7OztBQUVBOztFQUVFLGlCQUFpQjtFQUNqQixlQUFlOztBQUVqQjs7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsbUJBQW1CO0VBQ25CLGVBQWU7RUFDZiwyQkFBMkI7RUFDM0Isa0NBQWtDO0VBQ2xDLFlBQVk7QUFDZDs7O0FBRUE7RUFDRSxXQUFXO0FBQ2I7OztBQUVBO0VBQ0Usa0JBQWtCOztBQUVwQjs7O0FBQ0E7RUFDRSxXQUFXO0VBQ1gsaUJBQWlCO0FBQ25COzs7QUFDQTtFQUNFLHNDQUFzQztBQUN4Qzs7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIsa0JBQWtCOztBQUVwQjs7O0FBSUE7RUFDRSxlQUFlO0VBQ2YsaUJBQWlCO0VBQ2pCLGtCQUFrQjtBQUNwQjs7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIsa0JBQWtCO0FBQ3BCOzs7QUFHQTtFQUNFLFdBQVc7RUFDWCxZQUFZO0VBQ1osaUJBQWlCO0VBQ2pCLGlCQUFpQjtBQUNuQjs7O0FBRUE7RUFDRSxxREFBcUQ7QUFDdkQiLCJmaWxlIjoic3JjL2FwcC9ob21lL21lc3NhZ2UvbWVzc2FnZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcbiAgLmNvbnRhaW5lci1ib3R0b20ge1xyXG4gICAgZmxvYXQ6IHJpZ2h0O1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgYm90dG9tOiAwO1xyXG59XHJcblxyXG5cclxuLyogQ2hhdCBjb250YWluZXJzICovXHJcbi5jb250YWluZXIge1xyXG4gIGJvcmRlcjogMnB4IHNvbGlkICNkZWRlZGU7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2YxZjFmMTtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgcGFkZGluZzogMTBweDtcclxuICBtYXJnaW46IDEwcHggMDtcclxufVxyXG4vKiBDaGF0IGNvbnRhaW5lcnMgKi9cclxuLmNvbnRhaW5lcjIge1xyXG4gIGJvcmRlcjogNHB4IHNvbGlkICNkZWRlZGU7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogcGx1bTtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgcGFkZGluZzogMTBweDtcclxuICBtYXJnaW46IDEwcHggMDtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuXHJcbi8qIERhcmtlciBjaGF0IGNvbnRhaW5lciAqL1xyXG4uZGFya2VyIHtcclxuICBib3JkZXItY29sb3I6ICNjY2M7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2RkZDtcclxufVxyXG5cclxuLyogQ2xlYXIgZmxvYXRzICovXHJcbi5jb250YWluZXI6OmFmdGVyIHtcclxuICBjb250ZW50OiBcIlwiO1xyXG4gIGNsZWFyOiBib3RoO1xyXG4gIGRpc3BsYXk6IHRhYmxlO1xyXG59XHJcblxyXG4ucmlnaHQge1xyXG4gIGZsb2F0OiByaWdodDtcclxuICBtYXJnaW4tbGVmdDogMjBweDtcclxuICBtYXJnaW4tcmlnaHQ6MDtcclxufVxyXG5cclxuXHJcblxyXG4vKiBTdHlsZSB0aW1lIHRleHQgKi9cclxuLnRpbWUtcmlnaHQge1xyXG4gIGZsb2F0OiByaWdodDtcclxuICBjb2xvcjogI2FhYTtcclxufVxyXG5cclxuLyogU3R5bGUgdGltZSB0ZXh0ICovXHJcbi50aW1lLWxlZnQge1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIGNvbG9yOiAjOTk5O1xyXG59XHJcbi5tYXQtY2FyZCB7XHJcbiAgbWF4LXdpZHRoOiA4MDBweDtcclxuICBtYXJnaW46IGF1dG87XHJcbiAgcGFkZGluZzogMHB4O1xyXG4gIGhlaWdodDogMTAwJTtcclxuICBiYWNrZ3JvdW5kOiByZ2JhKDIxNCwgMjEyLCAyMTIsIDAuMDQ4KTtcclxuICBib3JkZXI6IC40cHggc29saWQgcmdiKDU5LCA1OSwgNTkpO1xyXG4gIGJveC1zaGFkb3c6IDAgNHB4IDhweCAwIHJnYmEoMCwwLDAsMC4yKSwgMCA2cHggMjBweCAwIHJnYmEoMCwgMCwgMCwgMC4xOSk7XHJcbn1cclxuXHJcbi5tYXQtY2FyZDIge1xyXG4gIG1heC13aWR0aDogNjAwcHg7XHJcbiAgbWFyZ2luOiBhdXRvO1xyXG4gIHBhZGRpbmc6IDBweDtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbiAgYmFja2dyb3VuZDogcmdiYSgyMTQsIDIxMiwgMjEyLCAwLjA0OCk7XHJcbiAgYm9yZGVyOiAuNHB4IHNvbGlkIHJnYig1OSwgNTksIDU5KTtcclxuICBib3gtc2hhZG93OiAwIDRweCA4cHggMCByZ2JhKDAsMCwwLDAuMiksIDAgNnB4IDIwcHggMCByZ2JhKDAsIDAsIDAsIDAuMTkpO1xyXG59XHJcblxyXG4ubWF0LWNhcmQtaGVhZGVyIHtcclxuIFxyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gIGRpc3BsYXk6IGlubGluZTtcclxuICBcclxufVxyXG5cclxuLm1hdC1jYXJkLXRpdGxlICB7XHJcbiAgbWFyZ2luLWxlZnQ6IC0xNnB4O1xyXG4gIG1hcmdpbi1yaWdodDogLTE2cHg7XHJcbiAgbWFyZ2luLXRvcDogMHB4O1xyXG4gIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuODM2KTtcclxuICBiYWNrZ3JvdW5kOiByZ2JhKDM0LCAzNCwgMzQsIDAuMTMpO1xyXG4gIHBhZGRpbmc6IDVweDtcclxufVxyXG5cclxuLm1hdC1jYXJkLWNvbnRlbnQge1xyXG4gIG1hcmdpbjogMHB4O1xyXG59XHJcblxyXG4ubWF0LWNhcmQ+Lm1hdC1jYXJkLWFjdGlvbnM6bGFzdC1jaGlsZCB7XHJcbiAgbWFyZ2luLWJvdHRvbTogNXB4O1xyXG4gXHJcbn1cclxuLm1hdC1jYXJkLWFjdGlvbnMgLm1hdC1idXR0b24sIC5tYXQtY2FyZC1hY3Rpb25zIC5tYXQtcmFpc2VkLWJ1dHRvbntcclxuICBtYXJnaW46IDBweDtcclxuICBtYXJnaW4tbGVmdDogMjJweDtcclxufVxyXG4ubWF0LWV4cGFuc2lvbi1wYW5lbCB7XHJcbiAgYmFja2dyb3VuZDogcmdiYSgyNTUsIDI1NCwgMjU0LCAwLjE1MSk7XHJcbn1cclxuXHJcbi5yZXF1aXJlbWVudHMge1xyXG4gIG1hcmdpbi1sZWZ0OiAzMHB4O1xyXG4gIG1hcmdpbi1yaWdodDogMzBweDtcclxuICBcclxufVxyXG5cclxuXHJcblxyXG4uY29udGVudCAuZGVzY3JpcHRpb257XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG4gIG1hcmdpbi1sZWZ0OiAzMHB4O1xyXG4gIG1hcmdpbi1yaWdodDogMzBweDtcclxufVxyXG5cclxuLmNvbnRlbnQgLmRhdGUsLmxvY2F0aW9uLC5kdXJhdGlvbntcclxuICBtYXJnaW4tbGVmdDogNDBweDtcclxuICBtYXJnaW4tcmlnaHQ6IDQwcHg7XHJcbn1cclxuXHJcblxyXG4udGFibGV7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG4gIG92ZXJmbG93LXg6ICBhdXRvO1xyXG4gIG92ZXJmbG93LXk6ICBhdXRvO1xyXG59XHJcblxyXG4ubWF0LWNhcmQge1xyXG4gIGZvbnQtZmFtaWx5OiBHZW9yZ2lhLCAnVGltZXMgTmV3IFJvbWFuJywgVGltZXMsIHNlcmlmO1xyXG59XHJcblxyXG5cclxuXHJcblxyXG4iXX0= */"
 
 /***/ }),
 
@@ -2295,7 +2298,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n\r\n<h5>(user1) this is user1 message</h5>\r\n<h5>(user2) this is user2 response</h5>\r\n\r\n<button (click)=\"getNameFromEmail()\">getUserName</button>\r\n  <button (click)=\"sendPersonalMessage()\">message</button>\r\n  <button (click)=\"isPartOf()\">IspartOf</button>"
+module.exports = "\r\n<button (click)=\"LoadMyMessages()\">get message</button>\r\n<mat-card >\r\n        <div class=\"container2\">\r\n          <span>\r\n            Messaging to {{showTitle()}}\r\n          </span>\r\n        </div>\r\n        <div class=\"container\">\r\n            <span class=\"right\">{{showTitle()}}</span>\r\n            <p class=\"right\">Hello. How are you today?</p>\r\n            <span class=\"time-right\">11:00</span>\r\n          </div>\r\n          \r\n          <div class=\"container darker\">\r\n              <span>{{showTitle()}}</span>\r\n            <p>Hey! I'm fine. Thanks for asking!</p>\r\n            <span class=\"time-left\">11:01</span>\r\n          </div>\r\n          \r\n          <div class=\"container\">\r\n              <span class=\"right\">{{showTitle()}}</span>\r\n            <p class=\"right\">Sweet! So, what do you wanna do today?</p>\r\n            <span class=\"time-right\">11:02</span>\r\n          </div>\r\n          \r\n          <div class=\"container darker\">\r\n              <span>{{showTitle()}}</span>\r\n            <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>\r\n            <span class=\"time-left\">11:05</span>\r\n          </div>\r\n\r\n          <div class=\"container\">\r\n              <span class=\"right\">{{showTitle()}}</span>\r\n            <p class=\"right\">Sweet! So, what do you wanna do today?</p>\r\n            <span class=\"time-right\">11:02</span>\r\n          </div>\r\n          \r\n          \r\n\r\n        <form class=\"container-Button\" [formGroup] = \"form\" (ngSubmit) = \"SendMessage()\">    \r\n                <mat-form-field>\r\n                    <input \r\n                        \r\n                        formControlName = \"message\"\r\n                        matInput\r\n                        id=\"message\" \r\n                        type=\"text\" \r\n                        placeholder=\"Message\">\r\n                </mat-form-field> \r\n                <div *ngIf=\" message.touched && message.invalid\" \r\n                class=\"alert alert-danger\">\r\n                <mat-error *ngIf=\"message.errors.required\">null<strong>Required!</strong></mat-error>\r\n            </div>\r\n            <button class=\"right\" mat-raised-button color = \"primary\" type=\"submit\" [disabled] = \"!form.valid\">send</button>\r\n        </form>\r\n\r\n</mat-card>"
 
 /***/ }),
 
@@ -2310,168 +2313,120 @@ module.exports = "\r\n\r\n\r\n<h5>(user1) this is user1 message</h5>\r\n<h5>(use
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessageComponent", function() { return MessageComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _shared_dbAccess_conversation_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../shared/dbAccess/conversation.service */ "./src/app/shared/dbAccess/conversation.service.ts");
-/* harmony import */ var src_app_shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/dbAccess/collabs.service */ "./src/app/shared/dbAccess/collabs.service.ts");
-/* harmony import */ var src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/dbAccess/user.service */ "./src/app/shared/dbAccess/user.service.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
+/* harmony import */ var _shared_models_message_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../shared/models/message.model */ "./src/app/shared/models/message.model.ts");
+/* harmony import */ var _shared_dbAccess_conversation_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../shared/dbAccess/conversation.service */ "./src/app/shared/dbAccess/conversation.service.ts");
+/* harmony import */ var src_app_shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/dbAccess/collabs.service */ "./src/app/shared/dbAccess/collabs.service.ts");
+/* harmony import */ var src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/shared/dbAccess/user.service */ "./src/app/shared/dbAccess/user.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 
 
 
+
+
+
+
+//import { NavbarComponent } from 'src/app/navbar/navbar.component';
 
 
 var MessageComponent = /** @class */ (function () {
-    function MessageComponent(userService, collabservice, conversation) {
+    function MessageComponent(userService, collabservice, conversation, router, mem_, formBuilder) {
         this.userService = userService;
         this.collabservice = collabservice;
         this.conversation = conversation;
+        this.router = router;
+        this.mem_ = mem_;
+        this.formBuilder = formBuilder;
+        this.sender = this.mem_.sender;
         this.partOf = false;
         this.isOwner = false;
+        this.message = new _shared_models_message_model__WEBPACK_IMPORTED_MODULE_2__["Message"]();
     }
     MessageComponent.prototype.ngOnInit = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var _this = this;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.userService.getUserdetails().subscribe(function (userData) { return _this.userData = userData; })];
-                    case 1:
-                        _a.sent();
-                        this.mymessages();
-                        return [2 /*return*/];
-                }
-            });
-        });
+        this.form = this.formBuilder.group({ message: [this.message.message, _angular_forms__WEBPACK_IMPORTED_MODULE_8__["Validators"].required] });
     };
-    MessageComponent.prototype.isPartOf = function () {
-        for (var _i = 0, _a = this.collabData.members; _i < _a.length; _i++) {
-            var member = _a[_i];
-            if (member == this.userData['username']) {
-                this.partOf = true;
-                console.log(this.partOf);
-                return this.partOf;
-            }
+    //spliting username by @ 
+    MessageComponent.prototype.getName = function (username) {
+        var temp = username.substring(0, 2).toUpperCase();
+        return temp;
+    };
+    //Display a title
+    MessageComponent.prototype.showTitle = function () {
+        if (this.mem_.mem != null) {
+            return this.getName(this.mem_.mem);
         }
+        else if (this.mem_.collabId != null) {
+            return this.mem_.Title_;
+        }
+        else
+            this.router.navigate(['/home']);
+    };
+    //send message
+    MessageComponent.prototype.SendMessage = function () {
+        if (this.mem_.mem != null) {
+            console.log("sending message to " + this.mem_.mem);
+            this.sendPersonalMessage();
+        }
+        else if (this.mem_.collabId != null) {
+            console.log("sending message to " + this.mem_.collabId);
+            this.SendGroupMessage();
+        }
+        else
+            this.router.navigate(['/home']);
     };
     //sendPersonalMessage()
     MessageComponent.prototype.sendPersonalMessage = function () {
-        var member = this.CollabData["members"];
-        //console.log(member)
-        //this.conversation.sendPersonalMessage().subscribe(message=>console.log(message))
+        var message = this.form.value;
+        this.conversation.sendPersonalMessage(message, this.mem_.mem).subscribe(function (message) { return console.log(message); });
     };
-    //return all message of users: personal and group
-    MessageComponent.prototype.mymessages = function () {
-        this.conversation.myCoversations().subscribe(function (data) {
-            console.log(data);
+    //sendGroud message to collab members
+    MessageComponent.prototype.SendGroupMessage = function () {
+        var message = this.form.value;
+        this.conversation.sendMessageToCollabGroup(message, this.mem_.collabId).subscribe(function (message) { return console.log(message); });
+    };
+    //based on user input e.g. collbId od individual, it will load messages
+    MessageComponent.prototype.LoadMyMessages = function () {
+        if (this.mem_.mem != null) {
+            //setting collabId to null before loading individual message
+            this.mem_.collabId = null;
+            this.LoadIndividualMessage();
+        }
+        else if (this.mem_.collabId != null) {
+            //setting collab member to null before loading  message
+            this.mem_.mem = null;
+            this.LoadGroupMessage();
+        }
+        else
+            this.router.navigate(['/home']);
+    };
+    //return participients and messages of current user
+    MessageComponent.prototype.LoadIndividualMessage = function () {
+        this.sender = this.mem_.sender;
+        this.conversation.LoadOtherUserMessage(0, this.sender).subscribe(function (message) {
+            console.log(message);
+        });
+    };
+    //return  collabId and  group messages of current user 
+    MessageComponent.prototype.LoadGroupMessage = function () {
+        this.collabID = this.mem_.collabId;
+        this.conversation.LoadGroupMessage(0, this.collabID).subscribe(function (message) {
+            console.log(message);
         });
     };
     MessageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"])({
             selector: 'app-message',
             template: __webpack_require__(/*! ./message.component.html */ "./src/app/home/message/message.component.html"),
             styles: [__webpack_require__(/*! ./message.component.css */ "./src/app/home/message/message.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"], src_app_shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_2__["CollabsService"], _shared_dbAccess_conversation_service__WEBPACK_IMPORTED_MODULE_1__["ConversationService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_5__["UserService"], src_app_shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_4__["CollabsService"],
+            _shared_dbAccess_conversation_service__WEBPACK_IMPORTED_MODULE_3__["ConversationService"], _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"],
+            _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_1__["NavbarComponent"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormBuilder"]])
     ], MessageComponent);
     return MessageComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/shared/dbAccess/collabs.service.ts":
-/*!****************************************************!*\
-  !*** ./src/app/shared/dbAccess/collabs.service.ts ***!
-  \****************************************************/
-/*! exports provided: CollabsService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CollabsService", function() { return CollabsService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-
-var CollabsService = /** @class */ (function () {
-    function CollabsService(http) {
-        this.http = http;
-        this.rootUrl = 'https://huntercollabapi.herokuapp.com';
-    }
-    //collab/getCollabDetails
-    CollabsService.prototype.collabDetails = function () {
-        return this.http.get(this.rootUrl + "/collab/getCollabDetails");
-    };
-    //collab/getAllCollabs
-    CollabsService.prototype.allCollabs = function () {
-        return this.http.get(this.rootUrl + "/collab/getAllCollabs");
-    };
-    //collab/getActiveCollabs 
-    CollabsService.prototype.activeCollabs = function () {
-        return this.http.get(this.rootUrl + "/collab/getActiveCollabs");
-    };
-    //Get Both All and My Collabs
-    CollabsService.prototype.getCollabs = function (collabType) {
-        return this.http.get(this.rootUrl + "/collab/" + collabType);
-    };
-    //______________POST_REQUEST____________
-    //create a new collab, wehre owner = currentUser
-    // size, date, duration, location, title, description, classes and skills are required
-    CollabsService.prototype.createCollab = function (collabData) {
-        var body = {
-            size: collabData.size,
-            date: collabData.date,
-            duration: collabData.duration,
-            location: collabData.location,
-            title: collabData.title,
-            description: collabData.description,
-            classes: collabData.classes,
-            skills: collabData.skills,
-        };
-        return this.http.post(this.rootUrl + "/collab/createCollab", body);
-    };
-    //Join Collab
-    CollabsService.prototype.joinCollab = function (id) {
-        console.log(id["$oid"]);
-        var body = {
-            id: id["$oid"]
-        };
-        return this.http.post(this.rootUrl + "/collab/joinCollab", body);
-    };
-    //Leave Collab
-    CollabsService.prototype.leaveCollab = function (id) {
-        //console.log(id["$oid"]);
-        var body = {
-            id: id["$oid"]
-        };
-        return this.http.post(this.rootUrl + "/collab/leaveCollab", body);
-    };
-    //TODO: Get this http request working
-    CollabsService.prototype.deleteCollab = function (id) {
-        //console.log(id["$oid"]);
-        var body = {
-            id: id["$oid"]
-        };
-        return this.http.delete(this.rootUrl + "/collab/deleteCollabForReal");
-    };
-    //TODO: Get this http request working
-    CollabsService.prototype.getReqCollabs = function (classes, skills) {
-        //console.log(classes);
-        //console.log(skills);
-        var body = {
-            classes: classes,
-            skills: skills
-        };
-        return this.http.post(this.rootUrl + "/collab/getRecommendedCollabs", body);
-    };
-    CollabsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
-            providedIn: 'root'
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
-    ], CollabsService);
-    return CollabsService;
 }());
 
 

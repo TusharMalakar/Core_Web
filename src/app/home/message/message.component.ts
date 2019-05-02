@@ -35,7 +35,8 @@ export class MessageComponent implements OnInit {
   
   constructor(private userService : UserService, private collabservice: CollabsService, 
     private conversation: ConversationService,private router: Router, 
-    private mem_:NavbarComponent,private formBuilder: FormBuilder) {
+    private mem_:NavbarComponent,
+    private formBuilder: FormBuilder) {
       this.message = new Message();
      }
   
@@ -86,10 +87,34 @@ export class MessageComponent implements OnInit {
     this.conversation.sendMessageToCollabGroup(message,this.mem_.collabId).subscribe(message=>console.log(message))
   }
 
-//return all message of users: personal and group
-mymessages(){
-  this.conversation.myCoversations().subscribe((data:any)=>{console.log(data)})
+//based on user input e.g. collbId od individual, it will load messages
+LoadMyMessages(){
+  if(this.mem_.mem !=null){
+    this.LoadIndividualMessage();
+  }
+  else if(this.mem_.collabId != null){
+    
+    this.LoadGroupMessage();
+  }
+  else
+    this.router.navigate(['/home'])
+
 }
  
+//return participients and messages of current user
+LoadIndividualMessage(){
+  this.sender=this.mem_.sender;
+  this.conversation.LoadOtherUserMessage(0,this.sender).subscribe((message:any)=>{
+    console.log(message)
+  })
+}
+
+//return  collabId and  group messages of current user 
+LoadGroupMessage(){
+  this.collabID=this.mem_.collabId;
+  this.conversation.LoadGroupMessage(0,this.collabID).subscribe((message:any)=>{
+    console.log(message)
+  })
+}
 
 }

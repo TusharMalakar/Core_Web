@@ -84,6 +84,7 @@ import { CollabMessagingComponent } from './conversations/collab-messaging/colla
   providers: [
     UserService,
     ConversationService,
+   // NavbarComponent,
     AuthGuard,
     {
       provide :HTTP_INTERCEPTORS,

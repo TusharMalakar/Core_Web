@@ -38,6 +38,30 @@ export class ConversationService {
     return this.http.get( this.rootUrl +"/messaging/myConvos");
   }
 
+  /**
+    page should be 0, 1, 2, 3, et cetera.
+    If you set page = 0, it will return the latest 20 messages.
+    If you set page = 1, it will skip the latest 20 messages and return the next 20 messages.
+    If you set page = 2, it will skip the latest 40 messages and return the next 20 messages.
+    …. You get the idea.
+
+    otherUser should be the other user’s username 
+   */
+  LoadOtherUserMessage(page:number, otherUser:string){
+    const body={
+      page      : page,
+      otherUser : otherUser
+    }
+    return this.http.post(this.rootUrl+"/messaging/getMessages",body)
+  }
+  
+  LoadGroupMessage(page:number, CollabId:string){
+    const body={
+      page      : page,
+      collabId  : CollabId
+    }
+    return this.http.post(this.rootUrl+"/messaging/getMessages",body)
+  }
 
 
 

@@ -94,6 +94,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/dbAccess/user.service */ "./src/app/shared/dbAccess/user.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var src_app_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
+
 
 
 
@@ -101,19 +103,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var UserPageComponent = /** @class */ (function () {
-    /*
-    TODO:
-      DISPLAY Image
-      Edit all fields
-      Autocomplete on edit skills and classes.
-  
-    */
-    function UserPageComponent(userService, router, formBuilder, conver) {
+    function UserPageComponent(userService, router, formBuilder, conver, getmem) {
         var _this = this;
         this.userService = userService;
         this.router = router;
         this.formBuilder = formBuilder;
         this.conver = conver;
+        this.getmem = getmem;
         this.filteredUsers = [];
         this.isLoading = false;
         //regular expression to check empty string
@@ -121,13 +117,16 @@ var UserPageComponent = /** @class */ (function () {
         //default variable for selected file.
         this.fileToUpload = null;
         this.userService.getUserdetails().subscribe(function (userData) { return _this.userData = userData; });
-        //console.log(this.userData);
     }
     UserPageComponent.prototype.ngOnInit = function () {
         this.profilePicture();
-        this.classesForm = this.formBuilder.group({
-            userInput: null
-        });
+        this.classesForm = this.formBuilder.group({ userInput: null });
+    };
+    //it will display other members profile from nebvar 
+    UserPageComponent.prototype.otherUserProfile = function () {
+        var _this = this;
+        this.userService.getUserdetails_(this.getmem.mem).subscribe(function (userData) { return _this.userData = userData; });
+        console.log("other User profile " + this.userData);
     };
     UserPageComponent.prototype.createImageFromBlob = function (image) {
         var _this = this;
@@ -211,7 +210,7 @@ var UserPageComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./user-page.component.html */ "./src/app/user/user-page/user-page.component.html"),
             styles: [__webpack_require__(/*! ./user-page.component.css */ "./src/app/user/user-page/user-page.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"], _shared_dbAccess_conversation_service__WEBPACK_IMPORTED_MODULE_1__["ConversationService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"], _shared_dbAccess_conversation_service__WEBPACK_IMPORTED_MODULE_1__["ConversationService"], src_app_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_6__["NavbarComponent"]])
     ], UserPageComponent);
     return UserPageComponent;
 }());
