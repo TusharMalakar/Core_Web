@@ -20,7 +20,7 @@ const routes: Routes = [
     component: CreateCollabComponent
   },
   {
-    path:"editcollab",
+    path:"editcollab/:_id",
     component: EditCollabComponent
   }
 ];

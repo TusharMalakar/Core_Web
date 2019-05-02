@@ -34,6 +34,16 @@ export class CollabsService {
     return this.http.get( this.rootUrl + "/collab/" + collabType);
   }
 
+  getSingleCollab(_id: string){
+    
+    const body = {
+      $oid : _id
+     }
+     
+    console.log(body); 
+    return this.http.request("GET",this.rootUrl + "/collab/getCollab");
+  }
+
   //______________POST_REQUEST____________
 
   //create a new collab, wehre owner = currentUser

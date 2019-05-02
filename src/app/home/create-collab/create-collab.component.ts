@@ -9,6 +9,7 @@ import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material
 import { MatChipInputEvent } from '@angular/material/chips';
 import { map, startWith, debounceTime, distinctUntilChanged, switchMap, } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { query } from '@angular/animations';
 
 @Component({
   selector: 'create-collab',
@@ -44,7 +45,7 @@ export class CreateCollabComponent implements OnInit {
   collabData: CollabModel;
 
   @ViewChild('skillInput') skillInput: ElementRef<HTMLInputElement>;
-  @ViewChild('auto') matAutocomplete: MatAutocomplete;
+  @ViewChild('auto') matAutocomplete1: MatAutocomplete;
 
   @ViewChild('classInput') classInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto2') matAutocomplete2: MatAutocomplete;
@@ -63,17 +64,20 @@ export class CreateCollabComponent implements OnInit {
 
   ngOnInit() {
     
-    this.filteredSkills = this.skillCtrl.valueChanges.pipe(
+    this.skillCtrl.valueChanges.pipe(
+      
       startWith(null),
-      debounceTime(400),
+      debounceTime(200),
       distinctUntilChanged(),
-      map((skill: string | null) => skill ? this._filter(skill) : this.allSkills.slice()));
+      switchMap( (query: string) => this.userService.searchSkills(query)  )
+      ).subscribe( (skills: Observable<string[]>) => this.filteredSkills = skills["matches"] );
 
-    this.filteredClasses = this.classCtrl.valueChanges.pipe(
+      this.classCtrl.valueChanges.pipe(
       startWith(null),
-      debounceTime(400),
+      debounceTime(200),
       distinctUntilChanged(),
-      map((_class: string | null) => _class ? this._filter(_class) : this.allClasses.slice()));
+      switchMap( (query: string) => this.userService.searchClasses(query)  )
+      ).subscribe( (classes: Observable<string[]>) => this.filteredClasses = classes["matches"] );
 
 
       
@@ -90,7 +94,7 @@ export class CreateCollabComponent implements OnInit {
 
   addSkill(event: MatChipInputEvent): void {
 
-    if(!this.matAutocomplete.isOpen){
+    if(!this.matAutocomplete1.isOpen){
 
       const input = event.input;
       const value = event.value;
@@ -104,6 +108,7 @@ export class CreateCollabComponent implements OnInit {
       } 
 
       this.skillCtrl.setValue(null);
+      
     }
   }
 
@@ -119,11 +124,12 @@ export class CreateCollabComponent implements OnInit {
     this.skills.push(event.option.viewValue);
     this.skillInput.nativeElement.value = '';
     this.skillCtrl.setValue(null);
+
   }
 
   addClass(event: MatChipInputEvent): void {
 
-    if(!this.matAutocomplete.isOpen){
+    if(!this.matAutocomplete2.isOpen){
 
       const input = event.input;
       const value = event.value;
@@ -175,12 +181,12 @@ export class CreateCollabComponent implements OnInit {
     
   }
 
-  private _filter(value: string){
-    const filterValue = value.toLowerCase();
-
-    this.userService.searchSkills(filterValue).subscribe(res => { this.allSkills = res['matches'] });
-    
-    return this.allSkills.filter(fruit => fruit.toLowerCase().indexOf(filterValue) === 0);
+  private _filterSkills(value: string){
+    const filterValue: string = value;
+    console.log(value);
+    this.userService.searchSkills(filterValue).subscribe((res: string[]) => { this.allSkills = res['matches'] });
+    console.log(this.allSkills);
+    return this.allSkills;
 
   }
 

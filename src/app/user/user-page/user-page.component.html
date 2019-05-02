@@ -17,10 +17,9 @@
                   </mat-card-header>  
 
                   <div class="image-background">
-                    <div class="iamge-container">
-                        <img mat-card-image [src]="imageToShow"
-                        alt="Place image title"
-                        *ngIf="!isImageLoading; else noImageFound">
+                    <div class="image-container">
+                        <img mat-card-image [src]="imageToShow" 
+                          alt="Image not found" onerror="this.onerror=null; this.src = 'assets/userPhoto.png';">
                     </div>
                   </div>
 

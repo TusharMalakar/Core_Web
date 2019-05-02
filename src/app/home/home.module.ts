@@ -22,6 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatSelectModule} from '@angular/material/select';
 
 
 import { CollabCardComponent } from './collab-card/collab-card.component';
@@ -54,6 +55,9 @@ import { EditCollabComponent } from './edit-collab/edit-collab.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatAutocompleteModule,
+    MatFormFieldModule,
+    MatSelectModule,
+
     OwlDateTimeModule, 
     OwlNativeDateTimeModule,
     

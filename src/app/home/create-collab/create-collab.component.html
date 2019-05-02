@@ -1,6 +1,6 @@
 <!-- Steppers -->
 <div class = "container">
-        <mat-vertical-stepper [linear] = "true" #stepper>
+        <mat-vertical-stepper [linear] = "false" #stepper>
     
                 <mat-step [stepControl] = "firstFormGroup">
                     <form [formGroup] = "firstFormGroup" (ngSubmit) = "onSubmit()">
@@ -30,7 +30,7 @@
                     <ng-template matStepLabel>Add Classes and Skills</ng-template>
                     <div>
                         <mat-form-field class="example-chip-list">
-                            <mat-chip-list #chipList>
+                            <mat-chip-list #chipListSkills>
                                 <mat-chip
                                     *ngFor="let skill of skills"
                                     [selectable]="selectable"
@@ -44,12 +44,12 @@
                                     #skillInput
                                     [formControl]="skillCtrl"
                                     [matAutocomplete]="auto"
-                                    [matChipInputFor]="chipList"
+                                    [matChipInputFor]="chipListSkills"
                                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                                     [matChipInputAddOnBlur]="addOnBlur"
                                     (matChipInputTokenEnd)="addSkill($event)">
                                     <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectedSkill($event)">
-                                        <mat-option *ngFor="let skill of filteredSkills | async" [value]="skill">
+                                        <mat-option *ngFor="let skill of filteredSkills" [value]="skill">
                                             {{ skill }}
                                         </mat-option>
                                     </mat-autocomplete>
@@ -70,15 +70,20 @@
                                     placeholder="New Class..."
                                     #classInput
                                     [formControl]="classCtrl"
+                                    [matAutocomplete]="auto2"
                                     [matChipInputFor]="chipListClasses"
+                                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                                     [matChipInputAddOnBlur]="addOnBlur"
                                     (matChipInputTokenEnd)="addClass($event)">
+                                    <mat-autocomplete #auto2="matAutocomplete" (optionSelected)="selectedClass($event)">
+                                        <mat-option *ngFor="let class of filteredClasses" [value]="class">
+                                            {{ class }}
+                                        </mat-option>
+                                    </mat-autocomplete>
                             </mat-chip-list>
 
                         </mat-form-field>
                     </div>
-                    
-            
                 </mat-step>
                 <mat-step>
                     <ng-template matStepLabel> Confirm Your Information</ng-template>

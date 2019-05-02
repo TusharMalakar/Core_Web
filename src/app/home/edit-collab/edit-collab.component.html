@@ -1,7 +1,24 @@
-<h4> Edit Component works</h4>
-
-<div>
-  <div>
-      <a routerLink="/home">Home</a>
+<div class = "container">
+    <form [formGroup] = "formGroup" (ngSubmit) = "onSubmit()">
+        <ng-template matStepLabel >Fill in Collab Info</ng-template>
+        <mat-form-field>
+            <input matInput placeholder = "Collab Title..." formControlName = "title" required>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matInput placeholder = "Description..." formControlName = "description" required></textarea>
+        </mat-form-field>
+        <mat-form-field>
+                <input matInput placeholder = "Location..." formControlName = "location" required>
+        </mat-form-field>
+        <mat-form-field>
+                <input type = "number" min="2"  matInput placeholder = "Collab Size..." formControlName = "size" required>
+        </mat-form-field>
+        <mat-form-field>
+                <input formControlName = "date" matInput [owlDateTimeTrigger]="dt" placeholder = "Choose a date" [owlDateTime]="dt" required>
+                <owl-date-time #dt></owl-date-time>
+        </mat-form-field>
+        <mat-form-field>
+                <input type = "number" min="2"  matInput placeholder = "Duration..." formControlName = "duration" required>
+        </mat-form-field>
+    </form>
   </div>
-</div>

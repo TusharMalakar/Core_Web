@@ -100,6 +100,11 @@ searchSkills(constrain: string): Observable<any>{
   return this.http.get(this.rootUrl +"/search/skills",{params: params});
 }
 
+searchClasses(constrain: string): Observable<any>{
+  let params = new HttpParams().set("query",constrain);
+  return this.http.get(this.rootUrl +"/search/classes",{params: params});
+}
+
 
 //___________POST_________________
 

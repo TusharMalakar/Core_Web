@@ -163,8 +163,8 @@ export class CollabCardComponent implements OnInit {
   }
 
   editCollab(){
-    console.log("Here");
-    this.router.navigate(['/home/createcollab']);
+    console.log(this.collabData._id);
+    this.router.navigate(['/home/editcollab/',this.collabData._id["$oid"]]);
   }
 
 
