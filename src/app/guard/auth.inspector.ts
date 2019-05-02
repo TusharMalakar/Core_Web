@@ -31,8 +31,10 @@ export class AuthInterceptor implements HttpInterceptor {
                 succ => {},
                 //If error
                 err => {
-                    if (err.status === 401)
+                    if (err.status === 401){
                         this.router.navigateByUrl('/login');
+                    }
+                        
                 }
                 );
         }
@@ -41,4 +43,6 @@ export class AuthInterceptor implements HttpInterceptor {
             this.router.navigateByUrl('/login');
         }
     }
+
 }
+

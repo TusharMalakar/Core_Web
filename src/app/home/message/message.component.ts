@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { NavbarComponent } from 'src/app/navbar/navbar.component';
 import { Router } from '@angular/router';
 import {  FormBuilder,FormGroup, Validators } from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-message',
@@ -18,7 +19,11 @@ export class MessageComponent implements OnInit {
  
   collabData: CollabModel;
   collabMem:CollabModel["members"]
+  member : string;
   message : Message;
+  collabID : string;
+  Title_ : string;
+  sender : string= this.mem_.sender;
   
   partOf = false; 
   isOwner = false; 
@@ -35,35 +40,55 @@ export class MessageComponent implements OnInit {
      }
   
   ngOnInit() {
-    this.form = this.formBuilder.group({ message:[this.message.message, Validators.required]})
+    this.form = this.formBuilder.group({ message:[this.message.message, Validators.required]});
   }
 
   //spliting username by @ 
-  getname(){
-    let temp = this.mem_.mem.split("@" )
-    return temp[0]
+  getName(username:string){
+    var temp = username.substring(0,2).toUpperCase()
+    return temp
   }
 
-  showMem(){
-    if(this.mem_.mem==null){
-      this.router.navigate(['/home'])
+ //Display a title
+  showTitle(){
+    if(this.mem_.mem !=null){
+      return this.getName(this.mem_.mem)  
+    }
+    else if(this.mem_.collabId != null){
+      return this.mem_.Title_
     }
     else
-    return this.getname()
+    this.router.navigate(['/home'])
+    
   }
-
+  //send message
+  SendMessage(){
+    if(this.mem_.mem !=null){
+      console.log("sending message to "+this.mem_.mem)
+      this.sendPersonalMessage();  
+    }
+    else if(this.mem_.collabId != null){
+      console.log("sending message to "+this.mem_.collabId)
+      this.SendGroupMessage();
+    }
+    else
+    this.router.navigate(['/home'])
+  }
 
   //sendPersonalMessage()
   sendPersonalMessage(){
     let message = this.form.value
     this.conversation.sendPersonalMessage(message,this.mem_.mem).subscribe(message=>console.log(message))      
-}
+  }
+  //sendGroud message to collab members
+  SendGroupMessage(){
+    let message = this.form.value;
+    this.conversation.sendMessageToCollabGroup(message,this.mem_.collabId).subscribe(message=>console.log(message))
+  }
 
 //return all message of users: personal and group
 mymessages(){
-  this.conversation.myCoversations().subscribe((data:any)=>{
-    console.log(data)
-  })
+  this.conversation.myCoversations().subscribe((data:any)=>{console.log(data)})
 }
  
 

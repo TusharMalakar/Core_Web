@@ -1,5 +1,27 @@
 <mat-drawer-container class="container" autosize >
     <!-- Will be triggered by (click) = "drawer.toggle()" -->
+     
+    <div class="sidenav-content">
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+                <!-- 
+                  drawer.toggle(): will call #drawer and will bring the sidenav into view
+                -->
+                <button mat-icon-button (click) = "drawer.toggle()">
+                        <mat-icon>menu</mat-icon>
+                </button>
+                <button mat-button routerLink="/home">Hunter Collab</button>
+         
+                <span class="spacer"></span>
+                
+                <mat-menu #menu="matMenu" >
+                  
+                </mat-menu>
+
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </div>
     
     <mat-drawer #drawer class="sidenav">
             <button mat-menu-item routerLink="/home">
@@ -19,17 +41,28 @@
               <!--Collab username goes in the list-->
                  <mat-list dense>
                     <ng-container *ngFor = "let collab of collabData" >
-                         <p routerLink="/home/message">
-                          <mat-icon>group</mat-icon>
-                          {{collab.title }}</p>
+                        
+                          <button mat-menu-item (click)="getTitle(collab.title)">
+                            <div routerLink="/home/message">
+                              <mat-icon routerLink="/home/message">group</mat-icon>
+                              <span  (click)="groupMessageingPageLink(collab._id.$oid)">{{collab.title}}   
+                                 <mat-icon >control_point</mat-icon>
+                              </span>                           
+                            </div>                             
+                            </button> 
+                
                          <mat-list-item *ngFor ="let mem of collab?.members">
-                          <!--Taking individual user as input to navigate user -->
-                          <div class="form-group">
-                              <mat-icon>person</mat-icon> 
-                              <input type="text" id="mem_" placeholder={{mem}} (click)="GoToProfile(mem)">    
-                            </div>
-                            <!--This leades to message-->
-                            <p (click)=" messagePageLink(mem)">  <mat-icon>chat</mat-icon> </p>
+                            <div ng-if="mem != sender">
+                              <!--Taking individual user as input to navigate user -->
+                              <div>
+                                  <button mat-menu-item >
+                                      <mat-icon routerLink="/user">person</mat-icon>                                     
+                                          <span (click)="PersonalmessagePageLink(mem)" >{{extractFirstNameAndLastName(mem)}} </span> 
+                                    </button> 
+                              </div>
+                          </div>
+                          
+                            
                                             
                         </mat-list-item> 
                    </ng-container> 
@@ -40,39 +73,7 @@
                     <span>LogOut</span>
                   </button>          
     </mat-drawer>
-    
-    <div class="sidenav-content">
-        <mat-toolbar color="primary">
-            <mat-toolbar-row>
-                <!-- 
-                  drawer.toggle(): will call #drawer and will bring the sidenav into view
-                -->
-                <button mat-icon-button (click) = "drawer.toggle()">
-                        <mat-icon>menu</mat-icon>
-                </button>
-                 
-                <button mat-button routerLink="/home">Hunter Collab</button>
-                <span class="spacer"></span>
-                <!--
-                   How every button is implemented 
-                    [matMenuTriggerFor] is bindded to button menu; will be triggered by menu
-                  -->
-                
-                <mat-menu #menu="matMenu" >
-                  <button mat-menu-item routerLink="/user">
-                    <mat-icon>person</mat-icon>
-                    <span>User Info</span>
-                  </button>
-                  <button mat-menu-item (click)="logOut()">
-                    <mat-icon>directions_run</mat-icon>
-                    <span>LogOut</span>
-                  </button>
-                </mat-menu>
-
-            </mat-toolbar-row>
-        </mat-toolbar>
-        <router-outlet></router-outlet>
-    </div>
+   
 </mat-drawer-container>
 
 

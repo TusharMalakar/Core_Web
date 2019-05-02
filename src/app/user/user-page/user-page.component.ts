@@ -27,7 +27,7 @@ export class UserPageComponent implements OnInit {
   regex = "^\\s+$";
 
   //place holder of image
-  imageToShow: any;
+  public imageToShow: any;
 
   //default variable for selected file.
   fileToUpload: File = null;
@@ -42,9 +42,8 @@ export class UserPageComponent implements OnInit {
 
   ngOnInit() {
     this.profilePicture();
-    this.classesForm = this.formBuilder.group({
-      userInput: null
-    })
+    this.classesForm = this.formBuilder.group({userInput: null});
+    
   }
 
   //it will display other members profile from nebvar 

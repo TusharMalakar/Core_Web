@@ -1,3 +1,5 @@
+import { Message } from 'src/app/shared/models/message.model';
+import { UserModel } from './../shared/models/user.model';
 import { map, startWith } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { FormControl } from '@angular/forms';
@@ -18,15 +20,33 @@ export class NavbarComponent implements OnInit {
   imageToShow:any;
   panelOpenState = false;
   public mem:string = null
+  public sender : Message["sender"];
+  userdata : UserModel;
+  public collabId: string;
+  public Title_ : string;
   
   constructor(private router: Router, private collabService : CollabsService, private userservice: UserService) { }
 
   ngOnInit() {
-    this.collabService.collabDetails().subscribe((collab:CollabModel)=>{this.collabData= collab;});
+    this.collabService.collabDetails().subscribe((collab:CollabModel)=>{
+      this.collabData= collab;
+      console.log(collab)
+    });
+    this.userservice.getUserdetails().subscribe((data:any)=>{
+        this.userdata=data;
+        this.sender=this.userdata.username
+    })
   }
-
+extractFirstNameAndLastName(username:string){
+  let temp = username.split("@")
+  return temp[0]
+}
   
-
+GoToHomePage(id:string){
+  this.collabId=id;
+  console.log("Going to Collab page of "+this.collabId)
+  this.router.navigate(['/home'])
+}
 
 
 GoToProfile(mem_:any){
@@ -35,16 +55,24 @@ GoToProfile(mem_:any){
   this.router.navigate(['/user'])
   }
 
-  messagePageLink(mem){
-    this.mem=mem
-    console.log("Going to message page of "+this.mem)
+groupMessageingPageLink(id:string){
+    this.collabId=id;
+    console.log("Going to Group message "+this.collabId)
     this.router.navigate(['/home/message'])
-  }
-
-  logOut(){
-    localStorage.removeItem('accessToken');
-    this.router.navigate(['/login']);
-  }
+}
+PersonalmessagePageLink(mem:string){
+  this.mem=mem
+  console.log("Going to message page of "+this.mem)
+  this.router.navigate(['/home/message'])
+}
+getTitle(title:string){
+  this.Title_ = title;
+  console.log("Showing title "+this.Title_)
+}
+logOut(){
+  localStorage.removeItem('accessToken');
+  this.router.navigate(['/login']);
+}
 
   
 
