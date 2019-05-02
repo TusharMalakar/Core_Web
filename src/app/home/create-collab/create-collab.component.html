@@ -1,6 +1,6 @@
 <!-- Steppers -->
 <div class = "container">
-        <mat-vertical-stepper [linear] = "false" #stepper>
+        <mat-vertical-stepper [linear] = "true" #stepper>
     
                 <mat-step [stepControl] = "firstFormGroup">
                     <form [formGroup] = "firstFormGroup" (ngSubmit) = "onSubmit()">
