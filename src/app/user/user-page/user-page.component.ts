@@ -1,9 +1,11 @@
+import { EditUserFormComponent } from './../edit-user-form/edit-user-form.component';
 import { Component, OnInit,ChangeDetectionStrategy } from '@angular/core';
 import { UserService } from 'src/app/shared/dbAccess/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserModel } from 'src/app/shared/models/user.model';
 import { FormControl, Form, FormGroup, FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -41,7 +43,8 @@ export class UserPageComponent implements OnInit {
     private userService : UserService,
     private router : Router, 
     private formBuilder: FormBuilder,
-    private activeRoute: ActivatedRoute)
+    private activeRoute: ActivatedRoute,
+    public dialog: MatDialog)
    { 
     this.activeRoute.paramMap
     .subscribe(params => {
@@ -120,6 +123,21 @@ profilePicture(){
  //     }, error => {
  //       console.log(error);
  //     });
-}
+  }
+
+  openDialog(): void {
+    //Dialog refeerence
+    const dialogRef = this.dialog.open(EditUserFormComponent, {
+      data: {
+        userData: this.userData
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+
 
 }

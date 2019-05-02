@@ -120,6 +120,7 @@
         width: 200px;
         height: 30px;
     }
+
     button {
         
         border: 3;
@@ -148,4 +149,10 @@
   height: 450px;
   max-height: 450px;
   max-width: 85%;
+}
+
+.mat-stroked-button  {
+  width: 7%;
+  margin-left: auto;
+  margin-right: 10px; 
 }

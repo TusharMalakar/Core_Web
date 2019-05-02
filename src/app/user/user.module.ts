@@ -1,3 +1,4 @@
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -19,9 +20,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule }  from '@angular/material/grid-list';
 import { MatListModule }  from '@angular/material/list';
 import { UpdateUserdataComponent } from './update-userdata/update-userdata.component';
+import { EditUserFormComponent } from './edit-user-form/edit-user-form.component';
 
 @NgModule({
-  declarations: [UserPageComponent, UpdateUserdataComponent],
+  declarations: [UserPageComponent, UpdateUserdataComponent, EditUserFormComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
@@ -38,6 +40,7 @@ import { UpdateUserdataComponent } from './update-userdata/update-userdata.compo
     MatChipsModule,
     MatAutocompleteModule,
     MatExpansionModule,
+    MatDialogModule,
 
     //Flex Module
     FlexLayoutModule,
@@ -46,6 +49,9 @@ import { UpdateUserdataComponent } from './update-userdata/update-userdata.compo
     FormsModule,
     ReactiveFormsModule,
 
+  ],
+  entryComponents: [
+    EditUserFormComponent
   ]
 })
 export class UserModule { }

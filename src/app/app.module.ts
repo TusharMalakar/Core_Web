@@ -27,6 +27,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatTableModule } from '@angular/material/table';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
 
 //Angular Flex Module
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -66,6 +67,7 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     MatNativeDateModule,
     MatAutocompleteModule,
     MatSelectModule,
+    MatDialogModule,
     
 
     //Our Routes will be here to make code cleaner
