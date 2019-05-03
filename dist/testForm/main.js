@@ -208,10 +208,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/autocomplete */ "./node_modules/@angular/material/esm5/autocomplete.es5.js");
 /* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/esm5/table.es5.js");
 /* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/datepicker */ "./node_modules/@angular/material/esm5/datepicker.es5.js");
-/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
-/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/cdk/scrolling */ "./node_modules/@angular/cdk/esm5/scrolling.es5.js");
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/material/core */ "./node_modules/@angular/material/esm5/core.es5.js");
-/* harmony import */ var ng_pick_datetime__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ng-pick-datetime */ "./node_modules/ng-pick-datetime/picker.js");
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/select */ "./node_modules/@angular/material/esm5/select.es5.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/cdk/scrolling */ "./node_modules/@angular/cdk/esm5/scrolling.es5.js");
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/material/core */ "./node_modules/@angular/material/esm5/core.es5.js");
+/* harmony import */ var ng_pick_datetime__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ng-pick-datetime */ "./node_modules/ng-pick-datetime/picker.js");
 
 
 
@@ -225,6 +227,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //These are the materials that will make our site adaptable
+
+
 
 
 
@@ -263,19 +267,21 @@ var AppModule = /** @class */ (function () {
                 _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_13__["MatSidenavModule"],
                 _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_14__["MatToolbarModule"],
                 _angular_material_menu__WEBPACK_IMPORTED_MODULE_16__["MatMenuModule"],
-                _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_22__["ScrollDispatchModule"],
+                _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_24__["ScrollDispatchModule"],
                 _angular_material_chips__WEBPACK_IMPORTED_MODULE_17__["MatChipsModule"],
                 _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__["MatAutocompleteModule"],
                 _angular_material_table__WEBPACK_IMPORTED_MODULE_19__["MatTableModule"],
                 _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_20__["MatDatepickerModule"],
-                _angular_material_core__WEBPACK_IMPORTED_MODULE_23__["MatNativeDateModule"],
+                _angular_material_core__WEBPACK_IMPORTED_MODULE_25__["MatNativeDateModule"],
                 _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__["MatAutocompleteModule"],
+                _angular_material_select__WEBPACK_IMPORTED_MODULE_21__["MatSelectModule"],
+                _angular_material_dialog__WEBPACK_IMPORTED_MODULE_22__["MatDialogModule"],
                 //Our Routes will be here to make code cleaner
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
-                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_21__["FlexLayoutModule"],
+                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_23__["FlexLayoutModule"],
                 //Clock
-                ng_pick_datetime__WEBPACK_IMPORTED_MODULE_24__["OwlDateTimeModule"],
-                ng_pick_datetime__WEBPACK_IMPORTED_MODULE_24__["OwlNativeDateTimeModule"],
+                ng_pick_datetime__WEBPACK_IMPORTED_MODULE_26__["OwlDateTimeModule"],
+                ng_pick_datetime__WEBPACK_IMPORTED_MODULE_26__["OwlNativeDateTimeModule"],
             ],
             providers: [
                 _shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_8__["UserService"],
@@ -495,7 +501,7 @@ __webpack_require__.r(__webpack_exports__);
 var UserService = /** @class */ (function () {
     function UserService(http) {
         this.http = http;
-        this.rootUrl = 'https://huntercollabapi.herokuapp.com';
+        this.rootUrl = 'http://13.58.204.157:5000';
     }
     UserService.prototype.getToken = function () {
         return localStorage.getItem('accessToken');
@@ -527,6 +533,9 @@ var UserService = /** @class */ (function () {
     //url + json authentication
     UserService.prototype.getUserdetails = function () {
         return this.http.get(this.rootUrl + "/user");
+    };
+    UserService.prototype.getMemberdetails = function (username) {
+        return this.http.get(this.rootUrl + "/user/" + username);
     };
     UserService.prototype.getUserSkills = function (userName) {
         return this.http.get(this.rootUrl + "/user/skills/" + userName).toPromise();
@@ -574,11 +583,20 @@ var UserService = /** @class */ (function () {
         var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set("query", constrain);
         return this.http.get(this.rootUrl + "/search/skills", { params: params });
     };
+    UserService.prototype.searchClasses = function (constrain) {
+        var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set("query", constrain);
+        return this.http.get(this.rootUrl + "/search/classes", { params: params });
+    };
     //___________POST_________________
     //download profile-picture as Bold file
     UserService.prototype.getPicture = function () {
         // user/profilePicture
         return this.http.get(this.rootUrl + "/user/profilePicture", { responseType: 'blob' });
+    };
+    UserService.prototype.getMemberPicture = function (username) {
+        console.log(username);
+        // user/profilePicture
+        return this.http.get(this.rootUrl + "/user/profilePicture?username=" + username, { responseType: 'blob' });
     };
     UserService.prototype.uploadProfilePicture = function (fileToUpload) {
         var formData = new FormData();
@@ -589,12 +607,11 @@ var UserService = /** @class */ (function () {
     ///collab/getRecommendedCollab
     //___________POST_________________
     //you can update user profile taking all these as input but "Not required"
-    UserService.prototype.updateUserProfile = function (github, linkedin, skills, classes) {
+    UserService.prototype.updateUserProfile = function (userData) {
         var body = {
-            github: github,
-            linkedin: linkedin,
-            skills: skills,
-            classes: classes
+            name: userData.username,
+            github: userData.github,
+            linkedin: userData.linkedin,
         };
         return this.http.post(this.rootUrl + "/user", body);
     };

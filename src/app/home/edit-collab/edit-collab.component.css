@@ -1,6 +1,10 @@
 .mat-form-field {
-    width: 70%;
+    width: 90%;
     margin-left: 15px;
+}
+
+.example-chip-list[_ngcontent-c8] {
+    width: 90%;
 }
 
 .container {
@@ -14,3 +18,4 @@
 .example-chip-list {
     width: 100%;
   }
+

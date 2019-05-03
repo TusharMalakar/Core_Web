@@ -55,11 +55,6 @@ export class CreateCollabComponent implements OnInit {
               private collabService: CollabsService,
               private router: Router) {
     this.collabData = new CollabModel;
-    if(this.collabData){
-      console.log(this.collabData);
-    } else {
-      console.log(this.collabData);
-    }
    }
 
   ngOnInit() {
@@ -180,16 +175,6 @@ export class CreateCollabComponent implements OnInit {
     
     
   }
-
-  private _filterSkills(value: string){
-    const filterValue: string = value;
-    console.log(value);
-    this.userService.searchSkills(filterValue).subscribe((res: string[]) => { this.allSkills = res['matches'] });
-    console.log(this.allSkills);
-    return this.allSkills;
-
-  }
-
   
   
 

@@ -1676,7 +1676,6 @@ var CollabCardComponent = /** @class */ (function () {
         });
     };
     CollabCardComponent.prototype.isUserOwner = function () {
-        console.log(this.userData['username']);
         if (this.collabData.owner == this.userData['username']) {
             this.isOwner = true;
         }
@@ -1691,7 +1690,6 @@ var CollabCardComponent = /** @class */ (function () {
                 this.partOf = true;
             }
         }
-        console.log(this.partOf);
     };
     CollabCardComponent.prototype.checkPartOf = function () {
         return this.partOf;
@@ -1712,8 +1710,7 @@ var CollabCardComponent = /** @class */ (function () {
             .subscribe(function (res) { console.log(res); });
     };
     CollabCardComponent.prototype.editCollab = function () {
-        console.log("Here");
-        this.router.navigate(['/home/createcollab']);
+        this.router.navigate(['/home/editcollab/', this.collabData._id["$oid"]]);
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"])(),
@@ -1833,17 +1830,17 @@ var HomeComponent = /** @class */ (function () {
                         return [3 /*break*/, 6];
                     case 1:
                         {
-                            this.collabService.getCollabs("getActiveCollabs").subscribe(function (data) { return _this.collabData = data; });
+                            this.collabService.getCollabs("getActiveCollabs").subscribe(function (data) { return _this.collabData = data.reverse(); });
                             return [3 /*break*/, 7];
                         }
                         _b.label = 2;
-                    case 2: return [4 /*yield*/, this.collabService.getCollabs("getCollabDetails").subscribe(function (data) { return _this.collabData = data; })];
+                    case 2: return [4 /*yield*/, this.collabService.getCollabs("getCollabDetails").subscribe(function (data) { return _this.collabData = data.reverse(); })];
                     case 3:
                         _b.sent();
                         return [3 /*break*/, 7];
                     case 4:
                         console.log(this.userData);
-                        return [4 /*yield*/, this.collabService.getReqCollabs(this.userData["classes"], this.userData["skills"]).subscribe(function (data) { return _this.collabData = data; })];
+                        return [4 /*yield*/, this.collabService.getReqCollabs(this.userData["classes"], this.userData["skills"]).subscribe(function (data) { return _this.collabData = data.reverse(); })];
                     case 5:
                         _b.sent();
                         return [3 /*break*/, 7];
@@ -1881,7 +1878,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "table { \n    width: 100%; \n    border-collapse: collapse; \n  }\n  /* Zebra striping */\n  tr:nth-of-type(odd) { \n    background: #eee; \n  }\n  th { \n    background: #333; \n    color: white; \n    font-weight: bold; \n  }\n  td, th { \n    padding: 6px; \n    border: 1px solid #ccc; \n    text-align: left; \n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jb2xsYWItdGFibGUvY29sbGFiLXRhYmxlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxXQUFXO0lBQ1gseUJBQXlCO0VBQzNCO0VBQ0EsbUJBQW1CO0VBQ25CO0lBQ0UsZ0JBQWdCO0VBQ2xCO0VBQ0E7SUFDRSxnQkFBZ0I7SUFDaEIsWUFBWTtJQUNaLGlCQUFpQjtFQUNuQjtFQUNBO0lBQ0UsWUFBWTtJQUNaLHNCQUFzQjtJQUN0QixnQkFBZ0I7RUFDbEIiLCJmaWxlIjoic3JjL2FwcC9ob21lL2NvbGxhYi10YWJsZS9jb2xsYWItdGFibGUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInRhYmxlIHsgXG4gICAgd2lkdGg6IDEwMCU7IFxuICAgIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7IFxuICB9XG4gIC8qIFplYnJhIHN0cmlwaW5nICovXG4gIHRyOm50aC1vZi10eXBlKG9kZCkgeyBcbiAgICBiYWNrZ3JvdW5kOiAjZWVlOyBcbiAgfVxuICB0aCB7IFxuICAgIGJhY2tncm91bmQ6ICMzMzM7IFxuICAgIGNvbG9yOiB3aGl0ZTsgXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7IFxuICB9XG4gIHRkLCB0aCB7IFxuICAgIHBhZGRpbmc6IDZweDsgXG4gICAgYm9yZGVyOiAxcHggc29saWQgI2NjYzsgXG4gICAgdGV4dC1hbGlnbjogbGVmdDsgXG4gIH0iXX0= */"
+module.exports = "table { \n    width: 100%; \n    border-collapse: collapse; \n  }\n  /* Zebra striping */\n  tr:nth-of-type(odd) { \n    background: #eee; \n  }\n  th { \n    background: #333; \n    color: white; \n    font-weight: bold; \n  }\n  td, th { \n    padding: 6px; \n    border: 1px solid #ccc; \n    text-align: left; \n  }\n  td a{\n    display: block;\n  \n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jb2xsYWItdGFibGUvY29sbGFiLXRhYmxlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxXQUFXO0lBQ1gseUJBQXlCO0VBQzNCO0VBQ0EsbUJBQW1CO0VBQ25CO0lBQ0UsZ0JBQWdCO0VBQ2xCO0VBQ0E7SUFDRSxnQkFBZ0I7SUFDaEIsWUFBWTtJQUNaLGlCQUFpQjtFQUNuQjtFQUNBO0lBQ0UsWUFBWTtJQUNaLHNCQUFzQjtJQUN0QixnQkFBZ0I7RUFDbEI7RUFFQTtJQUNFLGNBQWM7O0VBRWhCIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9jb2xsYWItdGFibGUvY29sbGFiLXRhYmxlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJ0YWJsZSB7IFxuICAgIHdpZHRoOiAxMDAlOyBcbiAgICBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlOyBcbiAgfVxuICAvKiBaZWJyYSBzdHJpcGluZyAqL1xuICB0cjpudGgtb2YtdHlwZShvZGQpIHsgXG4gICAgYmFja2dyb3VuZDogI2VlZTsgXG4gIH1cbiAgdGggeyBcbiAgICBiYWNrZ3JvdW5kOiAjMzMzOyBcbiAgICBjb2xvcjogd2hpdGU7IFxuICAgIGZvbnQtd2VpZ2h0OiBib2xkOyBcbiAgfVxuICB0ZCwgdGggeyBcbiAgICBwYWRkaW5nOiA2cHg7IFxuICAgIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7IFxuICAgIHRleHQtYWxpZ246IGxlZnQ7IFxuICB9XG5cbiAgdGQgYXtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgXG4gIH0iXX0= */"
 
 /***/ }),
 
@@ -1892,7 +1889,7 @@ module.exports = "table { \n    width: 100%; \n    border-collapse: collapse; \n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<table>\n    <tr *ngFor = \"let row of table\">\n      <td>{{ row.userName}}</td>\n      <td *ngFor = \"let req of row.list\" [style.background-color] = \"req.knows ? '#ccffcc' : '#ffcccc'\"> {{ req.nameOf }} </td>\n    </tr>\n</table>"
+module.exports = "\n<table>\n    <tr *ngFor = \"let row of table\">\n      <td>\n        <button mat-button color= \"primary\" (click) = \"goToProfile(row.userName)\">{{ row.userName }}</button>\n      </td>\n      <td *ngFor = \"let req of row.list\" [style.background-color] = \"req.knows ? '#ccffcc' : '#ffcccc'\"> {{ req.nameOf }} </td>\n    </tr>\n</table>"
 
 /***/ }),
 
@@ -1908,15 +1905,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CollabTableComponent", function() { return CollabTableComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
 
 
 var CollabTableComponent = /** @class */ (function () {
-    function CollabTableComponent() {
+    function CollabTableComponent(router) {
+        this.router = router;
         this.table = [];
         this.xAxisReq = [];
     }
     CollabTableComponent.prototype.ngOnInit = function () {
         //console.log(this.xAxisReq);
+    };
+    CollabTableComponent.prototype.goToProfile = function (user) {
+        this.router.navigate(['/user/', user]);
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -1932,7 +1935,7 @@ var CollabTableComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./collab-table.component.html */ "./src/app/home/collab-table/collab-table.component.html"),
             styles: [__webpack_require__(/*! ./collab-table.component.css */ "./src/app/home/collab-table/collab-table.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], CollabTableComponent);
     return CollabTableComponent;
 }());
@@ -1948,7 +1951,7 @@ var CollabTableComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".mat-form-field{\n    width: 70%;\n    margin-top: 10px;\n}\n\n.container {\n    margin-top: 50px;\n    margin-left: 25px;\n    margin-right: 25px;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}\n\n.example-chip-list {\n    width: 100%;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jcmVhdGUtY29sbGFiL2NyZWF0ZS1jb2xsYWIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFVBQVU7SUFDVixnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxnQkFBZ0I7SUFDaEIsaUJBQWlCO0lBQ2pCLGtCQUFrQjtJQUNsQix5RUFBeUU7QUFDN0U7O0FBRUE7SUFDSSxXQUFXO0VBQ2IiLCJmaWxlIjoic3JjL2FwcC9ob21lL2NyZWF0ZS1jb2xsYWIvY3JlYXRlLWNvbGxhYi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1hdC1mb3JtLWZpZWxke1xuICAgIHdpZHRoOiA3MCU7XG4gICAgbWFyZ2luLXRvcDogMTBweDtcbn1cblxuLmNvbnRhaW5lciB7XG4gICAgbWFyZ2luLXRvcDogNTBweDtcbiAgICBtYXJnaW4tbGVmdDogMjVweDtcbiAgICBtYXJnaW4tcmlnaHQ6IDI1cHg7XG4gICAgYm94LXNoYWRvdzogMCA0cHggOHB4IDAgcmdiYSgwLDAsMCwwLjIpLCAwIDZweCAyMHB4IDAgcmdiYSgwLCAwLCAwLCAwLjE5KTtcbn1cblxuLmV4YW1wbGUtY2hpcC1saXN0IHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfSJdfQ== */"
+module.exports = ".mat-form-field{\n    width: 70%;\n    margin-top: 10px;\n}\n\n.container {\n    margin-top: 50px;\n    margin-bottom: 50px;\n    margin-left: 10%;\n    margin-right: 10%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n\n}\n\n.example-chip-list {\n    width: 100%;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jcmVhdGUtY29sbGFiL2NyZWF0ZS1jb2xsYWIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFVBQVU7SUFDVixnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxnQkFBZ0I7SUFDaEIsbUJBQW1CO0lBQ25CLGdCQUFnQjtJQUNoQixpQkFBaUI7SUFDakIseUVBQXlFOztBQUU3RTs7QUFFQTtJQUNJLFdBQVc7RUFDYiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvY3JlYXRlLWNvbGxhYi9jcmVhdGUtY29sbGFiLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWF0LWZvcm0tZmllbGR7XG4gICAgd2lkdGg6IDcwJTtcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xufVxuXG4uY29udGFpbmVyIHtcbiAgICBtYXJnaW4tdG9wOiA1MHB4O1xuICAgIG1hcmdpbi1ib3R0b206IDUwcHg7XG4gICAgbWFyZ2luLWxlZnQ6IDEwJTtcbiAgICBtYXJnaW4tcmlnaHQ6IDEwJTtcbiAgICBib3gtc2hhZG93OiAwIDRweCA4cHggMCByZ2JhKDAsMCwwLDAuMiksIDAgNnB4IDIwcHggMCByZ2JhKDAsIDAsIDAsIDAuMTkpO1xuXG59XG5cbi5leGFtcGxlLWNoaXAtbGlzdCB7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH0iXX0= */"
 
 /***/ }),
 
@@ -1959,7 +1962,7 @@ module.exports = ".mat-form-field{\n    width: 70%;\n    margin-top: 10px;\n}\n\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Steppers -->\n<div class = \"container\">\n        <mat-vertical-stepper [linear] = \"true\" #stepper>\n    \n                <mat-step [stepControl] = \"firstFormGroup\">\n                    <form [formGroup] = \"firstFormGroup\" (ngSubmit) = \"onSubmit()\">\n                        <ng-template matStepLabel >Fill in Collab Info</ng-template>\n                        <mat-form-field>\n                            <input matInput placeholder = \"Collab Title...\" formControlName = \"title\" required>\n                        </mat-form-field>\n                        <mat-form-field>\n                            <textarea matInput placeholder = \"Description...\" formControlName = \"description\" required></textarea>\n                        </mat-form-field>\n                        <mat-form-field>\n                                <input matInput placeholder = \"Location...\" formControlName = \"location\" required>\n                        </mat-form-field>\n                        <mat-form-field>\n                                <input type = \"number\" min=\"2\"  matInput placeholder = \"Collab Size...\" formControlName = \"size\" required>\n                        </mat-form-field>\n                        <mat-form-field>\n                                <input formControlName = \"date\" matInput [owlDateTimeTrigger]=\"dt\" placeholder = \"Choose a date\" [owlDateTime]=\"dt\" required>\n                                <owl-date-time #dt></owl-date-time>\n                        </mat-form-field>\n                        <mat-form-field>\n                                <input type = \"number\" min=\"2\"  matInput placeholder = \"Duration...\" formControlName = \"duration\" required>\n                        </mat-form-field>\n                    </form>\n                </mat-step>\n                <mat-step [stepControl] = \"secondFormGroup\" >\n                    <ng-template matStepLabel>Add Classes and Skills</ng-template>\n                    <div>\n                        <mat-form-field class=\"example-chip-list\">\n                            <mat-chip-list #chipList>\n                                <mat-chip\n                                    *ngFor=\"let skill of skills\"\n                                    [selectable]=\"selectable\"\n                                    [removable]=\"removable\"\n                                    (removed)=\"removeSkill(skill)\">\n                                    {{ skill }}\n                                    <mat-icon matChipRemove *ngIf=\"removable\">cancel</mat-icon>\n                                </mat-chip>\n                                <input\n                                    placeholder=\"New Skill...\"\n                                    #skillInput\n                                    [formControl]=\"skillCtrl\"\n                                    [matAutocomplete]=\"auto\"\n                                    [matChipInputFor]=\"chipList\"\n                                    [matChipInputSeparatorKeyCodes]=\"separatorKeysCodes\"\n                                    [matChipInputAddOnBlur]=\"addOnBlur\"\n                                    (matChipInputTokenEnd)=\"addSkill($event)\">\n                                    <mat-autocomplete #auto=\"matAutocomplete\" (optionSelected)=\"selectedSkill($event)\">\n                                        <mat-option *ngFor=\"let skill of filteredSkills | async\" [value]=\"skill\">\n                                            {{ skill }}\n                                        </mat-option>\n                                    </mat-autocomplete>\n                            </mat-chip-list>\n                                    \n                        </mat-form-field>\n                        <mat-form-field class=\"example-chip-list\">\n                            <mat-chip-list #chipListClasses>\n                                <mat-chip\n                                    *ngFor = \"let class of classes\"\n                                    [selectable] = \"selectable\"\n                                    [removable] = \"removable\"\n                                    (removed) = \"removeClass(class)\">\n                                    {{ class }}\n                                    <mat-icon matChipRemove *ngIf=\"removable\">cancel</mat-icon>\n                                </mat-chip>\n                                <input \n                                    placeholder=\"New Class...\"\n                                    #classInput\n                                    [formControl]=\"classCtrl\"\n                                    [matChipInputFor]=\"chipListClasses\"\n                                    [matChipInputAddOnBlur]=\"addOnBlur\"\n                                    (matChipInputTokenEnd)=\"addClass($event)\">\n                            </mat-chip-list>\n\n                        </mat-form-field>\n                    </div>\n                    \n            \n                </mat-step>\n                <mat-step>\n                    <ng-template matStepLabel> Confirm Your Information</ng-template>\n                    <div>\n                        <button mat-raised-button (click) = \"createCollab()\" color=\"primary\">Done</button>\n                    </div>\n                </mat-step>\n            \n        </mat-vertical-stepper>\n    </div>"
+module.exports = "<!-- Steppers -->\n<div class = \"container\">\n        <mat-vertical-stepper [linear] = \"true\" #stepper>\n    \n                <mat-step [stepControl] = \"firstFormGroup\">\n                    <form [formGroup] = \"firstFormGroup\" (ngSubmit) = \"onSubmit()\">\n                        <ng-template matStepLabel >Fill in Collab Info</ng-template>\n                        <mat-form-field>\n                            <input matInput placeholder = \"Collab Title...\" formControlName = \"title\" required>\n                        </mat-form-field>\n                        <mat-form-field>\n                            <textarea matInput placeholder = \"Description...\" formControlName = \"description\" required></textarea>\n                        </mat-form-field>\n                        <mat-form-field>\n                                <input matInput placeholder = \"Location...\" formControlName = \"location\" required>\n                        </mat-form-field>\n                        <mat-form-field>\n                                <input type = \"number\" min=\"2\"  matInput placeholder = \"Collab Size...\" formControlName = \"size\" required>\n                        </mat-form-field>\n                        <mat-form-field>\n                                <input formControlName = \"date\" matInput [owlDateTimeTrigger]=\"dt\" placeholder = \"Choose a date\" [owlDateTime]=\"dt\" required>\n                                <owl-date-time #dt></owl-date-time>\n                        </mat-form-field>\n                        <mat-form-field>\n                                <input type = \"number\" min=\"2\"  matInput placeholder = \"Duration...\" formControlName = \"duration\" required>\n                        </mat-form-field>\n                    </form>\n                </mat-step>\n                <mat-step [stepControl] = \"secondFormGroup\" >\n                    <ng-template matStepLabel>Add Classes and Skills</ng-template>\n                    <div>\n                        <mat-form-field class=\"example-chip-list\">\n                            <mat-chip-list #chipListSkills>\n                                <mat-chip\n                                    *ngFor=\"let skill of skills\"\n                                    [selectable]=\"selectable\"\n                                    [removable]=\"removable\"\n                                    (removed)=\"removeSkill(skill)\">\n                                    {{ skill }}\n                                    <mat-icon matChipRemove *ngIf=\"removable\">cancel</mat-icon>\n                                </mat-chip>\n                                <input\n                                    placeholder=\"New Skill...\"\n                                    #skillInput\n                                    [formControl]=\"skillCtrl\"\n                                    [matAutocomplete]=\"auto\"\n                                    [matChipInputFor]=\"chipListSkills\"\n                                    [matChipInputSeparatorKeyCodes]=\"separatorKeysCodes\"\n                                    [matChipInputAddOnBlur]=\"addOnBlur\"\n                                    (matChipInputTokenEnd)=\"addSkill($event)\">\n                                    <mat-autocomplete #auto=\"matAutocomplete\" (optionSelected)=\"selectedSkill($event)\">\n                                        <mat-option *ngFor=\"let skill of filteredSkills\" [value]=\"skill\">\n                                            {{ skill }}\n                                        </mat-option>\n                                    </mat-autocomplete>\n                            </mat-chip-list>\n                                    \n                        </mat-form-field>\n                        <mat-form-field class=\"example-chip-list\">\n                            <mat-chip-list #chipListClasses>\n                                <mat-chip\n                                    *ngFor = \"let class of classes\"\n                                    [selectable] = \"selectable\"\n                                    [removable] = \"removable\"\n                                    (removed) = \"removeClass(class)\">\n                                    {{ class }}\n                                    <mat-icon matChipRemove *ngIf=\"removable\">cancel</mat-icon>\n                                </mat-chip>\n                                <input \n                                    placeholder=\"New Class...\"\n                                    #classInput\n                                    [formControl]=\"classCtrl\"\n                                    [matAutocomplete]=\"auto2\"\n                                    [matChipInputFor]=\"chipListClasses\"\n                                    [matChipInputSeparatorKeyCodes]=\"separatorKeysCodes\"\n                                    [matChipInputAddOnBlur]=\"addOnBlur\"\n                                    (matChipInputTokenEnd)=\"addClass($event)\">\n                                    <mat-autocomplete #auto2=\"matAutocomplete\" (optionSelected)=\"selectedClass($event)\">\n                                        <mat-option *ngFor=\"let class of filteredClasses\" [value]=\"class\">\n                                            {{ class }}\n                                        </mat-option>\n                                    </mat-autocomplete>\n                            </mat-chip-list>\n\n                        </mat-form-field>\n                    </div>\n                </mat-step>\n                <mat-step>\n                    <ng-template matStepLabel> Confirm Your Information</ng-template>\n                    <div>\n                        <button mat-raised-button (click) = \"createCollab()\" color=\"primary\">Done</button>\n                    </div>\n                </mat-step>\n            \n        </mat-vertical-stepper>\n    </div>"
 
 /***/ }),
 
@@ -2022,8 +2025,8 @@ var CreateCollabComponent = /** @class */ (function () {
     }
     CreateCollabComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.filteredSkills = this.skillCtrl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["startWith"])(null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["debounceTime"])(400), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (skill) { return skill ? _this._filter(skill) : _this.allSkills.slice(); }));
-        this.filteredClasses = this.classCtrl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["startWith"])(null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["debounceTime"])(400), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (_class) { return _class ? _this._filter(_class) : _this.allClasses.slice(); }));
+        this.skillCtrl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["startWith"])(null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["debounceTime"])(200), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["switchMap"])(function (query) { return _this.userService.searchSkills(query); })).subscribe(function (skills) { return _this.filteredSkills = skills["matches"]; });
+        this.classCtrl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["startWith"])(null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["debounceTime"])(200), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["switchMap"])(function (query) { return _this.userService.searchClasses(query); })).subscribe(function (classes) { return _this.filteredClasses = classes["matches"]; });
         this.firstFormGroup = this._formBuilder.group({
             title: [this.collabData.title, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required],
             description: [this.collabData.description, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required],
@@ -2034,7 +2037,7 @@ var CreateCollabComponent = /** @class */ (function () {
         });
     };
     CreateCollabComponent.prototype.addSkill = function (event) {
-        if (!this.matAutocomplete.isOpen) {
+        if (!this.matAutocomplete1.isOpen) {
             var input = event.input;
             var value = event.value;
             if ((value || '').trim()) {
@@ -2058,7 +2061,7 @@ var CreateCollabComponent = /** @class */ (function () {
         this.skillCtrl.setValue(null);
     };
     CreateCollabComponent.prototype.addClass = function (event) {
-        if (!this.matAutocomplete.isOpen) {
+        if (!this.matAutocomplete2.isOpen) {
             var input = event.input;
             var value = event.value;
             if ((value || '').trim()) {
@@ -2100,11 +2103,13 @@ var CreateCollabComponent = /** @class */ (function () {
             }
         });
     };
-    CreateCollabComponent.prototype._filter = function (value) {
+    CreateCollabComponent.prototype._filterSkills = function (value) {
         var _this = this;
-        var filterValue = value.toLowerCase();
+        var filterValue = value;
+        console.log(value);
         this.userService.searchSkills(filterValue).subscribe(function (res) { _this.allSkills = res['matches']; });
-        return this.allSkills.filter(function (fruit) { return fruit.toLowerCase().indexOf(filterValue) === 0; });
+        console.log(this.allSkills);
+        return this.allSkills;
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"])(),
@@ -2117,7 +2122,7 @@ var CreateCollabComponent = /** @class */ (function () {
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"])('auto'),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_7__["MatAutocomplete"])
-    ], CreateCollabComponent.prototype, "matAutocomplete", void 0);
+    ], CreateCollabComponent.prototype, "matAutocomplete1", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"])('classInput'),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ElementRef"])
@@ -2151,7 +2156,7 @@ var CreateCollabComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".mat-form-field{\n    width: 70%;\n    margin-top: 10px;\n}\n\n.container {\n    margin-top: 50px;\n    margin-left: 25px;\n    margin-right: 25px;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}\n\n.example-chip-list {\n    width: 100%;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9lZGl0LWNvbGxhYi9lZGl0LWNvbGxhYi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksVUFBVTtJQUNWLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLGdCQUFnQjtJQUNoQixpQkFBaUI7SUFDakIsa0JBQWtCO0lBQ2xCLHlFQUF5RTtBQUM3RTs7QUFFQTtJQUNJLFdBQVc7RUFDYiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvZWRpdC1jb2xsYWIvZWRpdC1jb2xsYWIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYXQtZm9ybS1maWVsZHtcbiAgICB3aWR0aDogNzAlO1xuICAgIG1hcmdpbi10b3A6IDEwcHg7XG59XG5cbi5jb250YWluZXIge1xuICAgIG1hcmdpbi10b3A6IDUwcHg7XG4gICAgbWFyZ2luLWxlZnQ6IDI1cHg7XG4gICAgbWFyZ2luLXJpZ2h0OiAyNXB4O1xuICAgIGJveC1zaGFkb3c6IDAgNHB4IDhweCAwIHJnYmEoMCwwLDAsMC4yKSwgMCA2cHggMjBweCAwIHJnYmEoMCwgMCwgMCwgMC4xOSk7XG59XG5cbi5leGFtcGxlLWNoaXAtbGlzdCB7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH0iXX0= */"
+module.exports = ".mat-form-field {\n    width: 70%;\n    margin-left: 15px;\n}\n\n.container {\n    margin-top: 50px;\n    margin-bottom: 50px;\n    margin-left: 10%;\n    margin-right: 10%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}\n\n.example-chip-list {\n    width: 100%;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9lZGl0LWNvbGxhYi9lZGl0LWNvbGxhYi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksVUFBVTtJQUNWLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLGdCQUFnQjtJQUNoQixtQkFBbUI7SUFDbkIsZ0JBQWdCO0lBQ2hCLGlCQUFpQjtJQUNqQix5RUFBeUU7QUFDN0U7O0FBRUE7SUFDSSxXQUFXO0VBQ2IiLCJmaWxlIjoic3JjL2FwcC9ob21lL2VkaXQtY29sbGFiL2VkaXQtY29sbGFiLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWF0LWZvcm0tZmllbGQge1xuICAgIHdpZHRoOiA3MCU7XG4gICAgbWFyZ2luLWxlZnQ6IDE1cHg7XG59XG5cbi5jb250YWluZXIge1xuICAgIG1hcmdpbi10b3A6IDUwcHg7XG4gICAgbWFyZ2luLWJvdHRvbTogNTBweDtcbiAgICBtYXJnaW4tbGVmdDogMTAlO1xuICAgIG1hcmdpbi1yaWdodDogMTAlO1xuICAgIGJveC1zaGFkb3c6IDAgNHB4IDhweCAwIHJnYmEoMCwwLDAsMC4yKSwgMCA2cHggMjBweCAwIHJnYmEoMCwgMCwgMCwgMC4xOSk7XG59XG5cbi5leGFtcGxlLWNoaXAtbGlzdCB7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH0iXX0= */"
 
 /***/ }),
 
@@ -2162,7 +2167,7 @@ module.exports = ".mat-form-field{\n    width: 70%;\n    margin-top: 10px;\n}\n\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h4> Edit Component works</h4>\n\n<div>\n  <div>\n      <a routerLink=\"/home\">Home</a>\n  </div>\n</div>\n"
+module.exports = "<div class = \"container\">\n<form #form = \"ngForm\" (ngSubmit) = \"update(form.value)\">\n        <br>\n        <mat-form-field>\n        <input [(ngModel)] = \"collabData['title']\" name = \"title\" id = \"title\" type = \"text\" class = \"form-control\"\n                #title = \"ngModel\" matInput placeholder = \"Collab Title...\" required>\n        </mat-form-field>\n        <br>\n        <mat-form-field>\n        <textarea [(ngModel)] = \"collabData['description']\" name = \"description\" id = \"description\" type = \"text\" class = \"form-control\"\n                #description = \"ngModel\" matInput placeholder = \"Collab Description...\" required></textarea>\n        </mat-form-field>\n        <br>\n        <mat-form-field>\n        <input [(ngModel)] = \"collabData['location']\" name = \"location\" id = \"location\" type = \"text\" class = \"form-control\"\n                #location = \"ngModel\" matInput placeholder = \"Location...\" required>\n        </mat-form-field>\n        <br>\n        <mat-form-field>\n                <input [(ngModel)] = \"collabData['size']\" name = \"size\" id = \"size\" type = \"text\" class = \"form-control\"\n                        #size = \"ngModel\" matInput placeholder = \"Collab Size...\" required>\n        </mat-form-field>\n        <mat-form-field>\n                <input [ngModel] = \"collabData['date'] | date:'yyy-MM-dd' \" name = \"date\" id=\"date\" class = \"form-control\"\n                        #date = \"ngModel\" matInput placeholder = \"Choose a date\" [owlDateTimeTrigger]=\"dt\" [owlDateTime]=\"dt\" required>\n                <owl-date-time #dt></owl-date-time>\n        </mat-form-field>\n        <mat-form-field>\n                <input [(ngModel)] = \"collabData['duration']\" name = \"duration\" id = \"duration\" type = \"number\" class = \"form-control\"\n                        #duration = \"ngModel\" matInput placeholder = \"Duration...\" required>\n        </mat-form-field>\n        <br>\n        <button mat-raised-button>Update</button>\n        <br>\n</form>\n</div>"
 
 /***/ }),
 
@@ -2195,11 +2200,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var EditCollabComponent = /** @class */ (function () {
-    function EditCollabComponent(_formBuilder, userService, collabService, router) {
+    function EditCollabComponent(_formBuilder, userService, collabService, router, activeRoute) {
+        var _this = this;
         this._formBuilder = _formBuilder;
         this.userService = userService;
         this.collabService = collabService;
         this.router = router;
+        this.activeRoute = activeRoute;
         this.visible = true;
         this.selectable = true;
         this.removable = true;
@@ -2214,10 +2221,22 @@ var EditCollabComponent = /** @class */ (function () {
         this.classes = [];
         this.allClasses = [];
         this.collabData = new src_app_shared_models_collab_model__WEBPACK_IMPORTED_MODULE_1__["CollabModel"];
+        this.activeRoute.paramMap
+            .subscribe(function (params) {
+            _this._id = params.get('_id');
+        });
     }
     EditCollabComponent.prototype.ngOnInit = function () {
+        this.getCollabDetails(this._id);
     };
-    EditCollabComponent.prototype.editCollab = function () {
+    EditCollabComponent.prototype.getCollabDetails = function (id) {
+        var _this = this;
+        this.collabService.getSingleCollab(id).subscribe(function (res) {
+            _this.collabData = res['0'];
+        });
+    };
+    EditCollabComponent.prototype.update = function (collabData) {
+        console.log(collabData);
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"])(),
@@ -2248,7 +2267,8 @@ var EditCollabComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"],
             src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"],
             src_app_shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_3__["CollabsService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_8__["ActivatedRoute"]])
     ], EditCollabComponent);
     return EditCollabComponent;
 }());
@@ -2295,7 +2315,7 @@ var routes = [
         component: _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_1__["CreateCollabComponent"]
     },
     {
-        path: "editcollab",
+        path: "editcollab/:_id",
         component: _edit_collab_edit_collab_component__WEBPACK_IMPORTED_MODULE_4__["EditCollabComponent"]
     }
 ];
@@ -2345,13 +2365,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/tabs */ "./node_modules/@angular/material/esm5/tabs.es5.js");
 /* harmony import */ var _angular_material_expansion__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/expansion */ "./node_modules/@angular/material/esm5/expansion.es5.js");
 /* harmony import */ var _angular_material_stepper__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/stepper */ "./node_modules/@angular/material/esm5/stepper.es5.js");
-/* harmony import */ var _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./collab-card/collab-card.component */ "./src/app/home/collab-card/collab-card.component.ts");
-/* harmony import */ var _collab_table_collab_table_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./collab-table/collab-table.component */ "./src/app/home/collab-table/collab-table.component.ts");
-/* harmony import */ var _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./create-collab/create-collab.component */ "./src/app/home/create-collab/create-collab.component.ts");
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/material/form-field */ "./node_modules/@angular/material/esm5/form-field.es5.js");
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/material/input */ "./node_modules/@angular/material/esm5/input.es5.js");
-/* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/material/datepicker */ "./node_modules/@angular/material/esm5/datepicker.es5.js");
-/* harmony import */ var _edit_collab_edit_collab_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./edit-collab/edit-collab.component */ "./src/app/home/edit-collab/edit-collab.component.ts");
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/select */ "./node_modules/@angular/material/esm5/select.es5.js");
+/* harmony import */ var _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./collab-card/collab-card.component */ "./src/app/home/collab-card/collab-card.component.ts");
+/* harmony import */ var _collab_table_collab_table_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./collab-table/collab-table.component */ "./src/app/home/collab-table/collab-table.component.ts");
+/* harmony import */ var _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./create-collab/create-collab.component */ "./src/app/home/create-collab/create-collab.component.ts");
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/material/form-field */ "./node_modules/@angular/material/esm5/form-field.es5.js");
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/material/input */ "./node_modules/@angular/material/esm5/input.es5.js");
+/* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @angular/material/datepicker */ "./node_modules/@angular/material/esm5/datepicker.es5.js");
+/* harmony import */ var _edit_collab_edit_collab_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./edit-collab/edit-collab.component */ "./src/app/home/edit-collab/edit-collab.component.ts");
 
 
 
@@ -2380,12 +2401,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var HomeModule = /** @class */ (function () {
     function HomeModule() {
     }
     HomeModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_11__["NgModule"])({
-            declarations: [_collab_list_home_component__WEBPACK_IMPORTED_MODULE_10__["HomeComponent"], _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_20__["CollabCardComponent"], _collab_table_collab_table_component__WEBPACK_IMPORTED_MODULE_21__["CollabTableComponent"], _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_22__["CreateCollabComponent"], _edit_collab_edit_collab_component__WEBPACK_IMPORTED_MODULE_26__["EditCollabComponent"]],
+            declarations: [_collab_list_home_component__WEBPACK_IMPORTED_MODULE_10__["HomeComponent"], _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_21__["CollabCardComponent"], _collab_table_collab_table_component__WEBPACK_IMPORTED_MODULE_22__["CollabTableComponent"], _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_23__["CreateCollabComponent"], _edit_collab_edit_collab_component__WEBPACK_IMPORTED_MODULE_27__["EditCollabComponent"]],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_12__["CommonModule"],
                 _home_routing_module__WEBPACK_IMPORTED_MODULE_13__["HomeRoutingModule"],
@@ -2401,11 +2423,13 @@ var HomeModule = /** @class */ (function () {
                 _angular_material_chips__WEBPACK_IMPORTED_MODULE_6__["MatChipsModule"],
                 _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_5__["MatGridListModule"],
                 _angular_material_stepper__WEBPACK_IMPORTED_MODULE_19__["MatStepperModule"],
-                _angular_material_form_field__WEBPACK_IMPORTED_MODULE_23__["MatFormFieldModule"],
-                _angular_material_input__WEBPACK_IMPORTED_MODULE_24__["MatInputModule"],
-                _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_25__["MatDatepickerModule"],
+                _angular_material_form_field__WEBPACK_IMPORTED_MODULE_24__["MatFormFieldModule"],
+                _angular_material_input__WEBPACK_IMPORTED_MODULE_25__["MatInputModule"],
+                _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_26__["MatDatepickerModule"],
                 _angular_material_core__WEBPACK_IMPORTED_MODULE_3__["MatNativeDateModule"],
                 _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_2__["MatAutocompleteModule"],
+                _angular_material_form_field__WEBPACK_IMPORTED_MODULE_24__["MatFormFieldModule"],
+                _angular_material_select__WEBPACK_IMPORTED_MODULE_20__["MatSelectModule"],
                 ng_pick_datetime__WEBPACK_IMPORTED_MODULE_1__["OwlDateTimeModule"],
                 ng_pick_datetime__WEBPACK_IMPORTED_MODULE_1__["OwlNativeDateTimeModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
@@ -2439,7 +2463,7 @@ __webpack_require__.r(__webpack_exports__);
 var CollabsService = /** @class */ (function () {
     function CollabsService(http) {
         this.http = http;
-        this.rootUrl = 'https://huntercollabapi.herokuapp.com';
+        this.rootUrl = 'http://13.58.204.157:5000';
     }
     //collab/getCollabDetails
     CollabsService.prototype.collabDetails = function () {
@@ -2460,6 +2484,13 @@ var CollabsService = /** @class */ (function () {
     //Get Both All and My Collabs
     CollabsService.prototype.getCollabs = function (collabType) {
         return this.http.get(this.rootUrl + "/collab/" + collabType);
+    };
+    CollabsService.prototype.getSingleCollab = function (_id) {
+        var body = {
+            id: _id
+        };
+        console.log(body);
+        return this.http.post(this.rootUrl + "/collab/getCollab", body);
     };
     //______________POST_REQUEST____________
     //create a new collab, wehre owner = currentUser
