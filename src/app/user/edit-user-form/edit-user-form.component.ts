@@ -31,9 +31,6 @@ export class EditUserFormComponent implements OnInit {
 
   update(userData){
 
-    console.log(userData['username']);
-    console.log(userData['github']);
-    console.log(userData['linkedin']);
     this.userService.updateUserProfile(userData).subscribe(result => { console.log(result) });
     this.dialogRef.close();
   }

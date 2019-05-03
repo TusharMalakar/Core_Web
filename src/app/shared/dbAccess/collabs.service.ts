@@ -9,7 +9,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class CollabsService {
 
-  readonly rootUrl = 'https://huntercollabapi.herokuapp.com';
+  readonly rootUrl = 'http://13.58.204.157:5000';
   constructor(private http: HttpClient) { }
 
   //collab/getCollabDetails
@@ -37,18 +37,18 @@ export class CollabsService {
   getSingleCollab(_id: string){
     
     const body = {
-      $oid : _id
+      id : _id
      }
      
     console.log(body); 
-    return this.http.request("GET",this.rootUrl + "/collab/getCollab");
+    return this.http.post(this.rootUrl + "/collab/getCollab", body );
   }
 
   //______________POST_REQUEST____________
 
   //create a new collab, wehre owner = currentUser
   // size, date, duration, location, title, description, classes and skills are required
-  createCollab(collabData: CollabModel){
+  createCollab(collabData: CollabModel) {
 
     const body: CollabModel = {
       size : collabData.size,

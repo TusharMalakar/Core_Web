@@ -59,6 +59,7 @@ export class UserPageComponent implements OnInit {
     this.loadUserData(this.username);
     this.classesForm = this.formBuilder.group({
       userInput: null
+      
     })
   }
 

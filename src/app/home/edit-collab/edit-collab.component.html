@@ -1,24 +1,36 @@
 <div class = "container">
-    <form [formGroup] = "formGroup" (ngSubmit) = "onSubmit()">
-        <ng-template matStepLabel >Fill in Collab Info</ng-template>
+<form #form = "ngForm" (ngSubmit) = "update(form.value)">
+        <br>
         <mat-form-field>
-            <input matInput placeholder = "Collab Title..." formControlName = "title" required>
+        <input [(ngModel)] = "collabData['title']" name = "title" id = "title" type = "text" class = "form-control"
+                #title = "ngModel" matInput placeholder = "Collab Title..." required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+        <textarea [(ngModel)] = "collabData['description']" name = "description" id = "description" type = "text" class = "form-control"
+                #description = "ngModel" matInput placeholder = "Collab Description..." required></textarea>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+        <input [(ngModel)] = "collabData['location']" name = "location" id = "location" type = "text" class = "form-control"
+                #location = "ngModel" matInput placeholder = "Location..." required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+                <input [(ngModel)] = "collabData['size']" name = "size" id = "size" type = "text" class = "form-control"
+                        #size = "ngModel" matInput placeholder = "Collab Size..." required>
         </mat-form-field>
         <mat-form-field>
-            <textarea matInput placeholder = "Description..." formControlName = "description" required></textarea>
-        </mat-form-field>
-        <mat-form-field>
-                <input matInput placeholder = "Location..." formControlName = "location" required>
-        </mat-form-field>
-        <mat-form-field>
-                <input type = "number" min="2"  matInput placeholder = "Collab Size..." formControlName = "size" required>
-        </mat-form-field>
-        <mat-form-field>
-                <input formControlName = "date" matInput [owlDateTimeTrigger]="dt" placeholder = "Choose a date" [owlDateTime]="dt" required>
+                <input [ngModel] = "collabData['date'] | date:'yyy-MM-dd' " name = "date" id="date" class = "form-control"
+                        #date = "ngModel" matInput placeholder = "Choose a date" [owlDateTimeTrigger]="dt" [owlDateTime]="dt" required>
                 <owl-date-time #dt></owl-date-time>
         </mat-form-field>
         <mat-form-field>
-                <input type = "number" min="2"  matInput placeholder = "Duration..." formControlName = "duration" required>
+                <input [(ngModel)] = "collabData['duration']" name = "duration" id = "duration" type = "number" class = "form-control"
+                        #duration = "ngModel" matInput placeholder = "Duration..." required>
         </mat-form-field>
-    </form>
-  </div>
+        <br>
+        <button mat-raised-button>Update</button>
+        <br>
+</form>
+</div>

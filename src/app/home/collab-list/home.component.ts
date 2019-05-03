@@ -67,18 +67,18 @@ export class HomeComponent implements OnInit {
     switch($event) {
 
       case 0: {
-        this.collabService.getCollabs("getActiveCollabs").subscribe ((data : CollabModel[] )  => this.collabData = data);
+        this.collabService.getCollabs("getActiveCollabs").subscribe ((data : CollabModel[] )  => this.collabData = data.reverse());
         break;
       }
 
       case 1: {
-        await this.collabService.getCollabs("getCollabDetails").subscribe ((data : CollabModel[] )  => this.collabData = data);
+        await this.collabService.getCollabs("getCollabDetails").subscribe ((data : CollabModel[] )  => this.collabData = data.reverse());
         break;
       }
 
       case 2: {
         console.log(this.userData);
-        await this.collabService.getReqCollabs(this.userData["classes"], this.userData["skills"]).subscribe ((data : CollabModel[] )  => this.collabData = data);
+        await this.collabService.getReqCollabs(this.userData["classes"], this.userData["skills"]).subscribe ((data : CollabModel[] )  => this.collabData = data.reverse());
         break;
       }
 

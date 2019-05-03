@@ -8,7 +8,7 @@ import { Requirements } from 'src/app/home/collab-card/collab-card.component';
 
 @Injectable()
 export class UserService {
-  readonly rootUrl = 'https://huntercollabapi.herokuapp.com';
+  readonly rootUrl = 'http://13.58.204.157:5000';
   constructor(private http: HttpClient) { }
   
   getToken(){

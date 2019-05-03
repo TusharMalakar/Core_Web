@@ -121,7 +121,7 @@ export class CollabCardComponent implements OnInit {
     this.isPartOf();
   }
   isUserOwner(){
-    console.log(this.userData['username']);
+    
     if(this.collabData.owner == this.userData['username']){
       this.isOwner = true;
     } else {
@@ -135,8 +135,6 @@ export class CollabCardComponent implements OnInit {
         this.partOf = true;
       } 
     }
-
-    console.log(this.partOf);
   }
 
   checkPartOf(){
@@ -163,7 +161,7 @@ export class CollabCardComponent implements OnInit {
   }
 
   editCollab(){
-    console.log(this.collabData._id);
+   
     this.router.navigate(['/home/editcollab/',this.collabData._id["$oid"]]);
   }
 

@@ -67,21 +67,17 @@ export class EditCollabComponent implements OnInit {
   ngOnInit() {
     this.getCollabDetails(this._id);
       
-    this.formGroup = this._formBuilder.group({
-      title: [this.collabData.title, Validators.required],
-      description: [this.collabData.description, Validators.required],
-      location: [this.collabData.location, Validators.required],
-      size: [this.collabData.size, Validators.required],
-      date: [this.collabData.date, Validators.required],
-      duration: [this.collabData.duration, Validators.required],
-    });
     
   }
 
   getCollabDetails(id: string){
     this.collabService.getSingleCollab(id).subscribe(res => {
-      console.log(res);
+      this.collabData = res['0'];
     });
+  }
+
+  update(collabData){
+    console.log(collabData);
   }
 
   
