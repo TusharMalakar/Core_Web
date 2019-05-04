@@ -143,7 +143,7 @@ updateUserProfile(userData: UserModel){
   return this.http.post(this.rootUrl +"/user", body)
 }
 
-updateUserSkill(skills){
+updateUserSkills(skills){
   const body : UserModel ={
     skills  :skills,
     

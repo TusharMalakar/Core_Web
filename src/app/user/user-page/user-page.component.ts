@@ -1,3 +1,4 @@
+import { EditSkillsComponent } from './../edit-skills/edit-skills.component';
 import { EditClassesComponent } from './../edit-classes/edit-classes.component';
 import { EditUserFormComponent } from './../edit-user-form/edit-user-form.component';
 import { Component, OnInit,ChangeDetectionStrategy } from '@angular/core';
@@ -135,7 +136,7 @@ profilePicture(){
   openDialog1(): void {
     //Dialog refeerence
     const dialogRef = this.dialog.open(EditUserFormComponent, {
-      width: '40%',
+      width: '50%',
       data: {
         userData: this.userData
       }
@@ -149,7 +150,21 @@ profilePicture(){
   openDialog2(): void {
     //Dialog refeerence
     const dialogRef = this.dialog.open(EditClassesComponent, {
-      width: '40%',
+      width: '70%',
+      data: {
+        userData: this.userData
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+  openDialog3(): void {
+    //Dialog refeerence
+    const dialogRef = this.dialog.open(EditSkillsComponent, {
+      width: '70%',
       data: {
         userData: this.userData
       }

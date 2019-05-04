@@ -21,9 +21,10 @@ import { MatGridListModule }  from '@angular/material/grid-list';
 import { MatListModule }  from '@angular/material/list';
 import { EditUserFormComponent } from './edit-user-form/edit-user-form.component';
 import { EditClassesComponent } from './edit-classes/edit-classes.component';
+import { EditSkillsComponent } from './edit-skills/edit-skills.component';
 
 @NgModule({
-  declarations: [UserPageComponent, EditUserFormComponent, EditClassesComponent],
+  declarations: [UserPageComponent, EditUserFormComponent, EditClassesComponent, EditSkillsComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
@@ -52,7 +53,8 @@ import { EditClassesComponent } from './edit-classes/edit-classes.component';
   ],
   entryComponents: [
     EditUserFormComponent,
-    EditClassesComponent
+    EditClassesComponent,
+    EditSkillsComponent
   ]
 })
 export class UserModule { }
