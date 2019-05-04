@@ -19,8 +19,12 @@ export interface Requirements{
 export class CollabCardComponent implements OnInit {
 
   @Input() collabData: CollabModel;
+
+  //Values being passed to collab-table
   table: Array<TableBuilder> = [];  
   xAxisReq: Array<string> = [];
+
+
   yAxisUsers: any
   alreadyBuilt: boolean = false;
   partOf = false; 
@@ -148,10 +152,12 @@ export class CollabCardComponent implements OnInit {
   }
   
   joinCollab(){
+
     this.collabService.joinCollab(this.collabData._id)
       .subscribe(res => { 
         if(res['success'] == true){
           this.partOf = true;
+          this.getUpdatedData();
         } else {
           
         }
@@ -163,6 +169,7 @@ export class CollabCardComponent implements OnInit {
       .subscribe(res => { 
         if(res['success'] == true){
           this.partOf = false;
+          this.getUpdatedData();
         } else {
           
         } 
@@ -171,12 +178,21 @@ export class CollabCardComponent implements OnInit {
 
   deleteCollab(){
     this.collabService.deleteCollab(this.collabData._id)
-      .subscribe(res => {console.log(res) })
+      .subscribe(res => {})
   }
 
   editCollab(){
    
     this.router.navigate(['/home/editcollab/',this.collabData._id["$oid"]]);
+  }
+
+  getUpdatedData(){
+    this.collabService.getSingleCollab(this.collabData._id["$oid"]).subscribe(
+      res => {
+        console.log(res['0'],
+        this.collabData = res['0'])
+      }
+    );
   }
 
 

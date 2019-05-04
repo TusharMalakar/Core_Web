@@ -82,7 +82,6 @@ export class EditClassesComponent implements OnInit {
   }
 
   update(){
-    console.log(this.classes);
     this.userService.updateUserclass(this.classes).subscribe(result => { console.log(result) });
     this.dialogRef.close();
   }

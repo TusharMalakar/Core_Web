@@ -61,7 +61,7 @@
             <div class ="grid-container">  
               <div class = "grid-search">
                   <div class="wrapper">
-                      <button (click) = "openDialog2()" mat-flat-button color="primary"> Update </button>
+                      <button (click) = "openDialog2()" mat-flat-button color="primary" *ngIf="canEdit"> Update </button>
                   </div>
               </div>
               
@@ -84,7 +84,7 @@
               <div class ="grid-container">  
                   <div class = "grid-search">
                       <div class="wrapper">
-                          <button (click) = "openDialog3()" mat-flat-button color="primary"> Update </button>
+                          <button (click) = "openDialog3()" mat-flat-button color="primary" *ngIf="canEdit"> Update </button>
                       </div>
                   </div>
                   <div class = "grid-item">

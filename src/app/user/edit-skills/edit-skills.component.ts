@@ -39,6 +39,7 @@ export class EditSkillsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.skills = this.data.userData['skills'];
     this.skillCtrl.valueChanges.pipe(
       
       startWith(null),
@@ -84,7 +85,6 @@ export class EditSkillsComponent implements OnInit {
   }
 
   update(){
-    console.log(this.skills);
     this.userService.updateUserSkills(this.skills).subscribe(result => { console.log(result) });
     this.dialogRef.close();
   }

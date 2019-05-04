@@ -83,7 +83,7 @@ export class UserService {
         skillOrClass: classTaken,
         type: "class"
       });
-    }
+    
     for(let skill of skills){
       xAxisReq.push({
       skillOrClass: skill,
