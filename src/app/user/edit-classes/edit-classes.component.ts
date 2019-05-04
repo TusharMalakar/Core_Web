@@ -38,7 +38,7 @@ export class EditClassesComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
-
+    this.classes = this.data.userData['classes'];
     this.classCtrl.valueChanges.pipe(
       startWith(null),
       debounceTime(200),

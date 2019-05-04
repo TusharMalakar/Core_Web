@@ -70,7 +70,6 @@
                       <mat-chip-list>
                         <mat-chip *ngFor = "let class of userData?.classes">
                           {{ class }}
-                          <mat-icon matChipRemove>cancel</mat-icon>
                         </mat-chip>
                       </mat-chip-list>
                     </cdk-virtual-scroll-viewport>
@@ -93,9 +92,7 @@
                           <mat-chip-list>
                             <mat-chip *ngFor = "let skill of userData?.skills">
                               {{ skill }}
-                              <mat-icon matChipRemove>cancel</mat-icon>
-                            </mat-chip>
-                            
+                            </mat-chip>  
                           </mat-chip-list>
                         </cdk-virtual-scroll-viewport>
                     </div>

@@ -149,6 +149,7 @@ profilePicture(){
   openDialog2(): void {
     //Dialog refeerence
     const dialogRef = this.dialog.open(EditClassesComponent, {
+      width: '40%',
       data: {
         userData: this.userData
       }
