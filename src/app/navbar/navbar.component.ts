@@ -77,9 +77,7 @@ getTitle(title:string){
   this.Title_ = title;
   console.log("Showing title "+this.Title_)
 }
-loadOtherUserProfile(){
-  
-}
+
 logOut(){
   localStorage.removeItem('accessToken');
   this.router.navigate(['/login']);

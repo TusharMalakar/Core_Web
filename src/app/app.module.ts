@@ -1,3 +1,5 @@
+import { GroupMessagingModel } from './shared/models/groupMessaging';
+import { OneToOneMessagingModel } from './shared/models/oneToOneMessagingModel';
 import { ConversationService } from './shared/dbAccess/conversation.service';
 import { AuthInterceptor } from './guard/auth.inspector';
 import { AuthGuard } from './guard/auth.guard';
