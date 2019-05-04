@@ -90,14 +90,16 @@ export class EditCollabComponent implements OnInit {
       this.collabData = res['0'];
       this.skills = res['0']['skills'];
       this.classes = res['0']['classes'];
-      console.log(this.collabData);
     });
   }
 
   update(collabUpdatedData){
-    console.log(collabUpdatedData);
-    console.log(this.classes);
-    console.log(this.skills);
+    console.log(this.collabData);
+    this.collabData = collabUpdatedData;
+    this.collabData.classes = this.classes;
+    this.collabData.skills = this.skills;
+    console.log(this.collabData);
+    this.collabService.editCollab(this.collabData, this._id).subscribe(res => { console.log(res)});
   }
 
   addSkill(event: MatChipInputEvent): void {
