@@ -6,11 +6,17 @@ import { UserPageComponent } from './user-page/user-page.component';
 
 const routes: Routes = [
   {
+    path:':username',
+    component: UserPageComponent
+  },
+  {
     //This is the default path the user will enter if the url is /user
     path:'',
     component: UserPageComponent
 
-  } , {
+  },
+  
+  {
     path:'update-userdata',
     component: UpdateUserdataComponent
   }

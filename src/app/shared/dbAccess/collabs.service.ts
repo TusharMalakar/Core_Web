@@ -9,7 +9,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class CollabsService {
 
-  readonly rootUrl = 'https://huntercollabapi.herokuapp.com';
+  readonly rootUrl = 'http://13.58.204.157:5000';
   constructor(private http: HttpClient) { }
 
   //collab/getCollabDetails
@@ -24,18 +24,31 @@ export class CollabsService {
   activeCollabs(){ 
     return this.http.get( this.rootUrl +"/collab/getActiveCollabs");
   }
-
+  //messaging/myConvos
+  myCollabs(){ 
+    return this.http.get( this.rootUrl +"/messaging/myConvos");
+  }
 
   //Get Both All and My Collabs
   getCollabs(collabType: string){
     return this.http.get( this.rootUrl + "/collab/" + collabType);
   }
 
+  getSingleCollab(_id: string){
+    
+    const body = {
+      id : _id
+     }
+     
+    console.log(body); 
+    return this.http.post(this.rootUrl + "/collab/getCollab", body );
+  }
+
   //______________POST_REQUEST____________
 
   //create a new collab, wehre owner = currentUser
   // size, date, duration, location, title, description, classes and skills are required
-  createCollab(collabData: CollabModel){
+  createCollab(collabData: CollabModel) {
 
     const body: CollabModel = {
       size : collabData.size,
@@ -63,7 +76,7 @@ export class CollabsService {
   //Leave Collab
   leaveCollab(id){
 
-    //console.log(id["$oid"]);
+    console.log(id["$oid"]);
     const body = {
      id : id["$oid"]
     }
@@ -72,17 +85,17 @@ export class CollabsService {
 
   //TODO: Get this http request working
   deleteCollab(id){
-    //console.log(id["$oid"]);
+
     const body = {
       id : id["$oid"]
     }
-    return this.http.delete(this.rootUrl + "/collab/deleteCollabForReal");
+    return this.http.request('delete',this.rootUrl + "/collab/deleteCollabForReal", {body});
   }
 
   //TODO: Get this http request working
   getReqCollabs(classes: string[], skills: string[]){
-    //console.log(classes);
-    //console.log(skills);
+    console.log(classes);
+    console.log(skills);
 
     const body = {
       classes : classes,
@@ -91,6 +104,27 @@ export class CollabsService {
 
     return this.http.post(this.rootUrl + "/collab/getRecommendedCollabs", body);
   }
+
+  //Requires a JSON"_id"
+  editCollab(collabData: CollabModel){
+      const body: CollabModel = {
+          _id         : collabData._id["$oid"],
+          size : collabData.size,
+          date : collabData.date,
+          duration : collabData.duration,
+          location : collabData.location,
+          title: collabData.title,
+          description: collabData.description,
+          classes: collabData.classes,
+          skills: collabData.skills,
+          applicants  : collabData.applicants
+      }
+      return this.http.post(this.rootUrl + "/collab/editCollab",body)
+  }
+
+    
+    
+
 
 }
 

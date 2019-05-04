@@ -4,7 +4,6 @@
     <mat-card-title> 
 
       <mat-grid-list  cols="2" rowHeight="4:1">
-        
         <mat-grid-tile>{{collabData?.title}}</mat-grid-tile>
         <mat-grid-tile><mat-icon>group</mat-icon> : {{collabData?.members.length}} / {{ collabData?.size}}</mat-grid-tile>
       </mat-grid-list>
@@ -45,7 +44,7 @@
                        (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
           <mat-panel-title>
-            <h4>Members</h4>
+              <h4>Members</h4>
           </mat-panel-title>
           <mat-panel-description>
           </mat-panel-description>
@@ -77,7 +76,7 @@
               <button *ngIf="checkPartOf() == false" mat-raised-button color = "primary" (click) = "joinCollab()"  > Join </button>
               <button *ngIf="checkPartOf() == true"  mat-raised-button color = "primary" (click) = "leaveCollab()" > Leave </button>
               <button *ngIf="checkOwner() == true"   mat-raised-button color = "primary" (click) = "deleteCollab()"> Delete </button>
-              <button *ngIf="checkOwner() == true"   mat-raised-button color = "primary" (ckick) = "editCollab()"> Edit </button>
+              <button *ngIf="checkOwner() == true"   mat-raised-button color = "primary" (click) = "editCollab()">    Edit</button>
             </mat-card-actions>   
         </mat-expansion-panel>
 

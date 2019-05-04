@@ -1,4 +1,4 @@
-import { MessageComponent } from './../home/message/message.component';
+import { CollabMessagingComponent } from './../conversations/collab-messaging/collab-messaging.component';
 import { Message } from './../shared/models/message.model';
 import { UserModel } from './../shared/models/user.model';
 import { map, startWith } from 'rxjs/operators';
@@ -9,7 +9,6 @@ import { CollabsService } from 'src/app/shared/dbAccess/collabs.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CollabModel } from '../shared/models/collab.model';
-
 
 @Component({
   selector: 'app-navbar',
@@ -63,7 +62,7 @@ groupMessageingPageLink(id:string){
     this.mem=null;
     console.log("Going to Group message "+this.collabId)
     console.log("member "+this.mem)
-    this.router.navigate(['/home/message'])
+    this.router.navigate(['/conversations'])
 }
 PersonalmessagePageLink(mem:string){
   //setting members of message
@@ -72,11 +71,14 @@ PersonalmessagePageLink(mem:string){
   this.collabId=null;
   console.log("Going to message page of "+this.mem)
   console.log("CollabId "+this.collabId)
-  this.router.navigate(['/home/message'])
+  this.router.navigate(['/conversations'])
 }
 getTitle(title:string){
   this.Title_ = title;
   console.log("Showing title "+this.Title_)
+}
+loadOtherUserProfile(){
+  
 }
 logOut(){
   localStorage.removeItem('accessToken');
@@ -84,4 +86,3 @@ logOut(){
 } 
 
 }
-

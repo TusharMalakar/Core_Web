@@ -4,6 +4,7 @@ import { CollabModel } from './../../shared/models/collab.model';
 import { Component, OnInit, Input } from '@angular/core';
 import { TableBuilder } from 'src/app/shared/models/tableBuilder.model';
 import { UserModel } from 'src/app/shared/models/user.model';
+import { Router } from '@angular/router';
 
 export interface Requirements{
   skillOrClass: string,
@@ -20,23 +21,24 @@ export class CollabCardComponent implements OnInit {
   @Input() collabData: CollabModel;
   table: Array<TableBuilder> = [];  
   xAxisReq: Array<string> = [];
+  yAxisUsers: any
   alreadyBuilt: boolean = false;
   partOf = false; 
   isOwner = false; 
-  
 
   //Will hold our user data.
   userData: UserModel[];
   
 
   constructor(private userService: UserService, 
-              private collabService: CollabsService) {
+              private collabService: CollabsService,
+              private router: Router) {
                
                 
               }
 
   async ngOnInit() {
-    await this.userService.getUserdetails().subscribe(userData => this.userData = userData)
+    await this.userService.getUserdetails().subscribe(userData => this.userData = userData);
     
   }
 
@@ -73,6 +75,12 @@ export class CollabCardComponent implements OnInit {
     
   }
 
+  RefreshPage(){
+    this.getAllRequired();
+    //Will members of the collaboration
+    this.yAxisUsers  = this.collabData.members;
+  } 
+  
   //WIll check if a user knows skill or class, from the list of classes and skills that a user knows
   async checkIfKnown(userName: string, listOfRequired: string[]){
     let tmp: TableBuilder = null;
@@ -108,13 +116,12 @@ export class CollabCardComponent implements OnInit {
     return xAxisReq;
   }
   
-
   async actionCheck(){
     await this.isUserOwner();
     this.isPartOf();
   }
   isUserOwner(){
-    console.log(this.userData['username']);
+    
     if(this.collabData.owner == this.userData['username']){
       this.isOwner = true;
     } else {
@@ -128,8 +135,6 @@ export class CollabCardComponent implements OnInit {
         this.partOf = true;
       } 
     }
-
-    console.log(this.partOf);
   }
 
   checkPartOf(){
@@ -139,7 +144,7 @@ export class CollabCardComponent implements OnInit {
   checkOwner(){
     return this.isOwner;
   }
-
+  
   joinCollab(){
     this.collabService.joinCollab(this.collabData._id)
       .subscribe(res => { console.log(res) });
@@ -153,6 +158,11 @@ export class CollabCardComponent implements OnInit {
   deleteCollab(){
     this.collabService.deleteCollab(this.collabData._id)
       .subscribe(res => {console.log(res) })
+  }
+
+  editCollab(){
+   
+    this.router.navigate(['/home/editcollab/',this.collabData._id["$oid"]]);
   }
 
 

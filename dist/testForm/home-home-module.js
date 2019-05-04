@@ -1,33 +1,48 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["home-home-module"],{
 
-/***/ "./node_modules/@angular/cdk/esm5/stepper.es5.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/@angular/cdk/esm5/stepper.es5.js ***!
-  \*******************************************************/
-/*! exports provided: StepperSelectionEvent, STEP_STATE, STEPPER_GLOBAL_OPTIONS, MAT_STEPPER_GLOBAL_OPTIONS, CdkStep, CdkStepper, CdkStepLabel, CdkStepperNext, CdkStepperPrevious, CdkStepperModule, CdkStepHeader */
+/***/ "./node_modules/@angular/material/esm5/select.es5.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@angular/material/esm5/select.es5.js ***!
+  \***********************************************************/
+/*! exports provided: MatSelectModule, MAT_SELECT_SCROLL_STRATEGY_PROVIDER_FACTORY, SELECT_PANEL_MAX_HEIGHT, SELECT_PANEL_PADDING_X, SELECT_PANEL_INDENT_PADDING_X, SELECT_ITEM_HEIGHT_EM, SELECT_MULTIPLE_PANEL_PADDING_X, SELECT_PANEL_VIEWPORT_PADDING, MAT_SELECT_SCROLL_STRATEGY, MAT_SELECT_SCROLL_STRATEGY_PROVIDER, MatSelectChange, MatSelectBase, _MatSelectMixinBase, MatSelectTrigger, MatSelect, matSelectAnimations, transformPanel, fadeInContent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StepperSelectionEvent", function() { return StepperSelectionEvent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STEP_STATE", function() { return STEP_STATE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STEPPER_GLOBAL_OPTIONS", function() { return STEPPER_GLOBAL_OPTIONS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MAT_STEPPER_GLOBAL_OPTIONS", function() { return MAT_STEPPER_GLOBAL_OPTIONS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CdkStep", function() { return CdkStep; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CdkStepper", function() { return CdkStepper; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CdkStepLabel", function() { return CdkStepLabel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CdkStepperNext", function() { return CdkStepperNext; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CdkStepperPrevious", function() { return CdkStepperPrevious; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CdkStepperModule", function() { return CdkStepperModule; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CdkStepHeader", function() { return CdkStepHeader; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/a11y */ "./node_modules/@angular/cdk/esm5/a11y.es5.js");
-/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/bidi */ "./node_modules/@angular/cdk/esm5/bidi.es5.js");
-/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/cdk/coercion */ "./node_modules/@angular/cdk/esm5/coercion.es5.js");
-/* harmony import */ var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/keycodes */ "./node_modules/@angular/cdk/esm5/keycodes.es5.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatSelectModule", function() { return MatSelectModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MAT_SELECT_SCROLL_STRATEGY_PROVIDER_FACTORY", function() { return MAT_SELECT_SCROLL_STRATEGY_PROVIDER_FACTORY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SELECT_PANEL_MAX_HEIGHT", function() { return SELECT_PANEL_MAX_HEIGHT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SELECT_PANEL_PADDING_X", function() { return SELECT_PANEL_PADDING_X; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SELECT_PANEL_INDENT_PADDING_X", function() { return SELECT_PANEL_INDENT_PADDING_X; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SELECT_ITEM_HEIGHT_EM", function() { return SELECT_ITEM_HEIGHT_EM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SELECT_MULTIPLE_PANEL_PADDING_X", function() { return SELECT_MULTIPLE_PANEL_PADDING_X; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SELECT_PANEL_VIEWPORT_PADDING", function() { return SELECT_PANEL_VIEWPORT_PADDING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MAT_SELECT_SCROLL_STRATEGY", function() { return MAT_SELECT_SCROLL_STRATEGY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MAT_SELECT_SCROLL_STRATEGY_PROVIDER", function() { return MAT_SELECT_SCROLL_STRATEGY_PROVIDER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatSelectChange", function() { return MatSelectChange; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatSelectBase", function() { return MatSelectBase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_MatSelectMixinBase", function() { return _MatSelectMixinBase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatSelectTrigger", function() { return MatSelectTrigger; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatSelect", function() { return MatSelect; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "matSelectAnimations", function() { return matSelectAnimations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "transformPanel", function() { return transformPanel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fadeInContent", function() { return fadeInContent; });
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/a11y */ "./node_modules/@angular/cdk/esm5/a11y.es5.js");
+/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/cdk/bidi */ "./node_modules/@angular/cdk/esm5/bidi.es5.js");
+/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/coercion */ "./node_modules/@angular/cdk/esm5/coercion.es5.js");
+/* harmony import */ var _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/cdk/collections */ "./node_modules/@angular/cdk/esm5/collections.es5.js");
+/* harmony import */ var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/keycodes */ "./node_modules/@angular/cdk/esm5/keycodes.es5.js");
+/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/cdk/overlay */ "./node_modules/@angular/cdk/esm5/overlay.es5.js");
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/cdk/scrolling */ "./node_modules/@angular/cdk/esm5/scrolling.es5.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/core */ "./node_modules/@angular/material/esm5/core.es5.js");
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/form-field */ "./node_modules/@angular/material/esm5/form-field.es5.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /**
  * @license
  * Copyright Google LLC All Rights Reserved.
@@ -44,1447 +59,2006 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var CdkStepLabel = /** @class */ (function () {
-    function CdkStepLabel(/** @docs-private */ template) {
-        this.template = template;
-    }
-    CdkStepLabel.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"], args: [{
-                    selector: '[cdkStepLabel]',
-                },] },
-    ];
-    /** @nocollapse */
-    CdkStepLabel.ctorParameters = function () { return [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["TemplateRef"] }
-    ]; };
-    return CdkStepLabel;
-}());
+
+
+
+
+
+
+
 
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-var CdkStepHeader = /** @class */ (function () {
-    function CdkStepHeader(_elementRef) {
-        this._elementRef = _elementRef;
-    }
-    /** Focuses the step header. */
+/**
+ * The following are all the animations for the mat-select component, with each
+ * const containing the metadata for one animation.
+ *
+ * The values below match the implementation of the AngularJS Material mat-select animation.
+ * \@docs-private
+ * @type {?}
+ */
+var matSelectAnimations = {
     /**
-     * Focuses the step header.
-     * @return {?}
+     * This animation ensures the select's overlay panel animation (transformPanel) is called when
+     * closing the select.
+     * This is needed due to https://github.com/angular/angular/issues/23302
      */
-    CdkStepHeader.prototype.focus = /**
-     * Focuses the step header.
-     * @return {?}
+    transformPanelWrap: Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"])('transformPanelWrap', [
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('* => void', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])('@transformPanel', [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animateChild"])()], { optional: true }))
+    ]),
+    /**
+     * This animation transforms the select's overlay panel on and off the page.
+     *
+     * When the panel is attached to the DOM, it expands its width by the amount of padding, scales it
+     * up to 100% on the Y axis, fades in its border, and translates slightly up and to the
+     * side to ensure the option text correctly overlaps the trigger text.
+     *
+     * When the panel is removed from the DOM, it simply fades out linearly.
      */
-    function () {
-        this._elementRef.nativeElement.focus();
-    };
-    CdkStepHeader.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"], args: [{
-                    selector: '[cdkStepHeader]',
-                    host: {
-                        'role': 'tab',
-                    },
-                },] },
-    ];
-    /** @nocollapse */
-    CdkStepHeader.ctorParameters = function () { return [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] }
-    ]; };
-    return CdkStepHeader;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-/**
- * Used to generate unique ID for each stepper component.
- * @type {?}
- */
-var nextId = 0;
-/**
- * Change event emitted on selection changes.
- */
-var  /**
- * Change event emitted on selection changes.
- */
-StepperSelectionEvent = /** @class */ (function () {
-    function StepperSelectionEvent() {
-    }
-    return StepperSelectionEvent;
-}());
-/**
- * Enum to represent the different states of the steps.
- * @type {?}
- */
-var STEP_STATE = {
-    NUMBER: 'number',
-    EDIT: 'edit',
-    DONE: 'done',
-    ERROR: 'error'
+    transformPanel: Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"])('transformPanel', [
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["state"])('void', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+            transform: 'scaleY(0.8)',
+            minWidth: '100%',
+            opacity: 0
+        })),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["state"])('showing', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+            opacity: 1,
+            minWidth: 'calc(100% + 32px)',
+            // 32px = 2 * 16px padding
+            transform: 'scaleY(1)'
+        })),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["state"])('showing-multiple', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+            opacity: 1,
+            minWidth: 'calc(100% + 64px)',
+            // 64px = 48px padding on the left + 16px padding on the right
+            transform: 'scaleY(1)'
+        })),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('void => *', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('120ms cubic-bezier(0, 0, 0.2, 1)')),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('* => void', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('100ms 25ms linear', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 0 })))
+    ]),
+    /**
+     * This animation fades in the background color and text content of the
+     * select's options. It is time delayed to occur 100ms after the overlay
+     * panel has transformed in.
+     * @deprecated Not used anymore. To be removed.
+     * \@breaking-change 8.0.0
+     */
+    fadeInContent: Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"])('fadeInContent', [
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["state"])('showing', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 1 })),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('void => showing', [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 0 }),
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('150ms 100ms cubic-bezier(0.55, 0, 0.55, 0.2)')
+        ])
+    ])
 };
 /**
- * InjectionToken that can be used to specify the global stepper options.
- * @type {?}
- */
-var STEPPER_GLOBAL_OPTIONS = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('STEPPER_GLOBAL_OPTIONS');
-/**
- * InjectionToken that can be used to specify the global stepper options.
- * @deprecated Use `STEPPER_GLOBAL_OPTIONS` instead.
- * \@breaking-change 8.0.0.
- * @type {?}
- */
-var MAT_STEPPER_GLOBAL_OPTIONS = STEPPER_GLOBAL_OPTIONS;
-var CdkStep = /** @class */ (function () {
-    /** @breaking-change 8.0.0 remove the `?` after `stepperOptions` */
-    function CdkStep(_stepper, stepperOptions) {
-        this._stepper = _stepper;
-        /**
-         * Whether user has seen the expanded step content or not.
-         */
-        this.interacted = false;
-        this._editable = true;
-        this._optional = false;
-        this._customCompleted = null;
-        this._customError = null;
-        this._stepperOptions = stepperOptions ? stepperOptions : {};
-        this._displayDefaultIndicatorType = this._stepperOptions.displayDefaultIndicatorType !== false;
-        this._showError = !!this._stepperOptions.showError;
-    }
-    Object.defineProperty(CdkStep.prototype, "editable", {
-        /** Whether the user can return to this step once it has been marked as completed. */
-        get: /**
-         * Whether the user can return to this step once it has been marked as completed.
-         * @return {?}
-         */
-        function () { return this._editable; },
-        set: /**
-         * @param {?} value
-         * @return {?}
-         */
-        function (value) {
-            this._editable = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_3__["coerceBooleanProperty"])(value);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(CdkStep.prototype, "optional", {
-        /** Whether the completion of step is optional. */
-        get: /**
-         * Whether the completion of step is optional.
-         * @return {?}
-         */
-        function () { return this._optional; },
-        set: /**
-         * @param {?} value
-         * @return {?}
-         */
-        function (value) {
-            this._optional = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_3__["coerceBooleanProperty"])(value);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(CdkStep.prototype, "completed", {
-        /** Whether step is marked as completed. */
-        get: /**
-         * Whether step is marked as completed.
-         * @return {?}
-         */
-        function () {
-            return this._customCompleted == null ? this._getDefaultCompleted() : this._customCompleted;
-        },
-        set: /**
-         * @param {?} value
-         * @return {?}
-         */
-        function (value) {
-            this._customCompleted = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_3__["coerceBooleanProperty"])(value);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    /**
-     * @private
-     * @return {?}
-     */
-    CdkStep.prototype._getDefaultCompleted = /**
-     * @private
-     * @return {?}
-     */
-    function () {
-        return this.stepControl ? this.stepControl.valid && this.interacted : this.interacted;
-    };
-    Object.defineProperty(CdkStep.prototype, "hasError", {
-        /** Whether step has an error. */
-        get: /**
-         * Whether step has an error.
-         * @return {?}
-         */
-        function () {
-            return this._customError == null ? this._getDefaultError() : this._customError;
-        },
-        set: /**
-         * @param {?} value
-         * @return {?}
-         */
-        function (value) {
-            this._customError = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_3__["coerceBooleanProperty"])(value);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    /**
-     * @private
-     * @return {?}
-     */
-    CdkStep.prototype._getDefaultError = /**
-     * @private
-     * @return {?}
-     */
-    function () {
-        return this.stepControl && this.stepControl.invalid && this.interacted;
-    };
-    /** Selects this step component. */
-    /**
-     * Selects this step component.
-     * @return {?}
-     */
-    CdkStep.prototype.select = /**
-     * Selects this step component.
-     * @return {?}
-     */
-    function () {
-        this._stepper.selected = this;
-    };
-    /** Resets the step to its initial state. Note that this includes resetting form data. */
-    /**
-     * Resets the step to its initial state. Note that this includes resetting form data.
-     * @return {?}
-     */
-    CdkStep.prototype.reset = /**
-     * Resets the step to its initial state. Note that this includes resetting form data.
-     * @return {?}
-     */
-    function () {
-        this.interacted = false;
-        if (this._customCompleted != null) {
-            this._customCompleted = false;
-        }
-        if (this._customError != null) {
-            this._customError = false;
-        }
-        if (this.stepControl) {
-            this.stepControl.reset();
-        }
-    };
-    /**
-     * @return {?}
-     */
-    CdkStep.prototype.ngOnChanges = /**
-     * @return {?}
-     */
-    function () {
-        // Since basically all inputs of the MatStep get proxied through the view down to the
-        // underlying MatStepHeader, we have to make sure that change detection runs correctly.
-        this._stepper._stateChanged();
-    };
-    CdkStep.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{selector: 'cdk-step',
-                    exportAs: 'cdkStep',
-                    template: '<ng-template><ng-content></ng-content></ng-template>',
-                    encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewEncapsulation"].None,
-                    changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectionStrategy"].OnPush,
-                },] },
-    ];
-    /** @nocollapse */
-    CdkStep.ctorParameters = function () { return [
-        { type: CdkStepper, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: [Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(function () { return CdkStepper; }),] }] },
-        { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: [STEPPER_GLOBAL_OPTIONS,] }] }
-    ]; };
-    CdkStep.propDecorators = {
-        stepLabel: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ContentChild"], args: [CdkStepLabel,] }],
-        content: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"], args: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["TemplateRef"],] }],
-        stepControl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        label: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        errorMessage: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        ariaLabel: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"], args: ['aria-label',] }],
-        ariaLabelledby: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"], args: ['aria-labelledby',] }],
-        state: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        editable: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        optional: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        completed: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        hasError: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
-    };
-    return CdkStep;
-}());
-var CdkStepper = /** @class */ (function () {
-    function CdkStepper(_dir, _changeDetectorRef, _elementRef, _document) {
-        this._dir = _dir;
-        this._changeDetectorRef = _changeDetectorRef;
-        this._elementRef = _elementRef;
-        /**
-         * Emits when the component is destroyed.
-         */
-        this._destroyed = new rxjs__WEBPACK_IMPORTED_MODULE_6__["Subject"]();
-        this._linear = false;
-        this._selectedIndex = 0;
-        /**
-         * Event emitted when the selected step has changed.
-         */
-        this.selectionChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        this._orientation = 'horizontal';
-        this._groupId = nextId++;
-        this._document = _document;
-    }
-    Object.defineProperty(CdkStepper.prototype, "steps", {
-        /** The list of step components that the stepper is holding. */
-        get: /**
-         * The list of step components that the stepper is holding.
-         * @return {?}
-         */
-        function () {
-            return this._steps;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(CdkStepper.prototype, "linear", {
-        /** Whether the validity of previous steps should be checked or not. */
-        get: /**
-         * Whether the validity of previous steps should be checked or not.
-         * @return {?}
-         */
-        function () { return this._linear; },
-        set: /**
-         * @param {?} value
-         * @return {?}
-         */
-        function (value) { this._linear = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_3__["coerceBooleanProperty"])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(CdkStepper.prototype, "selectedIndex", {
-        /** The index of the selected step. */
-        get: /**
-         * The index of the selected step.
-         * @return {?}
-         */
-        function () { return this._selectedIndex; },
-        set: /**
-         * @param {?} index
-         * @return {?}
-         */
-        function (index) {
-            /** @type {?} */
-            var newIndex = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_3__["coerceNumberProperty"])(index);
-            if (this.steps) {
-                // Ensure that the index can't be out of bounds.
-                if (newIndex < 0 || newIndex > this.steps.length - 1) {
-                    throw Error('cdkStepper: Cannot assign out-of-bounds value to `selectedIndex`.');
-                }
-                if (this._selectedIndex != newIndex &&
-                    !this._anyControlsInvalidOrPending(newIndex) &&
-                    (newIndex >= this._selectedIndex || this.steps.toArray()[newIndex].editable)) {
-                    this._updateSelectedItemIndex(index);
-                }
-            }
-            else {
-                this._selectedIndex = newIndex;
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(CdkStepper.prototype, "selected", {
-        /** The step that is selected. */
-        get: /**
-         * The step that is selected.
-         * @return {?}
-         */
-        function () {
-            // @breaking-change 8.0.0 Change return type to `CdkStep | undefined`.
-            return this.steps ? this.steps.toArray()[this.selectedIndex] : (/** @type {?} */ (undefined));
-        },
-        set: /**
-         * @param {?} step
-         * @return {?}
-         */
-        function (step) {
-            this.selectedIndex = this.steps ? this.steps.toArray().indexOf(step) : -1;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    /**
-     * @return {?}
-     */
-    CdkStepper.prototype.ngAfterViewInit = /**
-     * @return {?}
-     */
-    function () {
-        var _this = this;
-        // Note that while the step headers are content children by default, any components that
-        // extend this one might have them as view chidren. We initialize the keyboard handling in
-        // AfterViewInit so we're guaranteed for both view and content children to be defined.
-        this._keyManager = new _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_1__["FocusKeyManager"](this._stepHeader)
-            .withWrap()
-            .withVerticalOrientation(this._orientation === 'vertical');
-        (this._dir ? (/** @type {?} */ (this._dir.change)) : Object(rxjs__WEBPACK_IMPORTED_MODULE_6__["of"])())
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["startWith"])(this._layoutDirection()), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["takeUntil"])(this._destroyed))
-            .subscribe(function (direction) { return _this._keyManager.withHorizontalOrientation(direction); });
-        this._keyManager.updateActiveItemIndex(this._selectedIndex);
-        this.steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["takeUntil"])(this._destroyed)).subscribe(function () {
-            if (!_this.selected) {
-                _this._selectedIndex = Math.max(_this._selectedIndex - 1, 0);
-            }
-        });
-    };
-    /**
-     * @return {?}
-     */
-    CdkStepper.prototype.ngOnDestroy = /**
-     * @return {?}
-     */
-    function () {
-        this._destroyed.next();
-        this._destroyed.complete();
-    };
-    /** Selects and focuses the next step in list. */
-    /**
-     * Selects and focuses the next step in list.
-     * @return {?}
-     */
-    CdkStepper.prototype.next = /**
-     * Selects and focuses the next step in list.
-     * @return {?}
-     */
-    function () {
-        this.selectedIndex = Math.min(this._selectedIndex + 1, this.steps.length - 1);
-    };
-    /** Selects and focuses the previous step in list. */
-    /**
-     * Selects and focuses the previous step in list.
-     * @return {?}
-     */
-    CdkStepper.prototype.previous = /**
-     * Selects and focuses the previous step in list.
-     * @return {?}
-     */
-    function () {
-        this.selectedIndex = Math.max(this._selectedIndex - 1, 0);
-    };
-    /** Resets the stepper to its initial state. Note that this includes clearing form data. */
-    /**
-     * Resets the stepper to its initial state. Note that this includes clearing form data.
-     * @return {?}
-     */
-    CdkStepper.prototype.reset = /**
-     * Resets the stepper to its initial state. Note that this includes clearing form data.
-     * @return {?}
-     */
-    function () {
-        this._updateSelectedItemIndex(0);
-        this.steps.forEach(function (step) { return step.reset(); });
-        this._stateChanged();
-    };
-    /** Returns a unique id for each step label element. */
-    /**
-     * Returns a unique id for each step label element.
-     * @param {?} i
-     * @return {?}
-     */
-    CdkStepper.prototype._getStepLabelId = /**
-     * Returns a unique id for each step label element.
-     * @param {?} i
-     * @return {?}
-     */
-    function (i) {
-        return "cdk-step-label-" + this._groupId + "-" + i;
-    };
-    /** Returns unique id for each step content element. */
-    /**
-     * Returns unique id for each step content element.
-     * @param {?} i
-     * @return {?}
-     */
-    CdkStepper.prototype._getStepContentId = /**
-     * Returns unique id for each step content element.
-     * @param {?} i
-     * @return {?}
-     */
-    function (i) {
-        return "cdk-step-content-" + this._groupId + "-" + i;
-    };
-    /** Marks the component to be change detected. */
-    /**
-     * Marks the component to be change detected.
-     * @return {?}
-     */
-    CdkStepper.prototype._stateChanged = /**
-     * Marks the component to be change detected.
-     * @return {?}
-     */
-    function () {
-        this._changeDetectorRef.markForCheck();
-    };
-    /** Returns position state of the step with the given index. */
-    /**
-     * Returns position state of the step with the given index.
-     * @param {?} index
-     * @return {?}
-     */
-    CdkStepper.prototype._getAnimationDirection = /**
-     * Returns position state of the step with the given index.
-     * @param {?} index
-     * @return {?}
-     */
-    function (index) {
-        /** @type {?} */
-        var position = index - this._selectedIndex;
-        if (position < 0) {
-            return this._layoutDirection() === 'rtl' ? 'next' : 'previous';
-        }
-        else if (position > 0) {
-            return this._layoutDirection() === 'rtl' ? 'previous' : 'next';
-        }
-        return 'current';
-    };
-    /** Returns the type of icon to be displayed. */
-    /**
-     * Returns the type of icon to be displayed.
-     * @param {?} index
-     * @param {?=} state
-     * @return {?}
-     */
-    CdkStepper.prototype._getIndicatorType = /**
-     * Returns the type of icon to be displayed.
-     * @param {?} index
-     * @param {?=} state
-     * @return {?}
-     */
-    function (index, state) {
-        if (state === void 0) { state = STEP_STATE.NUMBER; }
-        /** @type {?} */
-        var step = this.steps.toArray()[index];
-        /** @type {?} */
-        var isCurrentStep = this._isCurrentStep(index);
-        return step._displayDefaultIndicatorType
-            ? this._getDefaultIndicatorLogic(step, isCurrentStep)
-            : this._getGuidelineLogic(step, isCurrentStep, state);
-    };
-    /**
-     * @private
-     * @param {?} step
-     * @param {?} isCurrentStep
-     * @return {?}
-     */
-    CdkStepper.prototype._getDefaultIndicatorLogic = /**
-     * @private
-     * @param {?} step
-     * @param {?} isCurrentStep
-     * @return {?}
-     */
-    function (step, isCurrentStep) {
-        if (step._showError && step.hasError && !isCurrentStep) {
-            return STEP_STATE.ERROR;
-        }
-        else if (!step.completed || isCurrentStep) {
-            return STEP_STATE.NUMBER;
-        }
-        else {
-            return step.editable ? STEP_STATE.EDIT : STEP_STATE.DONE;
-        }
-    };
-    /**
-     * @private
-     * @param {?} step
-     * @param {?} isCurrentStep
-     * @param {?=} state
-     * @return {?}
-     */
-    CdkStepper.prototype._getGuidelineLogic = /**
-     * @private
-     * @param {?} step
-     * @param {?} isCurrentStep
-     * @param {?=} state
-     * @return {?}
-     */
-    function (step, isCurrentStep, state) {
-        if (state === void 0) { state = STEP_STATE.NUMBER; }
-        if (step._showError && step.hasError && !isCurrentStep) {
-            return STEP_STATE.ERROR;
-        }
-        else if (step.completed && !isCurrentStep) {
-            return STEP_STATE.DONE;
-        }
-        else if (step.completed && isCurrentStep) {
-            return state;
-        }
-        else if (step.editable && isCurrentStep) {
-            return STEP_STATE.EDIT;
-        }
-        else {
-            return state;
-        }
-    };
-    /**
-     * @private
-     * @param {?} index
-     * @return {?}
-     */
-    CdkStepper.prototype._isCurrentStep = /**
-     * @private
-     * @param {?} index
-     * @return {?}
-     */
-    function (index) {
-        return this._selectedIndex === index;
-    };
-    /** Returns the index of the currently-focused step header. */
-    /**
-     * Returns the index of the currently-focused step header.
-     * @return {?}
-     */
-    CdkStepper.prototype._getFocusIndex = /**
-     * Returns the index of the currently-focused step header.
-     * @return {?}
-     */
-    function () {
-        return this._keyManager ? this._keyManager.activeItemIndex : this._selectedIndex;
-    };
-    /**
-     * @private
-     * @param {?} newIndex
-     * @return {?}
-     */
-    CdkStepper.prototype._updateSelectedItemIndex = /**
-     * @private
-     * @param {?} newIndex
-     * @return {?}
-     */
-    function (newIndex) {
-        /** @type {?} */
-        var stepsArray = this.steps.toArray();
-        this.selectionChange.emit({
-            selectedIndex: newIndex,
-            previouslySelectedIndex: this._selectedIndex,
-            selectedStep: stepsArray[newIndex],
-            previouslySelectedStep: stepsArray[this._selectedIndex],
-        });
-        // If focus is inside the stepper, move it to the next header, otherwise it may become
-        // lost when the active step content is hidden. We can't be more granular with the check
-        // (e.g. checking whether focus is inside the active step), because we don't have a
-        // reference to the elements that are rendering out the content.
-        this._containsFocus() ? this._keyManager.setActiveItem(newIndex) :
-            this._keyManager.updateActiveItemIndex(newIndex);
-        this._selectedIndex = newIndex;
-        this._stateChanged();
-    };
-    /**
-     * @param {?} event
-     * @return {?}
-     */
-    CdkStepper.prototype._onKeydown = /**
-     * @param {?} event
-     * @return {?}
-     */
-    function (event) {
-        /** @type {?} */
-        var hasModifier = Object(_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_4__["hasModifierKey"])(event);
-        /** @type {?} */
-        var keyCode = event.keyCode;
-        /** @type {?} */
-        var manager = this._keyManager;
-        if (manager.activeItemIndex != null && !hasModifier &&
-            (keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_4__["SPACE"] || keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_4__["ENTER"])) {
-            this.selectedIndex = manager.activeItemIndex;
-            event.preventDefault();
-        }
-        else if (keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_4__["HOME"]) {
-            manager.setFirstItemActive();
-            event.preventDefault();
-        }
-        else if (keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_4__["END"]) {
-            manager.setLastItemActive();
-            event.preventDefault();
-        }
-        else {
-            manager.onKeydown(event);
-        }
-    };
-    /**
-     * @private
-     * @param {?} index
-     * @return {?}
-     */
-    CdkStepper.prototype._anyControlsInvalidOrPending = /**
-     * @private
-     * @param {?} index
-     * @return {?}
-     */
-    function (index) {
-        /** @type {?} */
-        var steps = this.steps.toArray();
-        steps[this._selectedIndex].interacted = true;
-        if (this._linear && index >= 0) {
-            return steps.slice(0, index).some(function (step) {
-                /** @type {?} */
-                var control = step.stepControl;
-                /** @type {?} */
-                var isIncomplete = control ?
-                    (control.invalid || control.pending || !step.interacted) :
-                    !step.completed;
-                return isIncomplete && !step.optional;
-            });
-        }
-        return false;
-    };
-    /**
-     * @private
-     * @return {?}
-     */
-    CdkStepper.prototype._layoutDirection = /**
-     * @private
-     * @return {?}
-     */
-    function () {
-        return this._dir && this._dir.value === 'rtl' ? 'rtl' : 'ltr';
-    };
-    /** Checks whether the stepper contains the focused element. */
-    /**
-     * Checks whether the stepper contains the focused element.
-     * @private
-     * @return {?}
-     */
-    CdkStepper.prototype._containsFocus = /**
-     * Checks whether the stepper contains the focused element.
-     * @private
-     * @return {?}
-     */
-    function () {
-        if (!this._document || !this._elementRef) {
-            return false;
-        }
-        /** @type {?} */
-        var stepperElement = this._elementRef.nativeElement;
-        /** @type {?} */
-        var focusedElement = this._document.activeElement;
-        return stepperElement === focusedElement || stepperElement.contains(focusedElement);
-    };
-    CdkStepper.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"], args: [{
-                    selector: '[cdkStepper]',
-                    exportAs: 'cdkStepper',
-                },] },
-    ];
-    /** @nocollapse */
-    CdkStepper.ctorParameters = function () { return [
-        { type: _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_2__["Directionality"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"] }] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
-        { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["DOCUMENT"],] }] }
-    ]; };
-    CdkStepper.propDecorators = {
-        _steps: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ContentChildren"], args: [CdkStep,] }],
-        _stepHeader: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ContentChildren"], args: [CdkStepHeader,] }],
-        linear: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        selectedIndex: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        selected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-        selectionChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }]
-    };
-    return CdkStepper;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-/**
- * Button that moves to the next step in a stepper workflow.
- */
-var CdkStepperNext = /** @class */ (function () {
-    function CdkStepperNext(_stepper) {
-        this._stepper = _stepper;
-        /**
-         * Type of the next button. Defaults to "submit" if not specified.
-         */
-        this.type = 'submit';
-    }
-    CdkStepperNext.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"], args: [{
-                    selector: 'button[cdkStepperNext]',
-                    host: {
-                        '(click)': '_stepper.next()',
-                        '[type]': 'type',
-                    }
-                },] },
-    ];
-    /** @nocollapse */
-    CdkStepperNext.ctorParameters = function () { return [
-        { type: CdkStepper }
-    ]; };
-    CdkStepperNext.propDecorators = {
-        type: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
-    };
-    return CdkStepperNext;
-}());
-/**
- * Button that moves to the previous step in a stepper workflow.
- */
-var CdkStepperPrevious = /** @class */ (function () {
-    function CdkStepperPrevious(_stepper) {
-        this._stepper = _stepper;
-        /**
-         * Type of the previous button. Defaults to "button" if not specified.
-         */
-        this.type = 'button';
-    }
-    CdkStepperPrevious.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"], args: [{
-                    selector: 'button[cdkStepperPrevious]',
-                    host: {
-                        '(click)': '_stepper.previous()',
-                        '[type]': 'type',
-                    }
-                },] },
-    ];
-    /** @nocollapse */
-    CdkStepperPrevious.ctorParameters = function () { return [
-        { type: CdkStepper }
-    ]; };
-    CdkStepperPrevious.propDecorators = {
-        type: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
-    };
-    return CdkStepperPrevious;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var CdkStepperModule = /** @class */ (function () {
-    function CdkStepperModule() {
-    }
-    CdkStepperModule.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"], args: [{
-                    imports: [_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_2__["BidiModule"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["CommonModule"]],
-                    exports: [
-                        CdkStep,
-                        CdkStepper,
-                        CdkStepHeader,
-                        CdkStepLabel,
-                        CdkStepperNext,
-                        CdkStepperPrevious,
-                    ],
-                    declarations: [
-                        CdkStep,
-                        CdkStepper,
-                        CdkStepHeader,
-                        CdkStepLabel,
-                        CdkStepperNext,
-                        CdkStepperPrevious,
-                    ]
-                },] },
-    ];
-    return CdkStepperModule;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-
-
-//# sourceMappingURL=stepper.es5.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@angular/material/esm5/stepper.es5.js":
-/*!************************************************************!*\
-  !*** ./node_modules/@angular/material/esm5/stepper.es5.js ***!
-  \************************************************************/
-/*! exports provided: MatStepperModule, MatStepLabel, MatStep, MatStepper, MatHorizontalStepper, MatVerticalStepper, MatStepperNext, MatStepperPrevious, MatStepHeader, MAT_STEPPER_INTL_PROVIDER_FACTORY, MatStepperIntl, MAT_STEPPER_INTL_PROVIDER, matStepperAnimations, MatStepperIcon */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatStepperModule", function() { return MatStepperModule; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatStepLabel", function() { return MatStepLabel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatStep", function() { return MatStep; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatStepper", function() { return MatStepper; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatHorizontalStepper", function() { return MatHorizontalStepper; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatVerticalStepper", function() { return MatVerticalStepper; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatStepperNext", function() { return MatStepperNext; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatStepperPrevious", function() { return MatStepperPrevious; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatStepHeader", function() { return MatStepHeader; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MAT_STEPPER_INTL_PROVIDER_FACTORY", function() { return MAT_STEPPER_INTL_PROVIDER_FACTORY; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatStepperIntl", function() { return MatStepperIntl; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MAT_STEPPER_INTL_PROVIDER", function() { return MAT_STEPPER_INTL_PROVIDER; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "matStepperAnimations", function() { return matStepperAnimations; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatStepperIcon", function() { return MatStepperIcon; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/stepper */ "./node_modules/@angular/cdk/esm5/stepper.es5.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/a11y */ "./node_modules/@angular/cdk/esm5/a11y.es5.js");
-/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
-/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/bidi */ "./node_modules/@angular/cdk/esm5/bidi.es5.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/core */ "./node_modules/@angular/material/esm5/core.es5.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/cdk/portal */ "./node_modules/@angular/cdk/esm5/portal.es5.js");
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/esm5/icon.es5.js");
-/**
- * @license
- * Copyright Google LLC All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var MatStepLabel = /** @class */ (function (_super) {
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(MatStepLabel, _super);
-    function MatStepLabel() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    MatStepLabel.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"], args: [{
-                    selector: '[matStepLabel]',
-                },] },
-    ];
-    return MatStepLabel;
-}(_angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_2__["CdkStepLabel"]));
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-/**
- * Stepper data that is required for internationalization.
- */
-var MatStepperIntl = /** @class */ (function () {
-    function MatStepperIntl() {
-        /**
-         * Stream that emits whenever the labels here are changed. Use this to notify
-         * components if the labels have changed after initialization.
-         */
-        this.changes = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
-        /**
-         * Label that is rendered below optional steps.
-         */
-        this.optionalLabel = 'Optional';
-    }
-    MatStepperIntl.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"], args: [{ providedIn: 'root' },] },
-    ];
-    /** @nocollapse */ MatStepperIntl.ngInjectableDef = Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["defineInjectable"])({ factory: function MatStepperIntl_Factory() { return new MatStepperIntl(); }, token: MatStepperIntl, providedIn: "root" });
-    return MatStepperIntl;
-}());
-/**
+ * @deprecated
+ * \@breaking-change 8.0.0
  * \@docs-private
- * @param {?} parentIntl
+ * @type {?}
+ */
+var transformPanel = matSelectAnimations.transformPanel;
+/**
+ * @deprecated
+ * \@breaking-change 8.0.0
+ * \@docs-private
+ * @type {?}
+ */
+var fadeInContent = matSelectAnimations.fadeInContent;
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * Returns an exception to be thrown when attempting to change a select's `multiple` option
+ * after initialization.
+ * \@docs-private
  * @return {?}
  */
-function MAT_STEPPER_INTL_PROVIDER_FACTORY(parentIntl) {
-    return parentIntl || new MatStepperIntl();
+function getMatSelectDynamicMultipleError() {
+    return Error('Cannot change `multiple` mode of select after initialization.');
+}
+/**
+ * Returns an exception to be thrown when attempting to assign a non-array value to a select
+ * in `multiple` mode. Note that `undefined` and `null` are still valid values to allow for
+ * resetting the value.
+ * \@docs-private
+ * @return {?}
+ */
+function getMatSelectNonArrayValueError() {
+    return Error('Value must be an array in multiple-selection mode.');
+}
+/**
+ * Returns an exception to be thrown when assigning a non-function value to the comparator
+ * used to determine if a value corresponds to an option. Note that whether the function
+ * actually takes two values and returns a boolean is not checked.
+ * @return {?}
+ */
+function getMatSelectNonFunctionValueError() {
+    return Error('`compareWith` must be a function.');
+}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/** @type {?} */
+var nextUniqueId = 0;
+/**
+ * The max height of the select's overlay panel
+ * @type {?}
+ */
+var SELECT_PANEL_MAX_HEIGHT = 256;
+/**
+ * The panel's padding on the x-axis
+ * @type {?}
+ */
+var SELECT_PANEL_PADDING_X = 16;
+/**
+ * The panel's x axis padding if it is indented (e.g. there is an option group).
+ * @type {?}
+ */
+var SELECT_PANEL_INDENT_PADDING_X = SELECT_PANEL_PADDING_X * 2;
+/**
+ * The height of the select items in `em` units.
+ * @type {?}
+ */
+var SELECT_ITEM_HEIGHT_EM = 3;
+// TODO(josephperrott): Revert to a constant after 2018 spec updates are fully merged.
+/**
+ * Distance between the panel edge and the option text in
+ * multi-selection mode.
+ *
+ * Calculated as:
+ * (SELECT_PANEL_PADDING_X * 1.5) + 20 = 44
+ * The padding is multiplied by 1.5 because the checkbox's margin is half the padding.
+ * The checkbox width is 16px.
+ * @type {?}
+ */
+var SELECT_MULTIPLE_PANEL_PADDING_X = 0;
+/**
+ * The select panel will only "fit" inside the viewport if it is positioned at
+ * this value or more away from the viewport boundary.
+ * @type {?}
+ */
+var SELECT_PANEL_VIEWPORT_PADDING = 8;
+/**
+ * Injection token that determines the scroll handling while a select is open.
+ * @type {?}
+ */
+var MAT_SELECT_SCROLL_STRATEGY = new _angular_core__WEBPACK_IMPORTED_MODULE_9__["InjectionToken"]('mat-select-scroll-strategy');
+/**
+ * \@docs-private
+ * @param {?} overlay
+ * @return {?}
+ */
+function MAT_SELECT_SCROLL_STRATEGY_PROVIDER_FACTORY(overlay) {
+    return function () { return overlay.scrollStrategies.reposition(); };
 }
 /**
  * \@docs-private
  * @type {?}
  */
-var MAT_STEPPER_INTL_PROVIDER = {
-    provide: MatStepperIntl,
-    deps: [[new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Optional"](), new _angular_core__WEBPACK_IMPORTED_MODULE_1__["SkipSelf"](), MatStepperIntl]],
-    useFactory: MAT_STEPPER_INTL_PROVIDER_FACTORY
+var MAT_SELECT_SCROLL_STRATEGY_PROVIDER = {
+    provide: MAT_SELECT_SCROLL_STRATEGY,
+    deps: [_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_7__["Overlay"]],
+    useFactory: MAT_SELECT_SCROLL_STRATEGY_PROVIDER_FACTORY,
 };
-
 /**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Change event object that is emitted when the select value has changed.
  */
-var MatStepHeader = /** @class */ (function (_super) {
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(MatStepHeader, _super);
-    function MatStepHeader(_intl, _focusMonitor, _elementRef, changeDetectorRef) {
-        var _this = _super.call(this, _elementRef) || this;
-        _this._intl = _intl;
-        _this._focusMonitor = _focusMonitor;
-        _focusMonitor.monitor(_elementRef, true);
-        _this._intlSubscription = _intl.changes.subscribe(function () { return changeDetectorRef.markForCheck(); });
-        return _this;
+var  /**
+ * Change event object that is emitted when the select value has changed.
+ */
+MatSelectChange = /** @class */ (function () {
+    function MatSelectChange(source, value) {
+        this.source = source;
+        this.value = value;
     }
-    /**
-     * @return {?}
-     */
-    MatStepHeader.prototype.ngOnDestroy = /**
-     * @return {?}
-     */
-    function () {
-        this._intlSubscription.unsubscribe();
-        this._focusMonitor.stopMonitoring(this._elementRef);
-    };
-    /** Returns string label of given step if it is a text label. */
-    /**
-     * Returns string label of given step if it is a text label.
-     * @return {?}
-     */
-    MatStepHeader.prototype._stringLabel = /**
-     * Returns string label of given step if it is a text label.
-     * @return {?}
-     */
-    function () {
-        return this.label instanceof MatStepLabel ? null : this.label;
-    };
-    /** Returns MatStepLabel if the label of given step is a template label. */
-    /**
-     * Returns MatStepLabel if the label of given step is a template label.
-     * @return {?}
-     */
-    MatStepHeader.prototype._templateLabel = /**
-     * Returns MatStepLabel if the label of given step is a template label.
-     * @return {?}
-     */
-    function () {
-        return this.label instanceof MatStepLabel ? this.label : null;
-    };
-    /** Returns the host HTML element. */
-    /**
-     * Returns the host HTML element.
-     * @return {?}
-     */
-    MatStepHeader.prototype._getHostElement = /**
-     * Returns the host HTML element.
-     * @return {?}
-     */
-    function () {
-        return this._elementRef.nativeElement;
-    };
-    /** Template context variables that are exposed to the `matStepperIcon` instances. */
-    /**
-     * Template context variables that are exposed to the `matStepperIcon` instances.
-     * @return {?}
-     */
-    MatStepHeader.prototype._getIconContext = /**
-     * Template context variables that are exposed to the `matStepperIcon` instances.
-     * @return {?}
-     */
-    function () {
-        return {
-            index: this.index,
-            active: this.active,
-            optional: this.optional
-        };
-    };
-    /**
-     * @param {?} state
-     * @return {?}
-     */
-    MatStepHeader.prototype._getDefaultTextForState = /**
-     * @param {?} state
-     * @return {?}
-     */
-    function (state$$1) {
-        if (state$$1 == 'number') {
-            return "" + (this.index + 1);
-        }
-        if (state$$1 == 'edit') {
-            return 'create';
-        }
-        if (state$$1 == 'error') {
-            return 'warning';
-        }
-        return state$$1;
-    };
-    MatStepHeader.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"], args: [{selector: 'mat-step-header',
-                    template: "<div class=\"mat-step-header-ripple\" mat-ripple [matRippleTrigger]=\"_getHostElement()\"></div><div class=\"mat-step-icon-state-{{state}} mat-step-icon\" [class.mat-step-icon-selected]=\"selected\"><div class=\"mat-step-icon-content\" [ngSwitch]=\"!!(iconOverrides && iconOverrides[state])\"><ng-container *ngSwitchCase=\"true\" [ngTemplateOutlet]=\"iconOverrides[state]\" [ngTemplateOutletContext]=\"_getIconContext()\"></ng-container><ng-container *ngSwitchDefault [ngSwitch]=\"state\"><span *ngSwitchCase=\"'number'\">{{_getDefaultTextForState(state)}}</span><mat-icon *ngSwitchDefault>{{_getDefaultTextForState(state)}}</mat-icon></ng-container></div></div><div class=\"mat-step-label\" [class.mat-step-label-active]=\"active\" [class.mat-step-label-selected]=\"selected\" [class.mat-step-label-error]=\"state == 'error'\"><ng-container *ngIf=\"_templateLabel()\" [ngTemplateOutlet]=\"_templateLabel()!.template\"></ng-container><div class=\"mat-step-text-label\" *ngIf=\"_stringLabel()\">{{label}}</div><div class=\"mat-step-optional\" *ngIf=\"optional && state != 'error'\">{{_intl.optionalLabel}}</div><div class=\"mat-step-sub-label-error\" *ngIf=\"state == 'error'\">{{errorMessage}}</div></div>",
-                    styles: [".mat-step-header{overflow:hidden;outline:0;cursor:pointer;position:relative;box-sizing:content-box;-webkit-tap-highlight-color:transparent}.mat-step-optional,.mat-step-sub-label-error{font-size:12px}.mat-step-icon{border-radius:50%;height:24px;width:24px;flex-shrink:0;position:relative}.mat-step-icon .mat-icon,.mat-step-icon-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}.mat-step-icon .mat-icon{font-size:16px;height:16px;width:16px}.mat-step-icon-state-error .mat-icon{font-size:24px;height:24px;width:24px}.mat-step-label{display:inline-block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:50px;vertical-align:middle}.mat-step-text-label{text-overflow:ellipsis;overflow:hidden}.mat-step-header .mat-step-header-ripple{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none}"],
-                    host: {
-                        'class': 'mat-step-header',
-                        'role': 'tab',
-                    },
-                    encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
-                    changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectionStrategy"].OnPush,
-                },] },
-    ];
-    /** @nocollapse */
-    MatStepHeader.ctorParameters = function () { return [
-        { type: MatStepperIntl },
-        { type: _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_4__["FocusMonitor"] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"] }
-    ]; };
-    MatStepHeader.propDecorators = {
-        state: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
-        label: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
-        errorMessage: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
-        iconOverrides: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
-        index: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
-        selected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
-        active: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
-        optional: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }]
-    };
-    return MatStepHeader;
-}(_angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_2__["CdkStepHeader"]));
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-/**
- * Animations used by the Material steppers.
- * \@docs-private
- * @type {?}
- */
-var matStepperAnimations = {
-    /**
-     * Animation that transitions the step along the X axis in a horizontal stepper.
-     */
-    horizontalStepTransition: Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["trigger"])('stepTransition', [
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["state"])('previous', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ transform: 'translate3d(-100%, 0, 0)', visibility: 'hidden' })),
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["state"])('current', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ transform: 'none', visibility: 'visible' })),
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["state"])('next', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ transform: 'translate3d(100%, 0, 0)', visibility: 'hidden' })),
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["transition"])('* => *', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["animate"])('500ms cubic-bezier(0.35, 0, 0.25, 1)'))
-    ]),
-    /**
-     * Animation that transitions the step along the Y axis in a vertical stepper.
-     */
-    verticalStepTransition: Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["trigger"])('stepTransition', [
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["state"])('previous', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ height: '0px', visibility: 'hidden' })),
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["state"])('next', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ height: '0px', visibility: 'hidden' })),
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["state"])('current', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ height: '*', visibility: 'visible' })),
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["transition"])('* <=> current', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["animate"])('225ms cubic-bezier(0.4, 0.0, 0.2, 1)'))
-    ])
-};
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-/**
- * Template to be used to override the icons inside the step header.
- */
-var MatStepperIcon = /** @class */ (function () {
-    function MatStepperIcon(templateRef) {
-        this.templateRef = templateRef;
-    }
-    MatStepperIcon.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"], args: [{
-                    selector: 'ng-template[matStepperIcon]',
-                },] },
-    ];
-    /** @nocollapse */
-    MatStepperIcon.ctorParameters = function () { return [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"] }
-    ]; };
-    MatStepperIcon.propDecorators = {
-        name: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"], args: ['matStepperIcon',] }]
-    };
-    return MatStepperIcon;
+    return MatSelectChange;
 }());
-
+// Boilerplate for applying mixins to MatSelect.
 /**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * \@docs-private
  */
-var MatStep = /** @class */ (function (_super) {
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(MatStep, _super);
-    /** @breaking-change 8.0.0 remove the `?` after `stepperOptions` */
-    function MatStep(stepper, _errorStateMatcher, stepperOptions) {
-        var _this = _super.call(this, stepper, stepperOptions) || this;
-        _this._errorStateMatcher = _errorStateMatcher;
-        return _this;
+var  
+// Boilerplate for applying mixins to MatSelect.
+/**
+ * \@docs-private
+ */
+MatSelectBase = /** @class */ (function () {
+    function MatSelectBase(_elementRef, _defaultErrorStateMatcher, _parentForm, _parentFormGroup, ngControl) {
+        this._elementRef = _elementRef;
+        this._defaultErrorStateMatcher = _defaultErrorStateMatcher;
+        this._parentForm = _parentForm;
+        this._parentFormGroup = _parentFormGroup;
+        this.ngControl = ngControl;
     }
-    /** Custom error state matcher that additionally checks for validity of interacted form. */
-    /**
-     * Custom error state matcher that additionally checks for validity of interacted form.
-     * @param {?} control
-     * @param {?} form
-     * @return {?}
-     */
-    MatStep.prototype.isErrorState = /**
-     * Custom error state matcher that additionally checks for validity of interacted form.
-     * @param {?} control
-     * @param {?} form
-     * @return {?}
-     */
-    function (control, form) {
-        /** @type {?} */
-        var originalErrorState = this._errorStateMatcher.isErrorState(control, form);
-        // Custom error state checks for the validity of form that is not submitted or touched
-        // since user can trigger a form change by calling for another step without directly
-        // interacting with the current form.
-        /** @type {?} */
-        var customErrorState = !!(control && control.invalid && this.interacted);
-        return originalErrorState || customErrorState;
-    };
-    MatStep.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"], args: [{selector: 'mat-step',
-                    template: "<ng-template><ng-content></ng-content></ng-template>",
-                    providers: [{ provide: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["ErrorStateMatcher"], useExisting: MatStep }],
-                    encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
-                    exportAs: 'matStep',
-                    changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectionStrategy"].OnPush,
+    return MatSelectBase;
+}());
+/** @type {?} */
+var _MatSelectMixinBase = Object(_angular_material_core__WEBPACK_IMPORTED_MODULE_11__["mixinDisableRipple"])(Object(_angular_material_core__WEBPACK_IMPORTED_MODULE_11__["mixinTabIndex"])(Object(_angular_material_core__WEBPACK_IMPORTED_MODULE_11__["mixinDisabled"])(Object(_angular_material_core__WEBPACK_IMPORTED_MODULE_11__["mixinErrorState"])(MatSelectBase))));
+/**
+ * Allows the user to customize the trigger that is displayed when the select has a value.
+ */
+var MatSelectTrigger = /** @class */ (function () {
+    function MatSelectTrigger() {
+    }
+    MatSelectTrigger.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Directive"], args: [{
+                    selector: 'mat-select-trigger'
                 },] },
     ];
-    /** @nocollapse */
-    MatStep.ctorParameters = function () { return [
-        { type: MatStepper, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(function () { return MatStepper; }),] }] },
-        { type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["ErrorStateMatcher"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["SkipSelf"] }] },
-        { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Optional"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_2__["STEPPER_GLOBAL_OPTIONS"],] }] }
-    ]; };
-    MatStep.propDecorators = {
-        stepLabel: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ContentChild"], args: [MatStepLabel,] }]
-    };
-    return MatStep;
-}(_angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_2__["CdkStep"]));
-var MatStepper = /** @class */ (function (_super) {
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(MatStepper, _super);
-    function MatStepper() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
+    return MatSelectTrigger;
+}());
+var MatSelect = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(MatSelect, _super);
+    function MatSelect(_viewportRuler, _changeDetectorRef, _ngZone, _defaultErrorStateMatcher, elementRef, _dir, _parentForm, _parentFormGroup, _parentFormField, ngControl, tabIndex, scrollStrategyFactory, _liveAnnouncer) {
+        var _this = _super.call(this, elementRef, _defaultErrorStateMatcher, _parentForm, _parentFormGroup, ngControl) || this;
+        _this._viewportRuler = _viewportRuler;
+        _this._changeDetectorRef = _changeDetectorRef;
+        _this._ngZone = _ngZone;
+        _this._dir = _dir;
+        _this._parentFormField = _parentFormField;
+        _this.ngControl = ngControl;
+        _this._liveAnnouncer = _liveAnnouncer;
         /**
-         * Event emitted when the current step is done transitioning in.
+         * Whether or not the overlay panel is open.
          */
-        _this.animationDone = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        _this._panelOpen = false;
         /**
-         * Consumer-specified template-refs to be used to override the header icons.
+         * Whether filling out the select is required in the form.
          */
-        _this._iconOverrides = {};
+        _this._required = false;
         /**
-         * Stream of animation `done` events when the body expands/collapses.
+         * The scroll position of the overlay panel, calculated to center the selected option.
          */
-        _this._animationDone = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
+        _this._scrollTop = 0;
+        /**
+         * Whether the component is in multiple selection mode.
+         */
+        _this._multiple = false;
+        /**
+         * Comparison function to specify which option is displayed. Defaults to object equality.
+         */
+        _this._compareWith = function (o1, o2) { return o1 === o2; };
+        /**
+         * Unique id for this input.
+         */
+        _this._uid = "mat-select-" + nextUniqueId++;
+        /**
+         * Emits whenever the component is destroyed.
+         */
+        _this._destroy = new rxjs__WEBPACK_IMPORTED_MODULE_13__["Subject"]();
+        /**
+         * The cached font-size of the trigger element.
+         */
+        _this._triggerFontSize = 0;
+        /**
+         * `View -> model callback called when value changes`
+         */
+        _this._onChange = function () { };
+        /**
+         * `View -> model callback called when select has been touched`
+         */
+        _this._onTouched = function () { };
+        /**
+         * The IDs of child options to be passed to the aria-owns attribute.
+         */
+        _this._optionIds = '';
+        /**
+         * The value of the select panel's transform-origin property.
+         */
+        _this._transformOrigin = 'top';
+        /**
+         * Emits when the panel element is finished transforming in.
+         */
+        _this._panelDoneAnimatingStream = new rxjs__WEBPACK_IMPORTED_MODULE_13__["Subject"]();
+        /**
+         * The y-offset of the overlay panel in relation to the trigger's top start corner.
+         * This must be adjusted to align the selected option text over the trigger text.
+         * when the panel opens. Will change based on the y-position of the selected option.
+         */
+        _this._offsetY = 0;
+        /**
+         * This position config ensures that the top "start" corner of the overlay
+         * is aligned with with the top "start" of the origin by default (overlapping
+         * the trigger completely). If the panel cannot fit below the trigger, it
+         * will fall back to a position above the trigger.
+         */
+        _this._positions = [
+            {
+                originX: 'start',
+                originY: 'top',
+                overlayX: 'start',
+                overlayY: 'top',
+            },
+            {
+                originX: 'start',
+                originY: 'bottom',
+                overlayX: 'start',
+                overlayY: 'bottom',
+            },
+        ];
+        /**
+         * Whether the component is disabling centering of the active option over the trigger.
+         */
+        _this._disableOptionCentering = false;
+        _this._focused = false;
+        /**
+         * A name for this control that can be used by `mat-form-field`.
+         */
+        _this.controlType = 'mat-select';
+        /**
+         * Aria label of the select. If not specified, the placeholder will be used as label.
+         */
+        _this.ariaLabel = '';
+        /**
+         * Combined stream of all of the child options' change events.
+         */
+        _this.optionSelectionChanges = Object(rxjs__WEBPACK_IMPORTED_MODULE_13__["defer"])(function () {
+            if (_this.options) {
+                return rxjs__WEBPACK_IMPORTED_MODULE_13__["merge"].apply(void 0, _this.options.map(function (option) { return option.onSelectionChange; }));
+            }
+            return _this._ngZone.onStable
+                .asObservable()
+                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_14__["take"])(1), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_14__["switchMap"])(function () { return _this.optionSelectionChanges; }));
+        });
+        /**
+         * Event emitted when the select panel has been toggled.
+         */
+        _this.openedChange = new _angular_core__WEBPACK_IMPORTED_MODULE_9__["EventEmitter"]();
+        /**
+         * Event emitted when the select has been opened.
+         */
+        _this._openedStream = _this.openedChange.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_14__["filter"])(function (o) { return o; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_14__["map"])(function () { }));
+        /**
+         * Event emitted when the select has been closed.
+         */
+        _this._closedStream = _this.openedChange.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_14__["filter"])(function (o) { return !o; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_14__["map"])(function () { }));
+        /**
+         * Event emitted when the selected value has been changed by the user.
+         */
+        _this.selectionChange = new _angular_core__WEBPACK_IMPORTED_MODULE_9__["EventEmitter"]();
+        /**
+         * Event that emits whenever the raw value of the select changes. This is here primarily
+         * to facilitate the two-way binding for the `value` input.
+         * \@docs-private
+         */
+        _this.valueChange = new _angular_core__WEBPACK_IMPORTED_MODULE_9__["EventEmitter"]();
+        if (_this.ngControl) {
+            // Note: we provide the value accessor through here, instead of
+            // the `providers` to avoid running into a circular import.
+            _this.ngControl.valueAccessor = _this;
+        }
+        _this._scrollStrategyFactory = scrollStrategyFactory;
+        _this._scrollStrategy = _this._scrollStrategyFactory();
+        _this.tabIndex = parseInt(tabIndex) || 0;
+        // Force setter to be called in case id was not specified.
+        _this.id = _this.id;
         return _this;
     }
+    Object.defineProperty(MatSelect.prototype, "focused", {
+        /** Whether the select is focused. */
+        get: /**
+         * Whether the select is focused.
+         * @return {?}
+         */
+        function () {
+            return this._focused || this._panelOpen;
+        },
+        /**
+         * @deprecated Setter to be removed as this property is intended to be readonly.
+         * @breaking-change 8.0.0
+         */
+        set: /**
+         * @deprecated Setter to be removed as this property is intended to be readonly.
+         * \@breaking-change 8.0.0
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            this._focused = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatSelect.prototype, "placeholder", {
+        /** Placeholder to be shown if no value has been selected. */
+        get: /**
+         * Placeholder to be shown if no value has been selected.
+         * @return {?}
+         */
+        function () { return this._placeholder; },
+        set: /**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            this._placeholder = value;
+            this.stateChanges.next();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatSelect.prototype, "required", {
+        /** Whether the component is required. */
+        get: /**
+         * Whether the component is required.
+         * @return {?}
+         */
+        function () { return this._required; },
+        set: /**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            this._required = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_4__["coerceBooleanProperty"])(value);
+            this.stateChanges.next();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatSelect.prototype, "multiple", {
+        /** Whether the user should be allowed to select multiple options. */
+        get: /**
+         * Whether the user should be allowed to select multiple options.
+         * @return {?}
+         */
+        function () { return this._multiple; },
+        set: /**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            if (this._selectionModel) {
+                throw getMatSelectDynamicMultipleError();
+            }
+            this._multiple = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_4__["coerceBooleanProperty"])(value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatSelect.prototype, "disableOptionCentering", {
+        /** Whether to center the active option over the trigger. */
+        get: /**
+         * Whether to center the active option over the trigger.
+         * @return {?}
+         */
+        function () { return this._disableOptionCentering; },
+        set: /**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            this._disableOptionCentering = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_4__["coerceBooleanProperty"])(value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatSelect.prototype, "compareWith", {
+        /**
+         * Function to compare the option values with the selected values. The first argument
+         * is a value from an option. The second is a value from the selection. A boolean
+         * should be returned.
+         */
+        get: /**
+         * Function to compare the option values with the selected values. The first argument
+         * is a value from an option. The second is a value from the selection. A boolean
+         * should be returned.
+         * @return {?}
+         */
+        function () { return this._compareWith; },
+        set: /**
+         * @param {?} fn
+         * @return {?}
+         */
+        function (fn) {
+            if (typeof fn !== 'function') {
+                throw getMatSelectNonFunctionValueError();
+            }
+            this._compareWith = fn;
+            if (this._selectionModel) {
+                // A different comparator means the selection could change.
+                this._initializeSelection();
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatSelect.prototype, "value", {
+        /** Value of the select control. */
+        get: /**
+         * Value of the select control.
+         * @return {?}
+         */
+        function () { return this._value; },
+        set: /**
+         * @param {?} newValue
+         * @return {?}
+         */
+        function (newValue) {
+            if (newValue !== this._value) {
+                this.writeValue(newValue);
+                this._value = newValue;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatSelect.prototype, "id", {
+        /** Unique id of the element. */
+        get: /**
+         * Unique id of the element.
+         * @return {?}
+         */
+        function () { return this._id; },
+        set: /**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            this._id = value || this._uid;
+            this.stateChanges.next();
+        },
+        enumerable: true,
+        configurable: true
+    });
     /**
      * @return {?}
      */
-    MatStepper.prototype.ngAfterContentInit = /**
+    MatSelect.prototype.ngOnInit = /**
      * @return {?}
      */
     function () {
         var _this = this;
-        this._icons.forEach(function (_a) {
-            var name = _a.name, templateRef = _a.templateRef;
-            return _this._iconOverrides[name] = templateRef;
-        });
-        // Mark the component for change detection whenever the content children query changes
-        this._steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["takeUntil"])(this._destroyed)).subscribe(function () { return _this._stateChanged(); });
-        this._animationDone.pipe(
-        // This needs a `distinctUntilChanged` in order to avoid emitting the same event twice due
-        // to a bug in animations where the `.done` callback gets invoked twice on some browsers.
-        // See https://github.com/angular/angular/issues/24084
-        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["distinctUntilChanged"])(function (x, y) { return x.fromState === y.fromState && x.toState === y.toState; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["takeUntil"])(this._destroyed)).subscribe(function (event) {
-            if (((/** @type {?} */ (event.toState))) === 'current') {
-                _this.animationDone.emit();
+        this._selectionModel = new _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_5__["SelectionModel"](this.multiple);
+        this.stateChanges.next();
+        // We need `distinctUntilChanged` here, because some browsers will
+        // fire the animation end event twice for the same animation. See:
+        // https://github.com/angular/angular/issues/24084
+        this._panelDoneAnimatingStream
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_14__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_14__["takeUntil"])(this._destroy))
+            .subscribe(function () {
+            if (_this.panelOpen) {
+                _this._scrollTop = 0;
+                _this.openedChange.emit(true);
+            }
+            else {
+                _this.openedChange.emit(false);
+                _this.overlayDir.offsetX = 0;
+                _this._changeDetectorRef.markForCheck();
             }
         });
     };
-    MatStepper.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"], args: [{
-                    selector: '[matStepper]'
-                },] },
-    ];
-    MatStepper.propDecorators = {
-        _stepHeader: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChildren"], args: [MatStepHeader,] }],
-        _steps: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ContentChildren"], args: [MatStep,] }],
-        _icons: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ContentChildren"], args: [MatStepperIcon,] }],
-        animationDone: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"] }]
+    /**
+     * @return {?}
+     */
+    MatSelect.prototype.ngAfterContentInit = /**
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        this._initKeyManager();
+        this._selectionModel.onChange.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_14__["takeUntil"])(this._destroy)).subscribe(function (event) {
+            event.added.forEach(function (option) { return option.select(); });
+            event.removed.forEach(function (option) { return option.deselect(); });
+        });
+        this.options.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_14__["startWith"])(null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_14__["takeUntil"])(this._destroy)).subscribe(function () {
+            _this._resetOptions();
+            _this._initializeSelection();
+        });
     };
-    return MatStepper;
-}(_angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_2__["CdkStepper"]));
-var MatHorizontalStepper = /** @class */ (function (_super) {
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(MatHorizontalStepper, _super);
-    function MatHorizontalStepper() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        /**
-         * Whether the label should display in bottom or end position.
+    /**
+     * @return {?}
+     */
+    MatSelect.prototype.ngDoCheck = /**
+     * @return {?}
+     */
+    function () {
+        if (this.ngControl) {
+            this.updateErrorState();
+        }
+    };
+    /**
+     * @param {?} changes
+     * @return {?}
+     */
+    MatSelect.prototype.ngOnChanges = /**
+     * @param {?} changes
+     * @return {?}
+     */
+    function (changes) {
+        // Updating the disabled state is handled by `mixinDisabled`, but we need to additionally let
+        // the parent form field know to run change detection when the disabled state changes.
+        if (changes['disabled']) {
+            this.stateChanges.next();
+        }
+    };
+    /**
+     * @return {?}
+     */
+    MatSelect.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        this._destroy.next();
+        this._destroy.complete();
+        this.stateChanges.complete();
+    };
+    /** Toggles the overlay panel open or closed. */
+    /**
+     * Toggles the overlay panel open or closed.
+     * @return {?}
+     */
+    MatSelect.prototype.toggle = /**
+     * Toggles the overlay panel open or closed.
+     * @return {?}
+     */
+    function () {
+        this.panelOpen ? this.close() : this.open();
+    };
+    /** Opens the overlay panel. */
+    /**
+     * Opens the overlay panel.
+     * @return {?}
+     */
+    MatSelect.prototype.open = /**
+     * Opens the overlay panel.
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        if (this.disabled || !this.options || !this.options.length || this._panelOpen) {
+            return;
+        }
+        this._triggerRect = this.trigger.nativeElement.getBoundingClientRect();
+        // Note: The computed font-size will be a string pixel value (e.g. "16px").
+        // `parseInt` ignores the trailing 'px' and converts this to a number.
+        this._triggerFontSize = parseInt(getComputedStyle(this.trigger.nativeElement).fontSize || '0');
+        this._panelOpen = true;
+        this._keyManager.withHorizontalOrientation(null);
+        this._calculateOverlayPosition();
+        this._highlightCorrectOption();
+        this._changeDetectorRef.markForCheck();
+        // Set the font size on the panel element once it exists.
+        this._ngZone.onStable.asObservable().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_14__["take"])(1)).subscribe(function () {
+            if (_this._triggerFontSize && _this.overlayDir.overlayRef &&
+                _this.overlayDir.overlayRef.overlayElement) {
+                _this.overlayDir.overlayRef.overlayElement.style.fontSize = _this._triggerFontSize + "px";
+            }
+        });
+    };
+    /** Closes the overlay panel and focuses the host element. */
+    /**
+     * Closes the overlay panel and focuses the host element.
+     * @return {?}
+     */
+    MatSelect.prototype.close = /**
+     * Closes the overlay panel and focuses the host element.
+     * @return {?}
+     */
+    function () {
+        if (this._panelOpen) {
+            this._panelOpen = false;
+            this._keyManager.withHorizontalOrientation(this._isRtl() ? 'rtl' : 'ltr');
+            this._changeDetectorRef.markForCheck();
+            this._onTouched();
+        }
+    };
+    /**
+     * Sets the select's value. Part of the ControlValueAccessor interface
+     * required to integrate with Angular's core forms API.
+     *
+     * @param value New value to be written to the model.
+     */
+    /**
+     * Sets the select's value. Part of the ControlValueAccessor interface
+     * required to integrate with Angular's core forms API.
+     *
+     * @param {?} value New value to be written to the model.
+     * @return {?}
+     */
+    MatSelect.prototype.writeValue = /**
+     * Sets the select's value. Part of the ControlValueAccessor interface
+     * required to integrate with Angular's core forms API.
+     *
+     * @param {?} value New value to be written to the model.
+     * @return {?}
+     */
+    function (value) {
+        if (this.options) {
+            this._setSelectionByValue(value);
+        }
+    };
+    /**
+     * Saves a callback function to be invoked when the select's value
+     * changes from user input. Part of the ControlValueAccessor interface
+     * required to integrate with Angular's core forms API.
+     *
+     * @param fn Callback to be triggered when the value changes.
+     */
+    /**
+     * Saves a callback function to be invoked when the select's value
+     * changes from user input. Part of the ControlValueAccessor interface
+     * required to integrate with Angular's core forms API.
+     *
+     * @param {?} fn Callback to be triggered when the value changes.
+     * @return {?}
+     */
+    MatSelect.prototype.registerOnChange = /**
+     * Saves a callback function to be invoked when the select's value
+     * changes from user input. Part of the ControlValueAccessor interface
+     * required to integrate with Angular's core forms API.
+     *
+     * @param {?} fn Callback to be triggered when the value changes.
+     * @return {?}
+     */
+    function (fn) {
+        this._onChange = fn;
+    };
+    /**
+     * Saves a callback function to be invoked when the select is blurred
+     * by the user. Part of the ControlValueAccessor interface required
+     * to integrate with Angular's core forms API.
+     *
+     * @param fn Callback to be triggered when the component has been touched.
+     */
+    /**
+     * Saves a callback function to be invoked when the select is blurred
+     * by the user. Part of the ControlValueAccessor interface required
+     * to integrate with Angular's core forms API.
+     *
+     * @param {?} fn Callback to be triggered when the component has been touched.
+     * @return {?}
+     */
+    MatSelect.prototype.registerOnTouched = /**
+     * Saves a callback function to be invoked when the select is blurred
+     * by the user. Part of the ControlValueAccessor interface required
+     * to integrate with Angular's core forms API.
+     *
+     * @param {?} fn Callback to be triggered when the component has been touched.
+     * @return {?}
+     */
+    function (fn) {
+        this._onTouched = fn;
+    };
+    /**
+     * Disables the select. Part of the ControlValueAccessor interface required
+     * to integrate with Angular's core forms API.
+     *
+     * @param isDisabled Sets whether the component is disabled.
+     */
+    /**
+     * Disables the select. Part of the ControlValueAccessor interface required
+     * to integrate with Angular's core forms API.
+     *
+     * @param {?} isDisabled Sets whether the component is disabled.
+     * @return {?}
+     */
+    MatSelect.prototype.setDisabledState = /**
+     * Disables the select. Part of the ControlValueAccessor interface required
+     * to integrate with Angular's core forms API.
+     *
+     * @param {?} isDisabled Sets whether the component is disabled.
+     * @return {?}
+     */
+    function (isDisabled) {
+        this.disabled = isDisabled;
+        this._changeDetectorRef.markForCheck();
+        this.stateChanges.next();
+    };
+    Object.defineProperty(MatSelect.prototype, "panelOpen", {
+        /** Whether or not the overlay panel is open. */
+        get: /**
+         * Whether or not the overlay panel is open.
+         * @return {?}
          */
-        _this.labelPosition = 'end';
-        return _this;
-    }
-    MatHorizontalStepper.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"], args: [{selector: 'mat-horizontal-stepper',
-                    exportAs: 'matHorizontalStepper',
-                    template: "<div class=\"mat-horizontal-stepper-header-container\"><ng-container *ngFor=\"let step of steps; let i = index; let isLast = last\"><mat-step-header class=\"mat-horizontal-stepper-header\" (click)=\"step.select()\" (keydown)=\"_onKeydown($event)\" [tabIndex]=\"_getFocusIndex() === i ? 0 : -1\" [id]=\"_getStepLabelId(i)\" [attr.aria-posinset]=\"i + 1\" [attr.aria-setsize]=\"steps.length\" [attr.aria-controls]=\"_getStepContentId(i)\" [attr.aria-selected]=\"selectedIndex == i\" [attr.aria-label]=\"step.ariaLabel || null\" [attr.aria-labelledby]=\"(!step.ariaLabel && step.ariaLabelledby) ? step.ariaLabelledby : null\" [index]=\"i\" [state]=\"_getIndicatorType(i, step.state)\" [label]=\"step.stepLabel || step.label\" [selected]=\"selectedIndex === i\" [active]=\"step.completed || selectedIndex === i || !linear\" [optional]=\"step.optional\" [errorMessage]=\"step.errorMessage\" [iconOverrides]=\"_iconOverrides\"></mat-step-header><div *ngIf=\"!isLast\" class=\"mat-stepper-horizontal-line\"></div></ng-container></div><div class=\"mat-horizontal-content-container\"><div *ngFor=\"let step of steps; let i = index\" [attr.tabindex]=\"selectedIndex === i ? 0 : null\" class=\"mat-horizontal-stepper-content\" role=\"tabpanel\" [@stepTransition]=\"_getAnimationDirection(i)\" (@stepTransition.done)=\"_animationDone.next($event)\" [id]=\"_getStepContentId(i)\" [attr.aria-labelledby]=\"_getStepLabelId(i)\" [attr.aria-expanded]=\"selectedIndex === i\"><ng-container [ngTemplateOutlet]=\"step.content\"></ng-container></div></div>",
-                    styles: [".mat-stepper-horizontal,.mat-stepper-vertical{display:block}.mat-horizontal-stepper-header-container{white-space:nowrap;display:flex;align-items:center}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header-container{align-items:flex-start}.mat-stepper-horizontal-line{border-top-width:1px;border-top-style:solid;flex:auto;height:0;margin:0 -16px;min-width:32px}.mat-stepper-label-position-bottom .mat-stepper-horizontal-line{margin:0;min-width:0;position:relative;top:36px}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::before,.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::after,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::after,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::before{border-top-width:1px;border-top-style:solid;content:'';display:inline-block;height:0;position:absolute;top:36px;width:calc(50% - 20px)}.mat-horizontal-stepper-header{display:flex;height:72px;overflow:hidden;align-items:center;padding:0 24px}.mat-horizontal-stepper-header .mat-step-icon{margin-right:8px;flex:none}[dir=rtl] .mat-horizontal-stepper-header .mat-step-icon{margin-right:0;margin-left:8px}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header{box-sizing:border-box;flex-direction:column;height:auto;padding:24px}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::after,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::after{right:0}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::before,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::before{left:0}[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:first-child::after,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:last-child::before{display:none}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-icon{margin-right:0;margin-left:0}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-label{padding:16px 0 0 0;text-align:center;width:100%}.mat-vertical-stepper-header{display:flex;align-items:center;padding:24px;height:24px}.mat-vertical-stepper-header .mat-step-icon{margin-right:12px}[dir=rtl] .mat-vertical-stepper-header .mat-step-icon{margin-right:0;margin-left:12px}.mat-horizontal-stepper-content{outline:0}.mat-horizontal-stepper-content[aria-expanded=false]{height:0;overflow:hidden}.mat-horizontal-content-container{overflow:hidden;padding:0 24px 24px 24px}.mat-vertical-content-container{margin-left:36px;border:0;position:relative}[dir=rtl] .mat-vertical-content-container{margin-left:0;margin-right:36px}.mat-stepper-vertical-line::before{content:'';position:absolute;top:-16px;bottom:-16px;left:0;border-left-width:1px;border-left-style:solid}[dir=rtl] .mat-stepper-vertical-line::before{left:auto;right:0}.mat-vertical-stepper-content{overflow:hidden;outline:0}.mat-vertical-content{padding:0 24px 24px 24px}.mat-step:last-child .mat-vertical-content-container{border:none}"],
-                    inputs: ['selectedIndex'],
-                    host: {
-                        'class': 'mat-stepper-horizontal',
-                        '[class.mat-stepper-label-position-end]': 'labelPosition == "end"',
-                        '[class.mat-stepper-label-position-bottom]': 'labelPosition == "bottom"',
-                        'aria-orientation': 'horizontal',
-                        'role': 'tablist',
-                    },
-                    animations: [matStepperAnimations.horizontalStepTransition],
-                    providers: [{ provide: MatStepper, useExisting: MatHorizontalStepper }],
-                    encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
-                    changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectionStrategy"].OnPush,
-                },] },
-    ];
-    MatHorizontalStepper.propDecorators = {
-        labelPosition: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }]
+        function () {
+            return this._panelOpen;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatSelect.prototype, "selected", {
+        /** The currently selected option. */
+        get: /**
+         * The currently selected option.
+         * @return {?}
+         */
+        function () {
+            return this.multiple ? this._selectionModel.selected : this._selectionModel.selected[0];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatSelect.prototype, "triggerValue", {
+        /** The value displayed in the trigger. */
+        get: /**
+         * The value displayed in the trigger.
+         * @return {?}
+         */
+        function () {
+            if (this.empty) {
+                return '';
+            }
+            if (this._multiple) {
+                /** @type {?} */
+                var selectedOptions = this._selectionModel.selected.map(function (option) { return option.viewValue; });
+                if (this._isRtl()) {
+                    selectedOptions.reverse();
+                }
+                // TODO(crisbeto): delimiter should be configurable for proper localization.
+                return selectedOptions.join(', ');
+            }
+            return this._selectionModel.selected[0].viewValue;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /** Whether the element is in RTL mode. */
+    /**
+     * Whether the element is in RTL mode.
+     * @return {?}
+     */
+    MatSelect.prototype._isRtl = /**
+     * Whether the element is in RTL mode.
+     * @return {?}
+     */
+    function () {
+        return this._dir ? this._dir.value === 'rtl' : false;
     };
-    return MatHorizontalStepper;
-}(MatStepper));
-var MatVerticalStepper = /** @class */ (function (_super) {
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(MatVerticalStepper, _super);
-    function MatVerticalStepper(dir, changeDetectorRef, 
-    // @breaking-change 8.0.0 `elementRef` and `_document` parameters to become required.
-    elementRef, _document) {
-        var _this = _super.call(this, dir, changeDetectorRef, elementRef, _document) || this;
-        _this._orientation = 'vertical';
-        return _this;
-    }
-    MatVerticalStepper.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"], args: [{selector: 'mat-vertical-stepper',
-                    exportAs: 'matVerticalStepper',
-                    template: "<div class=\"mat-step\" *ngFor=\"let step of steps; let i = index; let isLast = last\"><mat-step-header class=\"mat-vertical-stepper-header\" (click)=\"step.select()\" (keydown)=\"_onKeydown($event)\" [tabIndex]=\"_getFocusIndex() == i ? 0 : -1\" [id]=\"_getStepLabelId(i)\" [attr.aria-posinset]=\"i + 1\" [attr.aria-setsize]=\"steps.length\" [attr.aria-controls]=\"_getStepContentId(i)\" [attr.aria-selected]=\"selectedIndex === i\" [attr.aria-label]=\"step.ariaLabel || null\" [attr.aria-labelledby]=\"(!step.ariaLabel && step.ariaLabelledby) ? step.ariaLabelledby : null\" [index]=\"i\" [state]=\"_getIndicatorType(i, step.state)\" [label]=\"step.stepLabel || step.label\" [selected]=\"selectedIndex === i\" [active]=\"step.completed || selectedIndex === i || !linear\" [optional]=\"step.optional\" [errorMessage]=\"step.errorMessage\" [iconOverrides]=\"_iconOverrides\"></mat-step-header><div class=\"mat-vertical-content-container\" [class.mat-stepper-vertical-line]=\"!isLast\"><div class=\"mat-vertical-stepper-content\" role=\"tabpanel\" [attr.tabindex]=\"selectedIndex === i ? 0 : null\" [@stepTransition]=\"_getAnimationDirection(i)\" (@stepTransition.done)=\"_animationDone.next($event)\" [id]=\"_getStepContentId(i)\" [attr.aria-labelledby]=\"_getStepLabelId(i)\" [attr.aria-expanded]=\"selectedIndex === i\"><div class=\"mat-vertical-content\"><ng-container [ngTemplateOutlet]=\"step.content\"></ng-container></div></div></div></div>",
-                    styles: [".mat-stepper-horizontal,.mat-stepper-vertical{display:block}.mat-horizontal-stepper-header-container{white-space:nowrap;display:flex;align-items:center}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header-container{align-items:flex-start}.mat-stepper-horizontal-line{border-top-width:1px;border-top-style:solid;flex:auto;height:0;margin:0 -16px;min-width:32px}.mat-stepper-label-position-bottom .mat-stepper-horizontal-line{margin:0;min-width:0;position:relative;top:36px}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::before,.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::after,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::after,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::before{border-top-width:1px;border-top-style:solid;content:'';display:inline-block;height:0;position:absolute;top:36px;width:calc(50% - 20px)}.mat-horizontal-stepper-header{display:flex;height:72px;overflow:hidden;align-items:center;padding:0 24px}.mat-horizontal-stepper-header .mat-step-icon{margin-right:8px;flex:none}[dir=rtl] .mat-horizontal-stepper-header .mat-step-icon{margin-right:0;margin-left:8px}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header{box-sizing:border-box;flex-direction:column;height:auto;padding:24px}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::after,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::after{right:0}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::before,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::before{left:0}[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:first-child::after,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:last-child::before{display:none}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-icon{margin-right:0;margin-left:0}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-label{padding:16px 0 0 0;text-align:center;width:100%}.mat-vertical-stepper-header{display:flex;align-items:center;padding:24px;height:24px}.mat-vertical-stepper-header .mat-step-icon{margin-right:12px}[dir=rtl] .mat-vertical-stepper-header .mat-step-icon{margin-right:0;margin-left:12px}.mat-horizontal-stepper-content{outline:0}.mat-horizontal-stepper-content[aria-expanded=false]{height:0;overflow:hidden}.mat-horizontal-content-container{overflow:hidden;padding:0 24px 24px 24px}.mat-vertical-content-container{margin-left:36px;border:0;position:relative}[dir=rtl] .mat-vertical-content-container{margin-left:0;margin-right:36px}.mat-stepper-vertical-line::before{content:'';position:absolute;top:-16px;bottom:-16px;left:0;border-left-width:1px;border-left-style:solid}[dir=rtl] .mat-stepper-vertical-line::before{left:auto;right:0}.mat-vertical-stepper-content{overflow:hidden;outline:0}.mat-vertical-content{padding:0 24px 24px 24px}.mat-step:last-child .mat-vertical-content-container{border:none}"],
-                    inputs: ['selectedIndex'],
+    /** Handles all keydown events on the select. */
+    /**
+     * Handles all keydown events on the select.
+     * @param {?} event
+     * @return {?}
+     */
+    MatSelect.prototype._handleKeydown = /**
+     * Handles all keydown events on the select.
+     * @param {?} event
+     * @return {?}
+     */
+    function (event) {
+        if (!this.disabled) {
+            this.panelOpen ? this._handleOpenKeydown(event) : this._handleClosedKeydown(event);
+        }
+    };
+    /** Handles keyboard events while the select is closed. */
+    /**
+     * Handles keyboard events while the select is closed.
+     * @private
+     * @param {?} event
+     * @return {?}
+     */
+    MatSelect.prototype._handleClosedKeydown = /**
+     * Handles keyboard events while the select is closed.
+     * @private
+     * @param {?} event
+     * @return {?}
+     */
+    function (event) {
+        /** @type {?} */
+        var keyCode = event.keyCode;
+        /** @type {?} */
+        var isArrowKey = keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["DOWN_ARROW"] || keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["UP_ARROW"] ||
+            keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["LEFT_ARROW"] || keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["RIGHT_ARROW"];
+        /** @type {?} */
+        var isOpenKey = keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["ENTER"] || keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["SPACE"];
+        /** @type {?} */
+        var manager = this._keyManager;
+        // Open the select on ALT + arrow key to match the native <select>
+        if ((isOpenKey && !Object(_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["hasModifierKey"])(event)) || ((this.multiple || event.altKey) && isArrowKey)) {
+            event.preventDefault(); // prevents the page from scrolling down when pressing space
+            this.open();
+        }
+        else if (!this.multiple) {
+            /** @type {?} */
+            var selectedOption = this.selected;
+            if (keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["HOME"] || keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["END"]) {
+                keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["HOME"] ? manager.setFirstItemActive() : manager.setLastItemActive();
+                event.preventDefault();
+            }
+            else {
+                manager.onKeydown(event);
+            }
+            // Since the value has changed, we need to announce it ourselves.
+            // @breaking-change 8.0.0 remove null check for _liveAnnouncer.
+            if (this._liveAnnouncer && selectedOption !== this.selected) {
+                this._liveAnnouncer.announce(((/** @type {?} */ (this.selected))).viewValue);
+            }
+        }
+    };
+    /** Handles keyboard events when the selected is open. */
+    /**
+     * Handles keyboard events when the selected is open.
+     * @private
+     * @param {?} event
+     * @return {?}
+     */
+    MatSelect.prototype._handleOpenKeydown = /**
+     * Handles keyboard events when the selected is open.
+     * @private
+     * @param {?} event
+     * @return {?}
+     */
+    function (event) {
+        /** @type {?} */
+        var keyCode = event.keyCode;
+        /** @type {?} */
+        var isArrowKey = keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["DOWN_ARROW"] || keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["UP_ARROW"];
+        /** @type {?} */
+        var manager = this._keyManager;
+        if (keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["HOME"] || keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["END"]) {
+            event.preventDefault();
+            keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["HOME"] ? manager.setFirstItemActive() : manager.setLastItemActive();
+        }
+        else if (isArrowKey && event.altKey) {
+            // Close the select on ALT + arrow key to match the native <select>
+            event.preventDefault();
+            this.close();
+        }
+        else if ((keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["ENTER"] || keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["SPACE"]) && manager.activeItem &&
+            !Object(_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["hasModifierKey"])(event)) {
+            event.preventDefault();
+            manager.activeItem._selectViaInteraction();
+        }
+        else if (this._multiple && keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["A"] && event.ctrlKey) {
+            event.preventDefault();
+            /** @type {?} */
+            var hasDeselectedOptions_1 = this.options.some(function (opt) { return !opt.disabled && !opt.selected; });
+            this.options.forEach(function (option) {
+                if (!option.disabled) {
+                    hasDeselectedOptions_1 ? option.select() : option.deselect();
+                }
+            });
+        }
+        else {
+            /** @type {?} */
+            var previouslyFocusedIndex = manager.activeItemIndex;
+            manager.onKeydown(event);
+            if (this._multiple && isArrowKey && event.shiftKey && manager.activeItem &&
+                manager.activeItemIndex !== previouslyFocusedIndex) {
+                manager.activeItem._selectViaInteraction();
+            }
+        }
+    };
+    /**
+     * @return {?}
+     */
+    MatSelect.prototype._onFocus = /**
+     * @return {?}
+     */
+    function () {
+        if (!this.disabled) {
+            this._focused = true;
+            this.stateChanges.next();
+        }
+    };
+    /**
+     * Calls the touched callback only if the panel is closed. Otherwise, the trigger will
+     * "blur" to the panel when it opens, causing a false positive.
+     */
+    /**
+     * Calls the touched callback only if the panel is closed. Otherwise, the trigger will
+     * "blur" to the panel when it opens, causing a false positive.
+     * @return {?}
+     */
+    MatSelect.prototype._onBlur = /**
+     * Calls the touched callback only if the panel is closed. Otherwise, the trigger will
+     * "blur" to the panel when it opens, causing a false positive.
+     * @return {?}
+     */
+    function () {
+        this._focused = false;
+        if (!this.disabled && !this.panelOpen) {
+            this._onTouched();
+            this._changeDetectorRef.markForCheck();
+            this.stateChanges.next();
+        }
+    };
+    /**
+     * Callback that is invoked when the overlay panel has been attached.
+     */
+    /**
+     * Callback that is invoked when the overlay panel has been attached.
+     * @return {?}
+     */
+    MatSelect.prototype._onAttached = /**
+     * Callback that is invoked when the overlay panel has been attached.
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        this.overlayDir.positionChange.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_14__["take"])(1)).subscribe(function () {
+            _this._setPseudoCheckboxPaddingSize();
+            _this._changeDetectorRef.detectChanges();
+            _this._calculateOverlayOffsetX();
+            _this.panel.nativeElement.scrollTop = _this._scrollTop;
+        });
+    };
+    /** Returns the theme to be used on the panel. */
+    /**
+     * Returns the theme to be used on the panel.
+     * @return {?}
+     */
+    MatSelect.prototype._getPanelTheme = /**
+     * Returns the theme to be used on the panel.
+     * @return {?}
+     */
+    function () {
+        return this._parentFormField ? "mat-" + this._parentFormField.color : '';
+    };
+    // TODO(josephperrott): Remove after 2018 spec updates are fully merged.
+    /** Sets the pseudo checkbox padding size based on the width of the pseudo checkbox. */
+    // TODO(josephperrott): Remove after 2018 spec updates are fully merged.
+    /**
+     * Sets the pseudo checkbox padding size based on the width of the pseudo checkbox.
+     * @private
+     * @return {?}
+     */
+    MatSelect.prototype._setPseudoCheckboxPaddingSize = 
+    // TODO(josephperrott): Remove after 2018 spec updates are fully merged.
+    /**
+     * Sets the pseudo checkbox padding size based on the width of the pseudo checkbox.
+     * @private
+     * @return {?}
+     */
+    function () {
+        if (!SELECT_MULTIPLE_PANEL_PADDING_X && this.multiple) {
+            /** @type {?} */
+            var pseudoCheckbox = this.panel.nativeElement.querySelector('.mat-pseudo-checkbox');
+            if (pseudoCheckbox) {
+                SELECT_MULTIPLE_PANEL_PADDING_X = SELECT_PANEL_PADDING_X * 1.5 + pseudoCheckbox.offsetWidth;
+            }
+        }
+    };
+    Object.defineProperty(MatSelect.prototype, "empty", {
+        /** Whether the select has a value. */
+        get: /**
+         * Whether the select has a value.
+         * @return {?}
+         */
+        function () {
+            return !this._selectionModel || this._selectionModel.isEmpty();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @private
+     * @return {?}
+     */
+    MatSelect.prototype._initializeSelection = /**
+     * @private
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        // Defer setting the value in order to avoid the "Expression
+        // has changed after it was checked" errors from Angular.
+        Promise.resolve().then(function () {
+            _this._setSelectionByValue(_this.ngControl ? _this.ngControl.value : _this._value);
+            _this.stateChanges.next();
+        });
+    };
+    /**
+     * Sets the selected option based on a value. If no option can be
+     * found with the designated value, the select trigger is cleared.
+     */
+    /**
+     * Sets the selected option based on a value. If no option can be
+     * found with the designated value, the select trigger is cleared.
+     * @private
+     * @param {?} value
+     * @return {?}
+     */
+    MatSelect.prototype._setSelectionByValue = /**
+     * Sets the selected option based on a value. If no option can be
+     * found with the designated value, the select trigger is cleared.
+     * @private
+     * @param {?} value
+     * @return {?}
+     */
+    function (value) {
+        var _this = this;
+        if (this.multiple && value) {
+            if (!Array.isArray(value)) {
+                throw getMatSelectNonArrayValueError();
+            }
+            this._selectionModel.clear();
+            value.forEach(function (currentValue) { return _this._selectValue(currentValue); });
+            this._sortValues();
+        }
+        else {
+            this._selectionModel.clear();
+            /** @type {?} */
+            var correspondingOption = this._selectValue(value);
+            // Shift focus to the active item. Note that we shouldn't do this in multiple
+            // mode, because we don't know what option the user interacted with last.
+            if (correspondingOption) {
+                this._keyManager.setActiveItem(correspondingOption);
+            }
+        }
+        this._changeDetectorRef.markForCheck();
+    };
+    /**
+     * Finds and selects and option based on its value.
+     * @returns Option that has the corresponding value.
+     */
+    /**
+     * Finds and selects and option based on its value.
+     * @private
+     * @param {?} value
+     * @return {?} Option that has the corresponding value.
+     */
+    MatSelect.prototype._selectValue = /**
+     * Finds and selects and option based on its value.
+     * @private
+     * @param {?} value
+     * @return {?} Option that has the corresponding value.
+     */
+    function (value) {
+        var _this = this;
+        /** @type {?} */
+        var correspondingOption = this.options.find(function (option) {
+            try {
+                // Treat null as a special reset value.
+                return option.value != null && _this._compareWith(option.value, value);
+            }
+            catch (error) {
+                if (Object(_angular_core__WEBPACK_IMPORTED_MODULE_9__["isDevMode"])()) {
+                    // Notify developers of errors in their comparator.
+                    console.warn(error);
+                }
+                return false;
+            }
+        });
+        if (correspondingOption) {
+            this._selectionModel.select(correspondingOption);
+        }
+        return correspondingOption;
+    };
+    /** Sets up a key manager to listen to keyboard events on the overlay panel. */
+    /**
+     * Sets up a key manager to listen to keyboard events on the overlay panel.
+     * @private
+     * @return {?}
+     */
+    MatSelect.prototype._initKeyManager = /**
+     * Sets up a key manager to listen to keyboard events on the overlay panel.
+     * @private
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        this._keyManager = new _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__["ActiveDescendantKeyManager"](this.options)
+            .withTypeAhead()
+            .withVerticalOrientation()
+            .withHorizontalOrientation(this._isRtl() ? 'rtl' : 'ltr')
+            .withAllowedModifierKeys(['shiftKey']);
+        this._keyManager.tabOut.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_14__["takeUntil"])(this._destroy)).subscribe(function () {
+            // Restore focus to the trigger before closing. Ensures that the focus
+            // position won't be lost if the user got focus into the overlay.
+            _this.focus();
+            _this.close();
+        });
+        this._keyManager.change.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_14__["takeUntil"])(this._destroy)).subscribe(function () {
+            if (_this._panelOpen && _this.panel) {
+                _this._scrollActiveOptionIntoView();
+            }
+            else if (!_this._panelOpen && !_this.multiple && _this._keyManager.activeItem) {
+                _this._keyManager.activeItem._selectViaInteraction();
+            }
+        });
+    };
+    /** Drops current option subscriptions and IDs and resets from scratch. */
+    /**
+     * Drops current option subscriptions and IDs and resets from scratch.
+     * @private
+     * @return {?}
+     */
+    MatSelect.prototype._resetOptions = /**
+     * Drops current option subscriptions and IDs and resets from scratch.
+     * @private
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        /** @type {?} */
+        var changedOrDestroyed = Object(rxjs__WEBPACK_IMPORTED_MODULE_13__["merge"])(this.options.changes, this._destroy);
+        this.optionSelectionChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_14__["takeUntil"])(changedOrDestroyed)).subscribe(function (event) {
+            _this._onSelect(event.source, event.isUserInput);
+            if (event.isUserInput && !_this.multiple && _this._panelOpen) {
+                _this.close();
+                _this.focus();
+            }
+        });
+        // Listen to changes in the internal state of the options and react accordingly.
+        // Handles cases like the labels of the selected options changing.
+        rxjs__WEBPACK_IMPORTED_MODULE_13__["merge"].apply(void 0, this.options.map(function (option) { return option._stateChanges; })).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_14__["takeUntil"])(changedOrDestroyed))
+            .subscribe(function () {
+            _this._changeDetectorRef.markForCheck();
+            _this.stateChanges.next();
+        });
+        this._setOptionIds();
+    };
+    /** Invoked when an option is clicked. */
+    /**
+     * Invoked when an option is clicked.
+     * @private
+     * @param {?} option
+     * @param {?} isUserInput
+     * @return {?}
+     */
+    MatSelect.prototype._onSelect = /**
+     * Invoked when an option is clicked.
+     * @private
+     * @param {?} option
+     * @param {?} isUserInput
+     * @return {?}
+     */
+    function (option, isUserInput) {
+        /** @type {?} */
+        var wasSelected = this._selectionModel.isSelected(option);
+        if (option.value == null && !this._multiple) {
+            option.deselect();
+            this._selectionModel.clear();
+            this._propagateChanges(option.value);
+        }
+        else {
+            option.selected ? this._selectionModel.select(option) : this._selectionModel.deselect(option);
+            if (isUserInput) {
+                this._keyManager.setActiveItem(option);
+            }
+            if (this.multiple) {
+                this._sortValues();
+                if (isUserInput) {
+                    // In case the user selected the option with their mouse, we
+                    // want to restore focus back to the trigger, in order to
+                    // prevent the select keyboard controls from clashing with
+                    // the ones from `mat-option`.
+                    this.focus();
+                }
+            }
+        }
+        if (wasSelected !== this._selectionModel.isSelected(option)) {
+            this._propagateChanges();
+        }
+        this.stateChanges.next();
+    };
+    /** Sorts the selected values in the selected based on their order in the panel. */
+    /**
+     * Sorts the selected values in the selected based on their order in the panel.
+     * @private
+     * @return {?}
+     */
+    MatSelect.prototype._sortValues = /**
+     * Sorts the selected values in the selected based on their order in the panel.
+     * @private
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        if (this.multiple) {
+            /** @type {?} */
+            var options_1 = this.options.toArray();
+            this._selectionModel.sort(function (a, b) {
+                return _this.sortComparator ? _this.sortComparator(a, b, options_1) :
+                    options_1.indexOf(a) - options_1.indexOf(b);
+            });
+            this.stateChanges.next();
+        }
+    };
+    /** Emits change event to set the model value. */
+    /**
+     * Emits change event to set the model value.
+     * @private
+     * @param {?=} fallbackValue
+     * @return {?}
+     */
+    MatSelect.prototype._propagateChanges = /**
+     * Emits change event to set the model value.
+     * @private
+     * @param {?=} fallbackValue
+     * @return {?}
+     */
+    function (fallbackValue) {
+        /** @type {?} */
+        var valueToEmit = null;
+        if (this.multiple) {
+            valueToEmit = ((/** @type {?} */ (this.selected))).map(function (option) { return option.value; });
+        }
+        else {
+            valueToEmit = this.selected ? ((/** @type {?} */ (this.selected))).value : fallbackValue;
+        }
+        this._value = valueToEmit;
+        this.valueChange.emit(valueToEmit);
+        this._onChange(valueToEmit);
+        this.selectionChange.emit(new MatSelectChange(this, valueToEmit));
+        this._changeDetectorRef.markForCheck();
+    };
+    /** Records option IDs to pass to the aria-owns property. */
+    /**
+     * Records option IDs to pass to the aria-owns property.
+     * @private
+     * @return {?}
+     */
+    MatSelect.prototype._setOptionIds = /**
+     * Records option IDs to pass to the aria-owns property.
+     * @private
+     * @return {?}
+     */
+    function () {
+        this._optionIds = this.options.map(function (option) { return option.id; }).join(' ');
+    };
+    /**
+     * Highlights the selected item. If no option is selected, it will highlight
+     * the first item instead.
+     */
+    /**
+     * Highlights the selected item. If no option is selected, it will highlight
+     * the first item instead.
+     * @private
+     * @return {?}
+     */
+    MatSelect.prototype._highlightCorrectOption = /**
+     * Highlights the selected item. If no option is selected, it will highlight
+     * the first item instead.
+     * @private
+     * @return {?}
+     */
+    function () {
+        if (this._keyManager) {
+            if (this.empty) {
+                this._keyManager.setFirstItemActive();
+            }
+            else {
+                this._keyManager.setActiveItem(this._selectionModel.selected[0]);
+            }
+        }
+    };
+    /** Scrolls the active option into view. */
+    /**
+     * Scrolls the active option into view.
+     * @private
+     * @return {?}
+     */
+    MatSelect.prototype._scrollActiveOptionIntoView = /**
+     * Scrolls the active option into view.
+     * @private
+     * @return {?}
+     */
+    function () {
+        /** @type {?} */
+        var activeOptionIndex = this._keyManager.activeItemIndex || 0;
+        /** @type {?} */
+        var labelCount = Object(_angular_material_core__WEBPACK_IMPORTED_MODULE_11__["_countGroupLabelsBeforeOption"])(activeOptionIndex, this.options, this.optionGroups);
+        this.panel.nativeElement.scrollTop = Object(_angular_material_core__WEBPACK_IMPORTED_MODULE_11__["_getOptionScrollPosition"])(activeOptionIndex + labelCount, this._getItemHeight(), this.panel.nativeElement.scrollTop, SELECT_PANEL_MAX_HEIGHT);
+    };
+    /** Focuses the select element. */
+    /**
+     * Focuses the select element.
+     * @return {?}
+     */
+    MatSelect.prototype.focus = /**
+     * Focuses the select element.
+     * @return {?}
+     */
+    function () {
+        this._elementRef.nativeElement.focus();
+    };
+    /** Gets the index of the provided option in the option list. */
+    /**
+     * Gets the index of the provided option in the option list.
+     * @private
+     * @param {?} option
+     * @return {?}
+     */
+    MatSelect.prototype._getOptionIndex = /**
+     * Gets the index of the provided option in the option list.
+     * @private
+     * @param {?} option
+     * @return {?}
+     */
+    function (option) {
+        return this.options.reduce(function (result, current, index) {
+            return result === undefined ? (option === current ? index : undefined) : result;
+        }, undefined);
+    };
+    /** Calculates the scroll position and x- and y-offsets of the overlay panel. */
+    /**
+     * Calculates the scroll position and x- and y-offsets of the overlay panel.
+     * @private
+     * @return {?}
+     */
+    MatSelect.prototype._calculateOverlayPosition = /**
+     * Calculates the scroll position and x- and y-offsets of the overlay panel.
+     * @private
+     * @return {?}
+     */
+    function () {
+        /** @type {?} */
+        var itemHeight = this._getItemHeight();
+        /** @type {?} */
+        var items = this._getItemCount();
+        /** @type {?} */
+        var panelHeight = Math.min(items * itemHeight, SELECT_PANEL_MAX_HEIGHT);
+        /** @type {?} */
+        var scrollContainerHeight = items * itemHeight;
+        // The farthest the panel can be scrolled before it hits the bottom
+        /** @type {?} */
+        var maxScroll = scrollContainerHeight - panelHeight;
+        // If no value is selected we open the popup to the first item.
+        /** @type {?} */
+        var selectedOptionOffset = this.empty ? 0 : (/** @type {?} */ (this._getOptionIndex(this._selectionModel.selected[0])));
+        selectedOptionOffset += Object(_angular_material_core__WEBPACK_IMPORTED_MODULE_11__["_countGroupLabelsBeforeOption"])(selectedOptionOffset, this.options, this.optionGroups);
+        // We must maintain a scroll buffer so the selected option will be scrolled to the
+        // center of the overlay panel rather than the top.
+        /** @type {?} */
+        var scrollBuffer = panelHeight / 2;
+        this._scrollTop = this._calculateOverlayScroll(selectedOptionOffset, scrollBuffer, maxScroll);
+        this._offsetY = this._calculateOverlayOffsetY(selectedOptionOffset, scrollBuffer, maxScroll);
+        this._checkOverlayWithinViewport(maxScroll);
+    };
+    /**
+     * Calculates the scroll position of the select's overlay panel.
+     *
+     * Attempts to center the selected option in the panel. If the option is
+     * too high or too low in the panel to be scrolled to the center, it clamps the
+     * scroll position to the min or max scroll positions respectively.
+     */
+    /**
+     * Calculates the scroll position of the select's overlay panel.
+     *
+     * Attempts to center the selected option in the panel. If the option is
+     * too high or too low in the panel to be scrolled to the center, it clamps the
+     * scroll position to the min or max scroll positions respectively.
+     * @param {?} selectedIndex
+     * @param {?} scrollBuffer
+     * @param {?} maxScroll
+     * @return {?}
+     */
+    MatSelect.prototype._calculateOverlayScroll = /**
+     * Calculates the scroll position of the select's overlay panel.
+     *
+     * Attempts to center the selected option in the panel. If the option is
+     * too high or too low in the panel to be scrolled to the center, it clamps the
+     * scroll position to the min or max scroll positions respectively.
+     * @param {?} selectedIndex
+     * @param {?} scrollBuffer
+     * @param {?} maxScroll
+     * @return {?}
+     */
+    function (selectedIndex, scrollBuffer, maxScroll) {
+        /** @type {?} */
+        var itemHeight = this._getItemHeight();
+        /** @type {?} */
+        var optionOffsetFromScrollTop = itemHeight * selectedIndex;
+        /** @type {?} */
+        var halfOptionHeight = itemHeight / 2;
+        // Starts at the optionOffsetFromScrollTop, which scrolls the option to the top of the
+        // scroll container, then subtracts the scroll buffer to scroll the option down to
+        // the center of the overlay panel. Half the option height must be re-added to the
+        // scrollTop so the option is centered based on its middle, not its top edge.
+        /** @type {?} */
+        var optimalScrollPosition = optionOffsetFromScrollTop - scrollBuffer + halfOptionHeight;
+        return Math.min(Math.max(0, optimalScrollPosition), maxScroll);
+    };
+    /** Returns the aria-label of the select component. */
+    /**
+     * Returns the aria-label of the select component.
+     * @return {?}
+     */
+    MatSelect.prototype._getAriaLabel = /**
+     * Returns the aria-label of the select component.
+     * @return {?}
+     */
+    function () {
+        // If an ariaLabelledby value has been set by the consumer, the select should not overwrite the
+        // `aria-labelledby` value by setting the ariaLabel to the placeholder.
+        return this.ariaLabelledby ? null : this.ariaLabel || this.placeholder;
+    };
+    /** Returns the aria-labelledby of the select component. */
+    /**
+     * Returns the aria-labelledby of the select component.
+     * @return {?}
+     */
+    MatSelect.prototype._getAriaLabelledby = /**
+     * Returns the aria-labelledby of the select component.
+     * @return {?}
+     */
+    function () {
+        if (this.ariaLabelledby) {
+            return this.ariaLabelledby;
+        }
+        // Note: we use `_getAriaLabel` here, because we want to check whether there's a
+        // computed label. `this.ariaLabel` is only the user-specified label.
+        if (!this._parentFormField || !this._parentFormField._hasFloatingLabel() ||
+            this._getAriaLabel()) {
+            return null;
+        }
+        return this._parentFormField._labelId || null;
+    };
+    /** Determines the `aria-activedescendant` to be set on the host. */
+    /**
+     * Determines the `aria-activedescendant` to be set on the host.
+     * @return {?}
+     */
+    MatSelect.prototype._getAriaActiveDescendant = /**
+     * Determines the `aria-activedescendant` to be set on the host.
+     * @return {?}
+     */
+    function () {
+        if (this.panelOpen && this._keyManager && this._keyManager.activeItem) {
+            return this._keyManager.activeItem.id;
+        }
+        return null;
+    };
+    /**
+     * Sets the x-offset of the overlay panel in relation to the trigger's top start corner.
+     * This must be adjusted to align the selected option text over the trigger text when
+     * the panel opens. Will change based on LTR or RTL text direction. Note that the offset
+     * can't be calculated until the panel has been attached, because we need to know the
+     * content width in order to constrain the panel within the viewport.
+     */
+    /**
+     * Sets the x-offset of the overlay panel in relation to the trigger's top start corner.
+     * This must be adjusted to align the selected option text over the trigger text when
+     * the panel opens. Will change based on LTR or RTL text direction. Note that the offset
+     * can't be calculated until the panel has been attached, because we need to know the
+     * content width in order to constrain the panel within the viewport.
+     * @private
+     * @return {?}
+     */
+    MatSelect.prototype._calculateOverlayOffsetX = /**
+     * Sets the x-offset of the overlay panel in relation to the trigger's top start corner.
+     * This must be adjusted to align the selected option text over the trigger text when
+     * the panel opens. Will change based on LTR or RTL text direction. Note that the offset
+     * can't be calculated until the panel has been attached, because we need to know the
+     * content width in order to constrain the panel within the viewport.
+     * @private
+     * @return {?}
+     */
+    function () {
+        /** @type {?} */
+        var overlayRect = this.overlayDir.overlayRef.overlayElement.getBoundingClientRect();
+        /** @type {?} */
+        var viewportSize = this._viewportRuler.getViewportSize();
+        /** @type {?} */
+        var isRtl = this._isRtl();
+        /** @type {?} */
+        var paddingWidth = this.multiple ? SELECT_MULTIPLE_PANEL_PADDING_X + SELECT_PANEL_PADDING_X :
+            SELECT_PANEL_PADDING_X * 2;
+        /** @type {?} */
+        var offsetX;
+        // Adjust the offset, depending on the option padding.
+        if (this.multiple) {
+            offsetX = SELECT_MULTIPLE_PANEL_PADDING_X;
+        }
+        else {
+            /** @type {?} */
+            var selected = this._selectionModel.selected[0] || this.options.first;
+            offsetX = selected && selected.group ? SELECT_PANEL_INDENT_PADDING_X : SELECT_PANEL_PADDING_X;
+        }
+        // Invert the offset in LTR.
+        if (!isRtl) {
+            offsetX *= -1;
+        }
+        // Determine how much the select overflows on each side.
+        /** @type {?} */
+        var leftOverflow = 0 - (overlayRect.left + offsetX - (isRtl ? paddingWidth : 0));
+        /** @type {?} */
+        var rightOverflow = overlayRect.right + offsetX - viewportSize.width
+            + (isRtl ? 0 : paddingWidth);
+        // If the element overflows on either side, reduce the offset to allow it to fit.
+        if (leftOverflow > 0) {
+            offsetX += leftOverflow + SELECT_PANEL_VIEWPORT_PADDING;
+        }
+        else if (rightOverflow > 0) {
+            offsetX -= rightOverflow + SELECT_PANEL_VIEWPORT_PADDING;
+        }
+        // Set the offset directly in order to avoid having to go through change detection and
+        // potentially triggering "changed after it was checked" errors. Round the value to avoid
+        // blurry content in some browsers.
+        this.overlayDir.offsetX = Math.round(offsetX);
+        this.overlayDir.overlayRef.updatePosition();
+    };
+    /**
+     * Calculates the y-offset of the select's overlay panel in relation to the
+     * top start corner of the trigger. It has to be adjusted in order for the
+     * selected option to be aligned over the trigger when the panel opens.
+     */
+    /**
+     * Calculates the y-offset of the select's overlay panel in relation to the
+     * top start corner of the trigger. It has to be adjusted in order for the
+     * selected option to be aligned over the trigger when the panel opens.
+     * @private
+     * @param {?} selectedIndex
+     * @param {?} scrollBuffer
+     * @param {?} maxScroll
+     * @return {?}
+     */
+    MatSelect.prototype._calculateOverlayOffsetY = /**
+     * Calculates the y-offset of the select's overlay panel in relation to the
+     * top start corner of the trigger. It has to be adjusted in order for the
+     * selected option to be aligned over the trigger when the panel opens.
+     * @private
+     * @param {?} selectedIndex
+     * @param {?} scrollBuffer
+     * @param {?} maxScroll
+     * @return {?}
+     */
+    function (selectedIndex, scrollBuffer, maxScroll) {
+        /** @type {?} */
+        var itemHeight = this._getItemHeight();
+        /** @type {?} */
+        var optionHeightAdjustment = (itemHeight - this._triggerRect.height) / 2;
+        /** @type {?} */
+        var maxOptionsDisplayed = Math.floor(SELECT_PANEL_MAX_HEIGHT / itemHeight);
+        /** @type {?} */
+        var optionOffsetFromPanelTop;
+        // Disable offset if requested by user by returning 0 as value to offset
+        if (this._disableOptionCentering) {
+            return 0;
+        }
+        if (this._scrollTop === 0) {
+            optionOffsetFromPanelTop = selectedIndex * itemHeight;
+        }
+        else if (this._scrollTop === maxScroll) {
+            /** @type {?} */
+            var firstDisplayedIndex = this._getItemCount() - maxOptionsDisplayed;
+            /** @type {?} */
+            var selectedDisplayIndex = selectedIndex - firstDisplayedIndex;
+            // The first item is partially out of the viewport. Therefore we need to calculate what
+            // portion of it is shown in the viewport and account for it in our offset.
+            /** @type {?} */
+            var partialItemHeight = itemHeight - (this._getItemCount() * itemHeight - SELECT_PANEL_MAX_HEIGHT) % itemHeight;
+            // Because the panel height is longer than the height of the options alone,
+            // there is always extra padding at the top or bottom of the panel. When
+            // scrolled to the very bottom, this padding is at the top of the panel and
+            // must be added to the offset.
+            optionOffsetFromPanelTop = selectedDisplayIndex * itemHeight + partialItemHeight;
+        }
+        else {
+            // If the option was scrolled to the middle of the panel using a scroll buffer,
+            // its offset will be the scroll buffer minus the half height that was added to
+            // center it.
+            optionOffsetFromPanelTop = scrollBuffer - itemHeight / 2;
+        }
+        // The final offset is the option's offset from the top, adjusted for the height difference,
+        // multiplied by -1 to ensure that the overlay moves in the correct direction up the page.
+        // The value is rounded to prevent some browsers from blurring the content.
+        return Math.round(optionOffsetFromPanelTop * -1 - optionHeightAdjustment);
+    };
+    /**
+     * Checks that the attempted overlay position will fit within the viewport.
+     * If it will not fit, tries to adjust the scroll position and the associated
+     * y-offset so the panel can open fully on-screen. If it still won't fit,
+     * sets the offset back to 0 to allow the fallback position to take over.
+     */
+    /**
+     * Checks that the attempted overlay position will fit within the viewport.
+     * If it will not fit, tries to adjust the scroll position and the associated
+     * y-offset so the panel can open fully on-screen. If it still won't fit,
+     * sets the offset back to 0 to allow the fallback position to take over.
+     * @private
+     * @param {?} maxScroll
+     * @return {?}
+     */
+    MatSelect.prototype._checkOverlayWithinViewport = /**
+     * Checks that the attempted overlay position will fit within the viewport.
+     * If it will not fit, tries to adjust the scroll position and the associated
+     * y-offset so the panel can open fully on-screen. If it still won't fit,
+     * sets the offset back to 0 to allow the fallback position to take over.
+     * @private
+     * @param {?} maxScroll
+     * @return {?}
+     */
+    function (maxScroll) {
+        /** @type {?} */
+        var itemHeight = this._getItemHeight();
+        /** @type {?} */
+        var viewportSize = this._viewportRuler.getViewportSize();
+        /** @type {?} */
+        var topSpaceAvailable = this._triggerRect.top - SELECT_PANEL_VIEWPORT_PADDING;
+        /** @type {?} */
+        var bottomSpaceAvailable = viewportSize.height - this._triggerRect.bottom - SELECT_PANEL_VIEWPORT_PADDING;
+        /** @type {?} */
+        var panelHeightTop = Math.abs(this._offsetY);
+        /** @type {?} */
+        var totalPanelHeight = Math.min(this._getItemCount() * itemHeight, SELECT_PANEL_MAX_HEIGHT);
+        /** @type {?} */
+        var panelHeightBottom = totalPanelHeight - panelHeightTop - this._triggerRect.height;
+        if (panelHeightBottom > bottomSpaceAvailable) {
+            this._adjustPanelUp(panelHeightBottom, bottomSpaceAvailable);
+        }
+        else if (panelHeightTop > topSpaceAvailable) {
+            this._adjustPanelDown(panelHeightTop, topSpaceAvailable, maxScroll);
+        }
+        else {
+            this._transformOrigin = this._getOriginBasedOnOption();
+        }
+    };
+    /** Adjusts the overlay panel up to fit in the viewport. */
+    /**
+     * Adjusts the overlay panel up to fit in the viewport.
+     * @private
+     * @param {?} panelHeightBottom
+     * @param {?} bottomSpaceAvailable
+     * @return {?}
+     */
+    MatSelect.prototype._adjustPanelUp = /**
+     * Adjusts the overlay panel up to fit in the viewport.
+     * @private
+     * @param {?} panelHeightBottom
+     * @param {?} bottomSpaceAvailable
+     * @return {?}
+     */
+    function (panelHeightBottom, bottomSpaceAvailable) {
+        // Browsers ignore fractional scroll offsets, so we need to round.
+        /** @type {?} */
+        var distanceBelowViewport = Math.round(panelHeightBottom - bottomSpaceAvailable);
+        // Scrolls the panel up by the distance it was extending past the boundary, then
+        // adjusts the offset by that amount to move the panel up into the viewport.
+        this._scrollTop -= distanceBelowViewport;
+        this._offsetY -= distanceBelowViewport;
+        this._transformOrigin = this._getOriginBasedOnOption();
+        // If the panel is scrolled to the very top, it won't be able to fit the panel
+        // by scrolling, so set the offset to 0 to allow the fallback position to take
+        // effect.
+        if (this._scrollTop <= 0) {
+            this._scrollTop = 0;
+            this._offsetY = 0;
+            this._transformOrigin = "50% bottom 0px";
+        }
+    };
+    /** Adjusts the overlay panel down to fit in the viewport. */
+    /**
+     * Adjusts the overlay panel down to fit in the viewport.
+     * @private
+     * @param {?} panelHeightTop
+     * @param {?} topSpaceAvailable
+     * @param {?} maxScroll
+     * @return {?}
+     */
+    MatSelect.prototype._adjustPanelDown = /**
+     * Adjusts the overlay panel down to fit in the viewport.
+     * @private
+     * @param {?} panelHeightTop
+     * @param {?} topSpaceAvailable
+     * @param {?} maxScroll
+     * @return {?}
+     */
+    function (panelHeightTop, topSpaceAvailable, maxScroll) {
+        // Browsers ignore fractional scroll offsets, so we need to round.
+        /** @type {?} */
+        var distanceAboveViewport = Math.round(panelHeightTop - topSpaceAvailable);
+        // Scrolls the panel down by the distance it was extending past the boundary, then
+        // adjusts the offset by that amount to move the panel down into the viewport.
+        this._scrollTop += distanceAboveViewport;
+        this._offsetY += distanceAboveViewport;
+        this._transformOrigin = this._getOriginBasedOnOption();
+        // If the panel is scrolled to the very bottom, it won't be able to fit the
+        // panel by scrolling, so set the offset to 0 to allow the fallback position
+        // to take effect.
+        if (this._scrollTop >= maxScroll) {
+            this._scrollTop = maxScroll;
+            this._offsetY = 0;
+            this._transformOrigin = "50% top 0px";
+            return;
+        }
+    };
+    /** Sets the transform origin point based on the selected option. */
+    /**
+     * Sets the transform origin point based on the selected option.
+     * @private
+     * @return {?}
+     */
+    MatSelect.prototype._getOriginBasedOnOption = /**
+     * Sets the transform origin point based on the selected option.
+     * @private
+     * @return {?}
+     */
+    function () {
+        /** @type {?} */
+        var itemHeight = this._getItemHeight();
+        /** @type {?} */
+        var optionHeightAdjustment = (itemHeight - this._triggerRect.height) / 2;
+        /** @type {?} */
+        var originY = Math.abs(this._offsetY) - optionHeightAdjustment + itemHeight / 2;
+        return "50% " + originY + "px 0px";
+    };
+    /** Calculates the amount of items in the select. This includes options and group labels. */
+    /**
+     * Calculates the amount of items in the select. This includes options and group labels.
+     * @private
+     * @return {?}
+     */
+    MatSelect.prototype._getItemCount = /**
+     * Calculates the amount of items in the select. This includes options and group labels.
+     * @private
+     * @return {?}
+     */
+    function () {
+        return this.options.length + this.optionGroups.length;
+    };
+    /** Calculates the height of the select's options. */
+    /**
+     * Calculates the height of the select's options.
+     * @private
+     * @return {?}
+     */
+    MatSelect.prototype._getItemHeight = /**
+     * Calculates the height of the select's options.
+     * @private
+     * @return {?}
+     */
+    function () {
+        return this._triggerFontSize * SELECT_ITEM_HEIGHT_EM;
+    };
+    /**
+     * Implemented as part of MatFormFieldControl.
+     * @docs-private
+     */
+    /**
+     * Implemented as part of MatFormFieldControl.
+     * \@docs-private
+     * @param {?} ids
+     * @return {?}
+     */
+    MatSelect.prototype.setDescribedByIds = /**
+     * Implemented as part of MatFormFieldControl.
+     * \@docs-private
+     * @param {?} ids
+     * @return {?}
+     */
+    function (ids) {
+        this._ariaDescribedby = ids.join(' ');
+    };
+    /**
+     * Implemented as part of MatFormFieldControl.
+     * @docs-private
+     */
+    /**
+     * Implemented as part of MatFormFieldControl.
+     * \@docs-private
+     * @return {?}
+     */
+    MatSelect.prototype.onContainerClick = /**
+     * Implemented as part of MatFormFieldControl.
+     * \@docs-private
+     * @return {?}
+     */
+    function () {
+        this.focus();
+        this.open();
+    };
+    Object.defineProperty(MatSelect.prototype, "shouldLabelFloat", {
+        /**
+         * Implemented as part of MatFormFieldControl.
+         * @docs-private
+         */
+        get: /**
+         * Implemented as part of MatFormFieldControl.
+         * \@docs-private
+         * @return {?}
+         */
+        function () {
+            return this._panelOpen || !this.empty;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    MatSelect.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Component"], args: [{selector: 'mat-select',
+                    exportAs: 'matSelect',
+                    template: "<div cdk-overlay-origin class=\"mat-select-trigger\" aria-hidden=\"true\" (click)=\"toggle()\" #origin=\"cdkOverlayOrigin\" #trigger><div class=\"mat-select-value\" [ngSwitch]=\"empty\"><span class=\"mat-select-placeholder\" *ngSwitchCase=\"true\">{{placeholder || '\u00A0'}}</span> <span class=\"mat-select-value-text\" *ngSwitchCase=\"false\" [ngSwitch]=\"!!customTrigger\"><span *ngSwitchDefault>{{triggerValue || '\u00A0'}}</span><ng-content select=\"mat-select-trigger\" *ngSwitchCase=\"true\"></ng-content></span></div><div class=\"mat-select-arrow-wrapper\"><div class=\"mat-select-arrow\"></div></div></div><ng-template cdk-connected-overlay cdkConnectedOverlayLockPosition cdkConnectedOverlayHasBackdrop cdkConnectedOverlayBackdropClass=\"cdk-overlay-transparent-backdrop\" [cdkConnectedOverlayScrollStrategy]=\"_scrollStrategy\" [cdkConnectedOverlayOrigin]=\"origin\" [cdkConnectedOverlayOpen]=\"panelOpen\" [cdkConnectedOverlayPositions]=\"_positions\" [cdkConnectedOverlayMinWidth]=\"_triggerRect?.width\" [cdkConnectedOverlayOffsetY]=\"_offsetY\" (backdropClick)=\"close()\" (attach)=\"_onAttached()\" (detach)=\"close()\"><div class=\"mat-select-panel-wrap\" [@transformPanelWrap]><div #panel class=\"mat-select-panel {{ _getPanelTheme() }}\" [ngClass]=\"panelClass\" [@transformPanel]=\"multiple ? 'showing-multiple' : 'showing'\" (@transformPanel.done)=\"_panelDoneAnimatingStream.next($event.toState)\" [style.transformOrigin]=\"_transformOrigin\" [style.font-size.px]=\"_triggerFontSize\" (keydown)=\"_handleKeydown($event)\"><ng-content></ng-content></div></div></ng-template>",
+                    styles: [".mat-select{display:inline-block;width:100%;outline:0}.mat-select-trigger{display:inline-table;cursor:pointer;position:relative;box-sizing:border-box}.mat-select-disabled .mat-select-trigger{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default}.mat-select-value{display:table-cell;max-width:0;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mat-select-value-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mat-select-arrow-wrapper{display:table-cell;vertical-align:middle}.mat-form-field-appearance-fill .mat-select-arrow-wrapper{transform:translateY(-50%)}.mat-form-field-appearance-outline .mat-select-arrow-wrapper{transform:translateY(-25%)}.mat-form-field-appearance-standard.mat-form-field-has-label .mat-select:not(.mat-select-empty) .mat-select-arrow-wrapper{transform:translateY(-50%)}.mat-form-field-appearance-standard .mat-select.mat-select-empty .mat-select-arrow-wrapper{transition:transform .4s cubic-bezier(.25,.8,.25,1)}._mat-animation-noopable.mat-form-field-appearance-standard .mat-select.mat-select-empty .mat-select-arrow-wrapper{transition:none}.mat-select-arrow{width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:5px solid;margin:0 4px}.mat-select-panel-wrap{flex-basis:100%}.mat-select-panel{min-width:112px;max-width:280px;overflow:auto;-webkit-overflow-scrolling:touch;padding-top:0;padding-bottom:0;max-height:256px;min-width:100%;border-radius:4px}@media (-ms-high-contrast:active){.mat-select-panel{outline:solid 1px}}.mat-select-panel .mat-optgroup-label,.mat-select-panel .mat-option{font-size:inherit;line-height:3em;height:3em}.mat-form-field-type-mat-select:not(.mat-form-field-disabled) .mat-form-field-flex{cursor:pointer}.mat-form-field-type-mat-select .mat-form-field-label{width:calc(100% - 18px)}.mat-select-placeholder{transition:color .4s .133s cubic-bezier(.25,.8,.25,1)}._mat-animation-noopable .mat-select-placeholder{transition:none}.mat-form-field-hide-placeholder .mat-select-placeholder{color:transparent;-webkit-text-fill-color:transparent;transition:none;display:block}"],
+                    inputs: ['disabled', 'disableRipple', 'tabIndex'],
+                    encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_9__["ViewEncapsulation"].None,
+                    changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_9__["ChangeDetectionStrategy"].OnPush,
                     host: {
-                        'class': 'mat-stepper-vertical',
-                        'aria-orientation': 'vertical',
-                        'role': 'tablist',
+                        'role': 'listbox',
+                        '[attr.id]': 'id',
+                        '[attr.tabindex]': 'tabIndex',
+                        '[attr.aria-label]': '_getAriaLabel()',
+                        '[attr.aria-labelledby]': '_getAriaLabelledby()',
+                        '[attr.aria-required]': 'required.toString()',
+                        '[attr.aria-disabled]': 'disabled.toString()',
+                        '[attr.aria-invalid]': 'errorState',
+                        '[attr.aria-owns]': 'panelOpen ? _optionIds : null',
+                        '[attr.aria-multiselectable]': 'multiple',
+                        '[attr.aria-describedby]': '_ariaDescribedby || null',
+                        '[attr.aria-activedescendant]': '_getAriaActiveDescendant()',
+                        '[class.mat-select-disabled]': 'disabled',
+                        '[class.mat-select-invalid]': 'errorState',
+                        '[class.mat-select-required]': 'required',
+                        '[class.mat-select-empty]': 'empty',
+                        'class': 'mat-select',
+                        '(keydown)': '_handleKeydown($event)',
+                        '(focus)': '_onFocus()',
+                        '(blur)': '_onBlur()',
                     },
-                    animations: [matStepperAnimations.verticalStepTransition],
-                    providers: [{ provide: MatStepper, useExisting: MatVerticalStepper }],
-                    encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
-                    changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectionStrategy"].OnPush,
+                    animations: [
+                        matSelectAnimations.transformPanelWrap,
+                        matSelectAnimations.transformPanel
+                    ],
+                    providers: [
+                        { provide: _angular_material_form_field__WEBPACK_IMPORTED_MODULE_12__["MatFormFieldControl"], useExisting: MatSelect },
+                        { provide: _angular_material_core__WEBPACK_IMPORTED_MODULE_11__["MAT_OPTION_PARENT_COMPONENT"], useExisting: MatSelect }
+                    ],
                 },] },
     ];
     /** @nocollapse */
-    MatVerticalStepper.ctorParameters = function () { return [
-        { type: _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_6__["Directionality"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Optional"] }] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] },
-        { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_common__WEBPACK_IMPORTED_MODULE_7__["DOCUMENT"],] }] }
+    MatSelect.ctorParameters = function () { return [
+        { type: _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_8__["ViewportRuler"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["ChangeDetectorRef"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["NgZone"] },
+        { type: _angular_material_core__WEBPACK_IMPORTED_MODULE_11__["ErrorStateMatcher"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["ElementRef"] },
+        { type: _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_3__["Directionality"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Optional"] }] },
+        { type: _angular_forms__WEBPACK_IMPORTED_MODULE_10__["NgForm"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Optional"] }] },
+        { type: _angular_forms__WEBPACK_IMPORTED_MODULE_10__["FormGroupDirective"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Optional"] }] },
+        { type: _angular_material_form_field__WEBPACK_IMPORTED_MODULE_12__["MatFormField"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Optional"] }] },
+        { type: _angular_forms__WEBPACK_IMPORTED_MODULE_10__["NgControl"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Self"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Optional"] }] },
+        { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Attribute"], args: ['tabindex',] }] },
+        { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Inject"], args: [MAT_SELECT_SCROLL_STRATEGY,] }] },
+        { type: _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__["LiveAnnouncer"] }
     ]; };
-    return MatVerticalStepper;
-}(MatStepper));
+    MatSelect.propDecorators = {
+        trigger: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["ViewChild"], args: ['trigger',] }],
+        panel: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["ViewChild"], args: ['panel',] }],
+        overlayDir: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["ViewChild"], args: [_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_7__["CdkConnectedOverlay"],] }],
+        options: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["ContentChildren"], args: [_angular_material_core__WEBPACK_IMPORTED_MODULE_11__["MatOption"], { descendants: true },] }],
+        optionGroups: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["ContentChildren"], args: [_angular_material_core__WEBPACK_IMPORTED_MODULE_11__["MatOptgroup"],] }],
+        panelClass: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Input"] }],
+        customTrigger: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["ContentChild"], args: [MatSelectTrigger,] }],
+        placeholder: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Input"] }],
+        required: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Input"] }],
+        multiple: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Input"] }],
+        disableOptionCentering: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Input"] }],
+        compareWith: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Input"] }],
+        value: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Input"] }],
+        ariaLabel: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Input"], args: ['aria-label',] }],
+        ariaLabelledby: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Input"], args: ['aria-labelledby',] }],
+        errorStateMatcher: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Input"] }],
+        sortComparator: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Input"] }],
+        id: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Input"] }],
+        openedChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Output"] }],
+        _openedStream: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Output"], args: ['opened',] }],
+        _closedStream: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Output"], args: ['closed',] }],
+        selectionChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Output"] }],
+        valueChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["Output"] }]
+    };
+    return MatSelect;
+}(_MatSelectMixinBase));
 
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-/**
- * Button that moves to the next step in a stepper workflow.
- */
-var MatStepperNext = /** @class */ (function (_super) {
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(MatStepperNext, _super);
-    function MatStepperNext() {
-        return _super !== null && _super.apply(this, arguments) || this;
+var MatSelectModule = /** @class */ (function () {
+    function MatSelectModule() {
     }
-    MatStepperNext.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"], args: [{
-                    selector: 'button[matStepperNext]',
-                    host: {
-                        '(click)': '_stepper.next()',
-                        '[type]': 'type',
-                    },
-                    inputs: ['type'],
-                    providers: [{ provide: _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_2__["CdkStepper"], useExisting: MatStepper }]
-                },] },
-    ];
-    return MatStepperNext;
-}(_angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_2__["CdkStepperNext"]));
-/**
- * Button that moves to the previous step in a stepper workflow.
- */
-var MatStepperPrevious = /** @class */ (function (_super) {
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(MatStepperPrevious, _super);
-    function MatStepperPrevious() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    MatStepperPrevious.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"], args: [{
-                    selector: 'button[matStepperPrevious]',
-                    host: {
-                        '(click)': '_stepper.previous()',
-                        '[type]': 'type',
-                    },
-                    inputs: ['type'],
-                    providers: [{ provide: _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_2__["CdkStepper"], useExisting: MatStepper }]
-                },] },
-    ];
-    return MatStepperPrevious;
-}(_angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_2__["CdkStepperPrevious"]));
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var MatStepperModule = /** @class */ (function () {
-    function MatStepperModule() {
-    }
-    MatStepperModule.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"], args: [{
+    MatSelectModule.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_9__["NgModule"], args: [{
                     imports: [
-                        _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MatCommonModule"],
-                        _angular_common__WEBPACK_IMPORTED_MODULE_7__["CommonModule"],
-                        _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_10__["PortalModule"],
-                        _angular_material_button__WEBPACK_IMPORTED_MODULE_11__["MatButtonModule"],
-                        _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_2__["CdkStepperModule"],
-                        _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__["MatIconModule"],
-                        _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MatRippleModule"],
+                        _angular_common__WEBPACK_IMPORTED_MODULE_15__["CommonModule"],
+                        _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_7__["OverlayModule"],
+                        _angular_material_core__WEBPACK_IMPORTED_MODULE_11__["MatOptionModule"],
+                        _angular_material_core__WEBPACK_IMPORTED_MODULE_11__["MatCommonModule"],
                     ],
-                    exports: [
-                        _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MatCommonModule"],
-                        MatHorizontalStepper,
-                        MatVerticalStepper,
-                        MatStep,
-                        MatStepLabel,
-                        MatStepper,
-                        MatStepperNext,
-                        MatStepperPrevious,
-                        MatStepHeader,
-                        MatStepperIcon,
-                    ],
-                    declarations: [
-                        MatHorizontalStepper,
-                        MatVerticalStepper,
-                        MatStep,
-                        MatStepLabel,
-                        MatStepper,
-                        MatStepperNext,
-                        MatStepperPrevious,
-                        MatStepHeader,
-                        MatStepperIcon,
-                    ],
-                    providers: [MAT_STEPPER_INTL_PROVIDER, _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["ErrorStateMatcher"]],
+                    exports: [_angular_material_form_field__WEBPACK_IMPORTED_MODULE_12__["MatFormFieldModule"], MatSelect, MatSelectTrigger, _angular_material_core__WEBPACK_IMPORTED_MODULE_11__["MatOptionModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_11__["MatCommonModule"]],
+                    declarations: [MatSelect, MatSelectTrigger],
+                    providers: [MAT_SELECT_SCROLL_STRATEGY_PROVIDER]
                 },] },
     ];
-    return MatStepperModule;
+    return MatSelectModule;
 }());
 
 /**
@@ -1498,7 +2072,7 @@ var MatStepperModule = /** @class */ (function () {
  */
 
 
-//# sourceMappingURL=stepper.es5.js.map
+//# sourceMappingURL=select.es5.js.map
 
 
 /***/ }),
@@ -1510,7 +2084,7 @@ var MatStepperModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".mat-card {\r\n    max-width: 800px;\r\n    margin: auto;\r\n    padding: 0px;\r\n    height: 100%;\r\n    background: rgba(214, 212, 212, 0.048);\r\n    border: .4px solid rgb(59, 59, 59);\r\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n}\r\n\r\n.mat-card-header {\r\n   \r\n    font-weight: bold;\r\n    display: inline;\r\n    \r\n}\r\n\r\n.mat-card-title  {\r\n    margin-left: -16px;\r\n    margin-right: -16px;\r\n    margin-top: 0px;\r\n    color: rgba(0, 0, 0, 0.836);\r\n    background: rgba(34, 34, 34, 0.13);\r\n    padding: 5px;\r\n}\r\n\r\n.mat-card-content {\r\n    margin: 0px;\r\n}\r\n\r\n.mat-card>.mat-card-actions:last-child {\r\n    margin-bottom: 5px;\r\n   \r\n}\r\n\r\n.mat-card-actions .mat-button, .mat-card-actions .mat-raised-button{\r\n    margin: 0px;\r\n    margin-left: 22px;\r\n}\r\n\r\n.mat-expansion-panel {\r\n    background: rgba(255, 254, 254, 0.151);\r\n}\r\n\r\n.requirements {\r\n    margin-left: 30px;\r\n    margin-right: 30px;\r\n    \r\n}\r\n\r\n.content .description{\r\n    font-size: 20px;\r\n    margin-left: 30px;\r\n    margin-right: 30px;\r\n}\r\n\r\n.content .date,.location,.duration{\r\n    margin-left: 40px;\r\n    margin-right: 40px;\r\n}\r\n\r\n.table{\r\n    width: 100%;\r\n    height: 100%;\r\n    overflow-x:  auto;\r\n    overflow-y:  auto;\r\n}\r\n\r\n.mat-card {\r\n    font-family: Georgia, 'Times New Roman', Times, serif;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jb2xsYWItY2FyZC9jb2xsYWItY2FyZC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLFlBQVk7SUFDWixZQUFZO0lBQ1osWUFBWTtJQUNaLHNDQUFzQztJQUN0QyxrQ0FBa0M7SUFDbEMseUVBQXlFO0FBQzdFOztBQUVBOztJQUVJLGlCQUFpQjtJQUNqQixlQUFlOztBQUVuQjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixtQkFBbUI7SUFDbkIsZUFBZTtJQUNmLDJCQUEyQjtJQUMzQixrQ0FBa0M7SUFDbEMsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLFdBQVc7QUFDZjs7QUFFQTtJQUNJLGtCQUFrQjs7QUFFdEI7O0FBQ0E7SUFDSSxXQUFXO0lBQ1gsaUJBQWlCO0FBQ3JCOztBQUNBO0lBQ0ksc0NBQXNDO0FBQzFDOztBQUVBO0lBQ0ksaUJBQWlCO0lBQ2pCLGtCQUFrQjs7QUFFdEI7O0FBSUE7SUFDSSxlQUFlO0lBQ2YsaUJBQWlCO0lBQ2pCLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLGlCQUFpQjtJQUNqQixrQkFBa0I7QUFDdEI7O0FBR0E7SUFDSSxXQUFXO0lBQ1gsWUFBWTtJQUNaLGlCQUFpQjtJQUNqQixpQkFBaUI7QUFDckI7O0FBRUE7SUFDSSxxREFBcUQ7QUFDekQiLCJmaWxlIjoic3JjL2FwcC9ob21lL2NvbGxhYi1jYXJkL2NvbGxhYi1jYXJkLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWF0LWNhcmQge1xyXG4gICAgbWF4LXdpZHRoOiA4MDBweDtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIHBhZGRpbmc6IDBweDtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIGJhY2tncm91bmQ6IHJnYmEoMjE0LCAyMTIsIDIxMiwgMC4wNDgpO1xyXG4gICAgYm9yZGVyOiAuNHB4IHNvbGlkIHJnYig1OSwgNTksIDU5KTtcclxuICAgIGJveC1zaGFkb3c6IDAgNHB4IDhweCAwIHJnYmEoMCwwLDAsMC4yKSwgMCA2cHggMjBweCAwIHJnYmEoMCwgMCwgMCwgMC4xOSk7XHJcbn1cclxuXHJcbi5tYXQtY2FyZC1oZWFkZXIge1xyXG4gICBcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgZGlzcGxheTogaW5saW5lO1xyXG4gICAgXHJcbn1cclxuXHJcbi5tYXQtY2FyZC10aXRsZSAge1xyXG4gICAgbWFyZ2luLWxlZnQ6IC0xNnB4O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAtMTZweDtcclxuICAgIG1hcmdpbi10b3A6IDBweDtcclxuICAgIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuODM2KTtcclxuICAgIGJhY2tncm91bmQ6IHJnYmEoMzQsIDM0LCAzNCwgMC4xMyk7XHJcbiAgICBwYWRkaW5nOiA1cHg7XHJcbn1cclxuXHJcbi5tYXQtY2FyZC1jb250ZW50IHtcclxuICAgIG1hcmdpbjogMHB4O1xyXG59XHJcblxyXG4ubWF0LWNhcmQ+Lm1hdC1jYXJkLWFjdGlvbnM6bGFzdC1jaGlsZCB7XHJcbiAgICBtYXJnaW4tYm90dG9tOiA1cHg7XHJcbiAgIFxyXG59XHJcbi5tYXQtY2FyZC1hY3Rpb25zIC5tYXQtYnV0dG9uLCAubWF0LWNhcmQtYWN0aW9ucyAubWF0LXJhaXNlZC1idXR0b257XHJcbiAgICBtYXJnaW46IDBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiAyMnB4O1xyXG59XHJcbi5tYXQtZXhwYW5zaW9uLXBhbmVsIHtcclxuICAgIGJhY2tncm91bmQ6IHJnYmEoMjU1LCAyNTQsIDI1NCwgMC4xNTEpO1xyXG59XHJcblxyXG4ucmVxdWlyZW1lbnRzIHtcclxuICAgIG1hcmdpbi1sZWZ0OiAzMHB4O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAzMHB4O1xyXG4gICAgXHJcbn1cclxuXHJcblxyXG5cclxuLmNvbnRlbnQgLmRlc2NyaXB0aW9ue1xyXG4gICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDMwcHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDMwcHg7XHJcbn1cclxuXHJcbi5jb250ZW50IC5kYXRlLC5sb2NhdGlvbiwuZHVyYXRpb257XHJcbiAgICBtYXJnaW4tbGVmdDogNDBweDtcclxuICAgIG1hcmdpbi1yaWdodDogNDBweDtcclxufVxyXG5cclxuXHJcbi50YWJsZXtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgb3ZlcmZsb3cteDogIGF1dG87XHJcbiAgICBvdmVyZmxvdy15OiAgYXV0bztcclxufVxyXG5cclxuLm1hdC1jYXJkIHtcclxuICAgIGZvbnQtZmFtaWx5OiBHZW9yZ2lhLCAnVGltZXMgTmV3IFJvbWFuJywgVGltZXMsIHNlcmlmO1xyXG59XHJcblxyXG5cclxuXHJcblxyXG4iXX0= */"
+module.exports = ".mat-card {\n    max-width: 800px;\n    margin: auto;\n    padding: 0px;\n    height: 100%;\n    background: rgba(214, 212, 212, 0.048);\n    border: .4px solid rgb(59, 59, 59);\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}\n\n.mat-card-header {\n   \n    font-weight: bold;\n    display: inline;\n    \n}\n\n.mat-card-title  {\n    margin-left: -16px;\n    margin-right: -16px;\n    margin-top: 0px;\n    color: rgba(0, 0, 0, 0.836);\n    background: rgba(34, 34, 34, 0.13);\n    padding: 5px;\n}\n\n.mat-card-content {\n    margin: 0px;\n}\n\n.mat-card>.mat-card-actions:last-child {\n    margin-bottom: 5px;\n   \n}\n\n.mat-card-actions .mat-button, .mat-card-actions .mat-raised-button{\n    margin: 0px;\n    margin-left: 22px;\n}\n\n.mat-expansion-panel {\n    background: rgba(255, 254, 254, 0.151);\n}\n\n.requirements {\n    margin-left: 30px;\n    margin-right: 30px;\n    \n}\n\n.content .description{\n    font-size: 20px;\n    margin-left: 30px;\n    margin-right: 30px;\n}\n\n.content .date,.location,.duration{\n    margin-left: 40px;\n    margin-right: 40px;\n}\n\n.table{\n    width: 100%;\n    height: 100%;\n    overflow-x:  auto;\n    overflow-y:  auto;\n}\n\n.mat-card {\n    font-family: Georgia, 'Times New Roman', Times, serif;\n}\n\n\n\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jb2xsYWItY2FyZC9jb2xsYWItY2FyZC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLFlBQVk7SUFDWixZQUFZO0lBQ1osWUFBWTtJQUNaLHNDQUFzQztJQUN0QyxrQ0FBa0M7SUFDbEMseUVBQXlFO0FBQzdFOztBQUVBOztJQUVJLGlCQUFpQjtJQUNqQixlQUFlOztBQUVuQjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixtQkFBbUI7SUFDbkIsZUFBZTtJQUNmLDJCQUEyQjtJQUMzQixrQ0FBa0M7SUFDbEMsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLFdBQVc7QUFDZjs7QUFFQTtJQUNJLGtCQUFrQjs7QUFFdEI7O0FBQ0E7SUFDSSxXQUFXO0lBQ1gsaUJBQWlCO0FBQ3JCOztBQUNBO0lBQ0ksc0NBQXNDO0FBQzFDOztBQUVBO0lBQ0ksaUJBQWlCO0lBQ2pCLGtCQUFrQjs7QUFFdEI7O0FBSUE7SUFDSSxlQUFlO0lBQ2YsaUJBQWlCO0lBQ2pCLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLGlCQUFpQjtJQUNqQixrQkFBa0I7QUFDdEI7O0FBR0E7SUFDSSxXQUFXO0lBQ1gsWUFBWTtJQUNaLGlCQUFpQjtJQUNqQixpQkFBaUI7QUFDckI7O0FBRUE7SUFDSSxxREFBcUQ7QUFDekQiLCJmaWxlIjoic3JjL2FwcC9ob21lL2NvbGxhYi1jYXJkL2NvbGxhYi1jYXJkLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWF0LWNhcmQge1xuICAgIG1heC13aWR0aDogODAwcHg7XG4gICAgbWFyZ2luOiBhdXRvO1xuICAgIHBhZGRpbmc6IDBweDtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgYmFja2dyb3VuZDogcmdiYSgyMTQsIDIxMiwgMjEyLCAwLjA0OCk7XG4gICAgYm9yZGVyOiAuNHB4IHNvbGlkIHJnYig1OSwgNTksIDU5KTtcbiAgICBib3gtc2hhZG93OiAwIDRweCA4cHggMCByZ2JhKDAsMCwwLDAuMiksIDAgNnB4IDIwcHggMCByZ2JhKDAsIDAsIDAsIDAuMTkpO1xufVxuXG4ubWF0LWNhcmQtaGVhZGVyIHtcbiAgIFxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgIGRpc3BsYXk6IGlubGluZTtcbiAgICBcbn1cblxuLm1hdC1jYXJkLXRpdGxlICB7XG4gICAgbWFyZ2luLWxlZnQ6IC0xNnB4O1xuICAgIG1hcmdpbi1yaWdodDogLTE2cHg7XG4gICAgbWFyZ2luLXRvcDogMHB4O1xuICAgIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuODM2KTtcbiAgICBiYWNrZ3JvdW5kOiByZ2JhKDM0LCAzNCwgMzQsIDAuMTMpO1xuICAgIHBhZGRpbmc6IDVweDtcbn1cblxuLm1hdC1jYXJkLWNvbnRlbnQge1xuICAgIG1hcmdpbjogMHB4O1xufVxuXG4ubWF0LWNhcmQ+Lm1hdC1jYXJkLWFjdGlvbnM6bGFzdC1jaGlsZCB7XG4gICAgbWFyZ2luLWJvdHRvbTogNXB4O1xuICAgXG59XG4ubWF0LWNhcmQtYWN0aW9ucyAubWF0LWJ1dHRvbiwgLm1hdC1jYXJkLWFjdGlvbnMgLm1hdC1yYWlzZWQtYnV0dG9ue1xuICAgIG1hcmdpbjogMHB4O1xuICAgIG1hcmdpbi1sZWZ0OiAyMnB4O1xufVxuLm1hdC1leHBhbnNpb24tcGFuZWwge1xuICAgIGJhY2tncm91bmQ6IHJnYmEoMjU1LCAyNTQsIDI1NCwgMC4xNTEpO1xufVxuXG4ucmVxdWlyZW1lbnRzIHtcbiAgICBtYXJnaW4tbGVmdDogMzBweDtcbiAgICBtYXJnaW4tcmlnaHQ6IDMwcHg7XG4gICAgXG59XG5cblxuXG4uY29udGVudCAuZGVzY3JpcHRpb257XG4gICAgZm9udC1zaXplOiAyMHB4O1xuICAgIG1hcmdpbi1sZWZ0OiAzMHB4O1xuICAgIG1hcmdpbi1yaWdodDogMzBweDtcbn1cblxuLmNvbnRlbnQgLmRhdGUsLmxvY2F0aW9uLC5kdXJhdGlvbntcbiAgICBtYXJnaW4tbGVmdDogNDBweDtcbiAgICBtYXJnaW4tcmlnaHQ6IDQwcHg7XG59XG5cblxuLnRhYmxle1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogMTAwJTtcbiAgICBvdmVyZmxvdy14OiAgYXV0bztcbiAgICBvdmVyZmxvdy15OiAgYXV0bztcbn1cblxuLm1hdC1jYXJkIHtcbiAgICBmb250LWZhbWlseTogR2VvcmdpYSwgJ1RpbWVzIE5ldyBSb21hbicsIFRpbWVzLCBzZXJpZjtcbn1cblxuXG5cblxuIl19 */"
 
 /***/ }),
 
@@ -1521,7 +2095,7 @@ module.exports = ".mat-card {\r\n    max-width: 800px;\r\n    margin: auto;\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card>\r\n  <mat-card-header >\r\n\r\n    <mat-card-title> \r\n\r\n      <mat-grid-list  cols=\"2\" rowHeight=\"4:1\">\r\n        \r\n        <mat-grid-tile>{{collabData?.title}}</mat-grid-tile>\r\n        <mat-grid-tile><mat-icon>group</mat-icon> : {{collabData?.members.length}} / {{ collabData?.size}}</mat-grid-tile>\r\n      </mat-grid-list>\r\n      \r\n    </mat-card-title>\r\n\r\n  </mat-card-header>\r\n  <mat-card-content>\r\n    <mat-accordion>\r\n        <div class = \"content\">\r\n            <p class=\"description\">Description: {{ collabData?.description }} </p>\r\n            <p class=\"date\">Date: {{ collabData?.date | date:'medium' }}</p>\r\n            <p class=\"duration\">Apply By: {{ collabData?.duration | date:'medium' }}</p>\r\n            <p class=\"location\">Location: {{ collabData?.location }}</p>\r\n\r\n            <div class = \"requirements\">\r\n                <mat-chip-list>\r\n                    Classes: \r\n                    <mat-chip *ngFor = \"let class of collabData?.classes\">\r\n                      {{ class }}\r\n                    </mat-chip>\r\n                </mat-chip-list>\r\n                <br>\r\n                <mat-chip-list>\r\n                    Skills: \r\n                    <mat-chip *ngFor=\"let skill of collabData?.skills\">\r\n                      {{ skill }}\r\n                    </mat-chip>\r\n                </mat-chip-list>\r\n            </div>\r\n      \r\n        </div>\r\n        <br>\r\n        \r\n        <!-- Event Binding: In this case the event is (opened) -->\r\n        <mat-expansion-panel \r\n                       (opened)=\"panelOpenState = true && makeTable()\"\r\n                       (closed)=\"panelOpenState = false\">\r\n        <mat-expansion-panel-header>\r\n          <mat-panel-title>\r\n            <h4>Members</h4>\r\n          </mat-panel-title>\r\n          <mat-panel-description>\r\n          </mat-panel-description>\r\n          </mat-expansion-panel-header>\r\n\r\n            <ng-container class=\"table-container\">\r\n              <div class=\"table\">\r\n                <collab-table [table] = \"table\" [xAxisReq] = \"xAxisReq\"></collab-table>\r\n              </div>\r\n            </ng-container>\r\n          \r\n          \r\n        </mat-expansion-panel>\r\n    </mat-accordion>\r\n    \r\n  </mat-card-content>\r\n\r\n  <mat-expansion-panel \r\n                       (opened)=\"panelOpenState = true && actionCheck()\"\r\n                       (closed)=\"panelOpenState = false\">\r\n        <mat-expansion-panel-header>\r\n          <mat-panel-title>\r\n            <h4>Actions</h4>\r\n          </mat-panel-title>\r\n          <mat-panel-description>\r\n          </mat-panel-description>\r\n          </mat-expansion-panel-header>\r\n            <mat-card-actions>\r\n              <button *ngIf=\"checkPartOf() == false\" mat-raised-button color = \"primary\" (click) = \"joinCollab()\"  > Join </button>\r\n              <button *ngIf=\"checkPartOf() == true\"  mat-raised-button color = \"primary\" (click) = \"leaveCollab()\" > Leave </button>\r\n              <button *ngIf=\"checkOwner() == true\"   mat-raised-button color = \"primary\" (click) = \"deleteCollab()\"> Delete </button>\r\n              <button *ngIf=\"checkOwner() == true\"   mat-raised-button color = \"primary\" (ckick) = \"editCollab()\"> Edit </button>\r\n            </mat-card-actions>   \r\n        </mat-expansion-panel>\r\n\r\n  \r\n\r\n</mat-card>"
+module.exports = "<mat-card>\n  <mat-card-header >\n\n    <mat-card-title> \n\n      <mat-grid-list  cols=\"2\" rowHeight=\"4:1\">\n        <mat-grid-tile>{{collabData?.title}}</mat-grid-tile>\n        <mat-grid-tile><mat-icon>group</mat-icon> : {{collabData?.members.length}} / {{ collabData?.size}}</mat-grid-tile>\n      </mat-grid-list>\n      \n    </mat-card-title>\n\n  </mat-card-header>\n  <mat-card-content>\n    <mat-accordion>\n        <div class = \"content\">\n            <p class=\"description\">Description: {{ collabData?.description }} </p>\n            <p class=\"date\">Date: {{ collabData?.date | date:'medium' }}</p>\n            <p class=\"duration\">Apply By: {{ collabData?.duration | date:'medium' }}</p>\n            <p class=\"location\">Location: {{ collabData?.location }}</p>\n\n            <div class = \"requirements\">\n                <mat-chip-list>\n                    Classes: \n                    <mat-chip *ngFor = \"let class of collabData?.classes\">\n                      {{ class }}\n                    </mat-chip>\n                </mat-chip-list>\n                <br>\n                <mat-chip-list>\n                    Skills: \n                    <mat-chip *ngFor=\"let skill of collabData?.skills\">\n                      {{ skill }}\n                    </mat-chip>\n                </mat-chip-list>\n            </div>\n      \n        </div>\n        <br>\n        \n        <!-- Event Binding: In this case the event is (opened) -->\n        <mat-expansion-panel \n                       (opened)=\"panelOpenState = true && makeTable()\"\n                       (closed)=\"panelOpenState = false\">\n        <mat-expansion-panel-header>\n          <mat-panel-title>\n              <h4>Members</h4>\n          </mat-panel-title>\n          <mat-panel-description>\n          </mat-panel-description>\n          </mat-expansion-panel-header>\n\n            <ng-container class=\"table-container\">\n              <div class=\"table\">\n                <collab-table [table] = \"table\" [xAxisReq] = \"xAxisReq\"></collab-table>\n              </div>\n            </ng-container>\n          \n          \n        </mat-expansion-panel>\n    </mat-accordion>\n    \n  </mat-card-content>\n\n  <mat-expansion-panel \n                       (opened)=\"panelOpenState = true && actionCheck()\"\n                       (closed)=\"panelOpenState = false\">\n        <mat-expansion-panel-header>\n          <mat-panel-title>\n            <h4>Actions</h4>\n          </mat-panel-title>\n          <mat-panel-description>\n          </mat-panel-description>\n          </mat-expansion-panel-header>\n            <mat-card-actions>\n              <button *ngIf=\"checkPartOf() == false\" mat-raised-button color = \"primary\" (click) = \"joinCollab()\"  > Join </button>\n              <button *ngIf=\"checkPartOf() == true\"  mat-raised-button color = \"primary\" (click) = \"leaveCollab()\" > Leave </button>\n              <button *ngIf=\"checkOwner() == true\"   mat-raised-button color = \"primary\" (click) = \"deleteCollab()\"> Delete </button>\n              <button *ngIf=\"checkOwner() == true\"   mat-raised-button color = \"primary\" (click) = \"editCollab()\">    Edit</button>\n            </mat-card-actions>   \n        </mat-expansion-panel>\n\n  \n\n</mat-card>"
 
 /***/ }),
 
@@ -1541,6 +2115,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_models_collab_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../shared/models/collab.model */ "./src/app/shared/models/collab.model.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_shared_models_tableBuilder_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/shared/models/tableBuilder.model */ "./src/app/shared/models/tableBuilder.model.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
 
 
 
@@ -1548,9 +2124,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var CollabCardComponent = /** @class */ (function () {
-    function CollabCardComponent(userService, collabService) {
+    function CollabCardComponent(userService, collabService, router) {
         this.userService = userService;
         this.collabService = collabService;
+        this.router = router;
         this.table = [];
         this.xAxisReq = [];
         this.alreadyBuilt = false;
@@ -1611,6 +2188,11 @@ var CollabCardComponent = /** @class */ (function () {
             });
         });
     };
+    CollabCardComponent.prototype.RefreshPage = function () {
+        this.getAllRequired();
+        //Will members of the collaboration
+        this.yAxisUsers = this.collabData.members;
+    };
     //WIll check if a user knows skill or class, from the list of classes and skills that a user knows
     CollabCardComponent.prototype.checkIfKnown = function (userName, listOfRequired) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
@@ -1668,7 +2250,6 @@ var CollabCardComponent = /** @class */ (function () {
         });
     };
     CollabCardComponent.prototype.isUserOwner = function () {
-        console.log(this.userData['username']);
         if (this.collabData.owner == this.userData['username']) {
             this.isOwner = true;
         }
@@ -1683,7 +2264,6 @@ var CollabCardComponent = /** @class */ (function () {
                 this.partOf = true;
             }
         }
-        console.log(this.partOf);
     };
     CollabCardComponent.prototype.checkPartOf = function () {
         return this.partOf;
@@ -1703,6 +2283,9 @@ var CollabCardComponent = /** @class */ (function () {
         this.collabService.deleteCollab(this.collabData._id)
             .subscribe(function (res) { console.log(res); });
     };
+    CollabCardComponent.prototype.editCollab = function () {
+        this.router.navigate(['/home/editcollab/', this.collabData._id["$oid"]]);
+    };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _shared_models_collab_model__WEBPACK_IMPORTED_MODULE_3__["CollabModel"])
@@ -1714,7 +2297,8 @@ var CollabCardComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./collab-card.component.css */ "./src/app/home/collab-card/collab-card.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"],
-            src_app_shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_1__["CollabsService"]])
+            src_app_shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_1__["CollabsService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"]])
     ], CollabCardComponent);
     return CollabCardComponent;
 }());
@@ -1730,7 +2314,7 @@ var CollabCardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "p {\r\n    padding: 16px;\r\n    text-align: center;\r\n  \r\n  }\r\n\r\n  .collab {\r\n    margin-top:25px;\r\n    margin-bottom: 30px;\r\n  }\r\n\r\n  .add-collab-button {\r\n    z-index: 5; \r\n    position: fixed; \r\n    display: flex;\r\n    align-self: flex-end; \r\n    bottom: 7%; \r\n    margin-bottom: 5px;\r\n    margin-left: 80%; \r\n  }\r\n\r\n  \r\n\r\n  \r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jb2xsYWItbGlzdC9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxhQUFhO0lBQ2Isa0JBQWtCOztFQUVwQjs7RUFFQTtJQUNFLGVBQWU7SUFDZixtQkFBbUI7RUFDckI7O0VBRUE7SUFDRSxVQUFVO0lBQ1YsZUFBZTtJQUNmLGFBQWE7SUFDYixvQkFBb0I7SUFDcEIsVUFBVTtJQUNWLGtCQUFrQjtJQUNsQixnQkFBZ0I7RUFDbEIiLCJmaWxlIjoic3JjL2FwcC9ob21lL2NvbGxhYi1saXN0L2hvbWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInAge1xyXG4gICAgcGFkZGluZzogMTZweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBcclxuICB9XHJcblxyXG4gIC5jb2xsYWIge1xyXG4gICAgbWFyZ2luLXRvcDoyNXB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMzBweDtcclxuICB9XHJcblxyXG4gIC5hZGQtY29sbGFiLWJ1dHRvbiB7XHJcbiAgICB6LWluZGV4OiA1OyBcclxuICAgIHBvc2l0aW9uOiBmaXhlZDsgXHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgYWxpZ24tc2VsZjogZmxleC1lbmQ7IFxyXG4gICAgYm90dG9tOiA3JTsgXHJcbiAgICBtYXJnaW4tYm90dG9tOiA1cHg7XHJcbiAgICBtYXJnaW4tbGVmdDogODAlOyBcclxuICB9XHJcblxyXG4gIFxyXG5cclxuICAiXX0= */"
+module.exports = "p {\n    padding: 16px;\n    text-align: center;\n  \n  }\n\n  .collab {\n    margin-top:25px;\n    margin-bottom: 30px;\n  }\n\n  .add-collab-button {\n    z-index: 5; \n    position: fixed; \n    display: flex;\n    align-self: flex-end; \n    bottom: 7%; \n    margin-bottom: 5px;\n    margin-left: 80%; \n  }\n\n  \n\n  \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jb2xsYWItbGlzdC9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxhQUFhO0lBQ2Isa0JBQWtCOztFQUVwQjs7RUFFQTtJQUNFLGVBQWU7SUFDZixtQkFBbUI7RUFDckI7O0VBRUE7SUFDRSxVQUFVO0lBQ1YsZUFBZTtJQUNmLGFBQWE7SUFDYixvQkFBb0I7SUFDcEIsVUFBVTtJQUNWLGtCQUFrQjtJQUNsQixnQkFBZ0I7RUFDbEIiLCJmaWxlIjoic3JjL2FwcC9ob21lL2NvbGxhYi1saXN0L2hvbWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInAge1xuICAgIHBhZGRpbmc6IDE2cHg7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBcbiAgfVxuXG4gIC5jb2xsYWIge1xuICAgIG1hcmdpbi10b3A6MjVweDtcbiAgICBtYXJnaW4tYm90dG9tOiAzMHB4O1xuICB9XG5cbiAgLmFkZC1jb2xsYWItYnV0dG9uIHtcbiAgICB6LWluZGV4OiA1OyBcbiAgICBwb3NpdGlvbjogZml4ZWQ7IFxuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgYWxpZ24tc2VsZjogZmxleC1lbmQ7IFxuICAgIGJvdHRvbTogNyU7IFxuICAgIG1hcmdpbi1ib3R0b206IDVweDtcbiAgICBtYXJnaW4tbGVmdDogODAlOyBcbiAgfVxuXG4gIFxuXG4gICJdfQ== */"
 
 /***/ }),
 
@@ -1741,7 +2325,7 @@ module.exports = "p {\r\n    padding: 16px;\r\n    text-align: center;\r\n  \r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "   <!--\r\n     selected.value: Is a value from .ts file.\r\n     selectedIndex: DOM value\r\n   -->\r\n   <mat-tab-group [selectedIndex] = \"selected.value\" \r\n                  (selectedIndexChange) =\"currentTab($event)\" >\r\n\r\n      <mat-tab label=\"All Collabs\">\r\n        <ng-template matTabContent>\r\n          <ng-container *ngFor = \"let collab of collabData\">\r\n            <div class =\"collab\">\r\n                <!-- Property binding from component to component using @Input() and @Output -->\r\n                <collab-card [collabData] = \"collab\"></collab-card>\r\n            </div>      \r\n          </ng-container>\r\n        </ng-template>\r\n      </mat-tab>\r\n\r\n      <mat-tab label=\"My Collabs\">\r\n        <ng-template matTabContent>\r\n            <ng-container *ngFor = \"let collab of collabData\">\r\n              <div class =\"collab\">\r\n                <!-- Property binding from component to component using @Input() and @Output -->\r\n                <collab-card [collabData] = \"collab\"></collab-card>\r\n              </div>      \r\n            </ng-container>\r\n        </ng-template>\r\n      </mat-tab>\r\n\r\n      <mat-tab label=\"Recommended Collabs\">\r\n        <ng-template matTabContent>\r\n          <ng-container *ngFor = \"let collab of collabData\">\r\n            <div class =\"collab\">\r\n                <!-- Property binding from component to component using @Input() and @Output -->\r\n                <collab-card [collabData] = \"collab\"></collab-card>\r\n            </div>      \r\n          </ng-container>\r\n        </ng-template>\r\n      </mat-tab>\r\n\r\n   </mat-tab-group>\r\n\r\n   <div class = \"add-collab-button\">\r\n     <a mat-fab color = \"primary\" routerLink=\"/home/createcollab\" style=\"margin-right: 14px\">\r\n      <mat-icon>add</mat-icon>\r\n     </a>\r\n   </div>\r\n     \r\n          \r\n            \r\n"
+module.exports = "   <!--\n     selected.value: Is a value from .ts file.\n     selectedIndex: DOM value\n   -->\n   <mat-tab-group [selectedIndex] = \"selected.value\" \n                  (selectedIndexChange) =\"currentTab($event)\" >\n\n      <mat-tab label=\"All Collabs\">\n        <ng-template matTabContent>\n          <ng-container *ngFor = \"let collab of collabData\">\n            <div class =\"collab\">\n                <!-- Property binding from component to component using @Input() and @Output -->\n                <collab-card [collabData] = \"collab\"></collab-card>\n            </div>      \n          </ng-container>\n        </ng-template>\n      </mat-tab>\n\n      <mat-tab label=\"My Collabs\">\n        <ng-template matTabContent>\n            <ng-container *ngFor = \"let collab of collabData\">\n              <div class =\"collab\">\n                <!-- Property binding from component to component using @Input() and @Output -->\n                <collab-card [collabData] = \"collab\"></collab-card>\n              </div>      \n            </ng-container>\n        </ng-template>\n      </mat-tab>\n\n      <mat-tab label=\"Recommended Collabs\">\n        <ng-template matTabContent>\n          <ng-container *ngFor = \"let collab of collabData\">\n            <div class =\"collab\">\n                <!-- Property binding from component to component using @Input() and @Output -->\n                <collab-card [collabData] = \"collab\"></collab-card>\n            </div>      \n          </ng-container>\n        </ng-template>\n      </mat-tab>\n\n   </mat-tab-group>\n\n   <div class = \"add-collab-button\">\n     <a mat-fab color = \"primary\" routerLink=\"/home/createcollab\" style=\"margin-right: 14px\">\n      <mat-icon>add</mat-icon>\n     </a>\n   </div>\n     \n          \n            \n"
 
 /***/ }),
 
@@ -1782,6 +2366,13 @@ var HomeComponent = /** @class */ (function () {
         var _this = this;
         this.userService.getUserdetails().subscribe(function (userData) { return _this.userData = userData; });
     };
+    HomeComponent.prototype.userPicture = function () {
+        ///user/profilePicture
+        this.userService.getPicture().subscribe(function (data) {
+            // BitmapImage image = new BitmapImage();
+            // image.SetSource(stream);  
+        });
+    };
     // return array of JSON OBJECTS
     HomeComponent.prototype.collabDetails = function () {
         this.collabService.collabDetails().subscribe(function (data) {
@@ -1789,6 +2380,11 @@ var HomeComponent = /** @class */ (function () {
     };
     HomeComponent.prototype.activeCollabs = function () {
         this.collabService.activeCollabs().subscribe(function (data) {
+            //console.log(data);   
+        });
+    };
+    HomeComponent.prototype.myCollabs = function () {
+        this.collabService.myCollabs().subscribe(function (data) {
             //console.log(data);   
         });
     };
@@ -1808,19 +2404,18 @@ var HomeComponent = /** @class */ (function () {
                         return [3 /*break*/, 6];
                     case 1:
                         {
-                            this.collabService.getCollabs("getActiveCollabs").subscribe(function (data) { return _this.collabData = data; });
+                            this.collabService.getCollabs("getActiveCollabs").subscribe(function (data) { return _this.collabData = data.reverse(); });
                             return [3 /*break*/, 7];
                         }
                         _b.label = 2;
-                    case 2: return [4 /*yield*/, this.collabService.getCollabs("getCollabDetails").subscribe(function (data) { return _this.collabData = data; })];
+                    case 2: return [4 /*yield*/, this.collabService.getCollabs("getCollabDetails").subscribe(function (data) { return _this.collabData = data.reverse(); })];
                     case 3:
                         _b.sent();
                         return [3 /*break*/, 7];
-                    case 4: 
-                    //console.log(this.userData);
-                    return [4 /*yield*/, this.collabService.getReqCollabs(this.userData["classes"], this.userData["skills"]).subscribe(function (data) { return _this.collabData = data; })];
+                    case 4:
+                        console.log(this.userData);
+                        return [4 /*yield*/, this.collabService.getReqCollabs(this.userData["classes"], this.userData["skills"]).subscribe(function (data) { return _this.collabData = data.reverse(); })];
                     case 5:
-                        //console.log(this.userData);
                         _b.sent();
                         return [3 /*break*/, 7];
                     case 6:
@@ -1857,7 +2452,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "table { \r\n    width: 100%; \r\n    border-collapse: collapse; \r\n  }\r\n  /* Zebra striping */\r\n  tr:nth-of-type(odd) { \r\n    background: #eee; \r\n  }\r\n  th { \r\n    background: #333; \r\n    color: white; \r\n    font-weight: bold; \r\n  }\r\n  td, th { \r\n    padding: 6px; \r\n    border: 1px solid #ccc; \r\n    text-align: left; \r\n  }\r\n  .mat-card-avatar {\r\n    background-image: url('/assets/userPhoto.png');\r\n    vertical-align: middle;\r\n    width: 50px;\r\n    height: 50px;\r\n    border-radius: 50%;\r\n\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jb2xsYWItdGFibGUvY29sbGFiLXRhYmxlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxXQUFXO0lBQ1gseUJBQXlCO0VBQzNCO0VBQ0EsbUJBQW1CO0VBQ25CO0lBQ0UsZ0JBQWdCO0VBQ2xCO0VBQ0E7SUFDRSxnQkFBZ0I7SUFDaEIsWUFBWTtJQUNaLGlCQUFpQjtFQUNuQjtFQUNBO0lBQ0UsWUFBWTtJQUNaLHNCQUFzQjtJQUN0QixnQkFBZ0I7RUFDbEI7RUFFQTtJQUNFLDhDQUE4QztJQUM5QyxzQkFBc0I7SUFDdEIsV0FBVztJQUNYLFlBQVk7SUFDWixrQkFBa0I7O0FBRXRCIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9jb2xsYWItdGFibGUvY29sbGFiLXRhYmxlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJ0YWJsZSB7IFxyXG4gICAgd2lkdGg6IDEwMCU7IFxyXG4gICAgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTsgXHJcbiAgfVxyXG4gIC8qIFplYnJhIHN0cmlwaW5nICovXHJcbiAgdHI6bnRoLW9mLXR5cGUob2RkKSB7IFxyXG4gICAgYmFja2dyb3VuZDogI2VlZTsgXHJcbiAgfVxyXG4gIHRoIHsgXHJcbiAgICBiYWNrZ3JvdW5kOiAjMzMzOyBcclxuICAgIGNvbG9yOiB3aGl0ZTsgXHJcbiAgICBmb250LXdlaWdodDogYm9sZDsgXHJcbiAgfVxyXG4gIHRkLCB0aCB7IFxyXG4gICAgcGFkZGluZzogNnB4OyBcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7IFxyXG4gICAgdGV4dC1hbGlnbjogbGVmdDsgXHJcbiAgfVxyXG5cclxuICAubWF0LWNhcmQtYXZhdGFyIHtcclxuICAgIGJhY2tncm91bmQtaW1hZ2U6IHVybCgnL2Fzc2V0cy91c2VyUGhvdG8ucG5nJyk7XHJcbiAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xyXG4gICAgd2lkdGg6IDUwcHg7XHJcbiAgICBoZWlnaHQ6IDUwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcblxyXG59Il19 */"
+module.exports = "table { \n    width: 100%; \n    border-collapse: collapse; \n  }\n  /* Zebra striping */\n  tr:nth-of-type(odd) { \n    background: #eee; \n  }\n  th { \n    background: #333; \n    color: white; \n    font-weight: bold; \n  }\n  td, th { \n    padding: 6px; \n    border: 1px solid #ccc; \n    text-align: left; \n  }\n  td a{\n    display: block;\n  \n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jb2xsYWItdGFibGUvY29sbGFiLXRhYmxlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxXQUFXO0lBQ1gseUJBQXlCO0VBQzNCO0VBQ0EsbUJBQW1CO0VBQ25CO0lBQ0UsZ0JBQWdCO0VBQ2xCO0VBQ0E7SUFDRSxnQkFBZ0I7SUFDaEIsWUFBWTtJQUNaLGlCQUFpQjtFQUNuQjtFQUNBO0lBQ0UsWUFBWTtJQUNaLHNCQUFzQjtJQUN0QixnQkFBZ0I7RUFDbEI7RUFFQTtJQUNFLGNBQWM7O0VBRWhCIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9jb2xsYWItdGFibGUvY29sbGFiLXRhYmxlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJ0YWJsZSB7IFxuICAgIHdpZHRoOiAxMDAlOyBcbiAgICBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlOyBcbiAgfVxuICAvKiBaZWJyYSBzdHJpcGluZyAqL1xuICB0cjpudGgtb2YtdHlwZShvZGQpIHsgXG4gICAgYmFja2dyb3VuZDogI2VlZTsgXG4gIH1cbiAgdGggeyBcbiAgICBiYWNrZ3JvdW5kOiAjMzMzOyBcbiAgICBjb2xvcjogd2hpdGU7IFxuICAgIGZvbnQtd2VpZ2h0OiBib2xkOyBcbiAgfVxuICB0ZCwgdGggeyBcbiAgICBwYWRkaW5nOiA2cHg7IFxuICAgIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7IFxuICAgIHRleHQtYWxpZ246IGxlZnQ7IFxuICB9XG5cbiAgdGQgYXtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgXG4gIH0iXX0= */"
 
 /***/ }),
 
@@ -1868,7 +2463,7 @@ module.exports = "table { \r\n    width: 100%; \r\n    border-collapse: collapse
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<table>\n    <tr *ngFor = \"let row of table\">\n      <td>{{ row.userName}}</td>\n      <td *ngFor = \"let req of row.list\" [style.background-color] = \"req.knows ? '#ccffcc' : '#ffcccc'\"> {{ req.nameOf }} </td>\n    </tr>\n</table>"
+module.exports = "\n<table>\n    <tr *ngFor = \"let row of table\">\n      <td>\n        <button mat-button color= \"primary\" (click) = \"goToProfile(row.userName)\">{{ row.userName }}</button>\n      </td>\n      <td *ngFor = \"let req of row.list\" [style.background-color] = \"req.knows ? '#ccffcc' : '#ffcccc'\"> {{ req.nameOf }} </td>\n    </tr>\n</table>"
 
 /***/ }),
 
@@ -1884,15 +2479,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CollabTableComponent", function() { return CollabTableComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
 
 
 var CollabTableComponent = /** @class */ (function () {
-    function CollabTableComponent() {
+    function CollabTableComponent(router) {
+        this.router = router;
         this.table = [];
         this.xAxisReq = [];
     }
     CollabTableComponent.prototype.ngOnInit = function () {
         //console.log(this.xAxisReq);
+    };
+    CollabTableComponent.prototype.goToProfile = function (user) {
+        this.router.navigate(['/user/', user]);
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -1908,7 +2509,7 @@ var CollabTableComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./collab-table.component.html */ "./src/app/home/collab-table/collab-table.component.html"),
             styles: [__webpack_require__(/*! ./collab-table.component.css */ "./src/app/home/collab-table/collab-table.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], CollabTableComponent);
     return CollabTableComponent;
 }());
@@ -1924,7 +2525,7 @@ var CollabTableComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".mat-form-field{\n    width: 70%;\n    margin-top: 10px;\n}\n\n.container {\n    margin-top: 50px;\n    margin-left: 25px;\n    margin-right: 25px;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}\n\n.example-chip-list {\n    width: 100%;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jcmVhdGUtY29sbGFiL2NyZWF0ZS1jb2xsYWIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFVBQVU7SUFDVixnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxnQkFBZ0I7SUFDaEIsaUJBQWlCO0lBQ2pCLGtCQUFrQjtJQUNsQix5RUFBeUU7QUFDN0U7O0FBRUE7SUFDSSxXQUFXO0VBQ2IiLCJmaWxlIjoic3JjL2FwcC9ob21lL2NyZWF0ZS1jb2xsYWIvY3JlYXRlLWNvbGxhYi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1hdC1mb3JtLWZpZWxke1xuICAgIHdpZHRoOiA3MCU7XG4gICAgbWFyZ2luLXRvcDogMTBweDtcbn1cblxuLmNvbnRhaW5lciB7XG4gICAgbWFyZ2luLXRvcDogNTBweDtcbiAgICBtYXJnaW4tbGVmdDogMjVweDtcbiAgICBtYXJnaW4tcmlnaHQ6IDI1cHg7XG4gICAgYm94LXNoYWRvdzogMCA0cHggOHB4IDAgcmdiYSgwLDAsMCwwLjIpLCAwIDZweCAyMHB4IDAgcmdiYSgwLCAwLCAwLCAwLjE5KTtcbn1cblxuLmV4YW1wbGUtY2hpcC1saXN0IHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfSJdfQ== */"
+module.exports = ".mat-form-field{\n    width: 70%;\n    margin-top: 10px;\n}\n\n.container {\n    margin-top: 50px;\n    margin-bottom: 50px;\n    margin-left: 10%;\n    margin-right: 10%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n\n}\n\n.example-chip-list {\n    width: 100%;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jcmVhdGUtY29sbGFiL2NyZWF0ZS1jb2xsYWIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFVBQVU7SUFDVixnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxnQkFBZ0I7SUFDaEIsbUJBQW1CO0lBQ25CLGdCQUFnQjtJQUNoQixpQkFBaUI7SUFDakIseUVBQXlFOztBQUU3RTs7QUFFQTtJQUNJLFdBQVc7RUFDYiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvY3JlYXRlLWNvbGxhYi9jcmVhdGUtY29sbGFiLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWF0LWZvcm0tZmllbGR7XG4gICAgd2lkdGg6IDcwJTtcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xufVxuXG4uY29udGFpbmVyIHtcbiAgICBtYXJnaW4tdG9wOiA1MHB4O1xuICAgIG1hcmdpbi1ib3R0b206IDUwcHg7XG4gICAgbWFyZ2luLWxlZnQ6IDEwJTtcbiAgICBtYXJnaW4tcmlnaHQ6IDEwJTtcbiAgICBib3gtc2hhZG93OiAwIDRweCA4cHggMCByZ2JhKDAsMCwwLDAuMiksIDAgNnB4IDIwcHggMCByZ2JhKDAsIDAsIDAsIDAuMTkpO1xuXG59XG5cbi5leGFtcGxlLWNoaXAtbGlzdCB7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH0iXX0= */"
 
 /***/ }),
 
@@ -1935,7 +2536,7 @@ module.exports = ".mat-form-field{\n    width: 70%;\n    margin-top: 10px;\n}\n\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Steppers -->\r\n<div class = \"container\">\r\n        <mat-vertical-stepper [linear] = \"true\" #stepper>\r\n    \r\n                <mat-step [stepControl] = \"firstFormGroup\">\r\n                    <form [formGroup] = \"firstFormGroup\" (ngSubmit) = \"onSubmit()\">\r\n                        <ng-template matStepLabel >Fill in Collab Info</ng-template>\r\n                        <mat-form-field>\r\n                            <input matInput placeholder = \"Collab Title...\" formControlName = \"title\" required>\r\n                        </mat-form-field>\r\n                        <mat-form-field>\r\n                            <textarea matInput placeholder = \"Description...\" formControlName = \"description\" required></textarea>\r\n                        </mat-form-field>\r\n                        <mat-form-field>\r\n                                <input matInput placeholder = \"Location...\" formControlName = \"location\" required>\r\n                        </mat-form-field>\r\n                        <mat-form-field>\r\n                                <input type = \"number\" min=\"2\"  matInput placeholder = \"Collab Size...\" formControlName = \"size\" required>\r\n                        </mat-form-field>\r\n                        <mat-form-field>\r\n                                <input formControlName = \"date\" matInput [owlDateTimeTrigger]=\"dt\" placeholder = \"Choose a date\" [owlDateTime]=\"dt\" required>\r\n                                <owl-date-time #dt></owl-date-time>\r\n                        </mat-form-field>\r\n                        <mat-form-field>\r\n                                <input type = \"number\" min=\"2\"  matInput placeholder = \"Duration...\" formControlName = \"duration\" required>\r\n                        </mat-form-field>\r\n                    </form>\r\n                </mat-step>\r\n                <mat-step [stepControl] = \"secondFormGroup\" >\r\n                    <ng-template matStepLabel>Add Classes and Skills</ng-template>\r\n                    <div>\r\n                        <mat-form-field class=\"example-chip-list\">\r\n                            <mat-chip-list #chipList>\r\n                                <mat-chip\r\n                                    *ngFor=\"let skill of skills\"\r\n                                    [selectable]=\"selectable\"\r\n                                    [removable]=\"removable\"\r\n                                    (removed)=\"removeSkill(skill)\">\r\n                                    {{ skill }}\r\n                                    <mat-icon matChipRemove *ngIf=\"removable\">cancel</mat-icon>\r\n                                </mat-chip>\r\n                                <input\r\n                                    placeholder=\"New Skill...\"\r\n                                    #skillInput\r\n                                    [formControl]=\"skillCtrl\"\r\n                                    [matAutocomplete]=\"auto\"\r\n                                    [matChipInputFor]=\"chipList\"\r\n                                    [matChipInputSeparatorKeyCodes]=\"separatorKeysCodes\"\r\n                                    [matChipInputAddOnBlur]=\"addOnBlur\"\r\n                                    (matChipInputTokenEnd)=\"addSkill($event)\">\r\n                                    <mat-autocomplete #auto=\"matAutocomplete\" (optionSelected)=\"selectedSkill($event)\">\r\n                                        <mat-option *ngFor=\"let skill of filteredSkills | async\" [value]=\"skill\">\r\n                                            {{ skill }}\r\n                                        </mat-option>\r\n                                    </mat-autocomplete>\r\n                            </mat-chip-list>\r\n                                    \r\n                        </mat-form-field>\r\n                        <mat-form-field class=\"example-chip-list\">\r\n                            <mat-chip-list #chipListClasses>\r\n                                <mat-chip\r\n                                    *ngFor = \"let class of classes\"\r\n                                    [selectable] = \"selectable\"\r\n                                    [removable] = \"removable\"\r\n                                    (removed) = \"removeClass(class)\">\r\n                                    {{ class }}\r\n                                    <mat-icon matChipRemove *ngIf=\"removable\">cancel</mat-icon>\r\n                                </mat-chip>\r\n                                <input \r\n                                    placeholder=\"New Class...\"\r\n                                    #classInput\r\n                                    [formControl]=\"classCtrl\"\r\n                                    [matChipInputFor]=\"chipListClasses\"\r\n                                    [matChipInputAddOnBlur]=\"addOnBlur\"\r\n                                    (matChipInputTokenEnd)=\"addClass($event)\">\r\n                            </mat-chip-list>\r\n\r\n                        </mat-form-field>\r\n                    </div>\r\n                    \r\n            \r\n                </mat-step>\r\n                <mat-step>\r\n                    <ng-template matStepLabel> Confirm Your Information</ng-template>\r\n                    <div>\r\n                        <button mat-raised-button (click) = \"createCollab()\" color=\"primary\">Done</button>\r\n                    </div>\r\n                </mat-step>\r\n            \r\n        </mat-vertical-stepper>\r\n    </div>"
+module.exports = "<!-- Steppers -->\n<div class = \"container\">\n        <mat-vertical-stepper [linear] = \"true\" #stepper>\n    \n                <mat-step [stepControl] = \"firstFormGroup\">\n                    <form [formGroup] = \"firstFormGroup\" (ngSubmit) = \"onSubmit()\">\n                        <ng-template matStepLabel >Fill in Collab Info</ng-template>\n                        <mat-form-field>\n                            <input matInput placeholder = \"Collab Title...\" formControlName = \"title\" required>\n                        </mat-form-field>\n                        <mat-form-field>\n                            <textarea matInput placeholder = \"Description...\" formControlName = \"description\" required></textarea>\n                        </mat-form-field>\n                        <mat-form-field>\n                                <input matInput placeholder = \"Location...\" formControlName = \"location\" required>\n                        </mat-form-field>\n                        <mat-form-field>\n                                <input type = \"number\" min=\"2\"  matInput placeholder = \"Collab Size...\" formControlName = \"size\" required>\n                        </mat-form-field>\n                        <mat-form-field>\n                                <input formControlName = \"date\" matInput [owlDateTimeTrigger]=\"dt\" placeholder = \"Choose a date\" [owlDateTime]=\"dt\" required>\n                                <owl-date-time #dt></owl-date-time>\n                        </mat-form-field>\n                        <mat-form-field>\n                                <input type = \"number\" min=\"2\"  matInput placeholder = \"Duration...\" formControlName = \"duration\" required>\n                        </mat-form-field>\n                    </form>\n                </mat-step>\n                <mat-step [stepControl] = \"secondFormGroup\" >\n                    <ng-template matStepLabel>Add Classes and Skills</ng-template>\n                    <div>\n                        <mat-form-field class=\"example-chip-list\">\n                            <mat-chip-list #chipListSkills>\n                                <mat-chip\n                                    *ngFor=\"let skill of skills\"\n                                    [selectable]=\"selectable\"\n                                    [removable]=\"removable\"\n                                    (removed)=\"removeSkill(skill)\">\n                                    {{ skill }}\n                                    <mat-icon matChipRemove *ngIf=\"removable\">cancel</mat-icon>\n                                </mat-chip>\n                                <input\n                                    placeholder=\"New Skill...\"\n                                    #skillInput\n                                    [formControl]=\"skillCtrl\"\n                                    [matAutocomplete]=\"auto\"\n                                    [matChipInputFor]=\"chipListSkills\"\n                                    [matChipInputSeparatorKeyCodes]=\"separatorKeysCodes\"\n                                    [matChipInputAddOnBlur]=\"addOnBlur\"\n                                    (matChipInputTokenEnd)=\"addSkill($event)\">\n                                    <mat-autocomplete #auto=\"matAutocomplete\" (optionSelected)=\"selectedSkill($event)\">\n                                        <mat-option *ngFor=\"let skill of filteredSkills\" [value]=\"skill\">\n                                            {{ skill }}\n                                        </mat-option>\n                                    </mat-autocomplete>\n                            </mat-chip-list>\n                                    \n                        </mat-form-field>\n                        <mat-form-field class=\"example-chip-list\">\n                            <mat-chip-list #chipListClasses>\n                                <mat-chip\n                                    *ngFor = \"let class of classes\"\n                                    [selectable] = \"selectable\"\n                                    [removable] = \"removable\"\n                                    (removed) = \"removeClass(class)\">\n                                    {{ class }}\n                                    <mat-icon matChipRemove *ngIf=\"removable\">cancel</mat-icon>\n                                </mat-chip>\n                                <input \n                                    placeholder=\"New Class...\"\n                                    #classInput\n                                    [formControl]=\"classCtrl\"\n                                    [matAutocomplete]=\"auto2\"\n                                    [matChipInputFor]=\"chipListClasses\"\n                                    [matChipInputSeparatorKeyCodes]=\"separatorKeysCodes\"\n                                    [matChipInputAddOnBlur]=\"addOnBlur\"\n                                    (matChipInputTokenEnd)=\"addClass($event)\">\n                                    <mat-autocomplete #auto2=\"matAutocomplete\" (optionSelected)=\"selectedClass($event)\">\n                                        <mat-option *ngFor=\"let class of filteredClasses\" [value]=\"class\">\n                                            {{ class }}\n                                        </mat-option>\n                                    </mat-autocomplete>\n                            </mat-chip-list>\n\n                        </mat-form-field>\n                    </div>\n                </mat-step>\n                <mat-step>\n                    <ng-template matStepLabel> Confirm Your Information</ng-template>\n                    <div>\n                        <button mat-raised-button (click) = \"createCollab()\" color=\"primary\">Done</button>\n                    </div>\n                </mat-step>\n            \n        </mat-vertical-stepper>\n    </div>"
 
 /***/ }),
 
@@ -1992,8 +2593,8 @@ var CreateCollabComponent = /** @class */ (function () {
     }
     CreateCollabComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.filteredSkills = this.skillCtrl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["startWith"])(null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["debounceTime"])(400), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (skill) { return skill ? _this._filter(skill) : _this.allSkills.slice(); }));
-        this.filteredClasses = this.classCtrl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["startWith"])(null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["debounceTime"])(400), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (_class) { return _class ? _this._filter(_class) : _this.allClasses.slice(); }));
+        this.skillCtrl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["startWith"])(null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["debounceTime"])(200), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["switchMap"])(function (query) { return _this.userService.searchSkills(query); })).subscribe(function (skills) { return _this.filteredSkills = skills["matches"]; });
+        this.classCtrl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["startWith"])(null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["debounceTime"])(200), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["switchMap"])(function (query) { return _this.userService.searchClasses(query); })).subscribe(function (classes) { return _this.filteredClasses = classes["matches"]; });
         this.firstFormGroup = this._formBuilder.group({
             title: [this.collabData.title, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required],
             description: [this.collabData.description, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required],
@@ -2004,7 +2605,7 @@ var CreateCollabComponent = /** @class */ (function () {
         });
     };
     CreateCollabComponent.prototype.addSkill = function (event) {
-        if (!this.matAutocomplete.isOpen) {
+        if (!this.matAutocomplete1.isOpen) {
             var input = event.input;
             var value = event.value;
             if ((value || '').trim()) {
@@ -2028,7 +2629,7 @@ var CreateCollabComponent = /** @class */ (function () {
         this.skillCtrl.setValue(null);
     };
     CreateCollabComponent.prototype.addClass = function (event) {
-        if (!this.matAutocomplete.isOpen) {
+        if (!this.matAutocomplete2.isOpen) {
             var input = event.input;
             var value = event.value;
             if ((value || '').trim()) {
@@ -2070,12 +2671,6 @@ var CreateCollabComponent = /** @class */ (function () {
             }
         });
     };
-    CreateCollabComponent.prototype._filter = function (value) {
-        var _this = this;
-        var filterValue = value.toLowerCase();
-        this.userService.searchSkills(filterValue).subscribe(function (res) { _this.allSkills = res['matches']; });
-        return this.allSkills.filter(function (fruit) { return fruit.toLowerCase().indexOf(filterValue) === 0; });
-    };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", src_app_shared_models_collab_model__WEBPACK_IMPORTED_MODULE_1__["CollabModel"])
@@ -2087,7 +2682,7 @@ var CreateCollabComponent = /** @class */ (function () {
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"])('auto'),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_7__["MatAutocomplete"])
-    ], CreateCollabComponent.prototype, "matAutocomplete", void 0);
+    ], CreateCollabComponent.prototype, "matAutocomplete1", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"])('classInput'),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ElementRef"])
@@ -2114,6 +2709,197 @@ var CreateCollabComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/home/edit-collab/edit-collab.component.css":
+/*!************************************************************!*\
+  !*** ./src/app/home/edit-collab/edit-collab.component.css ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".mat-form-field {\n    width: 90%;\n    margin-left: 15px;\n}\n\n.example-chip-list[_ngcontent-c8] {\n    width: 90%;\n}\n\n.container {\n    margin-top: 50px;\n    margin-bottom: 50px;\n    margin-left: 10%;\n    margin-right: 10%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}\n\n.example-chip-list {\n    width: 100%;\n  }\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9lZGl0LWNvbGxhYi9lZGl0LWNvbGxhYi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksVUFBVTtJQUNWLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLFVBQVU7QUFDZDs7QUFFQTtJQUNJLGdCQUFnQjtJQUNoQixtQkFBbUI7SUFDbkIsZ0JBQWdCO0lBQ2hCLGlCQUFpQjtJQUNqQix5RUFBeUU7QUFDN0U7O0FBRUE7SUFDSSxXQUFXO0VBQ2IiLCJmaWxlIjoic3JjL2FwcC9ob21lL2VkaXQtY29sbGFiL2VkaXQtY29sbGFiLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWF0LWZvcm0tZmllbGQge1xuICAgIHdpZHRoOiA5MCU7XG4gICAgbWFyZ2luLWxlZnQ6IDE1cHg7XG59XG5cbi5leGFtcGxlLWNoaXAtbGlzdFtfbmdjb250ZW50LWM4XSB7XG4gICAgd2lkdGg6IDkwJTtcbn1cblxuLmNvbnRhaW5lciB7XG4gICAgbWFyZ2luLXRvcDogNTBweDtcbiAgICBtYXJnaW4tYm90dG9tOiA1MHB4O1xuICAgIG1hcmdpbi1sZWZ0OiAxMCU7XG4gICAgbWFyZ2luLXJpZ2h0OiAxMCU7XG4gICAgYm94LXNoYWRvdzogMCA0cHggOHB4IDAgcmdiYSgwLDAsMCwwLjIpLCAwIDZweCAyMHB4IDAgcmdiYSgwLCAwLCAwLCAwLjE5KTtcbn1cblxuLmV4YW1wbGUtY2hpcC1saXN0IHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxuXG4iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/home/edit-collab/edit-collab.component.html":
+/*!*************************************************************!*\
+  !*** ./src/app/home/edit-collab/edit-collab.component.html ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class = \"container\">\n        <form #form = \"ngForm\" (ngSubmit) = \"update(form.value)\">\n                <br>\n                <mat-form-field>\n                <input [(ngModel)] = \"collabData['title']\" name = \"title\" id = \"title\" type = \"text\" class = \"form-control\"\n                        #title = \"ngModel\" matInput placeholder = \"Collab Title...\" required>\n                </mat-form-field>\n                <br>\n                <mat-form-field>\n                <textarea [(ngModel)] = \"collabData['description']\" name = \"description\" id = \"description\" type = \"text\" class = \"form-control\"\n                        #description = \"ngModel\" matInput placeholder = \"Collab Description...\" required></textarea>\n                </mat-form-field>\n                <br>\n                <mat-form-field>\n                <input [(ngModel)] = \"collabData['location']\" name = \"location\" id = \"location\" type = \"text\" class = \"form-control\"\n                        #location = \"ngModel\" matInput placeholder = \"Location...\" required>\n                </mat-form-field>\n                <br>\n                <mat-form-field>\n                        <input [(ngModel)] = \"collabData['size']\" name = \"size\" id = \"size\" type = \"text\" class = \"form-control\"\n                                #size = \"ngModel\" matInput placeholder = \"Collab Size...\" required>\n                </mat-form-field>\n                <mat-form-field>\n                        <input [ngModel] = \"collabData['date'] | date:'y-MM-dd' \" (ngModelChange)=\"collabData['date'] = $event\"\n                                name = \"date\" id=\"date\" class = \"form-control\" \n                                #date = \"ngModel\" matInput placeholder = \"Choose a date\" [owlDateTimeTrigger]=\"dt\" [owlDateTime]=\"dt\" required>\n                        <owl-date-time #dt></owl-date-time>\n                </mat-form-field>\n                <mat-form-field>\n                        <input [ngModel] = \"collabData['duration'] | date:'yyyy-MM-dd' \" name = \"duration\" id = \"duration\"  class = \"form-control\"\n                                #duration = \"ngModel\" matInput placeholder = \"Duration...\" [owlDateTimeTrigger]=\"dt2\" [owlDateTime]=\"dt2\" required>\n                        <owl-date-time #dt2></owl-date-time>\n                </mat-form-field>\n                <mat-form-field class=\"example-chip-list\">\n                        <mat-chip-list #chipListSkills>\n                                <mat-chip\n                                *ngFor=\"let skill of skills\"\n                                [selectable]=\"selectable\"\n                                [removable]=\"removable\"\n                                (removed)=\"removeSkill(skill)\">\n                                {{ skill }}\n                                <mat-icon matChipRemove *ngIf=\"removable\">cancel</mat-icon>\n                                </mat-chip>\n                                <input\n                                placeholder=\"New Skill...\"\n                                #skillInput\n                                [formControl]=\"skillCtrl\"\n                                [matAutocomplete]=\"auto\"\n                                [matChipInputFor]=\"chipListSkills\"\n                                [matChipInputSeparatorKeyCodes]=\"separatorKeysCodes\"\n                                [matChipInputAddOnBlur]=\"addOnBlur\"\n                                (matChipInputTokenEnd)=\"addSkill($event)\">\n                                <mat-autocomplete #auto=\"matAutocomplete\" (optionSelected)=\"selectedSkill($event)\">\n                                        <mat-option *ngFor=\"let skill of filteredSkills\" [value]=\"skill\">\n                                        {{ skill }}\n                                        </mat-option>\n                                </mat-autocomplete>\n                        </mat-chip-list>             \n                </mat-form-field>\n                <br>\n                <mat-form-field class=\"example-chip-list\">\n                        <mat-chip-list #chipListClasses>\n                                <mat-chip\n                                *ngFor = \"let class of classes\"\n                                [selectable] = \"selectable\"\n                                [removable] = \"removable\"\n                                (removed) = \"removeClass(class)\">\n                                {{ class }}\n                                <mat-icon matChipRemove *ngIf=\"removable\">cancel</mat-icon>\n                                </mat-chip>\n                                <input \n                                placeholder=\"New Class...\"\n                                #classInput\n                                [formControl]=\"classCtrl\"\n                                [matAutocomplete]=\"auto2\"\n                                [matChipInputFor]=\"chipListClasses\"\n                                [matChipInputSeparatorKeyCodes]=\"separatorKeysCodes\"\n                                [matChipInputAddOnBlur]=\"addOnBlur\"\n                                (matChipInputTokenEnd)=\"addClass($event)\">\n                        <mat-autocomplete #auto2=\"matAutocomplete\" (optionSelected)=\"selectedClass($event)\">\n                                <mat-option *ngFor=\"let class of filteredClasses\" [value]=\"class\">\n                                {{ class }}\n                                </mat-option>\n                        </mat-autocomplete>\n                </mat-chip-list>\n\n                </mat-form-field>\n                <br>\n                <button mat-raised-button>Update</button>\n                <br>\n        </form>\n       \n        \n</div>"
+
+/***/ }),
+
+/***/ "./src/app/home/edit-collab/edit-collab.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/home/edit-collab/edit-collab.component.ts ***!
+  \***********************************************************/
+/*! exports provided: EditCollabComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditCollabComponent", function() { return EditCollabComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var src_app_shared_models_collab_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/shared/models/collab.model */ "./src/app/shared/models/collab.model.ts");
+/* harmony import */ var src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/dbAccess/user.service */ "./src/app/shared/dbAccess/user.service.ts");
+/* harmony import */ var src_app_shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/dbAccess/collabs.service */ "./src/app/shared/dbAccess/collabs.service.ts");
+/* harmony import */ var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/keycodes */ "./node_modules/@angular/cdk/esm5/keycodes.es5.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/autocomplete */ "./node_modules/@angular/material/esm5/autocomplete.es5.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+
+
+
+
+
+
+var EditCollabComponent = /** @class */ (function () {
+    function EditCollabComponent(userService, collabService, activeRoute) {
+        var _this = this;
+        this.userService = userService;
+        this.collabService = collabService;
+        this.activeRoute = activeRoute;
+        this.visible = true;
+        this.selectable = true;
+        this.removable = true;
+        this.addOnBlur = true;
+        this.separatorKeysCodes = [_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_4__["ENTER"], _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_4__["COMMA"]];
+        //Variables for Skills.
+        this.skillCtrl = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]();
+        this.skills = [];
+        this.allSkills = [];
+        //Variables for Classes.
+        this.classCtrl = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]();
+        this.classes = [];
+        this.allClasses = [];
+        this.collabData = new src_app_shared_models_collab_model__WEBPACK_IMPORTED_MODULE_1__["CollabModel"];
+        this.activeRoute.paramMap
+            .subscribe(function (params) {
+            _this._id = params.get('_id');
+        });
+    }
+    EditCollabComponent.prototype.ngOnInit = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getCollabDetails(this._id)];
+                    case 1:
+                        _a.sent();
+                        this.skillCtrl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["startWith"])(null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["debounceTime"])(200), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["switchMap"])(function (query) { return _this.userService.searchSkills(query); })).subscribe(function (skills) { return _this.filteredSkills = skills["matches"]; });
+                        this.classCtrl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["startWith"])(null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["debounceTime"])(200), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["switchMap"])(function (query) { return _this.userService.searchClasses(query); })).subscribe(function (classes) { return _this.filteredClasses = classes["matches"]; });
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    EditCollabComponent.prototype.getCollabDetails = function (id) {
+        var _this = this;
+        this.collabService.getSingleCollab(id).subscribe(function (res) {
+            _this.collabData = res['0'];
+            _this.skills = res['0']['skills'];
+            _this.classes = res['0']['classes'];
+            console.log(_this.collabData);
+        });
+    };
+    EditCollabComponent.prototype.update = function (collabUpdatedData) {
+        console.log(collabUpdatedData);
+        console.log(this.classes);
+        console.log(this.skills);
+    };
+    EditCollabComponent.prototype.addSkill = function (event) {
+        if (!this.matAutocomplete1.isOpen) {
+            var input = event.input;
+            var value = event.value;
+            if ((value || '').trim()) {
+                this.skills.push(value.trim());
+            }
+            if (input) {
+                input.value = '';
+            }
+            this.skillCtrl.setValue(null);
+        }
+    };
+    EditCollabComponent.prototype.removeSkill = function (skill) {
+        var index = this.skills.indexOf(skill);
+        if (index >= 0) {
+            this.skills.splice(index, 1);
+        }
+    };
+    EditCollabComponent.prototype.selectedSkill = function (event) {
+        this.skills.push(event.option.viewValue);
+        this.skillInput.nativeElement.value = '';
+        this.skillCtrl.setValue(null);
+    };
+    EditCollabComponent.prototype.addClass = function (event) {
+        if (!this.matAutocomplete2.isOpen) {
+            var input = event.input;
+            var value = event.value;
+            if ((value || '').trim()) {
+                this.classes.push(value.trim());
+            }
+            if (input) {
+                input.value = '';
+            }
+            this.classCtrl.setValue(null);
+        }
+    };
+    EditCollabComponent.prototype.removeClass = function (_class) {
+        var index = this.classes.indexOf(_class);
+        if (index >= 0) {
+            this.classes.splice(index, 1);
+        }
+    };
+    EditCollabComponent.prototype.selectedClass = function (event) {
+        this.classes.push(event.option.viewValue);
+        this.classInput.nativeElement.value = '';
+        this.classCtrl.setValue(null);
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", src_app_shared_models_collab_model__WEBPACK_IMPORTED_MODULE_1__["CollabModel"])
+    ], EditCollabComponent.prototype, "currentCollab", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"])('skillInput'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ElementRef"])
+    ], EditCollabComponent.prototype, "skillInput", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"])('auto'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_7__["MatAutocomplete"])
+    ], EditCollabComponent.prototype, "matAutocomplete1", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"])('classInput'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ElementRef"])
+    ], EditCollabComponent.prototype, "classInput", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ViewChild"])('auto2'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_7__["MatAutocomplete"])
+    ], EditCollabComponent.prototype, "matAutocomplete2", void 0);
+    EditCollabComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"])({
+            selector: 'app-edit-collab',
+            template: __webpack_require__(/*! ./edit-collab.component.html */ "./src/app/home/edit-collab/edit-collab.component.html"),
+            styles: [__webpack_require__(/*! ./edit-collab.component.css */ "./src/app/home/edit-collab/edit-collab.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"],
+            src_app_shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_3__["CollabsService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_9__["ActivatedRoute"]])
+    ], EditCollabComponent);
+    return EditCollabComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/home/home-routing.module.ts":
 /*!*********************************************!*\
   !*** ./src/app/home/home-routing.module.ts ***!
@@ -2125,14 +2911,12 @@ var CreateCollabComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeRoutingModule", function() { return HomeRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../guard/auth.guard */ "./src/app/guard/auth.guard.ts");
-/* harmony import */ var _message_message_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./message/message.component */ "./src/app/home/message/message.component.ts");
-/* harmony import */ var _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./create-collab/create-collab.component */ "./src/app/home/create-collab/create-collab.component.ts");
-/* harmony import */ var _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./collab-card/collab-card.component */ "./src/app/home/collab-card/collab-card.component.ts");
-/* harmony import */ var _collab_list_home_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./collab-list/home.component */ "./src/app/home/collab-list/home.component.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-
+/* harmony import */ var _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./create-collab/create-collab.component */ "./src/app/home/create-collab/create-collab.component.ts");
+/* harmony import */ var _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./collab-card/collab-card.component */ "./src/app/home/collab-card/collab-card.component.ts");
+/* harmony import */ var _collab_list_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./collab-list/home.component */ "./src/app/home/collab-list/home.component.ts");
+/* harmony import */ var _edit_collab_edit_collab_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit-collab/edit-collab.component */ "./src/app/home/edit-collab/edit-collab.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 
 
 
@@ -2143,29 +2927,28 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [
     {
         path: '',
-        component: _collab_list_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"]
+        component: _collab_list_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"]
     },
     {
         path: "collabinfo",
-        component: _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_4__["CollabCardComponent"]
+        component: _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_2__["CollabCardComponent"]
     },
     {
         path: "createcollab",
-        component: _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_3__["CreateCollabComponent"]
+        component: _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_1__["CreateCollabComponent"]
     },
     {
-        path: "message",
-        component: _message_message_component__WEBPACK_IMPORTED_MODULE_2__["MessageComponent"],
-        canLoad: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__["AuthGuard"]]
+        path: "editcollab/:_id",
+        component: _edit_collab_edit_collab_component__WEBPACK_IMPORTED_MODULE_4__["EditCollabComponent"]
     }
 ];
 var HomeRoutingModule = /** @class */ (function () {
     function HomeRoutingModule() {
     }
     HomeRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"].forChild(routes)],
-            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"]]
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"].forChild(routes)],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"]]
         })
     ], HomeRoutingModule);
     return HomeRoutingModule;
@@ -2205,13 +2988,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/tabs */ "./node_modules/@angular/material/esm5/tabs.es5.js");
 /* harmony import */ var _angular_material_expansion__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/expansion */ "./node_modules/@angular/material/esm5/expansion.es5.js");
 /* harmony import */ var _angular_material_stepper__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/stepper */ "./node_modules/@angular/material/esm5/stepper.es5.js");
-/* harmony import */ var _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./collab-card/collab-card.component */ "./src/app/home/collab-card/collab-card.component.ts");
-/* harmony import */ var _collab_table_collab_table_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./collab-table/collab-table.component */ "./src/app/home/collab-table/collab-table.component.ts");
-/* harmony import */ var _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./create-collab/create-collab.component */ "./src/app/home/create-collab/create-collab.component.ts");
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/material/form-field */ "./node_modules/@angular/material/esm5/form-field.es5.js");
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/material/input */ "./node_modules/@angular/material/esm5/input.es5.js");
-/* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/material/datepicker */ "./node_modules/@angular/material/esm5/datepicker.es5.js");
-/* harmony import */ var _message_message_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./message/message.component */ "./src/app/home/message/message.component.ts");
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/select */ "./node_modules/@angular/material/esm5/select.es5.js");
+/* harmony import */ var _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./collab-card/collab-card.component */ "./src/app/home/collab-card/collab-card.component.ts");
+/* harmony import */ var _collab_table_collab_table_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./collab-table/collab-table.component */ "./src/app/home/collab-table/collab-table.component.ts");
+/* harmony import */ var _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./create-collab/create-collab.component */ "./src/app/home/create-collab/create-collab.component.ts");
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/material/form-field */ "./node_modules/@angular/material/esm5/form-field.es5.js");
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/material/input */ "./node_modules/@angular/material/esm5/input.es5.js");
+/* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @angular/material/datepicker */ "./node_modules/@angular/material/esm5/datepicker.es5.js");
+/* harmony import */ var _edit_collab_edit_collab_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./edit-collab/edit-collab.component */ "./src/app/home/edit-collab/edit-collab.component.ts");
 
 
 
@@ -2240,12 +3024,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var HomeModule = /** @class */ (function () {
     function HomeModule() {
     }
     HomeModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_11__["NgModule"])({
-            declarations: [_collab_list_home_component__WEBPACK_IMPORTED_MODULE_10__["HomeComponent"], _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_20__["CollabCardComponent"], _collab_table_collab_table_component__WEBPACK_IMPORTED_MODULE_21__["CollabTableComponent"], _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_22__["CreateCollabComponent"], _message_message_component__WEBPACK_IMPORTED_MODULE_26__["MessageComponent"]],
+            declarations: [_collab_list_home_component__WEBPACK_IMPORTED_MODULE_10__["HomeComponent"], _collab_card_collab_card_component__WEBPACK_IMPORTED_MODULE_21__["CollabCardComponent"], _collab_table_collab_table_component__WEBPACK_IMPORTED_MODULE_22__["CollabTableComponent"], _create_collab_create_collab_component__WEBPACK_IMPORTED_MODULE_23__["CreateCollabComponent"], _edit_collab_edit_collab_component__WEBPACK_IMPORTED_MODULE_27__["EditCollabComponent"]],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_12__["CommonModule"],
                 _home_routing_module__WEBPACK_IMPORTED_MODULE_13__["HomeRoutingModule"],
@@ -2261,11 +3046,13 @@ var HomeModule = /** @class */ (function () {
                 _angular_material_chips__WEBPACK_IMPORTED_MODULE_6__["MatChipsModule"],
                 _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_5__["MatGridListModule"],
                 _angular_material_stepper__WEBPACK_IMPORTED_MODULE_19__["MatStepperModule"],
-                _angular_material_form_field__WEBPACK_IMPORTED_MODULE_23__["MatFormFieldModule"],
-                _angular_material_input__WEBPACK_IMPORTED_MODULE_24__["MatInputModule"],
-                _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_25__["MatDatepickerModule"],
+                _angular_material_form_field__WEBPACK_IMPORTED_MODULE_24__["MatFormFieldModule"],
+                _angular_material_input__WEBPACK_IMPORTED_MODULE_25__["MatInputModule"],
+                _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_26__["MatDatepickerModule"],
                 _angular_material_core__WEBPACK_IMPORTED_MODULE_3__["MatNativeDateModule"],
                 _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_2__["MatAutocompleteModule"],
+                _angular_material_form_field__WEBPACK_IMPORTED_MODULE_24__["MatFormFieldModule"],
+                _angular_material_select__WEBPACK_IMPORTED_MODULE_20__["MatSelectModule"],
                 ng_pick_datetime__WEBPACK_IMPORTED_MODULE_1__["OwlDateTimeModule"],
                 ng_pick_datetime__WEBPACK_IMPORTED_MODULE_1__["OwlNativeDateTimeModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
@@ -2274,159 +3061,6 @@ var HomeModule = /** @class */ (function () {
         })
     ], HomeModule);
     return HomeModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/home/message/message.component.css":
-/*!****************************************************!*\
-  !*** ./src/app/home/message/message.component.css ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\r\n  .container-bottom {\r\n    float: right;\r\n    position: fixed;\r\n    bottom: 0;\r\n}\r\n\r\n\r\n/* Chat containers */\r\n\r\n\r\n.container {\r\n  border: 2px solid #dedede;\r\n  background-color: #f1f1f1;\r\n  border-radius: 5px;\r\n  padding: 10px;\r\n  margin: 10px 0;\r\n}\r\n\r\n\r\n/* Chat containers */\r\n\r\n\r\n.container2 {\r\n  border: 4px solid #dedede;\r\n  background-color: plum;\r\n  border-radius: 5px;\r\n  padding: 10px;\r\n  margin: 10px 0;\r\n  text-align: center;\r\n}\r\n\r\n\r\n/* Darker chat container */\r\n\r\n\r\n.darker {\r\n  border-color: #ccc;\r\n  background-color: #ddd;\r\n}\r\n\r\n\r\n/* Clear floats */\r\n\r\n\r\n.container::after {\r\n  content: \"\";\r\n  clear: both;\r\n  display: table;\r\n}\r\n\r\n\r\n.right {\r\n  float: right;\r\n  margin-left: 20px;\r\n  margin-right:0;\r\n}\r\n\r\n\r\n/* Style time text */\r\n\r\n\r\n.time-right {\r\n  float: right;\r\n  color: #aaa;\r\n}\r\n\r\n\r\n/* Style time text */\r\n\r\n\r\n.time-left {\r\n  float: left;\r\n  color: #999;\r\n}\r\n\r\n\r\n.mat-card {\r\n  max-width: 800px;\r\n  margin: auto;\r\n  padding: 0px;\r\n  height: 100%;\r\n  background: rgba(214, 212, 212, 0.048);\r\n  border: .4px solid rgb(59, 59, 59);\r\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n}\r\n\r\n\r\n.mat-card2 {\r\n  max-width: 600px;\r\n  margin: auto;\r\n  padding: 0px;\r\n  height: 100%;\r\n  background: rgba(214, 212, 212, 0.048);\r\n  border: .4px solid rgb(59, 59, 59);\r\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n}\r\n\r\n\r\n.mat-card-header {\r\n \r\n  font-weight: bold;\r\n  display: inline;\r\n  \r\n}\r\n\r\n\r\n.mat-card-title  {\r\n  margin-left: -16px;\r\n  margin-right: -16px;\r\n  margin-top: 0px;\r\n  color: rgba(0, 0, 0, 0.836);\r\n  background: rgba(34, 34, 34, 0.13);\r\n  padding: 5px;\r\n}\r\n\r\n\r\n.mat-card-content {\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.mat-card>.mat-card-actions:last-child {\r\n  margin-bottom: 5px;\r\n \r\n}\r\n\r\n\r\n.mat-card-actions .mat-button, .mat-card-actions .mat-raised-button{\r\n  margin: 0px;\r\n  margin-left: 22px;\r\n}\r\n\r\n\r\n.mat-expansion-panel {\r\n  background: rgba(255, 254, 254, 0.151);\r\n}\r\n\r\n\r\n.requirements {\r\n  margin-left: 30px;\r\n  margin-right: 30px;\r\n  \r\n}\r\n\r\n\r\n.content .description{\r\n  font-size: 20px;\r\n  margin-left: 30px;\r\n  margin-right: 30px;\r\n}\r\n\r\n\r\n.content .date,.location,.duration{\r\n  margin-left: 40px;\r\n  margin-right: 40px;\r\n}\r\n\r\n\r\n.table{\r\n  width: 100%;\r\n  height: 100%;\r\n  overflow-x:  auto;\r\n  overflow-y:  auto;\r\n}\r\n\r\n\r\n.mat-card {\r\n  font-family: Georgia, 'Times New Roman', Times, serif;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9tZXNzYWdlL21lc3NhZ2UuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0VBQ0U7SUFDRSxZQUFZO0lBQ1osZUFBZTtJQUNmLFNBQVM7QUFDYjs7O0FBR0Esb0JBQW9COzs7QUFDcEI7RUFDRSx5QkFBeUI7RUFDekIseUJBQXlCO0VBQ3pCLGtCQUFrQjtFQUNsQixhQUFhO0VBQ2IsY0FBYztBQUNoQjs7O0FBQ0Esb0JBQW9COzs7QUFDcEI7RUFDRSx5QkFBeUI7RUFDekIsc0JBQXNCO0VBQ3RCLGtCQUFrQjtFQUNsQixhQUFhO0VBQ2IsY0FBYztFQUNkLGtCQUFrQjtBQUNwQjs7O0FBRUEsMEJBQTBCOzs7QUFDMUI7RUFDRSxrQkFBa0I7RUFDbEIsc0JBQXNCO0FBQ3hCOzs7QUFFQSxpQkFBaUI7OztBQUNqQjtFQUNFLFdBQVc7RUFDWCxXQUFXO0VBQ1gsY0FBYztBQUNoQjs7O0FBRUE7RUFDRSxZQUFZO0VBQ1osaUJBQWlCO0VBQ2pCLGNBQWM7QUFDaEI7OztBQUlBLG9CQUFvQjs7O0FBQ3BCO0VBQ0UsWUFBWTtFQUNaLFdBQVc7QUFDYjs7O0FBRUEsb0JBQW9COzs7QUFDcEI7RUFDRSxXQUFXO0VBQ1gsV0FBVztBQUNiOzs7QUFDQTtFQUNFLGdCQUFnQjtFQUNoQixZQUFZO0VBQ1osWUFBWTtFQUNaLFlBQVk7RUFDWixzQ0FBc0M7RUFDdEMsa0NBQWtDO0VBQ2xDLHlFQUF5RTtBQUMzRTs7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsWUFBWTtFQUNaLFlBQVk7RUFDWixZQUFZO0VBQ1osc0NBQXNDO0VBQ3RDLGtDQUFrQztFQUNsQyx5RUFBeUU7QUFDM0U7OztBQUVBOztFQUVFLGlCQUFpQjtFQUNqQixlQUFlOztBQUVqQjs7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsbUJBQW1CO0VBQ25CLGVBQWU7RUFDZiwyQkFBMkI7RUFDM0Isa0NBQWtDO0VBQ2xDLFlBQVk7QUFDZDs7O0FBRUE7RUFDRSxXQUFXO0FBQ2I7OztBQUVBO0VBQ0Usa0JBQWtCOztBQUVwQjs7O0FBQ0E7RUFDRSxXQUFXO0VBQ1gsaUJBQWlCO0FBQ25COzs7QUFDQTtFQUNFLHNDQUFzQztBQUN4Qzs7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIsa0JBQWtCOztBQUVwQjs7O0FBSUE7RUFDRSxlQUFlO0VBQ2YsaUJBQWlCO0VBQ2pCLGtCQUFrQjtBQUNwQjs7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIsa0JBQWtCO0FBQ3BCOzs7QUFHQTtFQUNFLFdBQVc7RUFDWCxZQUFZO0VBQ1osaUJBQWlCO0VBQ2pCLGlCQUFpQjtBQUNuQjs7O0FBRUE7RUFDRSxxREFBcUQ7QUFDdkQiLCJmaWxlIjoic3JjL2FwcC9ob21lL21lc3NhZ2UvbWVzc2FnZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcbiAgLmNvbnRhaW5lci1ib3R0b20ge1xyXG4gICAgZmxvYXQ6IHJpZ2h0O1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgYm90dG9tOiAwO1xyXG59XHJcblxyXG5cclxuLyogQ2hhdCBjb250YWluZXJzICovXHJcbi5jb250YWluZXIge1xyXG4gIGJvcmRlcjogMnB4IHNvbGlkICNkZWRlZGU7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2YxZjFmMTtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgcGFkZGluZzogMTBweDtcclxuICBtYXJnaW46IDEwcHggMDtcclxufVxyXG4vKiBDaGF0IGNvbnRhaW5lcnMgKi9cclxuLmNvbnRhaW5lcjIge1xyXG4gIGJvcmRlcjogNHB4IHNvbGlkICNkZWRlZGU7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogcGx1bTtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgcGFkZGluZzogMTBweDtcclxuICBtYXJnaW46IDEwcHggMDtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuXHJcbi8qIERhcmtlciBjaGF0IGNvbnRhaW5lciAqL1xyXG4uZGFya2VyIHtcclxuICBib3JkZXItY29sb3I6ICNjY2M7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2RkZDtcclxufVxyXG5cclxuLyogQ2xlYXIgZmxvYXRzICovXHJcbi5jb250YWluZXI6OmFmdGVyIHtcclxuICBjb250ZW50OiBcIlwiO1xyXG4gIGNsZWFyOiBib3RoO1xyXG4gIGRpc3BsYXk6IHRhYmxlO1xyXG59XHJcblxyXG4ucmlnaHQge1xyXG4gIGZsb2F0OiByaWdodDtcclxuICBtYXJnaW4tbGVmdDogMjBweDtcclxuICBtYXJnaW4tcmlnaHQ6MDtcclxufVxyXG5cclxuXHJcblxyXG4vKiBTdHlsZSB0aW1lIHRleHQgKi9cclxuLnRpbWUtcmlnaHQge1xyXG4gIGZsb2F0OiByaWdodDtcclxuICBjb2xvcjogI2FhYTtcclxufVxyXG5cclxuLyogU3R5bGUgdGltZSB0ZXh0ICovXHJcbi50aW1lLWxlZnQge1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIGNvbG9yOiAjOTk5O1xyXG59XHJcbi5tYXQtY2FyZCB7XHJcbiAgbWF4LXdpZHRoOiA4MDBweDtcclxuICBtYXJnaW46IGF1dG87XHJcbiAgcGFkZGluZzogMHB4O1xyXG4gIGhlaWdodDogMTAwJTtcclxuICBiYWNrZ3JvdW5kOiByZ2JhKDIxNCwgMjEyLCAyMTIsIDAuMDQ4KTtcclxuICBib3JkZXI6IC40cHggc29saWQgcmdiKDU5LCA1OSwgNTkpO1xyXG4gIGJveC1zaGFkb3c6IDAgNHB4IDhweCAwIHJnYmEoMCwwLDAsMC4yKSwgMCA2cHggMjBweCAwIHJnYmEoMCwgMCwgMCwgMC4xOSk7XHJcbn1cclxuXHJcbi5tYXQtY2FyZDIge1xyXG4gIG1heC13aWR0aDogNjAwcHg7XHJcbiAgbWFyZ2luOiBhdXRvO1xyXG4gIHBhZGRpbmc6IDBweDtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbiAgYmFja2dyb3VuZDogcmdiYSgyMTQsIDIxMiwgMjEyLCAwLjA0OCk7XHJcbiAgYm9yZGVyOiAuNHB4IHNvbGlkIHJnYig1OSwgNTksIDU5KTtcclxuICBib3gtc2hhZG93OiAwIDRweCA4cHggMCByZ2JhKDAsMCwwLDAuMiksIDAgNnB4IDIwcHggMCByZ2JhKDAsIDAsIDAsIDAuMTkpO1xyXG59XHJcblxyXG4ubWF0LWNhcmQtaGVhZGVyIHtcclxuIFxyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gIGRpc3BsYXk6IGlubGluZTtcclxuICBcclxufVxyXG5cclxuLm1hdC1jYXJkLXRpdGxlICB7XHJcbiAgbWFyZ2luLWxlZnQ6IC0xNnB4O1xyXG4gIG1hcmdpbi1yaWdodDogLTE2cHg7XHJcbiAgbWFyZ2luLXRvcDogMHB4O1xyXG4gIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuODM2KTtcclxuICBiYWNrZ3JvdW5kOiByZ2JhKDM0LCAzNCwgMzQsIDAuMTMpO1xyXG4gIHBhZGRpbmc6IDVweDtcclxufVxyXG5cclxuLm1hdC1jYXJkLWNvbnRlbnQge1xyXG4gIG1hcmdpbjogMHB4O1xyXG59XHJcblxyXG4ubWF0LWNhcmQ+Lm1hdC1jYXJkLWFjdGlvbnM6bGFzdC1jaGlsZCB7XHJcbiAgbWFyZ2luLWJvdHRvbTogNXB4O1xyXG4gXHJcbn1cclxuLm1hdC1jYXJkLWFjdGlvbnMgLm1hdC1idXR0b24sIC5tYXQtY2FyZC1hY3Rpb25zIC5tYXQtcmFpc2VkLWJ1dHRvbntcclxuICBtYXJnaW46IDBweDtcclxuICBtYXJnaW4tbGVmdDogMjJweDtcclxufVxyXG4ubWF0LWV4cGFuc2lvbi1wYW5lbCB7XHJcbiAgYmFja2dyb3VuZDogcmdiYSgyNTUsIDI1NCwgMjU0LCAwLjE1MSk7XHJcbn1cclxuXHJcbi5yZXF1aXJlbWVudHMge1xyXG4gIG1hcmdpbi1sZWZ0OiAzMHB4O1xyXG4gIG1hcmdpbi1yaWdodDogMzBweDtcclxuICBcclxufVxyXG5cclxuXHJcblxyXG4uY29udGVudCAuZGVzY3JpcHRpb257XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG4gIG1hcmdpbi1sZWZ0OiAzMHB4O1xyXG4gIG1hcmdpbi1yaWdodDogMzBweDtcclxufVxyXG5cclxuLmNvbnRlbnQgLmRhdGUsLmxvY2F0aW9uLC5kdXJhdGlvbntcclxuICBtYXJnaW4tbGVmdDogNDBweDtcclxuICBtYXJnaW4tcmlnaHQ6IDQwcHg7XHJcbn1cclxuXHJcblxyXG4udGFibGV7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG4gIG92ZXJmbG93LXg6ICBhdXRvO1xyXG4gIG92ZXJmbG93LXk6ICBhdXRvO1xyXG59XHJcblxyXG4ubWF0LWNhcmQge1xyXG4gIGZvbnQtZmFtaWx5OiBHZW9yZ2lhLCAnVGltZXMgTmV3IFJvbWFuJywgVGltZXMsIHNlcmlmO1xyXG59XHJcblxyXG5cclxuXHJcblxyXG4iXX0= */"
-
-/***/ }),
-
-/***/ "./src/app/home/message/message.component.html":
-/*!*****************************************************!*\
-  !*** ./src/app/home/message/message.component.html ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\r\n<button (click)=\"LoadMyMessages()\">get message</button>\r\n<mat-card >\r\n        <div class=\"container2\">\r\n          <span>\r\n            Messaging to {{showTitle()}}\r\n          </span>\r\n        </div>\r\n        <div class=\"container\">\r\n            <span class=\"right\">{{showTitle()}}</span>\r\n            <p class=\"right\">Hello. How are you today?</p>\r\n            <span class=\"time-right\">11:00</span>\r\n          </div>\r\n          \r\n          <div class=\"container darker\">\r\n              <span>{{showTitle()}}</span>\r\n            <p>Hey! I'm fine. Thanks for asking!</p>\r\n            <span class=\"time-left\">11:01</span>\r\n          </div>\r\n          \r\n          <div class=\"container\">\r\n              <span class=\"right\">{{showTitle()}}</span>\r\n            <p class=\"right\">Sweet! So, what do you wanna do today?</p>\r\n            <span class=\"time-right\">11:02</span>\r\n          </div>\r\n          \r\n          <div class=\"container darker\">\r\n              <span>{{showTitle()}}</span>\r\n            <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>\r\n            <span class=\"time-left\">11:05</span>\r\n          </div>\r\n\r\n          <div class=\"container\">\r\n              <span class=\"right\">{{showTitle()}}</span>\r\n            <p class=\"right\">Sweet! So, what do you wanna do today?</p>\r\n            <span class=\"time-right\">11:02</span>\r\n          </div>\r\n          \r\n          \r\n\r\n        <form class=\"container-Button\" [formGroup] = \"form\" (ngSubmit) = \"SendMessage()\">    \r\n                <mat-form-field>\r\n                    <input \r\n                        \r\n                        formControlName = \"message\"\r\n                        matInput\r\n                        id=\"message\" \r\n                        type=\"text\" \r\n                        placeholder=\"Message\">\r\n                </mat-form-field> \r\n                <div *ngIf=\" message.touched && message.invalid\" \r\n                class=\"alert alert-danger\">\r\n                <mat-error *ngIf=\"message.errors.required\">null<strong>Required!</strong></mat-error>\r\n            </div>\r\n            <button class=\"right\" mat-raised-button color = \"primary\" type=\"submit\" [disabled] = \"!form.valid\">send</button>\r\n        </form>\r\n\r\n</mat-card>"
-
-/***/ }),
-
-/***/ "./src/app/home/message/message.component.ts":
-/*!***************************************************!*\
-  !*** ./src/app/home/message/message.component.ts ***!
-  \***************************************************/
-/*! exports provided: MessageComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessageComponent", function() { return MessageComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
-/* harmony import */ var _shared_models_message_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../shared/models/message.model */ "./src/app/shared/models/message.model.ts");
-/* harmony import */ var _shared_dbAccess_conversation_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../shared/dbAccess/conversation.service */ "./src/app/shared/dbAccess/conversation.service.ts");
-/* harmony import */ var src_app_shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/dbAccess/collabs.service */ "./src/app/shared/dbAccess/collabs.service.ts");
-/* harmony import */ var src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/shared/dbAccess/user.service */ "./src/app/shared/dbAccess/user.service.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-
-
-
-
-
-
-
-//import { NavbarComponent } from 'src/app/navbar/navbar.component';
-
-
-var MessageComponent = /** @class */ (function () {
-    function MessageComponent(userService, collabservice, conversation, router, mem_, formBuilder) {
-        this.userService = userService;
-        this.collabservice = collabservice;
-        this.conversation = conversation;
-        this.router = router;
-        this.mem_ = mem_;
-        this.formBuilder = formBuilder;
-        this.sender = this.mem_.sender;
-        this.partOf = false;
-        this.isOwner = false;
-        this.message = new _shared_models_message_model__WEBPACK_IMPORTED_MODULE_2__["Message"]();
-    }
-    MessageComponent.prototype.ngOnInit = function () {
-        this.form = this.formBuilder.group({ message: [this.message.message, _angular_forms__WEBPACK_IMPORTED_MODULE_8__["Validators"].required] });
-    };
-    //spliting username by @ 
-    MessageComponent.prototype.getName = function (username) {
-        var temp = username.substring(0, 2).toUpperCase();
-        return temp;
-    };
-    //Display a title
-    MessageComponent.prototype.showTitle = function () {
-        if (this.mem_.mem != null) {
-            return this.getName(this.mem_.mem);
-        }
-        else if (this.mem_.collabId != null) {
-            return this.mem_.Title_;
-        }
-        else
-            this.router.navigate(['/home']);
-    };
-    //send message
-    MessageComponent.prototype.SendMessage = function () {
-        if (this.mem_.mem != null) {
-            console.log("sending message to " + this.mem_.mem);
-            this.sendPersonalMessage();
-        }
-        else if (this.mem_.collabId != null) {
-            console.log("sending message to " + this.mem_.collabId);
-            this.SendGroupMessage();
-        }
-        else
-            this.router.navigate(['/home']);
-    };
-    //sendPersonalMessage()
-    MessageComponent.prototype.sendPersonalMessage = function () {
-        var message = this.form.value;
-        this.conversation.sendPersonalMessage(message, this.mem_.mem).subscribe(function (message) { return console.log(message); });
-    };
-    //sendGroud message to collab members
-    MessageComponent.prototype.SendGroupMessage = function () {
-        var message = this.form.value;
-        this.conversation.sendMessageToCollabGroup(message, this.mem_.collabId).subscribe(function (message) { return console.log(message); });
-    };
-    //based on user input e.g. collbId od individual, it will load messages
-    MessageComponent.prototype.LoadMyMessages = function () {
-        if (this.mem_.mem != null) {
-            //setting collabId to null before loading individual message
-            this.mem_.collabId = null;
-            this.LoadIndividualMessage();
-        }
-        else if (this.mem_.collabId != null) {
-            //setting collab member to null before loading  message
-            this.mem_.mem = null;
-            this.LoadGroupMessage();
-        }
-        else
-            this.router.navigate(['/home']);
-    };
-    //return participients and messages of current user
-    MessageComponent.prototype.LoadIndividualMessage = function () {
-        this.sender = this.mem_.sender;
-        this.conversation.LoadOtherUserMessage(0, this.sender).subscribe(function (message) {
-            console.log(message);
-        });
-    };
-    //return  collabId and  group messages of current user 
-    MessageComponent.prototype.LoadGroupMessage = function () {
-        this.collabID = this.mem_.collabId;
-        this.conversation.LoadGroupMessage(0, this.collabID).subscribe(function (message) {
-            console.log(message);
-        });
-    };
-    MessageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["Component"])({
-            selector: 'app-message',
-            template: __webpack_require__(/*! ./message.component.html */ "./src/app/home/message/message.component.html"),
-            styles: [__webpack_require__(/*! ./message.component.css */ "./src/app/home/message/message.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_5__["UserService"], src_app_shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_4__["CollabsService"],
-            _shared_dbAccess_conversation_service__WEBPACK_IMPORTED_MODULE_3__["ConversationService"], _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"],
-            _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_1__["NavbarComponent"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormBuilder"]])
-    ], MessageComponent);
-    return MessageComponent;
 }());
 
 

@@ -17,11 +17,7 @@ table {
     text-align: left; 
   }
 
-  .mat-card-avatar {
-    background-image: url('/assets/userPhoto.png');
-    vertical-align: middle;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-
-}
+  td a{
+    display: block;
+  
+  }

@@ -22,6 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatSelectModule} from '@angular/material/select';
 
 
 import { CollabCardComponent } from './collab-card/collab-card.component';
@@ -30,10 +31,10 @@ import { CreateCollabComponent } from './create-collab/create-collab.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MessageComponent } from './message/message.component';
+import { EditCollabComponent } from './edit-collab/edit-collab.component';
 
 @NgModule({
-  declarations: [HomeComponent, CollabCardComponent, CollabTableComponent, CreateCollabComponent, MessageComponent],
+  declarations: [HomeComponent, CollabCardComponent, CollabTableComponent, CreateCollabComponent, EditCollabComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
@@ -54,6 +55,9 @@ import { MessageComponent } from './message/message.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatAutocompleteModule,
+    MatFormFieldModule,
+    MatSelectModule,
+
     OwlDateTimeModule, 
     OwlNativeDateTimeModule,
     

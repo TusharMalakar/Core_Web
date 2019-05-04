@@ -9,28 +9,33 @@
 
     <div fxFlex = "40%" fxFlex.xs = "80%">
         <mat-card class="usercard1">
+          
                 <mat-card-header class="list-header-title">
-                    <div mat-card-avatar >
-                        <img mat-card-image [src]="imageToShow"
-                        class ="avatar"
-                        alt="Place image title"
-                        *ngIf="!isImageLoading; else noImageFound">
+
+                    <div mat-card-avatar></div>
+                      <mat-card-title>{{ userData?.name }}</mat-card-title>
+                      <mat-card-subtitle>{{ userData?.username }}</mat-card-subtitle>
+                      <button mat-stroked-button color="warm" (click) = "openDialog()">Edit</button>
+              
+                  </mat-card-header>  
+
+                  <div class="image-background">
+                    <div class="image-container">
+                        <img mat-card-image [src]="imageToShow" 
+                          alt="Image not found" onerror="this.onerror=null; this.src = 'assets/userPhoto.png';">
                     </div>
-                    <mat-card-title>{{ userData?.name }}</mat-card-title>
-                    <mat-card-subtitle>{{ userData?.username }}</mat-card-subtitle>
-                  </mat-card-header>    
-                  <img mat-card-image [src]="imageToShow"
-                    alt="Place image title"
-                    *ngIf="!isImageLoading; else noImageFound">
-                    
-               <!--Taking picture as input-->
-              <div class="form-group">
-                <input type="file" id="file"(change)="handleFileInput($event.target.files)">
-                <button (click)="uploadFileToActivity()">submit</button>
-              </div>
-                    <ng-template #noImageFound>
-                      <img src="/assets/userPhoto.png"> 
-                    </ng-template>
+                  </div>
+
+                     <!--Taking picture as input-->
+                <div class="form-group">
+
+                  <input  type="file" id="file" (change)="handleFileInput($event.target.files)">
+                  <button mat-button color="primary" (click)="uploadFileToActivity()">submit</button>
+                </div>
+
+                <ng-template #noImageFound>
+                  <img src="/assets/userPhoto.png"> 
+                </ng-template>
                 <!--img mat-card-image -->
                 <mat-card-content>
                 
@@ -56,8 +61,8 @@
             <div class ="grid-container">  
               <div class = "grid-search">
                   <div class="wrapper">
-                      <!--add a new skill--> 
-                      <form #classForm="ngForm" (ngSubmit)="addclass(classForm)" class="form form-login">
+                       <!--add a new skill--> 
+                       <form #classForm="ngForm" (ngSubmit)="addclass(classForm)" class="form form-login">
                           <input name="NewClass" id="login-email" type="text" class="form-input" placeholder="Add a new class" required ngModel>
                           <button mat-flat-button color="primary">Add class</button>
                       </form>
@@ -85,12 +90,12 @@
                   <div class = "grid-search">
                       <div class="wrapper">
 
-                        <!--add a new skill--> 
+                         <!--add a new skill--> 
                         <form #skillForm="ngForm" (ngSubmit)="addskill(skillForm)" class="form form-login">
-                            <input name="NewSkill" id="login-email" type="text" class="form-input" placeholder="Add a new skill" required ngModel>
+                            <input name="NewSkill" id="skillForm" type="text" class="form-input" placeholder="Add a new skill" required ngModel>
                             <button mat-flat-button color="primary">Add Skill</button>
                         </form>
-                          
+
                       </div>
                   </div>
                   <div class = "grid-item">

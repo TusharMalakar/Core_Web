@@ -45,8 +45,7 @@ import { CollabMessagingComponent } from './conversations/collab-messaging/colla
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    CollabMessagingComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -84,7 +83,6 @@ import { CollabMessagingComponent } from './conversations/collab-messaging/colla
   providers: [
     UserService,
     ConversationService,
-   // NavbarComponent,
     AuthGuard,
     {
       provide :HTTP_INTERCEPTORS,

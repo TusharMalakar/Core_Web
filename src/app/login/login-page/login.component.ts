@@ -21,7 +21,7 @@ import { LogInModel } from 'src/app/shared/models/login.model';
 
 export class LoginComponent implements OnInit {
  
-  user: LogInModel;
+ user: LogInModel;
   form: FormGroup;
   hide: boolean;
 
@@ -50,7 +50,9 @@ export class LoginComponent implements OnInit {
   
 
   onSubmit() {
-    this.user = Object.assign({}, this.form.value);
+
+      this.user = Object.assign({}, this.form.value);
+
     this.userService.userAuthentication(this.user.username,this.user.password)
     .subscribe((data : any)=>{
       

@@ -10,7 +10,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class ConversationService {
 
-  readonly rootUrl = 'https://huntercollabapi.herokuapp.com';
+  readonly rootUrl = 'http://13.58.204.157:5000';
   constructor(private http: HttpClient) { }
   
   //send group message to collab group

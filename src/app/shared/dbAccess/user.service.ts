@@ -1,19 +1,15 @@
-import { Route } from '@angular/compiler/src/core';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { UserModel } from '../models/user.model';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs';
 import { Requirements } from 'src/app/home/collab-card/collab-card.component';
-import 'rxjs/add/operator/catch';
-import { Router } from '@angular/router';
-//import 'rxjs/add/operator/throw';
 
 
 @Injectable()
 export class UserService {
-  readonly rootUrl = 'https://huntercollabapi.herokuapp.com';
-  constructor(private http: HttpClient, private router : Router) { }
+  readonly rootUrl = 'http://13.58.204.157:5000';
+  constructor(private http: HttpClient) { }
   
   getToken(){
     return localStorage.getItem('accessToken')
@@ -53,19 +49,10 @@ export class UserService {
  getUserdetails(): Observable<UserModel[]> {
   return this.http.get<UserModel[]>( this.rootUrl +"/user");
   }
-  //all other user profile
- public member:string;
- getUserdetails_(user:string): Observable<UserModel[]> { 
-  return this.http.get<UserModel[]>( this.rootUrl +"/user/"+user);
-  }
 
-  //wrapper of other user
-  otheruserprofile(user:string){
-    this.member=user;
-    console.log(this.member)
-    this.router.navigate(['/user'])
+  getMemberdetails(username: string): Observable<UserModel[]> {
+    return this.http.get<UserModel[]>( this.rootUrl +"/user/" + username);
   }
-
 
   getUserSkills(userName: string) { 
     return this.http.get( this.rootUrl + "/user/skills/" + userName).toPromise();
@@ -113,16 +100,45 @@ searchSkills(constrain: string): Observable<any>{
   return this.http.get(this.rootUrl +"/search/skills",{params: params});
 }
 
+searchClasses(constrain: string): Observable<any>{
+  let params = new HttpParams().set("query",constrain);
+  return this.http.get(this.rootUrl +"/search/classes",{params: params});
+}
+
 
 //___________POST_________________
 
+
+
+//download profile-picture as Bold file
+getPicture(): Observable <Blob>{
+  // user/profilePicture
+  return this.http.get( this.rootUrl +"/user/profilePicture",  { responseType: 'blob' });
+}
+
+getMemberPicture(username: string): Observable <Blob>{
+  console.log(username);
+  // user/profilePicture
+  return this.http.get( this.rootUrl +"/user/profilePicture?username=" + username,  { responseType: 'blob' });
+}
+
+uploadProfilePicture(fileToUpload: File){
+  const formData: FormData = new FormData();
+  formData.append('pic', fileToUpload, fileToUpload.name);
+  return this.http.post(this.rootUrl+"/user/profilePicture", formData)
+}
+
+// /collab/deleteCollab 
+///collab/getRecommendedCollab
+
+  //___________POST_________________
+
 //you can update user profile taking all these as input but "Not required"
-updateUserProfile(github,linkedin, skills, classes){
+updateUserProfile(userData: UserModel){
   const body : UserModel ={
-    github  :github,
-    linkedin:linkedin,
-    skills  :skills,
-    classes :classes
+    name : userData.username,
+    github  : userData.github,
+    linkedin: userData.linkedin,
   }
   return this.http.post(this.rootUrl +"/user", body)
 }
@@ -134,7 +150,6 @@ updateUserSkill(skills){
   }
   console.log(body)
   return this.http.post(this.rootUrl +"/user", body)
-
 }
 updateUserclass(classes){
   const body : UserModel ={
@@ -145,31 +160,7 @@ updateUserclass(classes){
 
 }
 
-//download profile-picture as Bold file
-getPicture(): Observable <Blob>{
-  // user/profilePicture
-  return this.http.get( this.rootUrl +"/user/profilePicture",  { responseType: 'blob' })
-  .catch(this.errorhandler);
-}
 
-uploadProfilePicture(fileToUpload: File){
-  const formData: FormData = new FormData();
-  formData.append('pic', fileToUpload, fileToUpload.name);
-  return this.http.post(this.rootUrl+"/user/profilePicture", formData)
-}
 
-//it will split usename by "@" and return "First.Last" of user
-gertFirstandLastName(username : UserModel["username"]){
-  let str = username
-  let result = str.split('@')
-  console.log(result[0]);
-  return result[0];
-}
-
-//Http error handler 
-errorhandler(error:HttpErrorResponse){
-  var str="error"
-  return Observable.throw(error.message || "server Error")
-}
 
 }

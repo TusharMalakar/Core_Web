@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/shared/dbAccess/user.service';
 
 @Component({
   selector: 'update-userdata',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateUserdataComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userservice: UserService) { }
 
   ngOnInit() {
   }

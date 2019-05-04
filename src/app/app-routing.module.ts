@@ -29,12 +29,12 @@ const routes: Routes = [
     loadChildren: './user/user.module#UserModule',
     canLoad: [AuthGuard]
   },
-  // {
-  //   path: 'conversations',
-  //   loadChildren: './ conversations/conversations.module#ConversationsModule',
-  // },
-  
-  
+  {
+    path: 'conversations',
+    loadChildren: './conversations/conversations.module#ConversationsModule',
+    canLoad: [AuthGuard]
+
+  },
   //default component
   {
     path:'**', 

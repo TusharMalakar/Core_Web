@@ -1,8 +1,8 @@
-import { AuthGuard } from './../guard/auth.guard';
-import { MessageComponent } from './message/message.component';
 import { CreateCollabComponent } from './create-collab/create-collab.component';
 import { CollabCardComponent } from './collab-card/collab-card.component';
 import { HomeComponent } from './collab-list/home.component';
+import { EditCollabComponent } from './edit-collab/edit-collab.component';
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -12,7 +12,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path:"collabinfo",
+  path:"collabinfo",
     component: CollabCardComponent
   },
   {
@@ -20,9 +20,8 @@ const routes: Routes = [
     component: CreateCollabComponent
   },
   {
-    path:"message",
-    component: MessageComponent,
-    canLoad: [AuthGuard]
+    path:"editcollab/:_id",
+    component: EditCollabComponent
   }
 ];
 

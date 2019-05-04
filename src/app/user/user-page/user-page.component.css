@@ -7,10 +7,7 @@
 
   .mat-card-avatar {
       background-image: url('/assets/userPhoto.png');
-      vertical-align: middle;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
+      background-size: cover;
 
   }
   .mat-card-actions {
@@ -23,11 +20,6 @@
     font-weight: bold;
     padding: 0px;
    
-  }
-
-  .mat-card-image {
-    margin: 0px;
-    max-width: 100%;
   }
 
   .mat-card-header {
@@ -47,7 +39,7 @@
    margin-top: 30px;
    color: rgba(0, 0, 0, .54);
    background: rgba(0, 0, 0, 0.062);
-   height: 92%;
+   height: 86.5%;
    padding-bottom: 25px;
    border-radius: 5px;
    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -61,7 +53,7 @@
 }
 
 .cdk-virtual-scroll-viewport {
-    height: 80%;
+    height: 70%;
     margin: 0px;
     background-color: white;
 
@@ -128,6 +120,7 @@
         width: 200px;
         height: 30px;
     }
+
     button {
         
         border: 3;
@@ -136,10 +129,30 @@
     }
 
   
-    .avatar {
-      vertical-align: middle;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-    }
-    
+ .image-background {
+   background: #555555;
+   display: table;
+   width: 100%;
+   height: 100%;
+   position: relative;
+
+   overflow: hidden;
+ }
+
+ 
+
+ .mat-card-image {
+  margin: 0px;
+  margin-left: 8.099%;
+  margin-right: 10%;
+  display: block;
+  height: 450px;
+  max-height: 450px;
+  max-width: 85%;
+}
+
+.mat-stroked-button  {
+  width: 7%;
+  margin-left: auto;
+  margin-right: 10px; 
+}

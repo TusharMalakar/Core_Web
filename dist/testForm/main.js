@@ -8,26 +8,34 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./conversations/conversations.module": [
+		"./src/app/conversations/conversations.module.ts",
+		"default~conversations-conversations-module~home-home-module~login-login-module~register-register-mod~dcefec69",
+		"default~conversations-conversations-module~home-home-module~user-user-module",
+		"default~conversations-conversations-module~home-home-module",
+		"conversations-conversations-module"
+	],
 	"./home/home.module": [
 		"./src/app/home/home.module.ts",
-		"default~home-home-module~login-login-module~register-register-module~user-user-module",
-		"default~home-home-module~user-user-module",
+		"default~conversations-conversations-module~home-home-module~login-login-module~register-register-mod~dcefec69",
+		"default~conversations-conversations-module~home-home-module~user-user-module",
+		"default~conversations-conversations-module~home-home-module",
 		"home-home-module"
 	],
 	"./login/login.module": [
 		"./src/app/login/login.module.ts",
-		"default~home-home-module~login-login-module~register-register-module~user-user-module",
+		"default~conversations-conversations-module~home-home-module~login-login-module~register-register-mod~dcefec69",
 		"login-login-module"
 	],
 	"./register/register.module": [
 		"./src/app/register/register.module.ts",
-		"default~home-home-module~login-login-module~register-register-module~user-user-module",
+		"default~conversations-conversations-module~home-home-module~login-login-module~register-register-mod~dcefec69",
 		"register-register-module"
 	],
 	"./user/user.module": [
 		"./src/app/user/user.module.ts",
-		"default~home-home-module~login-login-module~register-register-module~user-user-module",
-		"default~home-home-module~user-user-module",
+		"default~conversations-conversations-module~home-home-module~login-login-module~register-register-mod~dcefec69",
+		"default~conversations-conversations-module~home-home-module~user-user-module",
 		"user-user-module"
 	]
 };
@@ -92,10 +100,11 @@ var routes = [
         loadChildren: './user/user.module#UserModule',
         canLoad: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__["AuthGuard"]]
     },
-    // {
-    //   path: 'conversations',
-    //   loadChildren: './ conversations/conversations.module#ConversationsModule',
-    // },
+    {
+        path: 'conversations',
+        loadChildren: './conversations/conversations.module#ConversationsModule',
+        canLoad: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__["AuthGuard"]]
+    },
     //default component
     {
         path: '**',
@@ -210,7 +219,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/cdk/scrolling */ "./node_modules/@angular/cdk/esm5/scrolling.es5.js");
 /* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/material/core */ "./node_modules/@angular/material/esm5/core.es5.js");
 /* harmony import */ var ng_pick_datetime__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ng-pick-datetime */ "./node_modules/ng-pick-datetime/picker.js");
-/* harmony import */ var _conversations_collab_messaging_collab_messaging_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./conversations/collab-messaging/collab-messaging.component */ "./src/app/conversations/collab-messaging/collab-messaging.component.ts");
 
 
 
@@ -242,7 +250,6 @@ __webpack_require__.r(__webpack_exports__);
 
 //Clock
 
-
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -250,8 +257,7 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
-                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_16__["NavbarComponent"],
-                _conversations_collab_messaging_collab_messaging_component__WEBPACK_IMPORTED_MODULE_27__["CollabMessagingComponent"],
+                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_16__["NavbarComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["BrowserModule"],
@@ -284,7 +290,6 @@ var AppModule = /** @class */ (function () {
             providers: [
                 _shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_9__["UserService"],
                 _shared_dbAccess_conversation_service__WEBPACK_IMPORTED_MODULE_1__["ConversationService"],
-                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_16__["NavbarComponent"],
                 _guard_auth_guard__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"],
                 {
                     provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HTTP_INTERCEPTORS"],
@@ -296,62 +301,6 @@ var AppModule = /** @class */ (function () {
         })
     ], AppModule);
     return AppModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/conversations/collab-messaging/collab-messaging.component.css":
-/*!*******************************************************************************!*\
-  !*** ./src/app/conversations/collab-messaging/collab-messaging.component.css ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbnZlcnNhdGlvbnMvY29sbGFiLW1lc3NhZ2luZy9jb2xsYWItbWVzc2FnaW5nLmNvbXBvbmVudC5jc3MifQ== */"
-
-/***/ }),
-
-/***/ "./src/app/conversations/collab-messaging/collab-messaging.component.html":
-/*!********************************************************************************!*\
-  !*** ./src/app/conversations/collab-messaging/collab-messaging.component.html ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  collab-messaging works!\n</p>\n"
-
-/***/ }),
-
-/***/ "./src/app/conversations/collab-messaging/collab-messaging.component.ts":
-/*!******************************************************************************!*\
-  !*** ./src/app/conversations/collab-messaging/collab-messaging.component.ts ***!
-  \******************************************************************************/
-/*! exports provided: CollabMessagingComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CollabMessagingComponent", function() { return CollabMessagingComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var CollabMessagingComponent = /** @class */ (function () {
-    function CollabMessagingComponent() {
-    }
-    CollabMessagingComponent.prototype.ngOnInit = function () {
-    };
-    CollabMessagingComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-collab-messaging',
-            template: __webpack_require__(/*! ./collab-messaging.component.html */ "./src/app/conversations/collab-messaging/collab-messaging.component.html"),
-            styles: [__webpack_require__(/*! ./collab-messaging.component.css */ "./src/app/conversations/collab-messaging/collab-messaging.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], CollabMessagingComponent);
-    return CollabMessagingComponent;
 }());
 
 
@@ -453,9 +402,8 @@ var AuthInterceptor = /** @class */ (function () {
             function (succ) { }, 
             //If error
             function (err) {
-                if (err.status === 401) {
+                if (err.status === 401)
                     _this.router.navigateByUrl('/login');
-                }
             });
         }
         //If no token, send user to login.
@@ -481,7 +429,7 @@ var AuthInterceptor = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n}\n\n.container .mat-drawer {\n    min-width: 200px;\n}\n\n.container .mat-drawer .mat-button {\n    display: block;\n    width: 100%;\n    text-align: left;\n}\n\n.spacer {\n    flex: 1 1 auto;\n}\n\n.mat-toolbar-row .mat-button {\n    background-color: transparent;\n    font-size: 20px;\n    \n}\n\n.example-form {\n    min-width: 150px;\n    max-width: 500px;\n    width: 100%;\n  }\n\n.example-full-width {\n    width: 100%;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbmF2YmFyL25hdmJhci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksa0JBQWtCO0lBQ2xCLE1BQU07SUFDTixPQUFPO0lBQ1AsUUFBUTtJQUNSLFNBQVM7QUFDYjs7QUFFQTtJQUNJLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLGNBQWM7SUFDZCxXQUFXO0lBQ1gsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksY0FBYztBQUNsQjs7QUFFQTtJQUNJLDZCQUE2QjtJQUM3QixlQUFlOztBQUVuQjs7QUFFQTtJQUNJLGdCQUFnQjtJQUNoQixnQkFBZ0I7SUFDaEIsV0FBVztFQUNiOztBQUVBO0lBQ0UsV0FBVztFQUNiIiwiZmlsZSI6InNyYy9hcHAvbmF2YmFyL25hdmJhci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRhaW5lciB7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIHRvcDogMDtcbiAgICBsZWZ0OiAwO1xuICAgIHJpZ2h0OiAwO1xuICAgIGJvdHRvbTogMDtcbn1cblxuLmNvbnRhaW5lciAubWF0LWRyYXdlciB7XG4gICAgbWluLXdpZHRoOiAyMDBweDtcbn1cblxuLmNvbnRhaW5lciAubWF0LWRyYXdlciAubWF0LWJ1dHRvbiB7XG4gICAgZGlzcGxheTogYmxvY2s7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgdGV4dC1hbGlnbjogbGVmdDtcbn1cblxuLnNwYWNlciB7XG4gICAgZmxleDogMSAxIGF1dG87XG59XG5cbi5tYXQtdG9vbGJhci1yb3cgLm1hdC1idXR0b24ge1xuICAgIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xuICAgIGZvbnQtc2l6ZTogMjBweDtcbiAgICBcbn1cblxuLmV4YW1wbGUtZm9ybSB7XG4gICAgbWluLXdpZHRoOiAxNTBweDtcbiAgICBtYXgtd2lkdGg6IDUwMHB4O1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG4gIFxuICAuZXhhbXBsZS1mdWxsLXdpZHRoIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfSJdfQ== */"
+module.exports = ".container {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n}\n\n.container .mat-drawer {\n    min-width: 200px;\n}\n\n.container .mat-drawer .mat-button {\n    display: block;\n    width: 100%;\n    text-align: left;\n}\n\n.spacer {\n    flex: 1 1 auto;\n}\n\n.mat-toolbar-row .mat-button {\n    background-color: transparent;\n    font-size: 20px;\n    \n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbmF2YmFyL25hdmJhci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksa0JBQWtCO0lBQ2xCLE1BQU07SUFDTixPQUFPO0lBQ1AsUUFBUTtJQUNSLFNBQVM7QUFDYjs7QUFFQTtJQUNJLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLGNBQWM7SUFDZCxXQUFXO0lBQ1gsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksY0FBYztBQUNsQjs7QUFFQTtJQUNJLDZCQUE2QjtJQUM3QixlQUFlOztBQUVuQiIsImZpbGUiOiJzcmMvYXBwL25hdmJhci9uYXZiYXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWluZXIge1xuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICB0b3A6IDA7XG4gICAgbGVmdDogMDtcbiAgICByaWdodDogMDtcbiAgICBib3R0b206IDA7XG59XG5cbi5jb250YWluZXIgLm1hdC1kcmF3ZXIge1xuICAgIG1pbi13aWR0aDogMjAwcHg7XG59XG5cbi5jb250YWluZXIgLm1hdC1kcmF3ZXIgLm1hdC1idXR0b24ge1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIHRleHQtYWxpZ246IGxlZnQ7XG59XG5cbi5zcGFjZXIge1xuICAgIGZsZXg6IDEgMSBhdXRvO1xufVxuXG4ubWF0LXRvb2xiYXItcm93IC5tYXQtYnV0dG9uIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICBmb250LXNpemU6IDIwcHg7XG4gICAgXG59Il19 */"
 
 /***/ }),
 
@@ -492,7 +440,7 @@ module.exports = ".container {\n    position: absolute;\n    top: 0;\n    left: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-drawer-container class=\"container\" autosize >\r\n    <!-- Will be triggered by (click) = \"drawer.toggle()\" -->\r\n     \r\n    <div class=\"sidenav-content\">\r\n        <mat-toolbar color=\"primary\">\r\n            <mat-toolbar-row>\r\n                <!-- \r\n                  drawer.toggle(): will call #drawer and will bring the sidenav into view\r\n                -->\r\n                <button mat-icon-button (click) = \"drawer.toggle()\">\r\n                        <mat-icon>menu</mat-icon>\r\n                </button>\r\n                <button mat-button routerLink=\"/home\">Hunter Collab</button>\r\n         \r\n                <span class=\"spacer\"></span>\r\n                \r\n                <mat-menu #menu=\"matMenu\" >\r\n                  \r\n                </mat-menu>\r\n\r\n            </mat-toolbar-row>\r\n        </mat-toolbar>\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n    \r\n    <mat-drawer #drawer class=\"sidenav\">\r\n            <button mat-menu-item routerLink=\"/home\">\r\n              <mat-icon>home</mat-icon>\r\n              <span>Home</span>\r\n            </button> \r\n\r\n            <button mat-menu-item routerLink=\"/user\">\r\n              <mat-icon>person</mat-icon>\r\n              <span>Profile</span>\r\n            </button> \r\n           \r\n            <button mat-menu-item >\r\n                <span>Direct Messages  </span>\r\n                <mat-icon>send</mat-icon>\r\n            </button> \r\n              <!--Collab username goes in the list-->\r\n                 <mat-list dense>\r\n                    <ng-container *ngFor = \"let collab of collabData\" >\r\n                        \r\n                          <button mat-menu-item (click)=\"getTitle(collab.title)\">\r\n                            <div routerLink=\"/home/message\">\r\n                              <mat-icon routerLink=\"/home/message\">group</mat-icon>\r\n                              <span  (click)=\"groupMessageingPageLink(collab._id.$oid)\">{{collab.title}}   \r\n                                 <mat-icon >control_point</mat-icon>\r\n                              </span>                           \r\n                            </div>                             \r\n                            </button> \r\n                \r\n                         <mat-list-item *ngFor =\"let mem of collab?.members\">\r\n                            <div ng-if=\"mem != sender\">\r\n                              <!--Taking individual user as input to navigate user -->\r\n                              <div>\r\n                                  <button mat-menu-item >\r\n                                      <mat-icon routerLink=\"/user\">person</mat-icon>                                     \r\n                                          <span (click)=\"PersonalmessagePageLink(mem)\" >{{extractFirstNameAndLastName(mem)}} </span> \r\n                                    </button> \r\n                              </div>\r\n                          </div>\r\n                          \r\n                            \r\n                                            \r\n                        </mat-list-item> \r\n                   </ng-container> \r\n                 </mat-list>\r\n                  <span>----------------------------------</span>\r\n                 <button mat-menu-item (click)=\"logOut()\">\r\n                    <mat-icon>logout</mat-icon>\r\n                    <span>LogOut</span>\r\n                  </button>          \r\n    </mat-drawer>\r\n   \r\n</mat-drawer-container>\r\n\r\n\r\n     \r\n  "
+module.exports = "<mat-drawer-container class=\"container\" autosize >\n  <!-- Will be triggered by (click) = \"drawer.toggle()\" -->\n   \n  <div class=\"sidenav-content\">\n      <mat-toolbar color=\"primary\">\n          <mat-toolbar-row>\n              <!-- \n                drawer.toggle(): will call #drawer and will bring the sidenav into view\n              -->\n              <button mat-icon-button (click) = \"drawer.toggle()\">\n                      <mat-icon>menu</mat-icon>\n              </button>\n              <button mat-button routerLink=\"/home\">Hunter Collab</button>\n       \n              <span class=\"spacer\"></span>\n              \n              <mat-menu #menu=\"matMenu\" >\n                \n              </mat-menu>\n\n          </mat-toolbar-row>\n      </mat-toolbar>\n      <router-outlet></router-outlet>\n  </div>\n  \n  <mat-drawer #drawer class=\"sidenav\">\n          <button mat-menu-item routerLink=\"/home\">\n            <mat-icon>home</mat-icon>\n            <span>Home</span>\n          </button> \n\n          <button mat-menu-item routerLink=\"/user\">\n            <mat-icon>person</mat-icon>\n            <span>Profile</span>\n          </button> \n         \n          <button mat-menu-item routerLink=\"/conversations/messenger\" >\n              <span>Direct Messages  </span>\n              <mat-icon>send</mat-icon>\n          </button> \n            <!--Collab username goes in the list-->\n               <mat-list dense>\n                  <ng-container *ngFor = \"let collab of collabData\" >\n                      \n                        <button mat-menu-item (click)=\"getTitle(collab.title)\">\n                          <div routerLink=\"/conversations\">\n                            <mat-icon routerLink=\"/conversations\">group</mat-icon>\n                            <span  (click)=\"groupMessageingPageLink(collab._id.$oid)\">{{collab.title}}   \n                               <mat-icon >control_point</mat-icon>\n                            </span>                           \n                          </div>                             \n                          </button> \n              \n                       <mat-list-item *ngFor =\"let mem of collab?.members\">\n                          <div ng-if=\"mem !== sender\">\n                            <!--Taking individual user as input to navigate user -->\n                            <div>\n                                <button mat-menu-item >\n                                    <mat-icon routerLink=\"/user/{{mem}}\">person</mat-icon>                                     \n                                        <span (click)=\"PersonalmessagePageLink(mem)\" >{{extractFirstNameAndLastName(mem)}} </span> \n                                  </button> \n                            </div>\n                        </div>                   \n                      </mat-list-item> \n                 </ng-container> \n               </mat-list>\n                <span>----------------------------------</span>\n               <button mat-menu-item (click)=\"logOut()\">\n                  <mat-icon>logout</mat-icon>\n                  <span>LogOut</span>\n                </button>          \n  </mat-drawer>\n \n</mat-drawer-container>\n\n\n   \n"
 
 /***/ }),
 
@@ -507,23 +455,20 @@ module.exports = "<mat-drawer-container class=\"container\" autosize >\r\n    <!
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavbarComponent", function() { return NavbarComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _shared_models_message_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../shared/models/message.model */ "./src/app/shared/models/message.model.ts");
-/* harmony import */ var src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/dbAccess/user.service */ "./src/app/shared/dbAccess/user.service.ts");
-/* harmony import */ var src_app_shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/dbAccess/collabs.service */ "./src/app/shared/dbAccess/collabs.service.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-
+/* harmony import */ var src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/shared/dbAccess/user.service */ "./src/app/shared/dbAccess/user.service.ts");
+/* harmony import */ var src_app_shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/dbAccess/collabs.service */ "./src/app/shared/dbAccess/collabs.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 
 
 
 
 
 var NavbarComponent = /** @class */ (function () {
-    function NavbarComponent(router, collabService, userservice, loadMessage) {
+    function NavbarComponent(router, collabService, userservice) {
         this.router = router;
         this.collabService = collabService;
         this.userservice = userservice;
-        this.loadMessage = loadMessage;
         this.panelOpenState = false;
         this.mem = null;
     }
@@ -553,30 +498,40 @@ var NavbarComponent = /** @class */ (function () {
         this.router.navigate(['/user']);
     };
     NavbarComponent.prototype.groupMessageingPageLink = function (id) {
+        //setting collabId 
         this.collabId = id;
+        //making member to null, which is parameter of personal message before switching to group messaging
+        this.mem = null;
         console.log("Going to Group message " + this.collabId);
-        this.router.navigate(['/home/message']);
+        console.log("member " + this.mem);
+        this.router.navigate(['/conversations']);
     };
     NavbarComponent.prototype.PersonalmessagePageLink = function (mem) {
+        //setting members of message
         this.mem = mem;
+        //making collabId null before switching to personal messaging
+        this.collabId = null;
         console.log("Going to message page of " + this.mem);
-        this.router.navigate(['/home/message']);
+        console.log("CollabId " + this.collabId);
+        this.router.navigate(['/conversations']);
     };
     NavbarComponent.prototype.getTitle = function (title) {
         this.Title_ = title;
         console.log("Showing title " + this.Title_);
+    };
+    NavbarComponent.prototype.loadOtherUserProfile = function () {
     };
     NavbarComponent.prototype.logOut = function () {
         localStorage.removeItem('accessToken');
         this.router.navigate(['/login']);
     };
     NavbarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
             selector: 'app-navbar',
             template: __webpack_require__(/*! ./navbar.component.html */ "./src/app/navbar/navbar.component.html"),
             styles: [__webpack_require__(/*! ./navbar.component.css */ "./src/app/navbar/navbar.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"], src_app_shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_3__["CollabsService"], src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"], _shared_models_message_model__WEBPACK_IMPORTED_MODULE_1__["Message"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"], src_app_shared_dbAccess_collabs_service__WEBPACK_IMPORTED_MODULE_2__["CollabsService"], src_app_shared_dbAccess_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"]])
     ], NavbarComponent);
     return NavbarComponent;
 }());
@@ -604,7 +559,7 @@ __webpack_require__.r(__webpack_exports__);
 var CollabsService = /** @class */ (function () {
     function CollabsService(http) {
         this.http = http;
-        this.rootUrl = 'https://huntercollabapi.herokuapp.com';
+        this.rootUrl = 'http://13.58.204.157:5000';
     }
     //collab/getCollabDetails
     CollabsService.prototype.collabDetails = function () {
@@ -618,9 +573,20 @@ var CollabsService = /** @class */ (function () {
     CollabsService.prototype.activeCollabs = function () {
         return this.http.get(this.rootUrl + "/collab/getActiveCollabs");
     };
+    //messaging/myConvos
+    CollabsService.prototype.myCollabs = function () {
+        return this.http.get(this.rootUrl + "/messaging/myConvos");
+    };
     //Get Both All and My Collabs
     CollabsService.prototype.getCollabs = function (collabType) {
         return this.http.get(this.rootUrl + "/collab/" + collabType);
+    };
+    CollabsService.prototype.getSingleCollab = function (_id) {
+        var body = {
+            id: _id
+        };
+        console.log(body);
+        return this.http.post(this.rootUrl + "/collab/getCollab", body);
     };
     //______________POST_REQUEST____________
     //create a new collab, wehre owner = currentUser
@@ -648,7 +614,7 @@ var CollabsService = /** @class */ (function () {
     };
     //Leave Collab
     CollabsService.prototype.leaveCollab = function (id) {
-        //console.log(id["$oid"]);
+        console.log(id["$oid"]);
         var body = {
             id: id["$oid"]
         };
@@ -656,21 +622,36 @@ var CollabsService = /** @class */ (function () {
     };
     //TODO: Get this http request working
     CollabsService.prototype.deleteCollab = function (id) {
-        //console.log(id["$oid"]);
         var body = {
             id: id["$oid"]
         };
-        return this.http.delete(this.rootUrl + "/collab/deleteCollabForReal");
+        return this.http.request('delete', this.rootUrl + "/collab/deleteCollabForReal", { body: body });
     };
     //TODO: Get this http request working
     CollabsService.prototype.getReqCollabs = function (classes, skills) {
-        //console.log(classes);
-        //console.log(skills);
+        console.log(classes);
+        console.log(skills);
         var body = {
             classes: classes,
             skills: skills
         };
         return this.http.post(this.rootUrl + "/collab/getRecommendedCollabs", body);
+    };
+    //Requires a JSON"_id"
+    CollabsService.prototype.editCollab = function (collabData) {
+        var body = {
+            _id: collabData._id["$oid"],
+            size: collabData.size,
+            date: collabData.date,
+            duration: collabData.duration,
+            location: collabData.location,
+            title: collabData.title,
+            description: collabData.description,
+            classes: collabData.classes,
+            skills: collabData.skills,
+            applicants: collabData.applicants
+        };
+        return this.http.post(this.rootUrl + "/collab/editCollab", body);
     };
     CollabsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
@@ -704,7 +685,7 @@ __webpack_require__.r(__webpack_exports__);
 var ConversationService = /** @class */ (function () {
     function ConversationService(http) {
         this.http = http;
-        this.rootUrl = 'https://huntercollabapi.herokuapp.com';
+        this.rootUrl = 'http://13.58.204.157:5000';
     }
     //send group message to collab group
     ConversationService.prototype.sendMessageToCollabGroup = function (message, collabID) {
@@ -777,22 +758,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var rxjs_add_operator_catch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/add/operator/catch */ "./node_modules/rxjs-compat/_esm5/add/operator/catch.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 
 
 
 
-
-
-
-//import 'rxjs/add/operator/throw';
 var UserService = /** @class */ (function () {
-    function UserService(http, router) {
+    function UserService(http) {
         this.http = http;
-        this.router = router;
-        this.rootUrl = 'https://huntercollabapi.herokuapp.com';
+        this.rootUrl = 'http://13.58.204.157:5000';
     }
     UserService.prototype.getToken = function () {
         return localStorage.getItem('accessToken');
@@ -825,14 +798,8 @@ var UserService = /** @class */ (function () {
     UserService.prototype.getUserdetails = function () {
         return this.http.get(this.rootUrl + "/user");
     };
-    UserService.prototype.getUserdetails_ = function (user) {
-        return this.http.get(this.rootUrl + "/user/" + user);
-    };
-    //wrapper of other user
-    UserService.prototype.otheruserprofile = function (user) {
-        this.member = user;
-        console.log(this.member);
-        this.router.navigate(['/user']);
+    UserService.prototype.getMemberdetails = function (username) {
+        return this.http.get(this.rootUrl + "/user/" + username);
     };
     UserService.prototype.getUserSkills = function (userName) {
         return this.http.get(this.rootUrl + "/user/skills/" + userName).toPromise();
@@ -880,14 +847,35 @@ var UserService = /** @class */ (function () {
         var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set("query", constrain);
         return this.http.get(this.rootUrl + "/search/skills", { params: params });
     };
+    UserService.prototype.searchClasses = function (constrain) {
+        var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set("query", constrain);
+        return this.http.get(this.rootUrl + "/search/classes", { params: params });
+    };
+    //___________POST_________________
+    //download profile-picture as Bold file
+    UserService.prototype.getPicture = function () {
+        // user/profilePicture
+        return this.http.get(this.rootUrl + "/user/profilePicture", { responseType: 'blob' });
+    };
+    UserService.prototype.getMemberPicture = function (username) {
+        console.log(username);
+        // user/profilePicture
+        return this.http.get(this.rootUrl + "/user/profilePicture?username=" + username, { responseType: 'blob' });
+    };
+    UserService.prototype.uploadProfilePicture = function (fileToUpload) {
+        var formData = new FormData();
+        formData.append('pic', fileToUpload, fileToUpload.name);
+        return this.http.post(this.rootUrl + "/user/profilePicture", formData);
+    };
+    // /collab/deleteCollab 
+    ///collab/getRecommendedCollab
     //___________POST_________________
     //you can update user profile taking all these as input but "Not required"
-    UserService.prototype.updateUserProfile = function (github, linkedin, skills, classes) {
+    UserService.prototype.updateUserProfile = function (userData) {
         var body = {
-            github: github,
-            linkedin: linkedin,
-            skills: skills,
-            classes: classes
+            name: userData.username,
+            github: userData.github,
+            linkedin: userData.linkedin,
         };
         return this.http.post(this.rootUrl + "/user", body);
     };
@@ -905,54 +893,11 @@ var UserService = /** @class */ (function () {
         console.log(body);
         return this.http.post(this.rootUrl + "/user", body);
     };
-    //download profile-picture as Bold file
-    UserService.prototype.getPicture = function () {
-        // user/profilePicture
-        return this.http.get(this.rootUrl + "/user/profilePicture", { responseType: 'blob' })
-            .catch(this.errorhandler);
-    };
-    UserService.prototype.uploadProfilePicture = function (fileToUpload) {
-        var formData = new FormData();
-        formData.append('pic', fileToUpload, fileToUpload.name);
-        return this.http.post(this.rootUrl + "/user/profilePicture", formData);
-    };
-    //it will split usename by "@" and return "First.Last" of user
-    UserService.prototype.gertFirstandLastName = function (username) {
-        var str = username;
-        var result = str.split('@');
-        console.log(result[0]);
-        return result[0];
-    };
-    //Http error handler 
-    UserService.prototype.errorhandler = function (error) {
-        var str = "error";
-        return rxjs__WEBPACK_IMPORTED_MODULE_4__["Observable"].throw(error.message || "server Error");
-    };
     UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], UserService);
     return UserService;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/shared/models/message.model.ts":
-/*!************************************************!*\
-  !*** ./src/app/shared/models/message.model.ts ***!
-  \************************************************/
-/*! exports provided: Message */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Message", function() { return Message; });
-var Message = /** @class */ (function () {
-    function Message() {
-    }
-    return Message;
 }());
 
 
