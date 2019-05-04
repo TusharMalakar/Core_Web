@@ -19,11 +19,11 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule }  from '@angular/material/grid-list';
 import { MatListModule }  from '@angular/material/list';
-import { UpdateUserdataComponent } from './update-userdata/update-userdata.component';
 import { EditUserFormComponent } from './edit-user-form/edit-user-form.component';
+import { EditClassesComponent } from './edit-classes/edit-classes.component';
 
 @NgModule({
-  declarations: [UserPageComponent, UpdateUserdataComponent, EditUserFormComponent],
+  declarations: [UserPageComponent, EditUserFormComponent, EditClassesComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
@@ -51,7 +51,8 @@ import { EditUserFormComponent } from './edit-user-form/edit-user-form.component
 
   ],
   entryComponents: [
-    EditUserFormComponent
+    EditUserFormComponent,
+    EditClassesComponent
   ]
 })
 export class UserModule { }

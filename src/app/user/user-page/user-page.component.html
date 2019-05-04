@@ -15,7 +15,7 @@
                     <div mat-card-avatar></div>
                       <mat-card-title>{{ userData?.name }}</mat-card-title>
                       <mat-card-subtitle>{{ userData?.username }}</mat-card-subtitle>
-                      <button mat-stroked-button color="warm" (click) = "openDialog()">Edit</button>
+                      <button mat-stroked-button color="warm" (click) = "openDialog1()" *ngIf="canEdit">Edit</button>
               
                   </mat-card-header>  
 
@@ -61,8 +61,7 @@
             <div class ="grid-container">  
               <div class = "grid-search">
                   <div class="wrapper">
-                      <input type="text" placeholder="Search for Class..." />
-                      <button (click)="addClass()" mat-flat-button color="primary">Add Class</button>
+                      <button (click) = "openDialog2()" mat-flat-button color="primary"> Update </button>
                   </div>
               </div>
               
@@ -86,8 +85,7 @@
               <div class ="grid-container">  
                   <div class = "grid-search">
                       <div class="wrapper">
-                          <input type="text" placeholder="Search for Skills..." />
-                          <button (click)="addSkill()" mat-flat-button color="primary">Add Skill</button>
+                          <button (click)="addSkill()" mat-flat-button color="primary"> Update </button>
                       </div>
                   </div>
                   <div class = "grid-item">

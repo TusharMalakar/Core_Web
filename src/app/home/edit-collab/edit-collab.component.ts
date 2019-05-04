@@ -54,7 +54,8 @@ export class EditCollabComponent implements OnInit {
   constructor(
               private userService : UserService, 
               private collabService: CollabsService,
-              private activeRoute: ActivatedRoute) {
+              private activeRoute: ActivatedRoute,
+              private router : Router) {
             
     this.collabData = new CollabModel;
     this.activeRoute.paramMap
@@ -93,13 +94,24 @@ export class EditCollabComponent implements OnInit {
     });
   }
 
-  update(collabUpdatedData){
-    console.log(this.collabData);
+  async update(collabUpdatedData){
+    
     this.collabData = collabUpdatedData;
-    this.collabData.classes = this.classes;
     this.collabData.skills = this.skills;
-    console.log(this.collabData);
-    this.collabService.editCollab(this.collabData, this._id).subscribe(res => { console.log(res)});
+    this.collabData.classes = this.classes;
+    
+
+    console.log(collabUpdatedData);
+  
+    await this.collabService.editCollab(this.collabData, this._id)
+      .subscribe(res => { 
+          if(res['success']){ 
+            this.router.navigate(['/home'])
+           } else {
+            console.error(res);
+          }
+          });
+    
   }
 
   addSkill(event: MatChipInputEvent): void {

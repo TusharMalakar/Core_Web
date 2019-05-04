@@ -1,3 +1,4 @@
+import { EditClassesComponent } from './../edit-classes/edit-classes.component';
 import { EditUserFormComponent } from './../edit-user-form/edit-user-form.component';
 import { Component, OnInit,ChangeDetectionStrategy } from '@angular/core';
 import { UserService } from 'src/app/shared/dbAccess/user.service';
@@ -14,6 +15,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./user-page.component.css']
 })
 export class UserPageComponent implements OnInit {
+  canEdit:boolean;
   //Will hold our user data.
   userData: UserModel[];
   username: string;
@@ -34,8 +36,6 @@ export class UserPageComponent implements OnInit {
 
   /*
   TODO: 
-    DISPLAY Image
-    Edit all fields
     Autocomplete on edit skills and classes. 
 
   */
@@ -45,21 +45,27 @@ export class UserPageComponent implements OnInit {
     private formBuilder: FormBuilder,
     private activeRoute: ActivatedRoute,
     public dialog: MatDialog)
-   { 
-    this.activeRoute.paramMap
+   {    }
+
+  async ngOnInit() {
+    await this.activeRoute.paramMap
     .subscribe(params => {
       this.username = params.get('username');
     })
 
-   
-   }
-
-  ngOnInit() {
-
+    await this.userService.getUserdetails()
+      .subscribe(res => { 
+                if(res['username'] === this.username || this.username == null){
+                  this.canEdit = true;
+                }else{
+                  this.canEdit = false;
+                }  
+              
+              }); 
+      
     this.loadUserData(this.username);
     this.classesForm = this.formBuilder.group({
       userInput: null
-      
     })
   }
 
@@ -126,9 +132,23 @@ profilePicture(){
  //     });
   }
 
-  openDialog(): void {
+  openDialog1(): void {
     //Dialog refeerence
     const dialogRef = this.dialog.open(EditUserFormComponent, {
+      width: '40%',
+      data: {
+        userData: this.userData
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+  openDialog2(): void {
+    //Dialog refeerence
+    const dialogRef = this.dialog.open(EditClassesComponent, {
       data: {
         userData: this.userData
       }

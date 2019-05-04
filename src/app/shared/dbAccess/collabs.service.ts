@@ -108,7 +108,7 @@ export class CollabsService {
   //Requires a JSON"_id"
   editCollab(collabData: CollabModel, id: string){
 
-      console.log(id);
+      console.log(collabData);
       const body = {
           id : id,
           size : collabData.size,

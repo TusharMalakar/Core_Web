@@ -120,6 +120,7 @@ export class CollabCardComponent implements OnInit {
     await this.isUserOwner();
     this.isPartOf();
   }
+
   isUserOwner(){
     
     if(this.collabData.owner == this.userData['username']){
@@ -130,10 +131,11 @@ export class CollabCardComponent implements OnInit {
   }
 
   isPartOf(){
+
     for(let member of this.collabData.members){
       if(member == this.userData['username']){
         this.partOf = true;
-      } 
+      }
     }
   }
 
@@ -147,12 +149,24 @@ export class CollabCardComponent implements OnInit {
   
   joinCollab(){
     this.collabService.joinCollab(this.collabData._id)
-      .subscribe(res => { console.log(res) });
+      .subscribe(res => { 
+        if(res['success'] == true){
+          this.partOf = true;
+        } else {
+          
+        }
+      });
   }
 
   leaveCollab(){
     this.collabService.leaveCollab(this.collabData._id)
-      .subscribe(res => {console.log(res) })
+      .subscribe(res => { 
+        if(res['success'] == true){
+          this.partOf = false;
+        } else {
+          
+        } 
+      });
   }
 
   deleteCollab(){
