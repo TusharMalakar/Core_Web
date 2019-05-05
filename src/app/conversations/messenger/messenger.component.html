@@ -1,10 +1,17 @@
+<div class="fullpage">
+
+</div>
+
 <mat-card > 
       <mat-list >  
           <mat-list-item *ngFor="let contact of ContactList">
-            <mat-icon mat-list-icon>person</mat-icon>
-            <p mat-line> {{contact}} </p>
+            <mat-icon mat-list-icon routerLink="/user/{{contact}}">person</mat-icon>
+            <button (click)="PersonalmessagePageLink(contact)">{{extractFirstNameAndLastName(contact)}} </button>
+           
           </mat-list-item> 
       </mat-list>
 </mat-card>
 
 
+                                    
+                                      

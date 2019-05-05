@@ -1,9 +1,9 @@
+import { NgModule } from '@angular/core';
 import { CollabCardComponent } from './home/collab-card/collab-card.component';
 import { AuthGuard } from './guard/auth.guard';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/collab-list/home.component';
 import { LoginComponent } from './login/login-page/login.component';
-import { NgModule } from '@angular/core';
 import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { RegisterComponent } from './register/register-page/register.component';
 
@@ -35,6 +35,7 @@ const routes: Routes = [
     canLoad: [AuthGuard]
 
   },
+  
   //default component
   {
     path:'**', 

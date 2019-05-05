@@ -4,6 +4,7 @@ import { GroupMessagingModel } from './../../shared/models/groupMessaging';
 import { CollabsService } from 'src/app/shared/dbAccess/collabs.service';
 import { Component, OnInit } from '@angular/core';
 import {MatListModule} from '@angular/material/list';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-messenger',
@@ -16,12 +17,17 @@ export class MessengerComponent implements OnInit {
   public gropuMess : GroupMessagingModel[] = new Array();
   public ContactList   : string[] = new Array();
   public user : string = null;
-  
+  public avaterArray : any[];
+  public imageToShow :any;
+  public mem : string;
+
   constructor(private collab: CollabsService,
-              private userservice : UserService
+              private userservice : UserService,
+              private router :Router
     ) { }
 
   ngOnInit() {
+    
     this.userservice.getUserdetails().subscribe((data:any)=>{
       this.user=data.username
       });
@@ -49,6 +55,8 @@ export class MessengerComponent implements OnInit {
           return 0;
       }
     })
+    
+    
   }
   
 //remove duplicate contact
@@ -62,6 +70,15 @@ remove_duplicates(arr) {
         ret_arr.push(key);
     }
     return ret_arr;
+}
+extractFirstNameAndLastName(username:string){
+  let temp = username.split("@")
+  return temp[0]
+}
+PersonalmessagePageLink(contact){
+  console.log(contact)
+  this.mem=contact;
+  this.router.navigate(['/conversations'])
 }
 
 //write a sort fun to sort contact by time before display

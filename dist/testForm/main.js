@@ -72,8 +72,8 @@ module.exports = webpackAsyncContext;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./guard/auth.guard */ "./src/app/guard/auth.guard.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _guard_auth_guard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./guard/auth.guard */ "./src/app/guard/auth.guard.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 
 
@@ -83,27 +83,27 @@ var routes = [
     {
         path: 'login',
         loadChildren: './login/login.module#LoginModule',
-        canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__["AuthGuard"]]
+        canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]]
     },
     {
         path: 'register',
         loadChildren: './register/register.module#RegisterModule',
-        canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__["AuthGuard"]]
+        canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]]
     },
     {
         path: 'home',
         loadChildren: './home/home.module#HomeModule',
-        canLoad: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__["AuthGuard"]]
+        canLoad: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]]
     },
     {
         path: 'user',
         loadChildren: './user/user.module#UserModule',
-        canLoad: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__["AuthGuard"]]
+        canLoad: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]]
     },
     {
         path: 'conversations',
         loadChildren: './conversations/conversations.module#ConversationsModule',
-        canLoad: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_1__["AuthGuard"]]
+        canLoad: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]]
     },
     //default component
     {
@@ -116,7 +116,7 @@ var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
     AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             imports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(routes)],
             exports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"]]
         })
@@ -429,7 +429,7 @@ var AuthInterceptor = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n}\n\n.container .mat-drawer {\n    min-width: 200px;\n}\n\n.container .mat-drawer .mat-button {\n    display: block;\n    width: 100%;\n    text-align: left;\n}\n\n.spacer {\n    flex: 1 1 auto;\n}\n\n.mat-toolbar-row .mat-button {\n    background-color: transparent;\n    font-size: 20px;\n    \n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbmF2YmFyL25hdmJhci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksa0JBQWtCO0lBQ2xCLE1BQU07SUFDTixPQUFPO0lBQ1AsUUFBUTtJQUNSLFNBQVM7QUFDYjs7QUFFQTtJQUNJLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLGNBQWM7SUFDZCxXQUFXO0lBQ1gsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksY0FBYztBQUNsQjs7QUFFQTtJQUNJLDZCQUE2QjtJQUM3QixlQUFlOztBQUVuQiIsImZpbGUiOiJzcmMvYXBwL25hdmJhci9uYXZiYXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWluZXIge1xuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICB0b3A6IDA7XG4gICAgbGVmdDogMDtcbiAgICByaWdodDogMDtcbiAgICBib3R0b206IDA7XG59XG5cbi5jb250YWluZXIgLm1hdC1kcmF3ZXIge1xuICAgIG1pbi13aWR0aDogMjAwcHg7XG59XG5cbi5jb250YWluZXIgLm1hdC1kcmF3ZXIgLm1hdC1idXR0b24ge1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIHRleHQtYWxpZ246IGxlZnQ7XG59XG5cbi5zcGFjZXIge1xuICAgIGZsZXg6IDEgMSBhdXRvO1xufVxuXG4ubWF0LXRvb2xiYXItcm93IC5tYXQtYnV0dG9uIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICBmb250LXNpemU6IDIwcHg7XG4gICAgXG59Il19 */"
+module.exports = ".container {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n}\r\n\r\n.container .mat-drawer {\r\n    min-width: 200px;\r\n}\r\n\r\n.container .mat-drawer .mat-button {\r\n    display: block;\r\n    width: 100%;\r\n    text-align: left;\r\n}\r\n\r\n.spacer {\r\n    flex: 1 1 auto;\r\n}\r\n\r\n.mat-toolbar-row .mat-button {\r\n    background-color: transparent;\r\n    font-size: 20px;\r\n    \r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbmF2YmFyL25hdmJhci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksa0JBQWtCO0lBQ2xCLE1BQU07SUFDTixPQUFPO0lBQ1AsUUFBUTtJQUNSLFNBQVM7QUFDYjs7QUFFQTtJQUNJLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLGNBQWM7SUFDZCxXQUFXO0lBQ1gsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksY0FBYztBQUNsQjs7QUFFQTtJQUNJLDZCQUE2QjtJQUM3QixlQUFlOztBQUVuQiIsImZpbGUiOiJzcmMvYXBwL25hdmJhci9uYXZiYXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWluZXIge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiAwO1xyXG4gICAgbGVmdDogMDtcclxuICAgIHJpZ2h0OiAwO1xyXG4gICAgYm90dG9tOiAwO1xyXG59XHJcblxyXG4uY29udGFpbmVyIC5tYXQtZHJhd2VyIHtcclxuICAgIG1pbi13aWR0aDogMjAwcHg7XHJcbn1cclxuXHJcbi5jb250YWluZXIgLm1hdC1kcmF3ZXIgLm1hdC1idXR0b24ge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbn1cclxuXHJcbi5zcGFjZXIge1xyXG4gICAgZmxleDogMSAxIGF1dG87XHJcbn1cclxuXHJcbi5tYXQtdG9vbGJhci1yb3cgLm1hdC1idXR0b24ge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBcclxufVxyXG5cclxuIl19 */"
 
 /***/ }),
 
@@ -440,7 +440,7 @@ module.exports = ".container {\n    position: absolute;\n    top: 0;\n    left: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-drawer-container class=\"container\" autosize >\r\n  <!-- Will be triggered by (click) = \"drawer.toggle()\" -->\r\n   \r\n  <div class=\"sidenav-content\">\r\n      <mat-toolbar color=\"primary\">\r\n          <mat-toolbar-row>\r\n              <!-- \r\n                drawer.toggle(): will call #drawer and will bring the sidenav into view\r\n              -->\r\n              <button mat-icon-button (click) = \"drawer.toggle()\">\r\n                      <mat-icon>menu</mat-icon>\r\n              </button>\r\n              <button mat-button routerLink=\"/home\">Hunter Collab</button>\r\n       \r\n              <span class=\"spacer\"></span>\r\n              \r\n              <mat-menu #menu=\"matMenu\" >\r\n                \r\n              </mat-menu>\r\n\r\n          </mat-toolbar-row>\r\n      </mat-toolbar>\r\n      <router-outlet></router-outlet>\r\n  </div>\r\n  \r\n  <mat-drawer #drawer class=\"sidenav\">\r\n          <button mat-menu-item routerLink=\"/home\">\r\n            <mat-icon>home</mat-icon>\r\n            <span>Home</span>\r\n          </button> \r\n\r\n          <button mat-menu-item routerLink=\"/user\">\r\n            <mat-icon>person</mat-icon>\r\n            <span>Profile</span>\r\n          </button> \r\n         \r\n          <button mat-menu-item routerLink=\"/conversations/messenger\" >\r\n              <span>Direct Messages  </span>\r\n              <mat-icon>send</mat-icon>\r\n          </button> \r\n            <!--Collab username goes in the list-->\r\n               <mat-list dense>\r\n                  <ng-container *ngFor = \"let collab of collabData\" >\r\n                      \r\n                        <button mat-menu-item (click)=\"getTitle(collab.title)\">\r\n                          <div routerLink=\"/conversations\">\r\n                            <mat-icon routerLink=\"/conversations\">group</mat-icon>\r\n                            <span  (click)=\"groupMessageingPageLink(collab._id.$oid)\">{{collab.title}}   \r\n                               <mat-icon >control_point</mat-icon>\r\n                            </span>                           \r\n                          </div>                             \r\n                          </button> \r\n              \r\n                       <mat-list-item *ngFor =\"let mem of collab?.members\">\r\n                          <div ng-if=\"mem !== sender\">\r\n                            <!--Taking individual user as input to navigate user -->\r\n                            <div>\r\n                                <button mat-menu-item >\r\n                                    <mat-icon routerLink=\"/user/{{mem}}\">person</mat-icon>                                     \r\n                                        <span (click)=\"PersonalmessagePageLink(mem)\" >{{extractFirstNameAndLastName(mem)}} </span> \r\n                                  </button> \r\n                            </div>\r\n                        </div>                   \r\n                      </mat-list-item> \r\n                 </ng-container> \r\n               </mat-list>\r\n                <span>----------------------------------</span>\r\n               <button mat-menu-item (click)=\"logOut()\">\r\n                  <mat-icon>logout</mat-icon>\r\n                  <span>LogOut</span>\r\n                </button>          \r\n  </mat-drawer>\r\n \r\n</mat-drawer-container>\r\n\r\n\r\n   \r\n"
+module.exports = "<mat-drawer-container class=\"container\" autosize >\r\n  <!-- Will be triggered by (click) = \"drawer.toggle()\" -->\r\n   \r\n  <div class=\"sidenav-content\">\r\n      <mat-toolbar color=\"primary\">\r\n          <mat-toolbar-row>\r\n              <!-- \r\n                drawer.toggle(): will call #drawer and will bring the sidenav into view\r\n              -->\r\n              <button mat-icon-button (click) = \"drawer.toggle()\">\r\n                      <mat-icon>menu</mat-icon>\r\n              </button>\r\n              <button mat-button routerLink=\"/home\">Hunter Collab</button>\r\n       \r\n              <span class=\"spacer\"></span>\r\n              \r\n              <mat-menu #menu=\"matMenu\" >\r\n                \r\n              </mat-menu>\r\n\r\n          </mat-toolbar-row>\r\n      </mat-toolbar>\r\n      <router-outlet></router-outlet>\r\n  </div>\r\n  \r\n  <mat-drawer #drawer class=\"sidenav\">\r\n          <button mat-menu-item routerLink=\"/home\">\r\n            <mat-icon>home</mat-icon>\r\n            <span>Home</span>\r\n          </button> \r\n\r\n          <button mat-menu-item routerLink=\"/user\">\r\n            <mat-icon>person</mat-icon>\r\n            <span>Profile</span>\r\n          </button> \r\n         \r\n          <button mat-menu-item routerLink=\"/conversations/messenger\" >\r\n              <span>Direct Messages  </span>\r\n              <mat-icon>send</mat-icon>\r\n          </button> \r\n            <!--Collab username goes in the list-->\r\n               <mat-list dense>\r\n                  <ng-container *ngFor = \"let collab of collabData\" >\r\n                      \r\n                        <button mat-menu-item (click)=\"getTitle(collab.title)\">\r\n                          <div routerLink=\"/conversations\">\r\n                            <mat-icon routerLink=\"/conversations\">group</mat-icon>\r\n                            <span  (click)=\"groupMessageingPageLink(collab._id.$oid)\">{{collab.title}}   \r\n                               <mat-icon >control_point</mat-icon>\r\n                            </span>                           \r\n                          </div>                             \r\n                          </button> \r\n              \r\n                       <mat-list-item *ngFor =\"let mem of collab?.members\">\r\n                            <!--Taking individual user as input to navigate user -->\r\n                            <div>\r\n                                <button mat-menu-item >\r\n                                    <mat-icon routerLink=\"/user/{{mem}}\">person</mat-icon>                                     \r\n                                        <span (click)=\"PersonalmessagePageLink(mem)\" >{{extractFirstNameAndLastName(mem)}} </span> \r\n                                  </button> \r\n                            </div>                   \r\n                      </mat-list-item> \r\n                 </ng-container> \r\n               </mat-list>\r\n                <span>----------------------------------</span>\r\n               <button mat-menu-item (click)=\"logOut()\">\r\n                  <mat-icon>logout</mat-icon>\r\n                  <span>LogOut</span>\r\n                </button>          \r\n  </mat-drawer>\r\n \r\n</mat-drawer-container>\r\n\r\n\r\n   \r\n"
 
 /***/ }),
 
@@ -518,8 +518,6 @@ var NavbarComponent = /** @class */ (function () {
     NavbarComponent.prototype.getTitle = function (title) {
         this.Title_ = title;
         console.log("Showing title " + this.Title_);
-    };
-    NavbarComponent.prototype.loadOtherUserProfile = function () {
     };
     NavbarComponent.prototype.logOut = function () {
         localStorage.removeItem('accessToken');
@@ -941,18 +939,21 @@ var environment = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
-/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
+/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
 
 
 
 
-if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].production) {
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["enableProdMode"])();
+
+if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production) {
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["enableProdMode"])();
 }
-Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"])
+Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"])
     .catch(function (err) { return console.error(err); });
 
 

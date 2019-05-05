@@ -11,6 +11,10 @@ const routes: Routes = [
     {
       path: 'messenger',
       component: MessengerComponent
+    },
+    {
+      path: 'conversations',
+      component: CollabMessagingComponent
     }
   ];
   
