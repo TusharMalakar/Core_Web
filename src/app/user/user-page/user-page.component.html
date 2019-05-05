@@ -19,25 +19,20 @@
               
                 </mat-card-header>  
 
-                <div class="image-background">
-                  <div class="image-container">
-                      <img mat-card-image [src]="imageToShow" 
-                        alt="Image not found" onerror="this.onerror=null; this.src = 'assets/userPhoto.png';">
-                  </div>
+              
+                <div class="containerPic">
+                  <div class="image-background">
+                      <div class="image-container">
+                          <img mat-card-image [src]="imageToShow" 
+                          alt="Image not found" onerror="this.onerror=null; this.src = 'assets/userPhoto.png';"
+                           class="image">
+                          </div> 
+                          <div class="middle">
+                            <button mat-raised-button class="text" (click) = "openDialog4()">John Doe</button>
+                      </div>
+                  </div>  
                 </div>
 
-                   <!--Taking picture as input-->
-                  <div>
-                      <div class="uploadPic">
-                          Choose File
-                          <input  type="file" class="hide_file" (change)="handleFileInput($event.target.files)">
-                      </div>
-                      <button class="uploadButton" mat-button color="primary" (click)="uploadFileToActivity()">submit</button>
-                  </div>
-
-                <ng-template #noImageFound>
-                  <img src="/assets/userPhoto.png"> 
-                </ng-template>
                 <!--img mat-card-image -->
                 <mat-card-content>
                 

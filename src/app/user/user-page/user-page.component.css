@@ -128,61 +128,61 @@
         height: 38px;
     }
 
-  
- .image-background {
-   background: #555555;
-   display: table;
-   width: 100%;
-   height: 100%;
-   position: relative;
+    .mat-stroked-button  {
+      width: 7%;
+      margin-left: auto;
+      margin-right: 10px; 
+    }
 
-   overflow: hidden;
- }
 
- 
 
- .mat-card-image {
-  margin: 0px;
-  margin-left: 8.099%;
-  margin-right: 10%;
-  display: block;
-  height: 450px;
-  max-height: 450px;
-  max-width: 85%;
-}
+    .uploadButton {
+      height: 38px;
+    }
 
-.mat-stroked-button  {
-  width: 7%;
-  margin-left: auto;
-  margin-right: 10px; 
-}
+    .middle {
+      transition: .5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+    }
 
-.uploadPic{
-  padding:5px;
-  background:#3f51b5;
-  position:relative;
-  color:#fff;
-  text-align:center;
-  float:left;
-  cursor:pointer;
-  width: 50%;
-  height: 29px;
-  margin-left: 10%;
+    .containerPic:hover .image {
+      opacity: 0.3;
+    }
 
-  
-}
-.hide_file {
-    position: absolute;
-    z-index: 1000;
-    opacity: 0;
-    cursor: pointer;
-    right: 0;
-    top: 0;
-    height: 100%;
-    font-size: 24px;
-    width: 50%;
-    
-}
-.uploadButton {
-  height: 38px;
-}
+    .containerPic:hover .middle {
+      opacity: 1;
+    }
+
+
+    .image-background {
+      background: #555555;
+      display: table;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .containerPic {
+      position: relative;
+    }
+
+
+    .mat-card-image {
+    margin: 0px;
+    margin-left: 8.099%;
+    margin-right: 10%;
+    display: block;
+    height: 490px;
+    max-height: 500px;
+    max-width: 85%;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    opacity: 1;
+    }

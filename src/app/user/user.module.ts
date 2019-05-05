@@ -22,9 +22,10 @@ import { MatListModule }  from '@angular/material/list';
 import { EditUserFormComponent } from './edit-user-form/edit-user-form.component';
 import { EditClassesComponent } from './edit-classes/edit-classes.component';
 import { EditSkillsComponent } from './edit-skills/edit-skills.component';
+import { EditPictureComponent } from './edit-picture/edit-picture.component';
 
 @NgModule({
-  declarations: [UserPageComponent, EditUserFormComponent, EditClassesComponent, EditSkillsComponent],
+  declarations: [UserPageComponent, EditUserFormComponent, EditClassesComponent, EditSkillsComponent, EditPictureComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
@@ -54,7 +55,8 @@ import { EditSkillsComponent } from './edit-skills/edit-skills.component';
   entryComponents: [
     EditUserFormComponent,
     EditClassesComponent,
-    EditSkillsComponent
+    EditSkillsComponent,
+    EditPictureComponent
   ]
 })
 export class UserModule { }

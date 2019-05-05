@@ -1,3 +1,4 @@
+import { EditPictureComponent } from './../edit-picture/edit-picture.component';
 import { EditSkillsComponent } from './../edit-skills/edit-skills.component';
 import { EditClassesComponent } from './../edit-classes/edit-classes.component';
 import { EditUserFormComponent } from './../edit-user-form/edit-user-form.component';
@@ -117,21 +118,7 @@ profilePicture(){
     //console.log(picture)
   })
 }
- //function which you use in (change)-event of your file input tag:
- handleFileInput(files: FileList) {
-     this.fileToUpload = files.item(0);
- }
 
- uploadFileToActivity() {
-   this.userService.uploadProfilePicture(this.fileToUpload).subscribe((data: any)=>{
-     console.log(data)
-   })
- //   this.fileUploadService.postFile(this.fileToUpload).subscribe(data => {
- //     // do something, if upload success
- //     }, error => {
- //       console.log(error);
- //     });
-  }
 
   openDialog1(): void {
     //Dialog refeerence
@@ -150,7 +137,7 @@ profilePicture(){
   openDialog2(): void {
     //Dialog refeerence
     const dialogRef = this.dialog.open(EditClassesComponent, {
-      width: '70%',
+      width: '95%',
       data: {
         userData: this.userData
       }
@@ -173,6 +160,28 @@ profilePicture(){
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+  }
+
+  openDialog4(){
+    //Dialog refeerence
+    const dialogRef = this.dialog.open(EditPictureComponent, {
+      width: '280px',
+      data: {
+        userData: this.userData
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed' + result);
+      if(result == true){
+      
+      }
+    });
+
+  }
+
+  changeProfilePic(){
+    console.log("Change profile pic.")
   }
 
 
