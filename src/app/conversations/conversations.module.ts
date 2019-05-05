@@ -12,6 +12,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
+import { IgxBottomNavModule } from 'igniteui-angular';
 
 
 
@@ -53,6 +54,7 @@ import { MessengerComponent } from './messenger/messenger.component';
     MatAutocompleteModule,
     OwlDateTimeModule, 
     OwlNativeDateTimeModule,
+    IgxBottomNavModule,
     
 
     FormsModule,

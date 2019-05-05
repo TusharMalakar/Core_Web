@@ -40,6 +40,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { CollabMessagingComponent } from './conversations/collab-messaging/collab-messaging.component';
 
+//buttom nav bar for messenger
+import { IgxBottomNavModule } from 'igniteui-angular';
 
 
 
@@ -69,6 +71,7 @@ import { CollabMessagingComponent } from './conversations/collab-messaging/colla
     MatNativeDateModule,
     MatAutocompleteModule,
     MatListModule,
+    IgxBottomNavModule,
     
 
     //Our Routes will be here to make code cleaner

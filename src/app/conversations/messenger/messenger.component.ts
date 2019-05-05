@@ -5,6 +5,8 @@ import { CollabsService } from 'src/app/shared/dbAccess/collabs.service';
 import { Component, OnInit } from '@angular/core';
 import {MatListModule} from '@angular/material/list';
 import { Router } from '@angular/router';
+import { IgxBottomNavModule } from 'igniteui-angular';
+
 
 @Component({
   selector: 'app-messenger',
