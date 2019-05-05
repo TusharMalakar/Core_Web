@@ -27,7 +27,7 @@
                           alt="Image not found" onerror="this.onerror=null; this.src = 'assets/userPhoto.png';"
                            class="image">
                           </div> 
-                          <div class="middle">
+                          <div class="middle"  *ngIf="canEdit">
                             <button mat-raised-button class="text" (click) = "openDialog4()">John Doe</button>
                       </div>
                   </div>  
