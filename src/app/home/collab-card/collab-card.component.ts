@@ -19,10 +19,13 @@ export interface Requirements{
 export class CollabCardComponent implements OnInit {
 
   @Input() collabData: CollabModel;
+ 
 
   //Values being passed to collab-table
   table: Array<TableBuilder> = [];  
   xAxisReq: Array<string> = [];
+  panelOpenState1 = false;
+  panelOpenState2 = false;
 
 
   yAxisUsers: any
@@ -31,7 +34,7 @@ export class CollabCardComponent implements OnInit {
   isOwner = false; 
 
   //Will hold our user data.
-  userData: UserModel[];
+  userData: UserModel;
   
 
   constructor(private userService: UserService, 
@@ -193,6 +196,16 @@ export class CollabCardComponent implements OnInit {
         this.collabData = res['0'])
       }
     );
+  }
+
+  panelWasOpen1(){
+    this.panelOpenState1 = true;
+    this.makeTable()
+  }
+
+  panelWasOpen2(){
+    this.panelOpenState2 = true;
+    this.actionCheck();
   }
 
 

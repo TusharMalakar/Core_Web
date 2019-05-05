@@ -41,8 +41,8 @@ import { EditPictureComponent } from './edit-picture/edit-picture.component';
     ScrollDispatchModule,
     MatChipsModule,
     MatAutocompleteModule,
-    MatExpansionModule,
     MatDialogModule,
+    MatExpansionModule,
 
     //Flex Module
     FlexLayoutModule,

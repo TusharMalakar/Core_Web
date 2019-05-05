@@ -46,12 +46,12 @@ export class UserService {
     return localStorage.getItem('accessToken') !== null;
   }
  //url + json authentication
- getUserdetails(): Observable<UserModel[]> {
-  return this.http.get<UserModel[]>( this.rootUrl +"/user");
+ getUserdetails(): Observable<UserModel> {
+  return this.http.get<UserModel>( this.rootUrl +"/user");
   }
 
-  getMemberdetails(username: string): Observable<UserModel[]> {
-    return this.http.get<UserModel[]>( this.rootUrl +"/user/" + username);
+  getMemberdetails(username: string): Observable<UserModel> {
+    return this.http.get<UserModel>( this.rootUrl +"/user/" + username);
   }
 
   getUserSkills(userName: string) { 

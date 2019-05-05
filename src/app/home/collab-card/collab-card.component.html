@@ -40,8 +40,8 @@
         
         <!-- Event Binding: In this case the event is (opened) -->
         <mat-expansion-panel 
-                       (opened)="panelOpenState = true && makeTable()"
-                       (closed)="panelOpenState = false">
+                       (opened)="panelWasOpen1()"
+                       (closed)="panelOpenState1 = false">
         <mat-expansion-panel-header>
           <mat-panel-title>
               <h4>Members</h4>
@@ -63,8 +63,8 @@
   </mat-card-content>
 
   <mat-expansion-panel 
-                       (opened)="panelOpenState = true && actionCheck()"
-                       (closed)="panelOpenState = false">
+                       (opened)="panelWasOpen2()"
+                       (closed)="panelOpenState2 = false">
         <mat-expansion-panel-header>
           <mat-panel-title>
             <h4>Actions</h4>

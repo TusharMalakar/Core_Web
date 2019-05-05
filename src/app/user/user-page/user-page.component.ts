@@ -19,7 +19,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class UserPageComponent implements OnInit {
   canEdit:boolean;
   //Will hold our user data.
-  userData: UserModel[];
+  userData: UserModel;
   username: string;
   
   //Auto complete variables.
@@ -47,7 +47,9 @@ export class UserPageComponent implements OnInit {
     private formBuilder: FormBuilder,
     private activeRoute: ActivatedRoute,
     public dialog: MatDialog)
-   {    }
+   {   
+     
+    }
 
   async ngOnInit() {
     await this.activeRoute.paramMap
