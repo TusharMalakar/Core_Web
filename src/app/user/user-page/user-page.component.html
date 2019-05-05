@@ -17,21 +17,23 @@
                       <mat-card-subtitle>{{ userData?.username }}</mat-card-subtitle>
                       <button mat-stroked-button color="warm" (click) = "openDialog1()" *ngIf="canEdit">Edit</button>
               
-                  </mat-card-header>  
+                </mat-card-header>  
 
-                  <div class="image-background">
-                    <div class="image-container">
-                        <img mat-card-image [src]="imageToShow" 
-                          alt="Image not found" onerror="this.onerror=null; this.src = 'assets/userPhoto.png';">
-                    </div>
+                <div class="image-background">
+                  <div class="image-container">
+                      <img mat-card-image [src]="imageToShow" 
+                        alt="Image not found" onerror="this.onerror=null; this.src = 'assets/userPhoto.png';">
                   </div>
-
-                     <!--Taking picture as input-->
-                <div class="form-group">
-
-                  <input  type="file" id="file" (change)="handleFileInput($event.target.files)">
-                  <button mat-button color="primary" (click)="uploadFileToActivity()">submit</button>
                 </div>
+
+                   <!--Taking picture as input-->
+                  <div>
+                      <div class="uploadPic">
+                          Choose File
+                          <input  type="file" class="hide_file" (change)="handleFileInput($event.target.files)">
+                      </div>
+                      <button class="uploadButton" mat-button color="primary" (click)="uploadFileToActivity()">submit</button>
+                  </div>
 
                 <ng-template #noImageFound>
                   <img src="/assets/userPhoto.png"> 
