@@ -28,18 +28,15 @@ export class CollabMessagingComponent implements OnInit {
   collabID : string;
   Title_ : string;
   sender : string= this.mem_.sender;
-  //place holder for myCollabs
-  public gropuMess : GroupMessagingModel[] = new Array();
-  public oneone : OneToOneMessagingModel[] = new Array()
-  public ContactList   : string[] = new Array();
-  public user : string = null;
+  
 
   public allMess:OneToOneMessagingModel["messages"][]=new Array();
   public OneToOneMess:OneToOneMessagingModel["messages"][]=new Array();
   public OneToOneDate:OneToOneMessagingModel["messages"][]=new Array();
   public OneToOneDisName:OneToOneMessagingModel["messages"][]=new Array();
 
-  public groupmess:GroupMessagingModel;
+  public groupmess:GroupMessagingModel["messages"][]=new Array();
+  public alldata :any[]=new Array();
   
   partOf = false; 
   isOwner = false; 
@@ -61,23 +58,7 @@ export class CollabMessagingComponent implements OnInit {
   ngOnInit() {
     this.form = this.formBuilder.group({ message:[this.message.message, Validators.required]});
     this.LoadMyMessages();
-    this.collabSer.myCollabs().subscribe((data:any)=>{
-      //console.log(data[1].participants[0]);
-      for(let i=0; i<data.length-1;i++){
-        if(data[i]._id != null && data[i]._id["$oid"]!=null){
-          this.gropuMess.push(data[i]);
-        }
-
-        //making a personal contact-list
-        else if(data[i].participants.length != 0 && data[i].messages.length>0){
-          this.oneone.push(data[i].messages)
-          
-        }
-        else
-          return 0;
-      }
-    })
-    console.log(this.oneone)
+    
   }
   
 
@@ -140,11 +121,12 @@ remove_duplicates(arr) {
 //based on user input e.g. collbId od individual, it will load messages
 LoadMyMessages(){
   if(this.mem_.mem !=null){
-    this.showTitle();
+    //this.showTitle();
+    
     this.LoadIndividualMessage();
   }
   else if(this.mem_.collabId != null){
-    this.showTitle();
+    //this.showTitle();
     this.LoadGroupMessage();
   }
   else
@@ -155,44 +137,55 @@ LoadMyMessages(){
 //return participients and messages of current user
 LoadIndividualMessage(){
   this.sender=this.mem_.sender;
-  this.conversation.LoadOtherUserMessage(0,this.sender).subscribe((message:any)=>{
-    for(let i=0; i<message.length;i++){
-      this.Title_=message["otherUser"]
-      //console.log(message)
-      for(let j=0; j<message[i].messages.length;j++){
-        //assing message to mess
-
-        this.OneToOneMess.push(message[i].messages[j]);
-
-       
-
-        // this.OneToOneDate.push(message[i].messages[j].time);
-        // this.OneToOneDisName.push(message[i].messages[j].dispName);
-        
-        // this.allMess.push(message[i].messages[j].message["message"]);
-        // this.allMess.push(message[i].messages[j].time);
-        // this.allMess.push(message[i].messages[j].dispName);
-        
-        
-      }
+  for(let k=0; k<4; k++){ //user can loading last 200 messages
+    this.conversation.LoadOtherUserMessage(k,this.sender).subscribe((message:any)=>{
+      for(let i=0; i<message.length;i++){
       
-    }
-    //console.log(this.OneToOneMess)
+        this.alldata=message[i];
+        //console.log(message)
+        for(let j=0; j<message[i].messages.length;j++){
+          this.OneToOneMess.push(message[i].messages[j]); 
+          this.OneToOneMess.reverse();
+        }     
+      }
+    })
+  }
+  
 
-    
-    
-  })
 }
 
+testOne(){
+  console.log(this.OneToOneMess)
+}
 //return  collabId and  group messages of current user 
 LoadGroupMessage(){
   this.collabID=this.mem_.collabId;
-  this.conversation.LoadGroupMessage(0,this.collabID).subscribe((message:any)=>{
-    //console.log(message)
-    this.groupmess=message;
-    
-  })
-
+  
+  for(let j=0;j<4; j++){//user can loading last 200 messages
+    this.conversation.LoadGroupMessage(j,this.collabID).subscribe((message:any)=>{
+      this.Title_=this.mem_.Title_
+      for(let i=0; i<message.length;i++){
+        this.groupmess=message[i].messages
+        this.groupmess.reverse();
+      }
+      //console.log(this.Title_)
+      //console.log(this.groupmess)
+      
+    })
+  }
 }
+
+//need to write the fuc: it will take a username and will check if username is part of participantats
+isPartof(username:string , participantats :string[]){
+  for(let i=0; i<participantats.length; i++){
+    if(participantats[i]==username){
+      return true
+    }
+    else  
+        return false;
+  }
+}
+
+
 
 }

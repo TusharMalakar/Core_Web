@@ -1,10 +1,10 @@
-ul{
+ol{
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-ul li{
+ol li{
   display:inline-block;
   clear: both;
   padding: 20px;
@@ -22,7 +22,7 @@ ul li{
 
   
   float: right;
-  background: sienna;
+  background:blue;
   color: #fff;
 }
 
@@ -38,6 +38,7 @@ ul li{
 .me:last-of-type {
   border-bottom-right-radius: 30px;
 }
+
 
 
 
@@ -154,6 +155,13 @@ ul li{
   float: right;
   margin-left: 20px;
   margin-right:0;
+  font-size: 10px;
+}
+.left {
+  float: left;
+  margin-right: 20px;
+  margin-left:0;
+  font-size: 10px;
 }
 
 

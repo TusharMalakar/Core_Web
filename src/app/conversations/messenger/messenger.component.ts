@@ -77,10 +77,12 @@ extractFirstNameAndLastName(username:string){
   let temp = username.split("@")
   return temp[0]
 }
+
+
 PersonalmessagePageLink(contact){
   console.log(contact)
   this.mem=contact;
-  this.router.navigate(['/conversations'])
+  this.router.navigateByUrl("/conversations")
 }
 
 //write a sort fun to sort contact by time before display

@@ -62,7 +62,8 @@ groupMessageingPageLink(id:string){
     this.mem=null;
     console.log("Going to Group message "+this.collabId)
     console.log("member "+this.mem)
-    this.router.navigate(['/conversations'])
+    
+    this.router.navigateByUrl("/conversations")
 }
 PersonalmessagePageLink(mem:string){
   //setting members of message
@@ -71,12 +72,14 @@ PersonalmessagePageLink(mem:string){
   this.collabId=null;
   console.log("Going to message page of "+this.mem)
   console.log("CollabId "+this.collabId)
-  this.router.navigate(['/conversations'])
+  //location.reload();
+  this.router.navigateByUrl("/conversations")
 }
 getTitle(title:string){
   this.Title_ = title;
   console.log("Showing title "+this.Title_)
 }
+
 
 logOut(){
   localStorage.removeItem('accessToken');

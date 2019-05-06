@@ -1,3 +1,5 @@
+
+
 <form class="navbar"  [formGroup] = "form" (ngSubmit) = "SendMessage()">    
     <mat-form-field class="messa"> 
         <input 
@@ -17,32 +19,76 @@
 </form>
 
 <div class="mat-card">
-<ul   *ngFor="let messages of  OneToOneMess">
-    
-           
-                <div *ngIf="'messages.sender'==='sender'; then thenBlock else elseBlock"></div>
-                
-                <ng-template #thenBlock>
-                      <li class="him">
-                          {{messages.message["message"]}}<br>
-                          
-                          {{messages.dispName}}
-                        </li>
-                  </ng-template>
-                 
-                <ng-template #elseBlock>
-                   <li class="me">
-                        {{messages.message["message"]}}<br>
-                      
-                        <span class="right"> {{messages.dispName}}</span>
-                   </li>
-                </ng-template>
+        <ol   *ngFor="let messages of  OneToOneMess">
+                <div *ngIf="messages.sender===sender">
+                        <li class="me">
+                                {{messages.message["message"]}}<br>
+                                <span class="right"> {{messages.dispName}}</span>
+                               
+                            </li>
+                </div>
+                <div *ngIf="messages.sender!==sender">
+                        <li class="him">
+                               
+                                        {{messages.message["message"]}}<br>
+                                        <span class="left"> {{messages.dispName}}</span>
+                                
+                            </li>
+                </div>
                         
-          
-    
-</ul>
+                        
+            
+        </ol>
+
+</div>
+
+
+<div class="mat-card">
+        <ol   *ngFor="let messages of  groupmess">
+            
+                <div *ngIf="messages.sender===sender">
+                        <li class="me">
+
+                                {{messages.message["message"]}}<br>
+                                <span class="right"> {{messages.dispName}}</span>
+                               
+                            </li>
+
+                </div>
+                <div *ngIf="messages.sender!==sender">
+                        <li class="him">
+
+                                {{messages.message["message"]}}<br>
+                                <span class="left"> {{messages.dispName}}</span>
+                               
+                        </li>
+
+                </div>
+                            
+                 
+                                
+                
+            
+        </ol>
 
 </div>
 
 
 
+<!--
+
+     <ng-template #thenBlock>
+                            <li class="me">
+                                {{messages.message["message"]}}<br>
+                                <span class="right"> {{messages.sender}}</span>
+                                {{messages.sender}}
+                                </li>
+                        </ng-template>
+                        
+                        <ng-template #elseBlock>
+                        <li class="him">
+                                {{messages.message["message"]}}<br>
+                                <span class="right"> {{messages.sender}}</span>
+                        </li>
+                        </ng-template>
+-->
