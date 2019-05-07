@@ -88,6 +88,8 @@ get password2(){
   return this.form.get('password2');
 }
 
-
+login(){
+  this.router.navigate(['/login']);
+}
 
 }

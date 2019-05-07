@@ -72,6 +72,10 @@ export class LoginComponent implements OnInit {
     
   }
 
+  register(){
+      this.router.navigate(['/register']);
+  }
+
   get username(){
     return this.form.get('username');
   }

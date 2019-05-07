@@ -63,6 +63,10 @@ export class HomeComponent implements OnInit {
      });
   }
 
+  createCollab(){
+    this.router.navigate(['/home/createcollab']);
+  }
+
   async currentTab($event){
     switch($event) {
 
