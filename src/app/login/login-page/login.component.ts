@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
       
       if(data.success){
         //storing json object to localStorage
-        localStorage.setItem('accessToken',data.token);
+        localStorage.setItem('accessToken', data.token);
         this.router.navigate(['/home']);
         console.log ( this.user.username + "  logged-in"); 
       }

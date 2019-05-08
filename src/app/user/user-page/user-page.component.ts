@@ -186,6 +186,14 @@ profilePicture(){
     console.log("Change profile pic.")
   }
 
+  onNavigateGithub(){
+    window.open( "https://" + (this.userData).github , "_blank");
+  }
+
+  onNavigateLinkedIn(){
+    window.open( "https://" + (this.userData).linkedin , "_blank");
+  }
+
 
 
 }

@@ -15,7 +15,7 @@
                     <div mat-card-avatar></div>
                       <mat-card-title>{{ userData?.name }}</mat-card-title>
                       <mat-card-subtitle>{{ userData?.username }}</mat-card-subtitle>
-                      <button mat-stroked-button color="warm" (click) = "openDialog1()" *ngIf="canEdit">Edit</button>
+                      <button mat-flat-button color="primary" (click) = "openDialog1()" *ngIf="canEdit">Edit</button>
               
                 </mat-card-header>  
 
@@ -38,11 +38,11 @@
                 
                 <mat-grid-list cols="2" rowHeight="4:1" class="user-links">
                     <mat-grid-tile>
-                          <button mat-raised-button color="warm">{{ userData?.github }}</button>
+                          <button mat-raised-button color="warm" (click) = "onNavigateGithub()" >{{ userData?.github }}</button>
                     </mat-grid-tile>
                     
                     <mat-grid-tile>
-                        <button mat-raised-button color="primary">{{ userData?.linkedin }}</button>
+                        <button mat-raised-button color="primary" (click) = "onNavigateLinkedIn()">{{ userData?.linkedin }}</button>
                     </mat-grid-tile>
                 </mat-grid-list>
 
