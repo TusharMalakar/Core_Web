@@ -8,6 +8,17 @@ import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { RegisterComponent } from './register/register-page/register.component';
 
 
+/**
+* @author Edwin Quintuna
+* 
+*	@brief Configure the routes for the feature modules.
+*
+*	@param[routes] , variable that will hold the object with our routes
+*	@param[path]       , represents the queue that the process is in.
+*	@param[loadChildren]       , represents the current burst time the process is on.
+*	@param[canActivate]       , represents the current burst time the process is on.
+*	@return nothing
+*/
 const routes: Routes = [
   {
     path : 'login', 
