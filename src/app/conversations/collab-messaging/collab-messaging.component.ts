@@ -27,7 +27,8 @@ export class CollabMessagingComponent implements OnInit {
   mess:any []=new Array();
   collabID : string;
   Title_ : string;
-  sender : string= this.mem_.sender;
+  sender : string;
+  otherUser:string;
   
 
   public allMess:OneToOneMessagingModel["messages"][]=new Array();
@@ -136,13 +137,24 @@ LoadMyMessages(){
  
 //return participients and messages of current user
 LoadIndividualMessage(){
-  this.sender=this.mem_.sender;
+
+  if(this.mem_.sender!=null){
+    //value from nav bar
+    this.sender=this.mem_.sender;
+    this.otherUser=this.mem_.mem
+  }
+  else{
+    //value from messanger-list
+  // this.sender=
+  // this.otherUser=
+  }
+  console.log(this.sender)
   for(let k=0; k<4; k++){ //user can loading last 200 messages
-    this.conversation.LoadOtherUserMessage(k,this.sender).subscribe((message:any)=>{
+    this.conversation.LoadOtherUserMessage(k,this.otherUser).subscribe((message:any)=>{
       for(let i=0; i<message.length;i++){
       
         this.alldata=message[i];
-        //console.log(message)
+        console.log(message)
         for(let j=0; j<message[i].messages.length;j++){
           this.OneToOneMess.push(message[i].messages[j]); 
           this.OneToOneMess.reverse();

@@ -78,7 +78,7 @@ ol li{
   background-color: #333;
   position: fixed;
   bottom: 5px;
-  width: 100%; 
+  max-width: 800px;
 }
 
 .messageSender{

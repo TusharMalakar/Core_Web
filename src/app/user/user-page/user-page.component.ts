@@ -31,7 +31,7 @@ export class UserPageComponent implements OnInit {
 
 
   //place holder of image
-  imageToShow: any;
+  public imageToShow: any;
 
   //default variable for selected file.
   fileToUpload: File = null;
