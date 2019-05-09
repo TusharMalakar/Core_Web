@@ -4,8 +4,10 @@ import { UserModel } from './../../shared/models/user.model';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../shared/dbAccess/user.service';
 import {Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, pipe } from 'rxjs';
 import { CollabModel } from 'src/app/shared/models/collab.model';
+import { map, startWith } from 'rxjs/operators';
+import { start } from 'repl';
 
 @Component({
   selector: 'app-home',
@@ -14,8 +16,13 @@ import { CollabModel } from 'src/app/shared/models/collab.model';
 })
 export class HomeComponent implements OnInit {
     userData: UserModel;
-    collabData: CollabModel[];
+    collabData: Observable<CollabModel[]>;
     selected = new FormControl(0);
+
+    //Used for caching
+    CACHE_KEY_0 = 'activeCollabsCache';
+    CACHE_KEY_1 = 'myCollabsCache';
+    CACHE_KEY_2 = 'reqCollabsCache';
 
   constructor(
       private userService : UserService,
@@ -67,22 +74,56 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/home/createcollab']);
   }
 
-  async currentTab($event){
+  currentTab($event){
     switch($event) {
 
       case 0: {
-        this.collabService.getCollabs("getActiveCollabs").subscribe ((data : CollabModel[] )  => this.collabData = data.reverse());
+        this.collabData = this.collabService.getCollabs("getActiveCollabs")
+        .pipe(
+          map((data : CollabModel[] )  =>  data.reverse())
+        );
+        
+        this.collabData.subscribe( next => {
+          localStorage[this.CACHE_KEY_0] = JSON.stringify(next);
+        });
+
+        this.collabData = this.collabData.pipe(
+          startWith(JSON.parse(localStorage[this.CACHE_KEY_0] || '{}'))
+        );
+          
         break;
       }
 
       case 1: {
-        await this.collabService.getCollabs("getCollabDetails").subscribe ((data : CollabModel[] )  => this.collabData = data.reverse());
+        this.collabData = this.collabService.getCollabs("getCollabDetails")
+        .pipe(
+          map((data : CollabModel[] )  =>  data.reverse())
+        );
+
+        this.collabData.subscribe( next => {
+          localStorage[this.CACHE_KEY_1] = JSON.stringify(next);
+        });
+
+        this.collabData = this.collabData.pipe(
+          startWith(JSON.parse(localStorage[this.CACHE_KEY_1] || '{}'))
+        );
+        
         break;
       }
 
       case 2: {
-        console.log(this.userData);
-        await this.collabService.getReqCollabs(this.userData["classes"], this.userData["skills"]).subscribe ((data : CollabModel[] )  => this.collabData = data.reverse());
+        this.collabData = this.collabService.getReqCollabs(this.userData["classes"], this.userData["skills"])
+        .pipe(
+          map((data : CollabModel[] )  =>  data.reverse())
+        )
+
+        this.collabData.subscribe( next => {
+          localStorage[this.CACHE_KEY_2]= JSON.stringify(next);
+        });
+
+        this.collabData = this.collabData.pipe(
+          startWith(JSON.parse(localStorage[this.CACHE_KEY_2] || '{}'))
+        )
         break;
       }
 
