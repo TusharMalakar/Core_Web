@@ -2,44 +2,32 @@
 
 <form class="navbar"  [formGroup] = "form" (ngSubmit) = "SendMessage()">    
   <mat-form-field class="messa"> 
-      <input 
-          
-          formControlName = "message"
-          matInput
-          id="message" 
-          type="text" 
-          placeholder="Message">
- 
-  <div *ngIf=" message.touched && message.invalid" 
-  class="alert alert-danger">
-  <mat-error *ngIf="message.errors.required">null<strong>Required!</strong></mat-error>
-</div>
-<button class="right" mat-raised-button color = "primary" type="submit" [disabled] = "!form.valid">send</button>
-</mat-form-field>
+        <input            
+                formControlName = "message"
+                matInput
+                id="message" 
+                type="text" 
+                placeholder="Enter message">    
+        <div class="alert alert-danger"></div>
+        <button class="right" mat-raised-button color = "primary" type="submit" [disabled] = "!form.valid">send</button>
+        </mat-form-field>
 </form>
 
 <div class="mat-card">
       <ol   *ngFor="let messages of  OneToOneMess">
               <div *ngIf="messages.sender===sender">
-                      <li class="me">
-                              {{messages.message["message"]}}<br>
-                              <span class="right"> {{messages.dispName}}</span>
-                             
-                          </li>
+                <li class="me">
+                        {{messages.message["message"]}}<br>
+                        <span class="right"> {{messages.dispName}}</span>           
+                 </li>
               </div>
-              <div *ngIf="messages.sender!==sender">
-                      <li class="him">
-                                      
-                                      {{messages.message["message"]}}<br>
-                                      <span class="left"> {{messages.dispName}}</span>
-                              
-                          </li>
-              </div>
-                      
-                      
-          
-      </ol>
-
+                <div *ngIf="messages.sender!==sender">
+                <li class="him">  
+                        {{messages.message["message"]}}<br>
+                        <span class="left"> {{messages.dispName}}</span> 
+                </li>
+                </div>
+        </ol>
 </div>
 
 
@@ -48,27 +36,17 @@
           
               <div *ngIf="messages.sender===sender">
                       <li class="me">
-
                               {{messages.message["message"]}}<br>
-                              <span class="right"> {{messages.dispName}}</span>
-                             
+                              <span class="right"> {{messages.dispName}}</span>             
                           </li>
-
               </div>
               <div *ngIf="messages.sender!==sender">
                       <li class="him">
-
                               {{messages.message["message"]}}<br>
-                              <span class="left"> {{messages.dispName}}</span>
-                             
+                              <span class="left"> {{messages.dispName}}</span>     
                       </li>
 
-              </div>
-                          
-               
-                              
-              
-          
+              </div>         
       </ol>
 
 </div>
