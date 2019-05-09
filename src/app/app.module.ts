@@ -14,6 +14,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { GroupMessagingModel } from './shared/models/groupMessaging';
+import { OneToOneMessagingModel } from './shared/models/oneToOneMessagingModel';
+import { ConversationService } from './shared/dbAccess/conversation.service';
+import { CollabMessagingComponent } from './conversations/collab-messaging/collab-messaging.component';
+
+
+
 
 //These are the materials that will make our site adaptable
 import { MatButtonModule } from '@angular/material/button';
@@ -33,6 +40,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatListModule} from '@angular/material/list';
+
 
 //Clock
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
@@ -68,6 +77,8 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     MatAutocompleteModule,
     MatSelectModule,
     MatDialogModule,
+    MatListModule,
+    
     
 
     //Our Routes will be here to make code cleaner

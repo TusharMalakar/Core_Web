@@ -1,44 +1,78 @@
 <mat-drawer-container class="container" autosize >
-    <!-- Will be triggered by (click) = "drawer.toggle()" -->
-    
-    <mat-drawer #drawer class="sidenav">
-      
-            <button color="primary" mat-button (click) = "home()">
-              <mat-icon>home</mat-icon>
-              <span>Home</span>
-            </button>
-
-            <button mat-button (click) = "user()">
-                <mat-icon>person</mat-icon>
-                <span>User Info</span>
+  <!-- Will be triggered by (click) = "drawer.toggle()" -->
+   
+  <div class="sidenav-content">
+      <mat-toolbar color="primary">
+          <mat-toolbar-row>
+              <!-- 
+                drawer.toggle(): will call #drawer and will bring the sidenav into view
+              -->
+              <button mat-icon-button (click) = "drawer.toggle()">
+                      <mat-icon>menu</mat-icon>
               </button>
+              <button mat-button routerLink="/home">Hunter Collab</button>
+       
+              <span class="spacer"></span>
               
-            <button mat-button (click)="logOut()">
-                <mat-icon>directions_run</mat-icon>
-                <span>LogOut</span>
-              </button>
+              <mat-menu #menu="matMenu" >
+                
+              </mat-menu>
 
-    </mat-drawer>
-    
-    <div class="sidenav-content">
-        <mat-toolbar color="primary">
-            <mat-toolbar-row>
-                <!-- 
-                  drawer.toggle(): will call #drawer and will bring the sidenav into view
-                -->
-                <button mat-icon-button (click) = "drawer.toggle()">
-                        <mat-icon>menu</mat-icon>
-                </button>
-                 
-                <button mat-button (click) = "home()">Hunter Collab</button>
-                <span class="spacer"></span>
-                <!--
-                   How every button is implemented 
-                    [matMenuTriggerFor] is bindded to button menu; will be triggered by menu
-                  -->
+          </mat-toolbar-row>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+  </div>
+  
+  <mat-drawer #drawer class="sidenav">
+          <button mat-menu-item routerLink="/home">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+          </button> 
 
-            </mat-toolbar-row>
-        </mat-toolbar>
-        <router-outlet></router-outlet>
-    </div>
+          <button mat-menu-item routerLink="/user">
+            <mat-icon>person</mat-icon>
+            <span>Profile</span>
+          </button> 
+         
+          <!--
+            <button mat-menu-item routerLink="/conversations/messenger" >
+          -->
+          <button mat-menu-item routerLink="/conversations/messenger">
+              <span>Direct Messages  </span>
+              <mat-icon>send</mat-icon>
+          </button> 
+            <!--Collab username goes in the list-->
+               <mat-list dense>
+                  <ng-container *ngFor = "let collab of collabData" >
+                      
+                        <button mat-menu-item (click)="getTitle(collab.title)">
+                          <div routerLink="/conversations">
+                            <mat-icon routerLink="/conversations">group</mat-icon>
+                            <span  (click)="groupMessageingPageLink(collab._id.$oid)">{{collab.title}}   
+                               <mat-icon >control_point</mat-icon>
+                            </span>                           
+                          </div>                             
+                          </button> 
+              
+                       <mat-list-item *ngFor ="let mem of collab?.members">
+                            <!--Taking individual user as input to navigate user -->
+                            <div>
+                                <button mat-menu-item >
+                                    <mat-icon (click) = "user(mem)">person</mat-icon>                                     
+                                        <span (click)="PersonalmessagePageLink(mem)" >{{extractFirstNameAndLastName(mem)}} </span> 
+                                  </button> 
+                            </div>                   
+                      </mat-list-item> 
+                 </ng-container> 
+               </mat-list>
+                <span>----------------------------------</span>
+               <button mat-menu-item (click)="logOut()">
+                  <mat-icon>logout</mat-icon>
+                  <span>LogOut</span>
+                </button>          
+  </mat-drawer>
+ 
 </mat-drawer-container>
+
+
+   
