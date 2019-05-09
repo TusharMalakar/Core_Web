@@ -46,8 +46,7 @@ import {MatListModule} from '@angular/material/list';
 //Clock
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
-//buttom nav bar for messenger
-import { IgxBottomNavModule } from 'igniteui-angular';
+
 
 
 
