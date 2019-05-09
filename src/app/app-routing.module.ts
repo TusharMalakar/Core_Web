@@ -10,6 +10,7 @@ import { RegisterComponent } from './register/register-page/register.component';
 
 /**
 * @author Edwin Quintuna
+* @author Tushar Malakar
 * 
 *	@brief Configure the routes for the feature modules.
 *
