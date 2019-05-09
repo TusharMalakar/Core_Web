@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/shared/dbAccess/user.service';
+// import { Component, OnInit } from '@angular/core';
+// import { UserService } from 'src/app/shared/dbAccess/user.service';
 
-@Component({
-  selector: 'update-userdata',
-  templateUrl: './update-userdata.component.html',
-  styleUrls: ['./update-userdata.component.css']
-})
-export class UpdateUserdataComponent implements OnInit {
+// @Component({
+//   selector: 'update-userdata',
+//   templateUrl: './update-userdata.component.html'
+// })
+// export class UpdateUserdataComponent implements OnInit {
 
-  constructor(private userservice: UserService) { }
+//   constructor(private userservice: UserService) { }
 
-  ngOnInit() {
-  }
+//   ngOnInit() {
+//   }
 
-}
+// }

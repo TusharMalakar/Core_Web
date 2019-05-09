@@ -30,7 +30,6 @@ export class EditUserFormComponent implements OnInit {
   }
 
   update(userData){
-
     this.userService.updateUserProfile(userData).subscribe(result => { console.log(result) });
     this.dialogRef.close();
   }

@@ -1,3 +1,6 @@
+import { EditPictureComponent } from './../edit-picture/edit-picture.component';
+import { EditSkillsComponent } from './../edit-skills/edit-skills.component';
+import { EditClassesComponent } from './../edit-classes/edit-classes.component';
 import { EditUserFormComponent } from './../edit-user-form/edit-user-form.component';
 import { Component, OnInit,ChangeDetectionStrategy } from '@angular/core';
 import { UserService } from 'src/app/shared/dbAccess/user.service';
@@ -6,7 +9,6 @@ import { UserModel } from 'src/app/shared/models/user.model';
 import { FormControl, Form, FormGroup, FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
-import { NavbarComponent } from 'src/app/navbar/navbar.component';
 
 
 @Component({
@@ -15,8 +17,9 @@ import { NavbarComponent } from 'src/app/navbar/navbar.component';
   styleUrls: ['./user-page.component.css']
 })
 export class UserPageComponent implements OnInit {
+  canEdit:boolean;
   //Will hold our user data.
-  userData: UserModel[];
+  userData: UserModel;
   username: string;
   
   //Auto complete variables.
@@ -26,9 +29,6 @@ export class UserPageComponent implements OnInit {
   userClass:UserModel["classes"];
   userSkill:UserModel["skills"];
   
-  //regular expression to check empty string
-  regex = "^\\s+$";
-
 
   //place holder of image
   public imageToShow: any;
@@ -38,8 +38,6 @@ export class UserPageComponent implements OnInit {
 
   /*
   TODO: 
-    DISPLAY Image
-    Edit all fields
     Autocomplete on edit skills and classes. 
 
   */
@@ -48,19 +46,27 @@ export class UserPageComponent implements OnInit {
     private router : Router, 
     private formBuilder: FormBuilder,
     private activeRoute: ActivatedRoute,
-    public dialog: MatDialog,
-    private getmem :NavbarComponent)
-   { 
-    this.activeRoute.paramMap
+    public dialog: MatDialog)
+   {   
+     
+    }
+
+  async ngOnInit() {
+    await this.activeRoute.paramMap
     .subscribe(params => {
       this.username = params.get('username');
     })
 
-   
-   }
-
-  ngOnInit() {
-
+    await this.userService.getUserdetails()
+      .subscribe(res => { 
+                if(res['username'] === this.username || this.username == null){
+                  this.canEdit = true;
+                }else{
+                  this.canEdit = false;
+                }  
+              
+              }); 
+      
     this.loadUserData(this.username);
     this.classesForm = this.formBuilder.group({
       userInput: null
@@ -115,25 +121,12 @@ profilePicture(){
     //console.log(picture)
   })
 }
- //function which you use in (change)-event of your file input tag:
- handleFileInput(files: FileList) {
-     this.fileToUpload = files.item(0);
- }
 
- uploadFileToActivity() {
-   this.userService.uploadProfilePicture(this.fileToUpload).subscribe((data: any)=>{
-     console.log(data)
-   })
- //   this.fileUploadService.postFile(this.fileToUpload).subscribe(data => {
- //     // do something, if upload success
- //     }, error => {
- //       console.log(error);
- //     });
-  }
 
-  openDialog(): void {
+  openDialog1(): void {
     //Dialog refeerence
     const dialogRef = this.dialog.open(EditUserFormComponent, {
+      width: '50%',
       data: {
         userData: this.userData
       }
@@ -143,65 +136,65 @@ profilePicture(){
       console.log('The dialog was closed');
     });
   }
-  addskill(newSkill){
-    //return if input is empty string
-    if(newSkill.value["NewSkill"]==this.regex ){
-  
-      console.log("it is an empty string  ")
-      return 0;
-    }
-  
-    //taking values from input
-    let newObject = Object.assign(newSkill.value["NewSkill"])
-    //console.log(newObject)
-    //copying all the skills as object that are already exist
-    let skills: string []  = this.userData["skills"];
-    
-    
-   //checking if the skill is already exist or not
-    for(var iter in skills){
-     if(newObject== skills[iter]){
-         //console.log(skills[iter]," already exits !")
-         return 0;
-     }
-    }
-    //Combining input skill and previous skills
-    newObject= skills.concat(newObject)
-    this.userService.updateUserSkill(newObject).subscribe(data => {
-      //console.log(data)
+
+  openDialog2(): void {
+    //Dialog refeerence
+    const dialogRef = this.dialog.open(EditClassesComponent, {
+      width: '95%',
+      data: {
+        userData: this.userData
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
     });
   }
-  
-  addclass(newclass){
-    //return if input is empty string
-    if(newclass.value["NewClass"]==this.regex){
-      console.log("it is an empty strings")
-      return 0;
-    }
-    
-    //taking values from input
-    let newObject = Object.assign(newclass.value["NewClass"])
-    //console.log(newObject)
-    //copying all the classes as object that are already exist
-    let classes: string []  = this.userData["classes"];
-    
-    
-   //checking if the skill is already exist or not
-    for(var iter in classes){
-     if(newObject== classes[iter]){
-        // console.log(classes[iter]," already exits !")
-         return 0;
-     }
-    }
-    //Combining input skill and previous skills
-    newObject= classes.concat(newObject)
-    this.userService.updateUserclass(newObject).subscribe(data => {
-      //console.log(data)
+
+  openDialog3(): void {
+    //Dialog refeerence
+    const dialogRef = this.dialog.open(EditSkillsComponent, {
+      width: '70%',
+      data: {
+        userData: this.userData
+      }
     });
-  
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
-  
-  
+
+  openDialog4(){
+    //Dialog refeerence
+    const dialogRef = this.dialog.open(EditPictureComponent, {
+      width: '280px',
+      data: {
+        userData: this.userData
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed' + result);
+      if(result == true){
+      
+      }
+    });
+
+  }
+
+  changeProfilePic(){
+    console.log("Change profile pic.")
+  }
+
+  onNavigateGithub(){
+    window.open( "https://" + (this.userData).github , "_blank");
+  }
+
+  onNavigateLinkedIn(){
+    window.open( "https://" + (this.userData).linkedin , "_blank");
+  }
+
 
 
 }

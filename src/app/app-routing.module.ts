@@ -33,9 +33,7 @@ const routes: Routes = [
     path: 'conversations',
     loadChildren: './conversations/conversations.module#ConversationsModule',
     canLoad: [AuthGuard]
-
   },
-  
   //default component
   {
     path:'**', 

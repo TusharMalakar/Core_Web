@@ -19,15 +19,22 @@ export interface Requirements{
 export class CollabCardComponent implements OnInit {
 
   @Input() collabData: CollabModel;
+ 
+
+  //Values being passed to collab-table
   table: Array<TableBuilder> = [];  
   xAxisReq: Array<string> = [];
+  panelOpenState1 = false;
+  panelOpenState2 = false;
+
+
   yAxisUsers: any
   alreadyBuilt: boolean = false;
   partOf = false; 
   isOwner = false; 
 
   //Will hold our user data.
-  userData: UserModel[];
+  userData: UserModel;
   
 
   constructor(private userService: UserService, 
@@ -120,6 +127,7 @@ export class CollabCardComponent implements OnInit {
     await this.isUserOwner();
     this.isPartOf();
   }
+
   isUserOwner(){
     
     if(this.collabData.owner == this.userData['username']){
@@ -130,10 +138,11 @@ export class CollabCardComponent implements OnInit {
   }
 
   isPartOf(){
+
     for(let member of this.collabData.members){
       if(member == this.userData['username']){
         this.partOf = true;
-      } 
+      }
     }
   }
 
@@ -146,24 +155,60 @@ export class CollabCardComponent implements OnInit {
   }
   
   joinCollab(){
+
     this.collabService.joinCollab(this.collabData._id)
-      .subscribe(res => { console.log(res) });
+      .subscribe(res => { 
+        if(res['success'] == true){
+          this.partOf = true;
+          this.getUpdatedData();
+        } else {
+          
+        }
+      });
   }
 
   leaveCollab(){
     this.collabService.leaveCollab(this.collabData._id)
-      .subscribe(res => {console.log(res) })
+      .subscribe(res => { 
+        if(res['success'] == true){
+          this.partOf = false;
+          this.getUpdatedData();
+        } else {
+          
+        } 
+      });
   }
 
   deleteCollab(){
     this.collabService.deleteCollab(this.collabData._id)
-      .subscribe(res => {console.log(res) })
+      .subscribe(res => {})
   }
 
   editCollab(){
    
     this.router.navigate(['/home/editcollab/',this.collabData._id["$oid"]]);
   }
+
+  getUpdatedData(){
+    this.collabService.getSingleCollab(this.collabData._id["$oid"]).subscribe(
+      res => {
+        console.log(res['0'],
+        this.collabData = res['0'])
+      }
+    );
+  }
+
+  panelWasOpen1(){
+    this.panelOpenState1 = true;
+    this.makeTable()
+  }
+
+  panelWasOpen2(){
+    this.panelOpenState2 = true;
+    this.actionCheck();
+  }
+
+  
 
 
 }

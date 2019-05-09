@@ -13,7 +13,7 @@ import { CollabModel } from 'src/app/shared/models/collab.model';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-    userData: UserModel[];
+    userData: UserModel;
     collabData: CollabModel[];
     selected = new FormControl(0);
 
@@ -61,6 +61,10 @@ export class HomeComponent implements OnInit {
       //console.log(data);   
   
      });
+  }
+
+  createCollab(){
+    this.router.navigate(['/home/createcollab']);
   }
 
   async currentTab($event){

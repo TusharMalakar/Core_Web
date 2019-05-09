@@ -58,7 +58,7 @@
                             <!--Taking individual user as input to navigate user -->
                             <div>
                                 <button mat-menu-item >
-                                    <mat-icon routerLink="/user/{{mem}}">person</mat-icon>                                     
+                                    <mat-icon (click) = "user(mem)">person</mat-icon>                                     
                                         <span (click)="PersonalmessagePageLink(mem)" >{{extractFirstNameAndLastName(mem)}} </span> 
                                   </button> 
                             </div>                   

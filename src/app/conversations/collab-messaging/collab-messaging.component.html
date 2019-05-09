@@ -10,9 +10,7 @@
             type="text" 
             placeholder="Message">
    
-    <div *ngIf=" message.touched && message.invalid" 
-    class="alert alert-danger">
-    <mat-error *ngIf="message.errors.required">null<strong>Required!</strong></mat-error>
+    <div class="alert alert-danger">
 </div>
 <button class="right" mat-raised-button color = "primary" type="submit" [disabled] = "!form.valid">send</button>
 </mat-form-field>
@@ -57,10 +55,11 @@
                 </div>
                 <div *ngIf="messages.sender!==sender">
                         <li class="him">
-
+                         <div *ngIf = "messages.message[message]">
                                 {{messages.message["message"]}}<br>
                                 <span class="left"> {{messages.dispName}}</span>
-                               
+                         </div>
+                                
                         </li>
 
                 </div>

@@ -3,7 +3,7 @@
         <mat-vertical-stepper [linear] = "true" #stepper>
     
                 <mat-step [stepControl] = "firstFormGroup">
-                    <form [formGroup] = "firstFormGroup" (ngSubmit) = "onSubmit()">
+                    <form [formGroup] = "firstFormGroup">
                         <ng-template matStepLabel >Fill in Collab Info</ng-template>
                         <mat-form-field>
                             <input matInput placeholder = "Collab Title..." formControlName = "title" required>

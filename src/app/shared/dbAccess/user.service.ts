@@ -46,13 +46,15 @@ export class UserService {
     return localStorage.getItem('accessToken') !== null;
   }
  //url + json authentication
- getUserdetails(): Observable<UserModel[]> {
-  return this.http.get<UserModel[]>( this.rootUrl +"/user");
+ getUserdetails(): Observable<UserModel> {
+  return this.http.get<UserModel>( this.rootUrl +"/user");
   }
 
-  getMemberdetails(username: string): Observable<UserModel[]> {
-    return this.http.get<UserModel[]>( this.rootUrl +"/user/" + username);
+  getMemberdetails(username: string): Observable<UserModel> {
+    return this.http.get<UserModel>( this.rootUrl +"/user/" + username);
   }
+
+  
 
   getUserSkills(userName: string) { 
     return this.http.get( this.rootUrl + "/user/skills/" + userName).toPromise();
@@ -83,7 +85,7 @@ export class UserService {
         skillOrClass: classTaken,
         type: "class"
       });
-    }
+    
     for(let skill of skills){
       xAxisReq.push({
       skillOrClass: skill,
@@ -143,7 +145,7 @@ updateUserProfile(userData: UserModel){
   return this.http.post(this.rootUrl +"/user", body)
 }
 
-updateUserSkill(skills){
+updateUserSkills(skills){
   const body : UserModel ={
     skills  :skills,
     

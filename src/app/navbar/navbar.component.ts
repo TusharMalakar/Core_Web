@@ -80,6 +80,12 @@ getTitle(title:string){
   console.log("Showing title "+this.Title_)
 }
 
+home(){
+  this.router.navigate(['/home']);
+}
+user(mem){
+  this.router.navigate(['/user/'+mem]);
+}
 
 logOut(){
   localStorage.removeItem('accessToken');

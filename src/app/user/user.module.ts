@@ -19,11 +19,13 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule }  from '@angular/material/grid-list';
 import { MatListModule }  from '@angular/material/list';
-import { UpdateUserdataComponent } from './update-userdata/update-userdata.component';
 import { EditUserFormComponent } from './edit-user-form/edit-user-form.component';
+import { EditClassesComponent } from './edit-classes/edit-classes.component';
+import { EditSkillsComponent } from './edit-skills/edit-skills.component';
+import { EditPictureComponent } from './edit-picture/edit-picture.component';
 
 @NgModule({
-  declarations: [UserPageComponent, UpdateUserdataComponent, EditUserFormComponent],
+  declarations: [UserPageComponent, EditUserFormComponent, EditClassesComponent, EditSkillsComponent, EditPictureComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
@@ -39,6 +41,7 @@ import { EditUserFormComponent } from './edit-user-form/edit-user-form.component
     ScrollDispatchModule,
     MatChipsModule,
     MatAutocompleteModule,
+    MatDialogModule,
     MatExpansionModule,
     MatDialogModule,
 
@@ -51,7 +54,10 @@ import { EditUserFormComponent } from './edit-user-form/edit-user-form.component
 
   ],
   entryComponents: [
-    EditUserFormComponent
+    EditUserFormComponent,
+    EditClassesComponent,
+    EditSkillsComponent,
+    EditPictureComponent
   ]
 })
 export class UserModule { }

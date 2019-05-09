@@ -15,37 +15,34 @@
                     <div mat-card-avatar></div>
                       <mat-card-title>{{ userData?.name }}</mat-card-title>
                       <mat-card-subtitle>{{ userData?.username }}</mat-card-subtitle>
-                      <button mat-stroked-button color="warm" (click) = "openDialog()">Edit</button>
+                      <button mat-flat-button color="primary" (click) = "openDialog1()" *ngIf="canEdit">Edit</button>
               
-                  </mat-card-header>  
+                </mat-card-header>  
 
+              
+                <div class="containerPic">
                   <div class="image-background">
-                    <div class="image-container">
-                        <img mat-card-image [src]="imageToShow" 
-                          alt="Image not found" onerror="this.onerror=null; this.src = 'assets/userPhoto.png';">
-                    </div>
-                  </div>
-
-                     <!--Taking picture as input-->
-                <div class="form-group">
-
-                  <input  type="file" id="file" (change)="handleFileInput($event.target.files)">
-                  <button mat-button color="primary" (click)="uploadFileToActivity()">submit</button>
+                      <div class="image-container">
+                          <img mat-card-image [src]="imageToShow" 
+                          alt="Image not found" onerror="this.onerror=null; this.src = 'assets/userPhoto.png';"
+                           class="image">
+                          </div> 
+                          <div class="middle"  *ngIf="canEdit">
+                            <button mat-raised-button class="text" (click) = "openDialog4()">Change Picture</button>
+                      </div>
+                  </div>  
                 </div>
 
-                <ng-template #noImageFound>
-                  <img src="/assets/userPhoto.png"> 
-                </ng-template>
                 <!--img mat-card-image -->
                 <mat-card-content>
                 
                 <mat-grid-list cols="2" rowHeight="4:1" class="user-links">
                     <mat-grid-tile>
-                          <button mat-raised-button color="warm">{{ userData?.github }}</button>
+                          <button mat-raised-button color="warm" (click) = "onNavigateGithub()" >{{ userData?.github }}</button>
                     </mat-grid-tile>
                     
                     <mat-grid-tile>
-                        <button mat-raised-button color="primary">{{ userData?.linkedin }}</button>
+                        <button mat-raised-button color="primary" (click) = "onNavigateLinkedIn()">{{ userData?.linkedin }}</button>
                     </mat-grid-tile>
                 </mat-grid-list>
 
@@ -61,11 +58,7 @@
             <div class ="grid-container">  
               <div class = "grid-search">
                   <div class="wrapper">
-                       <!--add a new skill--> 
-                       <form #classForm="ngForm" (ngSubmit)="addclass(classForm)" class="form form-login">
-                          <input name="NewClass" id="login-email" type="text" class="form-input" placeholder="Add a new class" required ngModel>
-                          <button mat-flat-button color="primary">Add class</button>
-                      </form>
+                      <button (click) = "openDialog2()" mat-flat-button color="primary" *ngIf="canEdit"> Update </button>
                   </div>
               </div>
               
@@ -74,7 +67,6 @@
                       <mat-chip-list>
                         <mat-chip *ngFor = "let class of userData?.classes">
                           {{ class }}
-                          <mat-icon matChipRemove>cancel</mat-icon>
                         </mat-chip>
                       </mat-chip-list>
                     </cdk-virtual-scroll-viewport>
@@ -89,13 +81,7 @@
               <div class ="grid-container">  
                   <div class = "grid-search">
                       <div class="wrapper">
-
-                         <!--add a new skill--> 
-                        <form #skillForm="ngForm" (ngSubmit)="addskill(skillForm)" class="form form-login">
-                            <input name="NewSkill" id="skillForm" type="text" class="form-input" placeholder="Add a new skill" required ngModel>
-                            <button mat-flat-button color="primary">Add Skill</button>
-                        </form>
-
+                          <button (click) = "openDialog3()" mat-flat-button color="primary" *ngIf="canEdit"> Update </button>
                       </div>
                   </div>
                   <div class = "grid-item">
@@ -103,9 +89,7 @@
                           <mat-chip-list>
                             <mat-chip *ngFor = "let skill of userData?.skills">
                               {{ skill }}
-                              <mat-icon matChipRemove>cancel</mat-icon>
-                            </mat-chip>
-                            
+                            </mat-chip>  
                           </mat-chip-list>
                         </cdk-virtual-scroll-viewport>
                     </div>

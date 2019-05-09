@@ -17,6 +17,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { CollabMessagingComponent } from './conversations/collab-messaging/collab-messaging.component';
+
+
+
 
 //These are the materials that will make our site adaptable
 import { MatButtonModule } from '@angular/material/button';
@@ -29,16 +33,18 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatTableModule } from '@angular/material/table';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import {MatListModule} from '@angular/material/list';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
 
 //Angular Flex Module
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatListModule} from '@angular/material/list';
+
 
 //Clock
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
-import { CollabMessagingComponent } from './conversations/collab-messaging/collab-messaging.component';
 
 //buttom nav bar for messenger
 import { IgxBottomNavModule } from 'igniteui-angular';
@@ -70,8 +76,10 @@ import { IgxBottomNavModule } from 'igniteui-angular';
     MatDatepickerModule,
     MatNativeDateModule,
     MatAutocompleteModule,
+    MatSelectModule,
+    MatDialogModule,
     MatListModule,
-    IgxBottomNavModule,
+    
     
 
     //Our Routes will be here to make code cleaner
@@ -79,7 +87,7 @@ import { IgxBottomNavModule } from 'igniteui-angular';
 
     FlexLayoutModule,
 
-    //Clock
+    //Clock         
     OwlDateTimeModule, 
     OwlNativeDateTimeModule,
    
