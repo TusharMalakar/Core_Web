@@ -1,5 +1,0 @@
-FIRST CREATE A MODULE THAT WILL HOLD ALL COMPONENTS RELATED TO IT
-ng generate module orders --routing
-
-THEN CREATE COMPONENTS WITHIN THE MODULE
-ng generate component orders/orderlist --routing
