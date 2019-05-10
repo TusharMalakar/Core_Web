@@ -1,3 +1,4 @@
+import { UserService } from './../../shared/dbAccess/user.service';
 import { OneToOneMessagingModel } from './../../shared/models/oneToOneMessagingModel';
 import { Message } from './../../shared/models/message.model';
 import { CollabModel } from './../../shared/models/collab.model';
@@ -25,10 +26,12 @@ export class CollabMessagingComponent implements OnInit {
   member : string;
   message : Message;
   mess:any []=new Array();
-  collabID : string;
+  collabID : any;
   Title_ : string;
   sender : string;
   otherUser:string;
+  MessageId: any;
+  user:any;
   
 
   public allMess:OneToOneMessagingModel["messages"][]=new Array();
@@ -51,6 +54,7 @@ export class CollabMessagingComponent implements OnInit {
   constructor(private userService : UserService, private collabservice: CollabsService, 
     private conversation: ConversationService,private router: Router, 
     private mem_:NavbarComponent,
+    private userservie:UserService,
     private collabSer : CollabsService,
     private formBuilder: FormBuilder) {
     this.message = new Message();
@@ -59,6 +63,10 @@ export class CollabMessagingComponent implements OnInit {
   ngOnInit() {
     this.form = this.formBuilder.group({ message:[this.message.message, Validators.required]});
     this.LoadMyMessages();
+    this.userservie.getUserdetails().subscribe((data:any)=>{
+      this.user = data.username;
+      //console.log(this.user)
+    })
     
   }
   
@@ -69,7 +77,7 @@ export class CollabMessagingComponent implements OnInit {
     return temp
   }
 
-  //remove duplicate contact
+  //remove duplicate contac
 remove_duplicates(arr) {
   var obj = {};
   var ret_arr = [];
@@ -123,11 +131,13 @@ remove_duplicates(arr) {
 LoadMyMessages(){
   if(this.mem_.mem !=null){
     //this.showTitle();
-    
+    console.log(this.sender)
     this.LoadIndividualMessage();
   }
   else if(this.mem_.collabId != null){
     //this.showTitle();
+    this.collabID = this.mem_.collabId;
+    //console.log(this.collabID)
     this.LoadGroupMessage();
   }
   else
@@ -166,9 +176,7 @@ LoadIndividualMessage(){
 
 }
 
-testOne(){
-  console.log(this.OneToOneMess)
-}
+
 //return  collabId and  group messages of current user 
 LoadGroupMessage(){
   this.collabID=this.mem_.collabId;
@@ -177,10 +185,11 @@ LoadGroupMessage(){
     this.conversation.LoadGroupMessage(j,this.collabID).subscribe((message:any)=>{
       this.Title_=this.mem_.Title_
       for(let i=0; i<message.length;i++){
+        this.MessageId = message[0]._id["$oid"]
         this.groupmess=message[i].messages
         this.groupmess.reverse();
       }
-      //console.log(this.Title_)
+      //console.log(this.MessageId)
       //console.log(this.groupmess)
       
     })
