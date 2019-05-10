@@ -48,8 +48,10 @@ import { EditPictureComponent } from './edit-picture/edit-picture.component';
     //Flex Module
     FlexLayoutModule,
 
-    //Forms
+    //Template Driven Forms
     FormsModule,
+
+    //
     ReactiveFormsModule,
 
   ],

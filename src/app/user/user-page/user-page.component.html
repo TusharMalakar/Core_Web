@@ -23,8 +23,8 @@
                 <div class="containerPic">
                   <div class="image-background">
                       <div class="image-container">
-                          <img mat-card-image [src]="imageToShow" 
-                          alt="Image not found" onerror="this.onerror=null; this.src = 'assets/userPhoto.png';"
+                          <img mat-card-image [src] = "imageLink"
+                          onerror="this.onerror=null; this.src = 'assets/userPhoto.png';"
                            class="image">
                           </div> 
                           <div class="middle"  *ngIf="canEdit">

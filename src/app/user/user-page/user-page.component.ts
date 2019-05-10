@@ -21,6 +21,7 @@ export class UserPageComponent implements OnInit {
   //Will hold our user data.
   userData: UserModel;
   username: string;
+  imageLink: any;
   
   //Auto complete variables.
   classesForm: FormGroup;
@@ -84,11 +85,6 @@ export class UserPageComponent implements OnInit {
               }); 
     //Load the user data that will be displayed in our html files
     this.loadUserData(this.username);
-
-    this.classesForm = this.formBuilder.group({
-      userInput: null
-      
-    })
   }
 
   /**
@@ -107,46 +103,31 @@ export class UserPageComponent implements OnInit {
     if(username){
       this.userService.getMemberdetails(username).subscribe(userData => {
         this.userData = userData;
-        this.userClass= userData["classes"]
-        this.userSkill= userData["skills"]
-        this.profileMemberPicture(username);
-    
+        this.userClass= userData["classes"];
+        this.userSkill= userData["skills"];
       });
+      this.profileMemberPicture(username);
+
     } else {
       this.userService.getUserdetails().subscribe(userData => {
         this.userData = userData;
-        this.userClass= userData["classes"]
-        this.userSkill= userData["skills"]
-        this.profilePicture();
-    
+        this.userClass= userData["classes"];
+        this.userSkill= userData["skills"];
       });
+      this.profilePicture();
     }
   }  
 
-  createImageFromBlob(image: Blob) {
-    let reader = new FileReader();
-    reader.addEventListener("load", () => {
-      
-      //image to show is the final place holder of profile picture
-      this.imageToShow = reader.result;
-      return this.imageToShow
-    }, false);
-
-    if (image) {
-      reader.readAsDataURL(image);
-    }
-  }
-
   profilePicture(){
-    this.userService.getPicture().subscribe((picture:Blob)=>{
-      this.createImageFromBlob(picture)
-      //console.log(picture)
-    })
+    this.userService.getPicture().subscribe( (link) => {
+      console.log(link);
+      this.imageLink = 'http://' + link;
+      console.log(this.imageLink);
+     })
   }
   profileMemberPicture(username: string){
-    this.userService.getMemberPicture(username).subscribe((picture:Blob)=>{
-      this.createImageFromBlob(picture)
-      //console.log(picture)
+    this.userService.getMemberPicture(username).subscribe((link)=>{
+     this.imageLink = 'http://' + link;
     })
   }
 
