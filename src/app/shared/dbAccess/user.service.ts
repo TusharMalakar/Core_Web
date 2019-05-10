@@ -107,21 +107,12 @@ searchClasses(constrain: string): Observable<any>{
   return this.http.get(this.rootUrl +"/search/classes",{params: params});
 }
 
-
-//___________POST_________________
-
-
-
-//download profile-picture as Bold file
-getPicture(): Observable <Blob>{
-  // user/profilePicture
-  return this.http.get( this.rootUrl +"/user/profilePicture",  { responseType: 'blob' });
+getPicture(){
+  return this.http.get(this.rootUrl + "/user/profilePicture", {responseType: 'text'});
 }
 
-getMemberPicture(username: string): Observable <Blob>{
-  console.log(username);
-  // user/profilePicture
-  return this.http.get( this.rootUrl +"/user/profilePicture?username=" + username,  { responseType: 'blob' });
+getMemberPicture(username: string){
+  return this.http.get( this.rootUrl +"/user/profilePicture?username=" + username , {responseType: 'text'});
 }
 
 uploadProfilePicture(fileToUpload: File){

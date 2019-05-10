@@ -23,7 +23,7 @@ export class AuthInterceptor implements HttpInterceptor {
         if (localStorage.getItem('accessToken') != null) {
             //Copies request that was caught and adds the authorization
             const clonedreq = req.clone({
-                headers: req.headers.set("Authorization", localStorage.getItem('accessToken'))
+                headers: req.headers.set("capstoneAuth", localStorage.getItem('accessToken'))
             });
             //This sends the request that was cloned.
             return next.handle(clonedreq).do(

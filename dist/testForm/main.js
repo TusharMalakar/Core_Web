@@ -75,8 +75,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _guard_auth_guard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./guard/auth.guard */ "./src/app/guard/auth.guard.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+<<<<<<< HEAD
 /* harmony import */ var _messenger_messenger_messenger_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./messenger/messenger/messenger.component */ "./src/app/messenger/messenger/messenger.component.ts");
 
+=======
+>>>>>>> afb4c8f639181f60916a58657a4a0d19b635ecd6
 
 
 
@@ -84,12 +87,23 @@ __webpack_require__.r(__webpack_exports__);
 /**
 * @author Edwin Quintuna
 *
+<<<<<<< HEAD
 *	@brief Configure the routes for the feature modules.
 *
 *	@param[routes] , variable that will hold the object with our routes
 *	@param[path]       , represents the queue that the process is in.
 *	@param[loadChildren]       , represents the current burst time the process is on.
 *	@param[canActivate]       , represents the current burst time the process is on.
+=======
+*	@brief Configure the routes to allow for lazy loading of feature modules.
+*         Each feature module will have it's own routing module that will tell
+*         the router where to go to load relevant components.
+*
+*	@param[routes] ,  array that will contain our routes
+*	@param[path]       ,  string that will redirect to the module specified on 'loadChildren'
+*	@param[loadChildren]       , relative path to the module, a hash mark, and the module's class name
+*	@param[canActivate]       , auth guard that will prevent un-authorized users from gaining access to the module
+>>>>>>> afb4c8f639181f60916a58657a4a0d19b635ecd6
 *	@return nothing
 */
 var routes = [
@@ -118,12 +132,16 @@ var routes = [
         loadChildren: './conversations/conversations.module#ConversationsModule',
         canLoad: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]]
     },
+<<<<<<< HEAD
     {
         path: 'messenger',
         component: _messenger_messenger_messenger_component__WEBPACK_IMPORTED_MODULE_4__["MessengerComponent"],
         canLoad: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]]
     },
     //default component
+=======
+    //Will catch  route that is not listed
+>>>>>>> afb4c8f639181f60916a58657a4a0d19b635ecd6
     {
         path: '**',
         redirectTo: 'home',
@@ -135,6 +153,11 @@ var AppRoutingModule = /** @class */ (function () {
     }
     AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+<<<<<<< HEAD
+=======
+            //Lets angular know that this module is the root routing module.
+            //It will configure all the routes passed to it, give access to router directives, and register the RouterService.
+>>>>>>> afb4c8f639181f60916a58657a4a0d19b635ecd6
             imports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(routes)],
             exports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"]]
         })
@@ -239,7 +262,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @angular/material/core */ "./node_modules/@angular/material/esm5/core.es5.js");
 /* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @angular/material/list */ "./node_modules/@angular/material/esm5/list.es5.js");
 /* harmony import */ var ng_pick_datetime__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ng-pick-datetime */ "./node_modules/ng-pick-datetime/picker.js");
+<<<<<<< HEAD
 /* harmony import */ var _messenger_messenger_messenger_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./messenger/messenger/messenger.component */ "./src/app/messenger/messenger/messenger.component.ts");
+=======
+>>>>>>> afb4c8f639181f60916a58657a4a0d19b635ecd6
 
 
 
@@ -273,7 +299,10 @@ __webpack_require__.r(__webpack_exports__);
 
 //Clock
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> afb4c8f639181f60916a58657a4a0d19b635ecd6
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -281,8 +310,12 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
+<<<<<<< HEAD
                 _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_16__["NavbarComponent"],
                 _messenger_messenger_messenger_component__WEBPACK_IMPORTED_MODULE_29__["MessengerComponent"]
+=======
+                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_16__["NavbarComponent"]
+>>>>>>> afb4c8f639181f60916a58657a4a0d19b635ecd6
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["BrowserModule"],
@@ -421,7 +454,11 @@ var AuthInterceptor = /** @class */ (function () {
         if (localStorage.getItem('accessToken') != null) {
             //Copies request that was caught and adds the authorization
             var clonedreq = req.clone({
+<<<<<<< HEAD
                 headers: req.headers.set("Authorization", localStorage.getItem('accessToken'))
+=======
+                headers: req.headers.set("capstoneAuth", localStorage.getItem('accessToken'))
+>>>>>>> afb4c8f639181f60916a58657a4a0d19b635ecd6
             });
             //This sends the request that was cloned.
             return next.handle(clonedreq).do(
@@ -449,6 +486,7 @@ var AuthInterceptor = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "./src/app/messenger/messenger/messenger.component.css":
 /*!*************************************************************!*\
   !*** ./src/app/messenger/messenger/messenger.component.css ***!
@@ -505,6 +543,8 @@ var MessengerComponent = /** @class */ (function () {
 
 /***/ }),
 
+=======
+>>>>>>> afb4c8f639181f60916a58657a4a0d19b635ecd6
 /***/ "./src/app/navbar/navbar.component.css":
 /*!*********************************************!*\
   !*** ./src/app/navbar/navbar.component.css ***!
@@ -512,7 +552,11 @@ var MessengerComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 module.exports = ".container {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n}\r\n\r\n.container .mat-drawer {\r\n    min-width: 200px;\r\n}\r\n\r\n.container .mat-drawer .mat-button {\r\n    display: block;\r\n    width: 100%;\r\n    text-align: left;\r\n}\r\n\r\n.spacer {\r\n    flex: 1 1 auto;\r\n}\r\n\r\n.mat-toolbar-row .mat-button {\r\n    background-color: transparent;\r\n    font-size: 20px;\r\n    \r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbmF2YmFyL25hdmJhci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksa0JBQWtCO0lBQ2xCLE1BQU07SUFDTixPQUFPO0lBQ1AsUUFBUTtJQUNSLFNBQVM7QUFDYjs7QUFFQTtJQUNJLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLGNBQWM7SUFDZCxXQUFXO0lBQ1gsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksY0FBYztBQUNsQjs7QUFFQTtJQUNJLDZCQUE2QjtJQUM3QixlQUFlOztBQUVuQiIsImZpbGUiOiJzcmMvYXBwL25hdmJhci9uYXZiYXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWluZXIge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiAwO1xyXG4gICAgbGVmdDogMDtcclxuICAgIHJpZ2h0OiAwO1xyXG4gICAgYm90dG9tOiAwO1xyXG59XHJcblxyXG4uY29udGFpbmVyIC5tYXQtZHJhd2VyIHtcclxuICAgIG1pbi13aWR0aDogMjAwcHg7XHJcbn1cclxuXHJcbi5jb250YWluZXIgLm1hdC1kcmF3ZXIgLm1hdC1idXR0b24ge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbn1cclxuXHJcbi5zcGFjZXIge1xyXG4gICAgZmxleDogMSAxIGF1dG87XHJcbn1cclxuXHJcbi5tYXQtdG9vbGJhci1yb3cgLm1hdC1idXR0b24ge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBcclxufVxyXG5cclxuIl19 */"
+=======
+module.exports = ".container {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n}\n\n.container .mat-drawer {\n    min-width: 200px;\n}\n\n.container .mat-drawer .mat-button {\n    display: block;\n    width: 100%;\n    text-align: left;\n}\n\n.spacer {\n    flex: 1 1 auto;\n}\n\n.mat-toolbar-row .mat-button {\n    background-color: transparent;\n    font-size: 20px;\n    \n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbmF2YmFyL25hdmJhci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksa0JBQWtCO0lBQ2xCLE1BQU07SUFDTixPQUFPO0lBQ1AsUUFBUTtJQUNSLFNBQVM7QUFDYjs7QUFFQTtJQUNJLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLGNBQWM7SUFDZCxXQUFXO0lBQ1gsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksY0FBYztBQUNsQjs7QUFFQTtJQUNJLDZCQUE2QjtJQUM3QixlQUFlOztBQUVuQiIsImZpbGUiOiJzcmMvYXBwL25hdmJhci9uYXZiYXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWluZXIge1xuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICB0b3A6IDA7XG4gICAgbGVmdDogMDtcbiAgICByaWdodDogMDtcbiAgICBib3R0b206IDA7XG59XG5cbi5jb250YWluZXIgLm1hdC1kcmF3ZXIge1xuICAgIG1pbi13aWR0aDogMjAwcHg7XG59XG5cbi5jb250YWluZXIgLm1hdC1kcmF3ZXIgLm1hdC1idXR0b24ge1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIHRleHQtYWxpZ246IGxlZnQ7XG59XG5cbi5zcGFjZXIge1xuICAgIGZsZXg6IDEgMSBhdXRvO1xufVxuXG4ubWF0LXRvb2xiYXItcm93IC5tYXQtYnV0dG9uIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICBmb250LXNpemU6IDIwcHg7XG4gICAgXG59XG5cbiJdfQ== */"
+>>>>>>> afb4c8f639181f60916a58657a4a0d19b635ecd6
 
 /***/ }),
 
@@ -523,7 +567,11 @@ module.exports = ".container {\r\n    position: absolute;\r\n    top: 0;\r\n    
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 module.exports = "<mat-drawer-container class=\"container\" autosize >\r\n  <!-- Will be triggered by (click) = \"drawer.toggle()\" -->\r\n   \r\n  <div class=\"sidenav-content\">\r\n      <mat-toolbar color=\"primary\">\r\n          <mat-toolbar-row>\r\n              <!-- \r\n                drawer.toggle(): will call #drawer and will bring the sidenav into view\r\n              -->\r\n              <button mat-icon-button (click) = \"drawer.toggle()\">\r\n                      <mat-icon>menu</mat-icon>\r\n              </button>\r\n              <button mat-button routerLink=\"/home\">Hunter Collab</button>\r\n       \r\n              <span class=\"spacer\"></span>\r\n              \r\n              <mat-menu #menu=\"matMenu\" >\r\n                \r\n              </mat-menu>\r\n\r\n          </mat-toolbar-row>\r\n      </mat-toolbar>\r\n      <router-outlet></router-outlet>\r\n  </div>\r\n  \r\n  <mat-drawer #drawer class=\"sidenav\">\r\n          <button mat-menu-item routerLink=\"/home\">\r\n            <mat-icon>home</mat-icon>\r\n            <span>Home</span>\r\n          </button> \r\n\r\n          <button mat-menu-item routerLink=\"/user\">\r\n            <mat-icon>person</mat-icon>\r\n            <span>Profile</span>\r\n          </button> \r\n         \r\n          <!--\r\n            <button mat-menu-item routerLink=\"/conversations/messenger\" >\r\n          -->\r\n          <button mat-menu-item routerLink=\"/conversations/messenger\">\r\n              <span>Direct Messages  </span>\r\n              <mat-icon>send</mat-icon>\r\n          </button> \r\n            <!--Collab username goes in the list-->\r\n               <mat-list dense>\r\n                  <ng-container *ngFor = \"let collab of collabData\" >\r\n                      \r\n                        <button mat-menu-item (click)=\"getTitle(collab.title)\">\r\n                          <div routerLink=\"/conversations\">\r\n                            <mat-icon routerLink=\"/conversations\">group</mat-icon>\r\n                            <span  (click)=\"groupMessageingPageLink(collab._id.$oid)\">{{collab.title}}   \r\n                               <mat-icon >control_point</mat-icon>\r\n                            </span>                           \r\n                          </div>                             \r\n                          </button> \r\n              \r\n                       <mat-list-item *ngFor =\"let mem of collab?.members\">\r\n                            <!--Taking individual user as input to navigate user -->\r\n                            <div>\r\n                                <button mat-menu-item >\r\n                                    <mat-icon (click) = \"user(mem)\">person</mat-icon>                                     \r\n                                        <span (click)=\"PersonalmessagePageLink(mem)\" >{{extractFirstNameAndLastName(mem)}} </span> \r\n                                  </button> \r\n                            </div>                   \r\n                      </mat-list-item> \r\n                 </ng-container> \r\n               </mat-list>\r\n                <span>----------------------------------</span>\r\n               <button mat-menu-item (click)=\"logOut()\">\r\n                  <mat-icon>logout</mat-icon>\r\n                  <span>LogOut</span>\r\n                </button>          \r\n  </mat-drawer>\r\n \r\n</mat-drawer-container>\r\n\r\n\r\n   \r\n"
+=======
+module.exports = "<mat-drawer-container class=\"container\" autosize >\n  <!-- Will be triggered by (click) = \"drawer.toggle()\" -->\n   \n  <div class=\"sidenav-content\">\n      <mat-toolbar color=\"primary\">\n          <mat-toolbar-row>\n              <!-- \n                drawer.toggle(): will call #drawer and will bring the sidenav into view\n              -->\n              <button mat-icon-button (click) = \"drawer.toggle()\">\n                      <mat-icon>menu</mat-icon>\n              </button>\n              <button mat-button routerLink=\"/home\">Hunter Collab</button>\n       \n              <span class=\"spacer\"></span>\n              \n              <mat-menu #menu=\"matMenu\" >\n                \n              </mat-menu>\n\n          </mat-toolbar-row>\n      </mat-toolbar>\n      <router-outlet></router-outlet>\n  </div>\n  \n  <mat-drawer #drawer class=\"sidenav\">\n          <button mat-menu-item routerLink=\"/home\">\n            <mat-icon>home</mat-icon>\n            <span>Home</span>\n          </button> \n\n          <button mat-menu-item routerLink=\"/user\">\n            <mat-icon>person</mat-icon>\n            <span>Profile</span>\n          </button> \n         \n          <!--\n            <button mat-menu-item routerLink=\"/conversations/messenger\" >\n          -->\n          <button mat-menu-item routerLink=\"/conversations/messenger\">\n              <span>Direct Messages  </span>\n              <mat-icon>send</mat-icon>\n          </button> \n            <!--Collab username goes in the list-->\n               <mat-list dense>\n                  <ng-container *ngFor = \"let collab of collabData\" >\n                      \n                        <button mat-menu-item (click)=\"getTitle(collab.title)\">\n                          <div routerLink=\"/conversations\">\n                            <mat-icon routerLink=\"/conversations\">group</mat-icon>\n                            <span  (click)=\"groupMessageingPageLink(collab._id.$oid)\">{{collab.title}}   \n                               <mat-icon >control_point</mat-icon>\n                            </span>                           \n                          </div>                             \n                          </button> \n              \n                       <mat-list-item *ngFor =\"let mem of collab?.members\">\n                            <!--Taking individual user as input to navigate user -->\n                            <div>\n                                <button mat-menu-item >\n                                    <mat-icon (click) = \"user(mem)\">person</mat-icon>                                     \n                                        <span (click)=\"PersonalmessagePageLink(mem)\" >{{extractFirstNameAndLastName(mem)}} </span> \n                                  </button> \n                            </div>                   \n                      </mat-list-item> \n                 </ng-container> \n               </mat-list>\n                <span>----------------------------------</span>\n               <button mat-menu-item (click)=\"logOut()\">\n                  <mat-icon>logout</mat-icon>\n                  <span>LogOut</span>\n                </button>          \n  </mat-drawer>\n \n</mat-drawer-container>\n\n\n   \n"
+>>>>>>> afb4c8f639181f60916a58657a4a0d19b635ecd6
 
 /***/ }),
 
@@ -940,6 +988,7 @@ var UserService = /** @class */ (function () {
         var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set("query", constrain);
         return this.http.get(this.rootUrl + "/search/classes", { params: params });
     };
+<<<<<<< HEAD
     //___________POST_________________
     //download profile-picture as Bold file
     UserService.prototype.getPicture = function () {
@@ -950,6 +999,13 @@ var UserService = /** @class */ (function () {
         console.log(username);
         // user/profilePicture
         return this.http.get(this.rootUrl + "/user/profilePicture?username=" + username, { responseType: 'blob' });
+=======
+    UserService.prototype.getPicture = function () {
+        return this.http.get(this.rootUrl + "/user/profilePicture", { responseType: 'text' });
+    };
+    UserService.prototype.getMemberPicture = function (username) {
+        return this.http.get(this.rootUrl + "/user/profilePicture?username=" + username, { responseType: 'text' });
+>>>>>>> afb4c8f639181f60916a58657a4a0d19b635ecd6
     };
     UserService.prototype.uploadProfilePicture = function (fileToUpload) {
         var formData = new FormData();
@@ -1057,7 +1113,11 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\tusha\Desktop\CS499\hunterCollap\current\webApplication\src\main.ts */"./src/main.ts");
+=======
+module.exports = __webpack_require__(/*! /Users/ariel/Desktop/HunterCollabWeb/webApplication/src/main.ts */"./src/main.ts");
+>>>>>>> afb4c8f639181f60916a58657a4a0d19b635ecd6
 
 
 /***/ })
