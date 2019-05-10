@@ -11,12 +11,14 @@ import { RegisterComponent } from './register/register-page/register.component';
 /**
 * @author Edwin Quintuna
 * 
-*	@brief Configure the routes for the feature modules.
+*	@brief Configure the routes to allow for lazy loading of feature modules.
+*         Each feature module will have it's own routing module that will tell
+*         the router where to go to load relevant components.
 *
-*	@param[routes] , variable that will hold the object with our routes
-*	@param[path]       , represents the queue that the process is in.
-*	@param[loadChildren]       , represents the current burst time the process is on.
-*	@param[canActivate]       , represents the current burst time the process is on.
+*	@param[routes] ,  array that will contain our routes
+*	@param[path]       ,  string that will redirect to the module specified on 'loadChildren'
+*	@param[loadChildren]       , relative path to the module, a hash mark, and the module's class name
+*	@param[canActivate]       , auth guard that will prevent un-authorized users from gaining access to the module
 *	@return nothing
 */
 const routes: Routes = [
@@ -45,7 +47,7 @@ const routes: Routes = [
     loadChildren: './conversations/conversations.module#ConversationsModule',
     canLoad: [AuthGuard]
   },
-  //default component
+  //Will catch  route that is not listed
   {
     path:'**', 
     redirectTo: 'home',
@@ -54,6 +56,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  //Lets angular know that this module is the root routing module.
+  //It will configure all the routes passed to it, give access to router directives, and register the RouterService.
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
