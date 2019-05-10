@@ -6,6 +6,7 @@ import { HomeComponent } from './home/collab-list/home.component';
 import { LoginComponent } from './login/login-page/login.component';
 import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { RegisterComponent } from './register/register-page/register.component';
+import { MessengerComponent } from './messenger/messenger/messenger.component';
 
 
 /**
@@ -44,6 +45,12 @@ const routes: Routes = [
     path: 'conversations',
     loadChildren: './conversations/conversations.module#ConversationsModule',
     canLoad: [AuthGuard]
+  },
+  {
+    path: 'messenger',
+    component: MessengerComponent,
+    canLoad: [AuthGuard]
+
   },
   //default component
   {

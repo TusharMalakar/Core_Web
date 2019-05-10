@@ -43,26 +43,29 @@
 
 <div class="mat-card">
         <ol   *ngFor="let messages of  groupmess">
-            
-                <div *ngIf="messages.sender===sender">
-                        <li class="me">
-
-                                {{messages.message["message"]}}<br>
-                                <span class="right"> {{messages.dispName}}</span>
-                               
-                            </li>
-
+                <div *ngIf="MessageId===collabID">
+                        
+                        <div *ngIf="messages.sender===user">
+                                        <li class="me">
+                
+                                                {{messages.message["message"]}}<br>
+                                                <span class="right"> {{messages.dispName}}</span>
+                                                
+                                                </li>
+                
+                                </div>
+                                <div *ngIf="messages.sender!==user">
+                                        <li class="him">
+                                                <div *ngIf = "messages.message[message]">
+                                                {{messages.message["message"]}}<br>
+                                                <span class="left"> {{messages.dispName}}</span>
+                                                </div>
+                                                
+                                        </li>
+                
+                                </div>
                 </div>
-                <div *ngIf="messages.sender!==sender">
-                        <li class="him">
-                         <div *ngIf = "messages.message[message]">
-                                {{messages.message["message"]}}<br>
-                                <span class="left"> {{messages.dispName}}</span>
-                         </div>
-                                
-                        </li>
-
-                </div>
+                
                             
                  
                                 
