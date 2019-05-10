@@ -131,7 +131,7 @@ remove_duplicates(arr) {
 LoadMyMessages(){
   if(this.mem_.mem !=null){
     //this.showTitle();
-    console.log(this.sender)
+    //console.log(this.sender)
     this.LoadIndividualMessage();
   }
   else if(this.mem_.collabId != null){
@@ -158,20 +158,26 @@ LoadIndividualMessage(){
   // this.sender=
   // this.otherUser=
   }
-  console.log(this.sender)
+  //console.log(this.sender)
   for(let k=0; k<4; k++){ //user can loading last 200 messages
     this.conversation.LoadOtherUserMessage(k,this.otherUser).subscribe((message:any)=>{
+      console.log(message);
+      
       for(let i=0; i<message.length;i++){
       
         this.alldata=message[i];
-        console.log(message)
+        
         for(let j=0; j<message[i].messages.length;j++){
           this.OneToOneMess.push(message[i].messages[j]); 
-          this.OneToOneMess.reverse();
-        }     
+            
+        }  
+        
       }
+      this.OneToOneMess.reverse();   
+      //console.log(this.OneToOneMess)
     })
   }
+  
   
 
 }
@@ -189,9 +195,7 @@ LoadGroupMessage(){
         this.groupmess=message[i].messages
         this.groupmess.reverse();
       }
-      //console.log(this.MessageId)
       //console.log(this.groupmess)
-      
     })
   }
 }

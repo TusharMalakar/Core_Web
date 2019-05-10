@@ -17,6 +17,9 @@
 </form>
 
 <div class="mat-card">
+                <div *ngIf="sender!==null">
+                        {{sender}}
+                </div>
         <ol   *ngFor="let messages of  OneToOneMess">
                 <div *ngIf="messages.sender===sender">
                         <li class="me">
@@ -26,16 +29,11 @@
                             </li>
                 </div>
                 <div *ngIf="messages.sender!==sender">
-                        <li class="him">
-                                        
-                                        {{messages.message["message"]}}<br>
-                                        <span class="left"> {{messages.dispName}}</span>
-                                
-                            </li>
+                        <li class="him">   
+                                {{messages.message["message"]}}<br>
+                                <span class="left"> {{messages.dispName}}</span>   
+                        </li>
                 </div>
-                        
-                        
-            
         </ol>
 
 </div>
@@ -43,54 +41,25 @@
 
 <div class="mat-card">
         <ol   *ngFor="let messages of  groupmess">
+                
                 <div *ngIf="MessageId===collabID">
                         
                         <div *ngIf="messages.sender===user">
                                         <li class="me">
-                
                                                 {{messages.message["message"]}}<br>
-                                                <span class="right"> {{messages.dispName}}</span>
-                                                
-                                                </li>
-                
+                                                <span class="right"> {{messages.dispName}}</span> 
+                                        </li>
                                 </div>
+
                                 <div *ngIf="messages.sender!==user">
                                         <li class="him">
                                                 <div *ngIf = "messages.message[message]">
                                                 {{messages.message["message"]}}<br>
                                                 <span class="left"> {{messages.dispName}}</span>
-                                                </div>
-                                                
+                                                </div>    
                                         </li>
-                
                                 </div>
-                </div>
-                
-                            
-                 
-                                
-                
-            
+                </div>           
         </ol>
 
 </div>
-
-
-
-<!--
-
-     <ng-template #thenBlock>
-                            <li class="me">
-                                {{messages.message["message"]}}<br>
-                                <span class="right"> {{messages.sender}}</span>
-                                {{messages.sender}}
-                                </li>
-                        </ng-template>
-                        
-                        <ng-template #elseBlock>
-                        <li class="him">
-                                {{messages.message["message"]}}<br>
-                                <span class="right"> {{messages.sender}}</span>
-                        </li>
-                        </ng-template>
--->
