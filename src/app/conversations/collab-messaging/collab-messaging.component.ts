@@ -5,7 +5,7 @@ import { CollabModel } from './../../shared/models/collab.model';
 import { UserModel } from './../../shared/models/user.model';
 import { ConversationService } from './../../shared/dbAccess/conversation.service';
 import { CollabsService } from 'src/app/shared/dbAccess/collabs.service';
-import { UserService } from 'src/app/shared/dbAccess/user.service';
+//import { UserService } from 'src/app/shared/dbAccess/user.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { NavbarComponent } from 'src/app/navbar/navbar.component';
 import { Router } from '@angular/router';

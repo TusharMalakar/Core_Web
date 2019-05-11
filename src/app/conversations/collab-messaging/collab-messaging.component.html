@@ -17,10 +17,8 @@
 </form>
 
 <div class="mat-card">
-                <div *ngIf="sender!==null">
-                        {{sender}}
-                </div>
         <ol   *ngFor="let messages of  OneToOneMess">
+                        
                 <div *ngIf="messages.sender===sender">
                         <li class="me">
                                 {{messages.message["message"]}}<br>
