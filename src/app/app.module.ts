@@ -17,7 +17,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { CollabMessagingComponent } from './conversations/collab-messaging/collab-messaging.component';
 
 
 
@@ -47,15 +46,13 @@ import {MatListModule} from '@angular/material/list';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 
-import { MessengerComponent } from './messenger/messenger/messenger.component';
-
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    MessengerComponent
+    
   ],
   imports: [
     BrowserModule,

@@ -32,16 +32,19 @@ export class MessengerComponent implements OnInit {
     this.userservice.getUserdetails().subscribe((data:any)=>{
       this.user=data.username
       });
-
+      
     this.collab.myCollabs().subscribe((data:any)=>{
-      //console.log(data[1].participants[0]);
-      for(let i=0; i<data.length-1;i++){
+      console.log(data);
+      for(let i=0; i<data.length;i++){
         if(data[i]._id != null && data[i]._id["$oid"]!=null){
+          console.log(data[i]._id["$oid"])
           this.gropuMess.push(data[i]);
+        
         }
 
         //making a personal contact-list
         else if(data[i].participants.length != 0 && data[i].messages.length>0){
+          console.log(data[i].participants)
           for(let item=0; item<data[i].participants.length; item++){
             //removing user-himself from contact list
             if(data[i].participants[item] != this.user){

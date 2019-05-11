@@ -1,9 +1,9 @@
-import { CollabMessagingComponent } from './../conversations/collab-messaging/collab-messaging.component';
+//import { CollabMessagingComponent } from './../conversations/collab-messaging/collab-messaging.component';
 import { Message } from './../shared/models/message.model';
 import { UserModel } from './../shared/models/user.model';
-import { map, startWith } from 'rxjs/operators';
-import { Observable } from 'rxjs';
-import { FormControl } from '@angular/forms';
+//import { map, startWith } from 'rxjs/operators';
+//import { Observable } from 'rxjs';
+//import { FormControl } from '@angular/forms';
 import { UserService } from 'src/app/shared/dbAccess/user.service';
 import { CollabsService } from 'src/app/shared/dbAccess/collabs.service';
 import { Component, OnInit } from '@angular/core';
@@ -16,6 +16,7 @@ import { CollabModel } from '../shared/models/collab.model';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  
   collabData : CollabModel;
   imageToShow:any;
   panelOpenState = false;
@@ -75,6 +76,8 @@ PersonalmessagePageLink(mem:string){
   //location.reload();
   this.router.navigateByUrl("/conversations")
 }
+
+
 getTitle(title:string){
   this.Title_ = title;
   console.log("Showing title "+this.Title_)

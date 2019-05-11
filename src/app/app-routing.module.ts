@@ -51,7 +51,8 @@ const routes: Routes = [
   },
   {
     path: 'messenger',
-    component: MessengerComponent,
+    loadChildren: './messenger/messenger.module#MessengerModule',
+    //component: MessengerComponent,
     canLoad: [AuthGuard]
 
   },

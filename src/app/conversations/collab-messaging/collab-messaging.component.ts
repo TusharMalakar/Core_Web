@@ -5,7 +5,6 @@ import { CollabModel } from './../../shared/models/collab.model';
 import { UserModel } from './../../shared/models/user.model';
 import { ConversationService } from './../../shared/dbAccess/conversation.service';
 import { CollabsService } from 'src/app/shared/dbAccess/collabs.service';
-//import { UserService } from 'src/app/shared/dbAccess/user.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { NavbarComponent } from 'src/app/navbar/navbar.component';
 import { Router } from '@angular/router';
@@ -149,7 +148,11 @@ LoadMyMessages(){
 LoadIndividualMessage(){
 
   if(this.mem_.sender!=null){
+   if (this.sender!=null){
+     console.log("Sender value is " , this.sender)
+   }
     //value from nav bar
+    console.log(this.mem_.sender)
     this.sender=this.mem_.sender;
     this.otherUser=this.mem_.mem
   }
