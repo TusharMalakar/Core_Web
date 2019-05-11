@@ -49,13 +49,15 @@ const routes: Routes = [
     loadChildren: './conversations/conversations.module#ConversationsModule',
     canLoad: [AuthGuard]
   },
-  {
-    path: 'messenger',
-    loadChildren: './messenger/messenger.module#MessengerModule',
-    //component: MessengerComponent,
-    canLoad: [AuthGuard]
+  
+  // {
+  //   path: 'messenger',
+  //   loadChildren: './messenger/messenger.module#MessengerModule',
+  //   //component: MessengerComponent,
+  //   canLoad: [AuthGuard]
 
-  },
+  // },
+
   //default component
   {
     path:'**', 
