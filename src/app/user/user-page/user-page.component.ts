@@ -45,7 +45,7 @@ export class UserPageComponent implements OnInit {
   *
   *	@param[userService]  ,  service that will handle both retrival and updating user data via http requests
   *	@param[activeRoute]  ,  will allow us to retrieve path parameters if they are set
-  *	@param[dialog]       ,  will open a 
+  *	@param[dialog]       ,  service to open Material Design modal dialogs
   *	@return nothing
   */
   constructor(

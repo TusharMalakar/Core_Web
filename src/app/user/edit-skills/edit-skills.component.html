@@ -18,6 +18,7 @@
             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
             [matChipInputAddOnBlur]="addOnBlur"
             (matChipInputTokenEnd)="addSkill($event)">
+            <!--Autocomplete panel that will display the autocomplete options inside it-->
             <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectedSkill($event)">
                     <mat-option *ngFor="let skill of filteredSkills" [value]="skill">
                     {{ skill }}
