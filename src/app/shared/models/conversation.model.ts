@@ -1,5 +1,5 @@
 
-export class OneToOneMessagingModel {
+export class ConversationModel {
     public participants ?: string[];
     public messages     ?: {
                             sender  ?: string;
@@ -9,6 +9,6 @@ export class OneToOneMessagingModel {
                             }[];
     public otherUser    ?: string;
     public title        ?: string;
-    
+    public _id          ?: string;
 }
 

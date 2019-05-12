@@ -1,6 +1,6 @@
 import { GroupMessagingModel } from './../../shared/models/groupMessaging';
 import { UserService } from './../../shared/dbAccess/user.service';
-import { OneToOneMessagingModel } from './../../shared/models/oneToOneMessagingModel';
+import { ConversationModel } from './../../shared/models/conversation.model';
 import { Message } from './../../shared/models/message.model';
 import { CollabModel } from './../../shared/models/collab.model';
 import { UserModel } from './../../shared/models/user.model';
@@ -33,10 +33,10 @@ export class CollabMessagingComponent implements OnInit {
   user:any;
   
 
-  public allMess:OneToOneMessagingModel["messages"][]=new Array();
-  public OneToOneMess:OneToOneMessagingModel["messages"][]=new Array();
-  public OneToOneDate:OneToOneMessagingModel["messages"][]=new Array();
-  public OneToOneDisName:OneToOneMessagingModel["messages"][]=new Array();
+  public allMess:ConversationModel["messages"][]=new Array();
+  public OneToOneMess:ConversationModel["messages"][]=new Array();
+  public OneToOneDate:ConversationModel["messages"][]=new Array();
+  public OneToOneDisName:ConversationModel["messages"][]=new Array();
 
   public groupmess:GroupMessagingModel["messages"][]=new Array();
   public alldata :any[]=new Array();

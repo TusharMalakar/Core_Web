@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { UserModel } from '../models/user.model';
+import { ConversationModel } from '../models/conversation.model';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs';
 import { Requirements } from 'src/app/home/collab-card/collab-card.component';
@@ -52,6 +53,10 @@ export class UserService {
 
   getMemberdetails(username: string): Observable<UserModel> {
     return this.http.get<UserModel>( this.rootUrl +"/user/" + username);
+  }
+
+  getConversations(): Observable<ConversationModel> {
+    return this.http.get<ConversationModel>( this.rootUrl + "/myConvos" );
   }
 
   

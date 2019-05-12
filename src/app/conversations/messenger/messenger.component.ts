@@ -1,6 +1,6 @@
 import { CollabModel } from 'src/app/shared/models/collab.model';
 import { UserService } from 'src/app/shared/dbAccess/user.service';
-import { OneToOneMessagingModel } from './../../shared/models/oneToOneMessagingModel';
+import { ConversationModel } from '../../shared/models/conversation.model';
 import { GroupMessagingModel } from './../../shared/models/groupMessaging';
 import { CollabsService } from 'src/app/shared/dbAccess/collabs.service';
 import { Component, OnInit } from '@angular/core';
@@ -32,6 +32,7 @@ export class MessengerComponent implements OnInit {
   userdata : UserModel;
   public collabId: string;
   public Title_ : string;
+  public convos: ConversationModel[];
 
   constructor(private collab: CollabsService,
               private userservice : UserService,
@@ -49,6 +50,7 @@ export class MessengerComponent implements OnInit {
       this.user=data.username
       });
       
+
     this.collab.myCollabs().subscribe((data:any)=>{
       console.log(data);
       for(let i=0; i<data.length;i++){
