@@ -117,6 +117,12 @@ PersonalmessagePageLink(mem:string){
     console.log("Going to message page of "+this.mem)
     console.log("CollabId "+this.collabId)
     //location.reload();
+
+    // editCollab(){
+   
+    //   this.router.navigate(['/home/editcollab/',this.collabData._id["$oid"]]);
+    // }
+    
     this.router.navigateByUrl("/conversations")
 }
 

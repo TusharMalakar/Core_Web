@@ -129,13 +129,14 @@ remove_duplicates(arr) {
 //based on user input e.g. collbId od individual, it will load messages
 LoadMyMessages(){
   if(this.mem_.mem !=null){
+    
     //this.showTitle();
     //console.log(this.sender)
     this.LoadIndividualMessage();
   }
   else if(this.mem_.collabId != null){
+    console.log(this.collabID)
     //this.showTitle();
-    this.collabID = this.mem_.collabId;
     //console.log(this.collabID)
     this.LoadGroupMessage();
   }

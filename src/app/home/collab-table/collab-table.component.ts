@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TableBuilder } from 'src/app/shared/models/tableBuilder.model';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/shared/dbAccess/user.service';
 
 @Component({
   selector: 'collab-table',
@@ -13,7 +14,8 @@ export class CollabTableComponent implements OnInit {
  
 
   constructor(
-    private router: Router
+    private router: Router,
+    private userservice : UserService
   ) 
   { }
 
@@ -23,6 +25,13 @@ export class CollabTableComponent implements OnInit {
 
   goToProfile(user: string) {
       this.router.navigate(['/user/', user]);
+  }
+
+  getUserDispname(username: string){
+    this.userservice.getMemberdetails(username).subscribe((data :any)=>
+    {
+      console.log(data)
+    })
   }
 
 }

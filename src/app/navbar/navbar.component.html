@@ -37,7 +37,24 @@
           <!--
             <button mat-menu-item routerLink="/conversations/messenger" >
           -->
+          <button mat-button routerLink="/conversations/messenger">Direct Messages <mat-icon >send</mat-icon></button>
+          
+          
+          
+          
+          
+          
+          
+  
+          
 
+
+
+
+
+          
+          
+          
           <button mat-button [matMenuTriggerFor]="beforeMenu">Direct Messages<mat-icon >send</mat-icon></button>
           <mat-menu #beforeMenu="matMenu" xPosition="before">
               <mat-list-item *ngFor="let contact of ContactList">
@@ -60,6 +77,27 @@
 
               
           </mat-menu>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <!--Collab username goes in the list-->
                <mat-list dense>
