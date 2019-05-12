@@ -21,13 +21,13 @@
                                 #size = "ngModel" matInput placeholder = "Collab Size..." required>
                 </mat-form-field>
                 <mat-form-field>
-                        <input [ngModel] = "collabData['date'] | date:'y-MM-dd' " (ngModelChange)="collabData['date'] = $event"
+                        <input [ngModel] (ngModelChange)="collabData['date'] = $event"
                                 name = "date" id="date" class = "form-control" 
                                 #date = "ngModel" matInput placeholder = "Choose a date" [owlDateTimeTrigger]="dt" [owlDateTime]="dt" required>
                         <owl-date-time #dt></owl-date-time>
                 </mat-form-field>
                 <mat-form-field>
-                        <input [ngModel] = "collabData['duration'] | date:'yyyy-MM-dd' " name = "duration" id = "duration"  class = "form-control"
+                        <input [ngModel] name = "duration" id = "duration"  class = "form-control"
                                 #duration = "ngModel" matInput placeholder = "Duration..." [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" required>
                         <owl-date-time #dt2></owl-date-time>
                 </mat-form-field>
