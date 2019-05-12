@@ -4,7 +4,7 @@ import { OneToOneMessagingModel } from './../../shared/models/oneToOneMessagingM
 import { GroupMessagingModel } from './../../shared/models/groupMessaging';
 import { CollabsService } from 'src/app/shared/dbAccess/collabs.service';
 import { Component, OnInit } from '@angular/core';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 import { Router } from '@angular/router';
 import { Message } from 'src/app/shared/models/message.model';
 import { UserModel } from 'src/app/shared/models/user.model';

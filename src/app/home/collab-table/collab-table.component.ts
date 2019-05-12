@@ -35,6 +35,7 @@ export class CollabTableComponent implements OnInit {
       return this.displayNames.get(username);
     } else {
       this.displayNames.set(username, "");
+      
       setTimeout(()=>{
         this.userservice.getMemberdetails(username).subscribe((data :any)=>
         {
@@ -42,7 +43,7 @@ export class CollabTableComponent implements OnInit {
           this.displayNames.set(username, data['name']);
         })
       });
-      
+      return this.displayNames.get(username);
     }
   }
 
