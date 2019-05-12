@@ -33,7 +33,7 @@ export class EditSkillsComponent implements OnInit {
   skillCtrl = new FormControl();
   //Will hold the autocomplete results from the api as we type in the FormControl
   filteredSkills: Observable<string[]>;
-  //Will the skills that the user currently knows
+  //Will hold the skills that the user currently knows
   skills: string[] = [];
   /**
    * @deprecated used to hold the resulting skills from the api calls
@@ -61,6 +61,7 @@ export class EditSkillsComponent implements OnInit {
     //Handles the openning/closing of the Dialog
     public dialogRef: MatDialogRef<EditSkillsComponent>,
     //Handles passing of data from/to component opening the dialog
+      //Has a parameter decorator that specifies a custom provider of the dependency
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
@@ -68,7 +69,9 @@ export class EditSkillsComponent implements OnInit {
   * @author Edwin Quintuna
   * 
   *	@brief Function that will be called once Angular has finished initializing and setting up the component
-  *        Will retrieve data from the instance of the Component that openned this dialog 
+  *        Will retrieve data from the instance of the Component that openned this dialog. Also initializes
+  *        a listener on the formControl to listen for user inputs and make an api call with the value in the
+  *       formControl
   *	@return nothing
   */
   ngOnInit() {
@@ -91,10 +94,13 @@ export class EditSkillsComponent implements OnInit {
   * 
   *	@brief Function that will handle adding skills to the users skill array. The array will be updated both locally
   *        and in the database.
+  * @param[event] ,Emitted when a chip is to be added
   *	@return nothing
   */
   addSkill(event: MatChipInputEvent): void {
 
+    // Add element only when MatAutocomplete is not open
+    // To make sure this does not conflict with OptionSelected Event
     if(!this.matAutocomplete1.isOpen){
 
       const input = event.input;

@@ -1,6 +1,7 @@
 <h2 mat-dialog-title> Update User Details </h2>
 <mat-form-field class="example-chip-list">
     <mat-chip-list #chipListSkills>
+            <!--Displays Users skills-->
             <mat-chip
             *ngFor="let skill of skills"
             [selectable]="selectable"
@@ -9,6 +10,7 @@
             {{ skill }}
             <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
             </mat-chip>
+            <!--Allow user to input new skills-->
             <input
             placeholder="New Skill..."
             #skillInput
