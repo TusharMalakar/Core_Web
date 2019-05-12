@@ -1,9 +1,6 @@
-//import { CollabMessagingComponent } from './../conversations/collab-messaging/collab-messaging.component';
+import { GroupMessagingModel } from './../shared/models/groupMessaging';
 import { Message } from './../shared/models/message.model';
 import { UserModel } from './../shared/models/user.model';
-//import { map, startWith } from 'rxjs/operators';
-//import { Observable } from 'rxjs';
-//import { FormControl } from '@angular/forms';
 import { UserService } from 'src/app/shared/dbAccess/user.service';
 import { CollabsService } from 'src/app/shared/dbAccess/collabs.service';
 import { Component, OnInit } from '@angular/core';
@@ -25,8 +22,15 @@ export class NavbarComponent implements OnInit {
   userdata : UserModel;
   public collabId: string;
   public Title_ : string;
+
+  //place holder for myCollabs
+  public gropuMess : GroupMessagingModel[] = new Array();
+  public ContactList   : string[] = new Array();
   
-  constructor(private router: Router, private collabService : CollabsService, private userservice: UserService) { }
+  
+  constructor(private router: Router, 
+              private collabService : CollabsService, 
+              private userservice: UserService) { }
 
   ngOnInit() {
     this.collabService.collabDetails().subscribe((collab:CollabModel)=>{
@@ -37,10 +41,49 @@ export class NavbarComponent implements OnInit {
         this.userdata=data;
         this.sender=this.userdata.username
     })
+    this.collabService.myCollabs().subscribe((data:any)=>{
+      console.log(data);
+      for(let i=0; i<data.length;i++){
+        if(data[i]._id != null && data[i]._id["$oid"]!=null){
+          console.log(data[i]._id["$oid"])
+          console.log(data[i].title)
+          this.gropuMess.push(data[i]);
+        
+        }
+
+        //making a personal contact-list
+        else if(data[i].participants.length != 0 && data[i].messages.length>0){
+          console.log(data[i].participants)
+          for(let item=0; item<data[i].participants.length; item++){
+            //removing user-himself from contact list
+            if(data[i].participants[item] != this.user){
+              this.ContactList.push(data[i].participants[item]);
+            } 
+          } 
+          //remove duplicate if any exist
+          this.ContactList=this.remove_duplicates(this.ContactList) 
+          //console.log(this.ContactList) 
+        }
+        else
+          return 0;
+      }
+    })
   }
 extractFirstNameAndLastName(username:string){
   let temp = username.split("@")
   return temp[0]
+}
+//remove duplicate contact
+remove_duplicates(arr) {
+    var obj = {};
+    var ret_arr = [];
+    for (var i = 0; i < arr.length; i++) {
+        obj[arr[i]] = true;
+    }
+    for (var key in obj) {
+        ret_arr.push(key);
+    }
+    return ret_arr;
 }
   
 GoToHomePage(id:string){

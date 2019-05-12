@@ -2,8 +2,10 @@
 
 <form class="navbar"  [formGroup] = "form" (ngSubmit) = "SendMessage()">    
     <mat-form-field class="messa"> 
+        <p>{{box.value}}</p>
+                
         <input 
-            
+            #box (keyup)="0"
             formControlName = "message"
             matInput
             id="message" 
@@ -61,3 +63,6 @@
         </ol>
 
 </div>
+
+
+  

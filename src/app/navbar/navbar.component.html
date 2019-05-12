@@ -37,10 +37,30 @@
           <!--
             <button mat-menu-item routerLink="/conversations/messenger" >
           -->
-          <button mat-menu-item routerLink="/conversations/messenger">
-              <span>Direct Messages  </span>
-              <mat-icon>send</mat-icon>
-          </button> 
+
+          <button mat-button [matMenuTriggerFor]="beforeMenu">Direct Messages<mat-icon >send</mat-icon></button>
+          <mat-menu #beforeMenu="matMenu" xPosition="before">
+              <mat-list-item *ngFor="let contact of ContactList">
+                  <button mat-menu-item>
+                      <span (click)="PersonalmessagePageLink(contact)" >
+                          {{extractFirstNameAndLastName(contact)}}
+                          <mat-icon >send</mat-icon>
+                      </span>
+                  </button>
+              </mat-list-item>
+
+              <span>Groups ::</span> <br><br>
+              <mat-list-item *ngFor="let contact of gropuMess">
+                  <span (click)="groupMessageingPageLink(contact._id.$oid)" >
+                      {{contact.title}}<br><br>
+        
+                  </span>
+                
+              </mat-list-item>
+
+              
+          </mat-menu>
+
             <!--Collab username goes in the list-->
                <mat-list dense>
                   <ng-container *ngFor = "let collab of collabData" >
@@ -65,6 +85,10 @@
                       </mat-list-item> 
                  </ng-container> 
                </mat-list>
+
+              
+              
+
                 <span>----------------------------------</span>
                <button mat-menu-item (click)="logOut()">
                   <mat-icon>logout</mat-icon>
@@ -73,6 +97,8 @@
   </mat-drawer>
  
 </mat-drawer-container>
+
+
 
 
    

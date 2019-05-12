@@ -6,8 +6,6 @@ import { HomeComponent } from './home/collab-list/home.component';
 import { LoginComponent } from './login/login-page/login.component';
 import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { RegisterComponent } from './register/register-page/register.component';
-import { MessengerComponent } from './messenger/messenger/messenger.component';
-
 
 /**
 * @author Edwin Quintuna
@@ -49,14 +47,6 @@ const routes: Routes = [
     loadChildren: './conversations/conversations.module#ConversationsModule',
     canLoad: [AuthGuard]
   },
-  
-  // {
-  //   path: 'messenger',
-  //   loadChildren: './messenger/messenger.module#MessengerModule',
-  //   //component: MessengerComponent,
-  //   canLoad: [AuthGuard]
-
-  // },
 
   //default component
   {

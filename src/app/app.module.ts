@@ -14,8 +14,6 @@ import { RegisterComponent } from './register/register-page/register.component';
 import { HomeComponent } from './home/collab-list/home.component';
 import { UserService } from './shared/dbAccess/user.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 
@@ -40,12 +38,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatListModule} from '@angular/material/list';
-
+import { MatCardModule } from '@angular/material/card';
 
 //Clock
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
-
-
 
 
 @NgModule({
@@ -77,6 +73,7 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     MatSelectModule,
     MatDialogModule,
     MatListModule,
+    MatCardModule,
     
     
 

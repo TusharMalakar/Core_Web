@@ -1,3 +1,4 @@
+import { GroupMessagingModel } from './../../shared/models/groupMessaging';
 import { UserService } from './../../shared/dbAccess/user.service';
 import { OneToOneMessagingModel } from './../../shared/models/oneToOneMessagingModel';
 import { Message } from './../../shared/models/message.model';
@@ -10,7 +11,6 @@ import { NavbarComponent } from 'src/app/navbar/navbar.component';
 import { Router } from '@angular/router';
 import {  FormBuilder,FormGroup, Validators } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
-import { GroupMessagingModel } from 'src/app/shared/models/groupMessaging';
 
 
 @Component({
@@ -148,9 +148,7 @@ LoadMyMessages(){
 LoadIndividualMessage(){
 
   if(this.mem_.sender!=null){
-   if (this.sender!=null){
-     console.log("Sender value is " , this.sender)
-   }
+
     //value from nav bar
     console.log(this.mem_.sender)
     this.sender=this.mem_.sender;
