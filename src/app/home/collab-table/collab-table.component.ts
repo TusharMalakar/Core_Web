@@ -27,11 +27,23 @@ export class CollabTableComponent implements OnInit {
       this.router.navigate(['/user/', user]);
   }
 
+  
+  displayNames: Map<String, String> = new Map();
+
   getUserDispname(username: string){
-    this.userservice.getMemberdetails(username).subscribe((data :any)=>
-    {
-      console.log(data)
-    })
+    if (this.displayNames.has(username)) {
+      return this.displayNames.get(username);
+    } else {
+      this.displayNames.set(username, "");
+      setTimeout(()=>{
+        this.userservice.getMemberdetails(username).subscribe((data :any)=>
+        {
+          //console.log(data);
+          this.displayNames.set(username, data['name']);
+        })
+      });
+      
+    }
   }
 
 }
