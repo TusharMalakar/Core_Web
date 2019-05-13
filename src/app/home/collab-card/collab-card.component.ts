@@ -57,6 +57,27 @@ export class CollabCardComponent implements OnInit {
 
     if(this.alreadyBuilt){
 
+    this.table = []
+    //Will store the list of users.
+    let yAxisUsers : string[];
+
+    //Fuction will stop here until function getAllRequred returns
+    this.xAxisReq = await this.getAllRequired(); 
+    
+    //Will members of the collaboration
+    yAxisUsers  = this.collabData.members;
+    //console.log("Skills Required: " , xAxisReq);
+    
+    //Will loop through all the users and check if they know the required skills and classes
+    for(let y of yAxisUsers){
+      //console.log(x, " is being checked");
+
+        //Will hold a single instance of TableBuilder modle
+        let tableRow = await this.checkIfKnown(y,this.xAxisReq);
+        this.table.push(tableRow);
+        //console.log(tableRow);
+     }
+
     } else {
     this.alreadyBuilt = true;
     //Will store the list of users.
@@ -181,11 +202,15 @@ export class CollabCardComponent implements OnInit {
 
   deleteCollab(){
     this.collabService.deleteCollab(this.collabData._id)
-      .subscribe(res => {})
+      .subscribe(res => { 
+        console.log(res)
+        if(res){
+          window.location.reload();
+        }
+      })
   }
 
   editCollab(){
-   
     this.router.navigate(['/home/editcollab/',this.collabData._id["$oid"]]);
   }
 
