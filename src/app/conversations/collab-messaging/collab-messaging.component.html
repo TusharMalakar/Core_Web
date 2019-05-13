@@ -1,31 +1,35 @@
-<div class="container noBg">
-                <ol   *ngFor="let message of  messages">
-                        
-                                <div *ngIf="message.sender===user">
-                                        <li class="me">{{message.message}}<br>
-                                                <span class="right"> {{message.dispName}}</span>
-                                            </li>
-                                </div>
-                                <div *ngIf="message.sender!==user">
-                                        <li class="him">   
-                                                {{message.message}}<br>
-                                                <span class="left"> {{message.dispName}}</span>   
-                                        </li>
-                                </div>
-                        </ol>
-</div>
+
+<mat-card >
+        <div class="container noBg">
+                        <ol   *ngFor="let message of  messages">
+                                
+                                        <div *ngIf="message.sender===user">
+                                                <li class="me">
+                                                        {{message.message.message}}<br>
+                                                        <span class="right"> {{message.dispName}}</span>
+                                                        </li>
+                                        </div>
+                                        <div *ngIf="message.sender!==user">
+                                                <li class="him">   
+                                                        {{message.message}}<br>
+                                                        <span class="left"> {{message.dispName}}</span>   
+                                                </li>
+                                        </div>
+                                </ol>
+        </div>
+                
         
-
-<div class="container noBg">
-        <form #form = "ngForm" (ngSubmit) = "sendMessage()">
-
-                <mat-form-field>
-                        <input [(ngModel)] = "messageInput" name = "message" id = "username" type = "text" class = "form-control"
-                        #username = "ngModel" matInput placeholder = "Message..." required>
-                </mat-form-field>
-                <br>
-                <button mat-raised-button>Send</button>
-                <br>
-        </form>
-</div>
-
+        <div class="container noBg">
+                <form #form = "ngForm" (ngSubmit) = "sendMessage()">
+        
+                        <mat-form-field>
+                                <input [(ngModel)] = "messageInput" name = "message" id = "username" type = "text" class = "form-control"
+                                #username = "ngModel" matInput placeholder = "Message..." required>
+                        </mat-form-field>
+                        <br>
+                        <button mat-raised-button>Send</button>
+                        <br>
+                </form>
+        </div>
+        
+</mat-card>

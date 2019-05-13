@@ -30,6 +30,7 @@ export class CollabMessagingComponent implements OnInit {
   messageInput: string;
   //Will hold our user data.
   userData: UserModel[];
+  private static audioContext: AudioContext;
   
   constructor(private userService : UserService, private collabservice: CollabsService, 
     private conversation: ConversationService,private router: Router,
