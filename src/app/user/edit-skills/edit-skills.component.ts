@@ -4,7 +4,7 @@ import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material
 import { FormControl } from '@angular/forms';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Component, OnInit, ElementRef, ViewChild, Inject } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import { UserService } from 'src/app/shared/dbAccess/user.service';
 import { startWith, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { MatChipInputEvent } from '@angular/material/chips';

@@ -4,7 +4,7 @@ import { UserModel } from './../../shared/models/user.model';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../shared/dbAccess/user.service';
 import {Router } from '@angular/router';
-import { Observable, pipe } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import { CollabModel } from 'src/app/shared/models/collab.model';
 import { map, startWith } from 'rxjs/operators';
 

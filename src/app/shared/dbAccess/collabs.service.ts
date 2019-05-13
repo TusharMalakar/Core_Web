@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CollabModel } from '../models/collab.model';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({

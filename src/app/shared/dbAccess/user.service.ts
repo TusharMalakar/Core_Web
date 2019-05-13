@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from '@angular
 import { UserModel } from '../models/user.model';
 import { ConversationModel } from '../models/conversation.model';
 import 'rxjs/add/operator/map';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import { Requirements } from 'src/app/home/collab-card/collab-card.component';
 
 

@@ -7,7 +7,7 @@ import { UserService } from 'src/app/shared/dbAccess/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserModel } from 'src/app/shared/models/user.model';
 import { FormControl, Form, FormGroup, FormBuilder } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import { MatDialog } from '@angular/material/dialog';
 
 
