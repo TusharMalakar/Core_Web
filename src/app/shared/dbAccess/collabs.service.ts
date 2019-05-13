@@ -108,12 +108,13 @@ export class CollabsService {
   //Requires a JSON"_id"
   
   editCollab(collabData: CollabModel, id: string){
+
       let date = new Date(collabData.date).getTime();
       let duration = new Date(collabData.duration).getTime();
-      console.log("duration:" + duration);
+      console.log("duration:" +collabData.size);
 
       const body = {
-          id : id,
+          id : collabData._id,
           size : collabData.size,
           date : date,
           duration : duration,

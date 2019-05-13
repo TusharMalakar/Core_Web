@@ -19,9 +19,9 @@ export class HomeComponent implements OnInit {
     selected = new FormControl(0);
 
     //Used for caching
-    CACHE_KEY_0 = 'activeCollabsCache';
-    CACHE_KEY_1 = 'myCollabsCache';
-    CACHE_KEY_2 = 'reqCollabsCache';
+    CACHE_KEY_0 =  'reqCollabsCache';
+    CACHE_KEY_1 =  'activeCollabsCache';
+    CACHE_KEY_2 = 'myCollabsCache';
 
   constructor(
       private userService : UserService,
@@ -32,12 +32,13 @@ export class HomeComponent implements OnInit {
         }
 
   ngOnInit() {
-    
-    this.currentTab(0);
   }
 
   userDetails(){
-    this.userService.getUserdetails().subscribe(userData => this.userData = userData);
+    this.userService.getUserdetails().subscribe(userData => {
+      this.userData = userData,
+      this.currentTab(0);
+    });
   }
   
   userPicture(){
@@ -77,13 +78,29 @@ export class HomeComponent implements OnInit {
     switch($event) {
 
       case 0: {
+        this.collabData = this.collabService.getReqCollabs(this.userData["classes"], this.userData["skills"])
+        .pipe(
+          map((data : CollabModel[] )  =>  data.reverse())
+        )
+
+        this.collabData.subscribe( next => {
+          localStorage[this.CACHE_KEY_0]= JSON.stringify(next);
+        });
+
+        this.collabData = this.collabData.pipe(
+          startWith(JSON.parse(localStorage[this.CACHE_KEY_1] || '{}'))
+        )
+        break;
+      }
+
+      case 1: {
         this.collabData = this.collabService.getCollabs("getActiveCollabs")
         .pipe(
           map((data : CollabModel[] )  =>  data.reverse())
         );
         
         this.collabData.subscribe( next => {
-          localStorage[this.CACHE_KEY_0] = JSON.stringify(next);
+          localStorage[this.CACHE_KEY_2] = JSON.stringify(next);
         });
 
         this.collabData = this.collabData.pipe(
@@ -93,7 +110,7 @@ export class HomeComponent implements OnInit {
         break;
       }
 
-      case 1: {
+      case 2: {
         this.collabData = this.collabService.getCollabs("getCollabDetails")
         .pipe(
           map((data : CollabModel[] )  =>  data.reverse())
@@ -107,22 +124,6 @@ export class HomeComponent implements OnInit {
           startWith(JSON.parse(localStorage[this.CACHE_KEY_1] || '{}'))
         );
         
-        break;
-      }
-
-      case 2: {
-        this.collabData = this.collabService.getReqCollabs(this.userData["classes"], this.userData["skills"])
-        .pipe(
-          map((data : CollabModel[] )  =>  data.reverse())
-        )
-
-        this.collabData.subscribe( next => {
-          localStorage[this.CACHE_KEY_2]= JSON.stringify(next);
-        });
-
-        this.collabData = this.collabData.pipe(
-          startWith(JSON.parse(localStorage[this.CACHE_KEY_2] || '{}'))
-        )
         break;
       }
 

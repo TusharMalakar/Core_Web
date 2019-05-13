@@ -99,6 +99,7 @@ export class EditCollabComponent implements OnInit {
     this.collabData = collabUpdatedData;
     this.collabData.skills = this.skills;
     this.collabData.classes = this.classes;
+    this.collabData._id = this._id;
     
 
     console.log(collabUpdatedData);
