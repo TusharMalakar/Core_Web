@@ -15,6 +15,7 @@ import * as wsockjs from './../../include/websock';
 import * as utiljs from './../../include/util';
 
 
+
 @Component({
   selector: 'app-collab-messaging',
   templateUrl: './collab-messaging.component.html',
@@ -49,7 +50,7 @@ export class CollabMessagingComponent implements OnInit {
       this.convoIdent = params.get('unameOrCollabId');
       this.getMessages();
       setTimeout(function(){ 
-                      window.connect(localStorage.getItem('accessToken'));
+                      (<any>window).connect(localStorage.getItem('accessToken'));
               }, 2000);
       
               setInterval(()=> { this.loopPingCheck() }, 1 * 1000);
@@ -68,8 +69,8 @@ export class CollabMessagingComponent implements OnInit {
   }
 
   loopPingCheck() {
-    if (window.PingReceived) {
-      window.PingReceived = false;
+    if ((<any>window).PingReceived) {
+      (<any>window).PingReceived = false;
       console.log("Angular Detected Ping Receive, getting new messages.");
       this.getMessages();
     } else {
