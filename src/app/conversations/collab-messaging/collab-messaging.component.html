@@ -1,6 +1,6 @@
 
-<mat-card >
-        <div class="container noBg">
+
+        <div class="noBg overflow">
                         <ol   *ngFor="let message of  messages">
                                 
                                         <div *ngIf="message.sender===user">
@@ -19,17 +19,15 @@
         </div>
                 
         
-        <div class="container noBg">
-                <form #form = "ngForm" (ngSubmit) = "sendMessage()">
-        
-                        <mat-form-field>
-                                <input [(ngModel)] = "messageInput" name = "message" id = "username" type = "text" class = "form-control"
-                                #username = "ngModel" matInput placeholder = "Message..." required>
-                        </mat-form-field>
-                        <br>
-                        <button mat-raised-button>Send</button>
-                        <br>
-                </form>
+
+<form #form = "ngForm" (ngSubmit) = "sendMessage()">
+        <div class="form-container">
+                <mat-form-field>
+                        <input [(ngModel)] = "messageInput" name = "message" id = "username" type = "text" class = "form-control"
+                        #username = "ngModel" matInput placeholder = "Message..." required>
+                </mat-form-field> 
+                <button mat-raised-button color = "primary" >Send</button>
         </div>
+
+</form>
         
-</mat-card>

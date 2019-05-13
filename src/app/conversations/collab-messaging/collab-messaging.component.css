@@ -227,12 +227,22 @@ ol{
     
   }
 
+  .overflow {
+    overflow:auto;
+    height:500px;
+  }
+
   .noBg {
     background-color: rgba(214, 212, 212, 0.048);
   }
   
   
-  
+  .form-container {
+    display: flex;
+    flex-direction: column; 
+    padding: 20px;
+    
+  }
   .content .description{
     font-size: 20px;
     margin-left: 30px;

@@ -14,11 +14,12 @@
   <mat-card-content>
     <mat-accordion>
         <div class = "content">
-            <p class="description">Description: {{ collabData?.description }} </p>
+            <p class="description">{{ collabData?.description }} </p>
+            <mat-divider></mat-divider>
             <p class="date">Date: {{ collabData?.date | date:'medium' }}</p>
             <p class="duration">Apply By: {{ collabData?.duration | date:'medium' }}</p>
             <p class="location">Location: {{ collabData?.location }}</p>
-
+            <mat-divider></mat-divider><br />
             <div class = "requirements">
                 <mat-chip-list>
                     Classes: 

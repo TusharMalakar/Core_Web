@@ -17,34 +17,15 @@ import { UserModel } from 'src/app/shared/models/user.model';
 })
 export class MessengerComponent implements OnInit {
   
-  //place holder for myCollabs
-  public gropuMess : GroupMessagingModel[] = new Array();
-  public ContactList   : string[] = new Array();
+
   public user : string = null;
-  public avaterArray : any[];
-  public imageToShow :any;
-  public mem : string;
-
-
-  //messaing variable
-  collabData : CollabModel;
-  public sender : Message["sender"];
-  userdata : UserModel;
-  public collabId: string;
-  public Title_ : string;
   public convos: ConversationModel[];
 
-  constructor(private collab: CollabsService,
-              private userservice : UserService,
+  constructor(private userservice : UserService,
               private router :Router
     ) { }
 
   ngOnInit() {
-
-    this.collab.collabDetails().subscribe((collab:CollabModel)=>{
-      this.collabData= collab;
-      console.log(collab)
-    });
     
     this.userservice.getUserdetails().subscribe((data:any)=>{
       this.user=data.username
