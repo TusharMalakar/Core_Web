@@ -18,10 +18,12 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class UserPageComponent implements OnInit {
   canEdit:boolean;
+  canMessage: boolean;
   //Will hold our user data.
   userData: UserModel;
   username: string;
   imageLink: any;
+  
   
   //Auto complete variables.
   classesForm: FormGroup;
@@ -80,11 +82,16 @@ export class UserPageComponent implements OnInit {
                   this.canEdit = true;
                 }else{
                   this.canEdit = false;
+                  this.canMessage = true;
                 }  
               
               }); 
     //Load the user data that will be displayed in our html files
     this.loadUserData(this.username);
+  }
+
+  messageUser() {
+    this.router.navigate(['/conversations/message/', this.username]);
   }
 
   /**

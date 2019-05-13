@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>HunterCollab</title>
+  <title>Hunter Collaborate</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -115,23 +115,6 @@
   
               //End RMS Protocol Functions
   
-              window.onload = function() {
-                  console.log("onload");
-              }
-  
-  
-              if (!window.$D) {
-                  window.$D = function (id) {
-                      if (document.getElementById) {
-                          return document.getElementById(id);
-                      } else if (document.all) {
-                          return document.all[id];
-                      } else if (document.layers) {
-                          return document.layers[id];
-                      }
-                      return undefined;
-                  };
-              }
 
               function Websock() {
   "use strict";

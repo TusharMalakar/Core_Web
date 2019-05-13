@@ -7,7 +7,7 @@
             <mat-list-item *ngFor="let convo of convos">
             
               
-                  <button (click)="gotoConvo(convo)">{{ convo.otherUser != null ? convo.otherUser : convo.title }}</button>
+                  <button (click)="gotoConvo(convo)">{{ convo.otherUser != null ? getUserDisplayName(convo.otherUser) : convo.title }}</button>
                   
             </mat-list-item> 
         </mat-list>

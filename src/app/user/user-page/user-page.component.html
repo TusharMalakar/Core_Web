@@ -16,7 +16,7 @@
                       <mat-card-title>{{ userData?.name }}</mat-card-title>
                       <mat-card-subtitle>{{ userData?.username }}</mat-card-subtitle>
                       <button mat-flat-button color="primary" (click) = "openDialog1()" *ngIf="canEdit">Edit</button>
-              
+                      <button mat-flat-button color="primary" (click) = "messageUser()" *ngIf="canMessage">Message</button>
                 </mat-card-header>  
 
               
@@ -26,12 +26,13 @@
                           <img mat-card-image [src] = "imageLink"
                           onerror="this.onerror=null; this.src = 'assets/userPhoto.png';"
                            class="image">
-                          </div> 
-                          <div class="middle"  *ngIf="canEdit">
-                            <button mat-raised-button class="text" (click) = "openDialog4()">Change Picture</button>
+                      </div> 
+
+                      <div class="middle"  *ngIf="canEdit">
+                        <button mat-raised-button class="text" (click) = "openDialog4()">Change Picture</button>
                       </div>
-                  </div>  
-                </div>
+                    </div>  
+                  </div>
 
                 <!--img mat-card-image -->
                 <mat-card-content>
