@@ -47,6 +47,24 @@
 }
 
 
+.pull-right {
+    display:flex;
+    margin-left:auto; 
+    margin-right:0;
+}
+
+
+.center {
+    display:flex;
+    margin:auto;
+    margin-top:10px;
+}
+  
+.pull-left {
+    display:flex;
+    margin-left:0; 
+    margin-right:auto;
+}
 
 .content .description{
     font-size: 20px;
