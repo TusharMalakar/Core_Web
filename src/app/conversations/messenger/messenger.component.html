@@ -2,13 +2,12 @@
 
 <div class="fullpage">
     <mat-card > 
-        <span>Contact List :</span>
+        <span>Conversations :</span>
         <mat-list >  
-            <mat-list-item *ngFor="let contact of ContactList">
+            <mat-list-item *ngFor="let convo of convos">
+            
               
-              <mat-icon mat-list-icon routerLink="/user/{{contact}}">person</mat-icon>
-              
-                  <button (click)="PersonalmessagePageLink(contact)">{{extractFirstNameAndLastName(contact)}} </button>
+                  <button (click)="gotoConvo(convo)">{{ convo.otherUser != null ? convo.otherUser : convo.title }}</button>
                   
             </mat-list-item> 
         </mat-list>

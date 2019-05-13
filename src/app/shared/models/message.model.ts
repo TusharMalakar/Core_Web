@@ -1,7 +1,9 @@
 
-export class Message{
+export class Message {
     message   ?: string;
-    collabId  ?: string;
+    time  ?: number;
     sender    ?: string;
-    recipient ?: string
+    dispName ?: string;
+    recipient ?: string;
+    collabId ?: string;
 }

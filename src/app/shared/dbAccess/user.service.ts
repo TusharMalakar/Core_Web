@@ -55,8 +55,8 @@ export class UserService {
     return this.http.get<UserModel>( this.rootUrl +"/user/" + username);
   }
 
-  getConversations(): Observable<ConversationModel> {
-    return this.http.get<ConversationModel>( this.rootUrl + "/myConvos" );
+  getConversations(): Observable<ConversationModel[]> {
+    return this.http.get<ConversationModel[]>( this.rootUrl + "/messaging/myConvos" );
   }
 
   

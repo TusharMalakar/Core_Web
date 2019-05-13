@@ -5,16 +5,14 @@ import { MessengerComponent } from './messenger/messenger.component';
 
 const routes: Routes = [
     {
-      path: '',
-    component: CollabMessagingComponent,
-    },
-    {
-      path: 'messenger',
-      component: MessengerComponent
+      //Path to UserPageComponent, which places the parameter ':username' in the path
+      //':username' will be used to retrieve that specific users data 
+      path:'message/:unameOrCollabId',
+      component: CollabMessagingComponent
     },
     { 
-      path: 'conversations',
-      component: CollabMessagingComponent
+      path: '',
+      component: MessengerComponent
     }
   ];
   

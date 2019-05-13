@@ -50,37 +50,19 @@ export class MessengerComponent implements OnInit {
       this.user=data.username
       });
       
-
-    this.collab.myCollabs().subscribe((data:any)=>{
-      console.log(data);
-      for(let i=0; i<data.length;i++){
-        if(data[i]._id != null && data[i]._id["$oid"]!=null){
-          console.log(data[i]._id["$oid"])
-          this.gropuMess.push(data[i]);
-        
-        }
-
-        //making a personal contact-list
-        else if(data[i].participants.length != 0 && data[i].messages.length>0){
-          console.log(data[i].participants)
-          for(let item=0; item<data[i].participants.length; item++){
-            //removing user-himself from contact list
-            if(data[i].participants[item] != this.user){
-              this.ContactList.push(data[i].participants[item]);
-            } 
-          } 
-          //remove duplicate if any exist
-          this.ContactList=this.remove_duplicates(this.ContactList) 
-          //console.log(this.ContactList) 
-        }
-        else
-          return 0;
-      }
-    })
-    
+    this.userservice.getConversations().subscribe(convers => this.convos = convers);
     
   }
   
+  gotoConvo(convo: ConversationModel) {
+    if (convo.otherUser) {
+      console.log("Goto personal convo: " + convo.otherUser);
+      this.router.navigate(['/conversations/message/', convo.otherUser]);
+    } else {
+      console.log("Goto collab convo: " + convo._id.$oid);
+      this.router.navigate(['/conversations/message/', convo._id.$oid]);
+    }
+  }
 //remove duplicate contact
 remove_duplicates(arr) {
     var obj = {};

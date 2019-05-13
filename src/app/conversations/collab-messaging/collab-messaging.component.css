@@ -226,6 +226,10 @@ ol{
     margin-right: 30px;
     
   }
+
+  .noBg {
+    background-color: rgba(214, 212, 212, 0.048);
+  }
   
   
   

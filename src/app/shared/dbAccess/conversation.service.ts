@@ -38,6 +38,22 @@ export class ConversationService {
     return this.http.get( this.rootUrl +"/messaging/myConvos");
   }
 
+  getMessages(ident, collab: boolean): Observable<Message[]> {
+    if (collab) {
+      const body={
+        page      : 0,
+        collabId : ident
+      }
+      return this.http.post<Message[]>(this.rootUrl+"/messaging/getMessages",body)
+    } else {
+      const body={
+        page      : 0,
+        otherUser : ident
+      }
+      return this.http.post<Message[]>(this.rootUrl+"/messaging/getMessages",body)
+    }
+  }
+
   /**
     page should be 0, 1, 2, 3, et cetera.
     If you set page = 0, it will return the latest 20 messages.
