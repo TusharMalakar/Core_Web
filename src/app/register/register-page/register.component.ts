@@ -58,14 +58,14 @@ export class RegisterComponent implements OnInit{
     {
       this.userService.registerUser(this.user.username , this.user.password)
       .subscribe((data: any)  =>{
-            console.log ( data );
+            //console.log ( data );
             //storing json object to localStorage
             localStorage.setItem('accessToken',data.token);
 
             if(data.success){
 
               this.router.navigate(['/home']);
-              console.log ( this.user.username + " registered"); 
+              //console.log ( this.user.username + " registered"); 
             }
             else{ 
                 alert(data.error);

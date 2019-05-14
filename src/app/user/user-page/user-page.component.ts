@@ -127,9 +127,9 @@ export class UserPageComponent implements OnInit {
 
   profilePicture(){
     this.userService.getPicture().subscribe( (link) => {
-      console.log(link);
+      //console.log(link);
       this.imageLink = 'http://' + link;
-      console.log(this.imageLink);
+      //console.log(this.imageLink);
      })
   }
   profileMemberPicture(username: string){
@@ -158,7 +158,7 @@ export class UserPageComponent implements OnInit {
     });
     //Logic done after the dialog has been closed from the dialog window
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      //console.log('The dialog was closed');
     });
   }
 
@@ -181,7 +181,7 @@ export class UserPageComponent implements OnInit {
     });
     //Logic done after the dialog has been closed from the dialog window
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      //console.log('The dialog was closed');
     });
   }
 
@@ -204,7 +204,7 @@ export class UserPageComponent implements OnInit {
     });
     //Logic done after the dialog has been closed from the dialog window
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      //console.log('The dialog was closed');
     });
   }
 
@@ -227,7 +227,7 @@ export class UserPageComponent implements OnInit {
     });
     //Logic done after the dialog has been closed from the dialog window
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed' + result);
+      //console.log('The dialog was closed' + result);
       if(result == true){
       
       }
@@ -236,7 +236,7 @@ export class UserPageComponent implements OnInit {
   }
 
   changeProfilePic(){
-    console.log("Change profile pic.")
+    //console.log("Change profile pic.")
   }
 
   /**

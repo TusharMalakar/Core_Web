@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
         //storing json object to localStorage
         localStorage.setItem('accessToken', data.token);
         this.router.navigate(['/home']);
-        console.log ( this.user.username + "  logged-in"); 
+        //console.log ( this.user.username + "  logged-in"); 
       }
       else{ 
          alert(data.error);

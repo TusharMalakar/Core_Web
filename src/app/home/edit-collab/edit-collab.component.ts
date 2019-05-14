@@ -102,7 +102,7 @@ export class EditCollabComponent implements OnInit {
     this.collabData._id = this._id;
     
 
-    console.log(collabUpdatedData);
+    //console.log(collabUpdatedData);
   
     await this.collabService.editCollab(this.collabData, this._id)
       .subscribe(res => { 

@@ -85,7 +85,7 @@ export class EditSkillsComponent implements OnInit {
   }
 
   update(){
-    this.userService.updateUserSkills(this.skills).subscribe(result => { console.log(result) });
+    this.userService.updateUserSkills(this.skills).subscribe(result => { });
     this.dialogRef.close();
   }
 

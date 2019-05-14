@@ -40,7 +40,7 @@ export class CollabsService {
       id : _id
      }
      
-    console.log(body); 
+    //console.log(body); 
     return this.http.post(this.rootUrl + "/collab/getCollab", body );
   }
 
@@ -66,7 +66,7 @@ export class CollabsService {
   //Join Collab
   joinCollab(id){
 
-    console.log(id["$oid"]);
+    //console.log(id["$oid"]);
     const body = {
      id : id["$oid"]
     }
@@ -76,7 +76,7 @@ export class CollabsService {
   //Leave Collab
   leaveCollab(id){
 
-    console.log(id["$oid"]);
+    //console.log(id["$oid"]);
     const body = {
      id : id["$oid"]
     }
@@ -94,8 +94,8 @@ export class CollabsService {
 
   //TODO: Get this http request working
   getReqCollabs(classes: string[], skills: string[]){
-    console.log(classes);
-    console.log(skills);
+    //console.log(classes);
+    //console.log(skills);
 
     const body = {
       classes : classes,
@@ -111,7 +111,7 @@ export class CollabsService {
 
       let date = new Date(collabData.date).getTime();
       let duration = new Date(collabData.duration).getTime();
-      console.log("duration:" +collabData.size);
+      //console.log("duration:" +collabData.size);
 
       const body = {
           id : collabData._id,

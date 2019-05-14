@@ -122,6 +122,7 @@ export class CollabCardComponent implements OnInit {
       //Will return both skills and classes in a single array
       await this.userService.getUserSkillsAndClasses(userName).then(function(result){
         knownByUser = result;
+        //console.log(knownByUser);
       });
       
       if(knownByUser.includes(x)){

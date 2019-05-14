@@ -29,9 +29,7 @@ export class EditPictureComponent implements OnInit {
 }
 
   async uploadFileToActivity() {
-await this.userService.uploadProfilePicture(this.fileToUpload).subscribe((data: any)=>{
-  console.log(data)
-})
+await this.userService.uploadProfilePicture(this.fileToUpload).subscribe((data: any)=>{})
 //   this.fileUploadService.postFile(this.fileToUpload).subscribe(data => {
 //     // do something, if upload success
 //     }, error => {
@@ -39,7 +37,6 @@ await this.userService.uploadProfilePicture(this.fileToUpload).subscribe((data: 
 //     });
 this.submitPressed = true;
 this.dialogRef.close(this.submitPressed);
-
 }
 
 }

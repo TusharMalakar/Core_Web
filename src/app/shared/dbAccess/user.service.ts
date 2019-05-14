@@ -35,7 +35,7 @@ export class UserService {
     var requestedUrl = this.rootUrl + "/user?username="+username+"&password="+password;
 
     //Testing url 
-    console.log(requestedUrl);
+    //console.log(requestedUrl);
 
     //requestUrl: endpoint
     //body: Needed, but not used
@@ -83,21 +83,7 @@ export class UserService {
       classes = result["classes"];
     });
     
-    
-    /*
-    for(let classTaken of classes){
-        xAxisReq.push({
-        skillOrClass: classTaken,
-        type: "class"
-      });
-    
-    for(let skill of skills){
-      xAxisReq.push({
-      skillOrClass: skill,
-      type: "skill"
-    });
-  }
-  */
+    xAxisReq = xAxisReq.concat(classes);
 
     return xAxisReq;
   }
@@ -146,14 +132,14 @@ updateUserSkills(skills){
     skills  :skills,
     
   }
-  console.log(body)
+  //console.log(body)
   return this.http.post(this.rootUrl +"/user", body)
 }
 updateUserclass(classes){
   const body : UserModel ={
     classes:classes
   }
-  console.log(body)
+  //console.log(body)
   return this.http.post(this.rootUrl +"/user", body)
 
 }

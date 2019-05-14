@@ -51,7 +51,7 @@ export class EditUserFormComponent implements OnInit {
   */
   update(userData){
     //User userService to make an http request to update the fields specified on the Template Driven Form
-    this.userService.updateUserProfile(userData).subscribe(result => { console.log(result) });
+    this.userService.updateUserProfile(userData).subscribe(result => { });
     //Will close the dialog and go back to the UserPageComponent
     this.dialogRef.close();
   }
