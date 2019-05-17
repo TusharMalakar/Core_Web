@@ -26,6 +26,18 @@ export class LoginComponent implements OnInit {
   hide: boolean;
 
   isLoginError : boolean;
+
+  /**
+  * @author Edwin Quintuna
+  * 
+  *	@brief Constructor that will create an instance of RegisterComponent 
+  *        and allow us to inject our dependencies; services that will be needed in the component
+  *
+  *	@param[userService]  ,  service that will handle both retrival and updating user data via http requests
+  *	@param[router]  ,  An NgModule that provides navigation and URL manipulation capabilities
+  *	@param[formBuilder]       ,  Creates an AbstractControl from a user-specified configuration
+  *	@return nothing
+  */
   constructor(private formBuilder: FormBuilder,
               private userService : UserService,
               private router : Router) 

@@ -37,6 +37,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  //Lets angular know that the route list is only responsible 
+  //for providing additional routes and intended for feature modules
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })

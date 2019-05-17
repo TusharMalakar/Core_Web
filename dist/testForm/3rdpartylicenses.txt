@@ -51,10 +51,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+<<<<<<< HEAD
 @angular/common
 MIT
 
 @angular/compiler
+=======
+@angular/cdk/scrolling
+
+@angular/common
+>>>>>>> edwinBranch
 MIT
 
 @angular/core
@@ -113,10 +119,48 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+<<<<<<< HEAD
 @angular/platform-browser
 MIT
 
 @angular/platform-browser-dynamic
+=======
+@angular/material/autocomplete
+
+@angular/material/button
+
+@angular/material/card
+
+@angular/material/chips
+
+@angular/material/core
+
+@angular/material/datepicker
+
+@angular/material/dialog
+
+@angular/material/expansion
+
+@angular/material/form-field
+
+@angular/material/grid-list
+
+@angular/material/icon
+
+@angular/material/list
+
+@angular/material/menu
+
+@angular/material/sidenav
+
+@angular/material/stepper
+
+@angular/material/tabs
+
+@angular/material/toolbar
+
+@angular/platform-browser
+>>>>>>> edwinBranch
 MIT
 
 @angular/router

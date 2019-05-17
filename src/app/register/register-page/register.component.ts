@@ -17,8 +17,19 @@ export class RegisterComponent implements OnInit{
   form: FormGroup;
   hide1: boolean;
   hide2: boolean;
-
   isRegiError : boolean;
+
+  /**
+  * @author Edwin Quintuna
+  * 
+  *	@brief Constructor that will create an instance of RegisterComponent 
+  *        and allow us to inject our dependencies; services that will be needed in the component
+  *
+  *	@param[userService]   ,  service that will handle both retrival and updating user data via http requests
+  *	@param[router]        ,  An NgModule that provides navigation and URL manipulation capabilities
+  *	@param[formBuilder]   ,  Creates an AbstractControl from a user-specified configuration
+  *	@return nothing
+  */
   constructor(
     private userService : UserService,
     private router : Router,
@@ -29,6 +40,17 @@ export class RegisterComponent implements OnInit{
       this.hide2 = true;
      }
 
+  /**
+  * @author Edwin Quintuna
+  * 
+  *	@brief Function that will be called once the Angular has finished initializing and setting up the component
+  *        This function is async as we need to wait for data to be retrieved before setting values or doing logic
+  * 
+  * @pre  , form is not built
+  * @post , form is built
+  *
+  *	@return nothing
+  */   
   ngOnInit() {
     this.form = this.formBuilder.group({
        username: [this.user.username, [
@@ -58,14 +80,14 @@ export class RegisterComponent implements OnInit{
     {
       this.userService.registerUser(this.user.username , this.user.password)
       .subscribe((data: any)  =>{
-            //console.log ( data );
+            console.log ( data );
             //storing json object to localStorage
             localStorage.setItem('accessToken',data.token);
 
             if(data.success){
 
               this.router.navigate(['/home']);
-              //console.log ( this.user.username + " registered"); 
+              console.log ( this.user.username + " registered"); 
             }
             else{ 
                 alert(data.error);

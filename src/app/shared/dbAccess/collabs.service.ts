@@ -12,28 +12,65 @@ export class CollabsService {
   readonly rootUrl = 'http://13.58.204.157:5000';
   constructor(private http: HttpClient) { }
 
-  //collab/getCollabDetails
+  /**
+  * 
+  * @author Edwin Quintuna
+  * 
+  *	@deprecated , Not used.
+  */
   collabDetails(){ 
     return this.http.get( this.rootUrl +"/collab/getCollabDetails");
   }
-  //collab/getAllCollabs
+  /**
+  * 
+  * @author Edwin Quintuna
+  * 
+  *	@deprecated , Not used.
+  */
   allCollabs(): Observable<CollabModel[]> { 
     return this.http.get<CollabModel[]>( this.rootUrl +"/collab/getAllCollabs");
   }
-  //collab/getActiveCollabs 
+  
+  /**
+  * 
+  * @author Edwin Quintuna
+  * 
+  *	@deprecated , Not used.
+  */
   activeCollabs(){ 
     return this.http.get( this.rootUrl +"/collab/getActiveCollabs");
   }
-  //messaging/myConvos
+  
+  /**
+  * 
+  * @author Edwin Quintuna
+  * 
+  *	@deprecated , Not used.
+  */
   myCollabs(){ 
     return this.http.get( this.rootUrl +"/messaging/myConvos");
   }
 
-  //Get Both All and My Collabs
+  /**
+  * @author Edwin Quintuna
+  * 
+  *	@brief , Function that retrieve collaboration depending on the category specified by 'collabType'.
+  * @param['collabType'] , string that specifies the type of collab that needs to be retrieved from the database
+  *
+  *	@return Observable with server response containing an array with a list of collaborations.
+  */
   getCollabs(collabType: string){
     return this.http.get( this.rootUrl + "/collab/" + collabType);
   }
 
+  /**
+  * @author Edwin Quintuna
+  * 
+  *	@brief , Function that retrieve a single collaboration
+  * @param['_id'] , specify the collaboration to be retrieved
+  *
+  *	@return Observable with server response containing an a single collaboration.
+  */
   getSingleCollab(_id: string){
     
     const body = {
@@ -46,8 +83,14 @@ export class CollabsService {
 
   //______________POST_REQUEST____________
 
-  //create a new collab, wehre owner = currentUser
-  // size, date, duration, location, title, description, classes and skills are required
+  /**
+  * @author Edwin Quintuna
+  * 
+  *	@brief , Function that make a post request to create a collaboration with the data from CollabModel
+  * @param['collabData'] , Model that will contain all of the fields needed to create a collab
+  *
+  *	@return Observable with server response, 'success: true' if creating a collab was succesful.
+  */
   createCollab(collabData: CollabModel) {
 
     const body: CollabModel = {
@@ -63,7 +106,17 @@ export class CollabsService {
     return this.http.post(this.rootUrl + "/collab/createCollab", body);
   }
 
-  //Join Collab
+  /**
+  * @author Edwin Quintuna
+  * 
+  *	@brief , Function that make a post request to add the current user to the list of members
+  * @param['id'] , specify the collaboration to be retrieved
+  * 
+  * @pre collab will have x amount of members on its list
+  * @post if not full and http request is succesful, add member to the collaboration
+  *
+  *	@return Observable with server response, 'success: true' if joining a collab was succesful.
+  */
   joinCollab(id){
 
     //console.log(id["$oid"]);
@@ -73,7 +126,18 @@ export class CollabsService {
     return this.http.post(this.rootUrl + "/collab/joinCollab", body);
   }
 
-  //Leave Collab
+  /**
+  * @author Edwin Quintuna
+  * 
+  *	@brief , Function that make a post request to remove the current user from the list of members
+  * @param['id'] , specify the collaboration to be retrieved
+  * 
+  * @pre collab will have x amount of members on its list
+  * @post if the member is the owner, change collaboration owner and then remove member
+  *       if the member is the last member of the collaboration, remove member and delete the collaboration
+  *
+  *	@return Observable with server response, 'success: true' if leaving a collab was succesful.
+  */
   leaveCollab(id){
 
     //console.log(id["$oid"]);
@@ -83,7 +147,17 @@ export class CollabsService {
     return this.http.post(this.rootUrl + "/collab/leaveCollab", body);
   }
 
-  //TODO: Get this http request working
+  /**
+  * @author Edwin Quintuna
+  * 
+  *	@brief , Function that make a delete request to remove a collaboration from the database
+  * @param['id'] , specify the collaboration to be retrieved
+  * 
+  * @pre collaboration is on the database
+  * @post collaboration is removed from the database
+  * 
+  *	@return Observable with server response, 'success: true' if leaving a collab was succesful.
+  */
   deleteCollab(id){
 
     const body = {
@@ -92,7 +166,15 @@ export class CollabsService {
     return this.http.request('delete',this.rootUrl + "/collab/deleteCollabForReal", {body});
   }
 
-  //TODO: Get this http request working
+  /**
+  * @author Edwin Quintuna
+  * 
+  *	@brief , Function that retrieve collaboration depending on the classes and skills of the current user
+  * @param['classes'] , string array that holds the users known classes
+  * @param['skills'] , string array that  holds the users known skills
+  *
+  *	@return Observable with server response containing an array with a list of recommended collaborations.
+  */
   getReqCollabs(classes: string[], skills: string[]){
     //console.log(classes);
     //console.log(skills);
@@ -105,13 +187,22 @@ export class CollabsService {
     return this.http.post(this.rootUrl + "/collab/getRecommendedCollabs", body);
   }
 
-  //Requires a JSON"_id"
-  
+/**
+  * @author Edwin Quintuna
+  * 
+  *	@brief , Function that will update a collaboration with data from CollabModel
+  * @param['collabData'] , Model that will contain all of the fields needed to create a collab
+  * @param['id'] , string that holds the id of the collaboration that will be edited
+  *
+  *	@return Observable with server response, 'success: true' if edit a collab was succesful.
+  */
   editCollab(collabData: CollabModel, id: string){
 
       let date = new Date(collabData.date).getTime();
       let duration = new Date(collabData.duration).getTime();
       //console.log("duration:" +collabData.size);
+
+  
 
       const body = {
           id : collabData._id,
