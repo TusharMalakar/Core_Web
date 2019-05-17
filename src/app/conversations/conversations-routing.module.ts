@@ -16,12 +16,14 @@ import { MessengerComponent } from './messenger/messenger.component';
 */
 const routes: Routes = [
     {
-      //Path to UserPageComponent, which places the parameter ':username' in the path
-      //':username' will be used to retrieve that specific users data 
+      // Path to messaging page component, which places the parameter ':unameOrCollabId' in the path
+      //':unameOrCollabId' will be used to retreive the appropirate messages and initating
+      // the connection with the realtime messaging server.
       path:'message/:unameOrCollabId',
       component: CollabMessagingComponent
     },
     { 
+      //Path that shows conversation list.
       path: '',
       component: MessengerComponent
     }

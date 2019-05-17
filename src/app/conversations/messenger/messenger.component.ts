@@ -30,9 +30,10 @@ export class MessengerComponent implements OnInit {
     
     this.userservice.getUserdetails().subscribe((data:any)=>{
       this.user=data.username
-      });
+      }); //Get user's name.
       
     this.userservice.getConversations().subscribe(convers => this.convos = convers);
+    // Get the list of conversations.
     
   }
   
