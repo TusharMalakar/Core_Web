@@ -22,7 +22,7 @@ export class UserService {
     return this.http.get(this.rootUrl +"/auth/login?"+"username="+userName+"&password="+password, {headers : reqHeader});
   }
 
-  registerUser(username, password ) {
+  registerUser(username, password) {
     const body: UserModel = {
       username: username,
       password: password,
@@ -118,6 +118,7 @@ uploadProfilePicture(fileToUpload: File){
   //___________POST_________________
 
 //you can update user profile taking all these as input but "Not required"
+
 updateUserProfile(userData: UserModel){
   const body : UserModel ={
     name : userData.username,
@@ -135,6 +136,7 @@ updateUserSkills(skills){
   //console.log(body)
   return this.http.post(this.rootUrl +"/user", body)
 }
+
 updateUserclass(classes){
   const body : UserModel ={
     classes:classes
@@ -143,8 +145,6 @@ updateUserclass(classes){
   return this.http.post(this.rootUrl +"/user", body)
 
 }
-
-
 
 
 }

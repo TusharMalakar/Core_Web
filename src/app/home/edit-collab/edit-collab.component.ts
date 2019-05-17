@@ -84,8 +84,6 @@ export class EditCollabComponent implements OnInit {
     
   }
 
-  
-
   getCollabDetails(id: string){
     this.collabService.getSingleCollab(id).subscribe(res => {
       this.collabData = res['0'];

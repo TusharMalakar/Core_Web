@@ -11,6 +11,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./edit-user-form.component.css']
 })
 export class EditUserFormComponent implements OnInit {
+  
   //Model for user data
   userData: UserModel;
 

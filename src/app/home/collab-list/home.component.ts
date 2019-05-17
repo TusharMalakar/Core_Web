@@ -14,15 +14,29 @@ import { map, startWith } from 'rxjs/operators';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-    userData: UserModel;
-    collabData: Observable<CollabModel[]>;
-    selected = new FormControl(0);
 
-    //Used for caching
+    //Data model for our user data
+    userData: UserModel;
+    //Array that will be used to hold our data and display it as it becomes available
+    collabData: Observable<CollabModel[]>;
+    //Will determine the current tab
+    selected = new FormControl(0);
+    //Keys for caching
     CACHE_KEY_0 =  'reqCollabsCache';
     CACHE_KEY_1 =  'activeCollabsCache';
     CACHE_KEY_2 = 'myCollabsCache';
 
+  /**
+  * @author Edwin Quintuna
+  * 
+  *	@brief Constructor that will create an instance of the HomeComponent 
+  *        and allow us to inject our dependencies; services that will be needed in the component
+  *
+  *	@param[userService]   ,  service that will handle both retrival and updating user data via http requests
+  *	@param[router]        ,  
+  *	@param[collabService] ,  
+  *	@return nothing
+  */
   constructor(
       private userService : UserService,
       private router : Router, 

@@ -17,7 +17,9 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./user-page.component.css']
 })
 export class UserPageComponent implements OnInit {
+
   canEdit:boolean;
+  
   canMessage: boolean;
   //Will hold our user data.
   userData: UserModel;
@@ -132,6 +134,7 @@ export class UserPageComponent implements OnInit {
       //console.log(this.imageLink);
      })
   }
+
   profileMemberPicture(username: string){
     this.userService.getMemberPicture(username).subscribe((link)=>{
      this.imageLink = 'http://' + link;

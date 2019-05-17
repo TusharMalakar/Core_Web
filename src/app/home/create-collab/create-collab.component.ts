@@ -41,7 +41,6 @@ export class CreateCollabComponent implements OnInit {
   classes: string[] = [];
   allClasses: string[] = [];
 
-
   collabData: CollabModel;
 
   @ViewChild('skillInput') skillInput: ElementRef<HTMLInputElement>;
