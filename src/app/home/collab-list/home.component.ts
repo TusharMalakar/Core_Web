@@ -33,8 +33,8 @@ export class HomeComponent implements OnInit {
   *        and allow us to inject our dependencies; services that will be needed in the component
   *
   *	@param[userService]   ,  service that will handle both retrival and updating user data via http requests
-  *	@param[router]        ,  
-  *	@param[collabService] ,  
+  *	@param[router]         ,  enables navigation from one view to the next as users perform application tasks 
+  *	@param[collabService]  ,  service that will handle all collaboration related http requests  
   *	@return nothing
   */
   constructor(

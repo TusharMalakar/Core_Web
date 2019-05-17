@@ -37,6 +37,21 @@ export class CollabCardComponent implements OnInit {
   userData: UserModel;
   
 
+  /**
+  * @author Edwin Quintuna
+  * 
+  *	@brief Constructor that will create an instance of CollabCardComponent 
+  *        and allow us to inject our dependencies; services that will be needed in the component
+  * 
+  *	@param[userService]    ,  service that will handle both retrival and updating user data via http requests
+  *	@param[collabService]  ,  service that will handle all collaboration related http requests
+  *	@param[router]         ,  enables navigation from one view to the next as users perform application tasks
+  *
+  * @pre nothing is set
+  * @post A new instance of CollabModel is initialized
+  * 
+  *	@return nothing
+  */
   constructor(private userService: UserService, 
               private collabService: CollabsService,
               private router: Router) {
@@ -44,9 +59,19 @@ export class CollabCardComponent implements OnInit {
                 
               }
 
+  /**
+  * @author Edwin Quintuna
+  * 
+  *	@brief Function that will be called once Angular has finished initializing and setting up the component.
+  *        Will use the userService to retrieve the details for the user that is currently logged in.
+  * 
+  * @pre no data for tthe user is known. userData is null
+  * @post user data is retrieved via an Observable and that data is stored in the userData variable
+  *        
+  *	@return nothing
+  */             
   async ngOnInit() {
     await this.userService.getUserdetails().subscribe(userData => this.userData = userData);
-    
   }
 
   /*

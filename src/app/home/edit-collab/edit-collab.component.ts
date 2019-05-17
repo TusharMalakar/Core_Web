@@ -89,7 +89,7 @@ export class EditCollabComponent implements OnInit {
   *        the value in the formControl. This is done for both the formControl for skills and classes. If the values 
   *         change, make an api call to search database.
   * 
-  * @pre no data for the collan to be edited is available. FormControls are not set
+  * @pre no data for the collab to be edited is available. FormControls are not set
   * @post data has been retrieved for the collaboration and is displayed for the user and formControls are set up
   *       to react whenever the user is typing on the FormControl.
   *        
@@ -164,7 +164,7 @@ export class EditCollabComponent implements OnInit {
     
   }
 
-   /**
+  /**
   * @author Edwin Quintuna
   * 
   *	@brief Function that will handle adding skills to the users skill array. The array will be updated both locally

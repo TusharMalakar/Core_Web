@@ -44,7 +44,8 @@ export class RegisterComponent implements OnInit{
   * @author Edwin Quintuna
   * 
   *	@brief Function that will be called once the Angular has finished initializing and setting up the component
-  *        This function is async as we need to wait for data to be retrieved before setting values or doing logic
+  *        This function is async as we need to wait for data to be retrieved before setting values or doing logic.
+  *        Initializes our form using the formBuilder.
   * 
   * @pre  , form is not built
   * @post , form is built with child controls username, password and password2. Validators for each AbstractControlOption are specified.
