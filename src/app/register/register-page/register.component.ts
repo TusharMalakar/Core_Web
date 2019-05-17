@@ -47,8 +47,9 @@ export class RegisterComponent implements OnInit{
   *        This function is async as we need to wait for data to be retrieved before setting values or doing logic
   * 
   * @pre  , form is not built
-  * @post , form is built
-  *
+  * @post , form is built with child controls username, password and password2. Validators for each AbstractControlOption are specified.
+  *         These fields are connected to the HTML fields that have the same formControlName as the child control.
+  * 
   *	@return nothing
   */   
   ngOnInit() {
@@ -69,6 +70,18 @@ export class RegisterComponent implements OnInit{
     });
     }
   
+  /**
+  * @author Edwin Quintuna
+  * 
+  *	@brief Function that will call the UserService to update user details, once thats done return to UserPageComponent
+  *
+  * @pre All fields on the Angular Form has to be field in an in the correct format
+  * @post userService will be called to make an http request to attempt to create a new user with the credentails from
+  *       the Angular Form. If passwords match and the http request is succesful, a new user will be created and the 
+  *       user will be taken to the home screen
+  * 
+  *	@return nothing
+  */
   onSubmit() {
 
     this.user = Object.assign({}, this.form.value);
@@ -98,18 +111,49 @@ export class RegisterComponent implements OnInit{
 }
 
 
+/**
+* @author Edwin Quintuna
+* 
+*	@brief Getter method. In a reactive form, you can always access any form control through the get method on its parent group.
+*
+*	@return value of the child control 'username'
+*/
 get username(){
   return this.form.get('username');
 }
 
+/**
+* @author Edwin Quintuna
+* 
+*	@brief Getter method. In a reactive form, you can always access any form control through the get method on its parent group.
+*
+*	@return value of the child control 'password'
+*/
 get password(){
   return this.form.get('password');
 }
 
+/**
+* @author Edwin Quintuna
+* 
+*	@brief Getter method. In a reactive form, you can always access any form control through the get method on its parent group.
+*
+*	@return value of the child control 'password2'
+*/
 get password2(){
   return this.form.get('password2');
 }
 
+/**
+  * @author Edwin Quintuna
+  * 
+  *	@brief Function that router to another page
+  *
+  * @pre User is in the register page
+  * @post User us in the login page
+  * 
+  *	@return nothing
+  */
 login(){
   this.router.navigate(['/login']);
 }
