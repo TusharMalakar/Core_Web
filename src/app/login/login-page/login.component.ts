@@ -113,7 +113,7 @@ export class LoginComponent implements OnInit {
   *	@brief Function that router to another page
   *
   * @pre User is in the login page
-  * @post User us in the register page
+  * @post User is taken to the register page
   * 
   *	@return nothing
   */

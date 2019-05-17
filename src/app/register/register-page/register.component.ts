@@ -151,7 +151,7 @@ get password2(){
   *	@brief Function that router to another page
   *
   * @pre User is in the register page
-  * @post User us in the login page
+  * @post User is taken to the login page
   * 
   *	@return nothing
   */
