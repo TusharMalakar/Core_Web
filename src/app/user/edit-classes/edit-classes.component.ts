@@ -64,7 +64,7 @@ export class EditClassesComponent implements OnInit {
   /**
   * @author Edwin Quintuna
   * 
-  *	@brief Function that will be called once Angular has finished initializing and setting up the component
+  *	@brief Function that will be called once Angular has finished initializing and setting up the component.
   *        Will retrieve data from the instance of the Component that openned this dialog. Also initializes
   *        a listener on the formControl to listen for user inputs and make an api call with the value in the
   *       formControl

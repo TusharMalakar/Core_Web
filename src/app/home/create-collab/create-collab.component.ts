@@ -49,6 +49,22 @@ export class CreateCollabComponent implements OnInit {
   @ViewChild('classInput') classInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto2') matAutocomplete2: MatAutocomplete;
 
+  /**
+  * @author Edwin Quintuna
+  * 
+  *	@brief Constructor that will create an instance of EditCollabComponent 
+  *        and allow us to inject our dependencies; services that will be needed in the component
+  *
+  *	@param[formBuilder]   ,  Creates an AbstractControl from a user-specified configuration
+  *	@param[userService]    ,  service that will handle both retrival and updating user data via http requests
+  *	@param[collabService]  ,  service that will handle all collaboration related http requests
+  *	@param[router]         ,  enables navigation from one view to the next as users perform application tasks
+  *
+  * @pre nothing is set
+  * @post A new instance of CollabModel is initialized
+  * 
+  *	@return nothing
+  */
   constructor(private _formBuilder: FormBuilder, 
               private userService : UserService, 
               private collabService: CollabsService,
