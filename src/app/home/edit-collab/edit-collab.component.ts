@@ -51,6 +51,18 @@ export class EditCollabComponent implements OnInit {
   @ViewChild('classInput') classInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto2') matAutocomplete2: MatAutocomplete;
 
+  /**
+  * @author Edwin Quintuna
+  * 
+  *	@brief Constructor that will create an instance of EditCollabComponent 
+  *        and allow us to inject our dependencies; services that will be needed in the component
+  *
+  *	@param[userService]    ,  service that will handle both retrival and updating user data via http requests
+  *	@param[collabService]  ,  service that will handle all collaboration related http requests
+  *	@param[activeRoute]    ,  will allow us to retrieve path parameters if they are set
+  *	@param[router]         ,  enables navigation from one view to the next as users perform application tasks
+  *	@return nothing
+  */
   constructor(
               private userService : UserService, 
               private collabService: CollabsService,

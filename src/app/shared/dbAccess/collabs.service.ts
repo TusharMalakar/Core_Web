@@ -12,24 +12,53 @@ export class CollabsService {
   readonly rootUrl = 'http://13.58.204.157:5000';
   constructor(private http: HttpClient) { }
 
-  //collab/getCollabDetails
+  /**
+  * 
+  * @author Edwin Quintuna
+  * 
+  *	@deprecated , Not used.
+  */
   collabDetails(){ 
     return this.http.get( this.rootUrl +"/collab/getCollabDetails");
   }
-  //collab/getAllCollabs
+  /**
+  * 
+  * @author Edwin Quintuna
+  * 
+  *	@deprecated , Not used.
+  */
   allCollabs(): Observable<CollabModel[]> { 
     return this.http.get<CollabModel[]>( this.rootUrl +"/collab/getAllCollabs");
   }
-  //collab/getActiveCollabs 
+  
+  /**
+  * 
+  * @author Edwin Quintuna
+  * 
+  *	@deprecated , Not used.
+  */
   activeCollabs(){ 
     return this.http.get( this.rootUrl +"/collab/getActiveCollabs");
   }
-  //messaging/myConvos
+  
+  /**
+  * 
+  * @author Edwin Quintuna
+  * 
+  *	@deprecated , Not used.
+  */
   myCollabs(){ 
     return this.http.get( this.rootUrl +"/messaging/myConvos");
   }
 
-  //Get Both All and My Collabs
+  /**
+  * @author Edwin Quintuna
+  * 
+  *	@brief , Function that retrieve collaboration depending on the category specified by 'collabType'.
+  * @param['collabType'] , string that specifies the type of collab that needs to be retrieved from the database
+  *
+  *	@return Observable with server response containing an array with a list of collaborations.
+  */
   getCollabs(collabType: string){
     return this.http.get( this.rootUrl + "/collab/" + collabType);
   }
@@ -46,8 +75,7 @@ export class CollabsService {
 
   //______________POST_REQUEST____________
 
-  //create a new collab, wehre owner = currentUser
-  // size, date, duration, location, title, description, classes and skills are required
+ 
   createCollab(collabData: CollabModel) {
 
     const body: CollabModel = {
