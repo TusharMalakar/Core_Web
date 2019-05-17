@@ -48,6 +48,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  
   userDetails(){
     this.userService.getUserdetails().subscribe(userData => {
       this.userData = userData,
@@ -87,6 +88,7 @@ export class HomeComponent implements OnInit {
   createCollab(){
     this.router.navigate(['/home/createcollab']);
   }
+
 
   currentTab($event){
     switch($event) {
