@@ -3,9 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserPageComponent } from './user-page/user-page.component';
 
 
-/**
-* @author Edwin Quintuna
-* 
+/** 
 *	@brief Configure the routes for the feature module. Once loaded, we have 
 *        access to the components declared in the feature module
 *

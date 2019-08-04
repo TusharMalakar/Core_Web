@@ -8,7 +8,6 @@ import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { RegisterComponent } from './register/register-page/register.component';
 
 /**
-* @author Edwin Quintuna
 * @author Tushar Malakar
 * 
 *	@brief Configure the routes to allow for lazy loading of feature modules.

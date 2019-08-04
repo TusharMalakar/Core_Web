@@ -17,9 +17,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./user-page.component.css']
 })
 export class UserPageComponent implements OnInit {
-
   canEdit:boolean;
-  
   canMessage: boolean;
   //Will hold our user data.
   userData: UserModel;
@@ -49,7 +47,7 @@ export class UserPageComponent implements OnInit {
   *
   *	@param[userService]  ,  service that will handle both retrival and updating user data via http requests
   *	@param[activeRoute]  ,  will allow us to retrieve path parameters if they are set
-  *	@param[dialog]       ,  service to open Material Design modal dialogs
+  *	@param[dialog]       ,  will open a 
   *	@return nothing
   */
   constructor(
@@ -129,12 +127,11 @@ export class UserPageComponent implements OnInit {
 
   profilePicture(){
     this.userService.getPicture().subscribe( (link) => {
-      //console.log(link);
+      console.log(link);
       this.imageLink = 'http://' + link;
-      //console.log(this.imageLink);
+      console.log(this.imageLink);
      })
   }
-
   profileMemberPicture(username: string){
     this.userService.getMemberPicture(username).subscribe((link)=>{
      this.imageLink = 'http://' + link;
@@ -161,7 +158,7 @@ export class UserPageComponent implements OnInit {
     });
     //Logic done after the dialog has been closed from the dialog window
     dialogRef.afterClosed().subscribe(result => {
-      //console.log('The dialog was closed');
+      console.log('The dialog was closed');
     });
   }
 
@@ -184,7 +181,7 @@ export class UserPageComponent implements OnInit {
     });
     //Logic done after the dialog has been closed from the dialog window
     dialogRef.afterClosed().subscribe(result => {
-      //console.log('The dialog was closed');
+      console.log('The dialog was closed');
     });
   }
 
@@ -207,7 +204,7 @@ export class UserPageComponent implements OnInit {
     });
     //Logic done after the dialog has been closed from the dialog window
     dialogRef.afterClosed().subscribe(result => {
-      //console.log('The dialog was closed');
+      console.log('The dialog was closed');
     });
   }
 
@@ -230,7 +227,7 @@ export class UserPageComponent implements OnInit {
     });
     //Logic done after the dialog has been closed from the dialog window
     dialogRef.afterClosed().subscribe(result => {
-      //console.log('The dialog was closed' + result);
+      console.log('The dialog was closed' + result);
       if(result == true){
       
       }
@@ -239,7 +236,7 @@ export class UserPageComponent implements OnInit {
   }
 
   changeProfilePic(){
-    //console.log("Change profile pic.")
+    console.log("Change profile pic.")
   }
 
   /**

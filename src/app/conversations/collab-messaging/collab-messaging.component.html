@@ -25,8 +25,11 @@
                 <mat-form-field>
                         <input [(ngModel)] = "messageInput" name = "message" id = "username" type = "text" class = "form-control"
                         #username = "ngModel" matInput placeholder = "Message..." required>
+                       
+                        <!--clear the input after hitting send button-->
+                        <a ng-click="messageInput = null"></a>
                 </mat-form-field> 
-                <button mat-raised-button color = "primary" >Send</button>
+                <button mat-raised-button color = "primary" ng-click="messageInput = null" >Send</button>
         </div>
 
 </form>

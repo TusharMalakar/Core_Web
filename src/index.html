@@ -16,16 +16,16 @@
   <app-root></app-root>
 
   <script>
-            var PingReceived = false; //Was new message received?
+            var PingReceived = false;
           
              function connect(authToken) {
                      console.log("Connecting to RMS Server.");
-                      var ws = new Websock(); //Create new websock
-                      ws.on('open', function open() { //On open, send the auth token
+                      var ws = new Websock();
+                      ws.on('open', function open() {
                               writeUTF(ws, authToken);
                       });
 
-                      ws.on('message', function() { //On receiving, get the message.
+                      ws.on('message', function() {
                               var b1 = ws.rQshift8();
                               var b2 = ws.rQshift8();
                               var b3 = ws.rQshift8();
@@ -36,15 +36,15 @@
                               msgArr.push(ws.rQshift8());
                               }
                               var res = utf8ArrayToString(msgArr);
-                              if (res === "AUTH_FAIL") { 
+                              if (res === "AUTH_FAIL") {
                                 console.log("Failed RMS Auth.");
-                              } else if (res === "PING") { //If message is a ping, set PingReceived = true
+                              } else if (res === "PING") {
                                 console.log("Ping received.");
                                 PingReceived = true;
                               }
                       });
 
-                      ws.open("ws://13.58.204.157:8989", "binary")  //Connect to realtime messaging server
+                      ws.open("ws://13.58.204.157:8989", "binary") 
                       
                       
                       //setTimeout(function(){ ws.close(); }, 10000);

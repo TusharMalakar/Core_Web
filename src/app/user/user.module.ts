@@ -55,8 +55,6 @@ import { EditPictureComponent } from './edit-picture/edit-picture.component';
     ReactiveFormsModule,
 
   ],
-  //Array that is used to define only components that are not found in html and created dynamically with ComponentFactoryResolver
-  //Angular Material Dialoge will display these components
   entryComponents: [
     EditUserFormComponent,
     EditClassesComponent,

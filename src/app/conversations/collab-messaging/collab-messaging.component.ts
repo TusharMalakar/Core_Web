@@ -42,23 +42,24 @@ export class CollabMessagingComponent implements OnInit {
   
   async ngOnInit() {
     this.userservie.getUserdetails().subscribe((data:any)=>{
-      this.user = data.username; //Get this user's name. Used to check "self" when rendering the message screen.
+      this.user = data.username;
     })
-    //Will retrieve the 'unameOrCollabId' parameter from the url if set.
+    //Will retrieve the 'username' parameter from the url if set.
     await this.activeRoute.paramMap
     .subscribe(params => {
       this.convoIdent = params.get('unameOrCollabId');
       this.getMessages();
       setTimeout(function(){ 
                       (<any>window).connect(localStorage.getItem('accessToken'));
-              }, 2000); // Call connect in index.html, Initiates connected to realtime messaging server
+              }, 2000);
       
-              setInterval(()=> { this.loopPingCheck() }, 1 * 1000); //check if window.pingreceived = true every second.
+              setInterval(()=> { this.loopPingCheck() }, 1 * 1000);
     })
 
     
     this.userservie.getUserdetails().subscribe((data:any)=>{
       this.user = data.username;
+      //console.log(this.user)
     })
 
       
@@ -67,8 +68,6 @@ export class CollabMessagingComponent implements OnInit {
     
   }
 
-  //Checks if window.PingReceived = true
-  //If it is, get new messages.
   loopPingCheck() {
     if ((<any>window).PingReceived) {
       (<any>window).PingReceived = false;
@@ -79,7 +78,6 @@ export class CollabMessagingComponent implements OnInit {
     }
   }
 
-  //Get messages based on collabId or the username of the other participant in the convo.
   getMessages() {
     if(this.convoIdent.indexOf('@myhunter.cuny.edu') != -1){
     
@@ -97,7 +95,6 @@ export class CollabMessagingComponent implements OnInit {
     }
   }
 
-  //Send a message in a conversation.
   sendMessage() {
     console.log("Sending message : " + this.messageInput);
 

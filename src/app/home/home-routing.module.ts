@@ -7,8 +7,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 /**
-* @author Edwin Quintuna
-* 
 *	@brief Configure the routes for the feature module. Once loaded, we have 
 *        access to the components declared in the feature module
 *
@@ -37,8 +35,6 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  //Lets angular know that the route list is only responsible 
-  //for providing additional routes and intended for feature modules
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
