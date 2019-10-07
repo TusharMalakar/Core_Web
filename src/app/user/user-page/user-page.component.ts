@@ -211,14 +211,7 @@ export class UserPageComponent implements OnInit {
     });
   }
 
-  /**
-  * @author Tushar Malakar
-  * 
-  *	@brief Function that will open a dialog window with the content of EditPictureComponent
-  *        The window will open on the same screen, using the same data as the current screen
-  *
-  *	@return nothing
-  */
+  
   openDialog4(){
     //Dialog refeerence that will handle the closing of the dialog and to receive 
     //notifiations when the dialog has been closed
@@ -242,24 +235,12 @@ export class UserPageComponent implements OnInit {
     //console.log("Change profile pic.")
   }
 
-  /**
-  * @author Tushar Malakar
-  * 
-  *	@brief Function that will redirect to a users github page and will open on a separate window
-  *
-  *	@return nothing
-  */
+  
   onNavigateGithub(){
     window.open( "https://" + (this.userData).github , "_blank");
   }
 
-  /**
-  * @author Tushar Malakar
-  * 
-  *	@brief Function that will redirect to a users linkedIn page and will open on a separate window
-  *
-  *	@return nothing
-  */
+ 
   onNavigateLinkedIn(){
     window.open( "https://" + (this.userData).linkedin , "_blank");
   }
