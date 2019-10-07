@@ -14,6 +14,18 @@ export class EditPictureComponent implements OnInit {
   fileToUpload: File = null;
   submitPressed = false;
 
+  /**
+  * @author Tushar Malakar
+  * 
+  *	@brief Constructor that will create an instance of EditSkillsComponent dialog 
+  *        and allow us to inject our dependencies; services that will be needed in the component
+  *
+  *	@param[userService]  ,  service that will handle both retrival and updating user data via http requests
+  *	@param[dialogRef]    ,  reference to the newly-opened dialog with an instance of component EditClassesComponent
+  *	@param[data]         ,  handles passing of data from/to component opening the dialog
+  *                         @Inject() lets Angular know that a parameter must be injected
+  *	@return nothing
+  */
   constructor(
     private userService: UserService,
     public dialogRef: MatDialogRef<EditClassesComponent>,
@@ -23,23 +35,18 @@ export class EditPictureComponent implements OnInit {
   ngOnInit() {
   }
 
-   //function which you use in (change)-event of your file input tag:
+  //function which you use in (change)-event of your file input tag:
  handleFileInput(files: FileList) {
   this.fileToUpload = files.item(0);
-}
+  }
 
   async uploadFileToActivity() {
-await this.userService.uploadProfilePicture(this.fileToUpload).subscribe((data: any)=>{
-  console.log(data)
-})
-//   this.fileUploadService.postFile(this.fileToUpload).subscribe(data => {
-//     // do something, if upload success
-//     }, error => {
-//       console.log(error);
-//     });
-this.submitPressed = true;
-this.dialogRef.close(this.submitPressed);
+  await this.userService.uploadProfilePicture(this.fileToUpload).subscribe((data: any)=>{
+    console.log(data)
+  })
+  this.submitPressed = true;
+  this.dialogRef.close(this.submitPressed);
 
-}
+  }
 
 }

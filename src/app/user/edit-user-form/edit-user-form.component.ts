@@ -11,6 +11,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./edit-user-form.component.css']
 })
 export class EditUserFormComponent implements OnInit {
+  
   //Model for user data
   userData: UserModel;
 
@@ -18,7 +19,7 @@ export class EditUserFormComponent implements OnInit {
   collabData: CollabModel;
 
   /**
-  * @author Edwin Quintuna
+  * @author Tushar Malakar
   * 
   *	@brief Constructor that will create an instance of EditUserFormComponent 
   *        and allow us to inject our dependencies; services that will be needed in the component
@@ -42,7 +43,7 @@ export class EditUserFormComponent implements OnInit {
   ngOnInit() {}
 
   /**
-  * @author Edwin Quintuna
+  * @author Tushar Malakar
   * 
   *	@brief Function that will call the UserService to update user details, once thats done return to UserPageComponent
   *
@@ -51,7 +52,7 @@ export class EditUserFormComponent implements OnInit {
   */
   update(userData){
     //User userService to make an http request to update the fields specified on the Template Driven Form
-    this.userService.updateUserProfile(userData).subscribe(result => { console.log(result) });
+    this.userService.updateUserProfile(userData).subscribe(result => { });
     //Will close the dialog and go back to the UserPageComponent
     this.dialogRef.close();
   }

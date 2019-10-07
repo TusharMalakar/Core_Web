@@ -12,16 +12,46 @@ export class UserService {
   readonly rootUrl = 'http://13.58.204.157:5000';
   constructor(private http: HttpClient) { }
   
+  /**
+  * @author Tushar Malakar
+  * 
+  *	@brief Function that will be retrieve token with key 'accessToken' from local storage 
+  *
+  *	@return accessToken
+  */
   getToken(){
     return localStorage.getItem('accessToken')
   }
 
-  //"/user?username="+UserName+"&password="password
+  /**
+  * @author Tushar Malakar
+  * 
+  *	@brief , Function that will authenticate a user login credentials.
+  * @param['username'] , User's myhunter email 
+  * @param['password] , User's password
+  * 
+  * @pre No auth token in local storage
+  * @post Auth token stored in local storage
+  *
+  *	@return Observable with server response 
+  */
   userAuthentication(userName: string, password: string) {
     var reqHeader = new HttpHeaders({'No-Auth':'True'});
     return this.http.get(this.rootUrl +"/auth/login?"+"username="+userName+"&password="+password, {headers : reqHeader});
   }
 
+  /**
+  * @author Tushar Malakar
+  * 
+  *	@brief , Function that will register a user.
+  * @param['username'] , User's myhunter email 
+  * @param['password] , User's password
+  * 
+  * @pre No auth token in local storage
+  * @post Auth token stored in local storage
+  *
+  *	@return Observable with server response 
+  */
   registerUser(username, password ) {
     const body: UserModel = {
       username: username,
@@ -34,23 +64,43 @@ export class UserService {
     //Adding Parameters
     var requestedUrl = this.rootUrl + "/user?username="+username+"&password="+password;
 
-    //Testing url 
-    console.log(requestedUrl);
-
     //requestUrl: endpoint
     //body: Needed, but not used
     //{headers : reqHeader} : Creating object from the header library; set to non-auth 
     return this.http.put(requestedUrl , body, {headers : reqHeader});
   }
 
+  /**
+  * @author Tushar Malakar
+  * 
+  *	@brief , Function that will check if there is an auth token stored in local storage.
+  * 
+  *	@return nothing
+  */
   public isAuthenticated() : boolean {
     return localStorage.getItem('accessToken') !== null;
   }
- //url + json authentication
+
+
+ /**
+  * @author Tushar Malakar
+  * 
+  *	@brief , Function that will retrieve the current users data.
+  * 
+  *	@return Observable with server response containing user details, will be mapped to UserModel
+  */
  getUserdetails(): Observable<UserModel> {
   return this.http.get<UserModel>( this.rootUrl +"/user");
   }
 
+  /**
+  * @author Tushar Malakar
+  * 
+  *	@brief , Function that will retrieve user with the name 'username' from the database.
+  * @param['username'] , User's myhunter email 
+  * 
+  *	@return Observable with server response containing user details, will be mapped to UserModel
+  */
   getMemberdetails(username: string): Observable<UserModel> {
     return this.http.get<UserModel>( this.rootUrl +"/user/" + username);
   }
@@ -59,16 +109,38 @@ export class UserService {
     return this.http.get<ConversationModel[]>( this.rootUrl + "/messaging/myConvos" );
   }
 
-  
-
+  /**
+  * @author Tushar Malakar
+  * 
+  *	@brief , Function that will retrieve the user's skills 
+  * @param['username'] , User's myhunter email 
+  *
+  *	@return Observable with server response containing an array with the users skills
+  */
   getUserSkills(userName: string) { 
     return this.http.get( this.rootUrl + "/user/skills/" + userName).toPromise();
   }
 
+  /**
+  * @author Tushar Malakar
+  * 
+  *	@brief , Function that will retrieve the user's classes
+  * @param['username'] , User's myhunter email 
+  *
+  *	@return Observable with server response containing an array with the users classes
+  */
   getUserClasses(userName: string){ 
     return this.http.get( this.rootUrl +"/user/classes/" + userName).toPromise();
   }
 
+  /**
+  * @author Tushar Malakar
+  * 
+  *	@brief , Function that will retrieve the user's skills and classes
+  * @param['username'] , User's myhunter email 
+  *
+  *	@return Observable with server response containing an array with the users skills and classes
+  */
   async getUserSkillsAndClasses(username: string){
     
     let xAxisReq: Array<string> = [];
@@ -83,39 +155,55 @@ export class UserService {
       classes = result["classes"];
     });
     
-    
-    /*
-    for(let classTaken of classes){
-        xAxisReq.push({
-        skillOrClass: classTaken,
-        type: "class"
-      });
-    
-    for(let skill of skills){
-      xAxisReq.push({
-      skillOrClass: skill,
-      type: "skill"
-    });
-  }
-  */
-
+    xAxisReq = xAxisReq.concat(classes);
     return xAxisReq;
   }
 
+/**
+* @author Tushar Malakar
+* 
+*	@brief , Function that will return a list of results that match the constrain
+* @param['constrain'] , string that will be parsed to find matching results for autocomplete 
+*
+*	@return Observable with server response containing an array with the results for autocomplete
+*/
 searchSkills(constrain: string): Observable<any>{
   let params = new HttpParams().set("query",constrain);
   return this.http.get(this.rootUrl +"/search/skills",{params: params});
 }
 
+/**
+* @author Tushar Malakar
+* 
+*	@brief , Function that will return a list of results that match the constrain
+* @param['constrain'] , string that will be parsed to find matching results for autocomplete 
+*
+*	@return Observable with server response containing an array with the results for autocomplete
+*/
 searchClasses(constrain: string): Observable<any>{
   let params = new HttpParams().set("query",constrain);
   return this.http.get(this.rootUrl +"/search/classes",{params: params});
 }
 
+/**
+* @author Tushar Malakar
+* 
+*	@brief , Function that will return the link to the users profile picture
+*
+*	@return Observable with server response containing a string with the url of the users profile picture
+*/
 getPicture(){
   return this.http.get(this.rootUrl + "/user/profilePicture", {responseType: 'text'});
 }
 
+/**
+* @author Tushar Malakar
+* 
+*	@brief , Function that will return the link to the users profile picture
+* @param['username'] , Specify the user who's profile picture will be retrieved
+*
+*	@return Observable with server response containing a string with the url of the users profile picture
+*/
 getMemberPicture(username: string){
   return this.http.get( this.rootUrl +"/user/profilePicture?username=" + username , {responseType: 'text'});
 }
@@ -126,12 +214,14 @@ uploadProfilePicture(fileToUpload: File){
   return this.http.post(this.rootUrl+"/user/profilePicture", formData)
 }
 
-// /collab/deleteCollab 
-///collab/getRecommendedCollab
-
-  //___________POST_________________
-
-//you can update user profile taking all these as input but "Not required"
+/**
+* @author Tushar Malakar
+* 
+*	@brief , Function that will make a post request and update a user's data.
+* @param['userData'] , Model holding the fields that need to be updated
+*
+*	@return Observable with server response
+*/
 updateUserProfile(userData: UserModel){
   const body : UserModel ={
     name : userData.username,
@@ -141,24 +231,38 @@ updateUserProfile(userData: UserModel){
   return this.http.post(this.rootUrl +"/user", body)
 }
 
+/**
+* @author Tushar Malakar
+* 
+*	@brief , Function that will make a post request and update a user's skills.
+* @param['skills'] , Array that containes a list of skills to be added to the user's list on the database
+*
+*	@return Observable with server response
+*/
 updateUserSkills(skills){
   const body : UserModel ={
     skills  :skills,
     
   }
-  console.log(body)
+  //console.log(body)
   return this.http.post(this.rootUrl +"/user", body)
 }
+
+/**
+* @author Tushar Malakar
+* 
+*	@brief , Function that will make a post request and update a user's classes.
+* @param['skills'] , Array that containes a list of classes to be added to the user's list on the database
+*
+*	@return Observable with server response
+*/
 updateUserclass(classes){
   const body : UserModel ={
     classes:classes
   }
-  console.log(body)
+  //console.log(body)
   return this.http.post(this.rootUrl +"/user", body)
 
 }
-
-
-
 
 }

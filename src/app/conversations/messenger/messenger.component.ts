@@ -20,6 +20,7 @@ export class MessengerComponent implements OnInit {
 
   public user : string = null;
   public convos: ConversationModel[];
+  displayNames: Map<String, String> = new Map();
 
   constructor(private userservice : UserService,
               private router :Router
@@ -29,9 +30,10 @@ export class MessengerComponent implements OnInit {
     
     this.userservice.getUserdetails().subscribe((data:any)=>{
       this.user=data.username
-      });
+      }); //Get user's name.
       
     this.userservice.getConversations().subscribe(convers => this.convos = convers);
+    // Get the list of conversations.
     
   }
   
@@ -45,7 +47,7 @@ export class MessengerComponent implements OnInit {
     }
   }
 
-  displayNames: Map<String, String> = new Map();
+  
 
   getUserDispname(username: string){
     if (this.displayNames.has(username)) {

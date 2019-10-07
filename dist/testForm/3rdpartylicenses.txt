@@ -51,9 +51,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+<<<<<<< HEAD
+@angular/common
+MIT
+
+@angular/compiler
+=======
 @angular/cdk/scrolling
 
 @angular/common
+>>>>>>> edwinBranch
 MIT
 
 @angular/core
@@ -112,6 +119,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+<<<<<<< HEAD
+@angular/platform-browser
+MIT
+
+@angular/platform-browser-dynamic
+=======
 @angular/material/autocomplete
 
 @angular/material/button
@@ -125,8 +138,6 @@ THE SOFTWARE.
 @angular/material/datepicker
 
 @angular/material/dialog
-
-@angular/material/divider
 
 @angular/material/expansion
 
@@ -149,6 +160,7 @@ THE SOFTWARE.
 @angular/material/toolbar
 
 @angular/platform-browser
+>>>>>>> edwinBranch
 MIT
 
 @angular/router

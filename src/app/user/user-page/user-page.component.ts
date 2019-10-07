@@ -17,7 +17,9 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./user-page.component.css']
 })
 export class UserPageComponent implements OnInit {
+
   canEdit:boolean;
+  
   canMessage: boolean;
   //Will hold our user data.
   userData: UserModel;
@@ -40,14 +42,14 @@ export class UserPageComponent implements OnInit {
   fileToUpload: File = null;
 
   /**
-  * @author Edwin Quintuna
+  * @author Tushar Malakar
   * 
   *	@brief Constructor that will create an instance of UserPageComponent 
   *        and allow us to inject our dependencies; services that will be needed in the component
   *
   *	@param[userService]  ,  service that will handle both retrival and updating user data via http requests
   *	@param[activeRoute]  ,  will allow us to retrieve path parameters if they are set
-  *	@param[dialog]       ,  will open a 
+  *	@param[dialog]       ,  service to open Material Design modal dialogs
   *	@return nothing
   */
   constructor(
@@ -59,7 +61,7 @@ export class UserPageComponent implements OnInit {
     {}
 
   /**
-  * @author Edwin Quintuna
+  * @author Tushar Malakar
   * 
   *	@brief Function that will be called once the Angular has finished initializing and setting up the component
   *        This function is async as we need to wait for data to be retrieved before setting values or doing logic
@@ -95,7 +97,7 @@ export class UserPageComponent implements OnInit {
   }
 
   /**
-  * @author Edwin Quintuna
+  * @author Tushar Malakar
   * 
   *	@brief Function that will load a users data or another users data, depending on whether the variable
   *        'username' has been set from the url parameter.
@@ -127,11 +129,12 @@ export class UserPageComponent implements OnInit {
 
   profilePicture(){
     this.userService.getPicture().subscribe( (link) => {
-      console.log(link);
+      //console.log(link);
       this.imageLink = 'http://' + link;
-      console.log(this.imageLink);
+      //console.log(this.imageLink);
      })
   }
+
   profileMemberPicture(username: string){
     this.userService.getMemberPicture(username).subscribe((link)=>{
      this.imageLink = 'http://' + link;
@@ -139,7 +142,7 @@ export class UserPageComponent implements OnInit {
   }
 
   /**
-  * @author Edwin Quintuna
+  * @author Tushar Malakar
   * 
   *	@brief Function that will open a dialog window with the content of EditUserFormComponent
   *        The window will open on the same screen, using the same data as the current screen
@@ -158,12 +161,12 @@ export class UserPageComponent implements OnInit {
     });
     //Logic done after the dialog has been closed from the dialog window
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      //console.log('The dialog was closed');
     });
   }
 
   /**
-  * @author Edwin Quintuna
+  * @author Tushar Malakar
   * 
   *	@brief Function that will open a dialog window with the content of EditClassesComponent
   *        The window will open on the same screen, using the same data as the current screen
@@ -181,12 +184,12 @@ export class UserPageComponent implements OnInit {
     });
     //Logic done after the dialog has been closed from the dialog window
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      //console.log('The dialog was closed');
     });
   }
 
   /**
-  * @author Edwin Quintuna
+  * @author Tushar Malakar
   * 
   *	@brief Function that will open a dialog window with the content of EditSkillsComponent
   *        The window will open on the same screen, using the same data as the current screen
@@ -204,12 +207,12 @@ export class UserPageComponent implements OnInit {
     });
     //Logic done after the dialog has been closed from the dialog window
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      //console.log('The dialog was closed');
     });
   }
 
   /**
-  * @author Edwin Quintuna
+  * @author Tushar Malakar
   * 
   *	@brief Function that will open a dialog window with the content of EditPictureComponent
   *        The window will open on the same screen, using the same data as the current screen
@@ -227,7 +230,7 @@ export class UserPageComponent implements OnInit {
     });
     //Logic done after the dialog has been closed from the dialog window
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed' + result);
+      //console.log('The dialog was closed' + result);
       if(result == true){
       
       }
@@ -236,11 +239,11 @@ export class UserPageComponent implements OnInit {
   }
 
   changeProfilePic(){
-    console.log("Change profile pic.")
+    //console.log("Change profile pic.")
   }
 
   /**
-  * @author Edwin Quintuna
+  * @author Tushar Malakar
   * 
   *	@brief Function that will redirect to a users github page and will open on a separate window
   *
@@ -251,7 +254,7 @@ export class UserPageComponent implements OnInit {
   }
 
   /**
-  * @author Edwin Quintuna
+  * @author Tushar Malakar
   * 
   *	@brief Function that will redirect to a users linkedIn page and will open on a separate window
   *
